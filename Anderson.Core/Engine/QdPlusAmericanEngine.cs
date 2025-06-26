@@ -6,97 +6,95 @@ using Anderson.Interpolation.Interpolators;
 namespace Anderson.Engine
 {
     /// <summary>
-    /// QD+ American option pricing engine with robust root finding for exercise boundary calculation.
-    /// This version uses the auto-bracketing Solve method to handle cases where we don't have
-    /// a pre-defined finite bracket.
+    /// Implements the QD+ method to find an accurate initial guess for the American option exercise boundary.
+    /// This engine is primarily used as a first step for the more accurate QdFpAmericanEngine.
+    /// Reference: Li, M. (2009), "Analytical Approximations for the Critical Stock Prices of American Options".
     /// </summary>
     public class QdPlusAmericanEngine
     {
-        public enum SolverType { Brent, Newton, Ridder, Halley, SuperHalley }
+        public enum SolverType { Halley, Brent }
 
         private readonly ISolver1D _solver;
-        private readonly SolverType _solverType;
         private readonly int _interpolationPoints;
         private readonly double _epsilon;
 
         public QdPlusAmericanEngine(
             int interpolationPoints = 8,
             SolverType solverType = SolverType.Halley,
-            double epsilon = 1e-8)
+            double epsilon = 1e-9)
         {
             _interpolationPoints = interpolationPoints;
-            _solverType = solverType;
             _epsilon = epsilon;
             
             _solver = solverType switch
             {
-                SolverType.Brent => new Brent(),
-                SolverType.Newton => new Newton(),
-                SolverType.Ridder => new Ridder(),
-                SolverType.Halley => new Halley(),
-                SolverType.SuperHalley => new Halley(),
+                SolverType.Halley => new Halley { MaxEvaluations = 100 },
+                SolverType.Brent => new Brent { MaxEvaluations = 100 },
                 _ => throw new ArgumentOutOfRangeException(nameof(solverType))
             };
-            _solver.MaxEvaluations = 100;
         }
 
         /// <summary>
-        /// Calculates the short-maturity (T->0) exercise boundary for a put option.
-        /// This provides an excellent initial guess for the root finder.
-        /// Reference: Andersen & Lake (2021), Table 2 for American Puts.
+        /// Calculates the short-maturity (t->0) exercise boundary for a put option.
+        /// This provides an excellent initial guess for the root finder at longer maturities.
+        /// Reference: Andersen & Lake (2021), Table 2, "American put option boundary asymptotes".
         /// </summary>
         public static double XMax(double K, double r, double q)
         {
-            // From Anderson & Lake (2021), Table 2: American Put
-            // The short-maturity exercise boundary B(0) = X_max
+            // For a put option, early exercise is considered if r > q.
+            // If r <= q, the dividend yield advantage of holding the stock outweighs the interest rate gain
+            // from exercising early, but early exercise can still be optimal due to volatility.
+
+            if (r < 0 && q < r)
+            {
+                // This is the double-boundary case described by Andersen & Lake (2021).
+                // The single-boundary engine is not applicable. Return 0 to signal this.
+                return 0.0;
+            }
+
+            if (q > 0.0)
+            {
+                return K * Math.Max(1.0, r / q);
+            }
             
-            if (r >= 0.0)
+            if (q == 0.0)
             {
-                // Standard case: always return K * max(1, r/q)
-                // This ensures we never return 0, maintaining American optionality
-                if (q > 0.0)
-                {
-                    return K * Math.Max(1.0, r / q);
-                }
-                else if (q == 0.0)
-                {
-                    // No dividends: boundary approaches infinity as r/0
-                    return r > 0.0 ? double.PositiveInfinity : K;
-                }
-                else // q < 0 (negative dividends/storage costs)
-                {
-                    // With negative dividends, early exercise is always suboptimal
-                    // since holding the option gives positive carry
-                    return K; // Minimum boundary
-                }
+                // With no dividends (q=0), it is never optimal to exercise an American put early if r>=0.
+                // The boundary is effectively at S=0, so the continuation region covers all positive stock prices.
+                // We return infinity to signal this.
+                return (r >= 0.0) ? double.PositiveInfinity : K; // If r<0, q=0 => r/q is -inf, so max(1, r/q) is 1.
             }
-            else // r < 0 (negative interest rates)
-            {
-                if (q < r)
-                {
-                    // Double boundary case - not handled by this implementation
-                    return 0.0;
-                }
-                else
-                {
-                    // Single boundary case with negative rates
-                    return K * Math.Max(1.0, r / q);
-                }
-            }
+            
+            // Case q < 0 (negative dividends / cost of carry)
+            // It is always better to hold the option, as holding the underlying has a cost.
+            // Boundary stays at K.
+            return K;
         }
 
+        /// <summary>
+        /// Computes the exercise boundary B(τ) as a Chebyshev interpolation of the transformed function H(z).
+        /// H(z) = ln(B(τ(z)) / XMax)^2, where z is the transformed square-root time variable.
+        /// </summary>
         public ChebyshevInterpolation GetPutExerciseBoundary(double S, double K, double r, double q, double vol, double T)
         {
             double xmax = XMax(K, r, q);
+            
+            // If boundary is not applicable or trivial, return a zero-function interpolator.
             if (xmax <= 0 || double.IsInfinity(xmax))
             {
                 return new ChebyshevInterpolation(_interpolationPoints, z => 0.0);
             }
             
+            // This is the function we interpolate: the transformed boundary value.
             Func<double, double> functionToInterpolate = z =>
             {
+                // Map from canonical Chebyshev domain [-1, 1] to time-to-maturity τ
                 double tau = 0.25 * T * Math.Pow(1.0 + z, 2);
+                
+                // Find the boundary B(τ) at this specific time
                 double boundary = PutExerciseBoundaryAtTau(S, K, r, q, vol, T, tau);
+                
+                // Return the H-transformed value
                 return Math.Pow(Math.Log(Math.Max(1e-12, boundary) / xmax), 2);
             };
             
@@ -110,62 +108,25 @@ namespace Anderson.Engine
             var evaluator = new QdPlusBoundaryEvaluator(S, K, r, q, vol, tau);
             var solverFunction = new SolverFunction(evaluator);
             
-            // Use the asymptotic value as the initial guess
             double initialGuess = XMax(K, r, q);
-            
-            // Handle the case where XMax might be infinite
+            // The solver needs a finite initial guess
             if (double.IsInfinity(initialGuess))
             {
-                initialGuess = K * 2.0; // Use 2*K as a reasonable starting point
+                initialGuess = K; 
             }
             
-            // Clamp the guess to be above the minimum bound
-            initialGuess = Math.Max(evaluator.XMin(), initialGuess);
-            
-            // Use the auto-bracketing solve method with an initial step
-            // The step size should be proportional to the scale of the problem
-            double step = K * 0.1; // 10% of strike price as initial step
-            
-            // Set bounds on the solver to prevent it from exploring negative values
-            _solver.LowerBound = evaluator.XMin();
-            _solver.UpperBound = null; // No upper bound restriction
+            // Ensure guess is within valid bounds
+            initialGuess = Math.Min(K - 1e-6, Math.Max(evaluator.XMin(), initialGuess));
             
             try
             {
                 // Use the auto-bracketing method that finds its own bracket
-                return _solver.Solve(solverFunction, _epsilon, initialGuess, step);
+                return _solver.Solve(solverFunction, _epsilon, initialGuess, K * 0.1);
             }
             catch (Exception ex)
             {
-                // If auto-bracketing fails, try with a different initial guess
-                // Use a more conservative guess closer to the strike
-                initialGuess = K;
-                step = K * 0.05; // Smaller step
-                
-                try
-                {
-                    return _solver.Solve(solverFunction, _epsilon, initialGuess, step);
-                }
-                catch
-                {
-                    // If still failing, fall back to a simple search near the strike
-                    // This is a last resort
-                    double[] testPoints = { K * 0.8, K * 0.9, K, K * 1.1, K * 1.2, K * 1.5 };
-                    foreach (var testPoint in testPoints)
-                    {
-                        try
-                        {
-                            return _solver.Solve(solverFunction, _epsilon, testPoint, K * 0.1);
-                        }
-                        catch
-                        {
-                            continue;
-                        }
-                    }
-                    
-                    // If all else fails, throw the original exception
-                    throw new Exception($"Failed to find exercise boundary: {ex.Message}");
-                }
+                // Re-throw with a more informative message
+                throw new Exception($"QD+ solver failed to find exercise boundary for tau={tau:F4}. Initial guess was {initialGuess:F2}. Error: {ex.Message}");
             }
         }
 
