@@ -6,7 +6,7 @@ class Program
 {
     static void Main()
     {
-        Console.WriteLine("Anderson Derivative Pricing Engine - Enhanced Test");
+        Console.WriteLine("Anderson Derivative Pricing Engine Test");
         Console.WriteLine("=================================================");
         Console.WriteLine();
 
