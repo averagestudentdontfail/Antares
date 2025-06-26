@@ -4,6 +4,7 @@ using Anderson.Model;
 using Anderson.Interface;
 using Anderson.Engine;
 using Anderson.Distribution;
+using ModelOptionRight = Anderson.Model.OptionRight; 
 
 namespace Anderson.Engine.Engines
 {
