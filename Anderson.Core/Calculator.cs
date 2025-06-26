@@ -17,8 +17,8 @@ namespace Anderson
         {
             _engines = new Dictionary<string, IOptionPricingEngine>
             {
-                { "Anderson", new AndersonAmericanEngine() },
-                { "BlackScholes", new BlackScholesEngine() }
+                { "American", new AmericanEngine() },
+                { "European", new EuropeanEngine() }
             };
         }
 
