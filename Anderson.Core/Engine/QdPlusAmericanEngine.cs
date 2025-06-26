@@ -47,31 +47,41 @@ namespace Anderson.Engine
         /// </summary>
         public static double XMax(double K, double r, double q)
         {
-            // For American puts, early exercise is optimal when r > q
-            // The short-maturity exercise boundary is:
+            // From Anderson & Lake (2021), Table 2: American Put
+            // The short-maturity exercise boundary B(0) = X_max
             
-            if (r > q)
+            if (r >= 0.0)
             {
+                // Standard case: always return K * max(1, r/q)
+                // This ensures we never return 0, maintaining American optionality
                 if (q > 0.0)
                 {
-                    // Standard case: boundary is K * r/q
-                    return K * (r / q);
+                    return K * Math.Max(1.0, r / q);
                 }
                 else if (q == 0.0)
                 {
-                    // Special case: no dividends, always optimal to exercise deep ITM
-                    return double.PositiveInfinity;
+                    // No dividends: boundary approaches infinity as r/0
+                    return r > 0.0 ? double.PositiveInfinity : K;
                 }
-                else // q < 0
+                else // q < 0 (negative dividends/storage costs)
                 {
-                    // Negative dividend yield (storage costs), even more reason to exercise
-                    return double.PositiveInfinity;
+                    // With negative dividends, early exercise is always suboptimal
+                    // since holding the option gives positive carry
+                    return K; // Minimum boundary
                 }
             }
-            else // r <= q
+            else // r < 0 (negative interest rates)
             {
-                // Early exercise is not optimal when r <= q
-                return 0.0;
+                if (q < r)
+                {
+                    // Double boundary case - not handled by this implementation
+                    return 0.0;
+                }
+                else
+                {
+                    // Single boundary case with negative rates
+                    return K * Math.Max(1.0, r / q);
+                }
             }
         }
 
