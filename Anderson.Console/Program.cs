@@ -6,79 +6,78 @@ class Program
 {
     static void Main()
     {
-        Console.WriteLine("Anderson Derivative Pricing Engine - Test");
-        Console.WriteLine("=========================================");
+        Console.WriteLine("Anderson Derivative Pricing Engine - Enhanced Test");
+        Console.WriteLine("=================================================");
         Console.WriteLine();
 
-        // Create calculator
         var calculator = new Calculator();
 
-        // Create test contract
-        var contract = new OptionContract
-        {
-            Symbol = "AAPL",
-            Right = OptionRight.Put,
-            Strike = 150m,
-            Expiry = DateTime.Now.AddDays(30),
-            Style = OptionStyle.American
-        };
-
-        // Create market data
-        var marketData = new MarketData(
-            underlyingPrice: 145m,
-            volatility: 0.25,
-            riskFreeRate: 0.05,
-            dividendYield: 0.02
-        );
-
-        Console.WriteLine($"Contract: {contract}");
-        Console.WriteLine($"Market Data: {marketData}");
-        Console.WriteLine($"Time to Expiry: {contract.TimeToExpiry(marketData.ValuationTime):F4} years");
+        // Test 1: Original test case
+        Console.WriteLine("Test 1: Original Parameters (Minimal Early Exercise)");
+        Console.WriteLine("----------------------------------------------------");
+        TestContract(calculator, 
+            strike: 150m, spot: 145m, vol: 0.25, r: 0.05, q: 0.02, days: 30);
+        
         Console.WriteLine();
-
-        // Test American engine
-        Console.WriteLine("American Engine Test:");
-        Console.WriteLine("--------------------");
-        var americanResult = calculator.Price(contract, marketData, "American");
-        PrintResult(americanResult);
-
-        // Test European engine for comparison
-        contract.Style = OptionStyle.European;
-        Console.WriteLine("European Engine Test:");
-        Console.WriteLine("--------------------");
-        var europeanResult = calculator.Price(contract, marketData, "European");
-        PrintResult(europeanResult);
-
-        // Show early exercise premium
-        if (americanResult.IsSuccess && europeanResult.IsSuccess)
-        {
-            Console.WriteLine("Early Exercise Analysis:");
-            Console.WriteLine("------------------------");
-            Console.WriteLine($"American Price:  {americanResult.TheoreticalPrice:C}");
-            Console.WriteLine($"European Price:  {europeanResult.TheoreticalPrice:C}");
-            Console.WriteLine($"Early Exercise Premium: {americanResult.TheoreticalPrice - europeanResult.TheoreticalPrice:C}");
-        }
+        
+        // Test 2: Deep ITM put with early exercise value
+        Console.WriteLine("Test 2: Deep ITM Put (Should Have Early Exercise Premium)");
+        Console.WriteLine("---------------------------------------------------------");
+        TestContract(calculator, 
+            strike: 100m, spot: 70m, vol: 0.20, r: 0.05, q: 0.15, days: 90);
+        
+        Console.WriteLine();
+        
+        // Test 3: Very deep ITM, low vol (maximum early exercise)
+        Console.WriteLine("Test 3: Very Deep ITM, Low Vol (Maximum Early Exercise)");
+        Console.WriteLine("-------------------------------------------------------");
+        TestContract(calculator, 
+            strike: 100m, spot: 60m, vol: 0.10, r: 0.06, q: 0.20, days: 180);
 
         Console.WriteLine();
-        Console.WriteLine("Test completed. Press any key to exit...");
+        Console.WriteLine("Analysis Complete! Press any key to exit...");
         Console.ReadKey();
     }
 
-    static void PrintResult(PricingResult result)
+    static void TestContract(Calculator calc, decimal strike, decimal spot, 
+                           double vol, double r, double q, int days)
     {
-        if (result.IsSuccess)
+        var contract = new OptionContract
         {
-            Console.WriteLine($"  Price: {result.TheoreticalPrice:C}");
-            Console.WriteLine($"  Intrinsic: {result.IntrinsicValue:C}");
-            Console.WriteLine($"  Time Value: {result.TimeValue:C}");
-            Console.WriteLine($"  Model: {result.PricingModel}");
-            Console.WriteLine($"  Time: {result.CalculationTime.TotalMilliseconds:F1}ms");
-            Console.WriteLine($"  Greeks - Delta: {result.Greeks.Delta:F4}, Gamma: {result.Greeks.Gamma:F6}, Vega: {result.Greeks.Vega:F4}");
+            Symbol = "TEST",
+            Right = OptionRight.Put,
+            Strike = strike,
+            Expiry = DateTime.Now.AddDays(days),
+            Style = OptionStyle.American
+        };
+
+        var marketData = new MarketData(spot, vol, r, q);
+        
+        Console.WriteLine($"Parameters: S=${spot}, K=${strike}, T={days}d, vol={vol:P0}, r={r:P0}, q={q:P0}");
+        Console.WriteLine($"Moneyness: {(spot/strike - 1):P1} ({'ITM' if spot < strike else 'OTM'})");
+        
+        // Price American
+        var americanResult = calc.Price(contract, marketData, "American");
+        
+        // Price European for comparison
+        contract.Style = OptionStyle.European;
+        var europeanResult = calc.Price(contract, marketData, "European");
+        
+        if (americanResult.IsSuccess && europeanResult.IsSuccess)
+        {
+            decimal intrinsic = Math.Max(0, strike - spot);
+            decimal earlyExercisePremium = americanResult.TheoreticalPrice - europeanResult.TheoreticalPrice;
+            
+            Console.WriteLine($"  Intrinsic Value:        {intrinsic:C}");
+            Console.WriteLine($"  European Price:         {europeanResult.TheoreticalPrice:C}");
+            Console.WriteLine($"  American Price:         {americanResult.TheoreticalPrice:C}");
+            Console.WriteLine($"  Early Exercise Premium: {earlyExercisePremium:C} ({earlyExercisePremium/europeanResult.TheoreticalPrice:P1})");
+            Console.WriteLine($"  Calculation Time:       {americanResult.CalculationTime.TotalMilliseconds:F1}ms");
+            Console.WriteLine($"  Delta: {americanResult.Greeks.Delta:F3}, Gamma: {americanResult.Greeks.Gamma:F5}");
         }
         else
         {
-            Console.WriteLine($"  ERROR: {result.ErrorMessage}");
+            Console.WriteLine($"  ERROR: {americanResult.ErrorMessage ?? europeanResult.ErrorMessage}");
         }
-        Console.WriteLine();
     }
 }

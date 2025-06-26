@@ -1,12 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "8a2kD7Jcnk0=",
+  "dgSpecHash": "w8kiGzlMTiI=",
   "success": true,
   "projectFilePath": "/home/send2/.projects/Antares/Anderson.Core/Anderson.Core.csproj",
   "expectedPackageFiles": [
-    "/home/send2/.nuget/packages/mathnet.numerics/5.0.0/mathnet.numerics.5.0.0.nupkg.sha512",
-    "/home/send2/.nuget/packages/microsoft.netcore.app.ref/8.0.16/microsoft.netcore.app.ref.8.0.16.nupkg.sha512",
-    "/home/send2/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.16/microsoft.aspnetcore.app.ref.8.0.16.nupkg.sha512"
+    "/home/send2/.nuget/packages/mathnet.numerics/5.0.0/mathnet.numerics.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }
