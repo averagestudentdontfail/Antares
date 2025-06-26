@@ -26,7 +26,6 @@ namespace Anderson.Engine
         /// <summary>
         /// Evaluates the integrand for the early exercise premium.
         /// </summary>
-        /// <param name="z">Transformed time, z = sqrt(s). 's' is the time-to-maturity of the component being integrated.</param>
         public double Evaluate(double z)
         {
             // s is the time-to-maturity of the component part of the integral.
@@ -57,7 +56,6 @@ namespace Anderson.Engine
             double dm = dp - v_s;
             
             // 3. Assemble the integrand using discount factors based on 's'.
-            // This matches the logic: r = 2*z*(r_*K_*dr*Phi_(-dp+v) - q_*S_*dq*Phi_(-dp)); in QuantLib.
             double premium_integrand = 
                 _r * _K * dr_s * Distributions.CumulativeNormal(-dm) -
                 _q * _S * dq_s * Distributions.CumulativeNormal(-dp);
