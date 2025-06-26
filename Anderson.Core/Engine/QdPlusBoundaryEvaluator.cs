@@ -3,6 +3,10 @@ using Anderson.Distribution;
 
 namespace Anderson.Engine
 {
+    /// <summary>
+    /// Encapsulates the pure QD+ function and its derivatives.
+    /// This class is a pure mathematical representation and does not include the root-finding subtractions.
+    /// </summary>
     public class QdPlusBoundaryEvaluator
     {
         private readonly double _tau, _K, _sigma, _sigma2, _v, _r, _q;
@@ -36,7 +40,7 @@ namespace Anderson.Engine
         }
 
         // Returns the pure QD+(S) value
-        public double QdPlusValue(double S)
+        public double Value(double S)
         {
             PreCalculateIfNeeded(S);
             if (Math.Abs(_K - S - _npv) < 1e-12)
@@ -47,15 +51,16 @@ namespace Anderson.Engine
             return (1.0 - _dq * _Phi_dp) * S + (c0 + _lambda) * (_K - S - _npv);
         }
 
-        // Returns d(QD+)/dS
-        public double QdPlusDerivative(double S)
+        // Returns the pure first derivative: d(QD+)/dS
+        public double Derivative(double S)
         {
             PreCalculateIfNeeded(S);
+            // This now correctly returns d(QD+)/dS WITHOUT the "- 1"
             return 1.0 - _dq * _Phi_dp + _dq / _v * _phi_dp + _beta * (1.0 - _dq * _Phi_dp) + _alpha / _dr * _charm;
         }
 
-        // Returns d^2(QD+)/dS^2
-        public double QdPlusSecondDerivative(double S)
+        // Returns the pure second derivative: d^2(QD+)/dS^2
+        public double SecondDerivative(double S)
         {
             PreCalculateIfNeeded(S);
             double gamma = _phi_dp * _dq / (_v * S);
@@ -72,7 +77,7 @@ namespace Anderson.Engine
             {
                 _sc = Math.Max(1e-12, S);
                 _dp = (Math.Log(_sc * _dq / (_K * _dr)) / _v) + 0.5 * _v;
-                _dm = _dp - _v; 
+                _dm = _dp - _v;
                 _Phi_dp = Distributions.CumulativeNormal(-_dp);
                 _Phi_dm = Distributions.CumulativeNormal(-_dm);
                 _phi_dp = Distributions.NormalDensity(_dp);
