@@ -6,84 +6,61 @@ namespace Anderson.Engine
 {
     public enum FixedPointEquation { FP_A, FP_B, Auto }
 
-    /// <summary>
-    /// High-performance American option pricing engine based on fixed-point iteration for the exercise boundary.
-    /// This engine provides a highly accurate and fast solution by first obtaining an initial guess
-    /// for the exercise boundary from the QD+ method, and then iteratively refining it using a fixed-point scheme.
-    /// Reference: Andersen, Lake, and Offengenden (2015), "High Performance American Option Pricing".
-    /// </summary>
     public class QdFpAmericanEngine
     {
         private readonly IQdFpIterationScheme _scheme;
         private readonly FixedPointEquation _fpEquation;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="QdFpAmericanEngine"/> class.
-        /// </summary>
-        /// <param name="scheme">The iteration scheme defining nodes, steps, and integrators. A default high-precision scheme is used if null.</param>
-        /// <param name="fpEquation">The fixed-point formulation to use. 'Auto' selects the best scheme based on market data.</param>
         public QdFpAmericanEngine(
             IQdFpIterationScheme? scheme = null,
             FixedPointEquation fpEquation = FixedPointEquation.Auto)
         {
-            // Default to a reasonably accurate and fast scheme if none is provided.
             _scheme = scheme ?? new QdFpLegendreScheme(16, 8, 16, 32);
             _fpEquation = fpEquation;
         }
 
-        /// <summary>
-        /// Calculates the price of an American put option.
-        /// </summary>
         public double CalculatePut(double S, double K, double r, double q, double vol, double T)
         {
-            // --- Step 0: Determine the short-maturity boundary (asymptotic value) ---
             double xmax = QdPlusAmericanEngine.XMax(K, r, q);
 
-            // If xmax is 0, it signifies a double-boundary case not handled by this engine.
             if (xmax <= 0)
             {
-                throw new ArgumentException("This case (likely q < r < 0) results in a double exercise boundary and is not supported by this single-boundary engine. See Andersen & Lake (2021).");
+                throw new ArgumentException("This case (likely q < r < 0) results in a double exercise boundary and is not supported by this single-boundary engine.");
             }
 
-            // If xmax is infinite, it means early exercise is never optimal (e.g., put with r > 0, q = 0).
             if (double.IsInfinity(xmax))
             {
                 return CalculateBlackScholesPut(S, K, r, q, vol, T);
             }
 
-            // --- Step 1: Get initial guess for the boundary from the QD+ Engine ---
+            // Step 1: Get initial guess for the boundary from the QD+ Engine
             var qdPlusEngine = new QdPlusAmericanEngine(_scheme.GetNumberOfChebyshevInterpolationNodes());
-            var boundaryInterp = qdPlusEngine.GetPutExerciseBoundary(S, K, r, q, vol, T);
+            var boundaryInterp = qdPlusEngine.GetPutExerciseBoundary(K, r, q, vol, T);
             
-            // Create a delegate for the transformed boundary function H(z) = ln(B/Xmax)^2
-            // This function is what we iteratively refine.
-            Func<double, double> H_func = z => boundaryInterp.Value(z);
-
-            // --- Step 2: Choose the fixed-point equation formulation ---
-            // Per the paper, FP-A is more stable for low drift (r ≈ q). FP-B is more robust otherwise.
-            bool useFP_A = (_fpEquation == FixedPointEquation.FP_A) || 
-                           (_fpEquation == FixedPointEquation.Auto && Math.Abs(r - q) < 0.01 && vol > 0.05);
-
-            DqFpEquation equation;
-            // The boundary function B(tau) is derived from the H-interpolator
+            // Step 2: Define boundary function B(τ) with the CORRECT coordinate transformation
+            double sqrtT = Math.Sqrt(T);
             Func<double, double> B_func = tau => 
             {
                 if (tau <= 1e-12) return xmax;
-                double z_node = 2.0 * Math.Sqrt(tau / T) - 1.0;
+                double z_node = (2.0 * Math.Sqrt(tau) / sqrtT) - 1.0;
                 double h_val = boundaryInterp.Value(z_node);
                 return xmax * Math.Exp(-Math.Sqrt(Math.Max(0, h_val)));
             };
 
-            equation = useFP_A
+            // Step 3: Choose the fixed-point equation formulation
+            bool useFP_A = (_fpEquation == FixedPointEquation.FP_A) || 
+                           (_fpEquation == FixedPointEquation.Auto && Math.Abs(r - q) < 0.01 && vol > 0.05);
+
+            DqFpEquation equation = useFP_A
                 ? new DqFpEquation_A(K, r, q, vol, B_func, _scheme.GetFixedPointIntegrator())
                 : new DqFpEquation_B(K, r, q, vol, B_func, _scheme.GetFixedPointIntegrator());
 
-            // --- Step 3: Perform iterative refinement of the boundary ---
-            double[] z_nodes = ((ChebyshevInterpolation)boundaryInterp).Nodes();
-            double[] h_values = boundaryInterp.Values(); // Get the initial h-values
+            // Step 4: Perform iterative refinement of the boundary
+            double[] z_nodes = boundaryInterp.Nodes();
+            double[] h_values = boundaryInterp.Values();
             Func<double, double> h_transform = fv => Math.Pow(Math.Log(Math.Max(1e-12, fv) / xmax), 2);
 
-            // --- Part A: Jacobi-Newton Steps ---
+            // Part A: Jacobi-Newton Steps
             for (int k = 0; k < _scheme.GetNumberOfJacobiNewtonFixedPointSteps(); k++)
             {
                 for (int i = 1; i < z_nodes.Length; i++)
@@ -100,15 +77,15 @@ namespace Anderson.Engine
                     {
                         (double Nd, double Dd) = equation.NDd(tau, b_current);
                         double alpha = K * Math.Exp(-(r - q) * tau);
-                        double fd = alpha * (Nd * D - Dd * N) / (D * D); // Derivative of F(B) wrt B
-                        double b_new = b_current - (Fv - b_current) / (fd - 1.0); // Jacobi-Newton update
+                        double fd = alpha * (Nd * D - Dd * N) / (D * D);
+                        double b_new = b_current - (Fv - b_current) / (fd - 1.0);
                         h_values[i] = h_transform(b_new);
                     }
                 }
                 boundaryInterp.UpdateY(h_values);
             }
             
-            // --- Part B: Naive Richardson Fixed-Point Steps ---
+            // Part B: Naive Richardson Fixed-Point Steps
             for (int k = 0; k < _scheme.GetNumberOfNaiveFixedPointSteps(); k++)
             {
                 for (int i = 1; i < z_nodes.Length; i++)
@@ -120,14 +97,15 @@ namespace Anderson.Engine
                 boundaryInterp.UpdateY(h_values);
             }
             
-            // --- Step 4: Calculate final price using the refined boundary ---
+            // Step 5: Calculate final price using the refined boundary
+            // CORRECTED: Pass the concrete ChebyshevInterpolation type.
             var addOnValueFunc = new QdPlusAddOnValue(T, S, K, r, q, vol, xmax, boundaryInterp);
-            // The integral for the add-on value is over z = sqrt(tau) from 0 to sqrt(T)
-            double addOn = _scheme.GetExerciseBoundaryToPriceIntegrator().Integrate(addOnValueFunc.Evaluate, 0.0, Math.Sqrt(T));
+            double addOn = _scheme.GetExerciseBoundaryToPriceIntegrator().Integrate(addOnValueFunc.Evaluate, 0.0, sqrtT);
             
             double europeanValue = CalculateBlackScholesPut(S, K, r, q, vol, T);
 
-            return Math.Max(europeanValue, 0.0) + Math.Max(0.0, addOn);
+            // Final price is the greater of the European price and intrinsic value, plus the early exercise premium.
+            return Math.Max(europeanValue, K - S) + Math.Max(0.0, addOn);
         }
 
         private static double CalculateBlackScholesPut(double S, double K, double r, double q, double vol, double T)

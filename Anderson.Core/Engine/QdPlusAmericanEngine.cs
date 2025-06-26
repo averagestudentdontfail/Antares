@@ -2,6 +2,7 @@ using System;
 using Anderson.Root;
 using Anderson.Root.Solvers;
 using Anderson.Interpolation.Interpolators;
+using Anderson.Distribution;
 
 namespace Anderson.Engine
 {
@@ -34,105 +35,144 @@ namespace Anderson.Engine
             };
         }
 
-        /// <summary>
-        /// Calculates the short-maturity (t->0) exercise boundary for a put option.
-        /// This provides an excellent initial guess for the root finder at longer maturities.
-        /// Reference: Andersen & Lake (2021), Table 2, "American put option boundary asymptotes".
-        /// </summary>
         public static double XMax(double K, double r, double q)
         {
-            // For a put option, early exercise is considered if r > q.
-            // If r <= q, the dividend yield advantage of holding the stock outweighs the interest rate gain
-            // from exercising early, but early exercise can still be optimal due to volatility.
-
-            if (r < 0 && q < r)
-            {
-                // This is the double-boundary case described by Andersen & Lake (2021).
-                // The single-boundary engine is not applicable. Return 0 to signal this.
-                return 0.0;
-            }
-
-            if (q > 0.0)
-            {
-                return K * Math.Max(1.0, r / q);
-            }
-            
-            if (q == 0.0)
-            {
-                // With no dividends (q=0), it is never optimal to exercise an American put early if r>=0.
-                // The boundary is effectively at S=0, so the continuation region covers all positive stock prices.
-                // We return infinity to signal this.
-                return (r >= 0.0) ? double.PositiveInfinity : K; // If r<0, q=0 => r/q is -inf, so max(1, r/q) is 1.
-            }
-            
-            // Case q < 0 (negative dividends / cost of carry)
-            // It is always better to hold the option, as holding the underlying has a cost.
-            // Boundary stays at K.
+            if (r < 0 && q < r) return 0.0;
+            if (q > 0.0) return K * Math.Max(1.0, r / q);
+            if (q == 0.0) return (r >= 0.0) ? double.PositiveInfinity : K;
             return K;
         }
 
-        /// <summary>
-        /// Computes the exercise boundary B(τ) as a Chebyshev interpolation of the transformed function H(z).
-        /// H(z) = ln(B(τ(z)) / XMax)^2, where z is the transformed square-root time variable.
-        /// </summary>
-        public ChebyshevInterpolation GetPutExerciseBoundary(double S, double K, double r, double q, double vol, double T)
+        public ChebyshevInterpolation GetPutExerciseBoundary(double K, double r, double q, double vol, double T)
         {
             double xmax = XMax(K, r, q);
-            
-            // If boundary is not applicable or trivial, return a zero-function interpolator.
             if (xmax <= 0 || double.IsInfinity(xmax))
             {
                 return new ChebyshevInterpolation(_interpolationPoints, z => 0.0);
             }
             
-            // This is the function we interpolate: the transformed boundary value.
+            double sqrtT = Math.Sqrt(T);
             Func<double, double> functionToInterpolate = z =>
             {
-                // Map from canonical Chebyshev domain [-1, 1] to time-to-maturity τ
-                double tau = 0.25 * T * Math.Pow(1.0 + z, 2);
+                double x_val = 0.5 * sqrtT * (1.0 + z);
+                double tau = x_val * x_val;
                 
-                // Find the boundary B(τ) at this specific time
-                double boundary = PutExerciseBoundaryAtTau(S, K, r, q, vol, T, tau);
+                double boundary = PutExerciseBoundaryAtTau(K, r, q, vol, tau);
                 
-                // Return the H-transformed value
                 return Math.Pow(Math.Log(Math.Max(1e-12, boundary) / xmax), 2);
             };
             
             return new ChebyshevInterpolation(_interpolationPoints, functionToInterpolate);
         }
 
-        private double PutExerciseBoundaryAtTau(double S, double K, double r, double q, double vol, double T, double tau)
+        private double PutExerciseBoundaryAtTau(double K, double r, double q, double vol, double tau)
         {
             if (tau < 1e-9) return XMax(K, r, q);
             
-            var evaluator = new QdPlusBoundaryEvaluator(S, K, r, q, vol, tau);
+            // CORRECTED: The evaluator is constructed with static parameters only.
+            var evaluator = new QdPlusBoundaryEvaluator(K, r, q, vol, tau);
             var solverFunction = new SolverFunction(evaluator);
             
             double initialGuess = XMax(K, r, q);
-            // The solver needs a finite initial guess
             if (double.IsInfinity(initialGuess))
             {
                 initialGuess = K; 
             }
             
-            // Ensure guess is within valid bounds
             initialGuess = Math.Min(K - 1e-6, Math.Max(evaluator.XMin(), initialGuess));
             
             try
             {
-                // Use the auto-bracketing method that finds its own bracket
                 return _solver.Solve(solverFunction, _epsilon, initialGuess, K * 0.1);
             }
             catch (Exception ex)
             {
-                // Re-throw with a more informative message
                 throw new Exception($"QD+ solver failed to find exercise boundary for tau={tau:F4}. Initial guess was {initialGuess:F2}. Error: {ex.Message}");
             }
         }
 
         /// <summary>
-        /// Private adapter class to present the function g(B) = QD+(B) - B to the generic solvers.
+        /// Private helper class to evaluate the QD+ function g(B) = 0.
+        /// It is stateful to avoid re-calculating common terms for a given boundary candidate B.
         /// </summary>
+        private class QdPlusBoundaryEvaluator
+        {
+            // Fields are for a specific time-to-maturity tau
+            private readonly double _tau, _K, _sigma, _sigma2, _v, _r, _q;
+            private readonly double _dr, _dq, _ddr;
+            private readonly double _omega, _lambda, _lambdaPrime, _alpha, _beta;
+
+            // Fields that depend on the boundary candidate S
+            private double _sc, _dp, _dm, _phi_dp, _npv, _theta, _charm, _Phi_dp, _Phi_dm;
+
+            // CORRECTED CONSTRUCTOR: Only takes static parameters. 'S' is passed to methods.
+            public QdPlusBoundaryEvaluator(double strike, double riskFreeRate, double dividendYield, double volatility, double timeToMaturity)
+            {
+                _tau = timeToMaturity;
+                _K = strike;
+                _sigma = volatility;
+                _sigma2 = _sigma * _sigma;
+                _v = _sigma * Math.Sqrt(_tau);
+                _r = riskFreeRate;
+                _q = dividendYield;
+                _dr = Math.Exp(-_r * _tau);
+                _dq = Math.Exp(-_q * _tau);
+                _ddr = (Math.Abs(_r * _tau) > 1e-5) ? _r / (1.0 - _dr) : 1.0 / (_tau * (1.0 - 0.5 * _r * _tau * (1.0 - _r * _tau / 3.0)));
+                _omega = 2.0 * (_r - _q) / _sigma2;
+                double sqrt_term = Math.Sqrt(Math.Pow(_omega - 1, 2) + 8.0 * _ddr / _sigma2);
+                _lambda = 0.5 * (-(_omega - 1.0) - sqrt_term);
+                _lambdaPrime = 2.0 * _ddr * _ddr / (_sigma2 * sqrt_term);
+                double common_denom = 2.0 * _lambda + _omega - 1.0;
+                _alpha = 2.0 * _dr / (_sigma2 * common_denom);
+                _beta = _alpha * (_ddr + _lambdaPrime / common_denom) - _lambda;
+                _sc = -1; // Initialize cached spot to an invalid value
+            }
+
+            public double Value(double S)
+            {
+                PreCalculateIfNeeded(S);
+                if (Math.Abs(_K - S - _npv) < 1e-12)
+                {
+                    return (1.0 - _dq * _Phi_dp) * S + _alpha * _theta / _dr;
+                }
+                double c0 = -_beta - _lambda + _alpha * _theta / (_dr * (_K - S - _npv));
+                return (1.0 - _dq * _Phi_dp) * S + (c0 + _lambda) * (_K - S - _npv);
+            }
+
+            public double Derivative(double S)
+            {
+                PreCalculateIfNeeded(S);
+                return 1.0 - _dq * _Phi_dp + _dq / _v * _phi_dp + _beta * (1.0 - _dq * _Phi_dp) + _alpha / _dr * _charm;
+            }
+
+            public double SecondDerivative(double S)
+            {
+                PreCalculateIfNeeded(S);
+                double gamma = _phi_dp * _dq / (_v * S);
+                double colour = gamma * (_q + (_r - _q) * _dp / _v + (1.0 - _dp * _dm) / (2.0 * _tau));
+                return _dq * (_phi_dp / (S * _v) - _phi_dp * _dp / (S * _v * _v)) + _beta * gamma + _alpha / _dr * colour;
+            }
+
+            public double XMin() => 1e-5;
+            public double XMax() => _K;
+
+            private void PreCalculateIfNeeded(double S)
+            {
+                if (Math.Abs(S - _sc) > 1e-12)
+                {
+                    _sc = Math.Max(1e-12, S);
+                    _dp = (Math.Log(_sc * _dq / (_K * _dr)) / _v) + 0.5 * _v;
+                    _dm = _dp - _v;
+                    _Phi_dp = Distributions.CumulativeNormal(-_dp);
+                    _Phi_dm = Distributions.CumulativeNormal(-_dm);
+                    _phi_dp = Distributions.NormalDensity(_dp);
+                    _npv = _dr * _K * _Phi_dm - _sc * _dq * _Phi_dp;
+                    _theta = _r * _K * _dr * _Phi_dm - _q * _sc * _dq * _Phi_dp - _sigma2 * _sc / (2.0 * _v) * _dq * _phi_dp;
+                    _charm = -_dq * (_phi_dp * ((_r - _q) / _v - _dm / (2.0 * _tau)) + _q * _Phi_dp);
+                }
+            }
+        }
+        
         private class SolverFunction : IObjectiveFunctionWithSecondDerivative
         {
             private readonly QdPlusBoundaryEvaluator _eval;

@@ -56,8 +56,6 @@ namespace Anderson.Engine
         {
             if (tau < 1e-12)
             {
-                // Limiting case for tau -> 0, where B(tau) -> XMax.
-                // N and D both approach 0.5, so Fv -> K*exp(-(r-q)tau).
                 return (0.5, 0.5, K * Math.Exp(-(r - q) * tau));
             }
 
@@ -103,7 +101,6 @@ namespace Anderson.Engine
             (double d_plus, double d_minus) = CalculateD(tau, b / K);
             double v_tau = vol * vol * tau;
             
-            // Derivatives ignoring integral terms, which is sufficient for partial Jacobi-Newton step
             double Dd = -Distributions.NormalDensity(d_plus) * d_plus / (b * v_tau) + Distributions.NormalDensity(d_plus) / (b * vol * Math.Sqrt(tau));
             double Nd = -Distributions.NormalDensity(d_minus) * d_minus / (b * v_tau);
 
