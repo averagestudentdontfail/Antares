@@ -3,7 +3,7 @@ using System;
 using Anderson.Model;
 using Anderson.Interface;
 using Anderson.Distribution;
-using ModelOptionRight = Anderson.Model.OptionRight;
+using ModelOptionRight = Anderson.Model.ModelOptionRight;
 
 namespace Anderson.Engine.Engines
 {
@@ -34,12 +34,12 @@ namespace Anderson.Engine.Engines
                 // Handle expiry case
                 if (T <= 1e-12)
                 {
-                    decimal intrinsic = contract.Right == OptionRight.Call 
+                    decimal intrinsic = contract.Right == ModelOptionRight.Call 
                         ? Math.Max(0m, marketData.UnderlyingPrice - contract.Strike)
                         : Math.Max(0m, contract.Strike - marketData.UnderlyingPrice);
                     
                     var expiredGreeks = new Greeks(
-                        delta: intrinsic > 0 ? (contract.Right == OptionRight.Call ? 1m : -1m) : 0m
+                        delta: intrinsic > 0 ? (contract.Right == ModelOptionRight.Call ? 1m : -1m) : 0m
                     );
                     
                     var expiredResult = new PricingResult(intrinsic, expiredGreeks, Name);
@@ -48,7 +48,7 @@ namespace Anderson.Engine.Engines
                 }
 
                 // Convert to internal option right enum for BlackScholes calculation
-                var andersonRight = contract.Right == OptionRight.Call ? Anderson.OptionRight.Call : Anderson.OptionRight.Put;
+                var andersonRight = contract.Right == ModelOptionRight.Call ? Anderson.ModelOptionRight.Call : Anderson.ModelOptionRight.Put;
                 
                 // Calculate price and Greeks using analytical Black-Scholes formulas
                 double price = BlackScholes.Price(andersonRight, S, K, T, r, q, vol);

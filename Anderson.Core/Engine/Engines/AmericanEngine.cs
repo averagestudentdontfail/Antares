@@ -59,12 +59,12 @@ namespace Anderson.Engine.Engines
                 // Handle expiry case
                 if (T <= 1e-12)
                 {
-                    decimal intrinsic = contract.Right == OptionRight.Call 
+                    decimal intrinsic = contract.Right == ModelOptionRight.Call 
                         ? Math.Max(0m, marketData.UnderlyingPrice - contract.Strike)
                         : Math.Max(0m, contract.Strike - marketData.UnderlyingPrice);
                     
                     var expiredGreeks = new Greeks(
-                        delta: intrinsic > 0 ? (contract.Right == OptionRight.Call ? 1m : -1m) : 0m
+                        delta: intrinsic > 0 ? (contract.Right == ModelOptionRight.Call ? 1m : -1m) : 0m
                     );
                     
                     var expiredResult = new PricingResult(intrinsic, expiredGreeks, Name);
@@ -96,9 +96,9 @@ namespace Anderson.Engine.Engines
             }
         }
 
-        private double GetPrice(double s, double k, double r, double q, double vol, double t, OptionRight right)
+        private double GetPrice(double s, double k, double r, double q, double vol, double t, ModelOptionRight right)
         {
-            if (right == OptionRight.Put)
+            if (right == ModelOptionRight.Put)
             {
                 // Direct call to the core Anderson engine for puts
                 return _coreEngine.CalculatePut(s, k, r, q, vol, t);
@@ -107,7 +107,7 @@ namespace Anderson.Engine.Engines
             return _coreEngine.CalculatePut(k, s, q, r, vol, t);
         }
 
-        private Greeks CalculateGreeksByFiniteDifference(double S, double K, double r, double q, double vol, double T, OptionRight right, double basePrice)
+        private Greeks CalculateGreeksByFiniteDifference(double S, double K, double r, double q, double vol, double T, ModelOptionRight right, double basePrice)
         {
             double spotBump = S * 0.001;
             if (Math.Abs(spotBump) < 1e-9) spotBump = 1e-4;
