@@ -6,6 +6,10 @@ namespace Anderson.Engine
 {
     public enum FixedPointEquation { FP_A, FP_B, Auto }
 
+    /// <summary>
+    /// High-performance American option pricing engine based on fixed-point iteration for the exercise boundary.
+    /// This is a C# port of the logic in QuantLib's QdFpAmericanEngine.
+    /// </summary>
     public class QdFpAmericanEngine
     {
         private readonly IQdFpIterationScheme _scheme;
@@ -24,34 +28,26 @@ namespace Anderson.Engine
             if (T < 1e-9) return Math.Max(0.0, K - S);
 
             double xmax = QdPlusAmericanEngine.XMax(K, r, q);
-
-            if (xmax <= 0)
-            {
-                throw new ArgumentException("This case (likely q < r < 0) results in a double exercise boundary and is not supported by this single-boundary engine.");
-            }
-
-            if (double.IsInfinity(xmax))
+            
+            if (xmax <= 1e-9)
             {
                 return CalculateBlackScholesPut(S, K, r, q, vol, T);
             }
 
             var qdPlusEngine = new QdPlusAmericanEngine(_scheme.GetNumberOfChebyshevInterpolationNodes());
             var boundaryInterp = qdPlusEngine.GetPutExerciseBoundary(K, r, q, vol, T);
-            
+
             double sqrtT = Math.Sqrt(T);
-            Func<double, double> B_func = tau => 
+            Func<double, double> B_func = tau =>
             {
                 if (tau <= 1e-12) return xmax;
                 double z_node = (2.0 * Math.Sqrt(tau) / sqrtT) - 1.0;
                 double h_val = boundaryInterp.Value(z_node);
-                return xmax * Math.Exp(-Math.Sqrt(Math.Max(0, h_val)));
+                return xmax * Math.Exp(-h_val * h_val);
             };
-
-            // --- THE CORRECTED HEURISTIC ---
-            // The FP-A formulation is more stable and should be preferred unless the drift is very high.
-            // This heuristic is more in line with the spirit of the paper's recommendations.
-            bool useFP_A = (_fpEquation == FixedPointEquation.FP_A) || 
-                           (_fpEquation == FixedPointEquation.Auto && Math.Abs(r - q) < vol * vol);
+            
+            bool useFP_A = (_fpEquation == FixedPointEquation.FP_A) ||
+                           (_fpEquation == FixedPointEquation.Auto && Math.Abs(r - q) < 0.5 * vol * vol);
 
             DqFpEquation equation = useFP_A
                 ? new DqFpEquation_A(K, r, q, vol, B_func, _scheme.GetFixedPointIntegrator())
@@ -59,7 +55,7 @@ namespace Anderson.Engine
 
             double[] z_nodes = boundaryInterp.Nodes();
             double[] h_values = boundaryInterp.Values();
-            Func<double, double> h_transform = fv => Math.Pow(Math.Log(Math.Max(1e-12, fv) / xmax), 2);
+            Func<double, double> h_transform = fv => Math.Sqrt(Math.Max(0.0, -Math.Log(Math.Max(1e-12, fv) / xmax)));
 
             // Jacobi-Newton Steps
             for (int k = 0; k < _scheme.GetNumberOfJacobiNewtonFixedPointSteps(); k++)

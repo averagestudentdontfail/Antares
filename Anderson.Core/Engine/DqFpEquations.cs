@@ -52,20 +52,18 @@ namespace Anderson.Engine
             Func<double, double> k12_integrand = y =>
             {
                 double m = 0.25 * tau * Math.Pow(1 + y, 2);
-                double u = tau - m;
-                (double dp, _) = CalculateD(m, b / GetBoundary(u));
-                double discount = Math.Exp(q * u);
-                return discount * (0.5 * tau * (y + 1) * Distributions.CumulativeNormal(dp) + sqrt_tau / vol * Distributions.NormalDensity(dp));
+                (double dp, _) = CalculateD(m, b / GetBoundary(tau - m));
+                // This is the correct discount factor logic for this change of variables
+                return Math.Exp(q * m) * (0.5 * tau * (y + 1) * Distributions.CumulativeNormal(dp) + sqrt_tau / vol * Distributions.NormalDensity(dp));
             };
             double K12 = Integrator.Integrate(k12_integrand, -1, 1);
 
             Func<double, double> k3_integrand = y =>
             {
                 double m = 0.25 * tau * Math.Pow(1 + y, 2);
-                double u = tau - m;
-                (_, double dm) = CalculateD(m, b / GetBoundary(u));
-                double discount = Math.Exp(r * u);
-                return discount * sqrt_tau / vol * Distributions.NormalDensity(dm);
+                (_, double dm) = CalculateD(m, b / GetBoundary(tau - m));
+                // This is the correct discount factor logic for this change of variables
+                return Math.Exp(r * m) * sqrt_tau / vol * Distributions.NormalDensity(dm);
             };
             double K3 = Integrator.Integrate(k3_integrand, -1, 1);
             
@@ -104,7 +102,7 @@ namespace Anderson.Engine
             Func<double, double> n_integrand = u =>
             {
                 double df = Math.Exp(r * u);
-                if (u >= tau * (1 - 5e-9)) // Singularity handling
+                if (u >= tau * (1 - 5e-9))
                 {
                     return IsClose(b, GetBoundary(u)) ? 0.5 * df : df * ((b < GetBoundary(u)) ? 0.0 : 1.0);
                 }
@@ -115,7 +113,7 @@ namespace Anderson.Engine
             Func<double, double> d_integrand = u =>
             {
                 double df = Math.Exp(q * u);
-                if (u >= tau * (1 - 5e-9)) // Singularity handling
+                if (u >= tau * (1 - 5e-9))
                 {
                     return IsClose(b, GetBoundary(u)) ? 0.5 * df : df * ((b < GetBoundary(u)) ? 0.0 : 1.0);
                 }

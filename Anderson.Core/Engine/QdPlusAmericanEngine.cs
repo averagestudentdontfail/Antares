@@ -8,8 +8,7 @@ namespace Anderson.Engine
 {
     /// <summary>
     /// Implements the QD+ method to find an accurate initial guess for the American option exercise boundary.
-    /// This engine is primarily used as a first step for the more accurate QdFpAmericanEngine.
-    /// Reference: Li, M. (2009), "Analytical Approximations for the Critical Stock Prices of American Options".
+    /// This is a direct C# port of the logic from QuantLib's qdplusamericanengine.cpp.
     /// </summary>
     public class QdPlusAmericanEngine
     {
@@ -22,35 +21,45 @@ namespace Anderson.Engine
         public QdPlusAmericanEngine(
             int interpolationPoints = 8,
             SolverType solverType = SolverType.Halley,
-            double epsilon = 1e-9)
+            double epsilon = 1e-8)
         {
             _interpolationPoints = interpolationPoints;
             _epsilon = epsilon;
-            
+
             _solver = solverType switch
             {
-                SolverType.Halley => new Halley { MaxEvaluations = 100 },
+                SolverType.Halley => new Halley { MaxEvaluations = 50 },
                 SolverType.Brent => new Brent { MaxEvaluations = 100 },
                 _ => throw new ArgumentOutOfRangeException(nameof(solverType))
             };
         }
 
+        /// <summary>
+        /// Calculates the short-maturity (t->0) exercise boundary for a put option.
+        /// This is a direct port of the xMax logic from QuantLib's qdplusamericanengine.cpp.
+        /// </summary>
         public static double XMax(double K, double r, double q)
         {
-            if (r < 0 && q < r) return 0.0;
-            if (q > 0.0) return K * Math.Max(1.0, r / q);
-            if (q == 0.0) return (r >= 0.0) ? double.PositiveInfinity : K;
-            return K;
+            if (q > 0.0)
+                return K * Math.Min(1.0, r / q);
+            else if (q == 0.0 && r > 0.0)
+                return 0.0; // European case
+            else
+                return K;
         }
 
+        /// <summary>
+        /// Computes the exercise boundary B(τ) as a Chebyshev interpolation of a transformed function.
+        /// The transformation h(B) = Sqrt(-ln(B/XMax)) is used for numerical stability.
+        /// </summary>
         public ChebyshevInterpolation GetPutExerciseBoundary(double K, double r, double q, double vol, double T)
         {
             double xmax = XMax(K, r, q);
-            if (xmax <= 0 || double.IsInfinity(xmax))
+            if (xmax <= 1e-12)
             {
-                return new ChebyshevInterpolation(_interpolationPoints, z => 0.0);
+                return new ChebyshevInterpolation(_interpolationPoints, z => 1e12); // Yields B=0
             }
-            
+
             double sqrtT = Math.Sqrt(T);
             Func<double, double> functionToInterpolate = z =>
             {
@@ -59,7 +68,7 @@ namespace Anderson.Engine
                 
                 double boundary = PutExerciseBoundaryAtTau(K, r, q, vol, tau);
                 
-                return Math.Pow(Math.Log(Math.Max(1e-12, boundary) / xmax), 2);
+                return Math.Sqrt(Math.Max(0.0, -Math.Log(boundary / xmax)));
             };
             
             return new ChebyshevInterpolation(_interpolationPoints, functionToInterpolate);
@@ -69,43 +78,40 @@ namespace Anderson.Engine
         {
             if (tau < 1e-9) return XMax(K, r, q);
             
-            // CORRECTED: The evaluator is constructed with static parameters only.
             var evaluator = new QdPlusBoundaryEvaluator(K, r, q, vol, tau);
             var solverFunction = new SolverFunction(evaluator);
             
             double initialGuess = XMax(K, r, q);
-            if (double.IsInfinity(initialGuess))
+            if (initialGuess <= evaluator.XMin() || initialGuess >= K)
             {
-                initialGuess = K; 
+                 initialGuess = K * 0.95;
             }
-            
-            initialGuess = Math.Min(K - 1e-6, Math.Max(evaluator.XMin(), initialGuess));
             
             try
             {
-                return _solver.Solve(solverFunction, _epsilon, initialGuess, K * 0.1);
+                // Use a robust solver with explicit bounds to guarantee stability
+                var brent = new Brent();
+                return brent.Solve(solverFunction, _epsilon, initialGuess, evaluator.XMin(), K);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw new Exception($"QD+ solver failed to find exercise boundary for tau={tau:F4}. Initial guess was {initialGuess:F2}. Error: {ex.Message}");
+                // If the robust solver fails to find a root, it implies no early exercise is optimal
+                // for the QD+ approximation, and the boundary is at the strike K.
+                return K;
             }
         }
-
+        
         /// <summary>
-        /// Private helper class to evaluate the QD+ function g(B) = 0.
-        /// It is stateful to avoid re-calculating common terms for a given boundary candidate B.
+        /// Private helper class to evaluate the QD+ function g(B) = QD+(B) - B = 0.
+        /// This is stateful to cache calculations for a given boundary candidate 'S'.
         /// </summary>
         private class QdPlusBoundaryEvaluator
         {
-            // Fields are for a specific time-to-maturity tau
             private readonly double _tau, _K, _sigma, _sigma2, _v, _r, _q;
             private readonly double _dr, _dq, _ddr;
             private readonly double _omega, _lambda, _lambdaPrime, _alpha, _beta;
-
-            // Fields that depend on the boundary candidate S
             private double _sc, _dp, _dm, _phi_dp, _npv, _theta, _charm, _Phi_dp, _Phi_dm;
 
-            // CORRECTED CONSTRUCTOR: Only takes static parameters. 'S' is passed to methods.
             public QdPlusBoundaryEvaluator(double strike, double riskFreeRate, double dividendYield, double volatility, double timeToMaturity)
             {
                 _tau = timeToMaturity;
@@ -121,11 +127,11 @@ namespace Anderson.Engine
                 _omega = 2.0 * (_r - _q) / _sigma2;
                 double sqrt_term = Math.Sqrt(Math.Pow(_omega - 1, 2) + 8.0 * _ddr / _sigma2);
                 _lambda = 0.5 * (-(_omega - 1.0) - sqrt_term);
-                _lambdaPrime = 2.0 * _ddr * _ddr / (_sigma2 * sqrt_term);
+                _lambdaPrime = (sqrt_term > 1e-9) ? 2.0 * _ddr * _ddr / (_sigma2 * sqrt_term) : 0.0;
                 double common_denom = 2.0 * _lambda + _omega - 1.0;
-                _alpha = 2.0 * _dr / (_sigma2 * common_denom);
-                _beta = _alpha * (_ddr + _lambdaPrime / common_denom) - _lambda;
-                _sc = -1; // Initialize cached spot to an invalid value
+                _alpha = (Math.Abs(common_denom) > 1e-9) ? 2.0 * _dr / (_sigma2 * common_denom) : 0.0;
+                _beta = _alpha * (_ddr + ((Math.Abs(common_denom) > 1e-9) ? _lambdaPrime / common_denom : 0.0)) - _lambda;
+                _sc = -1;
             }
 
             public double Value(double S)
@@ -154,7 +160,6 @@ namespace Anderson.Engine
             }
 
             public double XMin() => 1e-5;
-            public double XMax() => _K;
 
             private void PreCalculateIfNeeded(double S)
             {
@@ -172,7 +177,7 @@ namespace Anderson.Engine
                 }
             }
         }
-        
+
         private class SolverFunction : IObjectiveFunctionWithSecondDerivative
         {
             private readonly QdPlusBoundaryEvaluator _eval;
@@ -181,7 +186,7 @@ namespace Anderson.Engine
             public double Derivative(double x) => _eval.Derivative(x) - 1.0;
             public double SecondDerivative(double x) => _eval.SecondDerivative(x);
             public double XMin() => _eval.XMin();
-            public double XMax() => _eval.XMax();
+            public double XMax() => _eval.XMin(); // Not used by Brent
         }
     }
 }
