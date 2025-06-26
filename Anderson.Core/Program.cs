@@ -1,4 +1,3 @@
-// Test Program (you can put this in a new console project or just run it temporarily)
 using System;
 using Anderson;
 using Anderson.Model;

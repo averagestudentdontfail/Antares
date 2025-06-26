@@ -48,7 +48,7 @@ namespace Anderson.Engine.Engines
                 }
 
                 // Convert to internal option right enum for BlackScholes calculation
-                var andersonRight = contract.Right == ModelOptionRight.Call ? Anderson.ModelOptionRight.Call : Anderson.ModelOptionRight.Put;
+                var andersonRight = contract.Right == ModelOptionRight.Call ? Anderson.Distribution.OptionRight.Call : Anderson.Distribution.OptionRight.Put;
                 
                 // Calculate price and Greeks using analytical Black-Scholes formulas
                 double price = BlackScholes.Price(andersonRight, S, K, T, r, q, vol);
