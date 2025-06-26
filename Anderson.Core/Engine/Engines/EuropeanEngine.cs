@@ -3,7 +3,7 @@ using System;
 using Anderson.Model;
 using Anderson.Interface;
 using Anderson.Distribution;
-using ModelOptionRight = Anderson.Model.ModelOptionRight;
+using ModelOptionRight = Anderson.Model.OptionRight;
 
 namespace Anderson.Engine.Engines
 {
