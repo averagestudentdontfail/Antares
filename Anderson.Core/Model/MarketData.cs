@@ -1,6 +1,6 @@
 using System;
 
-namespace Anderson.Models
+namespace Anderson.Model
 {
     /// <summary>
     /// Contains market data needed for option pricing
