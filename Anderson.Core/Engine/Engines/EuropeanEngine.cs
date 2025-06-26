@@ -1,3 +1,4 @@
+// Anderson.Core/Engine/Engines/EuropeanEngine.cs
 using System;
 using Anderson.Model;
 using Anderson.Interface;
@@ -6,9 +7,9 @@ using Anderson.Distribution;
 namespace Anderson.Engine.Engines
 {
     /// <summary>
-    /// Black-Scholes-Merton European option pricing engine
+    /// Black-Scholes-Merton European option pricing engine with analytical Greeks.
     /// </summary>
-    public class BlackScholesEngine : IOptionPricingEngine
+    public class EuropeanEngine : IOptionPricingEngine
     {
         public string Name => "Black-Scholes-Merton";
         public bool SupportsGreeks => true;
@@ -21,6 +22,7 @@ namespace Anderson.Engine.Engines
             
             try
             {
+                // Convert domain models to primitive types
                 double S = (double)marketData.UnderlyingPrice;
                 double K = (double)contract.Strike;
                 double T = contract.TimeToExpiry(marketData.ValuationTime);
@@ -44,8 +46,10 @@ namespace Anderson.Engine.Engines
                     return expiredResult;
                 }
 
+                // Convert to internal option right enum for BlackScholes calculation
                 var andersonRight = contract.Right == OptionRight.Call ? Anderson.OptionRight.Call : Anderson.OptionRight.Put;
                 
+                // Calculate price and Greeks using analytical Black-Scholes formulas
                 double price = BlackScholes.Price(andersonRight, S, K, T, r, q, vol);
                 var greeks = BlackScholes.Greeks(andersonRight, S, K, T, r, q, vol);
 
@@ -59,7 +63,7 @@ namespace Anderson.Engine.Engines
             }
             catch (Exception ex)
             {
-                return new PricingResult($"Black-Scholes pricing failed: {ex.Message}")
+                return new PricingResult($"European option pricing failed: {ex.Message}")
                 {
                     CalculationTime = DateTime.Now - startTime
                 };

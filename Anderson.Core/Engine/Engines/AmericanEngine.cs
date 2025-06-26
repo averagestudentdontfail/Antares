@@ -1,3 +1,4 @@
+// Anderson.Core/Engine/Engines/AmericanEngine.cs
 using System;
 using Anderson.Model;
 using Anderson.Interface;
@@ -7,11 +8,12 @@ using Anderson.Distribution;
 namespace Anderson.Engine.Engines
 {
     /// <summary>
-    /// High-performance American option pricing engine using the Andersen, Lake, and Offengenden method
+    /// High-performance American option pricing engine using the Anderson method.
+    /// Wrapper around the core QdFpAmericanEngine that provides the IOptionPricingEngine interface.
     /// </summary>
-    public class AndersonAmericanEngine : IOptionPricingEngine
+    public class AmericanEngine : IOptionPricingEngine
     {
-        private readonly Engine.QdFpAmericanEngine _engine;
+        private readonly QdFpAmericanEngine _coreEngine;
         
         public string Name => "Anderson American (QdFp)";
         public bool SupportsGreeks => true;
@@ -23,8 +25,9 @@ namespace Anderson.Engine.Engines
             Precise
         }
 
-        public AndersonAmericanEngine(Scheme scheme = Scheme.Accurate)
+        public AmericanEngine(Scheme scheme = Scheme.Accurate)
         {
+            // Create the iteration scheme based on desired accuracy/speed tradeoff
             IQdFpIterationScheme iterationScheme = scheme switch
             {
                 Scheme.Fast => new QdFpLegendreScheme(l: 7, m: 2, n: 7, p: 27),
@@ -32,7 +35,8 @@ namespace Anderson.Engine.Engines
                 _ => new QdFpLegendreLobattoScheme(l: 16, m: 8, n: 16, finalAccuracy: 1e-10)
             };
             
-            _engine = new Engine.QdFpAmericanEngine(iterationScheme);
+            // Instantiate the core mathematical engine
+            _coreEngine = new QdFpAmericanEngine(iterationScheme);
         }
 
         public bool SupportsStyle(OptionStyle style) => style == OptionStyle.American;
@@ -43,7 +47,7 @@ namespace Anderson.Engine.Engines
             
             try
             {
-                // Convert inputs to engine format
+                // Convert domain models to primitive types for the core engine
                 double S = (double)marketData.UnderlyingPrice;
                 double K = (double)contract.Strike;
                 double T = contract.TimeToExpiry(marketData.ValuationTime);
@@ -59,8 +63,7 @@ namespace Anderson.Engine.Engines
                         : Math.Max(0m, contract.Strike - marketData.UnderlyingPrice);
                     
                     var expiredGreeks = new Greeks(
-                        delta: intrinsic > 0 ? (contract.Right == OptionRight.Call ? 1m : -1m) : 0m,
-                        gamma: 0m, vega: 0m, theta: 0m, rho: 0m, lambda: 0m
+                        delta: intrinsic > 0 ? (contract.Right == OptionRight.Call ? 1m : -1m) : 0m
                     );
                     
                     var expiredResult = new PricingResult(intrinsic, expiredGreeks, Name);
@@ -68,12 +71,13 @@ namespace Anderson.Engine.Engines
                     return expiredResult;
                 }
 
-                // Calculate base price
+                // Calculate price using the core Anderson engine
                 double basePrice = GetPrice(S, K, r, q, vol, T, contract.Right);
                 
                 // Calculate Greeks using finite differences
                 var greeks = CalculateGreeksByFiniteDifference(S, K, r, q, vol, T, contract.Right, basePrice);
                 
+                // Package results in domain model
                 var result = new PricingResult((decimal)basePrice, greeks, Name)
                 {
                     CalculationTime = DateTime.Now - startTime
@@ -84,7 +88,7 @@ namespace Anderson.Engine.Engines
             }
             catch (Exception ex)
             {
-                return new PricingResult($"Pricing failed: {ex.Message}")
+                return new PricingResult($"American option pricing failed: {ex.Message}")
                 {
                     CalculationTime = DateTime.Now - startTime
                 };
@@ -95,10 +99,11 @@ namespace Anderson.Engine.Engines
         {
             if (right == OptionRight.Put)
             {
-                return _engine.CalculatePut(s, k, r, q, vol, t);
+                // Direct call to the core Anderson engine for puts
+                return _coreEngine.CalculatePut(s, k, r, q, vol, t);
             }
             // Use put-call symmetry for Call options: C(S,K,r,q) = P(K,S,q,r)
-            return _engine.CalculatePut(k, s, q, r, vol, t);
+            return _coreEngine.CalculatePut(k, s, q, r, vol, t);
         }
 
         private Greeks CalculateGreeksByFiniteDifference(double S, double K, double r, double q, double vol, double T, OptionRight right, double basePrice)
@@ -139,7 +144,7 @@ namespace Anderson.Engine.Engines
                     vega: (decimal)vega,
                     theta: (decimal)theta / 365m, // Convert to daily theta
                     rho: (decimal)rho,
-                    lambda: 0m // Will calculate if needed
+                    lambda: 0m
                 );
             }
             catch (Exception)
