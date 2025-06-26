@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <OutputPath>Release\bin</OutputPath>
-    <BaseIntermediateOutputPath>Release\obj</BaseIntermediateOutputPath>
+    <IntermediateOutputPath>Release\obj</IntermediateOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
