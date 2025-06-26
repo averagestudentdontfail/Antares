@@ -6,12 +6,6 @@ namespace Anderson.Engine
 {
     public enum FixedPointEquation { FP_A, FP_B, Auto }
 
-    /// <summary>
-    /// High-performance American option pricing engine based on fixed-point iteration for the exercise boundary.
-    /// This engine provides a highly accurate and fast solution by first obtaining an initial guess
-    /// for the exercise boundary from the QD+ method, and then iteratively refining it using a fixed-point scheme.
-    /// Reference: Andersen, Lake, and Offengenden (2015), "High Performance American Option Pricing".
-    /// </summary>
     public class QdFpAmericanEngine
     {
         private readonly IQdFpIterationScheme _scheme;
@@ -27,6 +21,8 @@ namespace Anderson.Engine
 
         public double CalculatePut(double S, double K, double r, double q, double vol, double T)
         {
+            if (T < 1e-9) return Math.Max(0.0, K - S);
+
             double xmax = QdPlusAmericanEngine.XMax(K, r, q);
 
             if (xmax <= 0)
@@ -51,8 +47,11 @@ namespace Anderson.Engine
                 return xmax * Math.Exp(-Math.Sqrt(Math.Max(0, h_val)));
             };
 
+            // --- THE CORRECTED HEURISTIC ---
+            // The FP-A formulation is more stable and should be preferred unless the drift is very high.
+            // This heuristic is more in line with the spirit of the paper's recommendations.
             bool useFP_A = (_fpEquation == FixedPointEquation.FP_A) || 
-                           (_fpEquation == FixedPointEquation.Auto && Math.Abs(r - q) < 0.01 && vol > 0.05);
+                           (_fpEquation == FixedPointEquation.Auto && Math.Abs(r - q) < vol * vol);
 
             DqFpEquation equation = useFP_A
                 ? new DqFpEquation_A(K, r, q, vol, B_func, _scheme.GetFixedPointIntegrator())
@@ -104,9 +103,6 @@ namespace Anderson.Engine
             
             double europeanValue = CalculateBlackScholesPut(S, K, r, q, vol, T);
 
-            // --- THE FINAL FIX ---
-            // The American price is the European price plus the early exercise premium,
-            // floored at the intrinsic value.
             return Math.Max(K - S, europeanValue + Math.Max(0.0, addOn));
         }
 

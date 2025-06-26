@@ -4,9 +4,6 @@ using Anderson.Integrator;
 
 namespace Anderson.Engine
 {
-    /// <summary>
-    /// Abstract base class for the fixed-point equation formulations (FP-A and FP-B).
-    /// </summary>
     public abstract class DqFpEquation
     {
         protected readonly double K, r, q, vol;
@@ -30,12 +27,13 @@ namespace Anderson.Engine
             double m = (Math.Log(z) + (r - q) * t) / v;
             return (m + 0.5 * v, m - 0.5 * v);
         }
+        
+        protected static bool IsClose(double a, double b)
+        {
+            return Math.Abs(a - b) < 1e-9;
+        }
     }
 
-    /// <summary>
-    /// Implements the FP-A formulation from Andersen et al. (2015).
-    /// This formulation is generally more stable for low drift (r ≈ q) cases.
-    /// </summary>
     public class DqFpEquation_A : DqFpEquation
     {
         public DqFpEquation_A(double k, double r, double q, double vol, Func<double, double> getBoundary, IIntegrator integrator)
@@ -51,40 +49,24 @@ namespace Anderson.Engine
             double sqrt_tau = Math.Sqrt(tau);
             double v = vol * sqrt_tau;
 
-            // Integrals K12 and K3 from the paper, using a change of variables
-            // that matches the QuantLib implementation for numerical stability.
-            // Let m = τ - u, where u is the original integration variable.
-            
             Func<double, double> k12_integrand = y =>
             {
-                // The variable 'm' here corresponds to τ-u in the paper's original formulation.
-                // It represents the time-to-maturity of the component being integrated.
                 double m = 0.25 * tau * Math.Pow(1 + y, 2);
-                
-                // The time parameter for the d-function is m.
-                // The boundary B is evaluated at time elapsed, u = tau - m.
-                (double dp, _) = CalculateD(m, b / GetBoundary(tau - m));
-
-                // The discount factor is exp(q*u) = exp(q*(tau-m)).
-                double discount = Math.Exp(q * (tau - m));
-                
+                double u = tau - m;
+                (double dp, _) = CalculateD(m, b / GetBoundary(u));
+                double discount = Math.Exp(q * u);
                 return discount * (0.5 * tau * (y + 1) * Distributions.CumulativeNormal(dp) + sqrt_tau / vol * Distributions.NormalDensity(dp));
             };
-            
             double K12 = Integrator.Integrate(k12_integrand, -1, 1);
 
             Func<double, double> k3_integrand = y =>
             {
                 double m = 0.25 * tau * Math.Pow(1 + y, 2);
-                (_, double dm) = CalculateD(m, b / GetBoundary(tau - m));
-                
-                // --- THIS IS THE FIX ---
-                // The discount factor is exp(r*u) = exp(r*(tau-m)).
-                double discount = Math.Exp(r * (tau - m));
-
+                double u = tau - m;
+                (_, double dm) = CalculateD(m, b / GetBoundary(u));
+                double discount = Math.Exp(r * u);
                 return discount * sqrt_tau / vol * Distributions.NormalDensity(dm);
             };
-
             double K3 = Integrator.Integrate(k3_integrand, -1, 1);
             
             (double d_plus_K, double d_minus_K) = CalculateD(tau, b / K);
@@ -107,10 +89,6 @@ namespace Anderson.Engine
         }
     }
     
-    /// <summary>
-    /// Implements the FP-B formulation from Andersen et al. (2015).
-    /// This is the more general and often more robust case, especially for high drift.
-    /// </summary>
     public class DqFpEquation_B : DqFpEquation
     {
         public DqFpEquation_B(double k, double r, double q, double vol, Func<double, double> getBoundary, IIntegrator integrator)
@@ -120,14 +98,30 @@ namespace Anderson.Engine
         {
             if (tau < 1e-12)
             {
-                return (0.5, 0.5, K * Math.Exp(-(r - q) * tau));
+                return (IsClose(b, K)) ? (0.5, 0.5, K * Math.Exp(-(r - q) * tau)) : ((b < K) ? (0.0, 0.0, 0.0) : (1.0, 1.0, K * Math.Exp(-(r-q)*tau)));
             }
 
-            // In this formulation, 'u' is the time elapsed.
-            Func<double, double> n_integrand = u => Math.Exp(r * u) * Distributions.CumulativeNormal(CalculateD(tau - u, b / GetBoundary(u)).dm);
+            // --- ROBUST IMPLEMENTATION PORTED FROM QUANTLIB ---
+            Func<double, double> n_integrand = u =>
+            {
+                double df = Math.Exp(r * u);
+                if (u >= tau * (1 - 5e-9)) // Singularity handling
+                {
+                    return IsClose(b, GetBoundary(u)) ? 0.5 * df : df * ((b < GetBoundary(u)) ? 0.0 : 1.0);
+                }
+                return df * Distributions.CumulativeNormal(CalculateD(tau - u, b / GetBoundary(u)).dm);
+            };
             double ni = Integrator.Integrate(n_integrand, 0, tau);
 
-            Func<double, double> d_integrand = u => Math.Exp(q * u) * Distributions.CumulativeNormal(CalculateD(tau - u, b / GetBoundary(u)).dp);
+            Func<double, double> d_integrand = u =>
+            {
+                double df = Math.Exp(q * u);
+                if (u >= tau * (1 - 5e-9)) // Singularity handling
+                {
+                    return IsClose(b, GetBoundary(u)) ? 0.5 * df : df * ((b < GetBoundary(u)) ? 0.0 : 1.0);
+                }
+                return df * Distributions.CumulativeNormal(CalculateD(tau - u, b / GetBoundary(u)).dp);
+            };
             double di = Integrator.Integrate(d_integrand, 0, tau);
 
             (double d_plus_K, double d_minus_K) = CalculateD(tau, b / K);
