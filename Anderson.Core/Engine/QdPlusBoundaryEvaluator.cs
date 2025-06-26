@@ -15,7 +15,10 @@ namespace Anderson.Engine
         private readonly double _tau, _K, _sigma, _sigma2, _v, _r, _q;
         private readonly double _dr, _dq, _ddr;
         private readonly double _omega, _lambda, _lambdaPrime, _alpha, _beta;
-        private readonly double _xMax, _xMin;
+        
+        // --- CORRECTED: Robust Bracket Definition ---
+        private readonly double _hardLowerBound;
+        private readonly double _hardUpperBound;
 
         // Mutable state for caching calculations to avoid re-computation
         private double _sc; // Spot cache
@@ -23,7 +26,7 @@ namespace Anderson.Engine
         private double _npv, _theta, _charm;
         private double _Phi_dp, _Phi_dm; // Cumulative distributions
 
-        public QdPlusBoundaryEvaluator(double spot, double strike, double riskFreeRate, double dividendYield, double volatility, double timeToMaturity, double totalTime)
+        public QdPlusBoundaryEvaluator(double spot, double strike, double riskFreeRate, double dividendYield, double volatility, double timeToMaturity)
         {
             _tau = timeToMaturity;
             _K = strike;
@@ -50,10 +53,11 @@ namespace Anderson.Engine
             double common_denom = 2.0 * _lambda + _omega - 1.0;
             _alpha = 2.0 * _dr / (_sigma2 * common_denom);
             _beta = _alpha * (_ddr + _lambdaPrime / common_denom) - _lambda;
-
-            _xMax = QdPlusAmericanEngine.XMax(_K, _r, _q);
-            // Define a practical minimum bound to prevent solver from going to zero
-            _xMin = 1e-4 * Math.Min(0.5 * (strike + spot), _xMax);
+            
+            // The hard upper bound for a put exercise boundary is always the strike price.
+            _hardUpperBound = _K;
+            // The hard lower bound is a small positive number to avoid numerical issues at zero.
+            _hardLowerBound = 1e-5;
             
             _sc = -1; // Initialize cache as invalid
         }
@@ -91,8 +95,9 @@ namespace Anderson.Engine
             return _dq * (_phi_dp / (S * _v) - _phi_dp * _dp / (S * _v * _v)) + _beta * gamma + _alpha / _dr * colour;
         }
 
-        public double XMin() => _xMin;
-        public double XMax() => _xMax;
+        // Public accessors for the robust bracket
+        public double XMin() => _hardLowerBound;
+        public double XMax() => _hardUpperBound;
 
         private void PreCalculateIfNeeded(double S)
         {
