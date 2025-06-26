@@ -6,6 +6,12 @@ namespace Anderson.Engine
 {
     public enum FixedPointEquation { FP_A, FP_B, Auto }
 
+    /// <summary>
+    /// High-performance American option pricing engine based on fixed-point iteration for the exercise boundary.
+    /// This engine provides a highly accurate and fast solution by first obtaining an initial guess
+    /// for the exercise boundary from the QD+ method, and then iteratively refining it using a fixed-point scheme.
+    /// Reference: Andersen, Lake, and Offengenden (2015), "High Performance American Option Pricing".
+    /// </summary>
     public class QdFpAmericanEngine
     {
         private readonly IQdFpIterationScheme _scheme;
@@ -33,11 +39,9 @@ namespace Anderson.Engine
                 return CalculateBlackScholesPut(S, K, r, q, vol, T);
             }
 
-            // Step 1: Get initial guess for the boundary from the QD+ Engine
             var qdPlusEngine = new QdPlusAmericanEngine(_scheme.GetNumberOfChebyshevInterpolationNodes());
             var boundaryInterp = qdPlusEngine.GetPutExerciseBoundary(K, r, q, vol, T);
             
-            // Step 2: Define boundary function B(τ) with the CORRECT coordinate transformation
             double sqrtT = Math.Sqrt(T);
             Func<double, double> B_func = tau => 
             {
@@ -47,7 +51,6 @@ namespace Anderson.Engine
                 return xmax * Math.Exp(-Math.Sqrt(Math.Max(0, h_val)));
             };
 
-            // Step 3: Choose the fixed-point equation formulation
             bool useFP_A = (_fpEquation == FixedPointEquation.FP_A) || 
                            (_fpEquation == FixedPointEquation.Auto && Math.Abs(r - q) < 0.01 && vol > 0.05);
 
@@ -55,12 +58,11 @@ namespace Anderson.Engine
                 ? new DqFpEquation_A(K, r, q, vol, B_func, _scheme.GetFixedPointIntegrator())
                 : new DqFpEquation_B(K, r, q, vol, B_func, _scheme.GetFixedPointIntegrator());
 
-            // Step 4: Perform iterative refinement of the boundary
             double[] z_nodes = boundaryInterp.Nodes();
             double[] h_values = boundaryInterp.Values();
             Func<double, double> h_transform = fv => Math.Pow(Math.Log(Math.Max(1e-12, fv) / xmax), 2);
 
-            // Part A: Jacobi-Newton Steps
+            // Jacobi-Newton Steps
             for (int k = 0; k < _scheme.GetNumberOfJacobiNewtonFixedPointSteps(); k++)
             {
                 for (int i = 1; i < z_nodes.Length; i++)
@@ -85,7 +87,7 @@ namespace Anderson.Engine
                 boundaryInterp.UpdateY(h_values);
             }
             
-            // Part B: Naive Richardson Fixed-Point Steps
+            // Naive Richardson Fixed-Point Steps
             for (int k = 0; k < _scheme.GetNumberOfNaiveFixedPointSteps(); k++)
             {
                 for (int i = 1; i < z_nodes.Length; i++)
@@ -97,15 +99,15 @@ namespace Anderson.Engine
                 boundaryInterp.UpdateY(h_values);
             }
             
-            // Step 5: Calculate final price using the refined boundary
-            // CORRECTED: Pass the concrete ChebyshevInterpolation type.
             var addOnValueFunc = new QdPlusAddOnValue(T, S, K, r, q, vol, xmax, boundaryInterp);
             double addOn = _scheme.GetExerciseBoundaryToPriceIntegrator().Integrate(addOnValueFunc.Evaluate, 0.0, sqrtT);
             
             double europeanValue = CalculateBlackScholesPut(S, K, r, q, vol, T);
 
-            // Final price is the greater of the European price and intrinsic value, plus the early exercise premium.
-            return Math.Max(europeanValue, K - S) + Math.Max(0.0, addOn);
+            // --- THE FINAL FIX ---
+            // The American price is the European price plus the early exercise premium,
+            // floored at the intrinsic value.
+            return Math.Max(K - S, europeanValue + Math.Max(0.0, addOn));
         }
 
         private static double CalculateBlackScholesPut(double S, double K, double r, double q, double vol, double T)
