@@ -1,5 +1,4 @@
 using System;
-using QuantConnect.Logging; 
 
 namespace Anderson.Root
 {
