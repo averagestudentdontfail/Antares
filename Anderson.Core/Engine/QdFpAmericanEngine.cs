@@ -98,7 +98,6 @@ namespace Anderson.Engine
             }
             
             // Step 5: Calculate final price using the refined boundary
-            // CORRECTED: Pass the concrete ChebyshevInterpolation type.
             var addOnValueFunc = new QdPlusAddOnValue(T, S, K, r, q, vol, xmax, boundaryInterp);
             double addOn = _scheme.GetExerciseBoundaryToPriceIntegrator().Integrate(addOnValueFunc.Evaluate, 0.0, sqrtT);
             
