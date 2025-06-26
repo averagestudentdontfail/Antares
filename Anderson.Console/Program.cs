@@ -54,7 +54,7 @@ class Program
         var marketData = new MarketData(spot, vol, r, q);
         
         Console.WriteLine($"Parameters: S=${spot}, K=${strike}, T={days}d, vol={vol:P0}, r={r:P0}, q={q:P0}");
-        Console.WriteLine($"Moneyness: {(spot/strike - 1):P1} ({'ITM' if spot < strike else 'OTM'})");
+        Console.WriteLine($"Moneyness: {(spot/strike - 1):P1} ({(spot < strike ? "ITM" : "OTM")})");
         
         // Price American
         var americanResult = calc.Price(contract, marketData, "American");
