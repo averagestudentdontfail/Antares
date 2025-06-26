@@ -6,7 +6,6 @@ namespace Anderson.Engine
 {
     /// <summary>
     /// Abstract base class for the fixed-point equation formulations (FP-A and FP-B).
-    /// These formulations represent the American option exercise boundary as an integral equation.
     /// </summary>
     public abstract class DqFpEquation
     {
@@ -20,22 +19,12 @@ namespace Anderson.Engine
             this.GetBoundary = getBoundary; this.Integrator = integrator;
         }
 
-        /// <summary>
-        /// Evaluates the fixed-point function F(B) = K*exp(...) * N/D.
-        /// </summary>
-        /// <returns>A tuple containing the numerator (N), denominator (D), and the resulting value F(B).</returns>
         public abstract (double N, double D, double Fv) F(double tau, double b);
-        
-        /// <summary>
-        /// Evaluates the derivative of the numerator (Nd) and denominator (Dd) with respect to the boundary B.
-        /// This is used in the Jacobi-Newton iteration step.
-        /// </summary>
         public abstract (double Nd, double Dd) NDd(double tau, double b);
 
         protected (double dp, double dm) CalculateD(double t, double z)
         {
             double v = vol * Math.Sqrt(t);
-            // Handle edge case where t is very small
             if (v < 1e-14) return (double.PositiveInfinity * Math.Sign(Math.Log(z)), double.PositiveInfinity * Math.Sign(Math.Log(z)));
             
             double m = (Math.Log(z) + (r - q) * t) / v;
@@ -60,37 +49,47 @@ namespace Anderson.Engine
             }
 
             double sqrt_tau = Math.Sqrt(tau);
-            double v_inv = 1.0 / (vol * sqrt_tau);
+            double v = vol * sqrt_tau;
 
-            // Integrals K1, K2, K3 from the paper (eq. 18-20), adapted for the sqrt-time transformation
-            Func<double, double> k1_integrand = y =>
+            // Integrals K12 and K3 from the paper, using a change of variables
+            // that matches the QuantLib implementation for numerical stability.
+            // Let m = τ - u, where u is the original integration variable.
+            
+            Func<double, double> k12_integrand = y =>
             {
-                double u_of_y = tau - 0.25 * tau * Math.Pow(1 + y, 2);
-                (double dp, _) = CalculateD(tau - u_of_y, b / GetBoundary(u_of_y));
-                return 0.5 * tau * (1 + y) * Math.Exp(q * u_of_y) * Distributions.CumulativeNormal(dp);
+                // The variable 'm' here corresponds to τ-u in the paper's original formulation.
+                // It represents the time-to-maturity of the component being integrated.
+                double m = 0.25 * tau * Math.Pow(1 + y, 2);
+                
+                // The time parameter for the d-function is m.
+                // The boundary B is evaluated at time elapsed, u = tau - m.
+                (double dp, _) = CalculateD(m, b / GetBoundary(tau - m));
+
+                // The discount factor is exp(q*u) = exp(q*(tau-m)).
+                double discount = Math.Exp(q * (tau - m));
+                
+                return discount * (0.5 * tau * (y + 1) * Distributions.CumulativeNormal(dp) + sqrt_tau / vol * Distributions.NormalDensity(dp));
             };
             
-            Func<double, double> k2_integrand = y =>
-            {
-                double u_of_y = tau - 0.25 * tau * Math.Pow(1 + y, 2);
-                (double dp, _) = CalculateD(tau - u_of_y, b / GetBoundary(u_of_y));
-                return sqrt_tau * Math.Exp(q * u_of_y) * Distributions.NormalDensity(dp) / vol;
-            };
+            double K12 = Integrator.Integrate(k12_integrand, -1, 1);
 
             Func<double, double> k3_integrand = y =>
             {
-                double u_of_y = tau - 0.25 * tau * Math.Pow(1 + y, 2);
-                (_, double dm) = CalculateD(tau - u_of_y, b / GetBoundary(u_of_y));
-                return sqrt_tau * Math.Exp(r * u_of_y) * Distributions.NormalDensity(dm) / vol;
+                double m = 0.25 * tau * Math.Pow(1 + y, 2);
+                (_, double dm) = CalculateD(m, b / GetBoundary(tau - m));
+                
+                // --- THIS IS THE FIX ---
+                // The discount factor is exp(r*u) = exp(r*(tau-m)).
+                double discount = Math.Exp(r * (tau - m));
+
+                return discount * sqrt_tau / vol * Distributions.NormalDensity(dm);
             };
 
-            double K1 = Integrator.Integrate(k1_integrand, -1, 1);
-            double K2 = Integrator.Integrate(k2_integrand, -1, 1);
             double K3 = Integrator.Integrate(k3_integrand, -1, 1);
             
             (double d_plus_K, double d_minus_K) = CalculateD(tau, b / K);
-            double N_val = Distributions.NormalDensity(d_minus_K) * v_inv + r * K3;
-            double D_val = Distributions.NormalDensity(d_plus_K) * v_inv + Distributions.CumulativeNormal(d_plus_K) + q * (K1 + K2);
+            double N_val = Distributions.NormalDensity(d_minus_K) / v + r * K3;
+            double D_val = Distributions.NormalDensity(d_plus_K) / v + Distributions.CumulativeNormal(d_plus_K) + q * K12;
             
             double fv = (D_val > 1e-12) ? K * Math.Exp(-(r - q) * tau) * N_val / D_val : 0.0;
             return (N_val, D_val, fv);
@@ -124,6 +123,7 @@ namespace Anderson.Engine
                 return (0.5, 0.5, K * Math.Exp(-(r - q) * tau));
             }
 
+            // In this formulation, 'u' is the time elapsed.
             Func<double, double> n_integrand = u => Math.Exp(r * u) * Distributions.CumulativeNormal(CalculateD(tau - u, b / GetBoundary(u)).dm);
             double ni = Integrator.Integrate(n_integrand, 0, tau);
 
