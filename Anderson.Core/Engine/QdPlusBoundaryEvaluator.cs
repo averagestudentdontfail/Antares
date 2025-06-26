@@ -3,9 +3,6 @@ using Anderson.Distribution;
 
 namespace Anderson.Engine
 {
-    /// <summary>
-    /// Encapsulates the pure QD+ function and its derivatives.
-    /// </summary>
     public class QdPlusBoundaryEvaluator
     {
         private readonly double _tau, _K, _sigma, _sigma2, _v, _r, _q;
@@ -35,7 +32,6 @@ namespace Anderson.Engine
             _sc = -1;
         }
 
-        // Returns the pure QD+(S) value
         public double Value(double S)
         {
             PreCalculateIfNeeded(S);
@@ -47,14 +43,12 @@ namespace Anderson.Engine
             return (1.0 - _dq * _Phi_dp) * S + (c0 + _lambda) * (_K - S - _npv);
         }
 
-        // Returns the pure first derivative: d(QD+)/dS
         public double Derivative(double S)
         {
             PreCalculateIfNeeded(S);
             return 1.0 - _dq * _Phi_dp + _dq / _v * _phi_dp + _beta * (1.0 - _dq * _Phi_dp) + _alpha / _dr * _charm;
         }
 
-        // Returns the pure second derivative: d^2(QD+)/dS^2
         public double SecondDerivative(double S)
         {
             PreCalculateIfNeeded(S);
@@ -65,6 +59,9 @@ namespace Anderson.Engine
 
         // Minimum bound to avoid division by zero
         public double XMin() => 1e-5;
+
+        // Maximum bound set to the strike price
+        public double XMax() => _K;
 
         private void PreCalculateIfNeeded(double S)
         {

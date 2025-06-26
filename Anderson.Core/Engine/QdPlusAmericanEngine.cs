@@ -47,16 +47,32 @@ namespace Anderson.Engine
         /// </summary>
         public static double XMax(double K, double r, double q)
         {
-            if (r > 0.0)
+            // For American puts, early exercise is optimal when r > q
+            // The short-maturity exercise boundary is:
+            
+            if (r > q)
             {
-                // For a put, early exercise is considered if q > r.
-                return K * Math.Max(1.0, q / r);
+                if (q > 0.0)
+                {
+                    // Standard case: boundary is K * r/q
+                    return K * (r / q);
+                }
+                else if (q == 0.0)
+                {
+                    // Special case: no dividends, always optimal to exercise deep ITM
+                    return double.PositiveInfinity;
+                }
+                else // q < 0
+                {
+                    // Negative dividend yield (storage costs), even more reason to exercise
+                    return double.PositiveInfinity;
+                }
             }
-            if (r == 0.0 && q > 0.0) return double.PositiveInfinity; // Theoretical limit
-            if (r < 0.0 && q > 0.0) return double.PositiveInfinity; // Theoretical limit
-
-            // Otherwise, early exercise is not optimal, and it behaves like a European option.
-            return 0.0;
+            else // r <= q
+            {
+                // Early exercise is not optimal when r <= q
+                return 0.0;
+            }
         }
 
         public ChebyshevInterpolation GetPutExerciseBoundary(double S, double K, double r, double q, double vol, double T)
