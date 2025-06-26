@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Anderson.Core/Anderson.Core.csproj -->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
+  </ItemGroup>
+</Project>
+
+<!-- Anderson.GUI/Anderson.GUI.csproj -->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Anderson.Core\Anderson.Core.csproj" />
+  </ItemGroup>
+</Project>
+
+<!-- Anderson.Console/Anderson.Console.csproj -->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Anderson.Core\Anderson.Core.csproj" />
+  </ItemGroup>
+</Project>
+
+<!-- Solution Structure:
+Anderson.DerivativePricing/
+├── Anderson.Core/                 # Core pricing engine library
+│   ├── Model/                   # Domain model
+│   ├── Distribution/             # Existing distribution code
+│   ├── Engine/                   # Existing engine code  
+│   ├── Integrator/              # Existing integrator code
+│   ├── Interpolation/           # Existing interpolation code
+│   ├── Root/                    # Existing root finding code
+│   └── Anderson.Core.csproj
+├── Anderson.GUI/                 # WPF GUI application
+│   ├── Views/
+│   ├── ViewModels/
+│   ├── Controls/
+│   └── Anderson.GUI.csproj
+├── Anderson.Console/             # Console test application
+│   └── Anderson.Console.csproj
+└── Anderson.DerivativePricing.sln
+-->
