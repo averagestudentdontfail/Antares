@@ -1,0 +1,6 @@
+/home/send2/.projects/Antares/Anderson.Core/obj/Debug/net8.0/Anderson.Core.csproj.AssemblyReference.cache
+/home/send2/.projects/Antares/Anderson.Core/obj/Debug/net8.0/Anderson.Core.GeneratedMSBuildEditorConfig.editorconfig
+/home/send2/.projects/Antares/Anderson.Core/obj/Debug/net8.0/Anderson.Core.AssemblyInfoInputs.cache
+/home/send2/.projects/Antares/Anderson.Core/obj/Debug/net8.0/Anderson.Core.AssemblyInfo.cs
+/home/send2/.projects/Antares/Anderson.Core/obj/Debug/net8.0/Anderson.Core.csproj.CoreCompileInputs.cache
+/home/send2/.projects/Antares/Anderson.Core/obj/Debug/net8.0/Anderson.Core.sourcelink.json
