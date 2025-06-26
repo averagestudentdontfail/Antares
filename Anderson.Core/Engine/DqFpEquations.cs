@@ -101,7 +101,6 @@ namespace Anderson.Engine
                 return (IsClose(b, K)) ? (0.5, 0.5, K * Math.Exp(-(r - q) * tau)) : ((b < K) ? (0.0, 0.0, 0.0) : (1.0, 1.0, K * Math.Exp(-(r-q)*tau)));
             }
 
-            // --- ROBUST IMPLEMENTATION PORTED FROM QUANTLIB ---
             Func<double, double> n_integrand = u =>
             {
                 double df = Math.Exp(r * u);
