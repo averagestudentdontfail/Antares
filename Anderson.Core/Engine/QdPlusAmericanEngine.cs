@@ -7,8 +7,8 @@ namespace Anderson.Engine
 {
     /// <summary>
     /// QD+ American option pricing engine with robust root finding for exercise boundary calculation.
-    /// This version uses a corrected bracketing strategy to ensure convergence to the correct
-    /// exercise boundary, even for Deep ITM options.
+    /// This version uses the auto-bracketing Solve method to handle cases where we don't have
+    /// a pre-defined finite bracket.
     /// </summary>
     public class QdPlusAmericanEngine
     {
@@ -84,13 +84,63 @@ namespace Anderson.Engine
             var evaluator = new QdPlusBoundaryEvaluator(S, K, r, q, vol, tau);
             var solverFunction = new SolverFunction(evaluator);
             
-            // Use the asymptotic value as the smart initial guess.
+            // Use the asymptotic value as the initial guess
             double initialGuess = XMax(K, r, q);
-            // Clamp the guess to be within the guaranteed bracket.
-            initialGuess = Math.Max(solverFunction.XMin(), Math.Min(initialGuess, solverFunction.XMax()));
-
-            // Always call the solver with the explicit, robust bracket [xMin, xMax].
-            return _solver.Solve(solverFunction, _epsilon, initialGuess, solverFunction.XMin(), solverFunction.XMax());
+            
+            // Handle the case where XMax might be infinite
+            if (double.IsInfinity(initialGuess))
+            {
+                initialGuess = K * 2.0; // Use 2*K as a reasonable starting point
+            }
+            
+            // Clamp the guess to be above the minimum bound
+            initialGuess = Math.Max(evaluator.XMin(), initialGuess);
+            
+            // Use the auto-bracketing solve method with an initial step
+            // The step size should be proportional to the scale of the problem
+            double step = K * 0.1; // 10% of strike price as initial step
+            
+            // Set bounds on the solver to prevent it from exploring negative values
+            _solver.LowerBound = evaluator.XMin();
+            _solver.UpperBound = null; // No upper bound restriction
+            
+            try
+            {
+                // Use the auto-bracketing method that finds its own bracket
+                return _solver.Solve(solverFunction, _epsilon, initialGuess, step);
+            }
+            catch (Exception ex)
+            {
+                // If auto-bracketing fails, try with a different initial guess
+                // Use a more conservative guess closer to the strike
+                initialGuess = K;
+                step = K * 0.05; // Smaller step
+                
+                try
+                {
+                    return _solver.Solve(solverFunction, _epsilon, initialGuess, step);
+                }
+                catch
+                {
+                    // If still failing, fall back to a simple search near the strike
+                    // This is a last resort
+                    double[] testPoints = { K * 0.8, K * 0.9, K, K * 1.1, K * 1.2, K * 1.5 };
+                    foreach (var testPoint in testPoints)
+                    {
+                        try
+                        {
+                            return _solver.Solve(solverFunction, _epsilon, testPoint, K * 0.1);
+                        }
+                        catch
+                        {
+                            continue;
+                        }
+                    }
+                    
+                    // If all else fails, throw the original exception
+                    throw new Exception($"Failed to find exercise boundary: {ex.Message}");
+                }
+            }
         }
 
         /// <summary>

@@ -5,8 +5,6 @@ namespace Anderson.Engine
 {
     /// <summary>
     /// Encapsulates the pure QD+ function and its derivatives.
-    /// This version uses a robust, minimal bracketing strategy, relying on the solver
-    /// to find the appropriate search range.
     /// </summary>
     public class QdPlusBoundaryEvaluator
     {
@@ -65,10 +63,8 @@ namespace Anderson.Engine
             return _dq * (_phi_dp / (S * _v) - _phi_dp * _dp / (S * _v * _v)) + _beta * gamma + _alpha / _dr * colour;
         }
 
-        // The only hard bracket is a small positive number to avoid division by zero.
+        // Minimum bound to avoid division by zero
         public double XMin() => 1e-5;
-        // There is no reliable hard upper bound; the solver must find it.
-        public double XMax() => double.PositiveInfinity; 
 
         private void PreCalculateIfNeeded(double S)
         {
