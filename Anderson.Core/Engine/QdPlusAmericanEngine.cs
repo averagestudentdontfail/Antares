@@ -17,37 +17,50 @@ namespace Anderson.Engine
         {
             _interpolationPoints = interpolationPoints;
             _epsilon = epsilon;
-            
-            // The solver now gets the adapter, not the raw evaluator
-            _solver = solverType switch
-            {
-                SolverType.Brent => new Brent(),
-                SolverType.Newton => new Newton(),
-                SolverType.Ridder => new Ridder(),
-                SolverType.Halley => new Halley(),
-                SolverType.SuperHalley => new Halley(), // Halley solver can be adapted for SuperHalley logic
-                _ => throw new ArgumentOutOfRangeException(nameof(solverType))
+            _solver = solverType switch {
+                SolverType.Brent => new Brent(), SolverType.Newton => new Newton(),
+                SolverType.Ridder => new Ridder(), SolverType.Halley => new Halley(),
+                SolverType.SuperHalley => new Halley(), _ => throw new ArgumentOutOfRangeException(nameof(solverType))
             };
             _solver.MaxEvaluations = 100;
         }
 
+        /// <summary>
+        /// Calculates the short-maturity (T->0) exercise boundary for a put option.
+        /// This provides an excellent initial guess for the root finder.
+        /// Reference: Andersen & Lake (2021), "Fast American Option Pricing: The Double-Boundary Case", Table 2.
+        /// </summary>
         public static double XMax(double K, double r, double q)
         {
-            if (r > 0.0) { if (q > 0.0) return K * Math.Min(1.0, r / q); return K; }
-            if (r == 0.0 && q < 0.0) return K;
-            if (r < 0.0 && q < r) return K;
+            if (r > 0.0)
+            {
+                // For a put, early exercise is considered if the dividend yield (q) is high relative to the risk-free rate (r).
+                // The boundary can exceed the strike price if q > r.
+                return K * Math.Max(1.0, q / r);
+            }
+            if (r == 0.0 && q > 0.0) return double.PositiveInfinity; // Theoretical limit, exercise is immediate
+            if (r < 0.0 && q > 0.0) return double.PositiveInfinity;
+
+            // In other cases (e.g., r > q, or r,q are negative in a way that doesn't favor early exercise),
+            // the option behaves like a European, and early exercise is not optimal.
+            // A value of 0 indicates no early exercise premium.
             return 0.0;
         }
 
         public ChebyshevInterpolation GetPutExerciseBoundary(double S, double K, double r, double q, double vol, double T)
         {
             double xmax = XMax(K, r, q);
-            if (xmax <= 0) return new ChebyshevInterpolation(_interpolationPoints, z => 0.0);
+            if (xmax <= 0 || double.IsInfinity(xmax))
+            {
+                // Return a trivial interpolation if it's a European option or if the boundary is infinite.
+                return new ChebyshevInterpolation(_interpolationPoints, z => 0.0);
+            }
             
             Func<double, double> functionToInterpolate = z => {
                 double tau = 0.25 * T * Math.Pow(1.0 + z, 2);
                 double boundary = PutExerciseBoundaryAtTau(S, K, r, q, vol, T, tau);
-                return Math.Pow(Math.Log(boundary / xmax), 2);
+                // Use a safe log calculation
+                return Math.Pow(Math.Log(Math.Max(1e-12, boundary) / xmax), 2);
             };
             
             return new ChebyshevInterpolation(_interpolationPoints, functionToInterpolate);
@@ -60,25 +73,25 @@ namespace Anderson.Engine
             var evaluator = new QdPlusBoundaryEvaluator(S, K, r, q, vol, tau);
             var solverFunction = new SolverFunction(evaluator);
             
+            // Use the asymptotic value as the smart initial guess.
             double initialGuess = XMax(K, r, q);
-            initialGuess = Math.Max(solverFunction.XMin(), Math.Min(initialGuess, solverFunction.XMax()));
+            // Clamp the guess to be within a reasonable range of the strike for stability.
+            initialGuess = Math.Max(evaluator.XMin(), Math.Min(initialGuess, K * 2.0));
 
-            return _solver.Solve(solverFunction, _epsilon, initialGuess, solverFunction.XMin(), solverFunction.XMax());
+            // The solver's own bracketing logic will expand from this guess as needed.
+            return _solver.Solve(solverFunction, _epsilon, initialGuess, evaluator.XMin());
         }
 
         /// <summary>
         /// Private adapter class to present the function g(B) = QD+(B) - B to the generic solvers.
-        /// This class correctly applies the subtractions for the root-finding problem.
         /// </summary>
         private class SolverFunction : IObjectiveFunctionWithSecondDerivative
         {
             private readonly QdPlusBoundaryEvaluator _eval;
             public SolverFunction(QdPlusBoundaryEvaluator evaluator) { _eval = evaluator; }
-            
             public double Value(double x) => _eval.Value(x) - x;
             public double Derivative(double x) => _eval.Derivative(x) - 1.0;
-            public double SecondDerivative(double x) => _eval.SecondDerivative(x); // d/dx(-x) = 0, d/dx(-1) = 0
-            
+            public double SecondDerivative(double x) => _eval.SecondDerivative(x);
             public double XMin() => _eval.XMin();
             public double XMax() => _eval.XMax();
         }

@@ -5,14 +5,14 @@ namespace Anderson.Engine
 {
     /// <summary>
     /// Encapsulates the pure QD+ function and its derivatives.
-    /// This class is a pure mathematical representation and does not include the root-finding subtractions.
+    /// This version uses a robust, minimal bracketing strategy, relying on the solver
+    /// to find the appropriate search range.
     /// </summary>
     public class QdPlusBoundaryEvaluator
     {
         private readonly double _tau, _K, _sigma, _sigma2, _v, _r, _q;
         private readonly double _dr, _dq, _ddr;
         private readonly double _omega, _lambda, _lambdaPrime, _alpha, _beta;
-        private readonly double _hardLowerBound, _hardUpperBound;
         private double _sc, _dp, _dm, _phi_dp, _npv, _theta, _charm, _Phi_dp, _Phi_dm;
 
         public QdPlusBoundaryEvaluator(double spot, double strike, double riskFreeRate, double dividendYield, double volatility, double timeToMaturity)
@@ -34,8 +34,6 @@ namespace Anderson.Engine
             double common_denom = 2.0 * _lambda + _omega - 1.0;
             _alpha = 2.0 * _dr / (_sigma2 * common_denom);
             _beta = _alpha * (_ddr + _lambdaPrime / common_denom) - _lambda;
-            _hardUpperBound = _K;
-            _hardLowerBound = 1e-5;
             _sc = -1;
         }
 
@@ -55,7 +53,6 @@ namespace Anderson.Engine
         public double Derivative(double S)
         {
             PreCalculateIfNeeded(S);
-            // This now correctly returns d(QD+)/dS WITHOUT the "- 1"
             return 1.0 - _dq * _Phi_dp + _dq / _v * _phi_dp + _beta * (1.0 - _dq * _Phi_dp) + _alpha / _dr * _charm;
         }
 
@@ -68,8 +65,10 @@ namespace Anderson.Engine
             return _dq * (_phi_dp / (S * _v) - _phi_dp * _dp / (S * _v * _v)) + _beta * gamma + _alpha / _dr * colour;
         }
 
-        public double XMin() => _hardLowerBound;
-        public double XMax() => _hardUpperBound;
+        // The only hard bracket is a small positive number to avoid division by zero.
+        public double XMin() => 1e-5;
+        // There is no reliable hard upper bound; the solver must find it.
+        public double XMax() => double.PositiveInfinity; 
 
         private void PreCalculateIfNeeded(double S)
         {
