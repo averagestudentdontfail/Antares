@@ -1,6 +1,4 @@
 using System;
-using QuantConnect.Indicators;
-using QuantConnect.Securities.Option;
 using Anderson.Engine;
 using Anderson.Interpolation.Interpolators;
 using Anderson.Distribution;
