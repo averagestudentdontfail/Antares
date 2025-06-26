@@ -19,7 +19,7 @@ namespace Anderson.Engine
         private readonly FixedPointEquation _fpEquation;
 
         public QdFpAmericanEngine(
-            IQdFpIterationScheme scheme = null,
+            IQdFpIterationScheme? scheme = null,
             FixedPointEquation fpEquation = FixedPointEquation.Auto)
         {
             // Default to a highly accurate scheme if none is provided.
