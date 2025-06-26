@@ -6,8 +6,6 @@ namespace Anderson.Engine
 {
     /// <summary>
     /// Represents the integrand for calculating the early exercise premium of an American put option.
-    /// This is a direct C# port of the detail::QdPlusAddOnValue implementation from QuantLib's
-    /// qdplusamericanengine.cpp, which correctly interprets the convolution integral.
     /// </summary>
     public class QdPlusAddOnValue
     {
