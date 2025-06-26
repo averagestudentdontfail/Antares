@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "qYpQnCNQzJk=",
+  "success": true,
+  "projectFilePath": "/home/send2/.projects/Antares/Anderson.Console/Anderson.Console.csproj",
+  "expectedPackageFiles": [
+    "/home/send2/.nuget/packages/mathnet.numerics/5.0.0/mathnet.numerics.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
