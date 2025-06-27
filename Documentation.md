@@ -1,854 +1,234 @@
-# Anderson Derivative Pricing Engine: A Comprehensive Method Paper
+# Anderson Derivative Pricing Engine: A Unified Spectral Method for Single and Double Boundary American Options
 
 ## Abstract
 
-This paper presents a comprehensive architectural framework for the Anderson derivative pricing engine, a high-performance computational system designed for pricing both European and American-style options with support for single and double exercise boundary cases. The engine leverages the groundbreaking spectral collocation methodology developed by Andersen, Lake, and Offengenden, extended to handle complex scenarios including negative interest rate environments and dual boundary conditions. The architecture provides a unified framework capable of achieving computational throughput of approximately 100,000 option prices per second while maintaining 10-11 significant digits of accuracy.
+This paper presents a comprehensive mathematical framework for a high-performance derivative pricing engine based on the spectral collocation methodology of Andersen, Lake, and Offengenden. The architecture is designed for pricing American-style options, unifying the treatment of standard single exercise boundary cases with the more complex double-boundary scenarios that arise in negative interest rate environments. By leveraging sophisticated fixed-point iteration schemes, advanced integral equation formulations, and spectral numerical methods, the framework achieves exceptional accuracy and computational speed. The methodology transforms the free-boundary problem of American option pricing into a system of integral equations for the optimal exercise boundary, which are solved with exponential convergence rates. For double-boundary cases, the framework employs a novel decoupled iteration system, allowing each boundary to be computed independently, thereby preserving the method's efficiency and accuracy. This paper provides a complete theoretical and mathematical blueprint for the engine, detailing the foundational equations, the numerical techniques for both single and double-boundary topologies, and the mathematical optimizations that ensure high performance.
 
 ## 1. Introduction
 
-The Anderson derivative pricing engine represents a paradigm shift in computational finance, moving beyond traditional finite difference and binomial tree methods to embrace spectral collocation techniques that achieve exponential convergence rates for smooth functions. This architectural framework addresses fundamental challenges in American option pricing, particularly the accurate and efficient computation of optimal exercise boundaries under varying market conditions.
+The valuation of American options presents a significant challenge in computational finance, primarily due to the early exercise feature which introduces a free boundary into the pricing problem. The core task is the determination of the optimal exercise boundary, a time-dependent asset price threshold that divides the state space into a continuation region and an exercise region. While traditional numerical techniques such as binomial trees and finite difference methods are widely used, they typically exhibit algebraic convergence rates, requiring substantial computational resources to achieve high precision .
 
-The theoretical foundation rests upon three critical mathematical innovations: (1) the spectral collocation method for boundary representation using Chebyshev polynomials, (2) sophisticated fixed-point iteration schemes for boundary computation, and (3) advanced integral equation formulations that decompose American option prices into European components plus early exercise premiums.
+This paper details the mathematical architecture of a pricing engine that overcomes these limitations by employing the spectral collocation method introduced by Andersen, Lake, and Offengenden . This approach recasts the American option pricing problem as the solution to a non-linear integral equation for the exercise boundary, which is then solved using a fixed-point iteration scheme. The use of Chebyshev polynomial interpolation on a transformed boundary, combined with high-order numerical quadrature, leads to spectral (i.e., exponential) convergence rates, enabling computational throughput of over 100,000 option prices per second with accuracy often exceeding 10 significant digits .
 
-### 1.1 Problem Statement and Motivation
+A significant challenge in modern financial markets is the presence of negative interest rates, a situation explicitly excluded in many classical pricing models . Negative rates can lead to a more complex exercise topology, where the exercise region is bounded by two distinct functions of time, creating a "double-boundary" case . This paper extends the foundational spectral method to robustly and efficiently handle these scenarios. Drawing on the work of Andersen and Lake, we present a complete mathematical recipe that characterizes the topology of the double-boundary exercise region, provides its short- and long-term asymptotics, and develops a decoupled fixed-point iteration system that allows each boundary to be calculated with high precision independently of the other .
 
-American option pricing presents computational challenges that traditional methods struggle to address efficiently. The fundamental issue lies in determining the optimal exercise boundary $S^*(t)$, which separates regions where immediate exercise is optimal from continuation regions where holding the option provides greater value.
+The resulting framework provides a unified and robust mathematical architecture for pricing American options across all possible sign combinations of interest rates and dividend yields, making it an invaluable tool for applications requiring both real-time performance and high fidelity, such as the risk management of large derivatives portfolios .
 
-The Anderson method transforms this problem into a sophisticated fixed-point iteration on the exercise boundary, utilizing integral equation representations of the form:
+## 2. Mathematical Framework
 
-$$V_{\text{American}} = V_{\text{European}} + \text{EEP}$$
+### 2.1 Process Dynamics
 
-where the Early Exercise Premium (EEP) is computed through high-order numerical integration of boundary-dependent integrands.
+We assume the underlying asset price, $S(t)$, follows a geometric Brownian motion under the risk-neutral measure $\mathbb{Q}$, governed by the stochastic differential equation (SDE):
 
-## 2. Theoretical Foundations
-
-### 2.1 Mathematical Framework
-
-#### 2.1.1 Process Dynamics
-
-The underlying asset follows a geometric Brownian motion under the risk-neutral measure $\mathbb{Q}$:
-
-$$dS(t) = (r - q)S(t)dt + \sigma S(t)dW(t)$$
+$$\frac{dS(t)}{S(t)} = (r-q)dt + \sigma dW(t)$$ 
 
 where:
-- $S(t)$ is the asset price at time $t$
-- $r$ is the risk-free interest rate  
-- $q$ is the dividend yield
-- $\sigma$ is the volatility
-- $W(t)$ is a standard Brownian motion under $\mathbb{Q}$
+* $S(t)$ is the asset price at time $t$.
+* $r$ is the constant risk-free interest rate .
+* $q$ is the constant continuous dividend yield . For options on futures, $q=r$, implying a drift of $\mu=0$ .
+* $\sigma$ is the constant asset price volatility .
+* $W(t)$ is a standard Wiener process under $\mathbb{Q}$ .
 
-#### 2.1.2 Option Valuation Framework
+Because the model parameters are constant, the process is time-homogeneous, and the option price at time $t$ for a contract maturing at $T$ can be expressed as a function of the time to maturity, $\tau \triangleq T-t$, and the current asset price, $S(t) = S$ .
 
-For an American put option with strike $K$ and maturity $T$, the value at time $t$ with spot price $S$ is given by:
+### 2.2 The American Option Problem
 
-$$V(t, S) = \sup_{\tau \in [t,T]} \mathbb{E}^{\mathbb{Q}}\left[e^{-r(\tau-t)}(K - S(\tau))^+\right]$$
+We focus on the American put option with strike price $K$ and maturity $T$. Its value at time $t$ is the solution to an optimal stopping problem:
 
-The optimal exercise strategy is characterized by a deterministic boundary $S^*(t)$ such that exercise is optimal when $S(t) \leq S^*(t)$.
+$$V(\tau, S) = \sup_{\nu \in [t, T]} \mathbb{E}_t^\mathbb{Q} \left[ e^{-r(\nu - t)} (K - S(\nu))^+ \right]$$ 
 
-#### 2.1.3 Integral Equation Representation
+where the supremum is taken over all stopping times $\nu$ between $t$ and $T$. The optimal exercise strategy is characterized by a time-dependent, deterministic exercise boundary, $B(\tau)$, such that it is optimal to exercise the put option if the asset price falls to or below this boundary .
 
-The Anderson method employs the integral equation:
+### 2.3 Integral Equation Representation (Single Boundary)
 
-$$V(\tau, S) = v(\tau, S) + \int_0^\tau rKe^{-r(\tau-u)}\Phi(-d_-(\tau-u, S/B(u)))du - \int_0^\tau qSe^{-q(\tau-u)}\Phi(-d_+(\tau-u, S/B(u)))du$$
+A cornerstone of the spectral method is the representation of the American option price as the sum of its European equivalent and an early exercise premium. For a single, continuous exercise boundary $B(u)$, the price of an American put option $V(\tau, S)$ is given by the integral equation:
 
-where $\tau = T - t$, $v(\tau, S)$ is the European option price, and:
-
-$$d_{\pm}(\tau, z) = \frac{\ln z + (r-q)\tau \pm \frac{1}{2}\sigma^2\tau}{\sigma\sqrt{\tau}}$$
-
-### 2.2 Fixed-Point Iteration Schemes
-
-#### 2.2.1 System A (FP-A) - Smooth Pasting Formulation
-
-The FP-A system utilizes the smooth pasting condition $\frac{\partial V}{\partial S}(S^*, t) = -1$ to derive:
-
-$$B(\tau) = Ke^{-(r-q)\tau}\frac{N_A(\tau, B)}{D_A(\tau, B)}$$
+$$V(\tau,S) = v(\tau,S) + \int_{0}^{\tau} rKe^{-r(\tau-u)}\Phi(-d_{-}(\tau-u,S/B(u)))du - \int_{0}^{\tau} qSe^{-q(\tau-u)}\Phi(-d_{+}(\tau-u,S/B(u)))du$$ 
 
 where:
+* $v(\tau, S)$ is the price of the corresponding European put option.
+* $\Phi(\cdot)$ is the standard normal cumulative distribution function.
+* $d_{\pm}(\tau, z) \triangleq \frac{\ln(z) + (r-q)\tau \pm \frac{1}{2}\sigma^2\tau}{\sigma\sqrt{\tau}}$ .
 
-$$N_A(\tau, B) = \frac{\phi(d_-(B/K))}{\sigma\sqrt{\tau}} + rK_3(\tau)$$
+The integral terms represent the present value of the "carry" associated with the early exercise right . This cash flow stream, $(rK - qS(s))ds$, arises from the interest earned on the strike price $K$ and the dividend payments forgone on the short stock position that would be established upon exercise .
 
-$$D_A(\tau, B) = \frac{\phi(d_+(B/K))}{\sigma\sqrt{\tau}} + \Phi(d_+(B/K)) + q(K_1(\tau) + K_2(\tau))$$
+## 3. The Optimal Exercise Boundary (Single Boundary Case)
 
-The integral operators are defined as:
+To utilize the integral representation, the exercise boundary function $B(\tau)$ must be determined. This is achieved by solving a non-linear integral equation derived from the boundary conditions of the American option problem.
 
-$$K_1(\tau) = \int_0^\tau e^{qu}\Phi(d_+(B(\tau)/B(u)))du$$
+### 3.1 Boundary Conditions
 
-$$K_2(\tau) = \int_0^\tau e^{qu}\frac{\phi(d_+(B(\tau)/B(u)))}{\sigma\sqrt{\tau-u}}du$$
+At the exercise boundary $S=B(\tau)$, the American option price must satisfy two critical conditions:
+1.  **Value Matching**: The option's value must equal its intrinsic value.
+    $$V(\tau, B(\tau)) = K - B(\tau)$$ 
+2.  **Smooth Pasting**: The option's delta must be continuous and equal to -1 for a put.
+    $$V_S(\tau, B(\tau)) = -1$$ 
 
-$$K_3(\tau) = \int_0^\tau e^{ru}\frac{\phi(d_-(B(\tau)/B(u)))}{\sigma\sqrt{\tau-u}}du$$
+Combining these conditions with the integral price formula (and its derivatives) yields various integral equations for the boundary $B(\tau)$ .
 
-#### 2.2.2 System B (FP-B) - Value Matching Formulation
+### 3.2 Asymptotic Behavior
 
-The FP-B system employs the value matching condition $V(S^*, t) = K - S^*$ to yield:
+The shape of $B(\tau)$ is characterized by its behavior at short and long maturities.
 
-$$B(\tau) = Ke^{-(r-q)\tau}\frac{N_B(\tau, B)}{D_B(\tau, B)}$$
+* **Short-Maturity ($\tau \to 0^+$)**: The boundary approaches a limit $X$ that depends on the sign of $r-q$.
+    $$\lim_{\tau \to 0^+} B(\tau) = X = \begin{cases} K & \text{if } r \ge q \\ K(r/q) & \text{if } r < q \end{cases}$$ 
+    The boundary is generally smooth for $\tau > 0$ but can be discontinuous at $\tau=0$ if $r<q$ . Its derivatives are unbounded at the origin .
 
-where:
+* **Long-Maturity ($\tau \to \infty$)**: The boundary asymptotically approaches a constant level, $B_\infty$, corresponding to the perpetual American option boundary.
+    $$B_\infty = K \frac{\theta_-}{\theta_- - 1} \quad \text{where} \quad \theta_- = \frac{-(\frac{r-q}{\sigma^2} - \frac{1}{2}) - \sqrt{(\frac{r-q}{\sigma^2} - \frac{1}{2})^2 + \frac{2r}{\sigma^2}}}{2}$$ 
 
-$$N_B(\tau, B) = \Phi(d_-(B/K)) + r\int_0^\tau e^{ru}\Phi(d_-(B(\tau)/B(u)))du$$
+### 3.3 Fixed-Point Iteration Systems
 
-$$D_B(\tau, B) = \Phi(d_+(B/K)) + q\int_0^\tau e^{qu}\Phi(d_+(B(\tau)/B(u)))du$$
+The integral equations for the boundary can be rearranged into a fixed-point form suitable for iterative solution:
 
-### 2.3 Double Boundary Cases
+$$B(\tau) = K e^{-(r-q)\tau} \frac{N(\tau, B)}{D(\tau, B)}$$ 
 
-#### 2.3.1 Negative Rate Environment
+where $N$ and $D$ are functionals of the entire boundary function $B(u)$ for $u \le \tau$. Two primary systems are derived from the boundary conditions.
 
-Under negative interest rates where $r < q < 0$, the exercise region can exhibit dual boundaries $\{l(t), u(t)\}$ where $l(t) < u(t)$, creating a "double continuation region" topology.
+* **System B (FP-B) - Value Matching Formulation**: Derived from the value matching condition, this system is given by:
+    $$N_B(\tau,B)=\Phi(d_{-}(\tau,B(\tau)/K))+r\int_{0}^{\tau}e^{ru}\Phi(d_{-}(\tau-u,B(\tau)/B(u)))du$$ 
+    $$D_B(\tau,B)=\Phi(d_{+}(\tau,B(\tau)/K))+q\int_{0}^{\tau}e^{qu}\Phi(d_{+}(\tau-u,B(\tau)/B(u)))du$$ 
 
-The modified integral equation becomes:
+* **System A (FP-A) - Smooth Pasting Formulation**: Derived from the smooth pasting condition, this system is more complex but often exhibits superior convergence properties . The functionals are:
+    $$N_A(\tau,B)=\frac{\phi(d_{-}(\tau,B(\tau)/K))}{\sigma\sqrt{\tau}}+r\mathcal{K}_{3}(\tau)$$ 
+    $$D_A(\tau,B)=\frac{\phi(d_{+}(\tau,B(\tau)/K))}{\sigma\sqrt{\tau}}+\Phi(d_{+}(\tau,B(\tau)/K))+q(\mathcal{K}_{1}(\tau)+\mathcal{K}_{2}(\tau))$$ 
+    where $\phi(\cdot)$ is the standard normal probability density function and the integral operators are:
+    $$\mathcal{K}_{1}(\tau)=\int_{0}^{\tau}e^{qu}\Phi(d_{+}(\tau-u,B(\tau)/B(u)))du$$ 
+    $$\mathcal{K}_{2}(\tau)=\int_{0}^{\tau}\frac{e^{qu}}{\sigma\sqrt{\tau-u}}\phi(d_{+}(\tau-u,B(\tau)/B(u)))du$$ 
+    $$\mathcal{K}_{3}(\tau)=\int_{0}^{\tau}\frac{e^{ru}}{\sigma\sqrt{\tau-u}}\phi(d_{-}(\tau-u,B(\tau)/B(u)))du$$ 
 
-$$V_A = V_E + \int_{t_s}^T rKe^{-rt}[\Phi(-d_2(S,u(t),t)) - \Phi(-d_2(S,l(t),t))]dt - \int_{t_s}^T qSe^{-qt}[\Phi(-d_1(S,u(t),t)) - \Phi(-d_1(S,l(t),t))]dt$$
+## 4. The Double-Boundary Case (Negative Rates)
 
-where $t_s$ is the crossing time when the boundaries intersect.
+When interest rates and dividend yields are negative, the topology of the exercise region can change dramatically, leading to two exercise boundaries .
 
-#### 2.3.2 Mathematical Characterization
+### 4.1 Conditions for Double Boundaries
 
-The existence of double boundaries occurs when:
-- $r < 0$ and $r - q - \frac{\sigma^2}{2} > 0$
-- $\left(r - q - \frac{\sigma^2}{2}\right)^2 + 2r\sigma^2 > 0$
+For an American put option, a double-boundary exercise region arises when both the risk-free rate and dividend yield are negative, with the dividend yield being more negative than the rate:
 
-The asymptotic behavior near maturity follows:
-- Upper boundary: $u^*(t) = K - K\sigma\sqrt{(T-t)\ln\frac{\sigma^2}{8\pi(T-t)(r-q)^2}}$
-- Lower boundary: $l^*(t) = \frac{rK}{q}\left(1 + \alpha_0\sigma\sqrt{2(T-t)}\right)$ where $\alpha_0 = 0.451723$
+* **American Put**: A double boundary occurs if $q < r < 0$ . The exercise region becomes the finite interval $(Kr/q, K)$ just prior to maturity .
+* **American Call**: By put-call symmetry, a double boundary occurs if $r < q < 0$ . The exercise region becomes $(K, Kr/q)$ just prior to maturity .
 
-## 3. Architectural Design
+In these cases, there exists both a standard exercise boundary (denoted $B(\tau)$) and a second boundary (denoted $Y(\tau)$) beyond which it is no longer optimal to hold the option, creating a finite exercise interval $[Y(\tau), B(\tau)]$ for a put, or $[B(\tau), Y(\tau)]$ for a call .
 
-### 3.1 Core Architecture Overview
+### 4.2 Topology and Asymptotics
 
-The Anderson engine employs a layered architecture with clear separation of concerns:
+The behavior of the two boundaries is characterized by their short- and long-maturity limits and a critical volatility $\sigma^*$.
 
-```
-┌─────────────────────────────────────────────────────┐
-│                   Calculator                        │ ← Facade Layer
-├─────────────────────────────────────────────────────┤
-│            Pricing Engines                          │ ← Engine Layer
-│  ┌─────────────────┐  ┌─────────────────────────────┐│
-│  │ EuropeanEngine  │  │    AmericanEngine           ││
-│  │ (Black-Scholes) │  │ (Anderson/QdFp Method)      ││
-│  └─────────────────┘  └─────────────────────────────┘│
-├─────────────────────────────────────────────────────┤
-│               Mathematical Core                      │ ← Core Layer
-│  ┌─────────────┐ ┌────────────┐ ┌─────────────────┐  │
-│  │ QdFpEngine  │ │ QdPlusEng  │ │ Boundary Eval   │  │
-│  └─────────────┘ └────────────┘ └─────────────────┘  │
-├─────────────────────────────────────────────────────┤
-│              Numerical Methods                       │ ← Methods Layer
-│  ┌───────────┐ ┌──────────────┐ ┌─────────────────┐  │
-│  │Integrators│ │Interpolators │ │   Root Solvers  │  │
-│  └───────────┘ └──────────────┘ └─────────────────┘  │
-├─────────────────────────────────────────────────────┤
-│               Infrastructure                         │ ← Base Layer
-│  ┌─────────────┐ ┌──────────────┐ ┌───────────────┐  │
-│  │Distributions│ │ Model Objects│ │    Utilities  │  │
-│  └─────────────┘ └──────────────┘ └───────────────┘  │
-└─────────────────────────────────────────────────────┘
-```
+* **Short-Maturity Asymptotics ($\tau \to 0^+$)**: The two boundaries start at:
+    * **Put ($q<r<0$)**: $B_0 = K$ and $Y_0 = Kr/q$ .
+    * **Call ($r<q<0$)**: $B_0 = K$ and $Y_0 = Kr/q$ .
 
-### 3.2 Component Architecture
+* **Long-Maturity Asymptotics ($\tau \to \infty$)**: The behavior depends on the relationship between the option's volatility $\sigma$ and a critical volatility $\sigma^* = |\sqrt{-2r} - \sqrt{-2q}|$ .
+    1.  If $\sigma > \sigma^*$: The boundaries do not have finite long-term limits. They intersect at a finite time $\tau^*$, "pinching off" the exercise region. For maturities $\tau > \tau^*$, early exercise is never optimal .
+    2.  If $\sigma < \sigma^*$: The boundaries never intersect and converge to distinct finite limits $B_\infty$ and $Y_\infty$, which have closed-form expressions derived from perpetual American option theory .
+    3.  If $\sigma = \sigma^*$: The boundaries converge to the same value at infinity: $B_\infty = Y_\infty = K\sqrt{r/q}$ .
 
-#### 3.2.1 Facade Layer: Calculator
+### 4.3 Integral Equation Representation (Double Boundary)
 
-The `Calculator` class provides a unified interface for option pricing operations:
+With a double-boundary exercise region $\mathcal{A}(s)=[Y(T-s), B(T-s)]$, the integral equation for the American put price is extended. The price is the European price plus the present value of the early exercise premium, which is now integrated over the finite exercise interval.
 
-```csharp
-public class Calculator
-{
-    private readonly Dictionary<string, IOptionPricingEngine> _engines;
-    
-    public PricingResult Price(OptionContract contract, MarketData marketData, string? engineName = null)
-    {
-        // Engine selection and validation logic
-        // Delegates to appropriate pricing engine
-    }
-}
-```
+**Corollary 1 (Andersen & Lake, 2021)**: For an American put where $q < r < 0$, the value $V$ is given by:
 
-#### 3.2.2 Engine Layer: Pricing Engines
+$$V(\tau,S,K) = p(\tau,S,K) + rK\int_{0}^{\min(\tau,\tau^{*})}[p_{K}(\tau-u,S,B(u))-p_{K}(\tau-u,S,Y(u))]du \\ + qS\int_{0}^{\min(\tau,\tau^{*})}[p_{S}(\tau-u,S,B(u))-p_{S}(\tau-u,S,Y(u))]du$$ 
 
-**European Engine**: Implements analytical Black-Scholes-Merton formulas with exact Greeks computation.
-
-**American Engine**: Wraps the sophisticated QdFp mathematical engine with high-level interface compliance.
-
-```csharp
-public class AmericanEngine : IOptionPricingEngine
-{
-    private readonly QdFpAmericanEngine _coreEngine;
-    
-    public PricingResult Price(OptionContract contract, MarketData marketData)
-    {
-        // Convert domain models to mathematical primitives
-        // Delegate to core engine
-        // Package results with Greeks computation
-    }
-}
-```
-
-#### 3.2.3 Mathematical Core: QdFp Engine
-
-The `QdFpAmericanEngine` implements the core Anderson algorithm:
-
-```csharp
-public class QdFpAmericanEngine
-{
-    public double CalculatePut(double S, double K, double r, double q, double vol, double T)
-    {
-        // 1. Boundary estimation via QdPlus
-        // 2. Chebyshev interpolation setup
-        // 3. Fixed-point iteration on boundary
-        // 4. Final price computation via integration
-    }
-}
-```
-
-### 3.3 Numerical Methods Layer
-
-#### 3.3.1 Integration Hierarchy
-
-The engine supports multiple integration schemes optimized for different accuracy/performance requirements:
-
-**Gauss-Legendre Integrator**: Fixed-order quadrature for smooth integrands
-- Optimal for well-behaved functions
-- Computational complexity: $O(n)$ where $n$ is the number of nodes
-- Achieves exponential convergence for smooth functions
-
-**Gauss-Lobatto Integrator**: Adaptive integration with endpoint evaluation
-- Superior error estimation capabilities
-- Handles endpoint singularities effectively
-- Self-adaptive refinement strategy
+where $p_S$ and $p_K$ are the partial derivatives of the European put price with respect to the spot price and strike, respectively .
 
-**Tanh-Sinh Integrator**: Double exponential transformation
-- Exceptional performance for functions with endpoint singularities
-- Robust convergence properties
-- Highest precision option for critical calculations
+### 4.4 Decoupled Fixed-Point Iteration Systems
 
-#### 3.3.2 Interpolation Framework
+A key innovation for the double-boundary case is that the integral representation can be manipulated to yield two *decoupled* equations for the boundaries $B$ and $Y$, allowing them to be solved separately . This avoids a more complex and less accurate simultaneous iteration .
 
-**Chebyshev Interpolation**: Core boundary representation method
+This is enabled by **Corollary 2 (Andersen & Lake, 2021)**, which shows that for an asset price $S$ outside the exercise interval, the price depends only on the boundary that would be hit first .
 
-The exercise boundary is represented as:
-$$B(\tau) = \text{Chebyshev interpolation of } H(\sqrt{\tau})$$
+* **Fixed-Point System for B (FP-B)**: By applying the value-matching condition at the upper boundary $S=B(\tau)$, we obtain a fixed-point system for $B$ that does not depend on $Y$:
+    $$N_{B}(\tau,B) = -c_{K}(\tau,B(\tau),K) - r\int_{0}^{\tau}c_{K}(\tau-u,B(\tau),B(u))du$$ 
+    $$D_{B}(\tau,B) = c_{S}(\tau,B(\tau),K) + q\int_{0}^{\tau}c_{S}(\tau-u,B(\tau),B(u))du$$ 
+    where $c_S$ and $c_K$ are derivatives of the European call price. This system has the same form as the single-boundary case .
 
-where $H(x) = \ln^2(B(x^2)/X_{max})$ and $X_{max} = K\min(1, r/q)$.
+* **Fixed-Point System for Y (FP-Y)**: By applying the smooth-pasting condition at the lower boundary $S=Y(\tau)$, we obtain a fixed-point system for $Y$ that does not depend on $B$:
+    $$N_{Y}(\tau,Y) = rK\int_{0}^{\tau}c_{KK}(\tau-u,Y(\tau),Y(u))du$$ 
+    $$D_{Y}(\tau,Y) = qY\int_{0}^{\tau}c_{SS}(\tau-u,Y(\tau),Y(u))du + q\int_{0}^{\tau}p_{S}(\tau-u,Y(\tau),Y(u))du$$ 
+    where $c_{SS}$ and $c_{KK}$ are second-order derivatives of the European call price .
 
-The transformation stabilizes the boundary representation and enables spectral convergence:
+The two boundaries are computed independently using these systems, and the intersection time $\tau^*$ is found afterward by solving for the point where $B(\tau^*) = Y(\tau^*)$ .
 
-```csharp
-public class ChebyshevInterpolation : Interpolation
-{
-    public override double Value(double x)
-    {
-        // Clenshaw's algorithm for stable evaluation
-        // Achieves machine precision accuracy
-    }
-}
-```
+## 5. High-Performance Numerical Implementation
 
-#### 3.3.3 Root Finding Algorithms
+The efficiency of the Anderson engine stems from a combination of mathematical transformations and advanced numerical methods that allow the controlling parameters of the algorithm—the number of quadrature points ($l$), fixed-point iterations ($m$), and collocation points ($n$)—to be kept very small while maintaining high accuracy .
 
-Multiple solvers handle boundary estimation and internal calculations:
+### 5.1 Collocation and Boundary Representation
 
-**Brent Method**: Robust bracketing solver combining bisection, secant, and inverse quadratic interpolation
-**Halley Method**: Third-order solver requiring first and second derivatives
-**Newton-Raphson**: Second-order solver with derivative-based updates
+The core of the method is to solve the fixed-point system not continuously, but only at a discrete set of $n$ collocation nodes $\{\tau_i\}_{i=1}^n$, and to represent the boundary between these nodes via polynomial interpolation .
 
-### 3.4 Iteration Schemes
+* **Chebyshev Collocation**: To avoid the instability of high-order polynomial interpolation on equidistant grids (the Runge phenomenon), the collocation nodes are chosen to be the Chebyshev nodes . This placement is known to be near-optimal for polynomial approximation .
 
-The engine supports configurable iteration schemes balancing accuracy and performance:
+* **Boundary Transformation**: The exercise boundary $B(\tau)$ is not well-suited for direct polynomial interpolation due to its steepness and unbounded derivatives near $\tau=0$ . To overcome this, a variance-stabilizing transformation is applied. The interpolation is performed on the much smoother function $H(x)$:
+    $$H(x) = \ln(B(x^2)/X)^2 \quad \text{where} \quad x=\sqrt{\tau} \quad \text{and} \quad X=K \min(1, r/q)$$ 
+    This transformation, combining a logarithmic function with a square-root of time variable, creates a function that is nearly linear and exceptionally well-approximated by a low-degree Chebyshev polynomial, allowing for a very small number of collocation points ($n$) .
 
-#### 3.4.1 QdFpLegendreScheme
-```csharp
-public class QdFpLegendreScheme : IQdFpIterationScheme
-{
-    // Fixed Gauss-Legendre integration
-    // Recommended for: Standard accuracy requirements
-    // Performance: ~50,000 options/second
-}
-```
+* **Polynomial Evaluation**: The interpolated polynomial is evaluated efficiently and stably at arbitrary points using the Clenshaw algorithm .
 
-#### 3.4.2 QdFpTanhSinhScheme  
-```csharp
-public class QdFpTanhSinhScheme : IQdFpIterationScheme
-{
-    // High-precision Tanh-Sinh integration
-    // Recommended for: Maximum accuracy requirements
-    // Performance: ~10,000 options/second with 12+ digit accuracy
-}
-```
+### 5.2 Numerical Quadrature
 
-#### 3.4.3 QdFpLegendreLobattoScheme
-```csharp
-public class QdFpLegendreLobattoScheme : QdFpLegendreScheme
-{
-    // Adaptive Gauss-Lobatto final integration
-    // Recommended for: Balanced accuracy/performance
-    // Performance: ~25,000 options/second
-}
-```
+Accurate and fast computation of the integral operators in the fixed-point systems is essential.
 
-## 4. Advanced Mathematical Implementation
+* **Singularity Handling**: The FP-A system contains integrals with a weak singularity of the form $(\tau-u)^{-1/2}$ . This singularity is handled analytically via the variable transformation:
+    $$z = \sqrt{\tau - u} \implies du = -2z \, dz$$ 
+    This change of variables removes the singularity, resulting in a smooth integrand that can be integrated with high accuracy .
 
-### 4.1 Boundary Estimation via QdPlus Algorithm
+* **High-Order Quadrature**: The resulting smooth integrals are computed using high-performance quadrature rules, such as Gauss-Legendre or tanh-sinh quadrature . These spectral methods can achieve high precision with a very small number of quadrature nodes ($l$), often outperforming simpler schemes like the trapezoid rule by orders of magnitude .
 
-#### 4.1.1 QdPlus Methodology
+### 5.3 Iteration Scheme Enhancements
 
-The QdPlus algorithm provides sophisticated initial boundary estimates by solving the enhanced equation:
+The number of fixed-point iterations ($m$) required for convergence is minimized through two key techniques.
 
-$$\eta = \eta e^{-q\tau}\Phi(\eta d_1) + (\lambda + c_0)\frac{\eta(S^* - K) - V_E(S^*, K, \tau)}{S^*}$$
+* **Jacobi-Newton Iteration**: To accelerate convergence, a Jacobi-Newton scheme is employed. This method uses the functional derivative of the fixed-point mapping to locally cancel out first-order error sensitivity, leading to quadratic convergence once the solution is sufficiently close to the true boundary . The iteration takes the form:
+    $$B^{(j)}(\tau) = B^{(j-1)}(\tau) + \frac{B^{(j-1)}(\tau) - f(\tau, B^{(j-1)})}{f'(\tau, B^{(j-1)}) - 1}$$ 
 
-where:
-- $\eta = 1$ for calls, $\eta = -1$ for puts
-- $\lambda$ incorporates higher-order correction terms
-- $c_0$ accounts for boundary curvature effects
+* **High-Quality Initial Guess**: The iteration is initialized with a highly accurate analytical approximation of the boundary, such as the QD+ method, which reduces the number of required iterations significantly .
 
-#### 4.1.2 Enhanced Precision Terms
+## 6. A Unified Framework
 
-The correction coefficient $c_0$ is computed as:
+The Anderson pricing engine provides a unified mathematical architecture for handling both single and double boundary cases. The workflow is as follows:
 
-$$c_0 = -\frac{(1-h)\alpha}{2\lambda + \omega - 1}\left[\frac{1}{h} - \frac{e^{r\tau}\Theta(S^*)}{r(\eta(S^* - K) - V_E(S^*, K, \tau))} + \frac{\lambda'}{2\lambda + \omega - 1}\right]$$
+1.  **Parameter Check**: Given the input parameters $(r, q)$, the engine first determines the appropriate boundary topology. For an American put:
+    * If $q < r < 0$, the double-boundary case is triggered .
+    * Otherwise, the single-boundary case is assumed.
 
-where:
-- $h = 1 - e^{-r\tau}$
-- $\omega = 2(r-q)/\sigma^2$  
-- $\alpha = 2r/(\sigma^2 h)$
-- $\Theta(S^*)$ is the European option theta
+2.  **Algorithm Selection**:
+    * **Double-Boundary Case**: The engine employs the decoupled fixed-point systems (FP-B for the upper boundary $B$, FP-Y for the lower boundary $Y$) described in Section 4.4 . The boundaries are computed independently and checked for intersection to find $\tau^*$ .
+    * **Single-Boundary Case**: The engine uses one of the standard fixed-point systems (FP-A or FP-B) from Section 3.3. FP-A is generally preferred for its faster convergence, except in strongly drift-dominated cases ($|r-q| \gg \sigma$) where FP-B offers greater stability .
 
-### 4.2 Fixed-Point Iteration Implementation
+3.  **Put-Call Symmetry**: American call options are priced using the fundamental put-call symmetry relationship . For a call option with parameters $(S, K, r, q, \sigma, \tau)$, the engine calculates the price of a put option with switched parameters $(K, S, q, r, \sigma, \tau)$. The call boundaries are then recovered via:
+    $$B_{\text{call}}(\tau; K, r, q) = \frac{KS}{B_{\text{put}}(\tau; S, q, r)}, \quad Y_{\text{call}}(\tau; K, r, q) = \frac{KS}{Y_{\text{put}}(\tau; S, q, r)}$$ 
 
-#### 4.2.1 Jacobi-Newton Enhancement
+4.  **Final Price Calculation**: Once the boundary (or boundaries) are determined up to the desired maturity, the final option price is computed via high-order numerical integration of the appropriate integral formula (from Section 2.3 or 4.3) .
 
-The engine implements a sophisticated Jacobi-Newton iteration for enhanced convergence:
+## 7. Conclusion
 
-$$B^{(j)}(\tau) = B^{(j-1)}(\tau) + \eta\frac{B^{(j-1)}(\tau) - f(\tau, B^{(j-1)})}{f'(\tau, B^{(j-1)}) - 1}$$
+The mathematical architecture detailed in this paper provides a robust, highly efficient, and exceptionally accurate framework for the valuation of American options. By integrating spectral collocation, Chebyshev interpolation on transformed variables, high-order quadrature, and accelerated fixed-point iterations, the method achieves spectral convergence, drastically outperforming traditional numerical methods.
 
-where $f'$ represents the Gateaux derivative:
+The key strengths of this mathematical design are:
 
-$$f'(\tau, B) = \frac{Ke^{-(r-q)\tau}}{D(\tau, B)}\epsilon$$
+1.  **Unified Approach**: It elegantly handles both standard single-boundary problems and the complex double-boundary cases arising from negative interest rates within a single, coherent framework.
+2.  **Efficiency**: The combination of mathematical transformations and numerical techniques ensures that the algorithm's complexity is minimized, allowing for real-time computation without sacrificing precision.
+3.  **Accuracy**: The spectral convergence properties enable the computation of option prices and their sensitivities to machine-level precision, a feat that is impractical with algebraic-convergence methods.
+4.  **Robustness**: The development of decoupled iteration schemes for the double-boundary case and stable fixed-point systems like FP-B ensures the method is robust across a wide and challenging range of market parameters.
 
-with:
-
-$$\epsilon = \int_0^\tau e^{ru}\left(\frac{r-q}{B(u)/K}\right)\psi(\tau-u, B(\tau)/B(u))\frac{\phi(d_-(\tau-u, B(\tau)/B(u)))}{\sigma\sqrt{\tau-u}}(g(\tau) - g(u))du$$
-
-#### 4.2.2 System Stability Analysis
-
-For system stability, the perturbation sensitivity analysis shows:
-
-**System A**: $\psi(\tau-u, z) = \frac{d_-(\tau-u, z)}{\sigma\sqrt{\tau-u}}$
-
-**System B**: $\psi(\tau-u, z) = -1$
-
-The analysis reveals that System A typically provides superior convergence for $|r-q| < 0.5\sigma^2$, while System B offers enhanced stability for drift-dominated scenarios.
-
-### 4.3 Double Boundary Implementation
-
-#### 4.3.1 Boundary Detection Logic
-
-The engine automatically detects double boundary scenarios:
-
-```csharp
-private bool RequiresDoubleBoundary(double r, double q, double sigma)
-{
-    if (r >= 0 || q >= r) return false;
-    
-    double sigmaStar = Math.Abs(Math.Sqrt(-2*r) - Math.Sqrt(-2*q));
-    return sigma > sigmaStar;
-}
-```
-
-#### 4.3.2 Modified Fixed-Point System
-
-For double boundaries, the iteration becomes:
-
-```csharp
-public (double upper, double lower) SolveDoubleBoundary(/* parameters */)
-{
-    // Coupled system:
-    // u^(j) = K * N_u(τ, u^(j-1), l^(j-1)) / D_u(τ, u^(j-1), l^(j-1))
-    // l^(j) = K * N_l(τ, l^(j-1), u^(j)) / D_l(τ, l^(j-1), u^(j))
-}
-```
-
-The modified numerators and denominators account for dual boundary effects:
-
-$$N_u(\tau, u, l) = N_{single}(\tau, u) - \int_{t_s}^T re^{-r(t-\tau)}\Phi(-d_2(u(\tau), l(t), t-\tau))dt$$
-
-$$D_u(\tau, u, l) = D_{single}(\tau, u) - \int_{t_s}^T qe^{-q(t-\tau)}\Phi(-d_1(u(\tau), l(t), t-\tau))dt$$
-
-### 4.4 Numerical Integration Strategies
-
-#### 4.4.1 Variable Transformation
-
-To handle singularities and improve convergence, the engine employs the transformation:
-
-$$z = \sqrt{\tau - u}, \quad du = -2z\,dz$$
-
-This transforms integrals of the form:
-$$\int_0^\tau f(\tau-u)\frac{g(u)}{\sqrt{\tau-u}}du = 2\int_0^{\sqrt{\tau}} f(z^2)g(\tau-z^2)z\,dz$$
-
-#### 4.4.2 Adaptive Quadrature Strategy
-
-The integration strategy adapts based on integrand behavior:
-
-1. **Smooth regions**: Gauss-Legendre quadrature with order $l = 2n+1$
-2. **Near singularities**: Tanh-Sinh transformation with exponential node clustering
-3. **Boundary proximities**: Adaptive Gauss-Lobatto with local refinement
-
-#### 4.4.3 Error Control Mechanisms
-
-The engine implements sophisticated error control:
-
-```csharp
-private double IntegrateWithErrorControl(Func<double, double> integrand, double a, double b)
-{
-    var primaryResult = _primaryIntegrator.Integrate(integrand, a, b);
-    var checkResult = _checkIntegrator.Integrate(integrand, a, b);
-    
-    double error = Math.Abs(primaryResult - checkResult);
-    if (error > _tolerance)
-    {
-        // Adaptive refinement or higher-order scheme
-        return _precisionIntegrator.Integrate(integrand, a, b);
-    }
-    
-    return primaryResult;
-}
-```
-
-## 5. Performance Optimization
-
-### 5.1 Computational Complexity Analysis
-
-#### 5.1.1 Traditional Methods Comparison
-
-| Method | Complexity | Accuracy | Convergence Rate |
-|--------|------------|----------|------------------|
-| Binomial Tree | $O(n^2)$ | Algebraic | $O(1/n)$ |
-| Finite Difference | $O(nm)$ | 2nd Order | $O(1/n^2)$ |
-| Anderson Method | $O(lmn^2)$ | Spectral | $O(1/n^n)$ |
-
-Where $l$ = integration nodes, $m$ = iterations, $n$ = collocation points.
-
-#### 5.1.2 Spectral Convergence Properties
-
-The Anderson method achieves exponential convergence due to:
-
-1. **Chebyshev interpolation**: Near-optimal polynomial approximation
-2. **Smooth boundary representation**: $H(\sqrt{\tau})$ transformation eliminates derivative singularities
-3. **High-order quadrature**: Gauss rules achieve optimal approximation order
-
-### 5.2 Memory Management Optimization
-
-#### 5.2.1 Object Pooling Strategy
-
-```csharp
-public class BoundaryComputationPool
-{
-    private readonly ConcurrentQueue<double[]> _nodeArrays;
-    private readonly ConcurrentQueue<double[]> _coefficientArrays;
-    
-    public (double[] nodes, double[] coefficients) Rent(int size)
-    {
-        // Reuse pre-allocated arrays to minimize GC pressure
-    }
-}
-```
-
-#### 5.2.2 Span<T> Utilization
-
-Critical loops utilize `Span<T>` for zero-allocation array operations:
-
-```csharp
-private void UpdateBoundaryValues(Span<double> boundaryValues, Span<double> newValues)
-{
-    // In-place updates without allocation
-    newValues.CopyTo(boundaryValues);
-}
-```
-
-### 5.3 Algorithmic Optimizations
-
-#### 5.3.1 Convergence Acceleration
-
-The engine implements Richardson extrapolation for boundary convergence:
-
-$$B_{extrapolated} = B_n + \frac{B_n - B_{n/2}}{2^p - 1}$$
-
-where $p$ is the convergence order estimate.
-
-#### 5.3.2 Early Termination Criteria
-
-Sophisticated stopping conditions prevent unnecessary iterations:
-
-```csharp
-private bool HasConverged(double[] current, double[] previous)
-{
-    double relativeChange = ComputeL2Norm(current, previous) / ComputeL2Norm(current);
-    double absoluteChange = ComputeMaxNorm(current, previous);
-    
-    return relativeChange < _relativeTolerance && absoluteChange < _absoluteTolerance;
-}
-```
-
-## 6. Greeks Computation
-
-### 6.1 Finite Difference Implementation
-
-The engine computes Greeks via optimized finite difference schemes:
-
-#### 6.1.1 Delta and Gamma Calculation
-
-$$\Delta = \frac{V(S+h) - V(S-h)}{2h}$$
-
-$$\Gamma = \frac{V(S+h) - 2V(S) + V(S-h)}{h^2}$$
-
-with adaptive step sizing:
-$$h = \max(10^{-4}, 0.001 \times S)$$
-
-#### 6.1.2 Vega Computation
-
-$$\nu = \frac{V(\sigma + h_\sigma) - V(\sigma - h_\sigma)}{2h_\sigma} \times 0.01$$
-
-where $h_\sigma = 0.001$ provides optimal accuracy/stability balance.
-
-#### 6.1.3 Theta Implementation
-
-$$\Theta = \frac{V(T-h_t) - V(T)}{h_t}$$
-
-with $h_t = 1/365$ (daily theta) and careful handling of near-expiry cases.
-
-### 6.2 Enhanced Accuracy Techniques
-
-#### 6.2.1 Richardson Extrapolation for Greeks
-
-For enhanced Greek accuracy:
-
-$$\Delta_{enhanced} = \frac{4\Delta(h/2) - \Delta(h)}{3}$$
-
-This fourth-order accurate scheme significantly improves Greek precision with minimal computational overhead.
-
-#### 6.2.2 Cross-Derivative Validation
-
-The engine validates Greeks through cross-derivative relationships:
-
-$$\frac{\partial\Delta}{\partial\tau} = \frac{\partial\Theta}{\partial S} + r\Delta - q\Delta_{dividend}$$
-
-## 7. Error Analysis and Validation
-
-### 7.1 Convergence Verification
-
-#### 7.1.1 Grid Convergence Studies
-
-The implementation includes automated convergence testing:
-
-```csharp
-public class ConvergenceAnalysis
-{
-    public ValidationResult VerifyConvergence(OptionContract contract, MarketData marketData)
-    {
-        var schemes = new[] { 
-            new QdFpLegendreScheme(8, 4, 8, 16),
-            new QdFpLegendreScheme(16, 8, 16, 32),
-            new QdFpLegendreScheme(32, 16, 32, 64)
-        };
-        
-        // Richardson extrapolation analysis
-        // Convergence rate estimation
-        // Error bound computation
-    }
-}
-```
-
-#### 7.1.2 Cross-Method Validation
-
-Critical validation against established methods:
-
-- **Put-Call Parity**: $C - P = S e^{-q\tau} - K e^{-r\tau}$
-- **European Limit**: American converges to European when exercise is never optimal
-- **Intrinsic Value**: American $\geq$ intrinsic value everywhere
-- **Monotonicity**: Boundary decreases with time for puts
-
-### 7.2 Benchmark Accuracy
-
-#### 7.2.1 Literature Benchmarks
-
-The engine achieves validated accuracy against published benchmarks:
-
-| Test Case | Anderson Result | Reference | Relative Error |
-|-----------|-----------------|-----------|----------------|
-| Barone-Adesi Case 1 | 4.478510 | 4.478507 | 6.7e-7 |
-| Kim Case A | 3.250421 | 3.250421 | < 1e-10 |
-| Broadie-Detemple 1 | 7.101508 | 7.101509 | 1.4e-7 |
-
-#### 7.2.2 Stress Testing
-
-Comprehensive stress testing across parameter ranges:
-
-- **High volatility**: $\sigma \in [0.5, 2.0]$
-- **Extreme rates**: $r \in [-0.05, 0.20]$
-- **Deep moneyness**: $S/K \in [0.1, 5.0]$
-- **Long maturity**: $T \in [0.01, 10]$ years
-
-## 8. Extension Capabilities
-
-### 8.1 Time-Dependent Parameters
-
-#### 8.1.1 Piecewise Constant Extensions
-
-The architecture supports piecewise constant parameter evolution:
-
-$$r(t) = \sum_{i=1}^n r_i \mathbf{1}_{[t_{i-1}, t_i)}(t)$$
-
-Modified integral equations become:
-
-$$V(\tau, S) = v(\tau, S) + \sum_{i=1}^n \int_{t_{i-1}}^{t_i} r_i K P(t,s) \Phi(-d_-(s-t, S/B(T-s))) ds$$
-
-where $P(t,s) = \exp(-\int_t^s r(u)du)$ is the discount factor.
-
-#### 8.1.2 Smooth Parameter Evolution
-
-For smooth parameter evolution $\sigma(t), r(t), q(t)$:
-
-$$d_\pm(s-t, z, t) = \frac{\ln(z \cdot Q(t,s)/P(t,s)) \pm \frac{1}{2}\Sigma(t,s)}{\sqrt{\Sigma(t,s)}}$$
-
-where:
-- $\Sigma(t,s) = \int_t^s \sigma^2(u)du$ (total variance)
-- $P(t,s) = \exp(-\int_t^s r(u)du)$ (discount factor)
-- $Q(t,s) = \exp(-\int_t^s q(u)du)$ (dividend factor)
-
-### 8.2 Multi-Asset Extensions
-
-#### 8.2.1 Exchange Option Framework
-
-For American exchange options with payoff $(c_1 S_1 - c_2 S_2)^+$:
-
-The system transforms via numeraire change to a single-asset problem:
-$$\tilde{S} = \frac{c_1 S_1}{c_2 S_2}, \quad \tilde{K} = 1$$
-
-with modified parameters:
-$$\tilde{r} = r - q_2, \quad \tilde{q} = q_1 - q_2, \quad \tilde{\sigma}^2 = \sigma_1^2 + \sigma_2^2 - 2\rho\sigma_1\sigma_2$$
-
-#### 8.2.2 Quanto Option Support
-
-For quanto options, the drift adjustment becomes:
-$$\tilde{r} = r - \rho_{S,FX}\sigma_S\sigma_{FX}$$
-
-where $\rho_{S,FX}$ is the correlation between asset and FX rate.
-
-### 8.3 Jump-Diffusion Extensions
-
-#### 8.3.1 Merton Jump-Diffusion
-
-For processes with jumps:
-$$dS = (\mu - \lambda k)S dt + \sigma S dW + S d\left(\sum_{i=1}^{N(t)} (J_i - 1)\right)$$
-
-The integral equation acquires additional terms:
-$$V = V_{BS} + V_{jump\_premium} + V_{early\_exercise}$$
-
-#### 8.3.2 Implementation Architecture
-
-```csharp
-public abstract class JumpDiffusionEngine : QdFpAmericanEngine
-{
-    protected abstract double ComputeJumpComponent(double S, double K, double r, double q, double vol, double T);
-    
-    public override double CalculatePut(double S, double K, double r, double q, double vol, double T)
-    {
-        double diffusionComponent = base.CalculatePut(S, K, r, q, vol, T);
-        double jumpComponent = ComputeJumpComponent(S, K, r, q, vol, T);
-        
-        return diffusionComponent + jumpComponent;
-    }
-}
-```
-
-## 9. Production Implementation Considerations
-
-### 9.1 Real-Time Risk Management
-
-#### 9.1.1 Portfolio-Level Optimizations
-
-For portfolio Greeks computation, the engine supports:
-
-```csharp
-public class PortfolioRiskEngine
-{
-    public PortfolioGreeks ComputePortfolioRisk(Portfolio portfolio, MarketData marketData)
-    {
-        // Parallel processing across instruments
-        // Shared boundary computations for similar contracts
-        // Vectorized Greeks computation
-        // Risk aggregation with proper correlations
-    }
-}
-```
-
-#### 9.1.2 Incremental Recalculation
-
-Smart invalidation strategies for parameter changes:
-
-- **Volatility shift**: Recompute boundary, preserve interpolation structure
-- **Rate shift**: Fast analytical adjustment for small changes
-- **Spot movement**: Greeks update without boundary recalculation
-
-### 9.2 Multi-Threading Architecture
-
-#### 9.2.1 Thread-Safe Design
-
-```csharp
-[ThreadSafe]
-public class QdFpAmericanEngine
-{
-    // Immutable configuration
-    private readonly IQdFpIterationScheme _scheme;
-    
-    // Thread-local working memory
-    [ThreadStatic]
-    private static BoundaryWorkspace? _workspace;
-    
-    public double CalculatePut(/* parameters */)
-    {
-        var workspace = _workspace ??= new BoundaryWorkspace();
-        // All state contained in local workspace
-    }
-}
-```
-
-#### 9.2.2 Parallel Portfolio Processing
-
-```csharp
-public async Task<PricingResult[]> PricePortfolioAsync(OptionContract[] contracts, MarketData marketData)
-{
-    return await Task.WhenAll(
-        contracts.Select(contract => 
-            Task.Run(() => Price(contract, marketData))
-        )
-    );
-}
-```
-
-### 9.3 Numerical Stability Enhancements
-
-#### 9.3.1 Precision Management
-
-```csharp
-public class PrecisionManager
-{
-    public static double EnsurePositive(double value, double minimum = 1e-15)
-    {
-        return Math.Max(value, minimum);
-    }
-    
-    public static bool IsNearZero(double value, double tolerance = 1e-12)
-    {
-        return Math.Abs(value) < tolerance;
-    }
-}
-```
-
-#### 9.3.2 Overflow Protection
-
-Careful handling of extreme parameter combinations:
-
-```csharp
-private double SafeExponential(double x)
-{
-    const double MaxExp = 700.0; // ln(1e304)
-    return Math.Exp(Math.Max(-MaxExp, Math.Min(MaxExp, x)));
-}
-```
-
-## 10. Future Research Directions
-
-### 10.1 Machine Learning Integration
-
-#### 10.1.1 Boundary Prediction Networks
-
-Research into neural network architectures for boundary initialization:
-
-$$B_{NN}(\tau; \theta) = \text{Neural Network}(\tau, S, K, r, q, \sigma; \theta)$$
-
-where $\theta$ represents learned parameters from extensive training data.
-
-#### 10.1.2 Adaptive Quadrature Selection
-
-ML-driven selection of optimal integration schemes based on problem characteristics:
-
-```csharp
-public interface IIntegratorSelector
-{
-    IIntegrator SelectOptimalIntegrator(ProblemCharacteristics characteristics);
-}
-```
-
-### 10.2 Quantum Computing Extensions
-
-#### 10.2.1 Quantum Amplitude Estimation
-
-Investigation of quantum algorithms for option pricing:
-
-- **Quantum Monte Carlo**: Quadratic speedup for path-dependent options
-- **Quantum PDE Solvers**: Exponential speedup for certain differential equations
-- **Quantum Optimization**: Enhanced boundary search algorithms
-
-#### 10.2.2 Hybrid Classical-Quantum Architecture
-
-```csharp
-public abstract class QuantumEnhancedEngine : QdFpAmericanEngine
-{
-    protected abstract Task<double> QuantumAcceleratedIntegration(Func<double, double> integrand, double a, double b);
-    
-    // Fallback to classical methods when quantum hardware unavailable
-}
-```
-
-### 10.3 Stochastic Volatility Extensions
-
-#### 10.3.1 Heston Model Integration
-
-Extension to stochastic volatility:
-
-$$dS = rS dt + \sqrt{v}S dW_1$$
-$$dv = \kappa(\theta - v)dt + \sigma_v\sqrt{v}dW_2$$
-
-With correlation $dW_1 dW_2 = \rho dt$.
-
-#### 10.3.2 Multi-Factor Models
-
-Support for multi-factor stochastic volatility models with regime switching capabilities.
-
-## 11. Conclusion
-
-The Anderson derivative pricing engine represents a quantum leap in computational finance, combining theoretical rigor with practical implementation excellence. The spectral collocation methodology achieves unprecedented accuracy while maintaining computational efficiency suitable for real-time risk management applications.
-
-Key architectural strengths include:
-
-1. **Mathematical Rigor**: Solid theoretical foundation with provable convergence properties
-2. **Computational Efficiency**: 100,000+ options per second throughput capability
-3. **Numerical Stability**: Robust handling of extreme market conditions
-4. **Extensibility**: Clean architecture supporting advanced extensions
-5. **Production Readiness**: Thread-safe design with comprehensive error handling
-
-The engine's ability to handle both single and double boundary cases positions it uniquely for modern derivatives markets where negative interest rates and complex boundary topologies have become increasingly relevant.
-
-Future developments will focus on machine learning integration, quantum computing enhancements, and advanced multi-asset capabilities, ensuring the Anderson engine remains at the forefront of computational finance innovation.
-
-The combination of spectral accuracy, architectural elegance, and production robustness makes this engine an invaluable tool for quantitative finance professionals demanding both precision and performance in their derivative pricing infrastructure.
+This engine architecture represents a significant advancement in computational finance, providing a definitive mathematical solution to the long-standing problem of American option pricing that is fit for the demands of modern financial markets.
 
 ## References
 
-1. Andersen, L.B., Lake, M., and Offengenden, D. (2016). "High-performance American option pricing." *Journal of Computational Finance*, 20(1), 39-87.
-
-2. Andersen, L. and Lake, M. (2021). "Fast American Option Pricing: The Double-Boundary Case." *Wilmott Magazine*, 2021(116), 32-40.
-
-3. Healy, J. (2021). "Pricing American options under negative rates." *Journal of Computational Finance*, 25(1), 1-27.
-
-4. Li, M. (2010). "Analytical approximations for the critical stock prices of American options: A performance comparison." *Review of Derivatives Research*, 13, 75-99.
-
-5. Kim, I.J. (1990). "The analytic valuation of American options." *The Review of Financial Studies*, 3(4), 547-572.
-
-6. Battauz, A., De Donno, M., and Sbuelz, A. (2015). "Real options and American derivatives: The double continuation region." *Management Science*, 61(5), 1094-1107.
-
-7. Broadie, M. and Detemple, J. (1996). "American option valuation: New bounds, approximations, and a comparison of existing methods." *The Review of Financial Studies*, 9(4), 1211-1250.
-
----
-
-*This method paper serves as comprehensive documentation for the Anderson derivative pricing engine architecture, providing both theoretical foundations and practical implementation guidance for advanced computational finance applications.*
+1.  Andersen, L. B., Lake, M., and Offengenden, D. 2016. High-performance American option pricing. *Journal of Computational Finance* 20(1), 39-87. 
+2.  Andersen, L. and Lake, M. 2021. Fast American Option Pricing: The Double-Boundary Case. *Wilmott Magazine*, 2021(116), 32-40. 
+3.  Barone-Adesi, G., and Whaley, R. 1987. Efficient Analytical Approximation of American Option Values. *Journal of Finance*, 42, 301-320. 
+4.  Battauz, A., De Donno, M., and Sbuelz, A. 2015. Real options and American derivatives: The double continuation region. *Management Science* 61(5), 1094-1107. 
+5.  Cortazar, G., Medina, L., and Naranjo, L. 2013. A Parallel Algorithm for Pricing American Options. *Working Paper, Pontificia Universidad Católica de Chile*. 
+6.  Healy, J. 2021. Pricing American options under negative rates. *Journal of Computational Finance*, 25(1), 1-27. 
+7.  Ikonen, S. and Toivanen, J. 2007. Pricing american options using lu decomposition. *Applied Mathematical Sciences* 1(51), 2529-2551. 
+8.  Jaillet, P., Lamberton, D., and Lapeyre, B. 1990. Variational inequalities and the pricing of American options. *Acta Applicandae Mathematicae* 21(3), 263-289. 
+9.  Ju, N. and Zhong, R. 1999. An approximate formula for pricing American Options. *Journal of Derivatives*, 7, 31-40. 
+10. Kim, I. J. 1990. The analytic valuation of American options. *Review of Financial Studies* 3(4), 547-572. 
+11. Kim, I., Jang, B.-G., and Kim, K. 2013. A simple iterative method for the valuation of American options. *Quantitative Finance*, 13(6), 885-895. 
+12. Le Floc'h, F. 2022. Double sweep LU decomposition for American options under negative rates. *arXiv:2203.08794v1*. 
+13. Li, M. 2010. Analytical approximations for the critical stock prices of American options: A performance comparison. *Review of Derivatives Research*, 13, 75-99. 
+14. McDonald, R. and Schroder, M. 1998. A Parity Result for American Options. *Journal of Computational Finance*, 1, 5-13. 
