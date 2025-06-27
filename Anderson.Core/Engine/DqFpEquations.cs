@@ -167,4 +167,4 @@ namespace Anderson.Engine
             return (Distributions.NormalDensity(d_minus) * common, Distributions.NormalDensity(d_plus) * common);
         }
     }
-}
+}   
