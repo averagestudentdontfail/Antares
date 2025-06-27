@@ -4,6 +4,11 @@ using Anderson.Integrator;
 
 namespace Anderson.Engine
 {
+    /// <summary>
+    /// Abstract base class for the fixed-point iteration equations (FP-A and FP-B).
+    /// It defines the contract for calculating the numerator (N), denominator (D),
+    /// and the resulting fixed-point value (Fv) of the boundary equation.
+    /// </summary>
     public abstract class DqFpEquation
     {
         protected readonly double K, r, q, vol;
@@ -16,9 +21,20 @@ namespace Anderson.Engine
             this.GetBoundary = getBoundary; this.Integrator = integrator;
         }
 
+        /// <summary>
+        /// Calculates the Numerator (N), Denominator (D), and the resulting Fixed-point Value (Fv) for the boundary equation at a given time tau and boundary value b.
+        /// </summary>
         public abstract (double N, double D, double Fv) F(double tau, double b);
+
+        /// <summary>
+        /// Calculates the derivatives of the non-integral parts of the Numerator (Nd) and Denominator (Dd) with respect to the boundary value.
+        /// Used for the Jacobi-Newton iteration step.
+        /// </summary>
         public abstract (double Nd, double Dd) NDd(double tau, double b);
 
+        /// <summary>
+        /// Helper method to calculate the Black-Scholes d-plus and d-minus values.
+        /// </summary>
         protected (double dp, double dm) CalculateD(double t, double z)
         {
             double v = vol * Math.Sqrt(t);
@@ -28,12 +44,19 @@ namespace Anderson.Engine
             return (m + 0.5 * v, m - 0.5 * v);
         }
         
+        /// <summary>
+        /// Helper method for floating point comparison.
+        /// </summary>
         protected static bool IsClose(double a, double b)
         {
             return Math.Abs(a - b) < 1e-9;
         }
     }
 
+    /// <summary>
+    /// Implements the "System A" (FP-A) fixed-point equation, derived from the smooth-pasting condition.
+    /// This version contains the corrected discount factor implementation.
+    /// </summary>
     public class DqFpEquation_A : DqFpEquation
     {
         public DqFpEquation_A(double k, double r, double q, double vol, Func<double, double> getBoundary, IIntegrator integrator)
@@ -49,23 +72,27 @@ namespace Anderson.Engine
             double sqrt_tau = Math.Sqrt(tau);
             double v = vol * sqrt_tau;
 
+            // Integrand for the K1 and K2 terms in the denominator, using the corrected discount factor.
             Func<double, double> k12_integrand = y =>
             {
                 double m = 0.25 * tau * Math.Pow(1 + y, 2);
                 (double dp, _) = CalculateD(m, b / GetBoundary(tau - m));
-                // This is the correct discount factor logic for this change of variables
-                return Math.Exp(q * m) * (0.5 * tau * (y + 1) * Distributions.CumulativeNormal(dp) + sqrt_tau / vol * Distributions.NormalDensity(dp));
+                // CORRECTED: The exponential term's sign is now negative, aligning with the paper's variable transformation.
+                return Math.Exp(-q * m) * (0.5 * tau * (y + 1) * Distributions.CumulativeNormal(dp) + sqrt_tau / vol * Distributions.NormalDensity(dp));
             };
-            double K12 = Integrator.Integrate(k12_integrand, -1, 1);
+            // The e^(q*tau) term is applied here, outside the integral, as per the paper's formulation.
+            double K12 = Math.Exp(q * tau) * Integrator.Integrate(k12_integrand, -1, 1);
 
+            // Integrand for the K3 term in the numerator, using the corrected discount factor.
             Func<double, double> k3_integrand = y =>
             {
                 double m = 0.25 * tau * Math.Pow(1 + y, 2);
                 (_, double dm) = CalculateD(m, b / GetBoundary(tau - m));
-                // This is the correct discount factor logic for this change of variables
-                return Math.Exp(r * m) * sqrt_tau / vol * Distributions.NormalDensity(dm);
+                // CORRECTED: The exponential term's sign is now negative.
+                return Math.Exp(-r * m) * sqrt_tau / vol * Distributions.NormalDensity(dm);
             };
-            double K3 = Integrator.Integrate(k3_integrand, -1, 1);
+            // The e^(r*tau) term is applied here.
+            double K3 = Math.Exp(r * tau) * Integrator.Integrate(k3_integrand, -1, 1);
             
             (double d_plus_K, double d_minus_K) = CalculateD(tau, b / K);
             double N_val = Distributions.NormalDensity(d_minus_K) / v + r * K3;
@@ -78,15 +105,19 @@ namespace Anderson.Engine
         public override (double Nd, double Dd) NDd(double tau, double b)
         {
             (double d_plus, double d_minus) = CalculateD(tau, b / K);
-            double v_tau = vol * vol * tau;
+            double v_tau_sq = vol * vol * tau;
             
-            double Dd = -Distributions.NormalDensity(d_plus) * d_plus / (b * v_tau) + Distributions.NormalDensity(d_plus) / (b * vol * Math.Sqrt(tau));
-            double Nd = -Distributions.NormalDensity(d_minus) * d_minus / (b * v_tau);
+            double Dd = -Distributions.NormalDensity(d_plus) * d_plus / (b * v_tau_sq) + Distributions.NormalDensity(d_plus) / (b * vol * Math.Sqrt(tau));
+            double Nd = -Distributions.NormalDensity(d_minus) * d_minus / (b * v_tau_sq);
 
             return (Nd, Dd);
         }
     }
     
+    /// <summary>
+    /// Implements the "System B" (FP-B) fixed-point equation, derived from the value-matching condition.
+    /// This implementation was already correct.
+    /// </summary>
     public class DqFpEquation_B : DqFpEquation
     {
         public DqFpEquation_B(double k, double r, double q, double vol, Func<double, double> getBoundary, IIntegrator integrator)
