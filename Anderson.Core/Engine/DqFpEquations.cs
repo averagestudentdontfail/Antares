@@ -116,7 +116,6 @@ namespace Anderson.Engine
     
     /// <summary>
     /// Implements the "System B" (FP-B) fixed-point equation, derived from the value-matching condition.
-    /// This implementation was already correct.
     /// </summary>
     public class DqFpEquation_B : DqFpEquation
     {
