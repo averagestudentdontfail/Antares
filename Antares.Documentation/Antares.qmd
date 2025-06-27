@@ -1,10 +1,177 @@
-# The Antares Spectral Collocation Framework: A Unified Mathematical Architecture for High-Performance American Option Pricing Under Arbitrary Interest Rate Regimes
+---
+title: "The Antares Spectral Collocation Framework"
+author: "Kiran K. Nath"
+date: "June 27, 2025"
+abstract: |
+  This paper presents the complete mathematical foundation and implementation methodology of the Antares derivatives pricing engine, a comprehensive computational framework designed for the valuation of American-style options across all interest rate environments. The architecture unifies the treatment of standard single exercise boundary configurations with the complex double-boundary topologies that emerge under negative interest rate conditions through sophisticated spectral collocation techniques. By transforming the classical free-boundary problem into a system of non-linear integral equations for the optimal exercise boundaries, the framework achieves exponential convergence rates while maintaining computational throughput exceeding one hundred thousand option valuations per second. The methodology employs Chebyshev polynomial interpolation on carefully transformed boundary functions, advanced integral equation formulations derived from optimal stopping theory, and accelerated fixed-point iteration schemes that decouple the computation of multiple boundaries. This comprehensive treatment provides both the theoretical foundation and practical implementation details necessary for constructing a production-grade derivatives pricing system capable of handling the full spectrum of market conditions encountered in modern financial environments.
 
-## Abstract
+keywords: [American Option Pricing, Early Exercise, Boundary Topology, Spectral Collocation, Chebyshev Polynomial Interpolation]
+jel: [G11, G13, G14, C58]
 
-This paper presents the complete mathematical foundation and implementation methodology of the Antares derivatives pricing engine, a comprehensive computational framework designed for the valuation of American-style options across all interest rate environments. The architecture unifies the treatment of standard single exercise boundary configurations with the complex double-boundary topologies that emerge under negative interest rate conditions through sophisticated spectral collocation techniques. By transforming the classical free-boundary problem into a system of non-linear integral equations for the optimal exercise boundaries, the framework achieves exponential convergence rates while maintaining computational throughput exceeding one hundred thousand option valuations per second. The methodology employs Chebyshev polynomial interpolation on carefully transformed boundary functions, advanced integral equation formulations derived from optimal stopping theory, and accelerated fixed-point iteration schemes that decouple the computation of multiple boundaries. This comprehensive treatment provides both the theoretical foundation and practical implementation details necessary for constructing a production-grade derivatives pricing system capable of handling the full spectrum of market conditions encountered in modern financial environments.
+# Document formatting
+format:
+  html:
+    theme: 
+      - cosmo
+      - Styling.scss
+    mainfont: "Source Serif Pro"
+    sansfont: "Source Sans Pro" 
+    monofont: "Source Code Pro"
+    fontsize: 12pt
+    linestretch: 1.6
+    toc: true
+    toc-depth: 4
+    toc-location: left
+    toc-title: "Contents"
+    number-sections: true
+    number-depth: 3
+    code-fold: false
+    code-tools: false
+    code-copy: false
+    html-math-method: katex
+    fig-cap-location: bottom
+    tbl-cap-location: top
+    citations-hover: true
+    footnotes-hover: true
+    smooth-scroll: true
+    anchor-sections: true
+    link-external-newwindow: true
+    highlight-style: github
+    grid:
+      sidebar-width: 300px
+      body-width: 900px
+      margin-width: 300px
+    page-layout: article
+    
+  pdf:
+    documentclass: article
+    classoption: [11pt, letterpaper, onecolumn]
+    geometry: 
+      - top=1.2in
+      - bottom=1.2in
+      - left=1.25in
+      - right=1.25in
+    fontfamily: mathpazo
+    fontsize: 11pt
+    linestretch: 1.5
+    number-sections: true
+    colorlinks: true
+    linkcolor: NavyBlue
+    urlcolor: NavyBlue
+    citecolor: NavyBlue
+    toccolor: black
+    fig-pos: "H"
+    tbl-pos: "H"
+    lot: false
+    lof: false
+    keep-tex: true
+    pdf-engine: pdflatex
+    cite-method: biblatex
+    biblio-style: apa
+    biblatexoptions: [backend=biber, style=apa, natbib=true]
+    include-in-header:
+      - text: |
+          \usepackage{booktabs}
+          \usepackage{longtable}
+          \usepackage{array}
+          \usepackage{multirow}
+          \usepackage{wrapfig}
+          \usepackage{float}
+          \usepackage{colortbl}
+          \usepackage{pdflscape}
+          \usepackage{tabu}
+          \usepackage{threeparttable}
+          \usepackage{threeparttablex}
+          \usepackage[normalem]{ulem}
+          \usepackage{makecell}
+          \usepackage{xcolor}
+          \usepackage{amsmath}
+          \usepackage{amsfonts}
+          \usepackage{amssymb}
+          \usepackage{mathtools}
+          \usepackage{bm}
+          \usepackage{microtype}
+          \usepackage{setspace}
+          \usepackage{fancyhdr}
+          \usepackage{titlesec}
+          \usepackage{caption}
+          
+          % Table and figure captions
+          \captionsetup[table]{skip=12pt, font=small, labelfont=bf}
+          \captionsetup[figure]{skip=12pt, font=small, labelfont=bf}
+          
+          % Professional section formatting
+          \titleformat{\section}{\large\bfseries\sffamily\color{NavyBlue}}{\thesection}{1em}{}
+          \titlespacing*{\section}{0pt}{24pt}{12pt}
+          
+          \titleformat{\subsection}{\normalsize\bfseries\sffamily\color{NavyBlue}}{\thesubsection}{1em}{}
+          \titlespacing*{\subsection}{0pt}{18pt}{9pt}
+          
+          \titleformat{\subsubsection}{\normalsize\bfseries\sffamily\color{NavyBlue}}{\thesubsubsection}{1em}{}
+          \titlespacing*{\subsubsection}{0pt}{12pt}{6pt}
+          
+          % Custom colors matching your theme
+          \definecolor{sunnyyellow}{RGB}{255, 223, 0}
+          \definecolor{sunnyblue}{RGB}{30, 144, 255}
+          \definecolor{sunnygray}{RGB}{248, 249, 250}
+          
+          % Professional header and footer
+          \pagestyle{fancy}
+          \fancyhf{}
+          \rhead{\small\thepage}
+          \lhead{\small\textit{The Sunny Algorithm}}
+          \renewcommand{\headrulewidth}{0.5pt}
+          \renewcommand{\headrule}{\hbox to\headwidth{\color{NavyBlue}\leaders\hrule height \headrulewidth\hfill}}
+          \setlength{\headheight}{14pt}
+          
+          % Better typography and spacing
+          \setlength{\emergencystretch}{3em}
+          \tolerance=9999
+          \hbadness=10000
+          \raggedbottom
+          
+          % Paragraph spacing
+          \setlength{\parskip}{8pt}
+          \setlength{\parindent}{0pt}
+          
+          % Better table spacing
+          \renewcommand{\arraystretch}{1.2}
+          
+          % Abstract formatting
+          \renewenvironment{abstract}
+            {\small\quotation\noindent\rule{\linewidth}{.5pt}\par\smallskip
+             \noindent\textbf{Abstract.}\space}
+            {\par\smallskip\noindent\rule{\linewidth}{.5pt}\endquotation}
 
-## 1. Introduction
+# Bibliography and references  
+bibliography: References.bib
+csl: Finance.csl
+link-citations: true
+reference-section-title: "References"
+
+# Execution and render options
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: true
+  freeze: auto
+
+# Cross-referencing
+crossref:
+  fig-title: "Figure"
+  tbl-title: "Table"
+  eq-title: "Equation"
+  title-delim: ":"
+  fig-prefix: "Figure"
+  tbl-prefix: "Table"
+  eq-prefix: "Equation"
+
+# Language and locale
+lang: en-US
+---
+
+## Introduction
 
 The valuation of American-style derivative securities represents one of the most computationally demanding challenges in quantitative finance, primarily due to the optimal stopping feature that introduces a free boundary separating the continuation region from the exercise region. Unlike European options, where analytical solutions exist under the Black-Scholes framework, American options require the simultaneous determination of both the option value and the optimal exercise strategy, creating a coupled problem of considerable mathematical complexity. Traditional numerical approaches, including binomial and trinomial tree methods, finite difference schemes, and Monte Carlo techniques, typically exhibit algebraic convergence rates that necessitate substantial computational resources to achieve high precision results.
 
@@ -18,7 +185,7 @@ The framework incorporates advanced mathematical transformations at multiple lev
 
 This comprehensive methodology enables the construction of a production-grade derivatives pricing system that maintains both exceptional accuracy and computational efficiency across the full range of market conditions. The framework handles positive and negative interest rates with equal facility, adapts automatically to single or double boundary topologies based on parameter configurations, and provides machine-precision accuracy for option prices and their sensitivities. The mathematical rigor of the approach ensures robust performance across extreme parameter ranges while the efficient implementation enables real-time applications in risk management and trading systems.
 
-## 2. Mathematical Foundation and Process Dynamics
+## Mathematical Foundation and Process Dynamics
 
 The mathematical foundation of the Antares framework rests upon the assumption that the underlying asset price follows a geometric Brownian motion under the risk-neutral probability measure. This fundamental modeling choice, while representing a considerable simplification of actual market dynamics, provides the mathematical tractability necessary for developing high-performance computational algorithms while maintaining sufficient realism for practical applications.
 
@@ -46,7 +213,7 @@ For options on futures contracts, a particularly important special case arises w
 
 The framework accommodates negative values of both $r$ and $q$, a capability that has become increasingly important in modern financial markets. When $r < 0$, the traditional interpretation of the risk-free rate as the return on a riskless investment requires careful reconsideration, but the mathematical structure of the pricing problem remains well-defined. Similarly, negative dividend yields, which can arise in markets with significant borrowing costs or convenience yields, are naturally incorporated into the framework without requiring special mathematical treatment.
 
-## 3. The American Option Valuation Problem
+## The American Option Valuation Problem
 
 The American option presents a fundamentally different mathematical challenge compared to its European counterpart due to the embedded optimal stopping feature. While European options have a fixed exercise date, American options grant the holder the right to exercise at any time prior to expiration, creating a dynamic optimization problem that must be solved in conjunction with the valuation problem.
 
@@ -92,7 +259,7 @@ $$\frac{1}{2}\sigma^2 \theta^2 + (r-q-\frac{1}{2}\sigma^2)\theta - r = 0$$
 
 This long-term behavior provides important boundary conditions for numerical algorithms and serves as a check on the accuracy of computed solutions.
 
-## 4. Integral Equation Formulation
+## Integral Equation Formulation
 
 The transformation of the American option problem from a partial differential equation with free boundaries to an integral equation represents one of the most significant mathematical innovations in derivatives pricing. This reformulation, originally developed by Kim and later refined by numerous researchers, provides the foundation for highly efficient numerical algorithms while offering deeper insight into the economic structure of the early exercise premium.
 
@@ -132,7 +299,7 @@ This non-linear integral equation for $B(\tau)$ forms the foundation of the nume
 
 The mathematical structure of these integral equations reveals several important properties. The kernel functions $\Phi(-d_{\pm}(\tau-u,B(\tau)/B(u)))$ are smooth and well-behaved for $u < \tau$, ensuring that standard numerical integration techniques can achieve high accuracy. The dependence of the integrand on the boundary function at different time points creates a Volterra-type integral equation that can be solved iteratively through fixed-point methods.
 
-## 5. Double Boundary Phenomena Under Negative Interest Rates
+## Double Boundary Phenomena Under Negative Interest Rates
 
 The emergence of negative interest rates in major financial markets has revealed a fascinating mathematical phenomenon that was largely overlooked in classical option pricing theory. Under certain combinations of negative interest rates and dividend yields, the optimal exercise region for American options can assume a qualitatively different topology, characterized by two distinct boundaries rather than the single boundary assumed in traditional models.
 
@@ -175,7 +342,7 @@ For the upper boundary $B(\tau)$, applying the value-matching condition at asset
 
 This decoupling property dramatically simplifies the computational problem, allowing the two boundaries to be computed through separate iterations rather than solving a coupled system. The mathematical basis for this decoupling lies in the principle that for asset prices outside the exercise interval, the option value depends only on the boundary that would be encountered first by the diffusion process.
 
-## 6. Spectral Collocation Methodology
+## Spectral Collocation Methodology
 
 The numerical solution of the integral equations governing American option pricing presents significant computational challenges due to the non-linear and non-local nature of the problem. Traditional approaches such as finite difference methods or simple quadrature schemes typically exhibit algebraic convergence rates, requiring substantial computational resources to achieve high precision. The Antares framework addresses these challenges through a sophisticated spectral collocation methodology that achieves exponential convergence rates while maintaining computational efficiency.
 
@@ -219,7 +386,7 @@ The accuracy of the spectral collocation approach depends critically on the smoo
 
 The efficiency of the spectral method extends beyond the boundary representation to the evaluation of the integral operators that appear in the fixed-point equations. The smooth nature of the transformed boundary enables the use of high-order quadrature rules that achieve exponential convergence with minimal function evaluations. The method employs Gauss-Legendre quadrature for smooth integrands and tanh-sinh quadrature for integrands with endpoint singularities.
 
-## 7. Advanced Numerical Techniques and Transformations
+## Advanced Numerical Techniques and Transformations
 
 The exceptional performance of the Antares framework derives not only from the spectral collocation approach but also from a suite of advanced numerical techniques that address the specific mathematical challenges arising in American option pricing. These techniques include sophisticated transformations for handling integral singularities, accelerated iteration schemes for rapid convergence, and adaptive algorithms that automatically adjust computational parameters based on problem characteristics.
 
@@ -261,7 +428,7 @@ For the double-boundary case, the initialization process is more complex due to 
 
 In cases where the boundaries intersect, the framework includes algorithms for detecting and accurately computing the intersection time $\tau^*$. This computation is performed through a combination of interval bisection and higher-order root-finding methods applied to the equation $B(\tau^*) = Y(\tau^*)$. The accurate determination of $\tau^*$ is crucial for the correct evaluation of the option price integral, as the integration domain depends on whether the current time to maturity exceeds the intersection time.
 
-## 8. Implementation Architecture and Computational Optimization
+## Implementation Architecture and Computational Optimization
 
 The translation of the mathematical framework into a high-performance computational system requires careful attention to algorithmic efficiency, numerical stability, and software architecture. The Antares implementation employs a modular design that separates the mathematical algorithms from the computational infrastructure, enabling both flexibility in method selection and optimization for specific hardware architectures.
 
@@ -287,7 +454,7 @@ Parallel computation capabilities enable the framework to exploit modern multi-c
 
 The software architecture emphasizes modularity and extensibility to facilitate future enhancements and customizations. The mathematical algorithms are encapsulated in self-contained modules with well-defined interfaces, enabling easy modification of specific components without affecting the overall system. This design facilitates the incorporation of alternative mathematical formulations, experimental algorithms, and specialized optimizations for particular market segments.
 
-## 9. Mathematical Validation and Convergence Analysis
+## Mathematical Validation and Convergence Analysis
 
 The rigorous validation of the Antares framework requires comprehensive mathematical analysis of convergence properties, error bounds, and numerical stability across the full range of supported parameter values. This analysis combines theoretical convergence results from spectral approximation theory with extensive empirical testing using both synthetic benchmarks and market data.
 
@@ -315,7 +482,7 @@ The validation suite includes extensive testing with extreme parameter values th
 
 Error estimation capabilities enable real-time assessment of solution quality without requiring expensive benchmark computations. The framework employs multiple error indicators, including Richardson extrapolation estimates based on solutions with different numbers of collocation points, iteration residual monitoring, and comparison with asymptotic formulas in limiting cases.
 
-## 10. Performance Characteristics and Computational Complexity
+## Performance Characteristics and Computational Complexity
 
 The computational performance of the Antares framework represents a significant advancement over traditional American option pricing methods, achieving execution speeds that enable real-time portfolio valuation while maintaining exceptional numerical accuracy. The performance characteristics result from the synergistic combination of mathematical innovations and computational optimizations embedded throughout the framework architecture.
 
@@ -341,7 +508,7 @@ The performance characteristics remain stable across different market conditions
 
 Comparison with other high-performance American option pricing methods demonstrates the competitive advantages of the spectral approach. The framework typically achieves accuracy comparable to finite difference methods with thousands of grid points while executing in a fraction of the computational time. Similarly, the method provides deterministic results with guaranteed accuracy bounds, unlike Monte Carlo approaches that provide only statistical estimates with confidence intervals.
 
-## 11. Extensions and Future Developments
+## Extensions and Future Developments
 
 The mathematical foundation of the Antares framework provides a robust platform for numerous extensions and enhancements that can address additional market segments and computational challenges. The spectral collocation methodology generalizes naturally to more complex derivative structures, alternative underlying process models, and advanced risk management applications.
 
