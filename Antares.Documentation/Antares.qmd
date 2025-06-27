@@ -119,7 +119,7 @@ format:
           \pagestyle{fancy}
           \fancyhf{}
           \rhead{\small\thepage}
-          \lhead{\small\textit{The Sunny Algorithm}}
+          \lhead{\small\textit{The Antares Architecture}}
           \renewcommand{\headrulewidth}{0.5pt}
           \renewcommand{\headrule}{\hbox to\headwidth{\color{NavyBlue}\leaders\hrule height \headrulewidth\hfill}}
           \setlength{\headheight}{14pt}
