@@ -1,35 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework> 
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <OutputPath>Release\bin</OutputPath>
-    <IntermediateOutputPath>Release\obj</IntermediateOutputPath>
+    <!-- Build configuration handled by Directory.Build.props -->
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
   </ItemGroup>
 </Project>
-
-<!-- Antares.GUI/Antares.GUI.csproj -->
-<!-- Solution Structure:
-Antares.DerivativePricing/
-├── Antares.Core/                 # Core pricing engine library
-│   ├── Model/                   # Domain model
-│   ├── Distribution/             # Existing distribution code
-│   ├── Engine/                   # Existing engine code  
-│   ├── Integrator/              # Existing integrator code
-│   ├── Interpolation/           # Existing interpolation code
-│   ├── Root/                    # Existing root finding code
-│   └── Antares.Core.csproj
-├── Antares.GUI/                 # WPF GUI application
-│   ├── Views/
-│   ├── ViewModels/
-│   ├── Controls/
-│   └── Antares.GUI.csproj
-├── Antares.Console/             # Console test application
-│   └── Antares.Console.csproj
-└── Antares.DerivativePricing.sln
--->
