@@ -59,7 +59,7 @@ namespace Antares.Engine
                 ? new DqFpEquation_A(K, r, q, vol, B_func, _scheme.GetFixedPointIntegrator())
                 : new DqFpEquation_B(K, r, q, vol, B_func, _scheme.GetFixedPointIntegrator());
 
-            SolveFixedPoint(equation, boundaryInterp, sqrtT, T, xmax);
+            SolveFixedPoint(equation, boundaryInterp, sqrtT, T, xmax, K, r, q);
             
             var addOnValueFunc = new QdPlusAddOnValue(T, S, K, r, q, vol, xmax, boundaryInterp);
             double addOn = _scheme.GetExerciseBoundaryToPriceIntegrator().Integrate(addOnValueFunc.Evaluate, 0.0, sqrtT);
@@ -89,7 +89,7 @@ namespace Antares.Engine
         }
 
         private void SolveFixedPoint(DqFpEquation equation, ChebyshevInterpolation boundaryInterp, 
-            double sqrtT, double T, double xmax)
+            double sqrtT, double T, double xmax, double K, double r, double q)
         {
             double[] z_nodes = boundaryInterp.Nodes();
             double[] h_values = boundaryInterp.Values();

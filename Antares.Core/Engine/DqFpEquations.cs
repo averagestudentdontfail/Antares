@@ -160,11 +160,11 @@ namespace Antares.Engine
             {
                 if (u >= tau - 1e-12)
                 {
-                    double boundary_at_u = GetBoundary(u);
-                    if (IsClose(b, boundary_at_u))
+                    double boundary_u = GetBoundary(u);
+                    if (IsClose(b, boundary_u))
                         return 0.5 * Math.Exp(r * u);
                     else
-                        return (b < boundary_at_u ? 0.0 : 1.0) * Math.Exp(r * u);
+                        return (b < boundary_u ? 0.0 : 1.0) * Math.Exp(r * u);
                 }
                 
                 double time_remaining = tau - u;
@@ -190,11 +190,11 @@ namespace Antares.Engine
             {
                 if (u >= tau - 1e-12)
                 {
-                    double boundary_at_u = GetBoundary(u);
-                    if (IsClose(b, boundary_at_u))
+                    double boundary_u = GetBoundary(u);
+                    if (IsClose(b, boundary_u))
                         return 0.5 * Math.Exp(q * u);
                     else
-                        return (b < boundary_at_u ? 0.0 : 1.0) * Math.Exp(q * u);
+                        return (b < boundary_u ? 0.0 : 1.0) * Math.Exp(q * u);
                 }
                 
                 double time_remaining = tau - u;
