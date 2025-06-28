@@ -126,7 +126,7 @@ namespace Antares.Engine
                 {
                     double v_rem = vol * Math.Sqrt(time_remaining);
                     double density_factor = phi_dp / v_rem;
-                    double interest_term = r * phi_dm / v_rem;
+                    double interest_term = phi_dm / v_rem;
                     
                     return jacobian * (q * dq_u * density_factor + r * dr_u * interest_term);
                 }
@@ -206,19 +206,19 @@ namespace Antares.Engine
             {
                 if (u >= tau - 1e-12)
                 {
-                    double boundary_u_val = GetBoundary(u);
-                    if (IsClose(b, boundary_u_val))
+                    double boundary_at_u = GetBoundary(u);
+                    if (IsClose(b, boundary_at_u))
                         return 0.5 * Math.Exp(r * u);
                     else
-                        return (b < boundary_u_val ? 0.0 : 1.0) * Math.Exp(r * u);
+                        return (b < boundary_at_u ? 0.0 : 1.0) * Math.Exp(r * u);
                 }
                 
                 double time_remaining = tau - u;
-                double boundary_u_val = GetBoundary(u);
+                double boundary_value_u = GetBoundary(u);
                 
-                if (boundary_u_val <= 1e-12 || time_remaining <= 1e-12) return 0.0;
+                if (boundary_value_u <= 1e-12 || time_remaining <= 1e-12) return 0.0;
                 
-                (_, double dm) = CalculateD(time_remaining, b / boundary_u_val);
+                (_, double dm) = CalculateD(time_remaining, b / boundary_value_u);
                 double Phi_dm = Distributions.CumulativeNormal(dm);
                 
                 return Math.Exp(r * u) * Phi_dm;
@@ -230,19 +230,19 @@ namespace Antares.Engine
             {
                 if (u >= tau - 1e-12)
                 {
-                    double boundary_u_val = GetBoundary(u);
-                    if (IsClose(b, boundary_u_val))
+                    double boundary_at_u_d = GetBoundary(u);
+                    if (IsClose(b, boundary_at_u_d))
                         return 0.5 * Math.Exp(q * u);
                     else
-                        return (b < boundary_u_val ? 0.0 : 1.0) * Math.Exp(q * u);
+                        return (b < boundary_at_u_d ? 0.0 : 1.0) * Math.Exp(q * u);
                 }
                 
                 double time_remaining = tau - u;
-                double boundary_u_val = GetBoundary(u);
+                double boundary_value_u_d = GetBoundary(u);
                 
-                if (boundary_u_val <= 1e-12 || time_remaining <= 1e-12) return 0.0;
+                if (boundary_value_u_d <= 1e-12 || time_remaining <= 1e-12) return 0.0;
                 
-                (double dp, _) = CalculateD(time_remaining, b / boundary_u_val);
+                (double dp, _) = CalculateD(time_remaining, b / boundary_value_u_d);
                 double Phi_dp = Distributions.CumulativeNormal(dp);
                 
                 return Math.Exp(q * u) * Phi_dp;
