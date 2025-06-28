@@ -64,10 +64,8 @@ class Program
         Console.WriteLine($"Parameters: S=${spot}, K=${strike}, T={days}d, vol={vol:P0}, r={r:P0}, q={q:P0}");
         Console.WriteLine($"Moneyness: {(spot / strike - 1):P1} ({(spot < strike ? "ITM" : "OTM")})");
 
-        // Price American
         var americanResult = calc.Price(contract, marketData, "American");
 
-        // Price European for comparison
         contract.Style = OptionStyle.European;
         var europeanResult = calc.Price(contract, marketData, "European");
 

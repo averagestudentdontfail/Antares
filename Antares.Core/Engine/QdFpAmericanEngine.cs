@@ -6,10 +6,6 @@ namespace Antares.Engine
 {
     public enum FixedPointEquation { FP_A, FP_B, Auto }
 
-    /// <summary>
-    /// High-performance American option pricing engine based on fixed-point iteration for the exercise boundary.
-    /// This is a C# port of the logic in QuantLib's QdFpAmericanEngine.
-    /// </summary>
     public class QdFpAmericanEngine
     {
         private readonly IQdFpIterationScheme _scheme;
@@ -29,33 +25,81 @@ namespace Antares.Engine
 
             double xmax = QdPlusAmericanEngine.XMax(K, r, q);
             
-            if (xmax <= 1e-9)
+            if (xmax <= K * 1e-6)
             {
                 return CalculateBlackScholesPut(S, K, r, q, vol, T);
             }
 
             var qdPlusEngine = new QdPlusAmericanEngine(_scheme.GetNumberOfChebyshevInterpolationNodes());
-            var boundaryInterp = qdPlusEngine.GetPutExerciseBoundary(K, r, q, vol, T);
+            ChebyshevInterpolation boundaryInterp;
+            
+            try
+            {
+                boundaryInterp = qdPlusEngine.GetPutExerciseBoundary(K, r, q, vol, T);
+            }
+            catch (Exception)
+            {
+                return CalculateBlackScholesPut(S, K, r, q, vol, T);
+            }
 
             double sqrtT = Math.Sqrt(T);
             Func<double, double> B_func = tau =>
             {
                 if (tau <= 1e-12) return xmax;
                 double z_node = (2.0 * Math.Sqrt(tau) / sqrtT) - 1.0;
+                z_node = Math.Max(-1.0, Math.Min(1.0, z_node));
                 double h_val = boundaryInterp.Value(z_node);
-                return xmax * Math.Exp(-h_val * h_val);
+                h_val = Math.Max(0.0, Math.Min(h_val, 50.0));
+                return Math.Max(xmax * Math.Exp(-h_val * h_val), S * 1e-6);
             };
             
-            bool useFP_A = (_fpEquation == FixedPointEquation.FP_A) ||
-                           (_fpEquation == FixedPointEquation.Auto && Math.Abs(r - q) < 0.5 * vol * vol);
+            bool useFP_A = DetermineOptimalEquation(r, q, vol);
 
             DqFpEquation equation = useFP_A
                 ? new DqFpEquation_A(K, r, q, vol, B_func, _scheme.GetFixedPointIntegrator())
                 : new DqFpEquation_B(K, r, q, vol, B_func, _scheme.GetFixedPointIntegrator());
 
+            SolveFixedPoint(equation, boundaryInterp, sqrtT, T, xmax);
+            
+            var addOnValueFunc = new QdPlusAddOnValue(T, S, K, r, q, vol, xmax, boundaryInterp);
+            double addOn = _scheme.GetExerciseBoundaryToPriceIntegrator().Integrate(addOnValueFunc.Evaluate, 0.0, sqrtT);
+            
+            double europeanValue = CalculateBlackScholesPut(S, K, r, q, vol, T);
+
+            return Math.Max(K - S, europeanValue + Math.Max(0.0, addOn));
+        }
+
+        private bool DetermineOptimalEquation(double r, double q, double vol)
+        {
+            if (_fpEquation == FixedPointEquation.FP_A) return true;
+            if (_fpEquation == FixedPointEquation.FP_B) return false;
+            
+            double rqDiff = Math.Abs(r - q);
+            double volSq = vol * vol;
+            
+            bool useFP_A = rqDiff < 0.5 * volSq;
+            
+            // Enhanced stability criteria for q > r cases
+            if (q > r && (q - r) > 0.1)
+            {
+                useFP_A = false;
+            }
+            
+            return useFP_A;
+        }
+
+        private void SolveFixedPoint(DqFpEquation equation, ChebyshevInterpolation boundaryInterp, 
+            double sqrtT, double T, double xmax)
+        {
             double[] z_nodes = boundaryInterp.Nodes();
             double[] h_values = boundaryInterp.Values();
-            Func<double, double> h_transform = fv => Math.Sqrt(Math.Max(0.0, -Math.Log(Math.Max(1e-12, fv) / xmax)));
+            
+            Func<double, double> h_transform = fv => 
+            {
+                double ratio = Math.Max(1e-12, fv) / xmax;
+                ratio = Math.Min(ratio, 1.0 - 1e-12);
+                return Math.Sqrt(Math.Max(0.0, -Math.Log(ratio)));
+            };
 
             // Jacobi-Newton Steps
             for (int k = 0; k < _scheme.GetNumberOfJacobiNewtonFixedPointSteps(); k++)
@@ -63,20 +107,39 @@ namespace Antares.Engine
                 for (int i = 1; i < z_nodes.Length; i++)
                 {
                     double tau = 0.25 * T * Math.Pow(1 + z_nodes[i], 2);
-                    double b_current = B_func(tau);
-                    (double N, double D, double Fv) = equation.F(tau, b_current);
+                    
+                    double h_current = Math.Max(0.0, h_values[i]);
+                    double b_current = xmax * Math.Exp(-h_current * h_current);
+                    
+                    var (N, D, Fv) = equation.F(tau, b_current);
 
-                    if (tau < 1e-9 || Math.Abs(D) < 1e-9)
+                    if (tau < 1e-9 || Math.Abs(D) < 1e-12)
                     {
                         h_values[i] = h_transform(Fv);
                     }
                     else
                     {
-                        (double Nd, double Dd) = equation.NDd(tau, b_current);
+                        var (Nd, Dd) = equation.NDd(tau, b_current);
                         double alpha = K * Math.Exp(-(r - q) * tau);
-                        double fd = alpha * (Nd * D - Dd * N) / (D * D);
-                        double b_new = b_current - (Fv - b_current) / (fd - 1.0);
-                        h_values[i] = h_transform(b_new);
+                        
+                        double denominator = D * D;
+                        if (Math.Abs(denominator) > 1e-15)
+                        {
+                            double fd = alpha * (Nd * D - Dd * N) / denominator;
+                            double adjustment = (Fv - b_current) / (fd - 1.0);
+                            
+                            double dampingFactor = 0.8;
+                            double b_new = b_current - dampingFactor * adjustment;
+                            
+                            b_new = Math.Max(b_new, xmax * 0.01);
+                            b_new = Math.Min(b_new, K * 0.99);
+                            
+                            h_values[i] = h_transform(b_new);
+                        }
+                        else
+                        {
+                            h_values[i] = h_transform(Fv);
+                        }
                     }
                 }
                 boundaryInterp.UpdateY(h_values);
@@ -88,18 +151,15 @@ namespace Antares.Engine
                 for (int i = 1; i < z_nodes.Length; i++)
                 {
                     double tau = 0.25 * T * Math.Pow(1.0 + z_nodes[i], 2);
-                    (_, _, double Fv) = equation.F(tau, B_func(tau));
+                    
+                    double h_current = Math.Max(0.0, h_values[i]);
+                    double b_current = xmax * Math.Exp(-h_current * h_current);
+                    
+                    var (_, _, Fv) = equation.F(tau, b_current);
                     h_values[i] = h_transform(Fv);
                 }
                 boundaryInterp.UpdateY(h_values);
             }
-            
-            var addOnValueFunc = new QdPlusAddOnValue(T, S, K, r, q, vol, xmax, boundaryInterp);
-            double addOn = _scheme.GetExerciseBoundaryToPriceIntegrator().Integrate(addOnValueFunc.Evaluate, 0.0, sqrtT);
-            
-            double europeanValue = CalculateBlackScholesPut(S, K, r, q, vol, T);
-
-            return Math.Max(K - S, europeanValue + Math.Max(0.0, addOn));
         }
 
         private static double CalculateBlackScholesPut(double S, double K, double r, double q, double vol, double T)

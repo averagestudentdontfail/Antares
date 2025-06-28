@@ -1,4 +1,3 @@
-// Antares.Core/Engine/Engines/AmericanEngine.cs
 using System;
 using Antares.Model;
 using Antares.Interface;
@@ -8,10 +7,6 @@ using ModelOptionRight = Antares.Model.OptionRight;
 
 namespace Antares.Engine.Engines
 {
-    /// <summary>
-    /// High-performance American option pricing engine using the Antares method.
-    /// Wrapper around the core QdFpAmericanEngine that provides the IOptionPricingEngine interface.
-    /// </summary>
     public class AmericanEngine : IOptionPricingEngine
     {
         private readonly QdFpAmericanEngine _coreEngine;
@@ -28,7 +23,6 @@ namespace Antares.Engine.Engines
 
         public AmericanEngine(Scheme scheme = Scheme.Accurate)
         {
-            // Create the iteration scheme based on desired accuracy/speed tradeoff
             IQdFpIterationScheme iterationScheme = scheme switch
             {
                 Scheme.Fast => new QdFpLegendreScheme(l: 7, m: 2, n: 7, p: 27),
@@ -36,7 +30,6 @@ namespace Antares.Engine.Engines
                 _ => new QdFpLegendreLobattoScheme(l: 16, m: 8, n: 16, finalAccuracy: 1e-10)
             };
             
-            // Instantiate the core mathematical engine
             _coreEngine = new QdFpAmericanEngine(iterationScheme);
         }
 
@@ -48,7 +41,6 @@ namespace Antares.Engine.Engines
             
             try
             {
-                // Convert domain models to primitive types for the core engine
                 double S = (double)marketData.UnderlyingPrice;
                 double K = (double)contract.Strike;
                 double T = contract.TimeToExpiry(marketData.ValuationTime);
@@ -56,7 +48,6 @@ namespace Antares.Engine.Engines
                 double q = marketData.DividendYield;
                 double vol = marketData.Volatility;
 
-                // Handle expiry case
                 if (T <= 1e-12)
                 {
                     decimal intrinsic = contract.Right == ModelOptionRight.Call 
@@ -72,13 +63,9 @@ namespace Antares.Engine.Engines
                     return expiredResult;
                 }
 
-                // Calculate price using the core Antares engine
                 double basePrice = GetPrice(S, K, r, q, vol, T, contract.Right);
-                
-                // Calculate Greeks using finite differences
                 var greeks = CalculateGreeksByFiniteDifference(S, K, r, q, vol, T, contract.Right, basePrice);
                 
-                // Package results in domain model
                 var result = new PricingResult((decimal)basePrice, greeks, Name)
                 {
                     CalculationTime = DateTime.Now - startTime
@@ -100,10 +87,8 @@ namespace Antares.Engine.Engines
         {
             if (right == ModelOptionRight.Put)
             {
-                // Direct call to the core Antares engine for puts
                 return _coreEngine.CalculatePut(s, k, r, q, vol, t);
             }
-            // Use put-call symmetry for Call options: C(S,K,r,q) = P(K,S,q,r)
             return _coreEngine.CalculatePut(k, s, q, r, vol, t);
         }
 
@@ -118,23 +103,19 @@ namespace Antares.Engine.Engines
 
             try
             {
-                // Delta and Gamma
                 double priceUp_Spot = GetPrice(S + spotBump, K, r, q, vol, T, right);
                 double priceDown_Spot = GetPrice(S - spotBump, K, r, q, vol, T, right);
                 double delta = (priceUp_Spot - priceDown_Spot) / (2 * spotBump);
                 double gamma = (priceUp_Spot - 2 * basePrice + priceDown_Spot) / (spotBump * spotBump);
 
-                // Vega
                 double priceUp_Vol = GetPrice(S, K, r, q, vol + volBump, T, right);
                 double priceDown_Vol = GetPrice(S, K, r, q, vol - volBump, T, right);
                 double vega = (priceUp_Vol - priceDown_Vol) / (2 * volBump) * 0.01;
 
-                // Rho
                 double priceUp_Rate = GetPrice(S, K, r + rateBump, q, vol, T, right);
                 double priceDown_Rate = GetPrice(S, K, r - rateBump, q, vol, T, right);
                 double rho = (priceUp_Rate - priceDown_Rate) / (2 * rateBump) * 0.01;
 
-                // Theta
                 double timeAfterBump = T > timeBump ? T - timeBump : 0.0;
                 double price_TimeDecay = GetPrice(S, K, r, q, vol, timeAfterBump, right);
                 double theta = (price_TimeDecay - basePrice);
@@ -143,14 +124,14 @@ namespace Antares.Engine.Engines
                     delta: (decimal)delta,
                     gamma: (decimal)gamma,
                     vega: (decimal)vega,
-                    theta: (decimal)theta / 365m, // Convert to daily theta
+                    theta: (decimal)theta / 365m,
                     rho: (decimal)rho,
                     lambda: 0m
                 );
             }
             catch (Exception)
             {
-                return new Greeks(); // Return zero Greeks on error
+                return new Greeks();
             }
         }
     }

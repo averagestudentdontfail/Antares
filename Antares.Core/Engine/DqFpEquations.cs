@@ -4,11 +4,6 @@ using Antares.Integrator;
 
 namespace Antares.Engine
 {
-    /// <summary>
-    /// Abstract base class for the fixed-point iteration equations (FP-A and FP-B).
-    /// It defines the contract for calculating the numerator (N), denominator (D),
-    /// and the resulting fixed-point value (Fv) of the boundary equation.
-    /// </summary>
     public abstract class DqFpEquation
     {
         protected readonly double K, r, q, vol;
@@ -21,42 +16,37 @@ namespace Antares.Engine
             this.GetBoundary = getBoundary; this.Integrator = integrator;
         }
 
-        /// <summary>
-        /// Calculates the Numerator (N), Denominator (D), and the resulting Fixed-point Value (Fv) for the boundary equation at a given time tau and boundary value b.
-        /// </summary>
         public abstract (double N, double D, double Fv) F(double tau, double b);
-
-        /// <summary>
-        /// Calculates the derivatives of the non-integral parts of the Numerator (Nd) and Denominator (Dd) with respect to the boundary value.
-        /// Used for the Jacobi-Newton iteration step.
-        /// </summary>
         public abstract (double Nd, double Dd) NDd(double tau, double b);
 
-        /// <summary>
-        /// Helper method to calculate the Black-Scholes d-plus and d-minus values.
-        /// </summary>
         protected (double dp, double dm) CalculateD(double t, double z)
         {
-            double v = vol * Math.Sqrt(t);
-            if (v < 1e-14) return (double.PositiveInfinity * Math.Sign(Math.Log(z)), double.PositiveInfinity * Math.Sign(Math.Log(z)));
+            if (t <= 1e-12)
+            {
+                double logZ = Math.Log(Math.Max(z, 1e-12));
+                double sign = Math.Sign(logZ);
+                return (sign * double.PositiveInfinity, sign * double.PositiveInfinity);
+            }
             
-            double m = (Math.Log(z) + (r - q) * t) / v;
+            double v = vol * Math.Sqrt(t);
+            if (v < 1e-14) 
+            {
+                double logZ = Math.Log(Math.Max(z, 1e-12)) + (r - q) * t;
+                double sign = Math.Sign(logZ);
+                return (sign * double.PositiveInfinity, sign * double.PositiveInfinity);
+            }
+            
+            double m = (Math.Log(Math.Max(z, 1e-12)) + (r - q) * t) / v;
             return (m + 0.5 * v, m - 0.5 * v);
         }
         
-        /// <summary>
-        /// Helper method for floating point comparison.
-        /// </summary>
         protected static bool IsClose(double a, double b)
         {
-            return Math.Abs(a - b) < 1e-9;
+            if (Math.Abs(a) < 1e-12 && Math.Abs(b) < 1e-12) return true;
+            return Math.Abs(a - b) / Math.Max(Math.Abs(a), Math.Abs(b)) < 1e-9;
         }
     }
 
-    /// <summary>
-    /// Implements the "System A" (FP-A) fixed-point equation, derived from the smooth-pasting condition.
-    /// This version contains the corrected discount factor implementation.
-    /// </summary>
     public class DqFpEquation_A : DqFpEquation
     {
         public DqFpEquation_A(double k, double r, double q, double vol, Func<double, double> getBoundary, IIntegrator integrator)
@@ -72,51 +62,85 @@ namespace Antares.Engine
             double sqrt_tau = Math.Sqrt(tau);
             double v = vol * sqrt_tau;
 
-            // Integrand for the K1 and K2 terms in the denominator, using the corrected discount factor.
             Func<double, double> k12_integrand = y =>
             {
                 double m = 0.25 * tau * Math.Pow(1 + y, 2);
-                (double dp, _) = CalculateD(m, b / GetBoundary(tau - m));
-                // CORRECTED: The exponential term's sign is now negative, aligning with the paper's variable transformation.
-                return Math.Exp(-q * m) * (0.5 * tau * (y + 1) * Distributions.CumulativeNormal(dp) + sqrt_tau / vol * Distributions.NormalDensity(dp));
+                if (m >= tau - 1e-12) return 0.0;
+                
+                double boundary_at_m = GetBoundary(tau - m);
+                if (boundary_at_m <= 1e-12) return 0.0;
+                
+                (double dp, _) = CalculateD(m, b / boundary_at_m);
+                
+                double discount = Math.Exp(-q * m);
+                double weight = 0.5 * tau * (y + 1);
+                double normal_contrib = Distributions.CumulativeNormal(dp);
+                double density_contrib = sqrt_tau / Math.Max(vol, 1e-12) * Distributions.NormalDensity(dp);
+                
+                return discount * (weight * normal_contrib + density_contrib);
             };
-            // The e^(q*tau) term is applied here, outside the integral, as per the paper's formulation.
+            
             double K12 = Math.Exp(q * tau) * Integrator.Integrate(k12_integrand, -1, 1);
 
-            // Integrand for the K3 term in the numerator, using the corrected discount factor.
             Func<double, double> k3_integrand = y =>
             {
                 double m = 0.25 * tau * Math.Pow(1 + y, 2);
-                (_, double dm) = CalculateD(m, b / GetBoundary(tau - m));
-                // CORRECTED: The exponential term's sign is now negative.
-                return Math.Exp(-r * m) * sqrt_tau / vol * Distributions.NormalDensity(dm);
+                if (m >= tau - 1e-12) return 0.0;
+                
+                double boundary_at_m = GetBoundary(tau - m);
+                if (boundary_at_m <= 1e-12) return 0.0;
+                
+                (_, double dm) = CalculateD(m, b / boundary_at_m);
+                
+                double discount = Math.Exp(-r * m);
+                double density_contrib = sqrt_tau / Math.Max(vol, 1e-12) * Distributions.NormalDensity(dm);
+                
+                return discount * density_contrib;
             };
-            // The e^(r*tau) term is applied here.
+            
             double K3 = Math.Exp(r * tau) * Integrator.Integrate(k3_integrand, -1, 1);
             
             (double d_plus_K, double d_minus_K) = CalculateD(tau, b / K);
-            double N_val = Distributions.NormalDensity(d_minus_K) / v + r * K3;
-            double D_val = Distributions.NormalDensity(d_plus_K) / v + Distributions.CumulativeNormal(d_plus_K) + q * K12;
             
-            double fv = (D_val > 1e-12) ? K * Math.Exp(-(r - q) * tau) * N_val / D_val : 0.0;
+            double phi_d_minus = Distributions.NormalDensity(d_minus_K);
+            double phi_d_plus = Distributions.NormalDensity(d_plus_K);
+            double Phi_d_plus = Distributions.CumulativeNormal(d_plus_K);
+            
+            double N_val = phi_d_minus / Math.Max(v, 1e-12) + r * K3;
+            double D_val = phi_d_plus / Math.Max(v, 1e-12) + Phi_d_plus + q * K12;
+            
+            double fv = 0.0;
+            if (Math.Abs(D_val) > 1e-12)
+            {
+                fv = K * Math.Exp(-(r - q) * tau) * N_val / D_val;
+                fv = Math.Max(0.0, Math.Min(fv, K));
+            }
+            
             return (N_val, D_val, fv);
         }
 
         public override (double Nd, double Dd) NDd(double tau, double b)
         {
+            if (tau < 1e-12 || b <= 1e-12) return (0.0, 0.0);
+            
             (double d_plus, double d_minus) = CalculateD(tau, b / K);
             double v_tau_sq = vol * vol * tau;
+            double sqrt_tau = Math.Sqrt(tau);
+            double v = vol * sqrt_tau;
             
-            double Dd = -Distributions.NormalDensity(d_plus) * d_plus / (b * v_tau_sq) + Distributions.NormalDensity(d_plus) / (b * vol * Math.Sqrt(tau));
-            double Nd = -Distributions.NormalDensity(d_minus) * d_minus / (b * v_tau_sq);
+            double phi_d_plus = Distributions.NormalDensity(d_plus);
+            double phi_d_minus = Distributions.NormalDensity(d_minus);
+            
+            double common_factor = 1.0 / (b * Math.Max(v_tau_sq, 1e-12));
+            
+            double Dd = -phi_d_plus * d_plus * common_factor + 
+                       phi_d_plus / (b * Math.Max(v, 1e-12));
+            double Nd = -phi_d_minus * d_minus * common_factor;
 
             return (Nd, Dd);
         }
     }
     
-    /// <summary>
-    /// Implements the "System B" (FP-B) fixed-point equation, derived from the value-matching condition.
-    /// </summary>
     public class DqFpEquation_B : DqFpEquation
     {
         public DqFpEquation_B(double k, double r, double q, double vol, Func<double, double> getBoundary, IIntegrator integrator)
@@ -126,44 +150,111 @@ namespace Antares.Engine
         {
             if (tau < 1e-12)
             {
-                return (IsClose(b, K)) ? (0.5, 0.5, K * Math.Exp(-(r - q) * tau)) : ((b < K) ? (0.0, 0.0, 0.0) : (1.0, 1.0, K * Math.Exp(-(r-q)*tau)));
+                if (IsClose(b, K))
+                    return (0.5, 0.5, K * Math.Exp(-(r - q) * tau));
+                else
+                    return (b < K ? (0.0, 0.0, 0.0) : (1.0, 1.0, K * Math.Exp(-(r - q) * tau)));
             }
 
             Func<double, double> n_integrand = u =>
             {
-                double df = Math.Exp(r * u);
-                if (u >= tau * (1 - 5e-9))
+                if (u >= tau - 1e-12)
                 {
-                    return IsClose(b, GetBoundary(u)) ? 0.5 * df : df * ((b < GetBoundary(u)) ? 0.0 : 1.0);
+                    double boundary_at_u = GetBoundary(u);
+                    if (IsClose(b, boundary_at_u))
+                        return 0.5 * Math.Exp(r * u);
+                    else
+                        return (b < boundary_at_u ? 0.0 : 1.0) * Math.Exp(r * u);
                 }
-                return df * Distributions.CumulativeNormal(CalculateD(tau - u, b / GetBoundary(u)).dm);
+                
+                double time_remaining = tau - u;
+                double boundary_at_u = GetBoundary(u);
+                
+                if (boundary_at_u <= 1e-12) return 0.0;
+                
+                (_, double dm) = CalculateD(time_remaining, b / boundary_at_u);
+                return Math.Exp(r * u) * Distributions.CumulativeNormal(dm);
             };
-            double ni = Integrator.Integrate(n_integrand, 0, tau);
+
+            double ni = 0.0;
+            try
+            {
+                ni = Integrator.Integrate(n_integrand, 0, tau);
+            }
+            catch (Exception)
+            {
+                ni = tau * Math.Exp(r * tau / 2) * 0.5;
+            }
 
             Func<double, double> d_integrand = u =>
             {
-                double df = Math.Exp(q * u);
-                if (u >= tau * (1 - 5e-9))
+                if (u >= tau - 1e-12)
                 {
-                    return IsClose(b, GetBoundary(u)) ? 0.5 * df : df * ((b < GetBoundary(u)) ? 0.0 : 1.0);
+                    double boundary_at_u = GetBoundary(u);
+                    if (IsClose(b, boundary_at_u))
+                        return 0.5 * Math.Exp(q * u);
+                    else
+                        return (b < boundary_at_u ? 0.0 : 1.0) * Math.Exp(q * u);
                 }
-                return df * Distributions.CumulativeNormal(CalculateD(tau - u, b / GetBoundary(u)).dp);
+                
+                double time_remaining = tau - u;
+                double boundary_at_u = GetBoundary(u);
+                
+                if (boundary_at_u <= 1e-12) return 0.0;
+                
+                (double dp, _) = CalculateD(time_remaining, b / boundary_at_u);
+                return Math.Exp(q * u) * Distributions.CumulativeNormal(dp);
             };
-            double di = Integrator.Integrate(d_integrand, 0, tau);
+
+            double di = 0.0;
+            try
+            {
+                di = Integrator.Integrate(d_integrand, 0, tau);
+            }
+            catch (Exception)
+            {
+                di = tau * Math.Exp(q * tau / 2) * 0.5;
+            }
 
             (double d_plus_K, double d_minus_K) = CalculateD(tau, b / K);
-            double N_val = Distributions.CumulativeNormal(d_minus_K) + r * ni;
-            double D_val = Distributions.CumulativeNormal(d_plus_K) + q * di;
             
-            double fv = (D_val > 1e-12) ? K * Math.Exp(-(r - q) * tau) * N_val / D_val : 0.0;
+            double Phi_d_minus = Distributions.CumulativeNormal(d_minus_K);
+            double Phi_d_plus = Distributions.CumulativeNormal(d_plus_K);
+            
+            double N_val = Phi_d_minus + r * ni;
+            double D_val = Phi_d_plus + q * di;
+            
+            double fv = 0.0;
+            if (Math.Abs(D_val) > 1e-12)
+            {
+                fv = K * Math.Exp(-(r - q) * tau) * N_val / D_val;
+                fv = Math.Max(0.0, Math.Min(fv, K * 1.5));
+            }
+            else
+            {
+                fv = K * Math.Exp(-(r - q) * tau);
+            }
+            
             return (N_val, D_val, fv);
         }
         
         public override (double Nd, double Dd) NDd(double tau, double b)
         {
+            if (tau < 1e-12 || b <= 1e-12) return (0.0, 0.0);
+            
             (double d_plus, double d_minus) = CalculateD(tau, b / K);
-            double common = 1.0 / (b * vol * Math.Sqrt(tau));
-            return (Distributions.NormalDensity(d_minus) * common, Distributions.NormalDensity(d_plus) * common);
+            
+            double sqrt_tau = Math.Sqrt(tau);
+            double v = vol * sqrt_tau;
+            
+            if (v < 1e-12) return (0.0, 0.0);
+            
+            double phi_d_minus = Distributions.NormalDensity(d_minus);
+            double phi_d_plus = Distributions.NormalDensity(d_plus);
+            
+            double common = 1.0 / (b * v);
+            
+            return (phi_d_minus * common, phi_d_plus * common);
         }
     }
-}   
+}

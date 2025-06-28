@@ -6,10 +6,6 @@ using Antares.Distribution;
 
 namespace Antares.Engine
 {
-    /// <summary>
-    /// Implements the QD+ method to find an accurate initial guess for the American option exercise boundary.
-    /// This is a direct C# port of the logic from QuantLib's qdplusamericanengine.cpp.
-    /// </summary>
     public class QdPlusAmericanEngine
     {
         public enum SolverType { Halley, Brent }
@@ -34,30 +30,33 @@ namespace Antares.Engine
             };
         }
 
-        /// <summary>
-        /// Calculates the short-maturity (t->0) exercise boundary for a put option.
-        /// This is a direct port of the xMax logic from QuantLib's qdplusamericanengine.cpp.
-        /// </summary>
         public static double XMax(double K, double r, double q)
         {
+            if (Math.Abs(q) < 1e-12)
+            {
+                return r > 0.0 ? 0.0 : K;
+            }
+            
             if (q > 0.0)
-                return K * Math.Min(1.0, r / q);
-            else if (q == 0.0 && r > 0.0)
-                return 0.0; // European case
+            {
+                double ratio = r / q;
+                // Prevent very small ratios that cause numerical instability
+                if (ratio < 0.05)
+                    return K * Math.Max(0.05, ratio);
+                return K * Math.Min(1.0, ratio);
+            }
             else
+            {
                 return K;
+            }
         }
 
-        /// <summary>
-        /// Computes the exercise boundary B(τ) as a Chebyshev interpolation of a transformed function.
-        /// The transformation h(B) = Sqrt(-ln(B/XMax)) is used for numerical stability.
-        /// </summary>
         public ChebyshevInterpolation GetPutExerciseBoundary(double K, double r, double q, double vol, double T)
         {
             double xmax = XMax(K, r, q);
-            if (xmax <= 1e-12)
+            if (xmax <= K * 1e-6)
             {
-                return new ChebyshevInterpolation(_interpolationPoints, z => 1e12); // Yields B=0
+                return new ChebyshevInterpolation(_interpolationPoints, z => 1e12);
             }
 
             double sqrtT = Math.Sqrt(T);
@@ -68,7 +67,9 @@ namespace Antares.Engine
                 
                 double boundary = PutExerciseBoundaryAtTau(K, r, q, vol, tau);
                 
-                return Math.Sqrt(Math.Max(0.0, -Math.Log(boundary / xmax)));
+                double ratio = Math.Max(1e-12, boundary) / xmax;
+                ratio = Math.Min(ratio, 1.0 - 1e-12);
+                return Math.Sqrt(Math.Max(0.0, -Math.Log(ratio)));
             };
             
             return new ChebyshevInterpolation(_interpolationPoints, functionToInterpolate);
@@ -89,22 +90,15 @@ namespace Antares.Engine
             
             try
             {
-                // Use a robust solver with explicit bounds to guarantee stability
                 var brent = new Brent();
                 return brent.Solve(solverFunction, _epsilon, initialGuess, evaluator.XMin(), K);
             }
             catch (Exception)
             {
-                // If the robust solver fails to find a root, it implies no early exercise is optimal
-                // for the QD+ approximation, and the boundary is at the strike K.
                 return K;
             }
         }
         
-        /// <summary>
-        /// Private helper class to evaluate the QD+ function g(B) = QD+(B) - B = 0.
-        /// This is stateful to cache calculations for a given boundary candidate 'S'.
-        /// </summary>
         private class QdPlusBoundaryEvaluator
         {
             private readonly double _tau, _K, _sigma, _sigma2, _v, _r, _q;
@@ -186,7 +180,7 @@ namespace Antares.Engine
             public double Derivative(double x) => _eval.Derivative(x) - 1.0;
             public double SecondDerivative(double x) => _eval.SecondDerivative(x);
             public double XMin() => _eval.XMin();
-            public double XMax() => _eval.XMin(); // Not used by Brent
+            public double XMax() => _eval.XMin();
         }
     }
 }

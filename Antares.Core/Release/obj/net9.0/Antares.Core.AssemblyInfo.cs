@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Antares.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d3fdeb5e2d68ecf71a06b7e857c6faeaf1c7a7d0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+efa20330cdea92ebc482bb2c693eed73a1af829a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Antares.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Antares.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
