@@ -21,17 +21,28 @@ format:
     fontsize: 12pt
     linestretch: 1.6
     toc: true
-    toc-depth: 3
+    toc-depth: 4
     toc-location: left
+    toc-title: "Contents"
     number-sections: true
     number-depth: 3
+    code-fold: false
+    code-tools: false
+    code-copy: false
     html-math-method: katex
     fig-cap-location: bottom
+    tbl-cap-location: top
     citations-hover: true
     footnotes-hover: true
     smooth-scroll: true
     anchor-sections: true
     link-external-newwindow: true
+    highlight-style: github
+    grid:
+      sidebar-width: 300px
+      body-width: 900px
+      margin-width: 300px
+    page-layout: article
     
   pdf:
     documentclass: article
@@ -49,34 +60,116 @@ format:
     linkcolor: NavyBlue
     urlcolor: NavyBlue
     citecolor: NavyBlue
+    toccolor: black
+    fig-pos: "H"
+    tbl-pos: "H"
+    lot: false
+    lof: false
     keep-tex: true
+    pdf-engine: pdflatex
+    cite-method: biblatex
+    biblio-style: apa
+    biblatexoptions: [backend=biber, style=apa, natbib=true]
     include-in-header:
       - text: |
+          \usepackage{booktabs}
+          \usepackage{longtable}
+          \usepackage{array}
+          \usepackage{multirow}
+          \usepackage{wrapfig}
+          \usepackage{float}
+          \usepackage{colortbl}
+          \usepackage{pdflscape}
+          \usepackage{tabu}
+          \usepackage{threeparttable}
+          \usepackage{threeparttablex}
+          \usepackage[normalem]{ulem}
+          \usepackage{makecell}
+          \usepackage{xcolor}
           \usepackage{amsmath}
           \usepackage{amsfonts}
           \usepackage{amssymb}
           \usepackage{mathtools}
           \usepackage{bm}
-          \usepackage{theorem}
-          \newtheorem{theorem}{Theorem}[section]
-          \newtheorem{lemma}[theorem]{Lemma}
-          \newtheorem{proposition}[theorem]{Proposition}
-          \newtheorem{corollary}[theorem]{Corollary}
-          \newtheorem{definition}[theorem]{Definition}
-          \newtheorem{remark}[theorem]{Remark}
+          \usepackage{microtype}
+          \usepackage{setspace}
+          \usepackage{fancyhdr}
+          \usepackage{titlesec}
+          \usepackage{caption}
+          
+          % Table and figure captions
+          \captionsetup[table]{skip=12pt, font=small, labelfont=bf}
+          \captionsetup[figure]{skip=12pt, font=small, labelfont=bf}
+          
+          % Professional section formatting
+          \titleformat{\section}{\large\bfseries\sffamily\color{NavyBlue}}{\thesection}{1em}{}
+          \titlespacing*{\section}{0pt}{24pt}{12pt}
+          
+          \titleformat{\subsection}{\normalsize\bfseries\sffamily\color{NavyBlue}}{\thesubsection}{1em}{}
+          \titlespacing*{\subsection}{0pt}{18pt}{9pt}
+          
+          \titleformat{\subsubsection}{\normalsize\bfseries\sffamily\color{NavyBlue}}{\thesubsubsection}{1em}{}
+          \titlespacing*{\subsubsection}{0pt}{12pt}{6pt}
+          
+          % Custom colors matching your theme
+          \definecolor{sunnyyellow}{RGB}{255, 223, 0}
+          \definecolor{sunnyblue}{RGB}{30, 144, 255}
+          \definecolor{sunnygray}{RGB}{248, 249, 250}
+          
+          % Professional header and footer
+          \pagestyle{fancy}
+          \fancyhf{}
+          \rhead{\small\thepage}
+          \lhead{\small\textit{The Sunny Algorithm}}
+          \renewcommand{\headrulewidth}{0.5pt}
+          \renewcommand{\headrule}{\hbox to\headwidth{\color{NavyBlue}\leaders\hrule height \headrulewidth\hfill}}
+          \setlength{\headheight}{14pt}
+          
+          % Better typography and spacing
+          \setlength{\emergencystretch}{3em}
+          \tolerance=9999
+          \hbadness=10000
+          \raggedbottom
+          
+          % Paragraph spacing
+          \setlength{\parskip}{8pt}
+          \setlength{\parindent}{0pt}
+          
+          % Better table spacing
+          \renewcommand{\arraystretch}{1.2}
+          
+          % Abstract formatting
+          \renewenvironment{abstract}
+            {\small\quotation\noindent\rule{\linewidth}{.5pt}\par\smallskip
+             \noindent\textbf{Abstract.}\space}
+            {\par\smallskip\noindent\rule{\linewidth}{.5pt}\endquotation}
 
-bibliography: references.bib
+# Bibliography and references  
+bibliography: References.bib
+csl: Finance.csl
 link-citations: true
+reference-section-title: "References"
 
+# Execution and render options
 execute:
   echo: false
   warning: false
   message: false
+  cache: true
+  freeze: auto
 
+# Cross-referencing
 crossref:
   fig-title: "Figure"
   tbl-title: "Table"
   eq-title: "Equation"
+  title-delim: ":"
+  fig-prefix: "Figure"
+  tbl-prefix: "Table"
+  eq-prefix: "Equation"
+
+# Language and locale
+lang: en-US
 ---
 
 ## Introduction
