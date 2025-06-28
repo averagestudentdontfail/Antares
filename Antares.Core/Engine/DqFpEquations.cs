@@ -158,21 +158,20 @@ namespace Antares.Engine
 
             Func<double, double> n_integrand = u =>
             {
+                double numeratorBoundary = GetBoundary(u);
+                
                 if (u >= tau - 1e-12)
                 {
-                    double boundary_u_val = GetBoundary(u);
-                    if (IsClose(b, boundary_u_val))
+                    if (IsClose(b, numeratorBoundary))
                         return 0.5 * Math.Exp(r * u);
                     else
-                        return (b < boundary_u_val ? 0.0 : 1.0) * Math.Exp(r * u);
+                        return (b < numeratorBoundary ? 0.0 : 1.0) * Math.Exp(r * u);
                 }
                 
+                if (numeratorBoundary <= 1e-12) return 0.0;
+                
                 double time_remaining = tau - u;
-                double boundary_u_val = GetBoundary(u);
-                
-                if (boundary_u_val <= 1e-12) return 0.0;
-                
-                (_, double dm) = CalculateD(time_remaining, b / boundary_u_val);
+                (_, double dm) = CalculateD(time_remaining, b / numeratorBoundary);
                 return Math.Exp(r * u) * Distributions.CumulativeNormal(dm);
             };
 
@@ -188,21 +187,20 @@ namespace Antares.Engine
 
             Func<double, double> d_integrand = u =>
             {
+                double denominatorBoundary = GetBoundary(u);
+                
                 if (u >= tau - 1e-12)
                 {
-                    double boundary_u_val = GetBoundary(u);
-                    if (IsClose(b, boundary_u_val))
+                    if (IsClose(b, denominatorBoundary))
                         return 0.5 * Math.Exp(q * u);
                     else
-                        return (b < boundary_u_val ? 0.0 : 1.0) * Math.Exp(q * u);
+                        return (b < denominatorBoundary ? 0.0 : 1.0) * Math.Exp(q * u);
                 }
                 
+                if (denominatorBoundary <= 1e-12) return 0.0;
+                
                 double time_remaining = tau - u;
-                double boundary_u_val = GetBoundary(u);
-                
-                if (boundary_u_val <= 1e-12) return 0.0;
-                
-                (double dp, _) = CalculateD(time_remaining, b / boundary_u_val);
+                (double dp, _) = CalculateD(time_remaining, b / denominatorBoundary);
                 return Math.Exp(q * u) * Distributions.CumulativeNormal(dp);
             };
 
