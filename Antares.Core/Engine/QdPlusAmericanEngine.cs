@@ -77,17 +77,17 @@ namespace Antares.Engine
                 {
                     // Near expiration, boundary approaches appropriate limit
                     double nearExpiryBoundary = r >= q ? K : K * r / q;
-                    double ratio = Math.Max(1e-12, nearExpiryBoundary) / xmax;
-                    ratio = Math.Max(1e-8, Math.Min(1.0 - 1e-8, ratio));
-                    return Math.Sqrt(Math.Max(0.0, -Math.Log(ratio)));
+                    double nearExpiryRatio = Math.Max(1e-12, nearExpiryBoundary) / xmax;
+                    nearExpiryRatio = Math.Max(1e-8, Math.Min(1.0 - 1e-8, nearExpiryRatio));
+                    return Math.Sqrt(Math.Max(0.0, -Math.Log(nearExpiryRatio)));
                 }
                 
                 double boundary = PutExerciseBoundaryAtTau(K, r, q, vol, tau, xmax);
                 
                 // Transform boundary to H-space using variance-stabilizing transformation
-                double ratio = Math.Max(1e-12, boundary) / xmax;
-                ratio = Math.Max(1e-8, Math.Min(1.0 - 1e-8, ratio));
-                double G = Math.Log(ratio);
+                double boundaryRatio = Math.Max(1e-12, boundary) / xmax;
+                boundaryRatio = Math.Max(1e-8, Math.Min(1.0 - 1e-8, boundaryRatio));
+                double G = Math.Log(boundaryRatio);
                 return Math.Max(0.0, G * G);
             };
             

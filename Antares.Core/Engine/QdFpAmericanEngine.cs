@@ -129,9 +129,9 @@ namespace Antares.Engine
                 {
                     // Near expiration boundary
                     double nearExpiryBoundary = r >= q ? K : K * r / q;
-                    double ratio = Math.Max(1e-12, nearExpiryBoundary) / xmax;
-                    ratio = Math.Max(1e-8, Math.Min(1.0 - 1e-8, ratio));
-                    return Math.Sqrt(Math.Max(0.0, -Math.Log(ratio)));
+                    double nearExpiryRatio = Math.Max(1e-12, nearExpiryBoundary) / xmax;
+                    nearExpiryRatio = Math.Max(1e-8, Math.Min(1.0 - 1e-8, nearExpiryRatio));
+                    return Math.Sqrt(Math.Max(0.0, -Math.Log(nearExpiryRatio)));
                 }
                 
                 // Interpolate between near-expiry and asymptotic values
@@ -142,9 +142,9 @@ namespace Antares.Engine
                 double boundary = nearExpiryBoundary2 * (1.0 - weight) + asymptoticBoundary * weight;
                 
                 // Apply variance-stabilizing transformation
-                double ratio = Math.Max(1e-12, boundary) / xmax;
-                ratio = Math.Max(1e-8, Math.Min(1.0 - 1e-8, ratio));
-                double G = Math.Log(ratio);
+                double finalRatio = Math.Max(1e-12, boundary) / xmax;
+                finalRatio = Math.Max(1e-8, Math.Min(1.0 - 1e-8, finalRatio));
+                double G = Math.Log(finalRatio);
                 return Math.Max(0.0, G * G);
             };
             
