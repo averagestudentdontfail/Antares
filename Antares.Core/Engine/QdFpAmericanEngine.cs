@@ -42,121 +42,258 @@ namespace Antares.Engine
                 return CalculateBlackScholesPut(S, K, r, q, vol, T);
             }
 
-            double sqrtT = Math.Sqrt(T);
-            Func<double, double> B_func = tau =>
+            if (!ValidateBoundary(boundaryInterp, xmax, K))
             {
-                if (tau <= 1e-12) return xmax;
-                double z_node = (2.0 * Math.Sqrt(tau) / sqrtT) - 1.0;
-                z_node = Math.Max(-1.0, Math.Min(1.0, z_node));
-                double h_val = boundaryInterp.Value(z_node);
-                h_val = Math.Max(0.0, Math.Min(h_val, 50.0));
-                return Math.Max(xmax * Math.Exp(-h_val * h_val), S * 1e-6);
-            };
-            
-            bool useFP_A = DetermineOptimalEquation(r, q, vol);
+                return CalculateBlackScholesPut(S, K, r, q, vol, T);
+            }
+
+            var framework = new SpCollocation(T, xmax, K, r, q, vol);
+            bool useFP_A = DetermineOptimalEquation(r, q, vol, xmax, K);
 
             DqFpEquation equation = useFP_A
-                ? new DqFpEquation_A(K, r, q, vol, B_func, _scheme.GetFixedPointIntegrator())
-                : new DqFpEquation_B(K, r, q, vol, B_func, _scheme.GetFixedPointIntegrator());
+                ? new DqFpEquation_A(K, r, q, vol, framework.GetBoundaryFunction(boundaryInterp), _scheme.GetFixedPointIntegrator())
+                : new DqFpEquation_B(K, r, q, vol, framework.GetBoundaryFunction(boundaryInterp), _scheme.GetFixedPointIntegrator());
 
-            SolveFixedPoint(equation, boundaryInterp, sqrtT, T, xmax, K, r, q);
-            
-            var addOnValueFunc = new QdPlusAddOnValue(T, S, K, r, q, vol, xmax, boundaryInterp);
-            double addOn = _scheme.GetExerciseBoundaryToPriceIntegrator().Integrate(addOnValueFunc.Evaluate, 0.0, sqrtT);
-            
+            bool converged = SolveFixedPoint(equation, boundaryInterp, framework);
+            if (!converged)
+            {
+                if (!AttemptRecovery(equation, boundaryInterp, framework))
+                {
+                    double europeanBase = CalculateBlackScholesPut(S, K, r, q, vol, T);
+                    double intrinsic = Math.Max(0.0, K - S);
+                    return Math.Max(intrinsic, europeanBase * 1.05);
+                }
+            }
+
+            double addOnValue = CalculateAddOnValue(S, K, r, q, vol, T, xmax, boundaryInterp);
             double europeanValue = CalculateBlackScholesPut(S, K, r, q, vol, T);
 
-            return Math.Max(K - S, europeanValue + Math.Max(0.0, addOn));
+            return Math.Max(K - S, europeanValue + Math.Max(0.0, addOnValue));
         }
 
-        private bool DetermineOptimalEquation(double r, double q, double vol)
+        private bool ValidateBoundary(ChebyshevInterpolation boundary, double xmax, double K)
+        {
+            try
+            {
+                double[] testPoints = { -1.0, -0.5, 0.0, 0.5, 1.0 };
+                foreach (double point in testPoints)
+                {
+                    double hVal = boundary.Value(point);
+                    if (double.IsNaN(hVal) || double.IsInfinity(hVal) || hVal < 0)
+                        return false;
+                    
+                    double boundaryVal = xmax * Math.Exp(-Math.Sqrt(Math.Max(0.0, hVal)));
+                    if (boundaryVal <= 0 || boundaryVal > K * 2)
+                        return false;
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        private bool DetermineOptimalEquation(double r, double q, double vol, double xmax, double K)
         {
             if (_fpEquation == FixedPointEquation.FP_A) return true;
             if (_fpEquation == FixedPointEquation.FP_B) return false;
-            
+
             double rqDiff = Math.Abs(r - q);
             double volSq = vol * vol;
-            
+            double normalizationFactor = xmax / K;
+
             bool useFP_A = rqDiff < 0.5 * volSq;
-            
-            if (q > r && (q - r) > 0.1)
+
+            if (q > r && (q - r) > 0.05 && normalizationFactor < 0.5)
             {
                 useFP_A = false;
             }
-            
+
+            if (normalizationFactor < 0.1)
+            {
+                useFP_A = true;
+            }
+
             return useFP_A;
         }
 
-        private void SolveFixedPoint(DqFpEquation equation, ChebyshevInterpolation boundaryInterp, 
-            double sqrtT, double T, double xmax, double K, double r, double q)
+        private bool SolveFixedPoint(DqFpEquation equation, ChebyshevInterpolation boundaryInterp, SpCollocation framework)
         {
-            double[] z_nodes = boundaryInterp.Nodes();
-            double[] h_values = boundaryInterp.Values();
-            
-            Func<double, double> h_transform = fv => 
-            {
-                double ratio = Math.Max(1e-12, fv) / xmax;
-                ratio = Math.Min(ratio, 1.0 - 1e-12);
-                return Math.Sqrt(Math.Max(0.0, -Math.Log(ratio)));
-            };
+            double[] previousErrors = new double[5];
+            int stagnationCount = 0;
+            const double tolerance = 1e-8;
 
-            for (int k = 0; k < _scheme.GetNumberOfJacobiNewtonFixedPointSteps(); k++)
+            for (int iter = 0; iter < _scheme.GetNumberOfJacobiNewtonFixedPointSteps(); iter++)
             {
-                for (int i = 1; i < z_nodes.Length; i++)
+                double maxError = ExecuteJacobiNewtonStep(equation, boundaryInterp, framework);
+
+                if (maxError < tolerance)
                 {
-                    double tau = 0.25 * T * Math.Pow(1 + z_nodes[i], 2);
-                    
-                    double h_current = Math.Max(0.0, h_values[i]);
-                    double b_current = xmax * Math.Exp(-h_current * h_current);
-                    
-                    var (N, D, Fv) = equation.F(tau, b_current);
+                    break;
+                }
 
-                    if (tau < 1e-9 || Math.Abs(D) < 1e-12)
+                if (iter >= 2)
+                {
+                    bool isStagnating = Math.Abs(maxError - previousErrors[0]) < tolerance * 0.1;
+                    if (isStagnating) stagnationCount++;
+                    else stagnationCount = 0;
+
+                    if (stagnationCount > 3)
                     {
-                        h_values[i] = h_transform(Fv);
+                        break;
+                    }
+                }
+
+                previousErrors[iter % 5] = maxError;
+            }
+
+            for (int iter = 0; iter < _scheme.GetNumberOfNaiveFixedPointSteps(); iter++)
+            {
+                double maxError = ExecuteNaiveRichardsonStep(equation, boundaryInterp, framework);
+
+                if (maxError < tolerance)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private double ExecuteJacobiNewtonStep(DqFpEquation equation, ChebyshevInterpolation boundaryInterp, SpCollocation framework)
+        {
+            double[] nodes = boundaryInterp.Nodes();
+            double[] hValues = boundaryInterp.Values();
+            double maxError = 0.0;
+
+            for (int i = 1; i < nodes.Length; i++)
+            {
+                double tau = 0.25 * framework.T * Math.Pow(1 + nodes[i], 2);
+                double boundaryValue = framework.TransformToBoundary(hValues[i], tau);
+
+                var (N, D, Fv) = equation.F(tau, boundaryValue);
+
+                if (tau < 1e-9 || Math.Abs(D) < 1e-12)
+                {
+                    hValues[i] = framework.TransformFromBoundary(Fv, tau);
+                }
+                else
+                {
+                    var (Nd, Dd) = equation.NDd(tau, boundaryValue);
+                    
+                    double alpha = framework.K * Math.Exp(-(framework.r - framework.q) * tau);
+                    double denominator = D * D;
+                    
+                    if (Math.Abs(denominator) > 1e-15)
+                    {
+                        double fd = alpha * (Nd * D - Dd * N) / denominator;
+                        double dampingFactor = 0.8;
+                        double adjustment = (Fv - boundaryValue) / (fd - 1.0);
+                        double newBoundary = boundaryValue - dampingFactor * adjustment;
+                        
+                        newBoundary = Math.Max(newBoundary, framework.xmax * 0.001);
+                        newBoundary = Math.Min(newBoundary, framework.K * 0.999);
+                        
+                        hValues[i] = framework.TransformFromBoundary(newBoundary, tau);
+                        
+                        double error = Math.Abs(newBoundary - boundaryValue) / Math.Max(boundaryValue, 1e-6);
+                        maxError = Math.Max(maxError, error);
                     }
                     else
                     {
-                        var (Nd, Dd) = equation.NDd(tau, b_current);
-                        double alpha = K * Math.Exp(-(r - q) * tau);
-                        
-                        double denominator = D * D;
-                        if (Math.Abs(denominator) > 1e-15)
-                        {
-                            double fd = alpha * (Nd * D - Dd * N) / denominator;
-                            double adjustment = (Fv - b_current) / (fd - 1.0);
-                            
-                            double dampingFactor = 0.8;
-                            double b_new = b_current - dampingFactor * adjustment;
-                            
-                            b_new = Math.Max(b_new, xmax * 0.01);
-                            b_new = Math.Min(b_new, K * 0.99);
-                            
-                            h_values[i] = h_transform(b_new);
-                        }
-                        else
-                        {
-                            h_values[i] = h_transform(Fv);
-                        }
+                        hValues[i] = framework.TransformFromBoundary(Fv, tau);
                     }
                 }
-                boundaryInterp.UpdateY(h_values);
             }
-            
-            for (int k = 0; k < _scheme.GetNumberOfNaiveFixedPointSteps(); k++)
+
+            boundaryInterp.UpdateY(hValues);
+            return maxError;
+        }
+
+        private double ExecuteNaiveRichardsonStep(DqFpEquation equation, ChebyshevInterpolation boundaryInterp, SpCollocation framework)
+        {
+            double[] nodes = boundaryInterp.Nodes();
+            double[] hValues = boundaryInterp.Values();
+            double maxError = 0.0;
+
+            for (int i = 1; i < nodes.Length; i++)
             {
-                for (int i = 1; i < z_nodes.Length; i++)
-                {
-                    double tau = 0.25 * T * Math.Pow(1.0 + z_nodes[i], 2);
-                    
-                    double h_current = Math.Max(0.0, h_values[i]);
-                    double b_current = xmax * Math.Exp(-h_current * h_current);
-                    
-                    var (_, _, Fv) = equation.F(tau, b_current);
-                    h_values[i] = h_transform(Fv);
-                }
-                boundaryInterp.UpdateY(h_values);
+                double tau = 0.25 * framework.T * Math.Pow(1 + nodes[i], 2);
+                double currentBoundary = framework.TransformToBoundary(hValues[i], tau);
+                
+                var (_, _, Fv) = equation.F(tau, currentBoundary);
+                double newHValue = framework.TransformFromBoundary(Fv, tau);
+                
+                double error = Math.Abs(newHValue - hValues[i]) / Math.Max(hValues[i], 1e-6);
+                maxError = Math.Max(maxError, error);
+                
+                hValues[i] = newHValue;
             }
+
+            boundaryInterp.UpdateY(hValues);
+            return maxError;
+        }
+
+        private bool AttemptRecovery(DqFpEquation equation, ChebyshevInterpolation boundaryInterp, SpCollocation framework)
+        {
+            for (int recovery = 0; recovery < 3; recovery++)
+            {
+                for (int iter = 0; iter < 10; iter++)
+                {
+                    double maxError = ExecuteNaiveRichardsonStep(equation, boundaryInterp, framework);
+                    if (maxError < 1e-6)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        private double CalculateAddOnValue(double S, double K, double r, double q, double vol, double T, 
+            double xmax, ChebyshevInterpolation boundaryInterp)
+        {
+            try
+            {
+                var addOnFunc = new QdPlusAddOnValue(T, S, K, r, q, vol, xmax, boundaryInterp);
+                double sqrtT = Math.Sqrt(T);
+                
+                double addOn = _scheme.GetExerciseBoundaryToPriceIntegrator().Integrate(addOnFunc.Evaluate, 0.0, sqrtT);
+                
+                if (double.IsNaN(addOn) || double.IsInfinity(addOn))
+                {
+                    return CalculateFallbackAddOnValue(S, K, r, q, vol, T);
+                }
+                
+                if (addOn < 0)
+                {
+                    return 0.0;
+                }
+                
+                double intrinsic = Math.Max(0, K - S);
+                if (addOn > intrinsic)
+                {
+                    return intrinsic * 0.8;
+                }
+                
+                return addOn;
+            }
+            catch (Exception)
+            {
+                return CalculateFallbackAddOnValue(S, K, r, q, vol, T);
+            }
+        }
+
+        private double CalculateFallbackAddOnValue(double S, double K, double r, double q, double vol, double T)
+        {
+            double intrinsic = Math.Max(0, K - S);
+            double timeValue = Math.Max(0, CalculateBlackScholesPut(S, K, r, q, vol, T) - intrinsic);
+            
+            double carryBenefit = Math.Max(0, r - q);
+            double earlyExerciseFactor = Math.Min(0.3, carryBenefit * T);
+            
+            return timeValue * earlyExerciseFactor;
         }
 
         private static double CalculateBlackScholesPut(double S, double K, double r, double q, double vol, double T)
