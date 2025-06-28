@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head>
 
-<head>
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
 
-<meta charset="utf-8" />
-<meta name="generator" content="quarto-1.7.32" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-
-<meta name="author" content="Kiran K. Nath" />
-<meta name="dcterms.date" content="2025-06-28" />
-<meta name="keywords" content="American Options, Spectral Methods, Free Boundary Problems, Negative Interest Rates, Optimal Stopping" />
+<meta name="author" content="Kiran K. Nath">
+<meta name="dcterms.date" content="2025-06-28">
+<meta name="keywords" content="American Options, Spectral Methods, Free Boundary Problems, Negative Interest Rates, Optimal Stopping">
 
 <title>The Antares Mathematical Framework</title>
 <style>
@@ -27,10 +25,20 @@ ul.task-list li input[type="checkbox"] {
 }
 </style>
 
-<!-- htmldependencies:E3FAD763 -->
+
+<script src="Antares_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="Antares_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="Antares_files/libs/quarto-html/popper.min.js"></script>
+<script src="Antares_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Antares_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Antares_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Antares_files/libs/quarto-html/quarto-syntax-highlighting-234273d1456647dabc34a594ac50e507.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Antares_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Antares_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Antares_files/libs/bootstrap/bootstrap-076c893dcca4f899fc30a0784f990812.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script defer="" src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
@@ -45,7 +53,7 @@ ul.task-list li input[type="checkbox"] {
    });
 }}});
   </script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -76,13 +84,70 @@ window.Quarto = {
 
 </head>
 
-<body>
+<body class="quarto-light">
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
 <div id="quarto-sidebar-toc-left" class="sidebar toc-left">
-  <div id="quarto-toc-target"></div>
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#mathematical-framework-and-problem-formulation" id="toc-mathematical-framework-and-problem-formulation" class="nav-link" data-scroll-target="#mathematical-framework-and-problem-formulation"><span class="header-section-number">2</span> Mathematical Framework and Problem Formulation</a>
+  <ul>
+  <li><a href="#stochastic-process-foundation" id="toc-stochastic-process-foundation" class="nav-link" data-scroll-target="#stochastic-process-foundation"><span class="header-section-number">2.1</span> Stochastic Process Foundation</a></li>
+  <li><a href="#the-optimal-stopping-formulation" id="toc-the-optimal-stopping-formulation" class="nav-link" data-scroll-target="#the-optimal-stopping-formulation"><span class="header-section-number">2.2</span> The Optimal Stopping Formulation</a></li>
+  <li><a href="#variational-inequality-characterization" id="toc-variational-inequality-characterization" class="nav-link" data-scroll-target="#variational-inequality-characterization"><span class="header-section-number">2.3</span> Variational Inequality Characterization</a></li>
+  <li><a href="#boundary-conditions-and-regularity" id="toc-boundary-conditions-and-regularity" class="nav-link" data-scroll-target="#boundary-conditions-and-regularity"><span class="header-section-number">2.4</span> Boundary Conditions and Regularity</a></li>
+  </ul></li>
+  <li><a href="#the-integral-equation-methodology" id="toc-the-integral-equation-methodology" class="nav-link" data-scroll-target="#the-integral-equation-methodology"><span class="header-section-number">3</span> The Integral Equation Methodology</a>
+  <ul>
+  <li><a href="#derivation-of-the-fundamental-integral-representation" id="toc-derivation-of-the-fundamental-integral-representation" class="nav-link" data-scroll-target="#derivation-of-the-fundamental-integral-representation"><span class="header-section-number">3.1</span> Derivation of the Fundamental Integral Representation</a></li>
+  <li><a href="#complete-integral-equation-formulation" id="toc-complete-integral-equation-formulation" class="nav-link" data-scroll-target="#complete-integral-equation-formulation"><span class="header-section-number">3.2</span> Complete Integral Equation Formulation</a></li>
+  <li><a href="#boundary-integral-equations" id="toc-boundary-integral-equations" class="nav-link" data-scroll-target="#boundary-integral-equations"><span class="header-section-number">3.3</span> Boundary Integral Equations</a></li>
+  </ul></li>
+  <li><a href="#double-boundary-phenomena-under-negative-interest-rates" id="toc-double-boundary-phenomena-under-negative-interest-rates" class="nav-link" data-scroll-target="#double-boundary-phenomena-under-negative-interest-rates"><span class="header-section-number">4</span> Double Boundary Phenomena Under Negative Interest Rates</a>
+  <ul>
+  <li><a href="#mathematical-characterization-of-the-double-boundary-regime" id="toc-mathematical-characterization-of-the-double-boundary-regime" class="nav-link" data-scroll-target="#mathematical-characterization-of-the-double-boundary-regime"><span class="header-section-number">4.1</span> Mathematical Characterization of the Double Boundary Regime</a></li>
+  <li><a href="#long-term-asymptotic-analysis" id="toc-long-term-asymptotic-analysis" class="nav-link" data-scroll-target="#long-term-asymptotic-analysis"><span class="header-section-number">4.2</span> Long-Term Asymptotic Analysis</a></li>
+  <li><a href="#modified-integral-equation-formulation" id="toc-modified-integral-equation-formulation" class="nav-link" data-scroll-target="#modified-integral-equation-formulation"><span class="header-section-number">4.3</span> Modified Integral Equation Formulation</a></li>
+  <li><a href="#decoupling-of-the-boundary-systems" id="toc-decoupling-of-the-boundary-systems" class="nav-link" data-scroll-target="#decoupling-of-the-boundary-systems"><span class="header-section-number">4.4</span> Decoupling of the Boundary Systems</a></li>
+  </ul></li>
+  <li><a href="#the-spectral-collocation-methodology" id="toc-the-spectral-collocation-methodology" class="nav-link" data-scroll-target="#the-spectral-collocation-methodology"><span class="header-section-number">5</span> The Spectral Collocation Methodology</a>
+  <ul>
+  <li><a href="#mathematical-foundation-of-spectral-approximation" id="toc-mathematical-foundation-of-spectral-approximation" class="nav-link" data-scroll-target="#mathematical-foundation-of-spectral-approximation"><span class="header-section-number">5.1</span> Mathematical Foundation of Spectral Approximation</a></li>
+  <li><a href="#domain-transformation-and-regularization" id="toc-domain-transformation-and-regularization" class="nav-link" data-scroll-target="#domain-transformation-and-regularization"><span class="header-section-number">5.2</span> Domain Transformation and Regularization</a></li>
+  <li><a href="#chebyshev-collocation-implementation" id="toc-chebyshev-collocation-implementation" class="nav-link" data-scroll-target="#chebyshev-collocation-implementation"><span class="header-section-number">5.3</span> Chebyshev Collocation Implementation</a></li>
+  <li><a href="#convergence-analysis" id="toc-convergence-analysis" class="nav-link" data-scroll-target="#convergence-analysis"><span class="header-section-number">5.4</span> Convergence Analysis</a></li>
+  <li><a href="#integration-of-singular-kernels" id="toc-integration-of-singular-kernels" class="nav-link" data-scroll-target="#integration-of-singular-kernels"><span class="header-section-number">5.5</span> Integration of Singular Kernels</a></li>
+  </ul></li>
+  <li><a href="#fixed-point-iteration-and-convergence-acceleration" id="toc-fixed-point-iteration-and-convergence-acceleration" class="nav-link" data-scroll-target="#fixed-point-iteration-and-convergence-acceleration"><span class="header-section-number">6</span> Fixed-Point Iteration and Convergence Acceleration</a>
+  <ul>
+  <li><a href="#mathematical-structure-of-the-fixed-point-problem" id="toc-mathematical-structure-of-the-fixed-point-problem" class="nav-link" data-scroll-target="#mathematical-structure-of-the-fixed-point-problem"><span class="header-section-number">6.1</span> Mathematical Structure of the Fixed-Point Problem</a></li>
+  <li><a href="#accelerated-iteration-schemes" id="toc-accelerated-iteration-schemes" class="nav-link" data-scroll-target="#accelerated-iteration-schemes"><span class="header-section-number">6.2</span> Accelerated Iteration Schemes</a></li>
+  <li><a href="#anderson-acceleration" id="toc-anderson-acceleration" class="nav-link" data-scroll-target="#anderson-acceleration"><span class="header-section-number">6.3</span> Anderson Acceleration</a></li>
+  <li><a href="#double-boundary-iteration-schemes" id="toc-double-boundary-iteration-schemes" class="nav-link" data-scroll-target="#double-boundary-iteration-schemes"><span class="header-section-number">6.4</span> Double-Boundary Iteration Schemes</a></li>
+  <li><a href="#convergence-monitoring-and-adaptive-control" id="toc-convergence-monitoring-and-adaptive-control" class="nav-link" data-scroll-target="#convergence-monitoring-and-adaptive-control"><span class="header-section-number">6.5</span> Convergence Monitoring and Adaptive Control</a></li>
+  </ul></li>
+  <li><a href="#mathematical-validation-and-error-analysis" id="toc-mathematical-validation-and-error-analysis" class="nav-link" data-scroll-target="#mathematical-validation-and-error-analysis"><span class="header-section-number">7</span> Mathematical Validation and Error Analysis</a>
+  <ul>
+  <li><a href="#theoretical-error-bounds" id="toc-theoretical-error-bounds" class="nav-link" data-scroll-target="#theoretical-error-bounds"><span class="header-section-number">7.1</span> Theoretical Error Bounds</a></li>
+  <li><a href="#option-price-error-analysis" id="toc-option-price-error-analysis" class="nav-link" data-scroll-target="#option-price-error-analysis"><span class="header-section-number">7.2</span> Option Price Error Analysis</a></li>
+  <li><a href="#convergence-verification" id="toc-convergence-verification" class="nav-link" data-scroll-target="#convergence-verification"><span class="header-section-number">7.3</span> Convergence Verification</a></li>
+  <li><a href="#greeks-computation-and-sensitivity-analysis" id="toc-greeks-computation-and-sensitivity-analysis" class="nav-link" data-scroll-target="#greeks-computation-and-sensitivity-analysis"><span class="header-section-number">7.4</span> Greeks Computation and Sensitivity Analysis</a></li>
+  </ul></li>
+  <li><a href="#extensions-and-mathematical-generalizations" id="toc-extensions-and-mathematical-generalizations" class="nav-link" data-scroll-target="#extensions-and-mathematical-generalizations"><span class="header-section-number">8</span> Extensions and Mathematical Generalizations</a>
+  <ul>
+  <li><a href="#time-dependent-parameter-extensions" id="toc-time-dependent-parameter-extensions" class="nav-link" data-scroll-target="#time-dependent-parameter-extensions"><span class="header-section-number">8.1</span> Time-Dependent Parameter Extensions</a></li>
+  <li><a href="#jump-diffusion-extensions" id="toc-jump-diffusion-extensions" class="nav-link" data-scroll-target="#jump-diffusion-extensions"><span class="header-section-number">8.2</span> Jump-Diffusion Extensions</a></li>
+  <li><a href="#stochastic-volatility-extensions" id="toc-stochastic-volatility-extensions" class="nav-link" data-scroll-target="#stochastic-volatility-extensions"><span class="header-section-number">8.3</span> Stochastic Volatility Extensions</a></li>
+  <li><a href="#multi-asset-extensions" id="toc-multi-asset-extensions" class="nav-link" data-scroll-target="#multi-asset-extensions"><span class="header-section-number">8.4</span> Multi-Asset Extensions</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">9</span> Conclusion</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Antares.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
 </div>
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
 <main class="content" id="quarto-document-content">
 
@@ -129,66 +194,9 @@ window.Quarto = {
 
 </header>
 
-<nav id="TOC" role="doc-toc">
-    <h2 id="toc-title">Contents</h2>
-   
-  <ul>
-  <li><a href="#introduction" id="toc-introduction"><span class="header-section-number">1</span> Introduction</a></li>
-  <li><a href="#mathematical-framework-and-problem-formulation" id="toc-mathematical-framework-and-problem-formulation"><span class="header-section-number">2</span> Mathematical Framework and Problem Formulation</a>
-  <ul>
-  <li><a href="#stochastic-process-foundation" id="toc-stochastic-process-foundation"><span class="header-section-number">2.1</span> Stochastic Process Foundation</a></li>
-  <li><a href="#the-optimal-stopping-formulation" id="toc-the-optimal-stopping-formulation"><span class="header-section-number">2.2</span> The Optimal Stopping Formulation</a></li>
-  <li><a href="#variational-inequality-characterization" id="toc-variational-inequality-characterization"><span class="header-section-number">2.3</span> Variational Inequality Characterization</a></li>
-  <li><a href="#boundary-conditions-and-regularity" id="toc-boundary-conditions-and-regularity"><span class="header-section-number">2.4</span> Boundary Conditions and Regularity</a></li>
-  </ul></li>
-  <li><a href="#the-integral-equation-methodology" id="toc-the-integral-equation-methodology"><span class="header-section-number">3</span> The Integral Equation Methodology</a>
-  <ul>
-  <li><a href="#derivation-of-the-fundamental-integral-representation" id="toc-derivation-of-the-fundamental-integral-representation"><span class="header-section-number">3.1</span> Derivation of the Fundamental Integral Representation</a></li>
-  <li><a href="#complete-integral-equation-formulation" id="toc-complete-integral-equation-formulation"><span class="header-section-number">3.2</span> Complete Integral Equation Formulation</a></li>
-  <li><a href="#boundary-integral-equations" id="toc-boundary-integral-equations"><span class="header-section-number">3.3</span> Boundary Integral Equations</a></li>
-  </ul></li>
-  <li><a href="#double-boundary-phenomena-under-negative-interest-rates" id="toc-double-boundary-phenomena-under-negative-interest-rates"><span class="header-section-number">4</span> Double Boundary Phenomena Under Negative Interest Rates</a>
-  <ul>
-  <li><a href="#mathematical-characterization-of-the-double-boundary-regime" id="toc-mathematical-characterization-of-the-double-boundary-regime"><span class="header-section-number">4.1</span> Mathematical Characterization of the Double Boundary Regime</a></li>
-  <li><a href="#long-term-asymptotic-analysis" id="toc-long-term-asymptotic-analysis"><span class="header-section-number">4.2</span> Long-Term Asymptotic Analysis</a></li>
-  <li><a href="#modified-integral-equation-formulation" id="toc-modified-integral-equation-formulation"><span class="header-section-number">4.3</span> Modified Integral Equation Formulation</a></li>
-  <li><a href="#decoupling-of-the-boundary-systems" id="toc-decoupling-of-the-boundary-systems"><span class="header-section-number">4.4</span> Decoupling of the Boundary Systems</a></li>
-  </ul></li>
-  <li><a href="#the-spectral-collocation-methodology" id="toc-the-spectral-collocation-methodology"><span class="header-section-number">5</span> The Spectral Collocation Methodology</a>
-  <ul>
-  <li><a href="#mathematical-foundation-of-spectral-approximation" id="toc-mathematical-foundation-of-spectral-approximation"><span class="header-section-number">5.1</span> Mathematical Foundation of Spectral Approximation</a></li>
-  <li><a href="#domain-transformation-and-regularization" id="toc-domain-transformation-and-regularization"><span class="header-section-number">5.2</span> Domain Transformation and Regularization</a></li>
-  <li><a href="#chebyshev-collocation-implementation" id="toc-chebyshev-collocation-implementation"><span class="header-section-number">5.3</span> Chebyshev Collocation Implementation</a></li>
-  <li><a href="#convergence-analysis" id="toc-convergence-analysis"><span class="header-section-number">5.4</span> Convergence Analysis</a></li>
-  <li><a href="#integration-of-singular-kernels" id="toc-integration-of-singular-kernels"><span class="header-section-number">5.5</span> Integration of Singular Kernels</a></li>
-  </ul></li>
-  <li><a href="#fixed-point-iteration-and-convergence-acceleration" id="toc-fixed-point-iteration-and-convergence-acceleration"><span class="header-section-number">6</span> Fixed-Point Iteration and Convergence Acceleration</a>
-  <ul>
-  <li><a href="#mathematical-structure-of-the-fixed-point-problem" id="toc-mathematical-structure-of-the-fixed-point-problem"><span class="header-section-number">6.1</span> Mathematical Structure of the Fixed-Point Problem</a></li>
-  <li><a href="#accelerated-iteration-schemes" id="toc-accelerated-iteration-schemes"><span class="header-section-number">6.2</span> Accelerated Iteration Schemes</a></li>
-  <li><a href="#anderson-acceleration" id="toc-anderson-acceleration"><span class="header-section-number">6.3</span> Anderson Acceleration</a></li>
-  <li><a href="#double-boundary-iteration-schemes" id="toc-double-boundary-iteration-schemes"><span class="header-section-number">6.4</span> Double-Boundary Iteration Schemes</a></li>
-  <li><a href="#convergence-monitoring-and-adaptive-control" id="toc-convergence-monitoring-and-adaptive-control"><span class="header-section-number">6.5</span> Convergence Monitoring and Adaptive Control</a></li>
-  </ul></li>
-  <li><a href="#mathematical-validation-and-error-analysis" id="toc-mathematical-validation-and-error-analysis"><span class="header-section-number">7</span> Mathematical Validation and Error Analysis</a>
-  <ul>
-  <li><a href="#theoretical-error-bounds" id="toc-theoretical-error-bounds"><span class="header-section-number">7.1</span> Theoretical Error Bounds</a></li>
-  <li><a href="#option-price-error-analysis" id="toc-option-price-error-analysis"><span class="header-section-number">7.2</span> Option Price Error Analysis</a></li>
-  <li><a href="#convergence-verification" id="toc-convergence-verification"><span class="header-section-number">7.3</span> Convergence Verification</a></li>
-  <li><a href="#greeks-computation-and-sensitivity-analysis" id="toc-greeks-computation-and-sensitivity-analysis"><span class="header-section-number">7.4</span> Greeks Computation and Sensitivity Analysis</a></li>
-  </ul></li>
-  <li><a href="#extensions-and-mathematical-generalizations" id="toc-extensions-and-mathematical-generalizations"><span class="header-section-number">8</span> Extensions and Mathematical Generalizations</a>
-  <ul>
-  <li><a href="#time-dependent-parameter-extensions" id="toc-time-dependent-parameter-extensions"><span class="header-section-number">8.1</span> Time-Dependent Parameter Extensions</a></li>
-  <li><a href="#jump-diffusion-extensions" id="toc-jump-diffusion-extensions"><span class="header-section-number">8.2</span> Jump-Diffusion Extensions</a></li>
-  <li><a href="#stochastic-volatility-extensions" id="toc-stochastic-volatility-extensions"><span class="header-section-number">8.3</span> Stochastic Volatility Extensions</a></li>
-  <li><a href="#multi-asset-extensions" id="toc-multi-asset-extensions"><span class="header-section-number">8.4</span> Multi-Asset Extensions</a></li>
-  </ul></li>
-  <li><a href="#conclusion" id="toc-conclusion"><span class="header-section-number">9</span> Conclusion</a></li>
-  </ul>
-</nav>
+
 <section id="introduction" class="level2" data-number="1">
-<h2 data-number="1"><span class="header-section-number">1</span> Introduction</h2>
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
 <p>The mathematical valuation of American-style derivative securities represents one of the most challenging problems in quantitative finance, fundamentally distinguished from its European counterpart by the embedded optimal stopping feature that creates a coupled optimization and valuation problem of considerable analytical complexity. The essential mathematical difficulty arises from the necessity to simultaneously determine both the option value function and the optimal exercise strategy, manifested as a free boundary that separates the continuation region from the exercise region in the underlying asset price space.</p>
 <p>Traditional numerical approaches to this problem, including binomial and trinomial lattice methods, finite difference schemes, and Monte Carlo techniques, typically exhibit algebraic convergence rates that demand substantial computational resources to achieve precision suitable for practical applications. The fundamental limitation of these methods stems from their discrete approximation of continuous processes and their inability to exploit the inherent smoothness properties of the value function away from the exercise boundary.</p>
 <p>The emergence of negative interest rate regimes in major global financial markets has introduced additional mathematical complexities that challenge the foundational assumptions of classical option pricing theory. Under certain configurations of negative interest rates and dividend yields, the optimal exercise region can exhibit a qualitatively different topology characterized by two distinct boundaries rather than the single boundary assumed in traditional models. This phenomenon, rigorously analyzed in recent mathematical finance literature, creates what is termed a “double continuation region” where the optimal exercise strategy involves exercising the option only when the underlying asset price falls within a specific interval bounded by two time-dependent functions.</p>
@@ -198,9 +206,9 @@ window.Quarto = {
 <p>This comprehensive mathematical methodology enables the construction of a rigorous analytical framework that maintains exceptional accuracy across the full range of market conditions while providing mathematical guarantees on convergence behavior and error bounds. The mathematical rigor of the approach ensures robust performance across extreme parameter ranges while the spectral convergence properties enable applications requiring the highest levels of precision.</p>
 </section>
 <section id="mathematical-framework-and-problem-formulation" class="level2" data-number="2">
-<h2 data-number="2"><span class="header-section-number">2</span> Mathematical Framework and Problem Formulation</h2>
+<h2 data-number="2" class="anchored" data-anchor-id="mathematical-framework-and-problem-formulation"><span class="header-section-number">2</span> Mathematical Framework and Problem Formulation</h2>
 <section id="stochastic-process-foundation" class="level3" data-number="2.1">
-<h3 data-number="2.1"><span class="header-section-number">2.1</span> Stochastic Process Foundation</h3>
+<h3 data-number="2.1" class="anchored" data-anchor-id="stochastic-process-foundation"><span class="header-section-number">2.1</span> Stochastic Process Foundation</h3>
 <p>The mathematical foundation of the Antares framework rests upon the assumption that the underlying asset price follows a geometric Brownian motion under the risk-neutral probability measure <span class="math inline">\mathbb{Q}</span>. This fundamental modeling choice, while representing a considerable idealization of actual market dynamics, provides the mathematical tractability necessary for developing rigorous analytical methods while maintaining sufficient economic realism for practical applications.</p>
 <p>Under the risk-neutral measure, the asset price process <span class="math inline">\{S(t)\}_{t \geq 0}</span> satisfies the stochastic differential equation:</p>
 <p><span class="math display">\frac{dS(t)}{S(t)} = (r-q)dt + \sigma dW(t) \tag{2.1}</span></p>
@@ -212,7 +220,7 @@ window.Quarto = {
 <p>The assumption of constant parameters throughout the option’s lifetime enables the exploitation of time-homogeneity in the underlying process. This property allows the option value at any time <span class="math inline">t</span> for a contract maturing at time <span class="math inline">T</span> to be expressed as a function of the time to maturity <span class="math inline">\tau \triangleq T-t</span> and the current asset price <span class="math inline">S</span>, independent of the absolute time <span class="math inline">t</span>. This dimensional reduction from a two-dimensional space-time problem to a one-dimensional time-to-maturity problem significantly simplifies both the mathematical analysis and the development of numerical algorithms.</p>
 </section>
 <section id="the-optimal-stopping-formulation" class="level3" data-number="2.2">
-<h3 data-number="2.2"><span class="header-section-number">2.2</span> The Optimal Stopping Formulation</h3>
+<h3 data-number="2.2" class="anchored" data-anchor-id="the-optimal-stopping-formulation"><span class="header-section-number">2.2</span> The Optimal Stopping Formulation</h3>
 <p>The mathematical characterization of American option pricing leads naturally to an optimal stopping problem. For an American put option with strike price <span class="math inline">K &gt; 0</span> and maturity <span class="math inline">T</span>, the value function at time <span class="math inline">t</span> with underlying asset price <span class="math inline">S(t) = s</span> is given by:</p>
 <p><span class="math display">V(\tau,s) = \sup_{\nu \in \mathcal{T}_{0,\tau}} \mathbb{E}^{\mathbb{Q}}\left[e^{-r\nu}(K-S(\nu))^+ \mid S(0) = s\right] \tag{2.4}</span></p>
 <p>where <span class="math inline">\tau = T-t</span> represents the time to maturity, <span class="math inline">\mathcal{T}_{0,\tau}</span> denotes the set of all stopping times taking values in <span class="math inline">[0,\tau]</span>, and the supremum is taken over all admissible exercise strategies.</p>
@@ -221,7 +229,7 @@ window.Quarto = {
 <p>The exercise boundary <span class="math inline">B(\tau)</span> divides the state space into two regions: the exercise region <span class="math inline">\mathcal{E}(\tau) = \{s : s \leq B(\tau)\}</span> and the continuation region <span class="math inline">\mathcal{C}(\tau) = \{s : s &gt; B(\tau)\}</span>.</p>
 </section>
 <section id="variational-inequality-characterization" class="level3" data-number="2.3">
-<h3 data-number="2.3"><span class="header-section-number">2.3</span> Variational Inequality Characterization</h3>
+<h3 data-number="2.3" class="anchored" data-anchor-id="variational-inequality-characterization"><span class="header-section-number">2.3</span> Variational Inequality Characterization</h3>
 <p>The value function <span class="math inline">V(\tau,s)</span> satisfies a variational inequality that captures the mathematical essence of the optimal stopping problem. In the continuation region, the value function must satisfy the Black-Scholes partial differential equation, while in the exercise region, the option value equals the intrinsic value. This leads to the variational inequality:</p>
 <p><span class="math display">\max\left\{(K-s)^+, \frac{\partial V}{\partial \tau} + \mathcal{L}V\right\} = 0 \tag{2.6}</span></p>
 <p>where <span class="math inline">\mathcal{L}</span> denotes the infinitesimal generator of the asset price process:</p>
@@ -234,7 +242,7 @@ V(\tau,s) - (K-s)^+ &amp;\geq 0 \\
 \end{aligned} \tag{2.8}</span></p>
 </section>
 <section id="boundary-conditions-and-regularity" class="level3" data-number="2.4">
-<h3 data-number="2.4"><span class="header-section-number">2.4</span> Boundary Conditions and Regularity</h3>
+<h3 data-number="2.4" class="anchored" data-anchor-id="boundary-conditions-and-regularity"><span class="header-section-number">2.4</span> Boundary Conditions and Regularity</h3>
 <p>The exercise boundary <span class="math inline">B(\tau)</span> must satisfy fundamental conditions that ensure the optimality of the stopping strategy. The value-matching condition requires continuity of the value function across the exercise boundary:</p>
 <p><span class="math display">V(\tau, B(\tau)) = K - B(\tau) \tag{2.9}</span></p>
 <p>The smooth-pasting condition, also known as the high-contact condition, ensures that the first derivative of the value function is continuous across the boundary:</p>
@@ -252,9 +260,9 @@ K \cdot \frac{r}{q} &amp; \text{if } r &lt; q
 </section>
 </section>
 <section id="the-integral-equation-methodology" class="level2" data-number="3">
-<h2 data-number="3"><span class="header-section-number">3</span> The Integral Equation Methodology</h2>
+<h2 data-number="3" class="anchored" data-anchor-id="the-integral-equation-methodology"><span class="header-section-number">3</span> The Integral Equation Methodology</h2>
 <section id="derivation-of-the-fundamental-integral-representation" class="level3" data-number="3.1">
-<h3 data-number="3.1"><span class="header-section-number">3.1</span> Derivation of the Fundamental Integral Representation</h3>
+<h3 data-number="3.1" class="anchored" data-anchor-id="derivation-of-the-fundamental-integral-representation"><span class="header-section-number">3.1</span> Derivation of the Fundamental Integral Representation</h3>
 <p>The transformation of the American option pricing problem from a partial differential equation with free boundaries to an integral equation represents a profound mathematical advancement that forms the cornerstone of the Antares methodology. This transformation, originally conceived by Kim and subsequently refined through extensive mathematical development, provides both computational advantages and deeper analytical insight into the structure of the early exercise premium.</p>
 <p>The derivation begins with the fundamental observation that the American option value can be decomposed as:</p>
 <p><span class="math display">V(\tau,s) = v(\tau,s) + \mathcal{P}(\tau,s) \tag{3.1}</span></p>
@@ -271,14 +279,14 @@ K \cdot \frac{r}{q} &amp; \text{if } r &lt; q
 <p>The indicator function <span class="math inline">\mathbbm{1}_{\{S(u) \leq B(\tau-u)\}}</span> restricts the integration to periods when early exercise is optimal, while the term <span class="math inline">(rK - qS(u))</span> represents the instantaneous net cash flow benefit from early exercise.</p>
 </section>
 <section id="complete-integral-equation-formulation" class="level3" data-number="3.2">
-<h3 data-number="3.2"><span class="header-section-number">3.2</span> Complete Integral Equation Formulation</h3>
+<h3 data-number="3.2" class="anchored" data-anchor-id="complete-integral-equation-formulation"><span class="header-section-number">3.2</span> Complete Integral Equation Formulation</h3>
 <p>Utilizing the lognormal distribution properties of the underlying asset price process, the expectation in equation (3.5) can be evaluated explicitly, yielding the complete integral representation:</p>
 <p><span class="math display">V(\tau,s) = v(\tau,s) + \int_0^\tau rK e^{-r(\tau-u)}\Phi(-d_-(\tau-u,s/B(u))) du - \int_0^\tau qs e^{-q(\tau-u)}\Phi(-d_+(\tau-u,s/B(u))) du \tag{3.6}</span></p>
 <p>The mathematical elegance of this formulation lies in its economic interpretation. The first integral term represents the present value of the interest earned on the strike price <span class="math inline">K</span> during periods when early exercise is optimal, weighted by the risk-neutral probability that the asset price falls below the exercise boundary. The second integral term captures the present value of the dividend yield foregone on the underlying asset position, similarly weighted by the exercise probability.</p>
 <p>The cumulative normal distribution functions <span class="math inline">\Phi(-d_{\pm}(\tau-u,s/B(u)))</span> arise naturally from the lognormal distribution of future asset prices and represent the risk-neutral probabilities of early exercise at future times, conditional on the current asset price <span class="math inline">s</span>.</p>
 </section>
 <section id="boundary-integral-equations" class="level3" data-number="3.3">
-<h3 data-number="3.3"><span class="header-section-number">3.3</span> Boundary Integral Equations</h3>
+<h3 data-number="3.3" class="anchored" data-anchor-id="boundary-integral-equations"><span class="header-section-number">3.3</span> Boundary Integral Equations</h3>
 <p>To determine the exercise boundary <span class="math inline">B(\tau)</span>, the integral equation (3.6) must be combined with the boundary conditions derived from the optimal stopping theory. Applying the value-matching condition (2.9) yields:</p>
 <p><span class="math display">K - B(\tau) = v(\tau, B(\tau)) + \int_0^\tau rK e^{-r(\tau-u)}\Phi(-d_-(\tau-u,B(\tau)/B(u))) du - \int_0^\tau qB(\tau) e^{-q(\tau-u)}\Phi(-d_+(\tau-u,B(\tau)/B(u))) du \tag{3.7}</span></p>
 <p>This nonlinear Volterra-type integral equation for <span class="math inline">B(\tau)</span> forms the foundation of the numerical algorithm. The equation can be rearranged into the fixed-point form:</p>
@@ -293,9 +301,9 @@ K \cdot \frac{r}{q} &amp; \text{if } r &lt; q
 </section>
 </section>
 <section id="double-boundary-phenomena-under-negative-interest-rates" class="level2" data-number="4">
-<h2 data-number="4"><span class="header-section-number">4</span> Double Boundary Phenomena Under Negative Interest Rates</h2>
+<h2 data-number="4" class="anchored" data-anchor-id="double-boundary-phenomena-under-negative-interest-rates"><span class="header-section-number">4</span> Double Boundary Phenomena Under Negative Interest Rates</h2>
 <section id="mathematical-characterization-of-the-double-boundary-regime" class="level3" data-number="4.1">
-<h3 data-number="4.1"><span class="header-section-number">4.1</span> Mathematical Characterization of the Double Boundary Regime</h3>
+<h3 data-number="4.1" class="anchored" data-anchor-id="mathematical-characterization-of-the-double-boundary-regime"><span class="header-section-number">4.1</span> Mathematical Characterization of the Double Boundary Regime</h3>
 <p>The emergence of negative interest rate environments has revealed a mathematically fascinating phenomenon that fundamentally challenges classical option pricing assumptions. Under specific combinations of negative interest rates and dividend yields, the optimal exercise region for American options assumes a qualitatively different topology characterized by two distinct boundaries rather than the single boundary traditionally assumed.</p>
 <p>For American put options, the double-boundary configuration arises precisely when the parameters satisfy <span class="math inline">q &lt; r &lt; 0</span>. The mathematical foundation for this phenomenon can be understood through the short-maturity analysis of the exercise premium. In the limit as <span class="math inline">\tau \to 0^+</span>, the decision to exercise depends on the sign of the net carry <span class="math inline">(rK - qs)</span> for asset prices near the strike.</p>
 <p><strong>Theorem 4.1</strong> (Double Boundary Existence): <em>Consider an American put option with parameters satisfying <span class="math inline">q &lt; r &lt; 0</span>. There exists a critical volatility <span class="math inline">\sigma^* = |\sqrt{-2r} - \sqrt{-2q}|</span> such that for <span class="math inline">\sigma \leq \sigma^*</span>, the optimal exercise region consists of the interval <span class="math inline">[Y(\tau), B(\tau)]</span> where both boundaries are well-defined for all <span class="math inline">\tau \geq 0</span>.</em></p>
@@ -305,7 +313,7 @@ K \cdot \frac{r}{q} &amp; \text{if } r &lt; q
 <p>Since <span class="math inline">q &lt; r &lt; 0</span>, the ratio <span class="math inline">r/q</span> satisfies <span class="math inline">0 &lt; r/q &lt; 1</span>, establishing that <span class="math inline">Y(0^+) &lt; B(0^+) = K</span>, confirming the existence of a non-trivial exercise interval near expiration.</p>
 </section>
 <section id="long-term-asymptotic-analysis" class="level3" data-number="4.2">
-<h3 data-number="4.2"><span class="header-section-number">4.2</span> Long-Term Asymptotic Analysis</h3>
+<h3 data-number="4.2" class="anchored" data-anchor-id="long-term-asymptotic-analysis"><span class="header-section-number">4.2</span> Long-Term Asymptotic Analysis</h3>
 <p>The long-term behavior of the double boundaries depends critically on the volatility relative to the critical threshold <span class="math inline">\sigma^*</span>. When <span class="math inline">\sigma &lt; \sigma^*</span>, both boundaries converge to finite limits as <span class="math inline">\tau \to \infty</span>:</p>
 <p><span class="math display">\lim_{\tau \to \infty} B(\tau) = K \frac{\lambda_+}{\lambda_+ - 1} \text{ and } \lim_{\tau \to \infty} Y(\tau) = K \frac{\lambda_-}{\lambda_- - 1} \tag{4.2}</span></p>
 <p>where <span class="math inline">\lambda_{\pm}</span> represent the roots of the modified characteristic equation:</p>
@@ -315,7 +323,7 @@ K \cdot \frac{r}{q} &amp; \text{if } r &lt; q
 <p>The intersection time <span class="math inline">\tau^*</span> cannot be determined analytically in general but can be computed numerically through root-finding algorithms applied to the equation <span class="math inline">B(\tau^*) = Y(\tau^*)</span>.</p>
 </section>
 <section id="modified-integral-equation-formulation" class="level3" data-number="4.3">
-<h3 data-number="4.3"><span class="header-section-number">4.3</span> Modified Integral Equation Formulation</h3>
+<h3 data-number="4.3" class="anchored" data-anchor-id="modified-integral-equation-formulation"><span class="header-section-number">4.3</span> Modified Integral Equation Formulation</h3>
 <p>The presence of two exercise boundaries necessitates a fundamental modification of the integral equation formulation. The early exercise premium must now account for the finite exercise region rather than the semi-infinite region of the single-boundary case.</p>
 <p>The modified integral representation takes the form:</p>
 <p><span class="math display">V(\tau,s) = v(\tau,s) + \int_0^{\min(\tau,\tau^*)} \mathbb{E}^{\mathbb{Q}}\left[e^{-ru} \mathbbm{1}_{\{Y(\tau-u) \leq S(u) \leq B(\tau-u)\}} (rK - qS(u)) \mid S(0) = s\right] du \tag{4.4}</span></p>
@@ -324,7 +332,7 @@ K \cdot \frac{r}{q} &amp; \text{if } r &lt; q
 <p><span class="math display">V(\tau,s) = v(\tau,s) + \int_0^{\min(\tau,\tau^*)} rK e^{-r(\tau-u)}[\Phi(-d_-(\tau-u,s/B(u))) - \Phi(-d_-(\tau-u,s/Y(u)))] du - \int_0^{\min(\tau,\tau^*)} qs e^{-q(\tau-u)}[\Phi(-d_+(\tau-u,s/B(u))) - \Phi(-d_+(\tau-u,s/Y(u)))] du \tag{4.5}</span></p>
 </section>
 <section id="decoupling-of-the-boundary-systems" class="level3" data-number="4.4">
-<h3 data-number="4.4"><span class="header-section-number">4.4</span> Decoupling of the Boundary Systems</h3>
+<h3 data-number="4.4" class="anchored" data-anchor-id="decoupling-of-the-boundary-systems"><span class="header-section-number">4.4</span> Decoupling of the Boundary Systems</h3>
 <p>A remarkable mathematical property of the double-boundary problem is that the two boundaries can be computed independently despite their apparent coupling in the integral equation (4.5). This decoupling arises from the fundamental principle that for asset prices outside the exercise interval, the option value depends only on the boundary that would be encountered first by the diffusion process.</p>
 <p><strong>Theorem 4.2</strong> (Boundary Decoupling): <em>The upper boundary <span class="math inline">B(\tau)</span> satisfies the single-boundary integral equation for all asset prices <span class="math inline">s \geq B(\tau)</span>, while the lower boundary <span class="math inline">Y(\tau)</span> satisfies a modified integral equation for all asset prices <span class="math inline">s \leq Y(\tau)</span>.</em></p>
 <p>For the upper boundary <span class="math inline">B(\tau)</span>, applying the value-matching condition at <span class="math inline">s = B(\tau)</span> yields:</p>
@@ -335,9 +343,9 @@ K \cdot \frac{r}{q} &amp; \text{if } r &lt; q
 </section>
 </section>
 <section id="the-spectral-collocation-methodology" class="level2" data-number="5">
-<h2 data-number="5"><span class="header-section-number">5</span> The Spectral Collocation Methodology</h2>
+<h2 data-number="5" class="anchored" data-anchor-id="the-spectral-collocation-methodology"><span class="header-section-number">5</span> The Spectral Collocation Methodology</h2>
 <section id="mathematical-foundation-of-spectral-approximation" class="level3" data-number="5.1">
-<h3 data-number="5.1"><span class="header-section-number">5.1</span> Mathematical Foundation of Spectral Approximation</h3>
+<h3 data-number="5.1" class="anchored" data-anchor-id="mathematical-foundation-of-spectral-approximation"><span class="header-section-number">5.1</span> Mathematical Foundation of Spectral Approximation</h3>
 <p>The spectral collocation methodology employed in the Antares framework represents a sophisticated application of global polynomial approximation theory to the solution of nonlinear integral equations arising in American option pricing. The mathematical foundation rests upon the exceptional approximation properties of orthogonal polynomials and their ability to achieve exponential convergence rates for sufficiently smooth functions.</p>
 <p>The fundamental principle of spectral methods lies in the representation of the unknown function through global basis functions that possess optimal approximation properties. For the exercise boundary function <span class="math inline">B(\tau)</span>, the spectral approximation takes the form:</p>
 <p><span class="math display">B_N(\tau) = \sum_{k=0}^{N} c_k \mathcal{B}_k(\tau) \tag{5.1}</span></p>
@@ -352,7 +360,7 @@ K \cdot \frac{r}{q} &amp; \text{if } r &lt; q
 \end{cases} \tag{5.3}</span></p>
 </section>
 <section id="domain-transformation-and-regularization" class="level3" data-number="5.2">
-<h3 data-number="5.2"><span class="header-section-number">5.2</span> Domain Transformation and Regularization</h3>
+<h3 data-number="5.2" class="anchored" data-anchor-id="domain-transformation-and-regularization"><span class="header-section-number">5.2</span> Domain Transformation and Regularization</h3>
 <p>The raw exercise boundary function <span class="math inline">B(\tau)</span> exhibits singular behavior near <span class="math inline">\tau = 0</span> that precludes direct polynomial approximation. The boundary possesses unbounded derivatives of all orders at the origin, making standard polynomial approximation inefficient and potentially unstable.</p>
 <p>The Antares methodology addresses this challenge through a sophisticated sequence of mathematical transformations designed to regularize the boundary function and render it amenable to spectral approximation. The transformation proceeds in several carefully designed stages.</p>
 <p><strong>Stage 1: Temporal Domain Transformation</strong></p>
@@ -372,7 +380,7 @@ K \cdot \frac{r}{q} &amp; \text{if } r &lt; q
 <p>The proof of this theorem relies on the asymptotic analysis of the boundary function and demonstrates that the transformed function <span class="math inline">H(\xi)</span> possesses the regularity properties necessary for spectral convergence.</p>
 </section>
 <section id="chebyshev-collocation-implementation" class="level3" data-number="5.3">
-<h3 data-number="5.3"><span class="header-section-number">5.3</span> Chebyshev Collocation Implementation</h3>
+<h3 data-number="5.3" class="anchored" data-anchor-id="chebyshev-collocation-implementation"><span class="header-section-number">5.3</span> Chebyshev Collocation Implementation</h3>
 <p>The collocation method determines the expansion coefficients by requiring the approximation to satisfy the governing equation at a discrete set of carefully chosen points. For Chebyshev polynomials, the optimal choice of collocation points corresponds to the Chebyshev-Gauss-Lobatto nodes:</p>
 <p><span class="math display">\xi_j = \cos\left(\frac{j\pi}{N}\right), \quad j = 0, 1, \ldots, N \tag{5.8}</span></p>
 <p>These points cluster near the boundaries of the interval <span class="math inline">[-1,1]</span> and provide optimal conditioning for the resulting linear system.</p>
@@ -387,7 +395,7 @@ H(\xi) &amp;= a_0 + \xi b_1 - b_2
 \end{aligned} \tag{5.10}</span></p>
 </section>
 <section id="convergence-analysis" class="level3" data-number="5.4">
-<h3 data-number="5.4"><span class="header-section-number">5.4</span> Convergence Analysis</h3>
+<h3 data-number="5.4" class="anchored" data-anchor-id="convergence-analysis"><span class="header-section-number">5.4</span> Convergence Analysis</h3>
 <p>The convergence properties of the spectral collocation method depend fundamentally on the smoothness of the transformed boundary function. For the Antares transformation sequence, the convergence can be characterized through the following theorem.</p>
 <p><strong>Theorem 5.2</strong> (Spectral Convergence): <em>Let <span class="math inline">H(\xi)</span> denote the transformed boundary function defined by equation (5.7), and let <span class="math inline">H_N(\xi)</span> denote its <span class="math inline">N</span>-point Chebyshev interpolant. If <span class="math inline">H</span> is analytic in a region containing <span class="math inline">[-1,1]</span>, then the approximation error satisfies:</em></p>
 <p><span class="math display">\|H - H_N\|_{\infty} \leq C \rho^{-N} \tag{5.11}</span></p>
@@ -395,7 +403,7 @@ H(\xi) &amp;= a_0 + \xi b_1 - b_2
 <p>The exponential convergence rate characterized by equation (5.11) represents a dramatic improvement over the algebraic convergence rates <span class="math inline">O(N^{-p})</span> achieved by finite difference methods. This superior convergence enables the achievement of high accuracy with relatively few degrees of freedom, typically requiring only 5-8 collocation points for most practical applications.</p>
 </section>
 <section id="integration-of-singular-kernels" class="level3" data-number="5.5">
-<h3 data-number="5.5"><span class="header-section-number">5.5</span> Integration of Singular Kernels</h3>
+<h3 data-number="5.5" class="anchored" data-anchor-id="integration-of-singular-kernels"><span class="header-section-number">5.5</span> Integration of Singular Kernels</h3>
 <p>The integral operators appearing in the boundary equations often contain weak singularities that require careful mathematical treatment to maintain the accuracy of the spectral method. The smooth-pasting formulation contains integrals of the form:</p>
 <p><span class="math display">\mathcal{I}(\tau) = \int_0^\tau \frac{f(u)}{\sqrt{\tau-u}} du \tag{5.12}</span></p>
 <p>where the factor <span class="math inline">(\tau-u)^{-1/2}</span> creates a weak singularity at <span class="math inline">u = \tau</span>.</p>
@@ -408,9 +416,9 @@ H(\xi) &amp;= a_0 + \xi b_1 - b_2
 </section>
 </section>
 <section id="fixed-point-iteration-and-convergence-acceleration" class="level2" data-number="6">
-<h2 data-number="6"><span class="header-section-number">6</span> Fixed-Point Iteration and Convergence Acceleration</h2>
+<h2 data-number="6" class="anchored" data-anchor-id="fixed-point-iteration-and-convergence-acceleration"><span class="header-section-number">6</span> Fixed-Point Iteration and Convergence Acceleration</h2>
 <section id="mathematical-structure-of-the-fixed-point-problem" class="level3" data-number="6.1">
-<h3 data-number="6.1"><span class="header-section-number">6.1</span> Mathematical Structure of the Fixed-Point Problem</h3>
+<h3 data-number="6.1" class="anchored" data-anchor-id="mathematical-structure-of-the-fixed-point-problem"><span class="header-section-number">6.1</span> Mathematical Structure of the Fixed-Point Problem</h3>
 <p>The boundary integral equations derived in the previous sections can be cast in the abstract fixed-point form <span class="math inline">B = \mathcal{F}(B)</span> where <span class="math inline">\mathcal{F}</span> represents a nonlinear operator mapping boundary functions to boundary functions. The mathematical properties of this operator determine the convergence behavior of iterative solution methods.</p>
 <p>For the single-boundary case, the fixed-point operator takes the form:</p>
 <p><span class="math display">\mathcal{F}(B)(\tau) = K e^{(r-q)\tau} \frac{N(\tau,B)}{D(\tau,B)} \tag{6.1}</span></p>
@@ -419,18 +427,18 @@ H(\xi) &amp;= a_0 + \xi b_1 - b_2
 <p>The proof of this theorem employs the analysis of the Gâteaux derivative of the operator <span class="math inline">\mathcal{F}</span> and demonstrates that small perturbations in the boundary function lead to proportionally smaller perturbations in the image, ensuring convergence of the fixed-point iteration.</p>
 </section>
 <section id="accelerated-iteration-schemes" class="level3" data-number="6.2">
-<h3 data-number="6.2"><span class="header-section-number">6.2</span> Accelerated Iteration Schemes</h3>
+<h3 data-number="6.2" class="anchored" data-anchor-id="accelerated-iteration-schemes"><span class="header-section-number">6.2</span> Accelerated Iteration Schemes</h3>
 <p>While the basic fixed-point iteration <span class="math inline">B^{(k+1)} = \mathcal{F}(B^{(k)})</span> guarantees convergence under the contraction mapping property, the convergence rate is typically linear and may require numerous iterations to achieve high precision. The Antares methodology employs sophisticated acceleration techniques to achieve quadratic convergence rates.</p>
 <p>The Jacobi-Newton acceleration scheme incorporates information about the functional derivative of the operator <span class="math inline">\mathcal{F}</span> to achieve superlinear convergence. The iteration takes the form:</p>
-<p><span class="math display">B^{(k+1)}(\tau) = B^{(k)}(\tau) + \eta \frac{B^{(k)}(\tau) - \mathcal{F}(B^{(k)})(\tau)}{\mathcal{F}&#39;(B^{(k)})(\tau) - 1} \tag{6.2}</span></p>
-<p>where <span class="math inline">\mathcal{F}&#39;(B)(\tau)</span> denotes the Gâteaux derivative of the operator with respect to boundary perturbations at the point <span class="math inline">\tau</span>, and <span class="math inline">\eta \in (0,1]</span> represents a relaxation parameter.</p>
+<p><span class="math display">B^{(k+1)}(\tau) = B^{(k)}(\tau) + \eta \frac{B^{(k)}(\tau) - \mathcal{F}(B^{(k)})(\tau)}{\mathcal{F}'(B^{(k)})(\tau) - 1} \tag{6.2}</span></p>
+<p>where <span class="math inline">\mathcal{F}'(B)(\tau)</span> denotes the Gâteaux derivative of the operator with respect to boundary perturbations at the point <span class="math inline">\tau</span>, and <span class="math inline">\eta \in (0,1]</span> represents a relaxation parameter.</p>
 <p>The computation of the functional derivative requires evaluation of additional integral expressions but typically reduces the required number of iterations from dozens to fewer than five, providing substantial overall computational savings.</p>
 <p><strong>Lemma 6.1</strong> (Gâteaux Derivative): <em>For both single-boundary fixed-point systems, the Gâteaux derivative of the operator <span class="math inline">\mathcal{F}</span> with respect to proportional boundary perturbations <span class="math inline">\ln B(\tau) \to \ln B(\tau) + \omega g(\tau)</span> satisfies:</em></p>
 <p><span class="math display">\frac{\partial \mathcal{F}}{\partial \omega}\bigg|_{\omega=0} = \frac{K e^{(r-q)\tau}}{D(\tau,B)} \int_0^\tau e^{ru} \frac{r-q}{B(u)/K} \psi(\tau-u, B(\tau)/B(u)) \frac{\phi(d_-(\tau-u,B(\tau)/B(u)))}{\sigma\sqrt{\tau-u}} (g(\tau) - g(u)) du \tag{6.3}</span></p>
 <p><em>where <span class="math inline">\psi</span> is a system-dependent weighting function.</em></p>
 </section>
 <section id="anderson-acceleration" class="level3" data-number="6.3">
-<h3 data-number="6.3"><span class="header-section-number">6.3</span> Anderson Acceleration</h3>
+<h3 data-number="6.3" class="anchored" data-anchor-id="anderson-acceleration"><span class="header-section-number">6.3</span> Anderson Acceleration</h3>
 <p>For boundary functions that exhibit slowly converging fixed-point behavior, the Antares framework incorporates Anderson acceleration, a multisecant method that combines information from multiple previous iterates to accelerate convergence.</p>
 <p>The Anderson acceleration maintains a history of the most recent <span class="math inline">m</span> iterates and residuals:</p>
 <p><span class="math display">\mathbf{F}_k = [F_k, F_{k-1}, \ldots, F_{k-m+1}], \quad \mathbf{G}_k = [G_k, G_{k-1}, \ldots, G_{k-m+1}] \tag{6.4}</span></p>
@@ -442,16 +450,16 @@ H(\xi) &amp;= a_0 + \xi b_1 - b_2
 <p>This acceleration technique often achieves superlinear convergence for well-conditioned problems and provides robustness against ill-conditioning that might affect the Jacobi-Newton method.</p>
 </section>
 <section id="double-boundary-iteration-schemes" class="level3" data-number="6.4">
-<h3 data-number="6.4"><span class="header-section-number">6.4</span> Double-Boundary Iteration Schemes</h3>
+<h3 data-number="6.4" class="anchored" data-anchor-id="double-boundary-iteration-schemes"><span class="header-section-number">6.4</span> Double-Boundary Iteration Schemes</h3>
 <p>The mathematical decoupling established in Theorem 4.2 enables the development of separate iteration schemes for the upper and lower boundaries in the double-boundary case. However, the practical implementation reveals that different acceleration strategies prove optimal for each boundary.</p>
 <p>For the upper boundary <span class="math inline">B(\tau)</span>, which typically exhibits more nonlinear behavior, the full Jacobi-Newton acceleration provides optimal performance:</p>
-<p><span class="math display">B^{(k+1)}(\tau) = B^{(k)}(\tau) + \eta \frac{B^{(k)}(\tau) - \mathcal{F}_B(B^{(k)})(\tau)}{\mathcal{F}_B&#39;(B^{(k)})(\tau) - 1} \tag{6.7}</span></p>
+<p><span class="math display">B^{(k+1)}(\tau) = B^{(k)}(\tau) + \eta \frac{B^{(k)}(\tau) - \mathcal{F}_B(B^{(k)})(\tau)}{\mathcal{F}_B'(B^{(k)})(\tau) - 1} \tag{6.7}</span></p>
 <p>For the lower boundary <span class="math inline">Y(\tau)</span>, which tends to be smoother and more linear, simplified acceleration schemes or even standard fixed-point iteration often suffice:</p>
 <p><span class="math display">Y^{(k+1)}(\tau) = \mathcal{F}_Y(Y^{(k)})(\tau) \tag{6.8}</span></p>
 <p>where <span class="math inline">\mathcal{F}_Y</span> denotes the fixed-point operator derived from the smooth-pasting condition for the lower boundary.</p>
 </section>
 <section id="convergence-monitoring-and-adaptive-control" class="level3" data-number="6.5">
-<h3 data-number="6.5"><span class="header-section-number">6.5</span> Convergence Monitoring and Adaptive Control</h3>
+<h3 data-number="6.5" class="anchored" data-anchor-id="convergence-monitoring-and-adaptive-control"><span class="header-section-number">6.5</span> Convergence Monitoring and Adaptive Control</h3>
 <p>The Antares framework incorporates sophisticated convergence monitoring that employs multiple criteria to ensure robust termination of the iterative process. The primary convergence criterion monitors the maximum relative change in the boundary function:</p>
 <p><span class="math display">\epsilon_{\text{rel}} = \max_{\tau \in [0,\tau_{\max}]} \left|\frac{B^{(k+1)}(\tau) - B^{(k)}(\tau)}{B^{(k)}(\tau)}\right| \tag{6.9}</span></p>
 <p>Secondary criteria detect oscillatory behavior and stagnation:</p>
@@ -461,9 +469,9 @@ H(\xi) &amp;= a_0 + \xi b_1 - b_2
 </section>
 </section>
 <section id="mathematical-validation-and-error-analysis" class="level2" data-number="7">
-<h2 data-number="7"><span class="header-section-number">7</span> Mathematical Validation and Error Analysis</h2>
+<h2 data-number="7" class="anchored" data-anchor-id="mathematical-validation-and-error-analysis"><span class="header-section-number">7</span> Mathematical Validation and Error Analysis</h2>
 <section id="theoretical-error-bounds" class="level3" data-number="7.1">
-<h3 data-number="7.1"><span class="header-section-number">7.1</span> Theoretical Error Bounds</h3>
+<h3 data-number="7.1" class="anchored" data-anchor-id="theoretical-error-bounds"><span class="header-section-number">7.1</span> Theoretical Error Bounds</h3>
 <p>The mathematical validation of the Antares methodology requires rigorous analysis of the various sources of approximation error and their cumulative effect on the final option price computation. The total error can be decomposed into three primary components: boundary approximation error, integral approximation error, and iteration truncation error.</p>
 <p><strong>Boundary Approximation Error</strong>: The spectral approximation of the transformed boundary function <span class="math inline">H(\xi)</span> through its <span class="math inline">N</span>-point Chebyshev interpolant <span class="math inline">H_N(\xi)</span> introduces an error that propagates through the inverse transformation to the original boundary function. The error bound can be established through the following theorem.</p>
 <p><strong>Theorem 7.1</strong> (Boundary Error Propagation): <em>Let <span class="math inline">B(\tau)</span> denote the exact exercise boundary and <span class="math inline">B_N(\tau)</span> denote the boundary reconstructed from the <span class="math inline">N</span>-point Chebyshev approximation of the transformed function <span class="math inline">H(\xi)</span>. If the transformation sequence satisfies the regularity conditions of Theorem 5.1, then:</em></p>
@@ -477,7 +485,7 @@ H(\xi) &amp;= a_0 + \xi b_1 - b_2
 <p>where <span class="math inline">M</span> represents the number of iterations, <span class="math inline">B^*</span> denotes the exact fixed-point solution, and <span class="math inline">\lambda &lt; 1</span> characterizes the convergence rate.</p>
 </section>
 <section id="option-price-error-analysis" class="level3" data-number="7.2">
-<h3 data-number="7.2"><span class="header-section-number">7.2</span> Option Price Error Analysis</h3>
+<h3 data-number="7.2" class="anchored" data-anchor-id="option-price-error-analysis"><span class="header-section-number">7.2</span> Option Price Error Analysis</h3>
 <p>The ultimate objective of the boundary computation is the accurate evaluation of option prices. The error in the option price depends on both the accuracy of the boundary approximation and the precision of the final price integral evaluation.</p>
 <p><strong>Theorem 7.2</strong> (Option Price Error Bound): <em>Let <span class="math inline">V(\tau,s)</span> denote the exact American option price and <span class="math inline">V_h(\tau,s)</span> denote the computed approximation using boundary approximation error <span class="math inline">\|B - B_h\|_{\infty} \leq h</span>. Then the option price error satisfies:</em></p>
 <p><span class="math display">|V(\tau,s) - V_h(\tau,s)| \leq C_5 h + C_6 \varepsilon_{\text{quad}} \tag{7.4}</span></p>
@@ -485,7 +493,7 @@ H(\xi) &amp;= a_0 + \xi b_1 - b_2
 <p>The proof of this theorem employs the Lipschitz continuity of the option price functional with respect to the boundary function and demonstrates that the price error scales linearly with the boundary approximation error.</p>
 </section>
 <section id="convergence-verification" class="level3" data-number="7.3">
-<h3 data-number="7.3"><span class="header-section-number">7.3</span> Convergence Verification</h3>
+<h3 data-number="7.3" class="anchored" data-anchor-id="convergence-verification"><span class="header-section-number">7.3</span> Convergence Verification</h3>
 <p>The practical verification of convergence requires comparison with high-precision benchmark solutions. The Antares framework employs multiple validation strategies to ensure the reliability of computed results.</p>
 <p><strong>Richardson Extrapolation</strong>: Multiple solutions are computed with different numbers of collocation points <span class="math inline">N_1 &lt; N_2 &lt; N_3</span>, and Richardson extrapolation is used to estimate the error:</p>
 <p><span class="math display">V_{\text{extrap}} = V_{N_3} + \frac{V_{N_3} - V_{N_2}}{(N_3/N_2)^p - 1} \tag{7.5}</span></p>
@@ -494,7 +502,7 @@ H(\xi) &amp;= a_0 + \xi b_1 - b_2
 <p><strong>Asymptotic Verification</strong>: For limiting cases where analytical solutions exist (such as perpetual options or European options), the computed results are compared with the exact formulas to verify the correctness of the implementation.</p>
 </section>
 <section id="greeks-computation-and-sensitivity-analysis" class="level3" data-number="7.4">
-<h3 data-number="7.4"><span class="header-section-number">7.4</span> Greeks Computation and Sensitivity Analysis</h3>
+<h3 data-number="7.4" class="anchored" data-anchor-id="greeks-computation-and-sensitivity-analysis"><span class="header-section-number">7.4</span> Greeks Computation and Sensitivity Analysis</h3>
 <p>The spectral representation of the boundary function enables the analytical computation of option price sensitivities (Greeks) with exceptional accuracy. The Greeks can be computed through either direct differentiation of the price formula or through automatic differentiation of the boundary computation algorithm.</p>
 <p><strong>Delta Computation</strong>: The hedge ratio <span class="math inline">\Delta = \partial V/\partial S</span> can be computed analytically from the integral representation:</p>
 <p><span class="math display">\Delta(\tau,s) = \frac{\partial v}{\partial s}(\tau,s) + \int_0^\tau \left[rK e^{-r(\tau-u)} + qs e^{-q(\tau-u)}\right] \frac{\phi(d_-(\tau-u,s/B(u)))}{\sigma\sqrt{\tau-u}} \frac{1}{s} du \tag{7.6}</span></p>
@@ -504,9 +512,9 @@ H(\xi) &amp;= a_0 + \xi b_1 - b_2
 </section>
 </section>
 <section id="extensions-and-mathematical-generalizations" class="level2" data-number="8">
-<h2 data-number="8"><span class="header-section-number">8</span> Extensions and Mathematical Generalizations</h2>
+<h2 data-number="8" class="anchored" data-anchor-id="extensions-and-mathematical-generalizations"><span class="header-section-number">8</span> Extensions and Mathematical Generalizations</h2>
 <section id="time-dependent-parameter-extensions" class="level3" data-number="8.1">
-<h3 data-number="8.1"><span class="header-section-number">8.1</span> Time-Dependent Parameter Extensions</h3>
+<h3 data-number="8.1" class="anchored" data-anchor-id="time-dependent-parameter-extensions"><span class="header-section-number">8.1</span> Time-Dependent Parameter Extensions</h3>
 <p>The mathematical framework of the Antares methodology can be extended to accommodate time-dependent interest rates, dividend yields, and volatilities through careful modification of the integral equation formulation. Consider the stochastic differential equation:</p>
 <p><span class="math display">\frac{dS(t)}{S(t)} = (r(t)-q(t))dt + \sigma(t) dW(t) \tag{8.1}</span></p>
 <p>where the parameters are now deterministic functions of time.</p>
@@ -517,7 +525,7 @@ H(\xi) &amp;= a_0 + \xi b_1 - b_2
 <p>with <span class="math inline">\Sigma(t_1,t_2) = \int_{t_1}^{t_2} \sigma(u)^2 du</span>.</p>
 </section>
 <section id="jump-diffusion-extensions" class="level3" data-number="8.2">
-<h3 data-number="8.2"><span class="header-section-number">8.2</span> Jump-Diffusion Extensions</h3>
+<h3 data-number="8.2" class="anchored" data-anchor-id="jump-diffusion-extensions"><span class="header-section-number">8.2</span> Jump-Diffusion Extensions</h3>
 <p>The incorporation of jump components in the underlying asset price dynamics requires fundamental modifications to both the stochastic process specification and the integral equation formulation. Consider the jump-diffusion process:</p>
 <p><span class="math display">\frac{dS(t)}{S(t-)} = (r-q-\lambda\kappa)dt + \sigma dW(t) + \int_{\mathbb{R}} z \tilde{N}(dt,dz) \tag{8.4}</span></p>
 <p>where <span class="math inline">\tilde{N}(dt,dz)</span> represents a compensated Poisson random measure with intensity <span class="math inline">\lambda</span> and jump size distribution characterized by the Lévy measure <span class="math inline">\nu(dz)</span>.</p>
@@ -526,7 +534,7 @@ H(\xi) &amp;= a_0 + \xi b_1 - b_2
 <p>where <span class="math inline">v_J(\tau,s)</span> denotes the corresponding European option price under the jump-diffusion model.</p>
 </section>
 <section id="stochastic-volatility-extensions" class="level3" data-number="8.3">
-<h3 data-number="8.3"><span class="header-section-number">8.3</span> Stochastic Volatility Extensions</h3>
+<h3 data-number="8.3" class="anchored" data-anchor-id="stochastic-volatility-extensions"><span class="header-section-number">8.3</span> Stochastic Volatility Extensions</h3>
 <p>The extension to stochastic volatility models, such as the Heston model, requires a fundamental increase in dimensionality as the exercise boundary becomes a function of both time and the volatility state variable. Consider the Heston system:</p>
 <p><span class="math display">\begin{aligned}
 \frac{dS(t)}{S(t)} &amp;= (r-q)dt + \sqrt{V(t)} dW_1(t) \\
@@ -538,7 +546,7 @@ dV(t) &amp;= \kappa(\theta - V(t))dt + \sigma_v \sqrt{V(t)} dW_2(t)
 <p>where <span class="math inline">\xi_\tau</span> and <span class="math inline">\xi_v</span> represent transformed time and volatility variables, respectively.</p>
 </section>
 <section id="multi-asset-extensions" class="level3" data-number="8.4">
-<h3 data-number="8.4"><span class="header-section-number">8.4</span> Multi-Asset Extensions</h3>
+<h3 data-number="8.4" class="anchored" data-anchor-id="multi-asset-extensions"><span class="header-section-number">8.4</span> Multi-Asset Extensions</h3>
 <p>The extension to multi-asset American options, such as exchange options or basket options, follows naturally from the single-asset framework. For a two-asset exchange option with payoff <span class="math inline">(S_1 - S_2)^+</span>, the exercise boundary becomes a curve in the two-dimensional asset price space.</p>
 <p>The correlated geometric Brownian motion system:</p>
 <p><span class="math display">\begin{aligned}
@@ -552,19 +560,19 @@ dV(t) &amp;= \kappa(\theta - V(t))dt + \sigma_v \sqrt{V(t)} dW_2(t)
 </section>
 </section>
 <section id="conclusion" class="level2" data-number="9">
-<h2 data-number="9"><span class="header-section-number">9</span> Conclusion</h2>
+<h2 data-number="9" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">9</span> Conclusion</h2>
 <p>The Antares mathematical framework represents a comprehensive analytical architecture that fundamentally advances the theoretical and computational treatment of American option pricing across the full spectrum of interest rate conditions. Through the innovative combination of optimal stopping theory, integral equation transformations, and spectral collocation techniques, the methodology achieves unprecedented mathematical rigor while maintaining exceptional computational efficiency.</p>
 <p>The mathematical elegance of the approach lies in its unified treatment of both traditional single-boundary configurations and the complex double-boundary topologies that emerge under negative interest rate conditions. The development of decoupled iteration schemes for the double-boundary case represents a particularly significant mathematical contribution, enabling the independent computation of multiple exercise boundaries while preserving the convergence properties of the single-boundary framework.</p>
 <p>The transformation sequence that converts singular, highly nonlinear boundary functions into smooth, nearly linear functions amenable to spectral approximation demonstrates the power of appropriate mathematical preprocessing in numerical algorithm design. The resulting exponential convergence rates represent a qualitative improvement over traditional algebraic methods and enable the achievement of machine precision accuracy with minimal computational effort.</p>
 <p>The rigorous mathematical analysis of convergence properties, error bounds, and stability characteristics provides theoretical guarantees that complement the exceptional empirical performance. The framework’s ability to maintain mathematical rigor across challenging parameter regimes, including those that arise in modern negative interest rate environments, ensures its applicability to the full range of contemporary financial market conditions.</p>
 <p>The extensibility of the mathematical framework to accommodate time-dependent parameters, alternative underlying processes, and multi-dimensional problems demonstrates the fundamental soundness of the analytical approach. The spectral methodology provides a robust foundation for addressing increasingly complex derivative valuation challenges while maintaining the mathematical precision required for critical financial applications.</p>
 <p>The Antares framework thus establishes a new standard for the mathematical treatment of American option pricing problems, combining theoretical rigor with computational excellence in a unified analytical architecture. The methodology’s emphasis on mathematical elegance, provable convergence properties, and practical efficiency positions it as a foundational contribution to the field of computational finance that will enable both current applications and future theoretical developments.</p>
-<hr />
+<hr>
 </section>
 
 </main>
 <!-- /main column -->
-<script id = "quarto-html-after-body" type="application/javascript">
+<script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -909,6 +917,8 @@ dV(t) &amp;= \kappa(\theta - V(t))dt + \sigma_v \sqrt{V(t)} dW_2(t)
   </script>
 </div> <!-- /content -->
 
-</body>
 
-</html>
+
+
+<script src="Antares_files/libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

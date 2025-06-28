@@ -52,7 +52,6 @@ format:
       - bottom=1.2in
       - left=1.25in
       - right=1.25in
-    fontfamily: mathpazo
     fontsize: 11pt
     linestretch: 1.5
     number-sections: true
@@ -72,6 +71,21 @@ format:
     biblatexoptions: [backend=biber, style=apa, natbib=true]
     include-in-header:
       - text: |
+          % Font and encoding setup for XeLaTeX
+          \usepackage{fontspec}
+          \usepackage{unicode-math}
+          
+          % Math packages (order matters for XeLaTeX)
+          \usepackage{amsmath}
+          \usepackage{mathtools}
+          
+          % Define mathbbm for indicator functions
+          \newcommand{\mathbbm}[1]{\mathbb{#1}}
+          
+          % Bold math symbols
+          \let\boldsymbol\symbf
+          
+          % Table and layout packages
           \usepackage{booktabs}
           \usepackage{longtable}
           \usepackage{array}
@@ -86,19 +100,22 @@ format:
           \usepackage[normalem]{ulem}
           \usepackage{makecell}
           \usepackage{xcolor}
-          \usepackage[utf8]{inputenc}
-          \usepackage[T1]{fontenc}
-          \usepackage{amsmath}
-          \usepackage{amsfonts}
-          \usepackage{amssymb}
-          \usepackage{mathtools}
-          \usepackage{bm}
-          \usepackage{bbm}
+          
+          % Typography and formatting
           \usepackage{microtype}
           \usepackage{setspace}
           \usepackage{fancyhdr}
           \usepackage{titlesec}
           \usepackage{caption}
+          
+          % Set main font
+          \setmainfont{Times New Roman}[
+            Ligatures=TeX,
+            Numbers=OldStyle
+          ]
+          
+          % Set math font
+          \setmathfont{Latin Modern Math}
           
           % Table and figure captions
           \captionsetup[table]{skip=12pt, font=small, labelfont=bf}
@@ -123,7 +140,7 @@ format:
           \pagestyle{fancy}
           \fancyhf{}
           \rhead{\small\thepage}
-          \lhead{\small\textit{The Sunny Algorithm}}
+          \lhead{\small\textit{The Antares Mathematical Framework}}
           \renewcommand{\headrulewidth}{0.5pt}
           \renewcommand{\headrule}{\hbox to\headwidth{\color{NavyBlue}\leaders\hrule height \headrulewidth\hfill}}
           \setlength{\headheight}{14pt}
