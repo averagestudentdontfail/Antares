@@ -66,7 +66,7 @@ format:
     lot: false
     lof: false
     keep-tex: true
-    pdf-engine: pdflatex
+    pdf-engine: xelatex
     cite-method: biblatex
     biblio-style: apa
     biblatexoptions: [backend=biber, style=apa, natbib=true]
@@ -86,11 +86,14 @@ format:
           \usepackage[normalem]{ulem}
           \usepackage{makecell}
           \usepackage{xcolor}
+          \usepackage[utf8]{inputenc}
+          \usepackage[T1]{fontenc}
           \usepackage{amsmath}
           \usepackage{amsfonts}
           \usepackage{amssymb}
           \usepackage{mathtools}
           \usepackage{bm}
+          \usepackage{bbm}
           \usepackage{microtype}
           \usepackage{setspace}
           \usepackage{fancyhdr}
