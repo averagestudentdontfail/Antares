@@ -1,47 +1,37 @@
 ---
-title: "The Antares Spectral Collocation Framework"
+title: "The Antares Mathematical Framework"
+subtitle: "A Spectral Collocation Methodology for American Option Pricing Under General Interest Rate Conditions"
 author: "Kiran K. Nath"
-date: "June 27, 2025"
+date: "June 28, 2025"
 abstract: |
-  This paper presents the complete mathematical foundation and implementation methodology of the Antares derivatives pricing engine, a comprehensive computational framework designed for the valuation of American-style options across all interest rate environments. The architecture unifies the treatment of standard single exercise boundary configurations with the complex double-boundary topologies that emerge under negative interest rate conditions through sophisticated spectral collocation techniques. By transforming the classical free-boundary problem into a system of non-linear integral equations for the optimal exercise boundaries, the framework achieves exponential convergence rates while maintaining computational throughput exceeding one hundred thousand option valuations per second. The methodology employs Chebyshev polynomial interpolation on carefully transformed boundary functions, advanced integral equation formulations derived from optimal stopping theory, and accelerated fixed-point iteration schemes that decouple the computation of multiple boundaries. This comprehensive treatment provides both the theoretical foundation and practical implementation details necessary for constructing a production-grade derivatives pricing system capable of handling the full spectrum of market conditions encountered in modern financial environments.
+  This paper presents a comprehensive mathematical framework for the valuation of American-style derivative securities that unifies the treatment of traditional single-boundary configurations with the complex double-boundary topologies emerging under negative interest rate environments. The Antares methodology transforms the classical free-boundary problem into a system of non-linear integral equations through sophisticated boundary function transformations and spectral collocation techniques. By employing Chebyshev polynomial interpolation on carefully regularized boundary representations, the framework achieves exponential convergence rates while maintaining mathematical rigor across all interest rate regimes. The key mathematical innovation lies in the development of decoupled iteration schemes for the double-boundary case, enabling independent computation of multiple exercise boundaries through separate fixed-point systems. This methodology provides both theoretical foundation and practical computational framework for derivatives pricing under the full spectrum of modern market conditions, with particular emphasis on the mathematical elegance of the spectral approach and its convergence properties.
 
-keywords: [American Option Pricing, Early Exercise, Boundary Topology, Spectral Collocation, Chebyshev Polynomial Interpolation]
-jel: [G11, G13, G14, C58]
+keywords: [American Options, Spectral Methods, Free Boundary Problems, Negative Interest Rates, Optimal Stopping]
+jel: [G13, C61, C63]
 
 # Document formatting
 format:
   html:
     theme: 
       - cosmo
-      - Styling.scss
+      - custom.scss
     mainfont: "Source Serif Pro"
     sansfont: "Source Sans Pro" 
     monofont: "Source Code Pro"
     fontsize: 12pt
     linestretch: 1.6
     toc: true
-    toc-depth: 4
+    toc-depth: 3
     toc-location: left
-    toc-title: "Contents"
     number-sections: true
     number-depth: 3
-    code-fold: false
-    code-tools: false
-    code-copy: false
     html-math-method: katex
     fig-cap-location: bottom
-    tbl-cap-location: top
     citations-hover: true
     footnotes-hover: true
     smooth-scroll: true
     anchor-sections: true
     link-external-newwindow: true
-    highlight-style: github
-    grid:
-      sidebar-width: 300px
-      body-width: 900px
-      margin-width: 300px
-    page-layout: article
     
   pdf:
     documentclass: article
@@ -59,507 +49,607 @@ format:
     linkcolor: NavyBlue
     urlcolor: NavyBlue
     citecolor: NavyBlue
-    toccolor: black
-    fig-pos: "H"
-    tbl-pos: "H"
-    lot: false
-    lof: false
     keep-tex: true
-    pdf-engine: pdflatex
-    cite-method: biblatex
-    biblio-style: apa
-    biblatexoptions: [backend=biber, style=apa, natbib=true]
     include-in-header:
       - text: |
-          \usepackage{booktabs}
-          \usepackage{longtable}
-          \usepackage{array}
-          \usepackage{multirow}
-          \usepackage{wrapfig}
-          \usepackage{float}
-          \usepackage{colortbl}
-          \usepackage{pdflscape}
-          \usepackage{tabu}
-          \usepackage{threeparttable}
-          \usepackage{threeparttablex}
-          \usepackage[normalem]{ulem}
-          \usepackage{makecell}
-          \usepackage{xcolor}
           \usepackage{amsmath}
           \usepackage{amsfonts}
           \usepackage{amssymb}
           \usepackage{mathtools}
           \usepackage{bm}
-          \usepackage{microtype}
-          \usepackage{setspace}
-          \usepackage{fancyhdr}
-          \usepackage{titlesec}
-          \usepackage{caption}
-          
-          % Table and figure captions
-          \captionsetup[table]{skip=12pt, font=small, labelfont=bf}
-          \captionsetup[figure]{skip=12pt, font=small, labelfont=bf}
-          
-          % Professional section formatting
-          \titleformat{\section}{\large\bfseries\sffamily\color{NavyBlue}}{\thesection}{1em}{}
-          \titlespacing*{\section}{0pt}{24pt}{12pt}
-          
-          \titleformat{\subsection}{\normalsize\bfseries\sffamily\color{NavyBlue}}{\thesubsection}{1em}{}
-          \titlespacing*{\subsection}{0pt}{18pt}{9pt}
-          
-          \titleformat{\subsubsection}{\normalsize\bfseries\sffamily\color{NavyBlue}}{\thesubsubsection}{1em}{}
-          \titlespacing*{\subsubsection}{0pt}{12pt}{6pt}
-          
-          % Custom colors matching your theme
-          \definecolor{sunnyyellow}{RGB}{255, 223, 0}
-          \definecolor{sunnyblue}{RGB}{30, 144, 255}
-          \definecolor{sunnygray}{RGB}{248, 249, 250}
-          
-          % Professional header and footer
-          \pagestyle{fancy}
-          \fancyhf{}
-          \rhead{\small\thepage}
-          \lhead{\small\textit{The Antares Architecture}}
-          \renewcommand{\headrulewidth}{0.5pt}
-          \renewcommand{\headrule}{\hbox to\headwidth{\color{NavyBlue}\leaders\hrule height \headrulewidth\hfill}}
-          \setlength{\headheight}{14pt}
-          
-          % Better typography and spacing
-          \setlength{\emergencystretch}{3em}
-          \tolerance=9999
-          \hbadness=10000
-          \raggedbottom
-          
-          % Paragraph spacing
-          \setlength{\parskip}{8pt}
-          \setlength{\parindent}{0pt}
-          
-          % Better table spacing
-          \renewcommand{\arraystretch}{1.2}
-          
-          % Abstract formatting
-          \renewenvironment{abstract}
-            {\small\quotation\noindent\rule{\linewidth}{.5pt}\par\smallskip
-             \noindent\textbf{Abstract.}\space}
-            {\par\smallskip\noindent\rule{\linewidth}{.5pt}\endquotation}
+          \usepackage{theorem}
+          \newtheorem{theorem}{Theorem}[section]
+          \newtheorem{lemma}[theorem]{Lemma}
+          \newtheorem{proposition}[theorem]{Proposition}
+          \newtheorem{corollary}[theorem]{Corollary}
+          \newtheorem{definition}[theorem]{Definition}
+          \newtheorem{remark}[theorem]{Remark}
 
-# Bibliography and references  
-bibliography: References.bib
-csl: Finance.csl
+bibliography: references.bib
 link-citations: true
-reference-section-title: "References"
 
-# Execution and render options
 execute:
   echo: false
   warning: false
   message: false
-  cache: true
-  freeze: auto
 
-# Cross-referencing
 crossref:
   fig-title: "Figure"
   tbl-title: "Table"
   eq-title: "Equation"
-  title-delim: ":"
-  fig-prefix: "Figure"
-  tbl-prefix: "Table"
-  eq-prefix: "Equation"
-
-# Language and locale
-lang: en-US
 ---
 
 ## Introduction
 
-The valuation of American-style derivative securities represents one of the most computationally demanding challenges in quantitative finance, primarily due to the optimal stopping feature that introduces a free boundary separating the continuation region from the exercise region. Unlike European options, where analytical solutions exist under the Black-Scholes framework, American options require the simultaneous determination of both the option value and the optimal exercise strategy, creating a coupled problem of considerable mathematical complexity. Traditional numerical approaches, including binomial and trinomial tree methods, finite difference schemes, and Monte Carlo techniques, typically exhibit algebraic convergence rates that necessitate substantial computational resources to achieve high precision results.
+The mathematical valuation of American-style derivative securities represents one of the most challenging problems in quantitative finance, fundamentally distinguished from its European counterpart by the embedded optimal stopping feature that creates a coupled optimization and valuation problem of considerable analytical complexity. The essential mathematical difficulty arises from the necessity to simultaneously determine both the option value function and the optimal exercise strategy, manifested as a free boundary that separates the continuation region from the exercise region in the underlying asset price space.
 
-The advent of negative interest rates in major global markets has introduced additional mathematical complexities that were not anticipated in classical option pricing theory. Under such conditions, the fundamental assumptions underlying many established pricing methodologies become invalid, potentially leading to exercise regions characterized by two distinct boundaries rather than the single boundary assumed in traditional models. This phenomenon, first rigorously analyzed by Battauz, De Donno, and Sbuelz, creates what is termed a "double continuation region" where the optimal exercise strategy involves exercising the option only when the underlying asset price falls within a specific interval bounded by two time-dependent functions.
+Traditional numerical approaches to this problem, including binomial and trinomial lattice methods, finite difference schemes, and Monte Carlo techniques, typically exhibit algebraic convergence rates that demand substantial computational resources to achieve precision suitable for practical applications. The fundamental limitation of these methods stems from their discrete approximation of continuous processes and their inability to exploit the inherent smoothness properties of the value function away from the exercise boundary.
 
-The Antares framework addresses these challenges through a unified mathematical architecture that extends the seminal work of Andersen, Lake, and Offengenden on spectral collocation methods for American option pricing. By recasting the free boundary problem as a system of non-linear integral equations and employing sophisticated numerical techniques including Chebyshev polynomial interpolation, high-order quadrature rules, and accelerated fixed-point iterations, the framework achieves spectral convergence rates that dramatically outperform traditional methods. The approach transforms the boundary determination problem through carefully designed mathematical transformations that regularize the solution behavior near the origin, where classical approaches often struggle with convergence.
+The emergence of negative interest rate regimes in major global financial markets has introduced additional mathematical complexities that challenge the foundational assumptions of classical option pricing theory. Under certain configurations of negative interest rates and dividend yields, the optimal exercise region can exhibit a qualitatively different topology characterized by two distinct boundaries rather than the single boundary assumed in traditional models. This phenomenon, rigorously analyzed in recent mathematical finance literature, creates what is termed a "double continuation region" where the optimal exercise strategy involves exercising the option only when the underlying asset price falls within a specific interval bounded by two time-dependent functions.
 
-A particularly significant contribution of this work lies in the development of decoupled iteration schemes for the double-boundary case. Rather than solving a coupled system of equations for both boundaries simultaneously, the mathematical structure of the problem allows for the independent computation of each boundary through separate fixed-point systems. This decoupling not only preserves the computational efficiency of the single-boundary case but also enhances numerical stability and accuracy by avoiding the ill-conditioning that can arise in coupled systems.
+The Antares mathematical framework addresses these challenges through a unified analytical architecture that extends spectral collocation methods to encompass both traditional single-boundary configurations and the more complex double-boundary topologies. The methodology transforms the free boundary problem into a system of non-linear integral equations and employs sophisticated mathematical techniques including Chebyshev polynomial interpolation, high-order quadrature rules, and accelerated fixed-point iterations to achieve spectral convergence rates.
 
-The framework incorporates advanced mathematical transformations at multiple levels of the computational hierarchy. The temporal domain undergoes a square-root transformation that concentrates computational effort near the option expiration date where boundary behavior is most critical. The boundary functions themselves are subjected to logarithmic and power transformations that convert highly non-linear functions with unbounded derivatives into nearly linear functions amenable to low-order polynomial approximation. The integral operators are transformed to eliminate weak singularities that would otherwise degrade numerical accuracy, while the iteration schemes employ functional derivatives to achieve quadratic convergence rates.
+A particularly significant mathematical contribution of this work lies in the development of decoupled iteration schemes for the double-boundary case. Rather than solving a coupled system of equations for both boundaries simultaneously, the mathematical structure of the problem allows for the independent computation of each boundary through separate fixed-point systems. This decoupling not only preserves the computational efficiency of the single-boundary case but also enhances numerical stability and provides deeper mathematical insight into the structure of the optimal stopping problem.
 
-This comprehensive methodology enables the construction of a production-grade derivatives pricing system that maintains both exceptional accuracy and computational efficiency across the full range of market conditions. The framework handles positive and negative interest rates with equal facility, adapts automatically to single or double boundary topologies based on parameter configurations, and provides machine-precision accuracy for option prices and their sensitivities. The mathematical rigor of the approach ensures robust performance across extreme parameter ranges while the efficient implementation enables real-time applications in risk management and trading systems.
+The framework incorporates advanced mathematical transformations at multiple levels of the analytical hierarchy. The temporal domain undergoes a square-root transformation that concentrates analytical effort near the option expiration date where boundary behavior exhibits the greatest mathematical complexity. The boundary functions themselves are subjected to logarithmic and power transformations that convert highly non-linear functions with unbounded derivatives into nearly linear functions amenable to low-order polynomial approximation. The integral operators are transformed to eliminate weak singularities that would otherwise degrade the convergence properties of the spectral method.
 
-## Mathematical Foundation and Process Dynamics
+This comprehensive mathematical methodology enables the construction of a rigorous analytical framework that maintains exceptional accuracy across the full range of market conditions while providing mathematical guarantees on convergence behavior and error bounds. The mathematical rigor of the approach ensures robust performance across extreme parameter ranges while the spectral convergence properties enable applications requiring the highest levels of precision.
 
-The mathematical foundation of the Antares framework rests upon the assumption that the underlying asset price follows a geometric Brownian motion under the risk-neutral probability measure. This fundamental modeling choice, while representing a considerable simplification of actual market dynamics, provides the mathematical tractability necessary for developing high-performance computational algorithms while maintaining sufficient realism for practical applications.
+## Mathematical Framework and Problem Formulation
 
-Under the risk-neutral measure $\mathbb{Q}$, the asset price process $S(t)$ satisfies the stochastic differential equation:
+### Stochastic Process Foundation
 
-$$\frac{dS(t)}{S(t)} = (r-q)dt + \sigma dW(t)$$
+The mathematical foundation of the Antares framework rests upon the assumption that the underlying asset price follows a geometric Brownian motion under the risk-neutral probability measure $\mathbb{Q}$. This fundamental modeling choice, while representing a considerable idealization of actual market dynamics, provides the mathematical tractability necessary for developing rigorous analytical methods while maintaining sufficient economic realism for practical applications.
 
-where the risk-free interest rate $r$ captures the time value of money in the economy, the continuous dividend yield $q$ represents the income stream generated by the underlying asset, the volatility parameter $\sigma$ characterizes the magnitude of random price fluctuations, and $W(t)$ denotes a standard Wiener process under the risk-neutral measure. The drift term $(r-q)$ emerges naturally from the risk-neutralization process and represents the excess return of the asset over its dividend yield, adjusted to the risk-free rate through the change of measure.
+Under the risk-neutral measure, the asset price process $\{S(t)\}_{t \geq 0}$ satisfies the stochastic differential equation:
 
-The assumption of constant parameters throughout the option's lifetime, while restrictive, enables the exploitation of time-homogeneity in the underlying process. This property allows the option value at any time $t$ for a contract maturing at time $T$ to be expressed as a function of the time to maturity $\tau \triangleq T-t$ and the current asset price $S$, independent of the absolute time $t$. This dimensional reduction from a two-dimensional space-time problem to a one-dimensional time-to-maturity problem significantly simplifies both the mathematical analysis and computational implementation.
+$$\frac{dS(t)}{S(t)} = (r-q)dt + \sigma dW(t) \tag{2.1}$$
 
-The geometric Brownian motion assumption implies that the logarithm of the asset price follows a Brownian motion with drift, leading to the familiar lognormal distribution for future asset prices. Specifically, the asset price at time $t+\tau$ given the current price $S$ follows:
+where $r \in \mathbb{R}$ represents the risk-free interest rate, $q \in \mathbb{R}$ denotes the continuous dividend yield, $\sigma > 0$ characterizes the volatility parameter, and $\{W(t)\}_{t \geq 0}$ denotes a standard Wiener process under $\mathbb{Q}$. The drift coefficient $(r-q)$ emerges naturally from the risk-neutralization process and represents the excess return of the asset over its dividend yield, appropriately adjusted through the change of measure.
 
-$$\ln S(t+\tau) \sim \mathcal{N}\left(\ln S + (r-q-\frac{1}{2}\sigma^2)\tau, \sigma^2\tau\right)$$
+The explicit solution to the stochastic differential equation (2.1) takes the form:
 
-This distributional property proves essential for the derivation of the integral equations that form the core of the pricing methodology. The parameters $d_{\pm}(\tau, z)$ that appear throughout the framework are defined as:
+$$S(t) = S(0) \exp\left(\left(r-q-\frac{1}{2}\sigma^2\right)t + \sigma W(t)\right) \tag{2.2}$$
 
-$$d_{\pm}(\tau, z) \triangleq \frac{\ln(z) + (r-q)\tau \pm \frac{1}{2}\sigma^2\tau}{\sigma\sqrt{\tau}}$$
+This representation reveals that the logarithm of the asset price follows a Brownian motion with drift, leading to the lognormal distribution for future asset prices. Specifically, for any $t > 0$, the conditional distribution of $S(t)$ given $S(0) = s$ satisfies:
 
-These quantities represent standardized distances in the lognormal distribution and are fundamental to all option pricing formulas derived from the Black-Scholes framework. The parameter $d_+$ corresponds to the "moneyness" of the option adjusted for the time value component, while $d_-$ represents the same quantity adjusted for volatility decay.
+$$\ln S(t) \mid S(0) = s \sim \mathcal{N}\left(\ln s + \left(r-q-\frac{1}{2}\sigma^2\right)t, \sigma^2 t\right) \tag{2.3}$$
 
-The mathematical elegance of the geometric Brownian motion framework extends beyond mere computational convenience. The model preserves several economically meaningful properties including the impossibility of negative asset prices, the scale-invariance property that allows option values to depend only on ratios of prices rather than absolute levels, and the time-scaling property that connects options of different maturities through deterministic transformations.
+The assumption of constant parameters throughout the option's lifetime enables the exploitation of time-homogeneity in the underlying process. This property allows the option value at any time $t$ for a contract maturing at time $T$ to be expressed as a function of the time to maturity $\tau \triangleq T-t$ and the current asset price $S$, independent of the absolute time $t$. This dimensional reduction from a two-dimensional space-time problem to a one-dimensional time-to-maturity problem significantly simplifies both the mathematical analysis and the development of numerical algorithms.
 
-For options on futures contracts, a particularly important special case arises when $q = r$, implying a zero drift in the underlying process. This configuration reflects the martingale property of futures prices under the risk-neutral measure and significantly simplifies many of the computational expressions. In such cases, the asset price process becomes a geometric martingale, and the early exercise premium calculations reduce to more tractable forms.
+### The Optimal Stopping Formulation
 
-The framework accommodates negative values of both $r$ and $q$, a capability that has become increasingly important in modern financial markets. When $r < 0$, the traditional interpretation of the risk-free rate as the return on a riskless investment requires careful reconsideration, but the mathematical structure of the pricing problem remains well-defined. Similarly, negative dividend yields, which can arise in markets with significant borrowing costs or convenience yields, are naturally incorporated into the framework without requiring special mathematical treatment.
+The mathematical characterization of American option pricing leads naturally to an optimal stopping problem. For an American put option with strike price $K > 0$ and maturity $T$, the value function at time $t$ with underlying asset price $S(t) = s$ is given by:
 
-## The American Option Valuation Problem
+$$V(\tau,s) = \sup_{\nu \in \mathcal{T}_{0,\tau}} \mathbb{E}^{\mathbb{Q}}\left[e^{-r\nu}(K-S(\nu))^+ \mid S(0) = s\right] \tag{2.4}$$
 
-The American option presents a fundamentally different mathematical challenge compared to its European counterpart due to the embedded optimal stopping feature. While European options have a fixed exercise date, American options grant the holder the right to exercise at any time prior to expiration, creating a dynamic optimization problem that must be solved in conjunction with the valuation problem.
+where $\tau = T-t$ represents the time to maturity, $\mathcal{T}_{0,\tau}$ denotes the set of all stopping times taking values in $[0,\tau]$, and the supremum is taken over all admissible exercise strategies.
 
-Mathematically, the value of an American put option with strike price $K$ and maturity $T$ at time $t$ represents the solution to an optimal stopping problem:
+The mathematical theory of optimal stopping for Markov processes guarantees the existence of an optimal stopping time $\nu^*$ that achieves the supremum in equation (2.4). Furthermore, this optimal stopping time can be characterized through a time-dependent exercise boundary function $B: [0,\tau] \to \mathbb{R}_+$ such that:
 
-$$V(\tau, S) = \sup_{\nu \in \mathcal{T}_{t,T}} \mathbb{E}_t^\mathbb{Q} \left[ e^{-r(\nu - t)} (K - S(\nu))^+ \right]$$
+$$\nu^* = \inf\{t \in [0,\tau] : S(t) \leq B(\tau-t)\} \tag{2.5}$$
 
-where $\mathcal{T}_{t,T}$ denotes the set of all stopping times taking values in the interval $[t,T]$, and the supremum is taken over all such admissible exercise strategies. The expectation is computed under the risk-neutral measure $\mathbb{Q}$, ensuring that the discounted option payoff represents the arbitrage-free price in a complete market.
+The exercise boundary $B(\tau)$ divides the state space into two regions: the exercise region $\mathcal{E}(\tau) = \{s : s \leq B(\tau)\}$ and the continuation region $\mathcal{C}(\tau) = \{s : s > B(\tau)\}$.
 
-The optimal stopping problem admits a solution characterized by a time-dependent exercise boundary function $B(\tau)$ that divides the state space into two regions. The exercise region $\mathcal{E}(\tau) = \{S : S \leq B(\tau)\}$ contains all asset price levels at which immediate exercise is optimal, while the continuation region $\mathcal{C}(\tau) = \{S : S > B(\tau)\}$ contains all price levels at which holding the option provides greater value than immediate exercise.
+### Variational Inequality Characterization
 
-The mathematical foundation for this characterization rests upon the theory of optimal stopping for Markov processes. The value function $V(\tau, S)$ satisfies the variational inequality:
+The value function $V(\tau,s)$ satisfies a variational inequality that captures the mathematical essence of the optimal stopping problem. In the continuation region, the value function must satisfy the Black-Scholes partial differential equation, while in the exercise region, the option value equals the intrinsic value. This leads to the variational inequality:
 
-$$\max\left\{(K-S)^+, \frac{\partial V}{\partial \tau} + \mathcal{L}V\right\} = 0$$
+$$\max\left\{(K-s)^+, \frac{\partial V}{\partial \tau} + \mathcal{L}V\right\} = 0 \tag{2.6}$$
 
 where $\mathcal{L}$ denotes the infinitesimal generator of the asset price process:
 
-$$\mathcal{L}V = \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + (r-q)S\frac{\partial V}{\partial S} - rV$$
+$$\mathcal{L}V = \frac{1}{2}\sigma^2 s^2 \frac{\partial^2 V}{\partial s^2} + (r-q)s\frac{\partial V}{\partial s} - rV \tag{2.7}$$
 
-In the continuation region, the variational inequality reduces to the standard Black-Scholes partial differential equation $\frac{\partial V}{\partial \tau} + \mathcal{L}V = 0$, while in the exercise region, the option value equals the intrinsic value $(K-S)^+$.
+The variational inequality (2.6) can be equivalently expressed as the complementarity system:
 
-The exercise boundary $B(\tau)$ must satisfy two critical conditions that ensure the optimality of the stopping strategy. The value-matching condition requires that the option value equals the exercise value at the boundary:
+$$\begin{aligned}
+\frac{\partial V}{\partial \tau} + \mathcal{L}V &\geq 0 \\
+V(\tau,s) - (K-s)^+ &\geq 0 \\
+\left(\frac{\partial V}{\partial \tau} + \mathcal{L}V\right)(V(\tau,s) - (K-s)^+) &= 0
+\end{aligned} \tag{2.8}$$
 
-$$V(\tau, B(\tau)) = K - B(\tau)$$
+### Boundary Conditions and Regularity
 
-This condition ensures that there is no arbitrage opportunity from exercising at the boundary versus holding the option. The smooth-pasting condition requires that the derivative of the option value with respect to the asset price be continuous at the boundary:
+The exercise boundary $B(\tau)$ must satisfy fundamental conditions that ensure the optimality of the stopping strategy. The value-matching condition requires continuity of the value function across the exercise boundary:
 
-$$\frac{\partial V}{\partial S}(\tau, B(\tau)) = -1$$
+$$V(\tau, B(\tau)) = K - B(\tau) \tag{2.9}$$
 
-This condition, also known as the high-contact condition, ensures that the exercise boundary represents a true optimum rather than merely a local maximum. Together, these conditions uniquely determine the exercise boundary function.
+The smooth-pasting condition, also known as the high-contact condition, ensures that the first derivative of the value function is continuous across the boundary:
 
-The mathematical structure of the American option problem exhibits several important properties that the Antares framework exploits for computational efficiency. The value function $V(\tau, S)$ is strictly convex in $S$ within the continuation region, ensuring that the exercise region forms a connected set. The boundary function $B(\tau)$ is continuous for $\tau > 0$ and possesses infinite derivatives of all orders at $\tau = 0$, reflecting the singular behavior of the optimal stopping problem near expiration.
+$$\frac{\partial V}{\partial s}(\tau, B(\tau)) = -1 \tag{2.10}$$
 
-For small values of $\tau$, the boundary function approaches a limiting value that depends on the sign relationship between $r$ and $q$. When $r \geq q$, the boundary approaches the strike price $K$ as $\tau \to 0^+$, while when $r < q$, the boundary approaches $K(r/q)$, creating a jump discontinuity at the origin. This asymptotic behavior plays a crucial role in the design of numerical algorithms, as traditional polynomial approximation methods struggle with the unbounded derivatives near $\tau = 0$.
+These conditions, when combined with the variational inequality (2.6), uniquely determine both the value function $V(\tau,s)$ and the exercise boundary $B(\tau)$.
 
-For large values of $\tau$, the boundary function converges to the perpetual American option boundary, which can be expressed in closed form. For an American put, this limiting value is:
+The mathematical analysis of the boundary function reveals several important regularity properties. For $\tau > 0$, the boundary function $B(\tau)$ is infinitely differentiable, though all derivatives become unbounded as $\tau \to 0^+$. The asymptotic behavior near expiration depends critically on the relationship between $r$ and $q$:
 
-$$B_\infty = K \frac{\theta_-}{\theta_- - 1}$$
+$$\lim_{\tau \to 0^+} B(\tau) = \begin{cases}
+K & \text{if } r \geq q \\
+K \cdot \frac{r}{q} & \text{if } r < q
+\end{cases} \tag{2.11}$$
 
-where $\theta_-$ represents the negative root of the characteristic equation:
+For large values of $\tau$, the boundary function converges to the perpetual American option boundary:
 
-$$\frac{1}{2}\sigma^2 \theta^2 + (r-q-\frac{1}{2}\sigma^2)\theta - r = 0$$
+$$\lim_{\tau \to \infty} B(\tau) = K \frac{\lambda_-}{\lambda_- - 1} \tag{2.12}$$
 
-This long-term behavior provides important boundary conditions for numerical algorithms and serves as a check on the accuracy of computed solutions.
+where $\lambda_-$ represents the negative root of the characteristic equation:
 
-## Integral Equation Formulation
+$$\frac{1}{2}\sigma^2 \lambda^2 + \left(r-q-\frac{1}{2}\sigma^2\right)\lambda - r = 0 \tag{2.13}$$
 
-The transformation of the American option problem from a partial differential equation with free boundaries to an integral equation represents one of the most significant mathematical innovations in derivatives pricing. This reformulation, originally developed by Kim and later refined by numerous researchers, provides the foundation for highly efficient numerical algorithms while offering deeper insight into the economic structure of the early exercise premium.
+## The Integral Equation Methodology
 
-The integral equation approach begins with the observation that the American option value can be decomposed into two components: the value of the corresponding European option and an early exercise premium that captures the additional value provided by the flexibility to exercise before expiration. Mathematically, this decomposition takes the form:
+### Derivation of the Fundamental Integral Representation
 
-$$V(\tau,S) = v(\tau,S) + \text{Early Exercise Premium}$$
+The transformation of the American option pricing problem from a partial differential equation with free boundaries to an integral equation represents a profound mathematical advancement that forms the cornerstone of the Antares methodology. This transformation, originally conceived by Kim and subsequently refined through extensive mathematical development, provides both computational advantages and deeper analytical insight into the structure of the early exercise premium.
 
-where $v(\tau,S)$ represents the European option price given by the Black-Scholes formula:
+The derivation begins with the fundamental observation that the American option value can be decomposed as:
 
-$$v(\tau,S) = K e^{-r\tau}\Phi(-d_-(\tau,S/K)) - S e^{-q\tau}\Phi(-d_+(\tau,S/K))$$
+$$V(\tau,s) = v(\tau,s) + \mathcal{P}(\tau,s) \tag{3.1}$$
 
-The early exercise premium can be derived through a careful application of the fundamental theorem of calculus to the present value of the cash flow stream associated with early exercise. When the option is exercised at any time $u$ before expiration, the holder receives the intrinsic value $K - S(u)$ but foregoes the remaining time value. The net cash flow at time $u$ relative to holding a European option can be expressed as $(rK - qS(u))du$, representing the interest earned on the strike price minus the dividend yield foregone on the short stock position.
+where $v(\tau,s)$ represents the corresponding European option price and $\mathcal{P}(\tau,s)$ denotes the early exercise premium that quantifies the additional value provided by the flexibility to exercise before expiration.
 
-The rigorous derivation of the integral equation employs Ito's lemma applied to the discounted option value process. Consider the process $H(t) = e^{-rt}V(T-t, S(t))$ where $V$ denotes the American option value. In the continuation region, this process follows:
+The European put option price is given by the Black-Scholes formula:
 
-$$dH(t) = e^{-rt}\sigma S(t) \frac{\partial V}{\partial S}(T-t, S(t)) dW(t)$$
+$$v(\tau,s) = K e^{-r\tau}\Phi(-d_-(\tau,s/K)) - s e^{-q\tau}\Phi(-d_+(\tau,s/K)) \tag{3.2}$$
 
-In the exercise region, however, the process exhibits different behavior due to the immediate exercise of the option. Integrating this stochastic differential equation from time $t$ to $T$ and taking expectations yields the integral representation.
+where $\Phi(\cdot)$ denotes the cumulative standard normal distribution function and the auxiliary functions are defined as:
 
-For the single-boundary case, the complete integral equation takes the form:
+$$d_{\pm}(\tau,z) \triangleq \frac{\ln(z) + (r-q)\tau \pm \frac{1}{2}\sigma^2\tau}{\sigma\sqrt{\tau}} \tag{3.3}$$
 
-$$V(\tau,S) = v(\tau,S) + \int_{0}^{\tau} rK e^{-r(\tau-u)}\Phi(-d_-(\tau-u,S/B(u)))du - \int_{0}^{\tau} qS e^{-q(\tau-u)}\Phi(-d_+(\tau-u,S/B(u)))du$$
+The rigorous derivation of the integral representation employs Itô's lemma applied to the discounted option value process. Consider the process $H(t) = e^{-rt}V(T-t, S(t))$ where $V$ denotes the American option value function. Through careful application of the stochastic calculus, this process can be shown to satisfy:
 
-The first integral term represents the present value of the interest earned on the strike price $K$ during periods when early exercise is optimal. The integrand $rK e^{-r(\tau-u)}\Phi(-d_-(\tau-u,S/B(u)))$ weights the interest flow by the probability that the asset price at time $T-u$ falls below the exercise boundary $B(u)$, given the current asset price $S$ at time $T-\tau$.
+$$H(\tau) - H(0) = \int_0^\tau e^{-ru} \sigma S(u) \frac{\partial V}{\partial s}(T-u, S(u)) dW(u) + \int_0^\tau e^{-ru} \mathcal{I}(u) du \tag{3.4}$$
 
-The second integral term captures the present value of the dividend yield foregone on the underlying asset position. The integrand $qS e^{-q(\tau-u)}\Phi(-d_+(\tau-u,S/B(u)))$ represents the dividend flow weighted by the same exercise probability, but with the dividend discount factor $e^{-q(\tau-u)}$ applied to the current asset price.
+where $\mathcal{I}(u)$ represents the integrand that captures the early exercise contribution.
 
-The cumulative normal distribution functions $\Phi(-d_{\pm}(\tau-u,S/B(u)))$ represent the risk-neutral probabilities that the asset price at time $T-u$ falls below the exercise boundary $B(u)$, conditional on the current price $S$. These probabilities arise naturally from the lognormal distribution of future asset prices under the geometric Brownian motion assumption.
+Taking expectations and utilizing the martingale property of the stochastic integral, the early exercise premium can be expressed as:
 
-The mathematical elegance of this formulation lies in its economic interpretation. The early exercise premium represents the net present value of the cash flow stream generated by the optimal exercise policy. When $r > q$, the interest component dominates, making early exercise more attractive and leading to higher exercise boundaries. Conversely, when $q > r$, the dividend component dominates, making it optimal to delay exercise and collect the dividend stream.
+$$\mathcal{P}(\tau,s) = \int_0^\tau \mathbb{E}^{\mathbb{Q}}\left[e^{-ru} \mathbbm{1}_{\{S(u) \leq B(\tau-u)\}} (rK - qS(u)) \mid S(0) = s\right] du \tag{3.5}$$
 
-To determine the exercise boundary $B(\tau)$, the integral equation must be combined with the boundary conditions derived from the optimal stopping problem. Applying the value-matching condition $V(\tau, B(\tau)) = K - B(\tau)$ to the integral equation yields:
+The indicator function $\mathbbm{1}_{\{S(u) \leq B(\tau-u)\}}$ restricts the integration to periods when early exercise is optimal, while the term $(rK - qS(u))$ represents the instantaneous net cash flow benefit from early exercise.
 
-$$K - B(\tau) = v(\tau, B(\tau)) + \int_{0}^{\tau} rK e^{-r(\tau-u)}\Phi(-d_-(\tau-u,B(\tau)/B(u)))du - \int_{0}^{\tau} qB(\tau) e^{-q(\tau-u)}\Phi(-d_+(\tau-u,B(\tau)/B(u)))du$$
+### Complete Integral Equation Formulation
 
-This non-linear integral equation for $B(\tau)$ forms the foundation of the numerical algorithm. Alternatively, applying the smooth-pasting condition $\frac{\partial V}{\partial S}(\tau, B(\tau)) = -1$ yields a different but equivalent integral equation that often exhibits superior numerical properties.
+Utilizing the lognormal distribution properties of the underlying asset price process, the expectation in equation (3.5) can be evaluated explicitly, yielding the complete integral representation:
 
-The mathematical structure of these integral equations reveals several important properties. The kernel functions $\Phi(-d_{\pm}(\tau-u,B(\tau)/B(u)))$ are smooth and well-behaved for $u < \tau$, ensuring that standard numerical integration techniques can achieve high accuracy. The dependence of the integrand on the boundary function at different time points creates a Volterra-type integral equation that can be solved iteratively through fixed-point methods.
+$$V(\tau,s) = v(\tau,s) + \int_0^\tau rK e^{-r(\tau-u)}\Phi(-d_-(\tau-u,s/B(u))) du - \int_0^\tau qs e^{-q(\tau-u)}\Phi(-d_+(\tau-u,s/B(u))) du \tag{3.6}$$
+
+The mathematical elegance of this formulation lies in its economic interpretation. The first integral term represents the present value of the interest earned on the strike price $K$ during periods when early exercise is optimal, weighted by the risk-neutral probability that the asset price falls below the exercise boundary. The second integral term captures the present value of the dividend yield foregone on the underlying asset position, similarly weighted by the exercise probability.
+
+The cumulative normal distribution functions $\Phi(-d_{\pm}(\tau-u,s/B(u)))$ arise naturally from the lognormal distribution of future asset prices and represent the risk-neutral probabilities of early exercise at future times, conditional on the current asset price $s$.
+
+### Boundary Integral Equations
+
+To determine the exercise boundary $B(\tau)$, the integral equation (3.6) must be combined with the boundary conditions derived from the optimal stopping theory. Applying the value-matching condition (2.9) yields:
+
+$$K - B(\tau) = v(\tau, B(\tau)) + \int_0^\tau rK e^{-r(\tau-u)}\Phi(-d_-(\tau-u,B(\tau)/B(u))) du - \int_0^\tau qB(\tau) e^{-q(\tau-u)}\Phi(-d_+(\tau-u,B(\tau)/B(u))) du \tag{3.7}$$
+
+This nonlinear Volterra-type integral equation for $B(\tau)$ forms the foundation of the numerical algorithm. The equation can be rearranged into the fixed-point form:
+
+$$B(\tau) = K e^{(r-q)\tau} \frac{N(\tau,B)}{D(\tau,B)} \tag{3.8}$$
+
+where the functionals $N(\tau,B)$ and $D(\tau,B)$ are defined through the integral terms and capture the economic forces driving the exercise decision.
+
+Alternatively, applying the smooth-pasting condition (2.10) and differentiating the integral equation (3.6) with respect to $s$ yields a different but mathematically equivalent boundary equation:
+
+$$-1 = -e^{-q\tau}\Phi(-d_+(τ,B(\tau)/K)) + \int_0^\tau \frac{rK}{B(\tau)} e^{-r(\tau-u)} \frac{\phi(-d_-(\tau-u,B(\tau)/B(u)))}{\sigma\sqrt{\tau-u}} du - \int_0^\tau q e^{-q(\tau-u)} \left[\frac{\phi(-d_+(\tau-u,B(\tau)/B(u)))}{\sigma\sqrt{\tau-u}} + \Phi(-d_+(\tau-u,B(\tau)/B(u)))\right] du \tag{3.9}$$
+
+where $\phi(\cdot)$ denotes the standard normal probability density function.
+
+The smooth-pasting formulation (3.9) often exhibits superior numerical properties due to the symmetry that can be restored between the integral and non-integral terms through the mathematical identity:
+
+$$\frac{K e^{-r\tau} \phi(-d_-(\tau,B(\tau)/K))}{\sigma\sqrt{\tau}} = \frac{B(\tau) e^{-q\tau} \phi(-d_+(\tau,B(\tau)/K))}{\sigma\sqrt{\tau}} \tag{3.10}$$
+
+This symmetry property proves crucial for the stability and convergence of the numerical algorithms developed in subsequent sections.
 
 ## Double Boundary Phenomena Under Negative Interest Rates
 
-The emergence of negative interest rates in major financial markets has revealed a fascinating mathematical phenomenon that was largely overlooked in classical option pricing theory. Under certain combinations of negative interest rates and dividend yields, the optimal exercise region for American options can assume a qualitatively different topology, characterized by two distinct boundaries rather than the single boundary assumed in traditional models.
+### Mathematical Characterization of the Double Boundary Regime
 
-This double-boundary phenomenon occurs when the fundamental relationship between the interest component and dividend component of the early exercise premium becomes inverted relative to the standard case. In the traditional setting with positive rates, the exercise region for a put option consists of all asset prices below a single threshold. However, under negative rates, it becomes possible for the exercise region to consist of an interval $[Y(\tau), B(\tau)]$ bounded by two time-dependent functions.
+The emergence of negative interest rate environments has revealed a mathematically fascinating phenomenon that fundamentally challenges classical option pricing assumptions. Under specific combinations of negative interest rates and dividend yields, the optimal exercise region for American options assumes a qualitatively different topology characterized by two distinct boundaries rather than the single boundary traditionally assumed.
 
-For American put options, the double-boundary case arises precisely when $q < r < 0$. The mathematical intuition behind this condition can be understood through the short-maturity analysis of the exercise premium. Just prior to expiration, the decision to exercise depends on the sign of the net carry $(rK - qS)$. For exercise to be optimal, this quantity must be positive, leading to the condition $S < rK/q$. When both $r$ and $q$ are negative with $q < r$, the ratio $r/q$ is positive but less than unity, creating an upper bound on the exercise region at $rK/q < K$.
+For American put options, the double-boundary configuration arises precisely when the parameters satisfy $q < r < 0$. The mathematical foundation for this phenomenon can be understood through the short-maturity analysis of the exercise premium. In the limit as $\tau \to 0^+$, the decision to exercise depends on the sign of the net carry $(rK - qs)$ for asset prices near the strike.
 
-Simultaneously, the standard lower bound for put option exercise remains at the strike price $K$, since exercising a put option at asset prices above the strike would result in negative intrinsic value. The combination of these effects creates a finite exercise interval $(rK/q, K)$ just prior to expiration, with the boundaries potentially moving and potentially intersecting as the time to maturity increases.
+**Theorem 4.1** (Double Boundary Existence): *Consider an American put option with parameters satisfying $q < r < 0$. There exists a critical volatility $\sigma^* = |\sqrt{-2r} - \sqrt{-2q}|$ such that for $\sigma \leq \sigma^*$, the optimal exercise region consists of the interval $[Y(\tau), B(\tau)]$ where both boundaries are well-defined for all $\tau \geq 0$.*
 
-The mathematical characterization of the double-boundary region requires a careful analysis of the asymptotic behavior of the boundary functions. As $\tau \to 0^+$, the two boundaries approach the limiting values:
+The proof of this theorem relies on the asymptotic analysis of the characteristic equation roots and the behavior of the perpetual option boundaries. The mathematical conditions ensure that both boundaries exist and remain finite throughout the option's lifetime.
 
-$$B_0 = \lim_{\tau \to 0^+} B(\tau) = K$$
-$$Y_0 = \lim_{\tau \to 0^+} Y(\tau) = rK/q$$
+As $\tau \to 0^+$, the boundaries approach the limiting values:
 
-The long-term behavior of the boundaries depends critically on the volatility of the underlying asset relative to a critical threshold. Define the critical volatility:
+$$\lim_{\tau \to 0^+} B(\tau) = K \text{ and } \lim_{\tau \to 0^+} Y(\tau) = K \frac{r}{q} \tag{4.1}$$
 
-$$\sigma^* = \left|\sqrt{-2r} - \sqrt{-2q}\right|$$
+Since $q < r < 0$, the ratio $r/q$ satisfies $0 < r/q < 1$, establishing that $Y(0^+) < B(0^+) = K$, confirming the existence of a non-trivial exercise interval near expiration.
 
-When the actual volatility exceeds this critical value, $\sigma > \sigma^*$, the two boundaries converge toward each other as the time to maturity increases, eventually intersecting at a finite time $\tau^*$. For maturities beyond this intersection time, the exercise region disappears entirely, and the American option becomes equivalent to its European counterpart.
+### Long-Term Asymptotic Analysis
 
-When the volatility falls below the critical threshold, $\sigma < \sigma^*$, the boundaries never intersect and instead converge to distinct finite limits as $\tau \to \infty$. These limiting values can be expressed in terms of the roots of the characteristic equation:
+The long-term behavior of the double boundaries depends critically on the volatility relative to the critical threshold $\sigma^*$. When $\sigma < \sigma^*$, both boundaries converge to finite limits as $\tau \to \infty$:
 
-$$B_\infty = K \frac{\lambda_+}{\lambda_+ - 1}, \quad Y_\infty = K \frac{\lambda_-}{\lambda_- - 1}$$
+$$\lim_{\tau \to \infty} B(\tau) = K \frac{\lambda_+}{\lambda_+ - 1} \text{ and } \lim_{\tau \to \infty} Y(\tau) = K \frac{\lambda_-}{\lambda_- - 1} \tag{4.2}$$
 
-where $\lambda_{\pm}$ represent the positive and negative roots:
+where $\lambda_{\pm}$ represent the roots of the modified characteristic equation:
 
-$$\lambda_{\pm} = \frac{-\mu \pm \sqrt{\mu^2 + 2r\sigma^2}}{\sigma^2}, \quad \mu = r - q - \frac{\sigma^2}{2}$$
+$$\lambda_{\pm} = \frac{-\mu \pm \sqrt{\mu^2 + 2r\sigma^2}}{\sigma^2} \text{ with } \mu = r - q - \frac{\sigma^2}{2} \tag{4.3}$$
 
-The boundary case $\sigma = \sigma^*$ results in the boundaries converging to the same limit $B_\infty = Y_\infty = K\sqrt{r/q}$.
+When $\sigma > \sigma^*$, the boundaries intersect at a finite time $\tau^*$, and for $\tau > \tau^*$, the exercise region disappears entirely, rendering the American option equivalent to its European counterpart.
 
-The integral equation formulation must be extended to accommodate the double-boundary topology. The early exercise premium now involves integration over the finite exercise region rather than the semi-infinite region of the single-boundary case. The complete integral equation for the double-boundary American put takes the form:
+**Proposition 4.1** (Boundary Intersection): *For parameters satisfying $q < r < 0$ and $\sigma > \sigma^*$, there exists a unique time $\tau^* < \infty$ such that $B(\tau^*) = Y(\tau^*)$ and the exercise region is empty for all $\tau > \tau^*$.*
 
-$$V(\tau,S,K) = p(\tau,S,K) + rK\int_{0}^{\min(\tau,\tau^{*})}[p_{K}(\tau-u,S,B(u))-p_{K}(\tau-u,S,Y(u))]du + qS\int_{0}^{\min(\tau,\tau^{*})}[p_{S}(\tau-u,S,B(u))-p_{S}(\tau-u,S,Y(u))]du$$
+The intersection time $\tau^*$ cannot be determined analytically in general but can be computed numerically through root-finding algorithms applied to the equation $B(\tau^*) = Y(\tau^*)$.
 
-where $p_K$ and $p_S$ denote the partial derivatives of the European put price with respect to the strike and spot price, respectively. The upper limit of integration reflects the finite lifetime of the exercise region when the boundaries intersect.
+### Modified Integral Equation Formulation
 
-The mathematical structure of this equation reveals a remarkable property that proves crucial for efficient numerical implementation. Despite the apparent coupling between the two boundaries in the integral equation, the boundary conditions can be manipulated to yield two decoupled systems that allow each boundary to be computed independently.
+The presence of two exercise boundaries necessitates a fundamental modification of the integral equation formulation. The early exercise premium must now account for the finite exercise region rather than the semi-infinite region of the single-boundary case.
 
-For the upper boundary $B(\tau)$, applying the value-matching condition at asset prices above the exercise region yields a fixed-point equation that depends only on $B$ and not on $Y$. Similarly, for the lower boundary $Y(\tau)$, applying the smooth-pasting condition at asset prices below the exercise region yields a fixed-point equation that depends only on $Y$ and not on $B$.
+The modified integral representation takes the form:
 
-This decoupling property dramatically simplifies the computational problem, allowing the two boundaries to be computed through separate iterations rather than solving a coupled system. The mathematical basis for this decoupling lies in the principle that for asset prices outside the exercise interval, the option value depends only on the boundary that would be encountered first by the diffusion process.
+$$V(\tau,s) = v(\tau,s) + \int_0^{\min(\tau,\tau^*)} \mathbb{E}^{\mathbb{Q}}\left[e^{-ru} \mathbbm{1}_{\{Y(\tau-u) \leq S(u) \leq B(\tau-u)\}} (rK - qS(u)) \mid S(0) = s\right] du \tag{4.4}$$
 
-## Spectral Collocation Methodology
+The indicator function now restricts the integration to the finite interval $[Y(\tau-u), B(\tau-u)]$, reflecting the bounded nature of the exercise region.
 
-The numerical solution of the integral equations governing American option pricing presents significant computational challenges due to the non-linear and non-local nature of the problem. Traditional approaches such as finite difference methods or simple quadrature schemes typically exhibit algebraic convergence rates, requiring substantial computational resources to achieve high precision. The Antares framework addresses these challenges through a sophisticated spectral collocation methodology that achieves exponential convergence rates while maintaining computational efficiency.
+Evaluating the expectation yields the complete double-boundary integral equation:
 
-The foundation of the spectral approach lies in the representation of the unknown boundary function through high-order polynomial approximation. Rather than discretizing the entire time domain with a fine grid, the method solves the integral equation at a small number of carefully chosen collocation points and represents the solution between these points through polynomial interpolation. This approach exploits the smoothness of the boundary function away from the origin to achieve high accuracy with minimal computational effort.
+$$V(\tau,s) = v(\tau,s) + \int_0^{\min(\tau,\tau^*)} rK e^{-r(\tau-u)}[\Phi(-d_-(\tau-u,s/B(u))) - \Phi(-d_-(\tau-u,s/Y(u)))] du - \int_0^{\min(\tau,\tau^*)} qs e^{-q(\tau-u)}[\Phi(-d_+(\tau-u,s/B(u))) - \Phi(-d_+(\tau-u,s/Y(u)))] du \tag{4.5}$$
 
-The selection of collocation points follows Chebyshev polynomial theory, which provides near-optimal point distributions for polynomial approximation. The Chebyshev nodes on the interval $[0, \sqrt{\tau_{\max}}]$ are given by:
+### Decoupling of the Boundary Systems
 
-$$x_i = \frac{\sqrt{\tau_{\max}}}{2}\left(1 + \cos\left(\frac{i\pi}{n}\right)\right), \quad i = 0, 1, \ldots, n$$
+A remarkable mathematical property of the double-boundary problem is that the two boundaries can be computed independently despite their apparent coupling in the integral equation (4.5). This decoupling arises from the fundamental principle that for asset prices outside the exercise interval, the option value depends only on the boundary that would be encountered first by the diffusion process.
 
-where $n$ represents the number of collocation points and $\tau_{\max}$ denotes the maximum time to maturity for which the boundary must be computed. The corresponding time points are $\tau_i = x_i^2$, reflecting the square-root transformation that concentrates computational effort near the critical region around expiration.
+**Theorem 4.2** (Boundary Decoupling): *The upper boundary $B(\tau)$ satisfies the single-boundary integral equation for all asset prices $s \geq B(\tau)$, while the lower boundary $Y(\tau)$ satisfies a modified integral equation for all asset prices $s \leq Y(\tau)$.*
 
-The choice of Chebyshev nodes is motivated by their optimal properties for polynomial interpolation. Unlike equidistant point distributions, which can lead to the Runge phenomenon and oscillatory interpolation errors, Chebyshev nodes minimize the maximum interpolation error and provide stable high-order polynomial approximation. The resulting interpolation error decreases exponentially with the number of points for sufficiently smooth functions.
+For the upper boundary $B(\tau)$, applying the value-matching condition at $s = B(\tau)$ yields:
 
-However, the raw exercise boundary function $B(\tau)$ is not well-suited for direct polynomial approximation due to its singular behavior near $\tau = 0$. The boundary exhibits unbounded derivatives of all orders at the origin, making direct polynomial approximation inefficient. To overcome this limitation, the Antares framework employs a sophisticated transformation that regularizes the boundary function and enables efficient polynomial representation.
+$$K - B(\tau) = v(\tau, B(\tau)) + \int_0^{\min(\tau,\tau^*)} rK e^{-r(\tau-u)}\Phi(-d_-(\tau-u,B(\tau)/B(u))) du - \int_0^{\min(\tau,\tau^*)} qB(\tau) e^{-q(\tau-u)}\Phi(-d_+(\tau-u,B(\tau)/B(u))) du \tag{4.6}$$
 
-The transformation proceeds in several stages, each designed to improve the smoothness and polynomial approximability of the resulting function. First, the boundary is normalized by its short-maturity limiting value:
+For the lower boundary $Y(\tau)$, applying the smooth-pasting condition at $s = Y(\tau)$ and utilizing the mathematical structure of the problem yields:
 
-$$\widetilde{B}(\tau) = \frac{B(\tau)}{X}, \quad X = K \min(1, r/q)$$
+$$-1 = -e^{-q\tau}\Phi(-d_+(τ,Y(\tau)/K)) + \int_0^{\min(\tau,\tau^*)} \frac{rK}{Y(\tau)} e^{-r(\tau-u)} \frac{\phi(-d_-(\tau-u,Y(\tau)/Y(u)))}{\sigma\sqrt{\tau-u}} du - \int_0^{\min(\tau,\tau^*)} q e^{-q(\tau-u)} \left[\frac{\phi(-d_+(\tau-u,Y(\tau)/Y(u)))}{\sigma\sqrt{\tau-u}} + \Phi(-d_+(\tau-u,Y(\tau)/Y(u)))\right] du \tag{4.7}$$
 
-This normalization removes the dependence on the strike price and adjusts for the discontinuity that occurs when $r < q$. Next, a logarithmic transformation is applied to linearize the exponential decay behavior:
+This decoupling enables the development of separate fixed-point iteration schemes for each boundary, dramatically simplifying the computational problem while maintaining mathematical rigor.
 
-$$G(\sqrt{\tau}) = \ln(\widetilde{B}(\tau))$$
+## The Spectral Collocation Methodology
 
-Finally, a variance-stabilizing transformation converts the function to a nearly linear form:
+### Mathematical Foundation of Spectral Approximation
 
-$$H(\sqrt{\tau}) = G(\sqrt{\tau})^2 = \ln(\widetilde{B}(\tau))^2$$
+The spectral collocation methodology employed in the Antares framework represents a sophisticated application of global polynomial approximation theory to the solution of nonlinear integral equations arising in American option pricing. The mathematical foundation rests upon the exceptional approximation properties of orthogonal polynomials and their ability to achieve exponential convergence rates for sufficiently smooth functions.
 
-This final function $H(x)$ with $x = \sqrt{\tau}$ exhibits remarkable smoothness and near-linearity, making it ideally suited for low-order polynomial approximation. The transformation effectively converts a highly non-linear function with singular derivatives into a function that can be accurately represented by polynomials of degree five or less.
+The fundamental principle of spectral methods lies in the representation of the unknown function through global basis functions that possess optimal approximation properties. For the exercise boundary function $B(\tau)$, the spectral approximation takes the form:
 
-The polynomial interpolation of the transformed function follows the Chebyshev interpolation formula. Given function values $H_i = H(x_i)$ at the Chebyshev nodes, the interpolating polynomial can be expressed as:
+$$B_N(\tau) = \sum_{k=0}^{N} c_k \mathcal{B}_k(\tau) \tag{5.1}$$
 
-$$H_C(x) = \sum_{k=0}^{n} a_k T_k\left(\frac{2x}{\sqrt{\tau_{\max}}} - 1\right)$$
+where $\{\mathcal{B}_k(\tau)\}_{k=0}^{N}$ represents a system of orthogonal basis functions and $\{c_k\}_{k=0}^{N}$ denotes the expansion coefficients to be determined.
 
-where $T_k$ denotes the $k$-th Chebyshev polynomial of the first kind and the coefficients $a_k$ are computed through the discrete cosine transform:
+The choice of basis functions proves crucial for the success of the spectral method. Chebyshev polynomials of the first kind provide optimal approximation properties for functions defined on bounded intervals and are characterized by the three-term recurrence relation:
 
-$$a_k = \frac{2}{n}\left[\frac{1}{2}H_0 + \sum_{j=1}^{n-1} H_j \cos\left(\frac{jk\pi}{n}\right) + \frac{(-1)^k}{2}H_n\right]$$
+$$T_0(x) = 1, \quad T_1(x) = x, \quad T_{k+1}(x) = 2xT_k(x) - T_{k-1}(x) \tag{5.2}$$
 
-The evaluation of the interpolating polynomial at arbitrary points employs the numerically stable Clenshaw recurrence algorithm, which avoids the potential instabilities associated with direct polynomial evaluation.
+with the orthogonality relation:
 
-The accuracy of the spectral collocation approach depends critically on the smoothness of the transformed boundary function. The mathematical analysis of the transformation reveals that $H(x)$ is infinitely differentiable for $x > 0$ and exhibits polynomial growth in its derivatives, ensuring exponential convergence of the Chebyshev approximation. Empirical testing confirms that five to seven collocation points typically suffice to achieve relative errors below $10^{-6}$ for most practical parameter ranges.
+$$\int_{-1}^{1} T_j(x) T_k(x) \frac{dx}{\sqrt{1-x^2}} = \begin{cases}
+\pi & \text{if } j = k = 0 \\
+\pi/2 & \text{if } j = k \neq 0 \\
+0 & \text{if } j \neq k
+\end{cases} \tag{5.3}$$
 
-The efficiency of the spectral method extends beyond the boundary representation to the evaluation of the integral operators that appear in the fixed-point equations. The smooth nature of the transformed boundary enables the use of high-order quadrature rules that achieve exponential convergence with minimal function evaluations. The method employs Gauss-Legendre quadrature for smooth integrands and tanh-sinh quadrature for integrands with endpoint singularities.
+### Domain Transformation and Regularization
 
-## Advanced Numerical Techniques and Transformations
+The raw exercise boundary function $B(\tau)$ exhibits singular behavior near $\tau = 0$ that precludes direct polynomial approximation. The boundary possesses unbounded derivatives of all orders at the origin, making standard polynomial approximation inefficient and potentially unstable.
 
-The exceptional performance of the Antares framework derives not only from the spectral collocation approach but also from a suite of advanced numerical techniques that address the specific mathematical challenges arising in American option pricing. These techniques include sophisticated transformations for handling integral singularities, accelerated iteration schemes for rapid convergence, and adaptive algorithms that automatically adjust computational parameters based on problem characteristics.
+The Antares methodology addresses this challenge through a sophisticated sequence of mathematical transformations designed to regularize the boundary function and render it amenable to spectral approximation. The transformation proceeds in several carefully designed stages.
 
-The integral operators that appear in the fixed-point equations often contain weak singularities that can degrade the accuracy of standard numerical integration methods. Specifically, the smooth-pasting formulation (System A) includes integrals of the form:
+**Stage 1: Temporal Domain Transformation**
 
-$$\mathcal{K}_2(\tau) = \int_{0}^{\tau} \frac{e^{qu}}{\sigma\sqrt{\tau-u}} \phi(d_+(\tau-u, B(\tau)/B(u))) du$$
+The temporal domain $[0, \tau_{\max}]$ is first transformed to concentrate computational effort near the critical region around expiration. The square-root transformation:
 
-The factor $(\tau-u)^{-1/2}$ creates a weak singularity at $u = \tau$ that requires special treatment to maintain numerical accuracy. The Antares framework addresses this challenge through an analytical transformation that eliminates the singularity while preserving the smooth structure of the integrand.
+$$\xi = \sqrt{\tau/\tau_{\max}} \tag{5.4}$$
 
-The transformation employs the substitution $z = \sqrt{\tau - u}$, which yields $du = -2z \, dz$ and transforms the integral to:
+maps the time-to-maturity variable to the interval $[0,1]$ while providing increased resolution near $\tau = 0$ where the boundary exhibits the most complex behavior.
 
-$$\mathcal{K}_2(\tau) = 2\int_{0}^{\sqrt{\tau}} \frac{e^{q(\tau-z^2)}}{\sigma} \phi(d_+(z^2, B(\tau)/B(\tau-z^2))) z \, dz$$
+**Stage 2: Boundary Normalization**
 
-This transformation completely eliminates the singularity, replacing it with a smooth integrand that can be evaluated accurately using standard high-order quadrature rules. The additional factor of $z$ in the integrand ensures that the transformed integral remains well-behaved at $z = 0$.
+The boundary function is normalized by its short-maturity limiting value to remove dependence on the strike price and account for the discontinuity that occurs when $r < q$:
 
-For computational efficiency, the integration domain is further transformed to the standard interval $[-1, 1]$ through the substitution:
+$$\widetilde{B}(\tau) = \frac{B(\tau)}{X} \text{ where } X = K \min(1, r/q) \tag{5.5}$$
 
-$$y = -1 + \frac{2z}{\sqrt{\tau}} = -1 + 2\sqrt{\frac{\tau-u}{\tau}}$$
+**Stage 3: Logarithmic Transformation**
 
-This normalization enables the use of standard Gaussian quadrature weights and nodes, avoiding the need to recompute quadrature parameters for each value of $\tau$. The final transformed integral takes the form:
+A logarithmic transformation is applied to linearize the exponential decay behavior and compress the range of the function:
 
-$$\mathcal{K}_2(\tau) = \frac{e^{q\tau}\sqrt{\tau}}{\sigma} \int_{-1}^{1} e^{-\frac{q\tau(1+y)^2}{4}} (1+y) \phi\left(d_+\left(\frac{\tau(1+y)^2}{4}, \frac{B(\tau)}{B(\tau-\frac{\tau(1+y)^2}{4})}\right)\right) dy$$
+$$G(\xi) = \ln(\widetilde{B}(\xi^2)) \tag{5.6}$$
 
-The convergence rate of the fixed-point iteration can be significantly enhanced through the use of accelerated iteration schemes that exploit the mathematical structure of the problem. The standard fixed-point iteration $B^{(j)} = F(B^{(j-1)})$ typically exhibits linear convergence, requiring numerous iterations to achieve high precision. The Antares framework employs a modified Jacobi-Newton scheme that achieves quadratic convergence by incorporating information about the functional derivative of the mapping $F$.
+**Stage 4: Variance-Stabilizing Transformation**
 
-The Jacobi-Newton iteration takes the form:
+The final transformation employs a variance-stabilizing technique that converts the function to a nearly linear form:
 
-$$B^{(j)}(\tau) = B^{(j-1)}(\tau) + \eta \frac{B^{(j-1)}(\tau) - F(\tau, B^{(j-1)})}{F'(\tau, B^{(j-1)}) - 1}$$
+$$H(\xi) = G(\xi)^2 = [\ln(\widetilde{B}(\xi^2))]^2 \tag{5.7}$$
 
-where $F'(\tau, B)$ denotes the Gateaux derivative of the fixed-point mapping with respect to perturbations in $B(\tau)$, and $\eta$ is a relaxation parameter that ensures stability. The computation of the functional derivative requires additional integral evaluations but typically reduces the number of required iterations from dozens to fewer than five.
+**Theorem 5.1** (Transformation Regularity): *The composite transformation $H(\xi)$ defined by equation (5.7) is infinitely differentiable on $(0,1]$ and exhibits polynomial growth in its derivatives, ensuring exponential convergence of the Chebyshev approximation.*
 
-For the double-boundary case, the decoupled nature of the iteration systems enables the use of different acceleration strategies for each boundary. The upper boundary $B(\tau)$, which typically exhibits more non-linear behavior, benefits from the full Jacobi-Newton acceleration. The lower boundary $Y(\tau)$, which tends to be smoother and more linear, can often be computed accurately with simplified acceleration schemes or even standard fixed-point iteration.
+The proof of this theorem relies on the asymptotic analysis of the boundary function and demonstrates that the transformed function $H(\xi)$ possesses the regularity properties necessary for spectral convergence.
 
-The initialization of the iteration scheme plays a crucial role in determining both the convergence rate and the overall computational efficiency. Poor initial guesses can lead to slow convergence or even divergence, particularly in challenging parameter regimes. The Antares framework employs sophisticated analytical approximations to provide high-quality initial boundary estimates.
+### Chebyshev Collocation Implementation
 
-For the single-boundary case, the framework uses the QD+ approximation method, which provides analytical expressions for the boundary based on refined asymptotic analysis. This method typically yields initial guesses accurate to within one percent of the true boundary value, significantly reducing the number of required iterations.
+The collocation method determines the expansion coefficients by requiring the approximation to satisfy the governing equation at a discrete set of carefully chosen points. For Chebyshev polynomials, the optimal choice of collocation points corresponds to the Chebyshev-Gauss-Lobatto nodes:
 
-For the double-boundary case, the initialization process is more complex due to the need to provide estimates for both boundaries. The framework employs a combination of asymptotic analysis near expiration and perpetual option theory for long maturities. The short-maturity estimates use the exact limiting values $B_0 = K$ and $Y_0 = rK/q$, while the long-maturity estimates employ the perpetual option formulas when they exist.
+$$\xi_j = \cos\left(\frac{j\pi}{N}\right), \quad j = 0, 1, \ldots, N \tag{5.8}$$
 
-In cases where the boundaries intersect, the framework includes algorithms for detecting and accurately computing the intersection time $\tau^*$. This computation is performed through a combination of interval bisection and higher-order root-finding methods applied to the equation $B(\tau^*) = Y(\tau^*)$. The accurate determination of $\tau^*$ is crucial for the correct evaluation of the option price integral, as the integration domain depends on whether the current time to maturity exceeds the intersection time.
+These points cluster near the boundaries of the interval $[-1,1]$ and provide optimal conditioning for the resulting linear system.
 
-## Implementation Architecture and Computational Optimization
+The boundary values $H(\xi_j)$ at the collocation points determine the Chebyshev expansion coefficients through the discrete cosine transform:
 
-The translation of the mathematical framework into a high-performance computational system requires careful attention to algorithmic efficiency, numerical stability, and software architecture. The Antares implementation employs a modular design that separates the mathematical algorithms from the computational infrastructure, enabling both flexibility in method selection and optimization for specific hardware architectures.
+$$a_k = \frac{2}{N} \sum_{j=0}^{N} \frac{H(\xi_j)}{c_k} \cos\left(\frac{jk\pi}{N}\right) \tag{5.9}$$
 
-The core computational workflow follows a hierarchical structure that minimizes redundant calculations while maximizing numerical accuracy. At the highest level, the system determines the appropriate mathematical formulation based on the input parameters, automatically selecting between single-boundary and double-boundary methodologies based on the signs and magnitudes of the interest rate and dividend yield.
+where $c_0 = 2$ and $c_k = 1$ for $k \geq 1$.
 
-For American call options, the framework exploits the fundamental put-call symmetry relationship to avoid duplicating the mathematical development. The symmetry transformation maps a call option with parameters $(S, K, r, q, \sigma, \tau)$ to a put option with parameters $(K, S, q, r, \sigma, \tau)$. This transformation not only reduces the codebase complexity but also ensures that all optimizations and accuracy improvements benefit both put and call valuations equally.
+The evaluation of the interpolating polynomial at arbitrary points employs the numerically stable Clenshaw recurrence algorithm:
 
-The boundary computation algorithm employs adaptive parameter selection to optimize the trade-off between accuracy and computational speed. The number of collocation points $n$ is automatically adjusted based on the problem characteristics, with additional points added in regions where the boundary exhibits rapid variation. Similarly, the number of quadrature points $l$ for integral evaluation is selected based on the required accuracy and the smoothness of the integrand.
+$$\begin{aligned}
+b_{N+1} &= b_{N+2} = 0 \\
+b_k &= a_k + 2\xi b_{k+1} - b_{k+2}, \quad k = N, N-1, \ldots, 1 \\
+H(\xi) &= a_0 + \xi b_1 - b_2
+\end{aligned} \tag{5.10}$$
 
-The fixed-point iteration process incorporates multiple convergence criteria to ensure robust termination. The primary criterion monitors the maximum relative change in the boundary function between successive iterations, while secondary criteria check for oscillatory behavior and excessively slow convergence. The iteration process terminates when either high accuracy is achieved or when additional iterations are unlikely to improve the solution significantly.
+### Convergence Analysis
 
-Memory management plays a crucial role in the efficiency of the spectral collocation approach. The framework employs sophisticated caching strategies that store intermediate results for reuse across multiple option valuations. When pricing multiple options with identical model parameters but different spot prices or strikes, the exercise boundary computation is performed only once, with the boundary function cached for subsequent price calculations.
+The convergence properties of the spectral collocation method depend fundamentally on the smoothness of the transformed boundary function. For the Antares transformation sequence, the convergence can be characterized through the following theorem.
 
-The numerical integration routines are optimized for the specific structure of the option pricing integrands. The framework includes specialized implementations of Gauss-Legendre quadrature for smooth integrands and tanh-sinh quadrature for integrands with endpoint singularities or rapid oscillations. The quadrature weights and nodes are precomputed and stored in lookup tables to eliminate redundant calculations.
+**Theorem 5.2** (Spectral Convergence): *Let $H(\xi)$ denote the transformed boundary function defined by equation (5.7), and let $H_N(\xi)$ denote its $N$-point Chebyshev interpolant. If $H$ is analytic in a region containing $[-1,1]$, then the approximation error satisfies:*
 
-For the double-boundary case, the framework includes sophisticated algorithms for handling the intersection detection and boundary coupling. The system monitors the relative positions of the two boundaries throughout the computation and automatically switches to simplified single-boundary calculations when the boundaries become sufficiently close. This adaptive approach maintains accuracy while avoiding numerical difficulties that can arise when the exercise region becomes very narrow.
+$$\|H - H_N\|_{\infty} \leq C \rho^{-N} \tag{5.11}$$
 
-Error estimation and adaptive refinement provide additional layers of computational robustness. The framework includes built-in error estimates based on Richardson extrapolation and comparison with lower-order approximations. When the estimated error exceeds user-specified tolerances, the system automatically increases the number of collocation points or quadrature nodes and recomputes the solution.
+*where $C$ is a constant depending on the function and $\rho > 1$ is determined by the location of the nearest singularity in the complex plane.*
 
-The implementation includes extensive validation and testing infrastructure to ensure numerical accuracy across the full range of supported parameter values. The validation suite includes comparisons with analytical solutions for limiting cases, cross-validation between different numerical formulations, and convergence studies that verify the expected exponential convergence rates.
+The exponential convergence rate characterized by equation (5.11) represents a dramatic improvement over the algebraic convergence rates $O(N^{-p})$ achieved by finite difference methods. This superior convergence enables the achievement of high accuracy with relatively few degrees of freedom, typically requiring only 5-8 collocation points for most practical applications.
 
-Parallel computation capabilities enable the framework to exploit modern multi-core processor architectures. The boundary computation algorithms are naturally parallel, as the fixed-point equations at different time points can be evaluated independently. Similarly, the computation of multiple option prices with common boundary functions can be distributed across multiple processing cores.
+### Integration of Singular Kernels
 
-The software architecture emphasizes modularity and extensibility to facilitate future enhancements and customizations. The mathematical algorithms are encapsulated in self-contained modules with well-defined interfaces, enabling easy modification of specific components without affecting the overall system. This design facilitates the incorporation of alternative mathematical formulations, experimental algorithms, and specialized optimizations for particular market segments.
+The integral operators appearing in the boundary equations often contain weak singularities that require careful mathematical treatment to maintain the accuracy of the spectral method. The smooth-pasting formulation contains integrals of the form:
 
-## Mathematical Validation and Convergence Analysis
+$$\mathcal{I}(\tau) = \int_0^\tau \frac{f(u)}{\sqrt{\tau-u}} du \tag{5.12}$$
 
-The rigorous validation of the Antares framework requires comprehensive mathematical analysis of convergence properties, error bounds, and numerical stability across the full range of supported parameter values. This analysis combines theoretical convergence results from spectral approximation theory with extensive empirical testing using both synthetic benchmarks and market data.
+where the factor $(\tau-u)^{-1/2}$ creates a weak singularity at $u = \tau$.
 
-The theoretical foundation for the exponential convergence of the spectral collocation method rests upon the smoothness properties of the transformed boundary function. The mathematical analysis demonstrates that the function $H(x) = \ln(B(x^2)/X)^2$ possesses bounded derivatives of all orders for $x > 0$, with derivative bounds that grow at most polynomially with the order. This regularity ensures that the Chebyshev polynomial approximation converges exponentially fast as the number of collocation points increases.
+The Antares methodology eliminates this singularity through the analytical transformation $z = \sqrt{\tau-u}$, which yields $du = -2z \, dz$ and converts the integral to:
 
-Specifically, for the transformed boundary function $H(x)$, the approximation error satisfies the bound:
+$$\mathcal{I}(\tau) = 2\int_0^{\sqrt{\tau}} f(\tau-z^2) z \, dz \tag{5.13}$$
 
-$$\|H - H_n\|_{\infty} \leq C \rho^{-n}$$
+This transformation completely removes the singularity and produces a smooth integrand amenable to high-order quadrature rules. The additional factor of $z$ ensures that the transformed integral remains well-behaved at $z = 0$.
 
-where $H_n$ denotes the $n$-point Chebyshev interpolant, $C$ is a constant depending on the function smoothness, and $\rho > 1$ is the convergence rate parameter. The parameter $\rho$ is determined by the location of the nearest singularity of $H$ in the complex plane, with larger values of $\rho$ corresponding to faster convergence.
+For computational efficiency, the integration domain is further normalized to the standard interval $[-1,1]$ through:
 
-Empirical convergence studies confirm the theoretical predictions across a wide range of parameter values. For typical market parameters, the relative error in the boundary function decreases by approximately one order of magnitude for each additional collocation point, achieving machine precision with fewer than ten points. This exponential convergence dramatically outperforms traditional finite difference methods, which typically require hundreds or thousands of grid points to achieve comparable accuracy.
+$$y = -1 + \frac{2z}{\sqrt{\tau}} = -1 + 2\sqrt{\frac{\tau-u}{\tau}} \tag{5.14}$$
 
-The convergence analysis extends to the option price calculations, which depend on the accuracy of both the boundary computation and the final price integral. The error in the option price can be decomposed into three components: boundary approximation error, integral approximation error, and iteration truncation error. The boundary approximation error inherits the exponential convergence of the spectral method, while the integral approximation error is controlled through high-order quadrature rules.
+This normalization enables the use of standard Gaussian quadrature weights and nodes, eliminating the need to recompute quadrature parameters for each value of $\tau$.
 
-The iteration truncation error, arising from the finite number of fixed-point iterations, typically converges linearly for standard fixed-point schemes and quadratically for the accelerated Jacobi-Newton method. The framework monitors this error component through successive approximation differences and terminates the iteration when the improvement becomes negligible relative to other error sources.
+## Fixed-Point Iteration and Convergence Acceleration
 
-Stability analysis focuses on the robustness of the numerical algorithms under parameter perturbations and computational round-off errors. The condition number of the spectral collocation system remains well-bounded for typical parameter ranges, ensuring that small perturbations in the input data do not lead to large changes in the computed results. The Chebyshev node distribution provides inherent stability advantages over other point distributions, avoiding the oscillatory instabilities that can plague high-order polynomial methods.
+### Mathematical Structure of the Fixed-Point Problem
 
-For the double-boundary case, additional validation focuses on the accuracy of the intersection time computation and the behavior of the algorithm near the critical volatility $\sigma^*$. The framework includes specialized tests for parameter combinations that result in boundaries that nearly intersect, as these cases present the greatest numerical challenges. The results demonstrate that the method maintains accuracy even when the exercise region becomes very narrow.
+The boundary integral equations derived in the previous sections can be cast in the abstract fixed-point form $B = \mathcal{F}(B)$ where $\mathcal{F}$ represents a nonlinear operator mapping boundary functions to boundary functions. The mathematical properties of this operator determine the convergence behavior of iterative solution methods.
 
-Benchmark comparisons with alternative numerical methods provide empirical validation of the framework's accuracy and efficiency claims. The framework is tested against high-precision finite difference solutions, Monte Carlo methods with variance reduction techniques, and other state-of-the-art American option pricing algorithms. These comparisons consistently demonstrate superior accuracy-to-cost ratios for the spectral approach.
+For the single-boundary case, the fixed-point operator takes the form:
 
-The validation suite includes extensive testing with extreme parameter values that stress the numerical algorithms. These tests encompass very short and very long maturities, extremely high and low volatilities, and interest rate configurations that span both positive and negative values. The framework demonstrates robust performance across this entire parameter space, maintaining accuracy and stability even in challenging regimes.
+$$\mathcal{F}(B)(\tau) = K e^{(r-q)\tau} \frac{N(\tau,B)}{D(\tau,B)} \tag{6.1}$$
 
-Error estimation capabilities enable real-time assessment of solution quality without requiring expensive benchmark computations. The framework employs multiple error indicators, including Richardson extrapolation estimates based on solutions with different numbers of collocation points, iteration residual monitoring, and comparison with asymptotic formulas in limiting cases.
+where the functionals $N(\tau,B)$ and $D(\tau,B)$ are defined through the integral terms in the boundary equation.
 
-## Performance Characteristics and Computational Complexity
+**Theorem 6.1** (Contraction Mapping): *Under suitable regularity conditions on the parameters $(r,q,\sigma)$ and for boundary functions in an appropriate function space, the operator $\mathcal{F}$ defined by equation (6.1) is a contraction mapping with Lipschitz constant $L < 1$.*
 
-The computational performance of the Antares framework represents a significant advancement over traditional American option pricing methods, achieving execution speeds that enable real-time portfolio valuation while maintaining exceptional numerical accuracy. The performance characteristics result from the synergistic combination of mathematical innovations and computational optimizations embedded throughout the framework architecture.
+The proof of this theorem employs the analysis of the Gâteaux derivative of the operator $\mathcal{F}$ and demonstrates that small perturbations in the boundary function lead to proportionally smaller perturbations in the image, ensuring convergence of the fixed-point iteration.
 
-The asymptotic computational complexity of the spectral collocation method scales as $O(mn^2 + lmn)$, where $m$ denotes the number of fixed-point iterations, $n$ represents the number of collocation points, and $l$ indicates the number of quadrature points. This scaling behavior compares favorably with finite difference methods, which typically scale as $O(N_t N_s)$ where $N_t$ and $N_s$ represent the number of time and space grid points, respectively.
+### Accelerated Iteration Schemes
 
-The key computational advantage stems from the ability to achieve high accuracy with very small values of the controlling parameters. Typical calculations require $n \leq 8$ collocation points, $m \leq 6$ fixed-point iterations, and $l \leq 16$ quadrature points, resulting in total operation counts of fewer than one thousand floating-point operations per option valuation. This efficiency enables computational throughputs exceeding 100,000 option prices per second on modern processor architectures.
+While the basic fixed-point iteration $B^{(k+1)} = \mathcal{F}(B^{(k)})$ guarantees convergence under the contraction mapping property, the convergence rate is typically linear and may require numerous iterations to achieve high precision. The Antares methodology employs sophisticated acceleration techniques to achieve quadratic convergence rates.
 
-The boundary representation through Chebyshev polynomial interpolation provides additional computational benefits beyond the low-order approximation capability. The evaluation of the interpolated boundary at arbitrary points requires only $O(n)$ operations using the Clenshaw recurrence algorithm, enabling efficient computation of the integrals that appear in the price formulas. Moreover, the polynomial representation facilitates the analytical computation of boundary derivatives needed for Greeks calculations.
+The Jacobi-Newton acceleration scheme incorporates information about the functional derivative of the operator $\mathcal{F}$ to achieve superlinear convergence. The iteration takes the form:
 
-Memory requirements of the framework remain modest due to the compact representation of the solution. The complete boundary function is captured by fewer than ten polynomial coefficients, resulting in memory footprints measured in kilobytes rather than megabytes. This efficiency enables the concurrent pricing of large option portfolios without memory constraints.
+$$B^{(k+1)}(\tau) = B^{(k)}(\tau) + \eta \frac{B^{(k)}(\tau) - \mathcal{F}(B^{(k)})(\tau)}{\mathcal{F}'(B^{(k)})(\tau) - 1} \tag{6.2}$$
 
-The double-boundary case introduces additional computational considerations due to the need to compute two boundary functions and detect their potential intersection. However, the decoupled iteration scheme ensures that the computational complexity scales linearly with the number of boundaries rather than exponentially as might be expected for coupled systems. The intersection detection algorithm adds minimal overhead, typically requiring fewer than ten function evaluations to achieve high precision.
+where $\mathcal{F}'(B)(\tau)$ denotes the Gâteaux derivative of the operator with respect to boundary perturbations at the point $\tau$, and $\eta \in (0,1]$ represents a relaxation parameter.
 
-Parallel computation capabilities further enhance the performance characteristics by exploiting the natural parallelism inherent in the mathematical algorithms. The boundary computations at different time points are independent and can be distributed across multiple processor cores. Similarly, portfolio pricing applications can parallelize over individual option contracts, achieving near-linear speedup with the number of available cores.
+The computation of the functional derivative requires evaluation of additional integral expressions but typically reduces the required number of iterations from dozens to fewer than five, providing substantial overall computational savings.
 
-The framework's performance scales gracefully with problem difficulty, automatically adapting computational effort to achieve user-specified accuracy targets. For simple cases with moderate parameter values, the method achieves high accuracy with minimal computational effort. For challenging cases involving extreme parameters or high precision requirements, the adaptive algorithms increase the computational resources proportionally to maintain accuracy standards.
+**Lemma 6.1** (Gâteaux Derivative): *For both single-boundary fixed-point systems, the Gâteaux derivative of the operator $\mathcal{F}$ with respect to proportional boundary perturbations $\ln B(\tau) \to \ln B(\tau) + \omega g(\tau)$ satisfies:*
 
-Cache efficiency plays an important role in the practical performance of the framework. The compact data structures and regular memory access patterns optimize processor cache utilization, while the polynomial representation enables efficient vectorization of computational kernels on modern SIMD processor architectures.
+$$\frac{\partial \mathcal{F}}{\partial \omega}\bigg|_{\omega=0} = \frac{K e^{(r-q)\tau}}{D(\tau,B)} \int_0^\tau e^{ru} \frac{r-q}{B(u)/K} \psi(\tau-u, B(\tau)/B(u)) \frac{\phi(d_-(\tau-u,B(\tau)/B(u)))}{\sigma\sqrt{\tau-u}} (g(\tau) - g(u)) du \tag{6.3}$$
 
-Profiling analysis reveals that the computational effort is distributed relatively evenly across the major algorithmic components. Approximately forty percent of the execution time is devoted to integral evaluation, thirty percent to polynomial interpolation and evaluation, twenty percent to convergence monitoring and control logic, and ten percent to initialization and setup costs. This balanced distribution indicates that no single component dominates the computational cost, suggesting that the overall algorithm design is well-optimized.
+*where $\psi$ is a system-dependent weighting function.*
 
-The performance characteristics remain stable across different market conditions and parameter regimes. Unlike some alternative methods that exhibit degraded performance for certain parameter combinations, the spectral approach maintains consistent execution times and accuracy levels. This stability is particularly important for risk management applications that require reliable performance under stressed market conditions.
+### Anderson Acceleration
 
-Comparison with other high-performance American option pricing methods demonstrates the competitive advantages of the spectral approach. The framework typically achieves accuracy comparable to finite difference methods with thousands of grid points while executing in a fraction of the computational time. Similarly, the method provides deterministic results with guaranteed accuracy bounds, unlike Monte Carlo approaches that provide only statistical estimates with confidence intervals.
+For boundary functions that exhibit slowly converging fixed-point behavior, the Antares framework incorporates Anderson acceleration, a multisecant method that combines information from multiple previous iterates to accelerate convergence.
 
-## Extensions and Future Developments
+The Anderson acceleration maintains a history of the most recent $m$ iterates and residuals:
 
-The mathematical foundation of the Antares framework provides a robust platform for numerous extensions and enhancements that can address additional market segments and computational challenges. The spectral collocation methodology generalizes naturally to more complex derivative structures, alternative underlying process models, and advanced risk management applications.
+$$\mathbf{F}_k = [F_k, F_{k-1}, \ldots, F_{k-m+1}], \quad \mathbf{G}_k = [G_k, G_{k-1}, \ldots, G_{k-m+1}] \tag{6.4}$$
 
-The extension to time-dependent parameters represents a natural progression that addresses the limitations of the constant parameter assumption. Many practical applications require the incorporation of term structures for interest rates, dividend yields, and volatilities. The mathematical framework can accommodate such extensions through modifications to the integral equation formulation and the introduction of time-dependent transformation functions.
+where $F_j = B^{(j)}$ and $G_j = \mathcal{F}(B^{(j)}) - B^{(j)}$ represent the iterates and residuals, respectively.
 
-For time-dependent interest rates $r(t)$ and dividend yields $q(t)$, the integral equation takes the modified form:
+The accelerated iterate is computed as:
 
-$$V(\tau,S) = v(\tau,S) + \int_{0}^{\tau} r(T-u)K e^{-\int_{T-\tau}^{T-u} r(s)ds}\Phi(-d_-(u,S/B(u),T-\tau))du - \int_{0}^{\tau} q(T-u)S e^{-\int_{T-\tau}^{T-u} q(s)ds}\Phi(-d_+(u,S/B(u),T-\tau))du$$
+$$B^{(k+1)} = \mathcal{F}\left(\mathbf{F}_k \boldsymbol{\alpha}\right) \tag{6.5}$$
 
-where the exponential discount factors are replaced by integrals of the time-dependent rates. The boundary computation algorithms require only minor modifications to accommodate these changes, with the primary impact being increased computational cost due to the evaluation of the time integrals.
+where the weight vector $\boldsymbol{\alpha}$ solves the least-squares problem:
 
-The incorporation of stochastic volatility models, such as the Heston model, presents greater mathematical challenges but remains within the scope of the framework. The exercise boundary becomes a function of both time and the volatility state variable, requiring a two-dimensional representation. However, the fundamental spectral approach can be extended through tensor product constructions and multi-dimensional interpolation schemes.
+$$\boldsymbol{\alpha} = \arg\min_{\boldsymbol{\beta}} \left\|\mathbf{G}_k \boldsymbol{\beta}\right\|_2 \text{ subject to } \mathbf{e}^T \boldsymbol{\beta} = 1 \tag{6.6}$$
 
-Jump-diffusion models represent another important extension that addresses the limitations of the pure diffusion assumption. The presence of jumps modifies the integral equation through additional terms that capture the contribution of large price movements that cross the exercise boundary. While this extension increases the mathematical complexity, the spectral framework provides a natural foundation for handling the additional integral terms.
+This acceleration technique often achieves superlinear convergence for well-conditioned problems and provides robustness against ill-conditioning that might affect the Jacobi-Newton method.
 
-The framework's architecture facilitates the incorporation of alternative exercise styles and exotic features. Bermudan options, which permit exercise only at discrete dates, can be handled through modifications of the integral equation that restrict the exercise region to specific time points. Barrier features can be incorporated through additional boundary conditions and constraint equations.
+### Double-Boundary Iteration Schemes
 
-Advanced Greeks calculation represents an area where the spectral approach provides significant advantages over traditional methods. The polynomial representation of the boundary function enables analytical differentiation with respect to model parameters, providing exact expressions for price sensitivities. These capabilities are particularly valuable for risk management applications that require accurate and stable Greeks calculations.
+The mathematical decoupling established in Theorem 4.2 enables the development of separate iteration schemes for the upper and lower boundaries in the double-boundary case. However, the practical implementation reveals that different acceleration strategies prove optimal for each boundary.
 
-The extension to multi-asset options, such as basket options or exchange options, follows naturally from the single-asset framework. The exercise boundary becomes a hypersurface in the multi-dimensional asset price space, requiring advanced interpolation techniques and higher-dimensional quadrature rules. However, the fundamental mathematical principles remain applicable.
+For the upper boundary $B(\tau)$, which typically exhibits more nonlinear behavior, the full Jacobi-Newton acceleration provides optimal performance:
 
-Model calibration and inverse problems represent important applications where the computational efficiency of the framework provides significant advantages. The rapid evaluation of option prices enables the use of gradient-based optimization algorithms for fitting model parameters to market data. The spectral approach's high accuracy is particularly valuable in this context, as parameter estimation errors can be dominated by numerical approximation errors in less accurate pricing methods.
+$$B^{(k+1)}(\tau) = B^{(k)}(\tau) + \eta \frac{B^{(k)}(\tau) - \mathcal{F}_B(B^{(k)})(\tau)}{\mathcal{F}_B'(B^{(k)})(\tau) - 1} \tag{6.7}$$
 
-The incorporation of credit risk and counterparty risk modeling represents another frontier where the framework's flexibility proves valuable. The modification of the risk-neutral measure to account for default possibilities requires adjustments to the underlying process dynamics and discount factors. The spectral methodology can accommodate these modifications while maintaining computational efficiency.
+For the lower boundary $Y(\tau)$, which tends to be smoother and more linear, simplified acceleration schemes or even standard fixed-point iteration often suffice:
 
-Machine learning applications present novel opportunities for enhancing the framework's capabilities. Neural networks can be employed to learn improved transformation functions that further optimize the boundary representation for specific parameter regimes. Similarly, reinforcement learning techniques might discover superior iteration schemes or adaptive parameter selection strategies.
+$$Y^{(k+1)}(\tau) = \mathcal{F}_Y(Y^{(k)})(\tau) \tag{6.8}$$
 
-High-performance computing platforms, including GPU architectures and distributed computing systems, offer opportunities for dramatic performance enhancements. The framework's mathematical structure is well-suited to vectorization and parallelization, enabling the exploitation of modern computational architectures. The compact memory footprint and regular computational patterns align well with the design constraints of specialized computing hardware.
+where $\mathcal{F}_Y$ denotes the fixed-point operator derived from the smooth-pasting condition for the lower boundary.
 
-The development of real-time risk management systems represents a primary application area where the framework's performance characteristics provide competitive advantages. The ability to reprice large derivatives portfolios in milliseconds rather than minutes enables more sophisticated risk monitoring and hedging strategies. The framework's accuracy ensures that risk calculations are not contaminated by numerical approximation errors.
+### Convergence Monitoring and Adaptive Control
+
+The Antares framework incorporates sophisticated convergence monitoring that employs multiple criteria to ensure robust termination of the iterative process. The primary convergence criterion monitors the maximum relative change in the boundary function:
+
+$$\epsilon_{\text{rel}} = \max_{\tau \in [0,\tau_{\max}]} \left|\frac{B^{(k+1)}(\tau) - B^{(k)}(\tau)}{B^{(k)}(\tau)}\right| \tag{6.9}$$
+
+Secondary criteria detect oscillatory behavior and stagnation:
+
+$$\epsilon_{\text{osc}} = \max_{\tau \in [0,\tau_{\max}]} \left|B^{(k+1)}(\tau) - B^{(k-1)}(\tau)\right| \tag{6.10}$$
+
+$$\epsilon_{\text{stag}} = \max_{j=1,\ldots,5} \left\|\mathbf{B}^{(k)} - \mathbf{B}^{(k-j)}\right\|_{\infty} \tag{6.11}$$
+
+The iteration terminates when either high accuracy is achieved ($\epsilon_{\text{rel}} < \epsilon_{\text{tol}}$) or when the convergence rate indicates that further iterations are unlikely to improve the solution significantly.
+
+## Mathematical Validation and Error Analysis
+
+### Theoretical Error Bounds
+
+The mathematical validation of the Antares methodology requires rigorous analysis of the various sources of approximation error and their cumulative effect on the final option price computation. The total error can be decomposed into three primary components: boundary approximation error, integral approximation error, and iteration truncation error.
+
+**Boundary Approximation Error**: The spectral approximation of the transformed boundary function $H(\xi)$ through its $N$-point Chebyshev interpolant $H_N(\xi)$ introduces an error that propagates through the inverse transformation to the original boundary function. The error bound can be established through the following theorem.
+
+**Theorem 7.1** (Boundary Error Propagation): *Let $B(\tau)$ denote the exact exercise boundary and $B_N(\tau)$ denote the boundary reconstructed from the $N$-point Chebyshev approximation of the transformed function $H(\xi)$. If the transformation sequence satisfies the regularity conditions of Theorem 5.1, then:*
+
+$$\|B - B_N\|_{\infty} \leq C_1 \|H - H_N\|_{\infty} \leq C_1 C_2 \rho^{-N} \tag{7.1}$$
+
+*where $C_1$ depends on the transformation Jacobian and $C_2$ depends on the smoothness of $H(\xi)$.*
+
+**Integral Approximation Error**: The evaluation of the integral operators through high-order quadrature rules introduces a second source of approximation error. For Gaussian quadrature with $L$ nodes applied to smooth integrands, the error satisfies:
+
+$$\left|\int_0^\tau f(u) du - \sum_{l=1}^{L} w_l f(u_l)\right| \leq C_3 \tau^{2L+1} \max_{u \in [0,\tau]} |f^{(2L)}(u)| \tag{7.2}$$
+
+where $\{w_l, u_l\}_{l=1}^{L}$ represent the quadrature weights and nodes.
+
+**Iteration Truncation Error**: The finite number of fixed-point iterations introduces a third error component that depends on the convergence rate of the iteration scheme. For the accelerated methods, this error typically decreases quadratically:
+
+$$\|B^{(M)} - B^*\|_{\infty} \leq C_4 \lambda^M \tag{7.3}$$
+
+where $M$ represents the number of iterations, $B^*$ denotes the exact fixed-point solution, and $\lambda < 1$ characterizes the convergence rate.
+
+### Option Price Error Analysis
+
+The ultimate objective of the boundary computation is the accurate evaluation of option prices. The error in the option price depends on both the accuracy of the boundary approximation and the precision of the final price integral evaluation.
+
+**Theorem 7.2** (Option Price Error Bound): *Let $V(\tau,s)$ denote the exact American option price and $V_h(\tau,s)$ denote the computed approximation using boundary approximation error $\|B - B_h\|_{\infty} \leq h$. Then the option price error satisfies:*
+
+$$|V(\tau,s) - V_h(\tau,s)| \leq C_5 h + C_6 \varepsilon_{\text{quad}} \tag{7.4}$$
+
+*where $\varepsilon_{\text{quad}}$ represents the quadrature error in the final price integral and the constants $C_5, C_6$ depend on the option parameters and the boundary sensitivity.*
+
+The proof of this theorem employs the Lipschitz continuity of the option price functional with respect to the boundary function and demonstrates that the price error scales linearly with the boundary approximation error.
+
+### Convergence Verification
+
+The practical verification of convergence requires comparison with high-precision benchmark solutions. The Antares framework employs multiple validation strategies to ensure the reliability of computed results.
+
+**Richardson Extrapolation**: Multiple solutions are computed with different numbers of collocation points $N_1 < N_2 < N_3$, and Richardson extrapolation is used to estimate the error:
+
+$$V_{\text{extrap}} = V_{N_3} + \frac{V_{N_3} - V_{N_2}}{(N_3/N_2)^p - 1} \tag{7.5}$$
+
+where $p$ represents the theoretical convergence order.
+
+**Method Comparison**: The spectral results are compared with high-precision finite difference solutions computed on extremely fine grids. These comparisons consistently demonstrate the superior accuracy of the spectral approach.
+
+**Asymptotic Verification**: For limiting cases where analytical solutions exist (such as perpetual options or European options), the computed results are compared with the exact formulas to verify the correctness of the implementation.
+
+### Greeks Computation and Sensitivity Analysis
+
+The spectral representation of the boundary function enables the analytical computation of option price sensitivities (Greeks) with exceptional accuracy. The Greeks can be computed through either direct differentiation of the price formula or through automatic differentiation of the boundary computation algorithm.
+
+**Delta Computation**: The hedge ratio $\Delta = \partial V/\partial S$ can be computed analytically from the integral representation:
+
+$$\Delta(\tau,s) = \frac{\partial v}{\partial s}(\tau,s) + \int_0^\tau \left[rK e^{-r(\tau-u)} + qs e^{-q(\tau-u)}\right] \frac{\phi(d_-(\tau-u,s/B(u)))}{\sigma\sqrt{\tau-u}} \frac{1}{s} du \tag{7.6}$$
+
+**Gamma Computation**: The convexity $\Gamma = \partial^2 V/\partial S^2$ follows from differentiating the delta expression:
+
+$$\Gamma(\tau,s) = \frac{\partial^2 v}{\partial s^2}(\tau,s) + \int_0^\tau \frac{rK e^{-r(\tau-u)} + qs e^{-q(\tau-u)}}{\sigma\sqrt{\tau-u}} \frac{\phi(d_-(\tau-u,s/B(u)))}{s^2} \left[\frac{d_-(\tau-u,s/B(u))}{\sigma\sqrt{\tau-u}} - 1\right] du \tag{7.7}$$
+
+The spectral accuracy of the boundary representation ensures that the Greeks maintain their precision throughout the differentiation process, providing reliable sensitivity measures for risk management applications.
+
+## Extensions and Mathematical Generalizations
+
+### Time-Dependent Parameter Extensions
+
+The mathematical framework of the Antares methodology can be extended to accommodate time-dependent interest rates, dividend yields, and volatilities through careful modification of the integral equation formulation. Consider the stochastic differential equation:
+
+$$\frac{dS(t)}{S(t)} = (r(t)-q(t))dt + \sigma(t) dW(t) \tag{8.1}$$
+
+where the parameters are now deterministic functions of time.
+
+The modified integral representation takes the form:
+
+$$V(\tau,s) = v_T(\tau,s) + \int_0^\tau r(T-u)K P(T-\tau,T-u) \Phi(-\tilde{d}_-(u,s/B(u),T-\tau)) du - \int_0^\tau q(T-u)s Q(T-\tau,T-u) \Phi(-\tilde{d}_+(u,s/B(u),T-\tau)) du \tag{8.2}$$
+
+where $P(t_1,t_2) = \exp(-\int_{t_1}^{t_2} r(u) du)$ and $Q(t_1,t_2) = \exp(-\int_{t_1}^{t_2} q(u) du)$ represent the integrated discount factors, and the modified $d$-functions account for the time-dependent parameters:
+
+$$\tilde{d}_{\pm}(\delta,z,t) = \frac{\ln(z \cdot Q(t,t+\delta)/P(t,t+\delta)) \pm \frac{1}{2}\Sigma(t,t+\delta)}{\sqrt{\Sigma(t,t+\delta)}} \tag{8.3}$$
+
+with $\Sigma(t_1,t_2) = \int_{t_1}^{t_2} \sigma(u)^2 du$.
+
+### Jump-Diffusion Extensions
+
+The incorporation of jump components in the underlying asset price dynamics requires fundamental modifications to both the stochastic process specification and the integral equation formulation. Consider the jump-diffusion process:
+
+$$\frac{dS(t)}{S(t-)} = (r-q-\lambda\kappa)dt + \sigma dW(t) + \int_{\mathbb{R}} z \tilde{N}(dt,dz) \tag{8.4}$$
+
+where $\tilde{N}(dt,dz)$ represents a compensated Poisson random measure with intensity $\lambda$ and jump size distribution characterized by the Lévy measure $\nu(dz)$.
+
+The modified integral equation must account for the additional contribution from jumps that cross the exercise boundary:
+
+$$V(\tau,s) = v_J(\tau,s) + \int_0^\tau \mathbb{E}^{\mathbb{Q}}\left[e^{-ru} \mathbbm{1}_{\{S(u-) \leq B(\tau-u)\}} (rK - qS(u-)) \mid S(0) = s\right] du + \int_0^\tau \lambda \int_{\mathbb{R}} \mathbb{E}^{\mathbb{Q}}\left[e^{-ru} (V(\tau-u,S(u-)e^z) - V(\tau-u,S(u-))) \mathbbm{1}_{\{S(u-) > B(\tau-u), S(u-)e^z \leq B(\tau-u)\}} \mid S(0) = s\right] \nu(dz) du \tag{8.5}$$
+
+where $v_J(\tau,s)$ denotes the corresponding European option price under the jump-diffusion model.
+
+### Stochastic Volatility Extensions
+
+The extension to stochastic volatility models, such as the Heston model, requires a fundamental increase in dimensionality as the exercise boundary becomes a function of both time and the volatility state variable. Consider the Heston system:
+
+$$\begin{aligned}
+\frac{dS(t)}{S(t)} &= (r-q)dt + \sqrt{V(t)} dW_1(t) \\
+dV(t) &= \kappa(\theta - V(t))dt + \sigma_v \sqrt{V(t)} dW_2(t)
+\end{aligned} \tag{8.6}$$
+
+where $dW_1(t) dW_2(t) = \rho dt$.
+
+The exercise boundary becomes a surface $B(\tau,v)$ in the two-dimensional state space, and the integral equation formulation requires two-dimensional integration over the exercise region. The spectral collocation method can be extended through tensor product constructions using bivariate Chebyshev polynomials:
+
+$$B_N(\tau,v) = \sum_{j=0}^{N_1} \sum_{k=0}^{N_2} c_{jk} T_j(\xi_\tau) T_k(\xi_v) \tag{8.7}$$
+
+where $\xi_\tau$ and $\xi_v$ represent transformed time and volatility variables, respectively.
+
+### Multi-Asset Extensions
+
+The extension to multi-asset American options, such as exchange options or basket options, follows naturally from the single-asset framework. For a two-asset exchange option with payoff $(S_1 - S_2)^+$, the exercise boundary becomes a curve in the two-dimensional asset price space.
+
+The correlated geometric Brownian motion system:
+
+$$\begin{aligned}
+\frac{dS_1(t)}{S_1(t)} &= (r-q_1)dt + \sigma_1 dW_1(t) \\
+\frac{dS_2(t)}{S_2(t)} &= (r-q_2)dt + \sigma_2 dW_2(t)
+\end{aligned} \tag{8.8}$$
+
+with $dW_1(t) dW_2(t) = \rho dt$ leads to a two-dimensional optimal stopping problem with exercise boundary $B(\tau,s_2)$ representing the critical level of $S_1$ as a function of time and the level of $S_2$.
+
+The spectral representation of the boundary surface employs two-dimensional Chebyshev expansion:
+
+$$B(\tau,s_2) = \sum_{j=0}^{N_1} \sum_{k=0}^{N_2} c_{jk} T_j(\xi_\tau) T_k(\xi_{s_2}) \tag{8.9}$$
+
+where appropriate transformations are applied to both the temporal and spatial dimensions.
 
 ## Conclusion
 
-The Antares spectral collocation framework represents a comprehensive mathematical architecture that fundamentally advances the state of computational derivatives pricing. Through the innovative combination of integral equation formulations, sophisticated boundary transformations, and high-order numerical methods, the framework achieves unprecedented computational efficiency while maintaining exceptional numerical accuracy across the full spectrum of market conditions.
+The Antares mathematical framework represents a comprehensive analytical architecture that fundamentally advances the theoretical and computational treatment of American option pricing across the full spectrum of interest rate conditions. Through the innovative combination of optimal stopping theory, integral equation transformations, and spectral collocation techniques, the methodology achieves unprecedented mathematical rigor while maintaining exceptional computational efficiency.
 
-The mathematical elegance of the approach lies in its ability to transform the inherently complex free-boundary problem of American option pricing into a well-conditioned system amenable to spectral numerical methods. The careful design of transformation functions converts singular, highly non-linear boundary functions into smooth, nearly linear functions that can be accurately represented by low-order polynomials. This transformation enables the achievement of machine-precision accuracy with computational effort measured in hundreds rather than thousands or millions of floating-point operations.
+The mathematical elegance of the approach lies in its unified treatment of both traditional single-boundary configurations and the complex double-boundary topologies that emerge under negative interest rate conditions. The development of decoupled iteration schemes for the double-boundary case represents a particularly significant mathematical contribution, enabling the independent computation of multiple exercise boundaries while preserving the convergence properties of the single-boundary framework.
 
-The framework's treatment of the double-boundary phenomenon under negative interest rates represents a particularly significant contribution to the field. The mathematical development of decoupled iteration schemes allows the independent computation of multiple exercise boundaries while preserving the computational efficiency of the single-boundary case. This capability ensures that the framework remains robust and efficient across all combinations of interest rate and dividend yield signs, a requirement that has become increasingly important in modern financial markets.
+The transformation sequence that converts singular, highly nonlinear boundary functions into smooth, nearly linear functions amenable to spectral approximation demonstrates the power of appropriate mathematical preprocessing in numerical algorithm design. The resulting exponential convergence rates represent a qualitative improvement over traditional algebraic methods and enable the achievement of machine precision accuracy with minimal computational effort.
 
-The theoretical foundation provided by spectral approximation theory guarantees exponential convergence rates that dramatically outperform traditional numerical methods. This mathematical guarantee, combined with extensive empirical validation, ensures that the framework provides reliable and accurate results across challenging parameter regimes. The adaptive algorithms automatically adjust computational effort to maintain accuracy standards, providing consistent performance regardless of problem difficulty.
+The rigorous mathematical analysis of convergence properties, error bounds, and stability characteristics provides theoretical guarantees that complement the exceptional empirical performance. The framework's ability to maintain mathematical rigor across challenging parameter regimes, including those that arise in modern negative interest rate environments, ensures its applicability to the full range of contemporary financial market conditions.
 
-The computational architecture emphasizes modularity and extensibility, facilitating the incorporation of advanced features and alternative mathematical formulations. The separation of mathematical algorithms from computational infrastructure enables optimization for specific hardware architectures while maintaining algorithmic flexibility. The framework's design principles ensure that future enhancements can be incorporated without disrupting existing functionality.
+The extensibility of the mathematical framework to accommodate time-dependent parameters, alternative underlying processes, and multi-dimensional problems demonstrates the fundamental soundness of the analytical approach. The spectral methodology provides a robust foundation for addressing increasingly complex derivative valuation challenges while maintaining the mathematical precision required for critical financial applications.
 
-The performance characteristics of the framework enable applications that were previously impractical due to computational constraints. Real-time portfolio pricing, high-frequency risk management, and large-scale parameter calibration become feasible with execution speeds exceeding 100,000 option valuations per second. These capabilities open new possibilities for sophisticated trading strategies and risk management techniques.
+The Antares framework thus establishes a new standard for the mathematical treatment of American option pricing problems, combining theoretical rigor with computational excellence in a unified analytical architecture. The methodology's emphasis on mathematical elegance, provable convergence properties, and practical efficiency positions it as a foundational contribution to the field of computational finance that will enable both current applications and future theoretical developments.
 
-The mathematical rigor of the framework ensures that computational results meet the accuracy standards required for financial applications. The error estimation and adaptive refinement capabilities provide real-time feedback on solution quality, while the extensive validation infrastructure ensures continued reliability across software updates and enhancements. The framework's deterministic nature provides reproducible results that facilitate regulatory compliance and audit requirements.
-
-The unified treatment of single and double boundary cases through a common mathematical framework simplifies implementation while ensuring consistency across different market regimes. The automatic detection and handling of boundary topology changes eliminates the need for manual intervention or separate code paths, reducing the potential for implementation errors and simplifying system maintenance.
-
-The Antares framework thus provides a complete solution to the American option pricing problem that meets the demanding requirements of modern financial applications. The combination of mathematical sophistication, computational efficiency, and implementation robustness establishes a new standard for derivatives pricing systems. The framework's extensibility ensures that it can evolve to meet future market needs while maintaining its fundamental performance and accuracy advantages.
-
-The success of the spectral collocation approach in the American option context suggests broader applications to other free-boundary problems in finance and related fields. The mathematical techniques developed for boundary transformation and spectral representation may prove valuable for optimal stopping problems in energy markets, real options valuation, and credit risk modeling. The computational methodologies may find applications in other areas of scientific computing where high accuracy and efficiency are paramount.
-
-This comprehensive mathematical framework thus represents not merely an incremental improvement in derivatives pricing technology, but a fundamental advancement that reshapes the computational landscape for complex financial problems. The Antares system stands as a testament to the power of combining deep mathematical insight with sophisticated computational techniques to solve challenging real-world problems with unprecedented efficiency and accuracy.
+---
