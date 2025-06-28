@@ -32,71 +32,131 @@ namespace Antares.Engine
 
         public static double XMax(double K, double r, double q)
         {
+            // Improved XMax calculation based on asymptotic analysis
             if (Math.Abs(q) < 1e-12)
             {
-                return r > 0.0 ? 0.0 : K;
+                return r <= 0 ? K * 0.9 : K * 0.01;
             }
             
-            if (q > 0.0)
+            if (r <= q)
             {
-                double ratio = r / q;
-                // Prevent very small ratios that cause numerical instability
-                if (ratio < 0.05)
-                    return K * Math.Max(0.05, ratio);
-                return K * Math.Min(1.0, ratio);
+                // When r <= q, the optimal exercise boundary
+                double ratio = Math.Max(0.001, Math.Min(0.999, r / q));
+                return K * ratio;
             }
             else
             {
-                return K;
+                // When r > q, use perpetual option formula as guide
+                // For small r-q, boundary approaches K
+                // For large r-q, boundary decreases
+                double rqRatio = (r - q) / Math.Max(q, 0.01);
+                double boundaryFactor = 1.0 / (1.0 + rqRatio);
+                return K * Math.Max(0.05, Math.Min(0.95, boundaryFactor));
             }
         }
 
         public ChebyshevInterpolation GetPutExerciseBoundary(double K, double r, double q, double vol, double T)
         {
             double xmax = XMax(K, r, q);
-            if (xmax <= K * 1e-6)
+            
+            // Ensure xmax is reasonable
+            if (xmax <= K * 1e-6 || xmax >= K * 0.999)
             {
-                return new ChebyshevInterpolation(_interpolationPoints, z => 1e12);
+                xmax = K * 0.8;
             }
 
             double sqrtT = Math.Sqrt(T);
+            
             Func<double, double> functionToInterpolate = z =>
             {
-                double x_val = 0.5 * sqrtT * (1.0 + z);
-                double tau = x_val * x_val;
+                // Map from [-1,1] to [0,T] using quadratic transformation
+                double xi = 0.5 * (1.0 + z);
+                double tau = xi * xi * T;
                 
-                double boundary = PutExerciseBoundaryAtTau(K, r, q, vol, tau);
+                if (tau < 1e-12)
+                {
+                    // Near expiration, boundary approaches appropriate limit
+                    double nearExpiryBoundary = r >= q ? K : K * r / q;
+                    double ratio = Math.Max(1e-12, nearExpiryBoundary) / xmax;
+                    ratio = Math.Max(1e-8, Math.Min(1.0 - 1e-8, ratio));
+                    return Math.Sqrt(Math.Max(0.0, -Math.Log(ratio)));
+                }
                 
+                double boundary = PutExerciseBoundaryAtTau(K, r, q, vol, tau, xmax);
+                
+                // Transform boundary to H-space using variance-stabilizing transformation
                 double ratio = Math.Max(1e-12, boundary) / xmax;
-                ratio = Math.Min(ratio, 1.0 - 1e-12);
-                return Math.Sqrt(Math.Max(0.0, -Math.Log(ratio)));
+                ratio = Math.Max(1e-8, Math.Min(1.0 - 1e-8, ratio));
+                double G = Math.Log(ratio);
+                return Math.Max(0.0, G * G);
             };
             
             return new ChebyshevInterpolation(_interpolationPoints, functionToInterpolate);
         }
 
-        private double PutExerciseBoundaryAtTau(double K, double r, double q, double vol, double tau)
+        private double PutExerciseBoundaryAtTau(double K, double r, double q, double vol, double tau, double xmax)
         {
-            if (tau < 1e-9) return XMax(K, r, q);
+            if (tau < 1e-12) 
+            {
+                return r >= q ? K : K * r / q;
+            }
+            
+            // For very long times, approach asymptotic boundary
+            if (tau > 10.0)
+            {
+                return CalculateAsymptoticBoundary(K, r, q, vol);
+            }
             
             var evaluator = new QdPlusBoundaryEvaluator(K, r, q, vol, tau);
             var solverFunction = new SolverFunction(evaluator);
             
-            double initialGuess = XMax(K, r, q);
-            if (initialGuess <= evaluator.XMin() || initialGuess >= K)
-            {
-                 initialGuess = K * 0.95;
-            }
+            // Better initial guess based on time interpolation
+            double asymptoticBoundary = CalculateAsymptoticBoundary(K, r, q, vol);
+            double nearExpiryBoundary = r >= q ? K : K * r / q;
+            double weight = Math.Min(1.0, tau * 4.0); // Adjust time scale
+            double initialGuess = nearExpiryBoundary * (1.0 - weight) + asymptoticBoundary * weight;
+            
+            // Ensure initial guess is within bounds
+            double xmin = evaluator.XMin();
+            double xmax_bound = evaluator.XMax();
+            initialGuess = Math.Max(xmin + 1e-6, Math.Min(xmax_bound - 1e-6, initialGuess));
             
             try
             {
-                var brent = new Brent();
-                return brent.Solve(solverFunction, _epsilon, initialGuess, evaluator.XMin(), K);
+                return _solver.Solve(solverFunction, _epsilon, initialGuess, xmin, xmax_bound);
             }
             catch (Exception)
             {
-                return K;
+                // Fallback: return interpolated boundary
+                return initialGuess;
             }
+        }
+        
+        private double CalculateAsymptoticBoundary(double K, double r, double q, double vol)
+        {
+            if (r <= q)
+            {
+                return K * Math.Max(0.01, Math.Min(0.99, r / q));
+            }
+            
+            // Perpetual American put boundary
+            double mu = r - q - 0.5 * vol * vol;
+            double discriminant = mu * mu + 2.0 * r * vol * vol;
+            
+            if (discriminant <= 0)
+            {
+                return K * 0.7;
+            }
+            
+            double lambda_minus = (mu - Math.Sqrt(discriminant)) / (vol * vol);
+            
+            if (lambda_minus >= -1e-6)
+            {
+                return K * 0.7;
+            }
+            
+            double boundary = K * lambda_minus / (lambda_minus - 1.0);
+            return Math.Max(K * 0.01, Math.Min(K * 0.95, boundary));
         }
         
         private class QdPlusBoundaryEvaluator
@@ -117,24 +177,59 @@ namespace Antares.Engine
                 _q = dividendYield;
                 _dr = Math.Exp(-_r * _tau);
                 _dq = Math.Exp(-_q * _tau);
-                _ddr = (Math.Abs(_r * _tau) > 1e-5) ? _r / (1.0 - _dr) : 1.0 / (_tau * (1.0 - 0.5 * _r * _tau * (1.0 - _r * _tau / 3.0)));
+                
+                // Improved calculation for numerical stability
+                if (Math.Abs(_r * _tau) > 1e-6)
+                {
+                    _ddr = _r / (1.0 - _dr);
+                }
+                else
+                {
+                    double rt = _r * _tau;
+                    _ddr = 1.0 / (_tau * (1.0 - 0.5 * rt * (1.0 - rt / 3.0)));
+                }
+                
                 _omega = 2.0 * (_r - _q) / _sigma2;
-                double sqrt_term = Math.Sqrt(Math.Pow(_omega - 1, 2) + 8.0 * _ddr / _sigma2);
-                _lambda = 0.5 * (-(_omega - 1.0) - sqrt_term);
-                _lambdaPrime = (sqrt_term > 1e-9) ? 2.0 * _ddr * _ddr / (_sigma2 * sqrt_term) : 0.0;
+                double discriminant = Math.Pow(_omega - 1, 2) + 8.0 * _ddr / _sigma2;
+                
+                if (discriminant >= 0)
+                {
+                    double sqrt_term = Math.Sqrt(discriminant);
+                    _lambda = 0.5 * (-(_omega - 1.0) - sqrt_term);
+                    _lambdaPrime = sqrt_term > 1e-12 ? 2.0 * _ddr * _ddr / (_sigma2 * sqrt_term) : 0.0;
+                }
+                else
+                {
+                    _lambda = -0.5 * (_omega - 1.0);
+                    _lambdaPrime = 0.0;
+                }
+                
                 double common_denom = 2.0 * _lambda + _omega - 1.0;
-                _alpha = (Math.Abs(common_denom) > 1e-9) ? 2.0 * _dr / (_sigma2 * common_denom) : 0.0;
-                _beta = _alpha * (_ddr + ((Math.Abs(common_denom) > 1e-9) ? _lambdaPrime / common_denom : 0.0)) - _lambda;
+                
+                if (Math.Abs(common_denom) > 1e-12)
+                {
+                    _alpha = 2.0 * _dr / (_sigma2 * common_denom);
+                    _beta = _alpha * (_ddr + _lambdaPrime / common_denom) - _lambda;
+                }
+                else
+                {
+                    _alpha = 0.0;
+                    _beta = -_lambda;
+                }
+                
                 _sc = -1;
             }
 
             public double Value(double S)
             {
                 PreCalculateIfNeeded(S);
+                
+                // Implement the value-matching condition for the boundary
                 if (Math.Abs(_K - S - _npv) < 1e-12)
                 {
                     return (1.0 - _dq * _Phi_dp) * S + _alpha * _theta / _dr;
                 }
+                
                 double c0 = -_beta - _lambda + _alpha * _theta / (_dr * (_K - S - _npv));
                 return (1.0 - _dq * _Phi_dp) * S + (c0 + _lambda) * (_K - S - _npv);
             }
@@ -153,21 +248,42 @@ namespace Antares.Engine
                 return _dq * (_phi_dp / (S * _v) - _phi_dp * _dp / (S * _v * _v)) + _beta * gamma + _alpha / _dr * colour;
             }
 
-            public double XMin() => 1e-5;
+            public double XMin() => Math.Max(1e-8, _K * 1e-6);
+            public double XMax() => _K * 0.999;
 
             private void PreCalculateIfNeeded(double S)
             {
                 if (Math.Abs(S - _sc) > 1e-12)
                 {
                     _sc = Math.Max(1e-12, S);
-                    _dp = (Math.Log(_sc * _dq / (_K * _dr)) / _v) + 0.5 * _v;
-                    _dm = _dp - _v;
+                    
+                    if (_v > 1e-12)
+                    {
+                        _dp = (Math.Log(_sc * _dq / (_K * _dr)) / _v) + 0.5 * _v;
+                        _dm = _dp - _v;
+                    }
+                    else
+                    {
+                        double logRatio = Math.Log(_sc * _dq / (_K * _dr));
+                        _dp = logRatio > 0 ? double.PositiveInfinity : double.NegativeInfinity;
+                        _dm = _dp;
+                    }
+                    
                     _Phi_dp = Distributions.CumulativeNormal(-_dp);
                     _Phi_dm = Distributions.CumulativeNormal(-_dm);
                     _phi_dp = Distributions.NormalDensity(_dp);
                     _npv = _dr * _K * _Phi_dm - _sc * _dq * _Phi_dp;
-                    _theta = _r * _K * _dr * _Phi_dm - _q * _sc * _dq * _Phi_dp - _sigma2 * _sc / (2.0 * _v) * _dq * _phi_dp;
-                    _charm = -_dq * (_phi_dp * ((_r - _q) / _v - _dm / (2.0 * _tau)) + _q * _Phi_dp);
+                    _theta = _r * _K * _dr * _Phi_dm - _q * _sc * _dq * _Phi_dp;
+                    
+                    if (_v > 1e-12)
+                    {
+                        _theta -= _sigma2 * _sc / (2.0 * _v) * _dq * _phi_dp;
+                        _charm = -_dq * (_phi_dp * ((_r - _q) / _v - _dm / (2.0 * _tau)) + _q * _Phi_dp);
+                    }
+                    else
+                    {
+                        _charm = -_q * _dq * _Phi_dp;
+                    }
                 }
             }
         }
@@ -175,12 +291,15 @@ namespace Antares.Engine
         private class SolverFunction : IObjectiveFunctionWithSecondDerivative
         {
             private readonly QdPlusBoundaryEvaluator _eval;
-            public SolverFunction(QdPlusBoundaryEvaluator evaluator) { _eval = evaluator; }
+            
+            public SolverFunction(QdPlusBoundaryEvaluator evaluator) 
+            { 
+                _eval = evaluator; 
+            }
+            
             public double Value(double x) => _eval.Value(x) - x;
             public double Derivative(double x) => _eval.Derivative(x) - 1.0;
             public double SecondDerivative(double x) => _eval.SecondDerivative(x);
-            public double XMin() => _eval.XMin();
-            public double XMax() => _eval.XMin();
         }
     }
 }
