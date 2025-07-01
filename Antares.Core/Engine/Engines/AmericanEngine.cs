@@ -176,21 +176,21 @@ namespace Antares.Engine.Engines
             double d1 = (Math.Log(S / K) + (r - q + 0.5 * vol * vol) * T) / (vol * sqrtT);
             double d2 = d1 - vol * sqrtT;
             
-            double vomega = vol / (2 * Math.Sqrt(T));
-            double nd1 = Distributions.NormalDensity(d1);
+            var norm = new StandardNormalDistribution();
+            double nd1 = norm.Density(d1);
             
             if (right == ModelOptionRight.Call)
             {
-                double theta = -S * Math.Exp(-q * T) * nd1 * vomega
-                             - r * K * Math.Exp(-r * T) * Distributions.CumulativeNormal(d2)
-                             + q * S * Math.Exp(-q * T) * Distributions.CumulativeNormal(d1);
+                double theta = -S * Math.Exp(-q * T) * nd1 * (vol / (2 * sqrtT))
+                             - r * K * Math.Exp(-r * T) * norm.CumulativeDistribution(d2)
+                             + q * S * Math.Exp(-q * T) * norm.CumulativeDistribution(d1);
                 return theta;
             }
             else
             {
-                double theta = -S * Math.Exp(-q * T) * nd1 * vomega
-                             + r * K * Math.Exp(-r * T) * Distributions.CumulativeNormal(-d2)
-                             - q * S * Math.Exp(-q * T) * Distributions.CumulativeNormal(-d1);
+                double theta = -S * Math.Exp(-q * T) * nd1 * (vol / (2 * sqrtT))
+                             + r * K * Math.Exp(-r * T) * norm.CumulativeDistribution(-d2)
+                             - q * S * Math.Exp(-q * T) * norm.CumulativeDistribution(-d1);
                 return theta;
             }
         }
@@ -207,7 +207,9 @@ namespace Antares.Engine.Engines
             double sqrtT = Math.Sqrt(T);
             double d1 = (Math.Log(S / K) + (r - q + 0.5 * vol * vol) * T) / (vol * sqrtT);
             double d2 = d1 - vol * sqrtT;
-            double nd1 = Distributions.NormalDensity(d1);
+            
+            var norm = new StandardNormalDistribution();
+            double nd1 = norm.Density(d1);
             
             double delta, gamma, vega, theta, rho;
             
@@ -216,19 +218,19 @@ namespace Antares.Engine.Engines
             
             if (right == ModelOptionRight.Call)
             {
-                delta = Math.Exp(-q * T) * Distributions.CumulativeNormal(d1);
+                delta = Math.Exp(-q * T) * norm.CumulativeDistribution(d1);
                 theta = -(S * vol * Math.Exp(-q * T) * nd1) / (2 * sqrtT)
-                        - r * K * Math.Exp(-r * T) * Distributions.CumulativeNormal(d2)
-                        + q * S * Math.Exp(-q * T) * Distributions.CumulativeNormal(d1);
-                rho = K * T * Math.Exp(-r * T) * Distributions.CumulativeNormal(d2) * 0.01;
+                        - r * K * Math.Exp(-r * T) * norm.CumulativeDistribution(d2)
+                        + q * S * Math.Exp(-q * T) * norm.CumulativeDistribution(d1);
+                rho = K * T * Math.Exp(-r * T) * norm.CumulativeDistribution(d2) * 0.01;
             }
             else
             {
-                delta = -Math.Exp(-q * T) * Distributions.CumulativeNormal(-d1);
+                delta = -Math.Exp(-q * T) * norm.CumulativeDistribution(-d1);
                 theta = -(S * vol * Math.Exp(-q * T) * nd1) / (2 * sqrtT)
-                        + r * K * Math.Exp(-r * T) * Distributions.CumulativeNormal(-d2)
-                        - q * S * Math.Exp(-q * T) * Distributions.CumulativeNormal(-d1);
-                rho = -K * T * Math.Exp(-r * T) * Distributions.CumulativeNormal(-d2) * 0.01;
+                        + r * K * Math.Exp(-r * T) * norm.CumulativeDistribution(-d2)
+                        - q * S * Math.Exp(-q * T) * norm.CumulativeDistribution(-d1);
+                rho = -K * T * Math.Exp(-r * T) * norm.CumulativeDistribution(-d2) * 0.01;
             }
 
             return new Greeks(

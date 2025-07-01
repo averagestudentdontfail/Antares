@@ -1,26 +1,29 @@
 using System;
 using Antares.Distribution;
+using Antares.Root;
 
 namespace Antares.Engine
 {
-    public class QdPlusBoundaryEvaluator
+    public class QdPlusBoundaryEvaluator : IObjectiveFunction
     {
         private readonly double _tau, _K, _sigma, _sigma2, _v, _r, _q;
         private readonly double _dr, _dq, _ddr;
         private readonly double _omega, _lambda, _lambdaPrime, _alpha, _beta;
         private double _sc, _dp, _dm, _phi_dp, _npv, _theta, _charm, _Phi_dp, _Phi_dm;
+        private readonly StandardNormalDistribution _phi;
 
-        public QdPlusBoundaryEvaluator(double spot, double strike, double riskFreeRate, double dividendYield, double volatility, double timeToMaturity)
+        public QdPlusBoundaryEvaluator(double K, double r, double q, double vol, double tau)
         {
-            _tau = timeToMaturity;
-            _K = strike;
-            _sigma = volatility;
+            _tau = tau;
+            _K = K;
+            _sigma = vol;
             _sigma2 = _sigma * _sigma;
             _v = _sigma * Math.Sqrt(_tau);
-            _r = riskFreeRate;
-            _q = dividendYield;
+            _r = r;
+            _q = q;
             _dr = Math.Exp(-_r * _tau);
             _dq = Math.Exp(-_q * _tau);
+            _phi = new StandardNormalDistribution();
             
             // Improved calculation of _ddr for numerical stability
             if (Math.Abs(_r * _tau) > 1e-6)
@@ -142,9 +145,9 @@ namespace Antares.Engine
                     _dm = _dp;
                 }
                 
-                _Phi_dp = Distributions.CumulativeNormal(-_dp);
-                _Phi_dm = Distributions.CumulativeNormal(-_dm);
-                _phi_dp = Distributions.NormalDensity(_dp);
+                _Phi_dp = _phi.CumulativeDistribution(-_dp);
+                _Phi_dm = _phi.CumulativeDistribution(-_dm);
+                _phi_dp = _phi.Density(_dp);
                 
                 // Net present value of option at current boundary
                 _npv = _dr * _K * _Phi_dm - _sc * _dq * _Phi_dp;

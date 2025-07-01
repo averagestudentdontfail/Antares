@@ -5,10 +5,13 @@ namespace Antares.Engine
 {
     public class SpCollocation
     {
-        public readonly double T, xmax, K, r, q, vol;
-        private readonly double _sqrtT;
+        public readonly double T;
+        public readonly double xmax;
+        public readonly double K;
+        public readonly double r;
+        public readonly double q;
+        public readonly double vol;
         private readonly double _rqDiff;
-        private readonly double _asymptoticBoundary;
 
         public SpCollocation(double T, double xmax, double K, double r, double q, double vol)
         {
@@ -18,110 +21,50 @@ namespace Antares.Engine
             this.r = r;
             this.q = q;
             this.vol = vol;
-            _sqrtT = Math.Sqrt(T);
-            _rqDiff = r - q;
-            _asymptoticBoundary = CalculateAsymptoticBoundary();
+            this._rqDiff = r - q;
         }
 
-        // Stage 1: Temporal Domain Transformation (Equation 5.4 in documentation)
         public double TemporalTransform(double tau)
         {
-            return Math.Sqrt(Math.Max(0.0, Math.Min(tau, T)) / T);
+            return Math.Sqrt(Math.Max(0.0, Math.Min(1.0, tau / T)));
         }
 
         public double InverseTemporalTransform(double xi)
         {
-            xi = Math.Max(0.0, Math.Min(1.0, xi));
             return xi * xi * T;
         }
 
-        // Stage 2: Boundary Normalization (Equation 5.5 in documentation)
-        public double NormalizeBoundary(double boundary)
-        {
-            double normalizer = Math.Max(xmax, K * 0.01);
-            return Math.Max(1e-12, boundary) / normalizer;
-        }
-
-        public double DenormalizeBoundary(double normalizedBoundary)
-        {
-            double normalizer = Math.Max(xmax, K * 0.01);
-            return Math.Max(1e-12, normalizedBoundary) * normalizer;
-        }
-
-        // Stage 3: Logarithmic Transformation (Equation 5.6 in documentation)
-        public double LogarithmicTransform(double normalizedBoundary)
-        {
-            normalizedBoundary = Math.Max(1e-12, Math.Min(10.0, normalizedBoundary));
-            return Math.Log(normalizedBoundary);
-        }
-
-        public double InverseLogarithmicTransform(double G)
-        {
-            G = Math.Max(-25.0, Math.Min(5.0, G));
-            return Math.Exp(G);
-        }
-
-        // Stage 4: Variance-Stabilizing Transformation (Equation 5.7 in documentation)
-        public double VarianceStabilizingTransform(double G)
-        {
-            G = Math.Max(-15.0, Math.Min(15.0, G));
-            return G * G;
-        }
-
-        public double InverseVarianceStabilizingTransform(double H)
-        {
-            H = Math.Max(0.0, Math.Min(225.0, H));
-            double sqrtH = Math.Sqrt(H);
-            // Preserve sign of original G
-            return H > 0 ? sqrtH : -sqrtH;
-        }
-
-        // Composite Forward Transformation: B(τ) → H(ξ)
-        public double TransformFromBoundary(double boundary, double tau)
-        {
-            try
-            {
-                // Ensure boundary is within reasonable economic bounds
-                boundary = Math.Max(K * 1e-6, Math.Min(K * 0.999, boundary));
-                
-                // Apply transformation sequence
-                double B_tilde = NormalizeBoundary(boundary);
-                double G = LogarithmicTransform(B_tilde);
-                double H = VarianceStabilizingTransform(G);
-                
-                return H;
-            }
-            catch (Exception)
-            {
-                // Robust fallback based on time interpolation
-                return GetFallbackTransform(boundary, tau);
-            }
-        }
-
-        // Composite Inverse Transformation: H(ξ) → B(τ)
         public double TransformToBoundary(double H, double tau)
         {
             try
             {
-                // Apply inverse transformation sequence
-                double G = InverseVarianceStabilizingTransform(H);
-                double B_tilde = InverseLogarithmicTransform(G);
-                double boundary = DenormalizeBoundary(B_tilde);
-                
-                // Apply economic bounds
-                boundary = Math.Max(K * 1e-6, Math.Min(K * 0.999, boundary));
-                
-                // Additional validation: ensure monotonicity properties
-                return ValidateBoundaryMonotonicity(boundary, tau);
+                double G = Math.Sqrt(Math.Max(0.0, H));
+                double ratio = Math.Exp(-G);
+                ratio = Math.Max(1e-12, Math.Min(1.0 - 1e-12, ratio));
+                return xmax * ratio;
             }
             catch (Exception)
             {
-                // Robust fallback
                 return GetTimeInterpolatedBoundary(tau);
             }
         }
 
-        // Enhanced boundary function generator with spectral reconstruction
+        public double TransformFromBoundary(double boundary, double tau)
+        {
+            try
+            {
+                boundary = Math.Max(K * 1e-6, Math.Min(K * 0.999, boundary));
+                double ratio = Math.Max(1e-12, boundary / xmax);
+                ratio = Math.Max(1e-12, Math.Min(1.0 - 1e-12, ratio));
+                double G = -Math.Log(ratio);
+                return G * G;
+            }
+            catch (Exception)
+            {
+                return 1.0;
+            }
+        }
+
         public Func<double, double> GetBoundaryFunction(ChebyshevInterpolation boundaryInterp)
         {
             return tau =>
@@ -135,67 +78,70 @@ namespace Antares.Engine
                     
                     if (tau >= T - 1e-12)
                     {
-                        return _asymptoticBoundary;
+                        return CalculateAsymptoticBoundary();
                     }
                     
-                    // Transform to Chebyshev domain [-1,1]
                     double xi = TemporalTransform(tau);
                     double chebyshev_coord = 2.0 * xi - 1.0;
                     chebyshev_coord = Math.Max(-1.0, Math.Min(1.0, chebyshev_coord));
                     
-                    // Evaluate Chebyshev interpolation
                     double H = boundaryInterp.Value(chebyshev_coord);
-                    
-                    // Transform back to boundary space
                     double boundary = TransformToBoundary(H, tau);
                     
-                    // Ensure economic validity
                     return Math.Max(K * 1e-6, Math.Min(K * 0.999, boundary));
                 }
                 catch (Exception)
                 {
-                    // Robust fallback with time interpolation
                     return GetTimeInterpolatedBoundary(tau);
                 }
             };
         }
 
-        // Enhanced asymptotic boundary calculation based on documentation
         private double CalculateAsymptoticBoundary()
         {
             try
             {
                 if (Math.Abs(q) < 1e-12)
                 {
-                    return r <= 0 ? K * 0.9 : K * 0.05;
+                    return r <= 0 ? K * 0.9 : K * (r > 0 ? r/(r + 0.5*vol*vol) : 0.1);
                 }
 
                 if (r <= q)
                 {
-                    // When r ≤ q, boundary approaches K * r/q
-                    double ratio = Math.Max(0.001, Math.Min(0.999, r / q));
+                    double mu = r - q - 0.5 * vol * vol;
+                    double discriminant = mu * mu + 2.0 * r * vol * vol;
+                    
+                    if (discriminant > 0 && r > 0)
+                    {
+                        double lambda_minus = (mu - Math.Sqrt(discriminant)) / (vol * vol);
+                        if (lambda_minus < -1e-6)
+                        {
+                            double boundary = K * lambda_minus / (lambda_minus - 1.0);
+                            return Math.Max(K * 0.1, Math.Min(K * 0.9, boundary));
+                        }
+                    }
+                    
+                    double ratio = Math.Max(0.1, Math.Min(0.8, Math.Pow(Math.Abs(r/q), 0.5)));
                     return K * ratio;
                 }
 
-                // Perpetual American put boundary (Equation 2.12 in documentation)
-                double mu = _rqDiff - 0.5 * vol * vol;
-                double discriminant = mu * mu + 2.0 * r * vol * vol;
+                double mu_std = _rqDiff - 0.5 * vol * vol;
+                double discriminant_std = mu_std * mu_std + 2.0 * r * vol * vol;
                 
-                if (discriminant <= 0)
+                if (discriminant_std <= 0)
                 {
                     return K * 0.7;
                 }
                 
-                double lambda_minus = (mu - Math.Sqrt(discriminant)) / (vol * vol);
+                double lambda_minus_std = (mu_std - Math.Sqrt(discriminant_std)) / (vol * vol);
                 
-                if (lambda_minus >= -1e-6)
+                if (lambda_minus_std >= -1e-6)
                 {
                     return K * 0.7;
                 }
                 
-                // Boundary formula: K * λ₋ / (λ₋ - 1)
-                double boundary = K * lambda_minus / (lambda_minus - 1.0);
-                return Math.Max(K * 0.01, Math.Min(K * 0.95, boundary));
+                double boundary_std = K * lambda_minus_std / (lambda_minus_std - 1.0);
+                return Math.Max(K * 0.1, Math.Min(K * 0.9, boundary_std));
             }
             catch (Exception)
             {
@@ -205,56 +151,15 @@ namespace Antares.Engine
 
         private double GetNearExpiryBoundary()
         {
-            // Equation 2.11 in documentation
-            return r >= q ? K : K * Math.Max(0.001, Math.Min(0.999, r / q));
+            return r >= q ? K : K * Math.Max(0.1, Math.Min(0.9, Math.Abs(r/q)));
         }
 
         private double GetTimeInterpolatedBoundary(double tau)
         {
             double nearExpiry = GetNearExpiryBoundary();
-            double weight = Math.Min(1.0, tau / T);
-            return nearExpiry * (1.0 - weight) + _asymptoticBoundary * weight;
-        }
-
-        private double GetFallbackTransform(double boundary, double tau)
-        {
-            // Simple transformation for fallback
-            double ratio = Math.Max(1e-12, boundary / Math.Max(xmax, K * 0.01));
-            ratio = Math.Max(1e-8, Math.Min(1.0, ratio));
-            double G = Math.Log(ratio);
-            return Math.Max(0.0, G * G);
-        }
-
-        private double ValidateBoundaryMonotonicity(double boundary, double tau)
-        {
-            // Ensure boundary doesn't violate economic constraints
-            double minBoundary = K * 1e-6;
-            double maxBoundary = K * 0.999;
-            
-            // For very small tau, boundary should approach near-expiry value
-            if (tau < T * 0.01)
-            {
-                double nearExpiry = GetNearExpiryBoundary();
-                double weight = tau / (T * 0.01);
-                double interpolated = nearExpiry * (1.0 - weight) + boundary * weight;
-                boundary = Math.Max(minBoundary, Math.Min(maxBoundary, interpolated));
-            }
-            
-            return Math.Max(minBoundary, Math.Min(maxBoundary, boundary));
-        }
-
-        // Diagnostic methods for validation
-        public double GetTransformationJacobian(double tau, double boundary)
-        {
-            double h = Math.Max(1e-8, boundary * 1e-6);
-            double H1 = TransformFromBoundary(boundary + h, tau);
-            double H2 = TransformFromBoundary(boundary - h, tau);
-            return (H1 - H2) / (2.0 * h);
-        }
-
-        public (double nearExpiry, double asymptotic) GetBoundaryLimits()
-        {
-            return (GetNearExpiryBoundary(), _asymptoticBoundary);
+            double asymptotic = CalculateAsymptoticBoundary();
+            double weight = Math.Min(1.0, tau / Math.Max(T, 1e-6));
+            return nearExpiry * (1.0 - weight) + asymptotic * weight;
         }
     }
 }

@@ -23,16 +23,13 @@ namespace Antares.Engine
         {
             if (T < 1e-9) return Math.Max(0.0, K - S);
 
-            // Calculate the theoretical maximum boundary using proper asymptotic analysis
             double xmax = CalculateAsymptoticBoundary(K, r, q, vol);
             
-            // For very small boundaries relative to strike, use European pricing
             if (xmax <= K * 0.001)
             {
                 return CalculateBlackScholesPut(S, K, r, q, vol, T);
             }
 
-            // Initialize the boundary using spectral collocation
             ChebyshevInterpolation boundaryInterp;
             try
             {
@@ -43,27 +40,21 @@ namespace Antares.Engine
                 return CalculateBlackScholesPut(S, K, r, q, vol, T);
             }
 
-            // Set up the mathematical framework
             var framework = new SpCollocation(T, xmax, K, r, q, vol);
-            
-            // Select optimal fixed-point equation based on parameter regime
             bool useFP_A = DetermineOptimalEquation(r, q, vol, T, xmax, K);
 
             DqFpEquation equation = useFP_A
                 ? new DqFpEquation_A(K, r, q, vol, framework.GetBoundaryFunction(boundaryInterp), _scheme.GetFixedPointIntegrator())
                 : new DqFpEquation_B(K, r, q, vol, framework.GetBoundaryFunction(boundaryInterp), _scheme.GetFixedPointIntegrator());
 
-            // Solve the fixed-point system with enhanced convergence monitoring
             bool converged = SolveFixedPoint(equation, boundaryInterp, framework);
             
             if (!converged)
             {
-                // Enhanced recovery mechanism
                 converged = AttemptEnhancedRecovery(equation, boundaryInterp, framework);
                 
                 if (!converged)
                 {
-                    // Fallback with modest early exercise premium
                     double europeanBase = CalculateBlackScholesPut(S, K, r, q, vol, T);
                     double intrinsic = Math.Max(0.0, K - S);
                     double conservativePremium = EstimateConservativePremium(S, K, r, q, vol, T);
@@ -71,7 +62,6 @@ namespace Antares.Engine
                 }
             }
 
-            // Calculate the final option price using the spectral method
             double addOnValue = CalculateSpectralAddOnValue(S, K, r, q, vol, T, xmax, boundaryInterp);
             double europeanValue = CalculateBlackScholesPut(S, K, r, q, vol, T);
             double intrinsicValue = Math.Max(0.0, K - S);
@@ -82,66 +72,65 @@ namespace Antares.Engine
 
         private double CalculateAsymptoticBoundary(double K, double r, double q, double vol)
         {
-            // Asymptotic boundary for infinite maturity (perpetual option)
             if (Math.Abs(q) < 1e-12)
             {
-                return r <= 0 ? K * 0.9 : 0.0;
+                return r <= 0 ? K * 0.9 : K * (r > 0 ? r/(r + 0.5*vol*vol) : 0.1);
             }
 
             if (r <= q)
             {
-                // When r <= q, early exercise is optimal for deeply ITM options
-                return K * Math.Max(0.01, Math.Min(0.99, r / q));
+                double mu = r - q - 0.5 * vol * vol;
+                double discriminant = mu * mu + 2.0 * r * vol * vol;
+                
+                if (discriminant > 0 && r > 0)
+                {
+                    double lambda_minus = (mu - Math.Sqrt(discriminant)) / (vol * vol);
+                    if (lambda_minus < -1e-6)
+                    {
+                        double boundary = K * lambda_minus / (lambda_minus - 1.0);
+                        return Math.Max(K * 0.1, Math.Min(K * 0.9, boundary));
+                    }
+                }
+                
+                double ratio = Math.Max(0.1, Math.Min(0.8, Math.Pow(Math.Abs(r/q), 0.5)));
+                return K * ratio;
             }
 
-            // Standard case: r > q
-            double mu = r - q - 0.5 * vol * vol;
-            double discriminant = mu * mu + 2.0 * r * vol * vol;
+            double mu_std = r - q - 0.5 * vol * vol;
+            double disc_std = mu_std * mu_std + 2.0 * r * vol * vol;
             
-            if (discriminant <= 0)
-            {
-                return K * 0.8;
-            }
+            if (disc_std <= 0) return K * 0.7;
             
-            double lambda_minus = (mu - Math.Sqrt(discriminant)) / (vol * vol);
+            double lambda_minus_std = (mu_std - Math.Sqrt(disc_std)) / (vol * vol);
+            if (lambda_minus_std >= -1e-6) return K * 0.7;
             
-            if (lambda_minus >= -1e-6)
-            {
-                return K * 0.8;
-            }
-            
-            double boundary = K * lambda_minus / (lambda_minus - 1.0);
-            return Math.Max(K * 0.01, Math.Min(K * 0.99, boundary));
+            double boundary_std = K * lambda_minus_std / (lambda_minus_std - 1.0);
+            return Math.Max(K * 0.1, Math.Min(K * 0.9, boundary_std));
         }
 
         private ChebyshevInterpolation InitializeBoundaryInterpolation(double K, double r, double q, double vol, double T, double xmax)
         {
             int n = _scheme.GetNumberOfChebyshevInterpolationNodes();
-            double sqrtT = Math.Sqrt(T);
             
             Func<double, double> initialBoundaryFunction = z =>
             {
-                // Transform from Chebyshev domain [-1,1] to time domain [0,T]
                 double xi = 0.5 * (1.0 + z);
                 double tau = xi * xi * T;
                 
                 if (tau < 1e-12)
                 {
-                    // Near expiration boundary
-                    double nearExpiryBoundary = r >= q ? K : K * r / q;
+                    double nearExpiryBoundary = r >= q ? K : K * Math.Max(0.1, Math.Min(0.9, Math.Abs(r/q)));
                     double nearExpiryRatio = Math.Max(1e-12, nearExpiryBoundary) / xmax;
                     nearExpiryRatio = Math.Max(1e-8, Math.Min(1.0 - 1e-8, nearExpiryRatio));
                     return Math.Sqrt(Math.Max(0.0, -Math.Log(nearExpiryRatio)));
                 }
                 
-                // Interpolate between near-expiry and asymptotic values
                 double asymptoticBoundary = CalculateAsymptoticBoundary(K, r, q, vol);
-                double nearExpiryBoundary2 = r >= q ? K : K * r / q;
+                double nearExpiryBoundary2 = r >= q ? K : K * Math.Max(0.1, Math.Min(0.9, Math.Abs(r/q)));
                 
                 double weight = Math.Min(1.0, tau / T);
                 double boundary = nearExpiryBoundary2 * (1.0 - weight) + asymptoticBoundary * weight;
                 
-                // Apply variance-stabilizing transformation
                 double finalRatio = Math.Max(1e-12, boundary) / xmax;
                 finalRatio = Math.Max(1e-8, Math.Min(1.0 - 1e-8, finalRatio));
                 double G = Math.Log(finalRatio);
@@ -156,26 +145,19 @@ namespace Antares.Engine
             if (_fpEquation == FixedPointEquation.FP_A) return true;
             if (_fpEquation == FixedPointEquation.FP_B) return false;
 
-            // Enhanced equation selection based on mathematical properties
             double rqDiff = Math.Abs(r - q);
-            double volSq = vol * vol;
-            double timeScale = vol * Math.Sqrt(T);
-            double normalizationFactor = xmax / K;
-
-            // Use FP_A (derivative-based) for well-behaved cases
-            if (rqDiff < 0.3 * volSq && timeScale > 0.1 && normalizationFactor > 0.1)
+            
+            if (rqDiff < 0.001)
             {
                 return true;
             }
-
-            // Use FP_B (integral-based) for extreme parameter cases
-            if (q > r + 0.02 || normalizationFactor < 0.05 || timeScale < 0.05)
+            
+            if (rqDiff < 0.05 && vol > 0.1 && T > 0.01)
             {
-                return false;
+                return true;
             }
-
-            // Default to FP_A for moderate cases
-            return true;
+            
+            return false;
         }
 
         private bool SolveFixedPoint(DqFpEquation equation, ChebyshevInterpolation boundaryInterp, SpCollocation framework)
@@ -185,17 +167,15 @@ namespace Antares.Engine
             double[] errorHistory = new double[5];
             int stagnationCount = 0;
 
-            // Jacobi-Newton iterations for rapid convergence
             for (int iter = 0; iter < _scheme.GetNumberOfJacobiNewtonFixedPointSteps(); iter++)
             {
                 double maxError = ExecuteJacobiNewtonStep(equation, boundaryInterp, framework);
 
                 if (maxError < tolerance)
                 {
-                    return true;
+                    return ValidateAmericanBehavior(boundaryInterp, framework);
                 }
 
-                // Monitor for stagnation
                 if (iter > 2)
                 {
                     bool isStagnating = Math.Abs(maxError - errorHistory[iter % 5]) < stagnationTolerance;
@@ -210,18 +190,36 @@ namespace Antares.Engine
                 errorHistory[iter % 5] = maxError;
             }
 
-            // Naive fixed-point iterations for robustness
             for (int iter = 0; iter < _scheme.GetNumberOfNaiveFixedPointSteps(); iter++)
             {
                 double maxError = ExecuteNaiveFixedPointStep(equation, boundaryInterp, framework);
 
                 if (maxError < tolerance)
                 {
-                    return true;
+                    return ValidateAmericanBehavior(boundaryInterp, framework);
                 }
             }
 
             return false;
+        }
+
+        private bool ValidateAmericanBehavior(ChebyshevInterpolation boundaryInterp, SpCollocation framework)
+        {
+            double[] testTaus = {0.01, 0.1, 0.5};
+            foreach (double tau in testTaus)
+            {
+                if (tau < framework.T)
+                {
+                    double boundary = framework.GetBoundaryFunction(boundaryInterp)(tau);
+                    
+                    if (boundary >= framework.K * 0.999)
+                    {
+                        return false;
+                    }
+                }
+            }
+            
+            return true;
         }
 
         private double ExecuteJacobiNewtonStep(DqFpEquation equation, ChebyshevInterpolation boundaryInterp, SpCollocation framework)
@@ -230,7 +228,6 @@ namespace Antares.Engine
             double[] hValues = boundaryInterp.Values();
             double maxError = 0.0;
 
-            // Skip the endpoint z = -1 (corresponds to tau = 0)
             for (int i = 1; i < nodes.Length; i++)
             {
                 double xi = 0.5 * (1.0 + nodes[i]);
@@ -249,34 +246,22 @@ namespace Antares.Engine
 
                 var (Nd, Dd) = equation.NDd(tau, boundaryValue);
                 
-                // Newton step with adaptive damping
                 double alpha = framework.K * Math.Exp(-(framework.r - framework.q) * tau);
                 double jacobian = alpha * (Nd * D - Dd * N) / (D * D);
                 
-                if (Math.Abs(jacobian - 1.0) > 1e-12)
-                {
-                    double step = (Fv - boundaryValue) / (jacobian - 1.0);
-                    
-                    // Adaptive damping based on step size
-                    double dampingFactor = Math.Min(0.8, 1.0 / (1.0 + Math.Abs(step) / boundaryValue));
-                    double newBoundary = boundaryValue - dampingFactor * step;
-                    
-                    // Enforce bounds
-                    newBoundary = Math.Max(newBoundary, framework.xmax * 0.001);
-                    newBoundary = Math.Min(newBoundary, framework.K * 0.999);
-                    
-                    hValues[i] = framework.TransformFromBoundary(newBoundary, tau);
-                    
-                    double error = Math.Abs(newBoundary - boundaryValue) / Math.Max(boundaryValue, 1e-6);
-                    maxError = Math.Max(maxError, error);
-                }
-                else
-                {
-                    hValues[i] = framework.TransformFromBoundary(Fv, tau);
-                }
+                double dampingFactor = Math.Min(0.7, 1.0 / (1.0 + Math.Abs(jacobian) * 0.1));
+                double newBoundary = Fv - dampingFactor * (N / D - boundaryValue) / (1.0 - jacobian * dampingFactor);
+                
+                newBoundary = Math.Max(framework.K * 1e-6, Math.Min(framework.K * 0.999, newBoundary));
+                
+                double newH = framework.TransformFromBoundary(newBoundary, tau);
+                double error = Math.Abs(newH - hValues[i]);
+                maxError = Math.Max(maxError, error);
+                
+                hValues[i] = newH;
             }
 
-            boundaryInterp.UpdateY(hValues);
+            boundaryInterp.UpdateValues(hValues);
             return maxError;
         }
 
@@ -293,48 +278,30 @@ namespace Antares.Engine
                 
                 if (tau < 1e-12) continue;
                 
-                double currentBoundary = framework.TransformToBoundary(hValues[i], tau);
-                var (_, _, Fv) = equation.F(tau, currentBoundary);
+                double boundaryValue = framework.TransformToBoundary(hValues[i], tau);
+                var (N, D, Fv) = equation.F(tau, boundaryValue);
+
+                double newBoundary = Math.Abs(D) > 1e-12 ? Fv : boundaryValue;
+                newBoundary = Math.Max(framework.K * 1e-6, Math.Min(framework.K * 0.999, newBoundary));
                 
-                // Richardson extrapolation for improved convergence
-                double newHValue = framework.TransformFromBoundary(Fv, tau);
-                double relaxedUpdate = 0.7 * newHValue + 0.3 * hValues[i];
-                
-                double error = Math.Abs(relaxedUpdate - hValues[i]) / Math.Max(hValues[i], 1e-6);
+                double newH = framework.TransformFromBoundary(newBoundary, tau);
+                double error = Math.Abs(newH - hValues[i]);
                 maxError = Math.Max(maxError, error);
                 
-                hValues[i] = relaxedUpdate;
+                hValues[i] = newH;
             }
 
-            boundaryInterp.UpdateY(hValues);
+            boundaryInterp.UpdateValues(hValues);
             return maxError;
         }
 
         private bool AttemptEnhancedRecovery(DqFpEquation equation, ChebyshevInterpolation boundaryInterp, SpCollocation framework)
         {
-            // Re-initialize with simpler boundary guess
-            double[] nodes = boundaryInterp.Nodes();
-            double[] hValues = boundaryInterp.Values();
-            
-            for (int i = 0; i < nodes.Length; i++)
+            for (int attempt = 0; attempt < 3; attempt++)
             {
-                double xi = 0.5 * (1.0 + nodes[i]);
-                double tau = xi * xi * framework.T;
+                ReinitializeBoundaryWithPerturbation(boundaryInterp, framework, attempt * 0.1);
                 
-                // Simple linear interpolation between bounds
-                double weight = Math.Min(1.0, tau / framework.T);
-                double simpleBoundary = framework.K * (0.9 * (1.0 - weight) + 0.7 * weight);
-                
-                hValues[i] = framework.TransformFromBoundary(simpleBoundary, tau);
-            }
-            
-            boundaryInterp.UpdateY(hValues);
-            
-            // Attempt convergence with relaxed tolerance
-            for (int iter = 0; iter < 20; iter++)
-            {
-                double maxError = ExecuteNaiveFixedPointStep(equation, boundaryInterp, framework);
-                if (maxError < 1e-6)
+                if (SolveFixedPoint(equation, boundaryInterp, framework))
                 {
                     return true;
                 }
@@ -343,69 +310,58 @@ namespace Antares.Engine
             return false;
         }
 
-        private double CalculateSpectralAddOnValue(double S, double K, double r, double q, double vol, double T, 
-            double xmax, ChebyshevInterpolation boundaryInterp)
+        private void ReinitializeBoundaryWithPerturbation(ChebyshevInterpolation boundaryInterp, SpCollocation framework, double perturbation)
         {
-            try
+            double[] hValues = boundaryInterp.Values();
+            
+            for (int i = 0; i < hValues.Length; i++)
             {
-                var addOnFunc = new QdPlusAddOnValue(T, S, K, r, q, vol, xmax, boundaryInterp);
-                double sqrtT = Math.Sqrt(T);
-                
-                // Use high-precision integration for the add-on value
-                double addOn = _scheme.GetExerciseBoundaryToPriceIntegrator().Integrate(addOnFunc.Evaluate, 0.0, sqrtT);
-                
-                // Validate the result
-                if (double.IsNaN(addOn) || double.IsInfinity(addOn) || addOn < 0)
-                {
-                    return EstimateConservativePremium(S, K, r, q, vol, T);
-                }
-                
-                // Sanity check: premium shouldn't exceed intrinsic value
-                double intrinsic = Math.Max(0, K - S);
-                double timeValue = Math.Max(0, CalculateBlackScholesPut(S, K, r, q, vol, T) - intrinsic);
-                
-                if (addOn > intrinsic + timeValue)
-                {
-                    return timeValue * 0.5;
-                }
-                
-                return addOn;
+                hValues[i] *= (1.0 + perturbation * (2.0 * new Random().NextDouble() - 1.0));
             }
-            catch (Exception)
-            {
-                return EstimateConservativePremium(S, K, r, q, vol, T);
-            }
+            
+            boundaryInterp.UpdateValues(hValues);
         }
 
         private double EstimateConservativePremium(double S, double K, double r, double q, double vol, double T)
         {
-            double intrinsic = Math.Max(0, K - S);
-            double timeValue = Math.Max(0, CalculateBlackScholesPut(S, K, r, q, vol, T) - intrinsic);
+            if (r <= q) return 0.0;
             
-            // Conservative estimate based on carry benefit
-            double carryBenefit = Math.Max(0, r - q);
             double moneyness = S / K;
+            double timeValue = vol * Math.Sqrt(T);
+            double carryBenefit = (r - q) * T;
             
-            // More premium for deeper ITM options when r > q
-            double itmFactor = moneyness < 1.0 ? Math.Pow(1.0 - moneyness, 0.5) : 0.0;
-            double timeFactor = Math.Min(1.0, Math.Sqrt(T));
-            
-            double estimatedPremium = timeValue * carryBenefit * itmFactor * timeFactor * 0.3;
-            
-            return Math.Min(estimatedPremium, intrinsic * 0.1);
+            return Math.Max(0.0, K * 0.01 * carryBenefit * timeValue * Math.Max(0.0, 1.0 - moneyness));
         }
 
-        private static double CalculateBlackScholesPut(double S, double K, double r, double q, double vol, double T)
+        private double CalculateSpectralAddOnValue(double S, double K, double r, double q, double vol, double T, double xmax, ChebyshevInterpolation boundaryInterp)
         {
-            if (T <= 1e-9) return Math.Max(K - S, 0.0);
-            if (vol <= 1e-9) return Math.Max(K * Math.Exp(-r * T) - S * Math.Exp(-q * T), 0.0);
-
-            double sqrtT = Math.Sqrt(T);
-            double d1 = (Math.Log(S / K) + (r - q + 0.5 * vol * vol) * T) / (vol * sqrtT);
-            double d2 = d1 - vol * sqrtT;
+            var spectralIntegrator = _scheme.GetExerciseBoundaryToPriceIntegrator();
+            var framework = new SpCollocation(T, xmax, K, r, q, vol);
+            var boundaryFunction = framework.GetBoundaryFunction(boundaryInterp);
             
-            return K * Math.Exp(-r * T) * Distributions.CumulativeNormal(-d2) - 
-                   S * Math.Exp(-q * T) * Distributions.CumulativeNormal(-d1);
+            var addOnCalculator = new QdPlusAddOnValue(T, S, K, r, q, vol, xmax, boundaryFunction);
+            
+            try
+            {
+                return spectralIntegrator.Integrate(addOnCalculator.Evaluate, 0.0, 1.0);
+            }
+            catch (Exception)
+            {
+                return 0.0;
+            }
+        }
+
+        private double CalculateBlackScholesPut(double S, double K, double r, double q, double vol, double T)
+        {
+            if (T <= 0) return Math.Max(0.0, K - S);
+            
+            double d1 = (Math.Log(S / K) + (r - q + 0.5 * vol * vol) * T) / (vol * Math.Sqrt(T));
+            double d2 = d1 - vol * Math.Sqrt(T);
+            
+            var norm = new StandardNormalDistribution();
+            
+            return K * Math.Exp(-r * T) * norm.CumulativeDistribution(-d2) - 
+                   S * Math.Exp(-q * T) * norm.CumulativeDistribution(-d1);
         }
     }
 }
