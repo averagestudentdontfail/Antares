@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1CumulativeNormalDistribution" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::CumulativeNormalDistribution</compoundname>
+    <includes refid="normaldistribution_8hpp" local="no">normaldistribution.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1CumulativeNormalDistribution_1a4c1be050448a40440602f7ea440b14c2" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::CumulativeNormalDistribution::average_</definition>
+        <argsstring></argsstring>
+        <name>average_</name>
+        <qualifiedname>QuantLib::CumulativeNormalDistribution::average_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/distributions/normaldistribution.hpp" line="76" column="14" bodyfile="ql/math/distributions/normaldistribution.hpp" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1CumulativeNormalDistribution_1a3f810a0ada8939b7f50c35b8f75a2fc5" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::CumulativeNormalDistribution::sigma_</definition>
+        <argsstring></argsstring>
+        <name>sigma_</name>
+        <qualifiedname>QuantLib::CumulativeNormalDistribution::sigma_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/distributions/normaldistribution.hpp" line="76" column="23" bodyfile="ql/math/distributions/normaldistribution.hpp" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1CumulativeNormalDistribution_1aa23792f1c276e755b7a738374cfefe0a" prot="private" static="no" mutable="no">
+        <type><ref refid="classQuantLib_1_1NormalDistribution" kindref="compound">NormalDistribution</ref></type>
+        <definition>NormalDistribution QuantLib::CumulativeNormalDistribution::gaussian_</definition>
+        <argsstring></argsstring>
+        <name>gaussian_</name>
+        <qualifiedname>QuantLib::CumulativeNormalDistribution::gaussian_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/distributions/normaldistribution.hpp" line="77" column="28" bodyfile="ql/math/distributions/normaldistribution.hpp" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1CumulativeNormalDistribution_1a83262f19294542fccd506e8a34550c26" prot="private" static="no" mutable="no">
+        <type><ref refid="classQuantLib_1_1ErrorFunction" kindref="compound">ErrorFunction</ref></type>
+        <definition>ErrorFunction QuantLib::CumulativeNormalDistribution::errorFunction_</definition>
+        <argsstring></argsstring>
+        <name>errorFunction_</name>
+        <qualifiedname>QuantLib::CumulativeNormalDistribution::errorFunction_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/distributions/normaldistribution.hpp" line="78" column="23" bodyfile="ql/math/distributions/normaldistribution.hpp" bodystart="78" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1CumulativeNormalDistribution_1a62909f9485d7a860e350d6cba731b240" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::CumulativeNormalDistribution::CumulativeNormalDistribution</definition>
+        <argsstring>(Real average=0.0, Real sigma=1.0)</argsstring>
+        <name>CumulativeNormalDistribution</name>
+        <qualifiedname>QuantLib::CumulativeNormalDistribution::CumulativeNormalDistribution</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>average</declname>
+          <defval>0.0</defval>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>sigma</declname>
+          <defval>1.0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/distributions/normaldistribution.hpp" line="70" column="9" bodyfile="ql/math/distributions/normaldistribution.hpp" bodystart="287" bodyend="294"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1CumulativeNormalDistribution_1aae667074551e83f4ce38b72fc951f669" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::CumulativeNormalDistribution::operator()</definition>
+        <argsstring>(Real x) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>QuantLib::CumulativeNormalDistribution::operator()</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/distributions/normaldistribution.hpp" line="73" column="14" bodyfile="ql/math/distributions/normaldistribution.cpp" bodystart="30" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1CumulativeNormalDistribution_1aa17baade8d27fc1212c52415dbe5e9b4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::CumulativeNormalDistribution::derivative</definition>
+        <argsstring>(Real x) const</argsstring>
+        <name>derivative</name>
+        <qualifiedname>QuantLib::CumulativeNormalDistribution::derivative</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/distributions/normaldistribution.hpp" line="74" column="14" bodyfile="ql/math/distributions/normaldistribution.hpp" bodystart="296" bodyend="299"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Cumulative normal distribution function. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Given x it provides an approximation to the integral of the gaussian normal distribution: formula here ...</para>
+<para>For this implementation see M. Abramowitz and I. Stegun, Handbook of Mathematical Functions, Dover Publications, New York (1972) </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>QuantLib::CumulativeNormalDistribution</label>
+        <link refid="classQuantLib_1_1CumulativeNormalDistribution"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>gaussian_</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>errorFunction_</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QuantLib::ErrorFunction</label>
+        <link refid="classQuantLib_1_1ErrorFunction"/>
+      </node>
+      <node id="2">
+        <label>QuantLib::NormalDistribution</label>
+        <link refid="classQuantLib_1_1NormalDistribution"/>
+      </node>
+    </collaborationgraph>
+    <location file="ql/math/distributions/normaldistribution.hpp" line="68" column="5" bodyfile="ql/math/distributions/normaldistribution.hpp" bodystart="68" bodyend="79"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1CumulativeNormalDistribution_1a4c1be050448a40440602f7ea440b14c2" prot="private" virt="non-virtual"><scope>QuantLib::CumulativeNormalDistribution</scope><name>average_</name></member>
+      <member refid="classQuantLib_1_1CumulativeNormalDistribution_1a62909f9485d7a860e350d6cba731b240" prot="public" virt="non-virtual"><scope>QuantLib::CumulativeNormalDistribution</scope><name>CumulativeNormalDistribution</name></member>
+      <member refid="classQuantLib_1_1CumulativeNormalDistribution_1aa17baade8d27fc1212c52415dbe5e9b4" prot="public" virt="non-virtual"><scope>QuantLib::CumulativeNormalDistribution</scope><name>derivative</name></member>
+      <member refid="classQuantLib_1_1CumulativeNormalDistribution_1a83262f19294542fccd506e8a34550c26" prot="private" virt="non-virtual"><scope>QuantLib::CumulativeNormalDistribution</scope><name>errorFunction_</name></member>
+      <member refid="classQuantLib_1_1CumulativeNormalDistribution_1aa23792f1c276e755b7a738374cfefe0a" prot="private" virt="non-virtual"><scope>QuantLib::CumulativeNormalDistribution</scope><name>gaussian_</name></member>
+      <member refid="classQuantLib_1_1CumulativeNormalDistribution_1aae667074551e83f4ce38b72fc951f669" prot="public" virt="non-virtual"><scope>QuantLib::CumulativeNormalDistribution</scope><name>operator()</name></member>
+      <member refid="classQuantLib_1_1CumulativeNormalDistribution_1a3f810a0ada8939b7f50c35b8f75a2fc5" prot="private" virt="non-virtual"><scope>QuantLib::CumulativeNormalDistribution</scope><name>sigma_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structQuantLib_1_1anonymous__namespace_02fdminnervaluecalculator_8cpp_03_1_1mapped__payoff" kind="struct" language="C++" prot="public">
+    <compoundname>QuantLib::anonymous_namespace{fdminnervaluecalculator.cpp}::mapped_payoff</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structQuantLib_1_1anonymous__namespace_02fdminnervaluecalculator_8cpp_03_1_1mapped__payoff_1abd61f81e39341c4d208db4ba14f17381" prot="public" static="no" mutable="no">
+        <type>const <ref refid="classQuantLib_1_1Payoff" kindref="compound">Payoff</ref> &amp;</type>
+        <definition>const Payoff&amp; QuantLib::anonymous_namespace{fdminnervaluecalculator.cpp}::mapped_payoff::payoff</definition>
+        <argsstring></argsstring>
+        <name>payoff</name>
+        <qualifiedname>QuantLib::anonymous_namespace{fdminnervaluecalculator.cpp}::mapped_payoff::payoff</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/fdminnervaluecalculator.cpp" line="46" column="26" bodyfile="ql/methods/finitedifferences/utilities/fdminnervaluecalculator.cpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structQuantLib_1_1anonymous__namespace_02fdminnervaluecalculator_8cpp_03_1_1mapped__payoff_1ab7547d47bea9ea0674dc084428fda382" prot="public" static="no" mutable="no">
+        <type>const std::function&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>)&gt; &amp;</type>
+        <definition>const std::function&lt;Real(Real)&gt;&amp; QuantLib::anonymous_namespace{fdminnervaluecalculator.cpp}::mapped_payoff::gridMapping_</definition>
+        <argsstring></argsstring>
+        <name>gridMapping_</name>
+        <qualifiedname>QuantLib::anonymous_namespace{fdminnervaluecalculator.cpp}::mapped_payoff::gridMapping_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/fdminnervaluecalculator.cpp" line="47" column="33" bodyfile="ql/methods/finitedifferences/utilities/fdminnervaluecalculator.cpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structQuantLib_1_1anonymous__namespace_02fdminnervaluecalculator_8cpp_03_1_1mapped__payoff_1a4b103bd05693eff18cd9d6f6d5801210" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::anonymous_namespace{fdminnervaluecalculator.cpp}::mapped_payoff::mapped_payoff</definition>
+        <argsstring>(const Payoff &amp;payoff, const std::function&lt; Real(Real)&gt; &amp;gridMapping)</argsstring>
+        <name>mapped_payoff</name>
+        <qualifiedname>QuantLib::anonymous_namespace{fdminnervaluecalculator.cpp}::mapped_payoff::mapped_payoff</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Payoff" kindref="compound">Payoff</ref> &amp;</type>
+          <declname>payoff</declname>
+        </param>
+        <param>
+          <type>const std::function&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>)&gt; &amp;</type>
+          <declname>gridMapping</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/fdminnervaluecalculator.cpp" line="39" column="22" bodyfile="ql/methods/finitedifferences/utilities/fdminnervaluecalculator.cpp" bodystart="39" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="structQuantLib_1_1anonymous__namespace_02fdminnervaluecalculator_8cpp_03_1_1mapped__payoff_1aa641149363aba024d859fd27995f8793" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::anonymous_namespace{fdminnervaluecalculator.cpp}::mapped_payoff::operator()</definition>
+        <argsstring>(Real x) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>QuantLib::anonymous_namespace{fdminnervaluecalculator.cpp}::mapped_payoff::operator()</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/fdminnervaluecalculator.cpp" line="44" column="18" bodyfile="ql/methods/finitedifferences/utilities/fdminnervaluecalculator.cpp" bodystart="44" bodyend="44"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>QuantLib::Payoff</label>
+        <link refid="classQuantLib_1_1Payoff"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::anonymous_namespace{fdminnervaluecalculator.cpp}::mapped_payoff</label>
+        <link refid="structQuantLib_1_1anonymous__namespace_02fdminnervaluecalculator_8cpp_03_1_1mapped__payoff"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>payoff</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/methods/finitedifferences/utilities/fdminnervaluecalculator.cpp" line="38" column="9" bodyfile="ql/methods/finitedifferences/utilities/fdminnervaluecalculator.cpp" bodystart="38" bodyend="48"/>
+    <listofallmembers>
+      <member refid="structQuantLib_1_1anonymous__namespace_02fdminnervaluecalculator_8cpp_03_1_1mapped__payoff_1ab7547d47bea9ea0674dc084428fda382" prot="public" virt="non-virtual"><scope>QuantLib::anonymous_namespace{fdminnervaluecalculator.cpp}::mapped_payoff</scope><name>gridMapping_</name></member>
+      <member refid="structQuantLib_1_1anonymous__namespace_02fdminnervaluecalculator_8cpp_03_1_1mapped__payoff_1a4b103bd05693eff18cd9d6f6d5801210" prot="public" virt="non-virtual"><scope>QuantLib::anonymous_namespace{fdminnervaluecalculator.cpp}::mapped_payoff</scope><name>mapped_payoff</name></member>
+      <member refid="structQuantLib_1_1anonymous__namespace_02fdminnervaluecalculator_8cpp_03_1_1mapped__payoff_1aa641149363aba024d859fd27995f8793" prot="public" virt="non-virtual"><scope>QuantLib::anonymous_namespace{fdminnervaluecalculator.cpp}::mapped_payoff</scope><name>operator()</name></member>
+      <member refid="structQuantLib_1_1anonymous__namespace_02fdminnervaluecalculator_8cpp_03_1_1mapped__payoff_1abd61f81e39341c4d208db4ba14f17381" prot="public" virt="non-virtual"><scope>QuantLib::anonymous_namespace{fdminnervaluecalculator.cpp}::mapped_payoff</scope><name>payoff</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

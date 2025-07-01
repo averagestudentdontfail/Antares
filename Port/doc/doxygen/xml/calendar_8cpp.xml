@@ -1,0 +1,547 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="calendar_8cpp" kind="file" language="C++">
+    <compoundname>calendar.cpp</compoundname>
+    <includes refid="calendar_8hpp" local="no">ql/time/calendar.hpp</includes>
+    <includes refid="errors_8hpp" local="no">ql/errors.hpp</includes>
+    <incdepgraph>
+      <node id="7">
+        <label>ql/config.ansi.hpp</label>
+        <link refid="config_8ansi_8hpp"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>ql/errors.hpp</label>
+        <link refid="errors_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>ql/mathconstants.hpp</label>
+        <link refid="mathconstants_8hpp"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ql/qldefines.hpp</label>
+        <link refid="qldefines_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>ql/shared_ptr.hpp</label>
+        <link refid="shared__ptr_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>ql/time/businessdayconvention.hpp</label>
+        <link refid="businessdayconvention_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ql/time/calendar.cpp</label>
+        <link refid="calendar_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ql/time/calendar.hpp</label>
+        <link refid="calendar_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>ql/time/date.hpp</label>
+        <link refid="date_8hpp"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>ql/time/frequency.hpp</label>
+        <link refid="frequency_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>ql/time/period.hpp</label>
+        <link refid="period_8hpp"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>ql/time/timeunit.hpp</label>
+        <link refid="timeunit_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>ql/time/weekday.hpp</label>
+        <link refid="weekday_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>ql/types.hpp</label>
+        <link refid="types_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>ql/userconfig.hpp</label>
+        <link refid="userconfig_8hpp"/>
+      </node>
+      <node id="29">
+        <label>ql/utilities/null.hpp</label>
+        <link refid="null_8hpp"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>boost/assert.hpp</label>
+      </node>
+      <node id="5">
+        <label>boost/config.hpp</label>
+      </node>
+      <node id="17">
+        <label>boost/current_function.hpp</label>
+      </node>
+      <node id="15">
+        <label>boost/enable_shared_from_this.hpp</label>
+      </node>
+      <node id="14">
+        <label>boost/make_shared.hpp</label>
+      </node>
+      <node id="13">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="6">
+        <label>boost/version.hpp</label>
+      </node>
+      <node id="10">
+        <label>cmath</label>
+      </node>
+      <node id="27">
+        <label>cstddef</label>
+      </node>
+      <node id="31">
+        <label>cstdint</label>
+      </node>
+      <node id="18">
+        <label>exception</label>
+      </node>
+      <node id="33">
+        <label>functional</label>
+      </node>
+      <node id="24">
+        <label>iosfwd</label>
+      </node>
+      <node id="11">
+        <label>limits</label>
+      </node>
+      <node id="35">
+        <label>set</label>
+      </node>
+      <node id="19">
+        <label>sstream</label>
+      </node>
+      <node id="20">
+        <label>string</label>
+      </node>
+      <node id="30">
+        <label>type_traits</label>
+      </node>
+      <node id="32">
+        <label>utility</label>
+      </node>
+      <node id="36">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceQuantLib">QuantLib</innernamespace>
+    <innernamespace refid="namespaceQuantLib_1_1anonymous__namespace_02calendar_8cpp_03">QuantLib::anonymous_namespace{calendar.cpp}</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>c++;<sp/>tab-width:<sp/>4;<sp/>indent-tabs-mode:<sp/>nil;<sp/>c-basic-offset:<sp/>4<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2000,<sp/>2001,<sp/>2002,<sp/>2003<sp/>RiskMap<sp/>srl</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2003,<sp/>2004,<sp/>2005,<sp/>2006,<sp/>2007<sp/>StatPro<sp/>Italia<sp/>srl</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2004<sp/>Jeff<sp/>Yu</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2014<sp/>Paolo<sp/>Mazzocchi</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2020<sp/>Leonardo<sp/>Arcari</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2020<sp/>Kline<sp/>s.r.l.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"></highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>QuantLib,<sp/>a<sp/>free-software/open-source<sp/>library</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>for<sp/>financial<sp/>quantitative<sp/>analysts<sp/>and<sp/>developers<sp/>-<sp/>http://quantlib.org/</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>QuantLib<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>QuantLib<sp/>license.<sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>copy<sp/>of<sp/>the<sp/>license<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>please<sp/>email</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>&lt;quantlib-dev@lists.sf.net&gt;.<sp/>The<sp/>license<sp/>is<sp/>also<sp/>available<sp/>online<sp/>at</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>&lt;http://quantlib.org/license.shtml&gt;.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"></highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the<sp/>license<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="calendar_8hpp" kindref="compound">ql/time/calendar.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="errors_8hpp" kindref="compound">ql/errors.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceQuantLib" kindref="compound">QuantLib</ref><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="namespaceQuantLib_1_1anonymous__namespace_02calendar_8cpp_03" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Requires:<sp/>from<sp/>&lt;<sp/>to.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1Date_1a2fbbbf87429ca9d86bde4e068eb028d6" kindref="member">Date::serial_type</ref><sp/><ref refid="namespaceQuantLib_1_1anonymous__namespace_02calendar_8cpp_03_1a1847c49d8d427c066eefdba86e059548" kindref="member">daysBetweenImpl</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Calendar" kindref="compound">Calendar</ref>&amp;<sp/>cal,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref>&amp;<sp/>from,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref>&amp;<sp/>to,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>includeFirst,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>includeLast)<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>res<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="classQuantLib_1_1Date_1a2fbbbf87429ca9d86bde4e068eb028d6" kindref="member">Date::serial_type</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(includeLast<sp/>&amp;&amp;<sp/>cal.<ref refid="classQuantLib_1_1Calendar_1a4a5f6f7ded0bf681f69850a8b4009da2" kindref="member">isBusinessDay</ref>(to));</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref><sp/>d<sp/>=<sp/>includeFirst<sp/>?<sp/>from<sp/>:<sp/>from<sp/>+<sp/>1;<sp/>d<sp/>&lt;<sp/>to;<sp/>++d)<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>+=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="classQuantLib_1_1Date_1a2fbbbf87429ca9d86bde4e068eb028d6" kindref="member">Date::serial_type</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(cal.<ref refid="classQuantLib_1_1Calendar_1a4a5f6f7ded0bf681f69850a8b4009da2" kindref="member">isBusinessDay</ref>(d));</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>res;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Calendar_1aa564e41e48b07fa36e1edf310664375b" kindref="member">Calendar::addHoliday</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref>&amp;<sp/>d)<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(<ref refid="classQuantLib_1_1Calendar_1acc625997293c78eb94aeefbb3cf395cb" kindref="member">impl_</ref>,<sp/></highlight><highlight class="stringliteral">&quot;no<sp/>calendar<sp/>implementation<sp/>provided&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>QL_HIGH_RESOLUTION_DATE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref><sp/>_d(d.<ref refid="classQuantLib_1_1Date_1a06e40aaa71eadf6b67db9b6e714923f2" kindref="member">dayOfMonth</ref>(),<sp/>d.<ref refid="classQuantLib_1_1Date_1a020b505ad0bcb0a74da4889144d1ad8b" kindref="member">month</ref>(),<sp/>d.<ref refid="classQuantLib_1_1Date_1a2e9611d4f28e785dba87d98a8acdb87a" kindref="member">year</ref>());</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref>&amp;<sp/>_d<sp/>=<sp/>d;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>d<sp/>was<sp/>a<sp/>genuine<sp/>holiday<sp/>previously<sp/>removed,<sp/>revert<sp/>the<sp/>change</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1Calendar_1acc625997293c78eb94aeefbb3cf395cb" kindref="member">impl_</ref>-&gt;removedHolidays.erase(_d);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>it&apos;s<sp/>already<sp/>a<sp/>holiday,<sp/>leave<sp/>the<sp/>calendar<sp/>alone.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Otherwise,<sp/>add<sp/>it.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classQuantLib_1_1Calendar_1acc625997293c78eb94aeefbb3cf395cb" kindref="member">impl_</ref>-&gt;isBusinessDay(_d))</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1Calendar_1acc625997293c78eb94aeefbb3cf395cb" kindref="member">impl_</ref>-&gt;addedHolidays.insert(_d);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Calendar_1a5e9840da40b5f4a4a0283e12d302a53c" kindref="member">Calendar::removeHoliday</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Date&amp;<sp/>d)<sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(<ref refid="classQuantLib_1_1Calendar_1acc625997293c78eb94aeefbb3cf395cb" kindref="member">impl_</ref>,<sp/></highlight><highlight class="stringliteral">&quot;no<sp/>calendar<sp/>implementation<sp/>provided&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>QL_HIGH_RESOLUTION_DATE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Date<sp/>_d(d.dayOfMonth(),<sp/>d.month(),<sp/>d.year());</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Date&amp;<sp/>_d<sp/>=<sp/>d;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>d<sp/>was<sp/>an<sp/>artificially-added<sp/>holiday,<sp/>revert<sp/>the<sp/>change</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1Calendar_1acc625997293c78eb94aeefbb3cf395cb" kindref="member">impl_</ref>-&gt;addedHolidays.erase(_d);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>it&apos;s<sp/>already<sp/>a<sp/>business<sp/>day,<sp/>leave<sp/>the<sp/>calendar<sp/>alone.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Otherwise,<sp/>add<sp/>it.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classQuantLib_1_1Calendar_1acc625997293c78eb94aeefbb3cf395cb" kindref="member">impl_</ref>-&gt;isBusinessDay(_d))</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1Calendar_1acc625997293c78eb94aeefbb3cf395cb" kindref="member">impl_</ref>-&gt;removedHolidays.insert(_d);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Calendar_1a241bbfff329946c512776c6147d7a886" kindref="member">Calendar::resetAddedAndRemovedHolidays</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1Calendar_1acc625997293c78eb94aeefbb3cf395cb" kindref="member">impl_</ref>-&gt;addedHolidays.clear();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1Calendar_1acc625997293c78eb94aeefbb3cf395cb" kindref="member">impl_</ref>-&gt;removedHolidays.clear();</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>Date<sp/><ref refid="classQuantLib_1_1Calendar_1a0bb53b37b787d8d6a01b4b002814b438" kindref="member">Calendar::adjust</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Date&amp;<sp/>d,</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1ac95a4b5bc8017f1eb4ad0b54a9af3881" kindref="member">BusinessDayConvention</ref><sp/>c)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(d<sp/>!=<sp/>Date(),<sp/></highlight><highlight class="stringliteral">&quot;null<sp/>date&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(c<sp/>==<sp/><ref refid="namespaceQuantLib_1ac95a4b5bc8017f1eb4ad0b54a9af3881a6a9f8f55985b149ed0c336c23bf03667" kindref="member">Unadjusted</ref>)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Date<sp/>d1<sp/>=<sp/>d;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(c<sp/>==<sp/><ref refid="namespaceQuantLib_1ac95a4b5bc8017f1eb4ad0b54a9af3881ad881bac893a17d75191f0041eefda956" kindref="member">Following</ref><sp/>||<sp/>c<sp/>==<sp/><ref refid="namespaceQuantLib_1ac95a4b5bc8017f1eb4ad0b54a9af3881aaa730fc5548402fd95e95f1c57f9a535" kindref="member">ModifiedFollowing</ref><sp/></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||<sp/>c<sp/>==<sp/><ref refid="namespaceQuantLib_1ac95a4b5bc8017f1eb4ad0b54a9af3881a248a27cb448948bf67124edc19a58e8c" kindref="member">HalfMonthModifiedFollowing</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="classQuantLib_1_1Calendar_1ad35c33853f0462c7ee0722e5b40e04c8" kindref="member">isHoliday</ref>(d1))</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++d1;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(c<sp/>==<sp/><ref refid="namespaceQuantLib_1ac95a4b5bc8017f1eb4ad0b54a9af3881aaa730fc5548402fd95e95f1c57f9a535" kindref="member">ModifiedFollowing</ref><sp/></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||<sp/>c<sp/>==<sp/><ref refid="namespaceQuantLib_1ac95a4b5bc8017f1eb4ad0b54a9af3881a248a27cb448948bf67124edc19a58e8c" kindref="member">HalfMonthModifiedFollowing</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(d1.month()<sp/>!=<sp/>d.month())<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Calendar_1a0bb53b37b787d8d6a01b4b002814b438" kindref="member">adjust</ref>(d,<sp/><ref refid="namespaceQuantLib_1ac95a4b5bc8017f1eb4ad0b54a9af3881a4fc14cfd1593e872bbe3c8a4429d1a1f" kindref="member">Preceding</ref>);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(c<sp/>==<sp/><ref refid="namespaceQuantLib_1ac95a4b5bc8017f1eb4ad0b54a9af3881a248a27cb448948bf67124edc19a58e8c" kindref="member">HalfMonthModifiedFollowing</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(d.dayOfMonth()<sp/>&lt;=<sp/>15<sp/>&amp;&amp;<sp/>d1.dayOfMonth()<sp/>&gt;<sp/>15)<sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Calendar_1a0bb53b37b787d8d6a01b4b002814b438" kindref="member">adjust</ref>(d,<sp/><ref refid="namespaceQuantLib_1ac95a4b5bc8017f1eb4ad0b54a9af3881a4fc14cfd1593e872bbe3c8a4429d1a1f" kindref="member">Preceding</ref>);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(c<sp/>==<sp/><ref refid="namespaceQuantLib_1ac95a4b5bc8017f1eb4ad0b54a9af3881a4fc14cfd1593e872bbe3c8a4429d1a1f" kindref="member">Preceding</ref><sp/>||<sp/>c<sp/>==<sp/><ref refid="namespaceQuantLib_1ac95a4b5bc8017f1eb4ad0b54a9af3881a9b4da4fc0dfcb46d879645f8501ab645" kindref="member">ModifiedPreceding</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="classQuantLib_1_1Calendar_1ad35c33853f0462c7ee0722e5b40e04c8" kindref="member">isHoliday</ref>(d1))</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>--d1;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(c<sp/>==<sp/><ref refid="namespaceQuantLib_1ac95a4b5bc8017f1eb4ad0b54a9af3881a9b4da4fc0dfcb46d879645f8501ab645" kindref="member">ModifiedPreceding</ref><sp/>&amp;&amp;<sp/>d1.month()<sp/>!=<sp/>d.month())<sp/>{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Calendar_1a0bb53b37b787d8d6a01b4b002814b438" kindref="member">adjust</ref>(d,<ref refid="namespaceQuantLib_1ac95a4b5bc8017f1eb4ad0b54a9af3881ad881bac893a17d75191f0041eefda956" kindref="member">Following</ref>);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(c<sp/>==<sp/><ref refid="namespaceQuantLib_1ac95a4b5bc8017f1eb4ad0b54a9af3881aa6c83e096b1da365ee4944baa6f38cfa" kindref="member">Nearest</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Date<sp/>d2<sp/>=<sp/>d;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="classQuantLib_1_1Calendar_1ad35c33853f0462c7ee0722e5b40e04c8" kindref="member">isHoliday</ref>(d1)<sp/>&amp;&amp;<sp/><ref refid="classQuantLib_1_1Calendar_1ad35c33853f0462c7ee0722e5b40e04c8" kindref="member">isHoliday</ref>(d2))</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++d1;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>--d2;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classQuantLib_1_1Calendar_1ad35c33853f0462c7ee0722e5b40e04c8" kindref="member">isHoliday</ref>(d1))</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d2;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d1;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a8efe9cb3e67c8d0585e57b4d53c5d2fe" kindref="member">QL_FAIL</ref>(</highlight><highlight class="stringliteral">&quot;unknown<sp/>business-day<sp/>convention&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d1;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>Date<sp/><ref refid="classQuantLib_1_1Calendar_1a8235b8094fc4514319ea342602d3fdcc" kindref="member">Calendar::advance</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Date&amp;<sp/>d,</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a8ac1a45a37d8d3dda438a2e59e222620" kindref="member">Integer</ref><sp/>n,<sp/><ref refid="namespaceQuantLib_1a6cdac5e2dae1e972076cc8e3302e4ad3" kindref="member">TimeUnit</ref><sp/>unit,</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1ac95a4b5bc8017f1eb4ad0b54a9af3881" kindref="member">BusinessDayConvention</ref><sp/>c,</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>endOfMonth)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(d!=Date(),<sp/></highlight><highlight class="stringliteral">&quot;null<sp/>date&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(n<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Calendar_1a0bb53b37b787d8d6a01b4b002814b438" kindref="member">adjust</ref>(d,c);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(unit<sp/>==<sp/><ref refid="namespaceQuantLib_1a6cdac5e2dae1e972076cc8e3302e4ad3ac2d73aad1a6496a6481563e7b5e62b36" kindref="member">Days</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Date<sp/>d1<sp/>=<sp/>d;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(n<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(n<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++d1;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="classQuantLib_1_1Calendar_1ad35c33853f0462c7ee0722e5b40e04c8" kindref="member">isHoliday</ref>(d1))</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++d1;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>--n;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(n<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>--d1;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(<ref refid="classQuantLib_1_1Calendar_1ad35c33853f0462c7ee0722e5b40e04c8" kindref="member">isHoliday</ref>(d1))</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>--d1;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++n;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d1;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(unit<sp/>==<sp/><ref refid="namespaceQuantLib_1a6cdac5e2dae1e972076cc8e3302e4ad3abfe6416a9a483125b6b22548c1ff3947" kindref="member">Weeks</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Date<sp/>d1<sp/>=<sp/>d<sp/>+<sp/>n*unit;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Calendar_1a0bb53b37b787d8d6a01b4b002814b438" kindref="member">adjust</ref>(d1,c);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Date<sp/>d1<sp/>=<sp/>d<sp/>+<sp/>n*unit;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>we<sp/>are<sp/>sure<sp/>the<sp/>unit<sp/>is<sp/>Months<sp/>or<sp/>Years</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classQuantLib_1_1Calendar_1a0638994ad2f61be6cdc66f3da2c0b3b3" kindref="member">endOfMonth</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(c<sp/>==<sp/><ref refid="namespaceQuantLib_1ac95a4b5bc8017f1eb4ad0b54a9af3881a6a9f8f55985b149ed0c336c23bf03667" kindref="member">Unadjusted</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>move<sp/>to<sp/>the<sp/>last<sp/>calendar<sp/>day<sp/>if<sp/>d<sp/>is<sp/>the<sp/>last<sp/>calendar<sp/>day</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classQuantLib_1_1Date_1a748ed14c936b2b91dfd440fdb9e309e3" kindref="member">Date::isEndOfMonth</ref>(d))<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Date_1a452304c9aded5ef07d82fc43dcc81309" kindref="member">Date::endOfMonth</ref>(d1);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>move<sp/>to<sp/>the<sp/>last<sp/>business<sp/>day<sp/>if<sp/>d<sp/>is<sp/>the<sp/>last<sp/>business<sp/>day</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classQuantLib_1_1Calendar_1a145f2f578a9b170c72d3247d8d3ae286" kindref="member">isEndOfMonth</ref>(d))<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Calendar_1a0638994ad2f61be6cdc66f3da2c0b3b3" kindref="member">Calendar::endOfMonth</ref>(d1);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Calendar_1a0bb53b37b787d8d6a01b4b002814b438" kindref="member">adjust</ref>(d1,<sp/>c);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>Date<sp/><ref refid="classQuantLib_1_1Calendar_1a8235b8094fc4514319ea342602d3fdcc" kindref="member">Calendar::advance</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Date<sp/>&amp;<sp/>d,</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Period<sp/>&amp;<sp/>p,</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1ac95a4b5bc8017f1eb4ad0b54a9af3881" kindref="member">BusinessDayConvention</ref><sp/>c,</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>endOfMonth)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Calendar_1a8235b8094fc4514319ea342602d3fdcc" kindref="member">advance</ref>(d,<sp/>p.length(),<sp/>p.units(),<sp/>c,<sp/><ref refid="classQuantLib_1_1Calendar_1a0638994ad2f61be6cdc66f3da2c0b3b3" kindref="member">endOfMonth</ref>);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1Date_1a2fbbbf87429ca9d86bde4e068eb028d6" kindref="member">Date::serial_type</ref><sp/><ref refid="classQuantLib_1_1Calendar_1a18748866f25d5af17761e45e2e167bb6" kindref="member">Calendar::businessDaysBetween</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Date&amp;<sp/>from,</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Date&amp;<sp/>to,</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>includeFirst,</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>includeLast)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(from<sp/>&lt;<sp/>to)<sp/>?<sp/><ref refid="namespaceQuantLib_1_1anonymous__namespace_02calendar_8cpp_03_1a1847c49d8d427c066eefdba86e059548" kindref="member">daysBetweenImpl</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>from,<sp/>to,<sp/>includeFirst,<sp/>includeLast)<sp/>:</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(from<sp/>&gt;<sp/>to)<sp/>?<sp/>-<ref refid="namespaceQuantLib_1_1anonymous__namespace_02calendar_8cpp_03_1a1847c49d8d427c066eefdba86e059548" kindref="member">daysBetweenImpl</ref>(*this,<sp/>to,<sp/>from,<sp/>includeLast,<sp/>includeFirst)<sp/>:</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Date::serial_type(includeFirst<sp/>&amp;&amp;<sp/>includeLast<sp/>&amp;&amp;<sp/><ref refid="classQuantLib_1_1Calendar_1a4a5f6f7ded0bf681f69850a8b4009da2" kindref="member">isBusinessDay</ref>(from));</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Western<sp/>calendars</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Calendar_1_1WesternImpl_1a12b0990935e3dd37714889de2c52be39" kindref="member">Calendar::WesternImpl::isWeekend</ref>(<ref refid="namespaceQuantLib_1a04474aebb0bea95bba2f1dcbdd8a27a6" kindref="member">Weekday</ref><sp/>w)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>w<sp/>==<sp/><ref refid="namespaceQuantLib_1a04474aebb0bea95bba2f1dcbdd8a27a6a5057b5122f5d5e92e76e8824f664c8bc" kindref="member">Saturday</ref><sp/>||<sp/>w<sp/>==<sp/><ref refid="namespaceQuantLib_1a04474aebb0bea95bba2f1dcbdd8a27a6a6276c6480efe5dff72b2ded9b08045e3" kindref="member">Sunday</ref>;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a7354a4ac9189352870cbb0cb998e0bd4" kindref="member">Day</ref><sp/><ref refid="classQuantLib_1_1Calendar_1_1WesternImpl_1ac738570e6417cd7d19e2a89288edf857" kindref="member">Calendar::WesternImpl::easterMonday</ref>(<ref refid="namespaceQuantLib_1a5dcda5470aff130981ac30f25d4244e7" kindref="member">Year</ref><sp/>y)<sp/>{</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>EasterMonday[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>98,<sp/><sp/>90,<sp/>103,<sp/><sp/>95,<sp/>114,<sp/>106,<sp/><sp/>91,<sp/>111,<sp/>102,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1901-1909</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>87,<sp/>107,<sp/><sp/>99,<sp/><sp/>83,<sp/>103,<sp/><sp/>95,<sp/>115,<sp/><sp/>99,<sp/><sp/>91,<sp/>111,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1910-1919</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>96,<sp/><sp/>87,<sp/>107,<sp/><sp/>92,<sp/>112,<sp/>103,<sp/><sp/>95,<sp/>108,<sp/>100,<sp/><sp/>91,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1920-1929</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>111,<sp/><sp/>96,<sp/><sp/>88,<sp/>107,<sp/><sp/>92,<sp/>112,<sp/>104,<sp/><sp/>88,<sp/>108,<sp/>100,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1930-1939</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>85,<sp/>104,<sp/><sp/>96,<sp/>116,<sp/>101,<sp/><sp/>92,<sp/>112,<sp/><sp/>97,<sp/><sp/>89,<sp/>108,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1940-1949</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>100,<sp/><sp/>85,<sp/>105,<sp/><sp/>96,<sp/>109,<sp/>101,<sp/><sp/>93,<sp/>112,<sp/><sp/>97,<sp/><sp/>89,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1950-1959</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>109,<sp/><sp/>93,<sp/>113,<sp/>105,<sp/><sp/>90,<sp/>109,<sp/>101,<sp/><sp/>86,<sp/>106,<sp/><sp/>97,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1960-1969</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>89,<sp/>102,<sp/><sp/>94,<sp/>113,<sp/>105,<sp/><sp/>90,<sp/>110,<sp/>101,<sp/><sp/>86,<sp/>106,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1970-1979</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>98,<sp/>110,<sp/>102,<sp/><sp/>94,<sp/>114,<sp/><sp/>98,<sp/><sp/>90,<sp/>110,<sp/><sp/>95,<sp/><sp/>86,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1980-1989</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>106,<sp/><sp/>91,<sp/>111,<sp/>102,<sp/><sp/>94,<sp/>107,<sp/><sp/>99,<sp/><sp/>90,<sp/>103,<sp/><sp/>95,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1990-1999</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>115,<sp/>106,<sp/><sp/>91,<sp/>111,<sp/>103,<sp/><sp/>87,<sp/>107,<sp/><sp/>99,<sp/><sp/>84,<sp/>103,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2000-2009</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>95,<sp/>115,<sp/>100,<sp/><sp/>91,<sp/>111,<sp/><sp/>96,<sp/><sp/>88,<sp/>107,<sp/><sp/>92,<sp/>112,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2010-2019</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>104,<sp/><sp/>95,<sp/>108,<sp/>100,<sp/><sp/>92,<sp/>111,<sp/><sp/>96,<sp/><sp/>88,<sp/>108,<sp/><sp/>92,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2020-2029</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>112,<sp/>104,<sp/><sp/>89,<sp/>108,<sp/>100,<sp/><sp/>85,<sp/>105,<sp/><sp/>96,<sp/>116,<sp/>101,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2030-2039</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>93,<sp/>112,<sp/><sp/>97,<sp/><sp/>89,<sp/>109,<sp/>100,<sp/><sp/>85,<sp/>105,<sp/><sp/>97,<sp/>109,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2040-2049</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>101,<sp/><sp/>93,<sp/>113,<sp/><sp/>97,<sp/><sp/>89,<sp/>109,<sp/><sp/>94,<sp/>113,<sp/>105,<sp/><sp/>90,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2050-2059</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>110,<sp/>101,<sp/><sp/>86,<sp/>106,<sp/><sp/>98,<sp/><sp/>89,<sp/>102,<sp/><sp/>94,<sp/>114,<sp/>105,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2060-2069</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>90,<sp/>110,<sp/>102,<sp/><sp/>86,<sp/>106,<sp/><sp/>98,<sp/>111,<sp/>102,<sp/><sp/>94,<sp/>114,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2070-2079</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>99,<sp/><sp/>90,<sp/>110,<sp/><sp/>95,<sp/><sp/>87,<sp/>106,<sp/><sp/>91,<sp/>111,<sp/>103,<sp/><sp/>94,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2080-2089</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>107,<sp/><sp/>99,<sp/><sp/>91,<sp/>103,<sp/><sp/>95,<sp/>115,<sp/>107,<sp/><sp/>91,<sp/>111,<sp/>103,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2090-2099</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>88,<sp/>108,<sp/>100,<sp/><sp/>85,<sp/>105,<sp/><sp/>96,<sp/>109,<sp/>101,<sp/><sp/>93,<sp/>112,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2100-2109</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>97,<sp/><sp/>89,<sp/>109,<sp/><sp/>93,<sp/>113,<sp/>105,<sp/><sp/>90,<sp/>109,<sp/>101,<sp/><sp/>86,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2110-2119</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>106,<sp/><sp/>97,<sp/><sp/>89,<sp/>102,<sp/><sp/>94,<sp/>113,<sp/>105,<sp/><sp/>90,<sp/>110,<sp/>101,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2120-2129</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>86,<sp/>106,<sp/><sp/>98,<sp/>110,<sp/>102,<sp/><sp/>94,<sp/>114,<sp/><sp/>98,<sp/><sp/>90,<sp/>110,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2130-2139</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>95,<sp/><sp/>86,<sp/>106,<sp/><sp/>91,<sp/>111,<sp/>102,<sp/><sp/>94,<sp/>107,<sp/><sp/>99,<sp/><sp/>90,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2140-2149</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>103,<sp/><sp/>95,<sp/>115,<sp/>106,<sp/><sp/>91,<sp/>111,<sp/>103,<sp/><sp/>87,<sp/>107,<sp/><sp/>99,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2150-2159</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>84,<sp/>103,<sp/><sp/>95,<sp/>115,<sp/>100,<sp/><sp/>91,<sp/>111,<sp/><sp/>96,<sp/><sp/>88,<sp/>107,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2160-2169</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>92,<sp/>112,<sp/>104,<sp/><sp/>95,<sp/>108,<sp/>100,<sp/><sp/>92,<sp/>111,<sp/><sp/>96,<sp/><sp/>88,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2170-2179</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>108,<sp/><sp/>92,<sp/>112,<sp/>104,<sp/><sp/>89,<sp/>108,<sp/>100,<sp/><sp/>85,<sp/>105,<sp/><sp/>96,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2180-2189</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>116,<sp/>101,<sp/><sp/>93,<sp/>112,<sp/><sp/>97,<sp/><sp/>89,<sp/>109,<sp/>100,<sp/><sp/>85,<sp/>105<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2190-2199</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EasterMonday[y-1901];</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Orthodox<sp/>calendars</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Calendar_1_1OrthodoxImpl_1a14ae9ed2074fc6c9c4eb71f8676fff7b" kindref="member">Calendar::OrthodoxImpl::isWeekend</ref>(<ref refid="namespaceQuantLib_1a04474aebb0bea95bba2f1dcbdd8a27a6" kindref="member">Weekday</ref><sp/>w)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>w<sp/>==<sp/><ref refid="namespaceQuantLib_1a04474aebb0bea95bba2f1dcbdd8a27a6a5057b5122f5d5e92e76e8824f664c8bc" kindref="member">Saturday</ref><sp/>||<sp/>w<sp/>==<sp/><ref refid="namespaceQuantLib_1a04474aebb0bea95bba2f1dcbdd8a27a6a6276c6480efe5dff72b2ded9b08045e3" kindref="member">Sunday</ref>;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a7354a4ac9189352870cbb0cb998e0bd4" kindref="member">Day</ref><sp/><ref refid="classQuantLib_1_1Calendar_1_1OrthodoxImpl_1a482906651eed528ab437c5b449b56cc5" kindref="member">Calendar::OrthodoxImpl::easterMonday</ref>(<ref refid="namespaceQuantLib_1a5dcda5470aff130981ac30f25d4244e7" kindref="member">Year</ref><sp/>y)<sp/>{</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>EasterMonday[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>105,<sp/>118,<sp/>110,<sp/>102,<sp/>121,<sp/>106,<sp/>126,<sp/>118,<sp/>102,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1901-1909</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>122,<sp/>114,<sp/><sp/>99,<sp/>118,<sp/>110,<sp/><sp/>95,<sp/>115,<sp/>106,<sp/>126,<sp/>111,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1910-1919</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>103,<sp/>122,<sp/>107,<sp/><sp/>99,<sp/>119,<sp/>110,<sp/>123,<sp/>115,<sp/>107,<sp/>126,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1920-1929</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>111,<sp/>103,<sp/>123,<sp/>107,<sp/><sp/>99,<sp/>119,<sp/>104,<sp/>123,<sp/>115,<sp/>100,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1930-1939</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>120,<sp/>111,<sp/><sp/>96,<sp/>116,<sp/>108,<sp/>127,<sp/>112,<sp/>104,<sp/>124,<sp/>115,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1940-1949</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>100,<sp/>120,<sp/>112,<sp/><sp/>96,<sp/>116,<sp/>108,<sp/>128,<sp/>112,<sp/>104,<sp/>124,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1950-1959</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>109,<sp/>100,<sp/>120,<sp/>105,<sp/>125,<sp/>116,<sp/>101,<sp/>121,<sp/>113,<sp/>104,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1960-1969</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>117,<sp/>109,<sp/>101,<sp/>120,<sp/>105,<sp/>125,<sp/>117,<sp/>101,<sp/>121,<sp/>113,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1970-1979</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>98,<sp/>117,<sp/>109,<sp/>129,<sp/>114,<sp/>105,<sp/>125,<sp/>110,<sp/>102,<sp/>121,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1980-1989</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>106,<sp/><sp/>98,<sp/>118,<sp/>109,<sp/>122,<sp/>114,<sp/>106,<sp/>118,<sp/>110,<sp/>102,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1990-1999</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>122,<sp/>106,<sp/>126,<sp/>118,<sp/>103,<sp/>122,<sp/>114,<sp/><sp/>99,<sp/>119,<sp/>110,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2000-2009</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>95,<sp/>115,<sp/>107,<sp/>126,<sp/>111,<sp/>103,<sp/>123,<sp/>107,<sp/><sp/>99,<sp/>119,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2010-2019</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>111,<sp/>123,<sp/>115,<sp/>107,<sp/>127,<sp/>111,<sp/>103,<sp/>123,<sp/>108,<sp/><sp/>99,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2020-2029</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>119,<sp/>104,<sp/>124,<sp/>115,<sp/>100,<sp/>120,<sp/>112,<sp/><sp/>96,<sp/>116,<sp/>108,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2030-2039</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>128,<sp/>112,<sp/>104,<sp/>124,<sp/>116,<sp/>100,<sp/>120,<sp/>112,<sp/><sp/>97,<sp/>116,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2040-2049</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>108,<sp/>128,<sp/>113,<sp/>104,<sp/>124,<sp/>109,<sp/>101,<sp/>120,<sp/>105,<sp/>125,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2050-2059</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>117,<sp/>101,<sp/>121,<sp/>113,<sp/>105,<sp/>117,<sp/>109,<sp/>101,<sp/>121,<sp/>105,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2060-2069</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>125,<sp/>110,<sp/>102,<sp/>121,<sp/>113,<sp/><sp/>98,<sp/>118,<sp/>109,<sp/>129,<sp/>114,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2070-2079</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>106,<sp/>125,<sp/>110,<sp/>102,<sp/>122,<sp/>106,<sp/><sp/>98,<sp/>118,<sp/>110,<sp/>122,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2080-2089</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>114,<sp/><sp/>99,<sp/>119,<sp/>110,<sp/>102,<sp/>115,<sp/>107,<sp/>126,<sp/>118,<sp/>103,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2090-2099</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>123,<sp/>115,<sp/>100,<sp/>120,<sp/>112,<sp/><sp/>96,<sp/>116,<sp/>108,<sp/>128,<sp/>112,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2100-2109</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>104,<sp/>124,<sp/>109,<sp/>100,<sp/>120,<sp/>105,<sp/>125,<sp/>116,<sp/>108,<sp/>121,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2110-2119</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>113,<sp/>104,<sp/>124,<sp/>109,<sp/>101,<sp/>120,<sp/>105,<sp/>125,<sp/>117,<sp/>101,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2120-2129</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>121,<sp/>113,<sp/><sp/>98,<sp/>117,<sp/>109,<sp/>129,<sp/>114,<sp/>105,<sp/>125,<sp/>110,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2130-2139</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>102,<sp/>121,<sp/>113,<sp/><sp/>98,<sp/>118,<sp/>109,<sp/>129,<sp/>114,<sp/>106,<sp/>125,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2140-2149</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>110,<sp/>102,<sp/>122,<sp/>106,<sp/>126,<sp/>118,<sp/>103,<sp/>122,<sp/>114,<sp/><sp/>99,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2150-2159</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>119,<sp/>110,<sp/>102,<sp/>115,<sp/>107,<sp/>126,<sp/>111,<sp/>103,<sp/>123,<sp/>114,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2160-2169</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>99,<sp/>119,<sp/>111,<sp/>130,<sp/>115,<sp/>107,<sp/>127,<sp/>111,<sp/>103,<sp/>123,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2170-2179</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>108,<sp/><sp/>99,<sp/>119,<sp/>104,<sp/>124,<sp/>115,<sp/>100,<sp/>120,<sp/>112,<sp/>103,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2180-2189</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>116,<sp/>108,<sp/>128,<sp/>119,<sp/>104,<sp/>124,<sp/>116,<sp/>100,<sp/>120,<sp/>112<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2190-2199</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EasterMonday[y-1901];</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Date&gt;<sp/><ref refid="classQuantLib_1_1Calendar_1ab65e58d8c20c0cf6f4ea2369ab242244" kindref="member">Calendar::holidayList</ref>(</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Date&amp;<sp/>from,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Date&amp;<sp/>to,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>includeWeekEnds)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(to&gt;=from,<sp/></highlight><highlight class="stringliteral">&quot;&apos;from&apos;<sp/>date<sp/>(&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>from<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)<sp/>must<sp/>be<sp/>equal<sp/>to<sp/>or<sp/>earlier<sp/>than<sp/>&apos;to&apos;<sp/>date<sp/>(&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>to<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;Date&gt;<sp/>result;</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(Date<sp/>d<sp/>=<sp/>from;<sp/>d<sp/>&lt;=<sp/>to;<sp/>++d)<sp/>{</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classQuantLib_1_1Calendar_1ad35c33853f0462c7ee0722e5b40e04c8" kindref="member">isHoliday</ref>(d)<sp/>&amp;&amp;<sp/>(includeWeekEnds<sp/>||<sp/>!<ref refid="classQuantLib_1_1Calendar_1a1294b93fa51c86f66c3c9a0a8a9901db" kindref="member">isWeekend</ref>(d.weekday())))</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result.push_back(d);</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Date&gt;<sp/><ref refid="classQuantLib_1_1Calendar_1af2b4f3307e646c559811a2061f8d3fb9" kindref="member">Calendar::businessDayList</ref>(</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Date&amp;<sp/>from,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Date&amp;<sp/>to)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(to&gt;=from,<sp/></highlight><highlight class="stringliteral">&quot;&apos;from&apos;<sp/>date<sp/>(&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>from<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)<sp/>must<sp/>be<sp/>equal<sp/>to<sp/>or<sp/>earlier<sp/>than<sp/>&apos;to&apos;<sp/>date<sp/>(&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>to<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;Date&gt;<sp/>result;</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(Date<sp/>d<sp/>=<sp/>from;<sp/>d<sp/>&lt;=<sp/>to;<sp/>++d)<sp/>{</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classQuantLib_1_1Calendar_1a4a5f6f7ded0bf681f69850a8b4009da2" kindref="member">isBusinessDay</ref>(d))</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result.push_back(d);</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="304"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="ql/time/calendar.cpp"/>
+  </compounddef>
+</doxygen>

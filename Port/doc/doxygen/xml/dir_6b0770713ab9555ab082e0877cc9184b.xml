@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_6b0770713ab9555ab082e0877cc9184b" kind="dir">
+    <compoundname>ql/math/ode</compoundname>
+    <innerfile refid="adaptiverungekutta_8hpp">adaptiverungekutta.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ql/math/ode/"/>
+  </compounddef>
+</doxygen>

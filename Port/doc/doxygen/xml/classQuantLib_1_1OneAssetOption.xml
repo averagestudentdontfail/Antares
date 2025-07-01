@@ -1,0 +1,580 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1OneAssetOption" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::OneAssetOption</compoundname>
+    <basecompoundref refid="classQuantLib_1_1Option" prot="public" virt="non-virtual">QuantLib::Option</basecompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1VanillaOption" prot="public" virt="non-virtual">QuantLib::VanillaOption</derivedcompoundref>
+    <includes refid="oneassetoption_8hpp" local="no">oneassetoption.hpp</includes>
+    <innerclass refid="classQuantLib_1_1OneAssetOption_1_1engine" prot="public">QuantLib::OneAssetOption::engine</innerclass>
+    <innerclass refid="classQuantLib_1_1OneAssetOption_1_1results" prot="public">QuantLib::OneAssetOption::results</innerclass>
+    <sectiondef kind="user-defined">
+      <header>greeks</header>
+      <memberdef kind="variable" id="classQuantLib_1_1OneAssetOption_1a0f2486ef271b5cfda29f59d6b21726d5" prot="protected" static="no" mutable="yes">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::OneAssetOption::delta_</definition>
+        <argsstring></argsstring>
+        <name>delta_</name>
+        <qualifiedname>QuantLib::OneAssetOption::delta_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/oneassetoption.hpp" line="63" column="22" bodyfile="ql/instruments/oneassetoption.hpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1OneAssetOption_1a46ff6fe39afba281f273310751de4523" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::OneAssetOption::deltaForward_</definition>
+        <argsstring></argsstring>
+        <name>deltaForward_</name>
+        <qualifiedname>QuantLib::OneAssetOption::deltaForward_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/oneassetoption.hpp" line="63" column="29" bodyfile="ql/instruments/oneassetoption.hpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1OneAssetOption_1a62eee9c1e86fa3606446f7cb6f5b89fe" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::OneAssetOption::elasticity_</definition>
+        <argsstring></argsstring>
+        <name>elasticity_</name>
+        <qualifiedname>QuantLib::OneAssetOption::elasticity_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/oneassetoption.hpp" line="63" column="43" bodyfile="ql/instruments/oneassetoption.hpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1OneAssetOption_1acd566d7bddc02fc9b822a27072ccad90" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::OneAssetOption::gamma_</definition>
+        <argsstring></argsstring>
+        <name>gamma_</name>
+        <qualifiedname>QuantLib::OneAssetOption::gamma_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/oneassetoption.hpp" line="63" column="55" bodyfile="ql/instruments/oneassetoption.hpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1OneAssetOption_1a06d44ade435f5aeced2117952abfda11" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::OneAssetOption::theta_</definition>
+        <argsstring></argsstring>
+        <name>theta_</name>
+        <qualifiedname>QuantLib::OneAssetOption::theta_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/oneassetoption.hpp" line="63" column="62" bodyfile="ql/instruments/oneassetoption.hpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1OneAssetOption_1a2eaaa309e0848702e8c8328334edacdd" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::OneAssetOption::thetaPerDay_</definition>
+        <argsstring></argsstring>
+        <name>thetaPerDay_</name>
+        <qualifiedname>QuantLib::OneAssetOption::thetaPerDay_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/oneassetoption.hpp" line="64" column="13" bodyfile="ql/instruments/oneassetoption.hpp" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1OneAssetOption_1aaa99d88f04727d63bca4cb23e164b6e1" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::OneAssetOption::vega_</definition>
+        <argsstring></argsstring>
+        <name>vega_</name>
+        <qualifiedname>QuantLib::OneAssetOption::vega_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/oneassetoption.hpp" line="64" column="26" bodyfile="ql/instruments/oneassetoption.hpp" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1OneAssetOption_1a7a8b8781122df61dc8d29352d3337621" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::OneAssetOption::rho_</definition>
+        <argsstring></argsstring>
+        <name>rho_</name>
+        <qualifiedname>QuantLib::OneAssetOption::rho_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/oneassetoption.hpp" line="64" column="32" bodyfile="ql/instruments/oneassetoption.hpp" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1OneAssetOption_1acec199353113b55df04b0b1758988f47" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::OneAssetOption::dividendRho_</definition>
+        <argsstring></argsstring>
+        <name>dividendRho_</name>
+        <qualifiedname>QuantLib::OneAssetOption::dividendRho_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/oneassetoption.hpp" line="64" column="37" bodyfile="ql/instruments/oneassetoption.hpp" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1OneAssetOption_1a60b4335a10c0e0e080eee3685faee269" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::OneAssetOption::strikeSensitivity_</definition>
+        <argsstring></argsstring>
+        <name>strikeSensitivity_</name>
+        <qualifiedname>QuantLib::OneAssetOption::strikeSensitivity_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/oneassetoption.hpp" line="64" column="50" bodyfile="ql/instruments/oneassetoption.hpp" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1OneAssetOption_1ac7be4123d83cf536d9dc812a138d87d1" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::OneAssetOption::itmCashProbability_</definition>
+        <argsstring></argsstring>
+        <name>itmCashProbability_</name>
+        <qualifiedname>QuantLib::OneAssetOption::itmCashProbability_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/oneassetoption.hpp" line="65" column="13" bodyfile="ql/instruments/oneassetoption.hpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1OneAssetOption_1ade9880b1f51bd7b94ea4d176e1cb259f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::OneAssetOption::delta</definition>
+        <argsstring>() const</argsstring>
+        <name>delta</name>
+        <qualifiedname>QuantLib::OneAssetOption::delta</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/oneassetoption.hpp" line="46" column="14" bodyfile="ql/instruments/oneassetoption.cpp" bodystart="37" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1OneAssetOption_1ab01837864824837e07151b9d7b218e60" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::OneAssetOption::deltaForward</definition>
+        <argsstring>() const</argsstring>
+        <name>deltaForward</name>
+        <qualifiedname>QuantLib::OneAssetOption::deltaForward</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/oneassetoption.hpp" line="47" column="14" bodyfile="ql/instruments/oneassetoption.cpp" bodystart="43" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1OneAssetOption_1ac4b96563e0650f3f486402eca600707c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::OneAssetOption::elasticity</definition>
+        <argsstring>() const</argsstring>
+        <name>elasticity</name>
+        <qualifiedname>QuantLib::OneAssetOption::elasticity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/oneassetoption.hpp" line="48" column="14" bodyfile="ql/instruments/oneassetoption.cpp" bodystart="50" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1OneAssetOption_1a0e6f1fae2659124479c772cc76fd93bb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::OneAssetOption::gamma</definition>
+        <argsstring>() const</argsstring>
+        <name>gamma</name>
+        <qualifiedname>QuantLib::OneAssetOption::gamma</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/oneassetoption.hpp" line="49" column="14" bodyfile="ql/instruments/oneassetoption.cpp" bodystart="56" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1OneAssetOption_1a572436642dd053662198cd1ce7705d15" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::OneAssetOption::theta</definition>
+        <argsstring>() const</argsstring>
+        <name>theta</name>
+        <qualifiedname>QuantLib::OneAssetOption::theta</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/oneassetoption.hpp" line="50" column="14" bodyfile="ql/instruments/oneassetoption.cpp" bodystart="62" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1OneAssetOption_1a4dc87d12fff8ba2783a17e062d2195e1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::OneAssetOption::thetaPerDay</definition>
+        <argsstring>() const</argsstring>
+        <name>thetaPerDay</name>
+        <qualifiedname>QuantLib::OneAssetOption::thetaPerDay</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/oneassetoption.hpp" line="51" column="14" bodyfile="ql/instruments/oneassetoption.cpp" bodystart="68" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1OneAssetOption_1a52b2075516ffa4961681a1d4e800a730" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::OneAssetOption::vega</definition>
+        <argsstring>() const</argsstring>
+        <name>vega</name>
+        <qualifiedname>QuantLib::OneAssetOption::vega</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/oneassetoption.hpp" line="52" column="14" bodyfile="ql/instruments/oneassetoption.cpp" bodystart="74" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1OneAssetOption_1a8cf492dbdd0ca337ee07f4dad8a45b59" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::OneAssetOption::rho</definition>
+        <argsstring>() const</argsstring>
+        <name>rho</name>
+        <qualifiedname>QuantLib::OneAssetOption::rho</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/oneassetoption.hpp" line="53" column="14" bodyfile="ql/instruments/oneassetoption.cpp" bodystart="80" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1OneAssetOption_1aa08f7265cbca4f4e026e4c80a545af64" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::OneAssetOption::dividendRho</definition>
+        <argsstring>() const</argsstring>
+        <name>dividendRho</name>
+        <qualifiedname>QuantLib::OneAssetOption::dividendRho</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/oneassetoption.hpp" line="54" column="14" bodyfile="ql/instruments/oneassetoption.cpp" bodystart="86" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1OneAssetOption_1aeb6d5f004784c578a95e8a12a0d44e0d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::OneAssetOption::strikeSensitivity</definition>
+        <argsstring>() const</argsstring>
+        <name>strikeSensitivity</name>
+        <qualifiedname>QuantLib::OneAssetOption::strikeSensitivity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/oneassetoption.hpp" line="55" column="14" bodyfile="ql/instruments/oneassetoption.cpp" bodystart="92" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1OneAssetOption_1ad5e7faea3a7aada73da20453f5bd67a9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::OneAssetOption::itmCashProbability</definition>
+        <argsstring>() const</argsstring>
+        <name>itmCashProbability</name>
+        <qualifiedname>QuantLib::OneAssetOption::itmCashProbability</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/oneassetoption.hpp" line="56" column="14" bodyfile="ql/instruments/oneassetoption.cpp" bodystart="99" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1OneAssetOption_1a7c9dadd5ebc375b371ca4e12c11d8c55" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QuantLib::OneAssetOption::fetchResults</definition>
+        <argsstring>(const PricingEngine::results *) const override</argsstring>
+        <name>fetchResults</name>
+        <qualifiedname>QuantLib::OneAssetOption::fetchResults</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Instrument_1aebe809131db2941325d037c031bbf41b">fetchResults</reimplements>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1PricingEngine_1_1results" kindref="compound">PricingEngine::results</ref> *</type>
+          <defname>r</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>When a derived result structure is defined for an instrument, this method should be overridden to read from it. This is mandatory in case a pricing engine is used. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/oneassetoption.hpp" line="58" column="14" bodyfile="ql/instruments/oneassetoption.cpp" bodystart="113" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1OneAssetOption_1ac550518bed1cbfd3d7a5f3a64d830099" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QuantLib::OneAssetOption::setupExpired</definition>
+        <argsstring>() const override</argsstring>
+        <name>setupExpired</name>
+        <qualifiedname>QuantLib::OneAssetOption::setupExpired</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Instrument_1a73d90597fcd3ff52a8aed674393ab574">setupExpired</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method must leave the instrument in a consistent state when the expiration condition is met. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/oneassetoption.hpp" line="61" column="14" bodyfile="ql/instruments/oneassetoption.cpp" bodystart="106" bodyend="111"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <header>Instrument interface</header>
+      <memberdef kind="function" id="classQuantLib_1_1OneAssetOption_1a504f249f48aad9a3053d6b40ae1d9e6d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool QuantLib::OneAssetOption::isExpired</definition>
+        <argsstring>() const override</argsstring>
+        <name>isExpired</name>
+        <qualifiedname>QuantLib::OneAssetOption::isExpired</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Instrument_1a121a2a929b179900744a58272d46aefe">isExpired</reimplements>
+        <briefdescription>
+<para>returns whether the instrument might have value greater than zero. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/oneassetoption.hpp" line="42" column="14" bodyfile="ql/instruments/oneassetoption.cpp" bodystart="33" bodyend="35"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1OneAssetOption_1a48dbb5aa57ecc6dd55a3fd579f2a0163" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::OneAssetOption::OneAssetOption</definition>
+        <argsstring>(const ext::shared_ptr&lt; Payoff &gt; &amp;, const ext::shared_ptr&lt; Exercise &gt; &amp;)</argsstring>
+        <name>OneAssetOption</name>
+        <qualifiedname>QuantLib::OneAssetOption::OneAssetOption</qualifiedname>
+        <param>
+          <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1Payoff" kindref="compound">Payoff</ref> &gt; &amp;</type>
+          <defname>payoff</defname>
+        </param>
+        <param>
+          <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1Exercise" kindref="compound">Exercise</ref> &gt; &amp;</type>
+          <defname>exercise</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/oneassetoption.hpp" line="38" column="9" bodyfile="ql/instruments/oneassetoption.cpp" bodystart="28" bodyend="31"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Base class for options on a single asset. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>QuantLib::Instrument</label>
+        <link refid="classQuantLib_1_1Instrument"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QuantLib::LazyObject</label>
+        <link refid="classQuantLib_1_1LazyObject"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>QuantLib::Observable</label>
+        <link refid="classQuantLib_1_1Observable"/>
+      </node>
+      <node id="6">
+        <label>QuantLib::Observer</label>
+        <link refid="classQuantLib_1_1Observer"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::OneAssetOption</label>
+        <link refid="classQuantLib_1_1OneAssetOption"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::Option</label>
+        <link refid="classQuantLib_1_1Option"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>QuantLib::VanillaOption</label>
+        <link refid="classQuantLib_1_1VanillaOption"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="7">
+        <label>QuantLib::Date</label>
+        <link refid="classQuantLib_1_1Date"/>
+      </node>
+      <node id="3">
+        <label>QuantLib::Instrument</label>
+        <link refid="classQuantLib_1_1Instrument"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>valuationDate_</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QuantLib::LazyObject</label>
+        <link refid="classQuantLib_1_1LazyObject"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>QuantLib::Observable</label>
+        <link refid="classQuantLib_1_1Observable"/>
+      </node>
+      <node id="6">
+        <label>QuantLib::Observer</label>
+        <link refid="classQuantLib_1_1Observer"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::OneAssetOption</label>
+        <link refid="classQuantLib_1_1OneAssetOption"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::Option</label>
+        <link refid="classQuantLib_1_1Option"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/instruments/oneassetoption.hpp" line="34" column="5" bodyfile="ql/instruments/oneassetoption.hpp" bodystart="34" bodyend="66"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Instrument_1a468edb294da268b097c91bf821084c07" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>additionalResults</name></member>
+      <member refid="classQuantLib_1_1Instrument_1a57d2b34e8625ab3d9ffa50c0c7931099" prot="protected" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>additionalResults_</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a02070ea7442d30625992c1711030d4b8" prot="protected" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>alwaysForward_</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a17c9433135a259e4776baec66204a484" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>alwaysForwardNotifications</name></member>
+      <member refid="classQuantLib_1_1Instrument_1a4c573c48f7eaead5042864ac0eb5b025" prot="protected" virt="virtual"><scope>QuantLib::OneAssetOption</scope><name>calculate</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a58b4986a80efa18634483a92c121e26e" prot="protected" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>calculated_</name></member>
+      <member refid="classQuantLib_1_1Option_1abaee7fc605354c444867545492cd5845a4f872c1ba3286c1af60485c2f4a4d3c1" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>Call</name></member>
+      <member refid="classQuantLib_1_1Observer_1acfbf794db3e7d5cfdea2cd517a195183" prot="public" virt="virtual"><scope>QuantLib::OneAssetOption</scope><name>deepUpdate</name></member>
+      <member refid="classQuantLib_1_1OneAssetOption_1ade9880b1f51bd7b94ea4d176e1cb259f" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>delta</name></member>
+      <member refid="classQuantLib_1_1OneAssetOption_1a0f2486ef271b5cfda29f59d6b21726d5" prot="protected" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>delta_</name></member>
+      <member refid="classQuantLib_1_1OneAssetOption_1ab01837864824837e07151b9d7b218e60" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>deltaForward</name></member>
+      <member refid="classQuantLib_1_1OneAssetOption_1a46ff6fe39afba281f273310751de4523" prot="protected" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>deltaForward_</name></member>
+      <member refid="classQuantLib_1_1OneAssetOption_1aa08f7265cbca4f4e026e4c80a545af64" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>dividendRho</name></member>
+      <member refid="classQuantLib_1_1OneAssetOption_1acec199353113b55df04b0b1758988f47" prot="protected" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>dividendRho_</name></member>
+      <member refid="classQuantLib_1_1OneAssetOption_1ac4b96563e0650f3f486402eca600707c" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>elasticity</name></member>
+      <member refid="classQuantLib_1_1OneAssetOption_1a62eee9c1e86fa3606446f7cb6f5b89fe" prot="protected" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>elasticity_</name></member>
+      <member refid="classQuantLib_1_1Instrument_1ac548cb61c864779db09bd0fac6ae7c81" prot="protected" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>engine_</name></member>
+      <member refid="classQuantLib_1_1Instrument_1a03502fb6c606b262c25acd94ff4c1e52" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>errorEstimate</name></member>
+      <member refid="classQuantLib_1_1Instrument_1abb8f4cfa7346fab7a2f3a8c8b4da30f3" prot="protected" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>errorEstimate_</name></member>
+      <member refid="classQuantLib_1_1Option_1a983bd3fd1eb1437bbdef1f3fa2adf899" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>exercise</name></member>
+      <member refid="classQuantLib_1_1Option_1a3e8fca2ab5ba46c45b99badeeacd7e7a" prot="protected" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>exercise_</name></member>
+      <member refid="classQuantLib_1_1OneAssetOption_1a7c9dadd5ebc375b371ca4e12c11d8c55" prot="public" virt="virtual"><scope>QuantLib::OneAssetOption</scope><name>fetchResults</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1afac6ee19c3107c453e1347dd8000e023" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>forwardFirstNotificationOnly</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a7157f41e83f2c5d924f5c5bafda04d1d" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>freeze</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a7bb721fe00c6854e602758aba629ab77" prot="protected" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>frozen_</name></member>
+      <member refid="classQuantLib_1_1OneAssetOption_1a0e6f1fae2659124479c772cc76fd93bb" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>gamma</name></member>
+      <member refid="classQuantLib_1_1OneAssetOption_1acd566d7bddc02fc9b822a27072ccad90" prot="protected" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>gamma_</name></member>
+      <member refid="classQuantLib_1_1Instrument_1a5e4c746cbf7999c83dc57f87e241f1cc" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>Instrument</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a0a7c5d42815a4e16ee2158e24dbfc748" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>isCalculated</name></member>
+      <member refid="classQuantLib_1_1OneAssetOption_1a504f249f48aad9a3053d6b40ae1d9e6d" prot="public" virt="virtual"><scope>QuantLib::OneAssetOption</scope><name>isExpired</name></member>
+      <member refid="classQuantLib_1_1Observable_1a07ad87c2c2599551463d0a529924dec2" prot="private" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::OneAssetOption</scope><name>iterator</name></member>
+      <member refid="classQuantLib_1_1Observer_1ad45fa6f7242ee763d17c714a3e8bb6d7" prot="public" virt="non-virtual" ambiguityscope="QuantLib::Observer::"><scope>QuantLib::OneAssetOption</scope><name>iterator</name></member>
+      <member refid="classQuantLib_1_1OneAssetOption_1ad5e7faea3a7aada73da20453f5bd67a9" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>itmCashProbability</name></member>
+      <member refid="classQuantLib_1_1OneAssetOption_1ac7be4123d83cf536d9dc812a138d87d1" prot="protected" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>itmCashProbability_</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a26f18f4ff7faaaebd8eae50e064b493e" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>LazyObject</name></member>
+      <member refid="classQuantLib_1_1Observable_1afb67478418efdb94382ac9d7ae904b94" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>notifyObservers</name></member>
+      <member refid="classQuantLib_1_1Instrument_1a5afdd9698267cd30ddd10cf01f3487b0" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>NPV</name></member>
+      <member refid="classQuantLib_1_1Instrument_1a997663780100d30ae59b14ac0285322d" prot="protected" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>NPV_</name></member>
+      <member refid="classQuantLib_1_1Observable_1ae0d19b21fab87a01f53586a6b5c15f85" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observable_1a942cf6a572bd95341433a6772c70cb29" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observable_1a6c35885ef344665ecdfac9b9f3a59c0e" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observer_1a85e3adb273b706155ea7e8bd98ee460b" prot="private" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>observables_</name></member>
+      <member refid="classQuantLib_1_1Observer_1a246072080d37c0cd180013417251c70b" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>Observer</name></member>
+      <member refid="classQuantLib_1_1Observer_1ae6e892e237db5ffe7acbef54360ef0e3" prot="public" virt="non-virtual" ambiguityscope="QuantLib::Observer::"><scope>QuantLib::OneAssetOption</scope><name>Observer</name></member>
+      <member refid="classQuantLib_1_1Observable_1a4da6017619203dcb570d5f4174f0beea" prot="private" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>observers_</name></member>
+      <member refid="classQuantLib_1_1OneAssetOption_1a48dbb5aa57ecc6dd55a3fd579f2a0163" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>OneAssetOption</name></member>
+      <member refid="classQuantLib_1_1Option_1a03bf400e04666eadc73907b0c716739e" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classQuantLib_1_1Observable_1ad1e086da62f05b4bc5eafa698ef6fbc3" prot="public" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::OneAssetOption</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1Observable_1ab45941c65068ab4c8d69a7d1a72beeb7" prot="public" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::OneAssetOption</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1Observer_1a40ad1a8bfb71e32b2916b370f3f9392c" prot="public" virt="non-virtual" ambiguityscope="QuantLib::Observer::"><scope>QuantLib::OneAssetOption</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1Option_1a53a00c225649c5da693898cb8b4b364b" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>Option</name></member>
+      <member refid="classQuantLib_1_1Option_1a85744e7ba21d0df6987f618893ea76ce" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>payoff</name></member>
+      <member refid="classQuantLib_1_1Option_1ada24896615e540bebf2b9623c3537def" prot="protected" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>payoff_</name></member>
+      <member refid="classQuantLib_1_1Instrument_1aad23f546bbca156a49a95ca2bee124c4" prot="protected" virt="virtual"><scope>QuantLib::OneAssetOption</scope><name>performCalculations</name></member>
+      <member refid="classQuantLib_1_1Option_1abaee7fc605354c444867545492cd5845aa96ffa37e51c7bbea13951f106dbd3c0" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>Put</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a70c9b24e50132408d8d9ce4f6674662a" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>recalculate</name></member>
+      <member refid="classQuantLib_1_1Observable_1a1eb87a03e7e1fd43377bce32e0c21bce" prot="private" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>registerObserver</name></member>
+      <member refid="classQuantLib_1_1Observer_1a312bbe4a5386f10a1584f3477b3c2709" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>registerWith</name></member>
+      <member refid="classQuantLib_1_1Observer_1a338928c4fe626f9ccf0b98ceb318853a" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>registerWithObservables</name></member>
+      <member refid="classQuantLib_1_1Instrument_1a266c15a12160a89f4f9707db85f9fa27" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>result</name></member>
+      <member refid="classQuantLib_1_1OneAssetOption_1a8cf492dbdd0ca337ee07f4dad8a45b59" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>rho</name></member>
+      <member refid="classQuantLib_1_1OneAssetOption_1a7a8b8781122df61dc8d29352d3337621" prot="protected" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>rho_</name></member>
+      <member refid="classQuantLib_1_1Observable_1a22e674e99fccc2da996de9620304f63c" prot="private" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::OneAssetOption</scope><name>set_type</name></member>
+      <member refid="classQuantLib_1_1Instrument_1a3444386491f179f64f4f0aac24997071" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>setPricingEngine</name></member>
+      <member refid="classQuantLib_1_1Option_1ade8dc0f95885cb8ac36364b24d29b057" prot="public" virt="virtual"><scope>QuantLib::OneAssetOption</scope><name>setupArguments</name></member>
+      <member refid="classQuantLib_1_1OneAssetOption_1ac550518bed1cbfd3d7a5f3a64d830099" prot="protected" virt="virtual"><scope>QuantLib::OneAssetOption</scope><name>setupExpired</name></member>
+      <member refid="classQuantLib_1_1OneAssetOption_1aeb6d5f004784c578a95e8a12a0d44e0d" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>strikeSensitivity</name></member>
+      <member refid="classQuantLib_1_1OneAssetOption_1a60b4335a10c0e0e080eee3685faee269" prot="protected" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>strikeSensitivity_</name></member>
+      <member refid="classQuantLib_1_1OneAssetOption_1a572436642dd053662198cd1ce7705d15" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>theta</name></member>
+      <member refid="classQuantLib_1_1OneAssetOption_1a06d44ade435f5aeced2117952abfda11" prot="protected" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>theta_</name></member>
+      <member refid="classQuantLib_1_1OneAssetOption_1a4dc87d12fff8ba2783a17e062d2195e1" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>thetaPerDay</name></member>
+      <member refid="classQuantLib_1_1OneAssetOption_1a2eaaa309e0848702e8c8328334edacdd" prot="protected" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>thetaPerDay_</name></member>
+      <member refid="classQuantLib_1_1Option_1abaee7fc605354c444867545492cd5845" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>Type</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a2e0e4786666453024b9d4e0761f2770b" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>unfreeze</name></member>
+      <member refid="classQuantLib_1_1Observable_1abd81ef8b87594aa6f9d2a5bd5de3e628" prot="private" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>unregisterObserver</name></member>
+      <member refid="classQuantLib_1_1Observer_1a297d13afa77b0e7e6deae3bab777180f" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>unregisterWith</name></member>
+      <member refid="classQuantLib_1_1Observer_1ab88925691aba7e7d96cc5188e94361ea" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>unregisterWithAll</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1adee2bf49be5c4c78736be293321a856d" prot="public" virt="virtual"><scope>QuantLib::OneAssetOption</scope><name>update</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1ae2c605a452787b38d6a64cf20395a075" prot="private" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>updating_</name></member>
+      <member refid="classQuantLib_1_1Instrument_1a53a0fc1adc70b73387ad53009725835d" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>valuationDate</name></member>
+      <member refid="classQuantLib_1_1Instrument_1aa60b558fc82f022e13535360ac4a6fed" prot="protected" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>valuationDate_</name></member>
+      <member refid="classQuantLib_1_1OneAssetOption_1a52b2075516ffa4961681a1d4e800a730" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>vega</name></member>
+      <member refid="classQuantLib_1_1OneAssetOption_1aaa99d88f04727d63bca4cb23e164b6e1" prot="protected" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>vega_</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a9d719c43bb627177a90d7d12324a2d6e" prot="public" virt="non-virtual"><scope>QuantLib::OneAssetOption</scope><name>~LazyObject</name></member>
+      <member refid="classQuantLib_1_1Observable_1a32093a7038e9bd8d28e5d378eca9f4f7" prot="public" virt="virtual"><scope>QuantLib::OneAssetOption</scope><name>~Observable</name></member>
+      <member refid="classQuantLib_1_1Observer_1a6b5c15445bbe598d34871f5a5a3ed671" prot="public" virt="virtual"><scope>QuantLib::OneAssetOption</scope><name>~Observer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

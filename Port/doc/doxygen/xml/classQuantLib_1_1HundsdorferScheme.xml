@@ -1,0 +1,264 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1HundsdorferScheme" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::HundsdorferScheme</compoundname>
+    <includes refid="hundsdorferscheme_8hpp" local="no">hundsdorferscheme.hpp</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classQuantLib_1_1HundsdorferScheme_1a42872b0974d50a464be1e56f590988d3" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1OperatorTraits" kindref="compound">OperatorTraits</ref>&lt; <ref refid="classQuantLib_1_1FdmLinearOp" kindref="compound">FdmLinearOp</ref> &gt;</type>
+        <definition>typedef OperatorTraits&lt;FdmLinearOp&gt; QuantLib::HundsdorferScheme::traits</definition>
+        <argsstring></argsstring>
+        <name>traits</name>
+        <qualifiedname>QuantLib::HundsdorferScheme::traits</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/hundsdorferscheme.hpp" line="41" column="32" bodyfile="ql/methods/finitedifferences/schemes/hundsdorferscheme.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1HundsdorferScheme_1a95d1393e9161072c874b3b80fe549493" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1OperatorTraits_1a7f201b1bba2d13ab18324758b388d586" kindref="member">traits::operator_type</ref></type>
+        <definition>typedef traits::operator_type QuantLib::HundsdorferScheme::operator_type</definition>
+        <argsstring></argsstring>
+        <name>operator_type</name>
+        <qualifiedname>QuantLib::HundsdorferScheme::operator_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/hundsdorferscheme.hpp" line="42" column="39" bodyfile="ql/methods/finitedifferences/schemes/hundsdorferscheme.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1HundsdorferScheme_1a0df75180eb9ecb5bfa2f0cb272ce4e5f" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1OperatorTraits_1a8b93c7b87d132e84abc2a170df02f9d2" kindref="member">traits::array_type</ref></type>
+        <definition>typedef traits::array_type QuantLib::HundsdorferScheme::array_type</definition>
+        <argsstring></argsstring>
+        <name>array_type</name>
+        <qualifiedname>QuantLib::HundsdorferScheme::array_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/hundsdorferscheme.hpp" line="43" column="36" bodyfile="ql/methods/finitedifferences/schemes/hundsdorferscheme.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1HundsdorferScheme_1a465c4d87595cac3a259490933947935c" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1OperatorTraits_1a36e452286290e4446d658377e6487d00" kindref="member">traits::bc_set</ref></type>
+        <definition>typedef traits::bc_set QuantLib::HundsdorferScheme::bc_set</definition>
+        <argsstring></argsstring>
+        <name>bc_set</name>
+        <qualifiedname>QuantLib::HundsdorferScheme::bc_set</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/hundsdorferscheme.hpp" line="44" column="32" bodyfile="ql/methods/finitedifferences/schemes/hundsdorferscheme.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1HundsdorferScheme_1a66c327b911d0e0ac3be3c47bdc0c0877" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1OperatorTraits_1afba7e06f490184e83ac81ac711dc7e1e" kindref="member">traits::condition_type</ref></type>
+        <definition>typedef traits::condition_type QuantLib::HundsdorferScheme::condition_type</definition>
+        <argsstring></argsstring>
+        <name>condition_type</name>
+        <qualifiedname>QuantLib::HundsdorferScheme::condition_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/hundsdorferscheme.hpp" line="45" column="40" bodyfile="ql/methods/finitedifferences/schemes/hundsdorferscheme.hpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1HundsdorferScheme_1a8b7aa96e806a25bcb0882a2c4111fb8c" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+        <definition>Time QuantLib::HundsdorferScheme::dt_</definition>
+        <argsstring></argsstring>
+        <name>dt_</name>
+        <qualifiedname>QuantLib::HundsdorferScheme::dt_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/hundsdorferscheme.hpp" line="57" column="14" bodyfile="ql/methods/finitedifferences/schemes/hundsdorferscheme.hpp" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1HundsdorferScheme_1abfd41a6c4eb0fa639129daa39b482bc8" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::HundsdorferScheme::theta_</definition>
+        <argsstring></argsstring>
+        <name>theta_</name>
+        <qualifiedname>QuantLib::HundsdorferScheme::theta_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/hundsdorferscheme.hpp" line="58" column="20" bodyfile="ql/methods/finitedifferences/schemes/hundsdorferscheme.hpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1HundsdorferScheme_1a951ced00d97c1195230b8d11ca0923d9" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::HundsdorferScheme::mu_</definition>
+        <argsstring></argsstring>
+        <name>mu_</name>
+        <qualifiedname>QuantLib::HundsdorferScheme::mu_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/hundsdorferscheme.hpp" line="59" column="20" bodyfile="ql/methods/finitedifferences/schemes/hundsdorferscheme.hpp" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1HundsdorferScheme_1a3a8c79496e2d13b677bd988e1fe0a7b3" prot="protected" static="no" mutable="no">
+        <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmLinearOpComposite" kindref="compound">FdmLinearOpComposite</ref> &gt;</type>
+        <definition>const ext::shared_ptr&lt;FdmLinearOpComposite&gt; QuantLib::HundsdorferScheme::map_</definition>
+        <argsstring></argsstring>
+        <name>map_</name>
+        <qualifiedname>QuantLib::HundsdorferScheme::map_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/hundsdorferscheme.hpp" line="61" column="31" bodyfile="ql/methods/finitedifferences/schemes/hundsdorferscheme.hpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1HundsdorferScheme_1a764f2c74cd059c66ed580dfd201aff17" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="classQuantLib_1_1BoundaryConditionSchemeHelper" kindref="compound">BoundaryConditionSchemeHelper</ref></type>
+        <definition>const BoundaryConditionSchemeHelper QuantLib::HundsdorferScheme::bcSet_</definition>
+        <argsstring></argsstring>
+        <name>bcSet_</name>
+        <qualifiedname>QuantLib::HundsdorferScheme::bcSet_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/hundsdorferscheme.hpp" line="62" column="45" bodyfile="ql/methods/finitedifferences/schemes/hundsdorferscheme.hpp" bodystart="62" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1HundsdorferScheme_1af459d4a407d7dbd2609a3c8bc3a8ec5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::HundsdorferScheme::HundsdorferScheme</definition>
+        <argsstring>(Real theta, Real mu, ext::shared_ptr&lt; FdmLinearOpComposite &gt; map, const bc_set &amp;bcSet=bc_set())</argsstring>
+        <name>HundsdorferScheme</name>
+        <qualifiedname>QuantLib::HundsdorferScheme::HundsdorferScheme</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>theta</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>mu</declname>
+        </param>
+        <param>
+          <type>ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmLinearOpComposite" kindref="compound">FdmLinearOpComposite</ref> &gt;</type>
+          <declname>map</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1HundsdorferScheme_1a465c4d87595cac3a259490933947935c" kindref="member">bc_set</ref> &amp;</type>
+          <declname>bcSet</declname>
+          <defval><ref refid="classQuantLib_1_1HundsdorferScheme_1a465c4d87595cac3a259490933947935c" kindref="member">bc_set</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/hundsdorferscheme.hpp" line="48" column="9" bodyfile="ql/methods/finitedifferences/schemes/hundsdorferscheme.cpp" bodystart="27" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1HundsdorferScheme_1aa50104a33c0d9a1873744b187820b19c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::HundsdorferScheme::step</definition>
+        <argsstring>(array_type &amp;a, Time t)</argsstring>
+        <name>step</name>
+        <qualifiedname>QuantLib::HundsdorferScheme::step</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1HundsdorferScheme_1a0df75180eb9ecb5bfa2f0cb272ce4e5f" kindref="member">array_type</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/hundsdorferscheme.hpp" line="53" column="14" bodyfile="ql/methods/finitedifferences/schemes/hundsdorferscheme.cpp" bodystart="33" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1HundsdorferScheme_1a8a6f7d8cdc0263f0f1308a02a849a1f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::HundsdorferScheme::setStep</definition>
+        <argsstring>(Time dt)</argsstring>
+        <name>setStep</name>
+        <qualifiedname>QuantLib::HundsdorferScheme::setStep</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/hundsdorferscheme.hpp" line="54" column="14" bodyfile="ql/methods/finitedifferences/schemes/hundsdorferscheme.cpp" bodystart="63" bodyend="65"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>QuantLib::OperatorTraits&lt; QuantLib::FdmLinearOp &gt;</label>
+        <link refid="classQuantLib_1_1OperatorTraits"/>
+      </node>
+      <node id="2">
+        <label>QuantLib::BoundaryConditionSchemeHelper</label>
+        <link refid="classQuantLib_1_1BoundaryConditionSchemeHelper"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>bcSet_</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::HundsdorferScheme</label>
+        <link refid="classQuantLib_1_1HundsdorferScheme"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>bcSet_</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/methods/finitedifferences/schemes/hundsdorferscheme.hpp" line="38" column="5" bodyfile="ql/methods/finitedifferences/schemes/hundsdorferscheme.hpp" bodystart="38" bodyend="63"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1HundsdorferScheme_1a0df75180eb9ecb5bfa2f0cb272ce4e5f" prot="public" virt="non-virtual"><scope>QuantLib::HundsdorferScheme</scope><name>array_type</name></member>
+      <member refid="classQuantLib_1_1HundsdorferScheme_1a465c4d87595cac3a259490933947935c" prot="public" virt="non-virtual"><scope>QuantLib::HundsdorferScheme</scope><name>bc_set</name></member>
+      <member refid="classQuantLib_1_1HundsdorferScheme_1a764f2c74cd059c66ed580dfd201aff17" prot="protected" virt="non-virtual"><scope>QuantLib::HundsdorferScheme</scope><name>bcSet_</name></member>
+      <member refid="classQuantLib_1_1HundsdorferScheme_1a66c327b911d0e0ac3be3c47bdc0c0877" prot="public" virt="non-virtual"><scope>QuantLib::HundsdorferScheme</scope><name>condition_type</name></member>
+      <member refid="classQuantLib_1_1HundsdorferScheme_1a8b7aa96e806a25bcb0882a2c4111fb8c" prot="protected" virt="non-virtual"><scope>QuantLib::HundsdorferScheme</scope><name>dt_</name></member>
+      <member refid="classQuantLib_1_1HundsdorferScheme_1af459d4a407d7dbd2609a3c8bc3a8ec5b" prot="public" virt="non-virtual"><scope>QuantLib::HundsdorferScheme</scope><name>HundsdorferScheme</name></member>
+      <member refid="classQuantLib_1_1HundsdorferScheme_1a3a8c79496e2d13b677bd988e1fe0a7b3" prot="protected" virt="non-virtual"><scope>QuantLib::HundsdorferScheme</scope><name>map_</name></member>
+      <member refid="classQuantLib_1_1HundsdorferScheme_1a951ced00d97c1195230b8d11ca0923d9" prot="protected" virt="non-virtual"><scope>QuantLib::HundsdorferScheme</scope><name>mu_</name></member>
+      <member refid="classQuantLib_1_1HundsdorferScheme_1a95d1393e9161072c874b3b80fe549493" prot="public" virt="non-virtual"><scope>QuantLib::HundsdorferScheme</scope><name>operator_type</name></member>
+      <member refid="classQuantLib_1_1HundsdorferScheme_1a8a6f7d8cdc0263f0f1308a02a849a1f2" prot="public" virt="non-virtual"><scope>QuantLib::HundsdorferScheme</scope><name>setStep</name></member>
+      <member refid="classQuantLib_1_1HundsdorferScheme_1aa50104a33c0d9a1873744b187820b19c" prot="public" virt="non-virtual"><scope>QuantLib::HundsdorferScheme</scope><name>step</name></member>
+      <member refid="classQuantLib_1_1HundsdorferScheme_1abfd41a6c4eb0fa639129daa39b482bc8" prot="protected" virt="non-virtual"><scope>QuantLib::HundsdorferScheme</scope><name>theta_</name></member>
+      <member refid="classQuantLib_1_1HundsdorferScheme_1a42872b0974d50a464be1e56f590988d3" prot="public" virt="non-virtual"><scope>QuantLib::HundsdorferScheme</scope><name>traits</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

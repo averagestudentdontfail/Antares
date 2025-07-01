@@ -1,0 +1,1235 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="qdplusamericanengine_8cpp" kind="file" language="C++">
+    <compoundname>qdplusamericanengine.cpp</compoundname>
+    <includes local="no">algorithm</includes>
+    <includes refid="exercise_8hpp" local="no">ql/exercise.hpp</includes>
+    <includes refid="null_8hpp" local="no">ql/utilities/null.hpp</includes>
+    <includes refid="math_2functional_8hpp" local="no">ql/math/functional.hpp</includes>
+    <includes refid="comparison_8hpp" local="no">ql/math/comparison.hpp</includes>
+    <includes refid="brent_8hpp" local="no">ql/math/solvers1d/brent.hpp</includes>
+    <includes refid="ridder_8hpp" local="no">ql/math/solvers1d/ridder.hpp</includes>
+    <includes refid="newton_8hpp" local="no">ql/math/solvers1d/newton.hpp</includes>
+    <includes refid="chebyshevinterpolation_8hpp" local="no">ql/math/interpolations/chebyshevinterpolation.hpp</includes>
+    <includes refid="blackcalculator_8hpp" local="no">ql/pricingengines/blackcalculator.hpp</includes>
+    <includes refid="qdplusamericanengine_8hpp" local="no">ql/pricingengines/vanilla/qdplusamericanengine.hpp</includes>
+    <includes refid="tanhsinhintegral_8hpp" local="no">ql/math/integrals/tanhsinhintegral.hpp</includes>
+    <includes refid="gausslobattointegral_8hpp" local="no">ql/math/integrals/gausslobattointegral.hpp</includes>
+    <incdepgraph>
+      <node id="63">
+        <label>ql/any.hpp</label>
+        <link refid="any_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+      </node>
+      <node id="73">
+        <label>ql/cashflow.hpp</label>
+        <link refid="cashflow_8hpp"/>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="72">
+        <label>ql/cashflows/dividend.hpp</label>
+        <link refid="dividend_8hpp"/>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="91">
+        <label>ql/compounding.hpp</label>
+        <link refid="compounding_8hpp"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>ql/config.ansi.hpp</label>
+        <link refid="config_8ansi_8hpp"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>ql/errors.hpp</label>
+        <link refid="errors_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="74">
+        <label>ql/event.hpp</label>
+        <link refid="event_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>ql/exercise.hpp</label>
+        <link refid="exercise_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>ql/functional.hpp</label>
+        <link refid="functional_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="89">
+        <label>ql/handle.hpp</label>
+        <link refid="handle_8hpp"/>
+        <childnode refid="59" relation="include">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>ql/instrument.hpp</label>
+        <link refid="instrument_8hpp"/>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="71">
+        <label>ql/instruments/dividendschedule.hpp</label>
+        <link refid="dividendschedule_8hpp"/>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="70">
+        <label>ql/instruments/oneassetoption.hpp</label>
+        <link refid="oneassetoption_8hpp"/>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>ql/instruments/payoffs.hpp</label>
+        <link refid="payoffs_8hpp"/>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+      </node>
+      <node id="69">
+        <label>ql/instruments/vanillaoption.hpp</label>
+        <link refid="vanillaoption_8hpp"/>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+      </node>
+      <node id="90">
+        <label>ql/interestrate.hpp</label>
+        <link refid="interestrate_8hpp"/>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>ql/math/array.hpp</label>
+        <link refid="array_8hpp"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>ql/math/comparison.hpp</label>
+        <link refid="comparison_8hpp"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="98">
+        <label>ql/math/distributions/normaldistribution.hpp</label>
+        <link refid="normaldistribution_8hpp"/>
+        <childnode refid="99" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="99">
+        <label>ql/math/errorfunction.hpp</label>
+        <link refid="errorfunction_8hpp"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>ql/math/functional.hpp</label>
+        <link refid="math_2functional_8hpp"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="102">
+        <label>ql/math/integrals/gausslobattointegral.hpp</label>
+        <link refid="gausslobattointegral_8hpp"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="101" relation="include">
+        </childnode>
+      </node>
+      <node id="101">
+        <label>ql/math/integrals/integral.hpp</label>
+        <link refid="integral_8hpp"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+      <node id="100">
+        <label>ql/math/integrals/tanhsinhintegral.hpp</label>
+        <link refid="tanhsinhintegral_8hpp"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="101" relation="include">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>ql/math/interpolation.hpp</label>
+        <link refid="interpolation_8hpp"/>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>ql/math/interpolations/chebyshevinterpolation.hpp</label>
+        <link refid="chebyshevinterpolation_8hpp"/>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>ql/math/interpolations/extrapolation.hpp</label>
+        <link refid="extrapolation_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="79">
+        <label>ql/math/matrix.hpp</label>
+        <link refid="matrix_8hpp"/>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>ql/math/solver1d.hpp</label>
+        <link refid="solver1d_8hpp"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>ql/math/solvers1d/brent.hpp</label>
+        <link refid="brent_8hpp"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>ql/math/solvers1d/newton.hpp</label>
+        <link refid="newton_8hpp"/>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>ql/math/solvers1d/newtonsafe.hpp</label>
+        <link refid="newtonsafe_8hpp"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>ql/math/solvers1d/ridder.hpp</label>
+        <link refid="ridder_8hpp"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>ql/mathconstants.hpp</label>
+        <link refid="mathconstants_8hpp"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>ql/option.hpp</label>
+        <link refid="option_8hpp"/>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="75">
+        <label>ql/optional.hpp</label>
+        <link refid="optional_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>ql/patterns/curiouslyrecurring.hpp</label>
+        <link refid="curiouslyrecurring_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>ql/patterns/lazyobject.hpp</label>
+        <link refid="lazyobject_8hpp"/>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="59">
+        <label>ql/patterns/observable.hpp</label>
+        <link refid="observable_8hpp"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>ql/patterns/singleton.hpp</label>
+        <link refid="singleton_8hpp"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="67">
+        <label>ql/patterns/visitor.hpp</label>
+        <link refid="visitor_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>ql/payoff.hpp</label>
+        <link refid="payoff_8hpp"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="62">
+        <label>ql/pricingengine.hpp</label>
+        <link refid="pricingengine_8hpp"/>
+        <childnode refid="59" relation="include">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>ql/pricingengines/blackcalculator.hpp</label>
+        <link refid="blackcalculator_8hpp"/>
+        <childnode refid="55" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ql/pricingengines/vanilla/qdplusamericanengine.cpp</label>
+        <link refid="qdplusamericanengine_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="100" relation="include">
+        </childnode>
+        <childnode refid="102" relation="include">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>ql/pricingengines/vanilla/qdplusamericanengine.hpp</label>
+        <link refid="qdplusamericanengine_8hpp"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="98" relation="include">
+        </childnode>
+      </node>
+      <node id="77">
+        <label>ql/processes/blackscholesprocess.hpp</label>
+        <link refid="blackscholesprocess_8hpp"/>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="97" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+      </node>
+      <node id="81">
+        <label>ql/processes/eulerdiscretization.hpp</label>
+        <link refid="eulerdiscretization_8hpp"/>
+        <childnode refid="78" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>ql/qldefines.hpp</label>
+        <link refid="qldefines_8hpp"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="93">
+        <label>ql/quote.hpp</label>
+        <link refid="quote_8hpp"/>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+      </node>
+      <node id="87">
+        <label>ql/settings.hpp</label>
+        <link refid="settings_8hpp"/>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>ql/shared_ptr.hpp</label>
+        <link refid="shared__ptr_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="78">
+        <label>ql/stochasticprocess.hpp</label>
+        <link refid="stochasticprocess_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+      </node>
+      <node id="83">
+        <label>ql/termstructure.hpp</label>
+        <link refid="termstructure_8hpp"/>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="95">
+        <label>ql/termstructures/volatility/equityfx/blackvoltermstructure.hpp</label>
+        <link refid="blackvoltermstructure_8hpp"/>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+      </node>
+      <node id="97">
+        <label>ql/termstructures/volatility/equityfx/localvoltermstructure.hpp</label>
+        <link refid="localvoltermstructure_8hpp"/>
+        <childnode refid="96" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+      </node>
+      <node id="96">
+        <label>ql/termstructures/voltermstructure.hpp</label>
+        <link refid="voltermstructure_8hpp"/>
+        <childnode refid="83" relation="include">
+        </childnode>
+      </node>
+      <node id="82">
+        <label>ql/termstructures/yieldtermstructure.hpp</label>
+        <link refid="yieldtermstructure_8hpp"/>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="85">
+        <label>ql/time/businessdayconvention.hpp</label>
+        <link refid="businessdayconvention_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="84">
+        <label>ql/time/calendar.hpp</label>
+        <link refid="calendar_8hpp"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ql/time/date.hpp</label>
+        <link refid="date_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="86">
+        <label>ql/time/daycounter.hpp</label>
+        <link refid="daycounter_8hpp"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="92">
+        <label>ql/time/daycounters/actual365fixed.hpp</label>
+        <link refid="actual365fixed_8hpp"/>
+        <childnode refid="86" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>ql/time/frequency.hpp</label>
+        <link refid="frequency_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>ql/time/period.hpp</label>
+        <link refid="period_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>ql/time/timeunit.hpp</label>
+        <link refid="timeunit_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>ql/time/weekday.hpp</label>
+        <link refid="weekday_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>ql/types.hpp</label>
+        <link refid="types_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>ql/userconfig.hpp</label>
+        <link refid="userconfig_8hpp"/>
+      </node>
+      <node id="20">
+        <label>ql/utilities/null.hpp</label>
+        <link refid="null_8hpp"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="88">
+        <label>ql/utilities/observablevalue.hpp</label>
+        <link refid="observablevalue_8hpp"/>
+        <childnode refid="59" relation="include">
+        </childnode>
+      </node>
+      <node id="80">
+        <label>ql/utilities/steppingiterator.hpp</label>
+        <link refid="steppingiterator_8hpp"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>algorithm</label>
+      </node>
+      <node id="64">
+        <label>any</label>
+      </node>
+      <node id="37">
+        <label>boost/assert.hpp</label>
+      </node>
+      <node id="8">
+        <label>boost/config.hpp</label>
+      </node>
+      <node id="38">
+        <label>boost/current_function.hpp</label>
+      </node>
+      <node id="32">
+        <label>boost/enable_shared_from_this.hpp</label>
+      </node>
+      <node id="31">
+        <label>boost/make_shared.hpp</label>
+      </node>
+      <node id="76">
+        <label>boost/optional.hpp</label>
+      </node>
+      <node id="30">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="9">
+        <label>boost/version.hpp</label>
+      </node>
+      <node id="13">
+        <label>cmath</label>
+      </node>
+      <node id="18">
+        <label>cstddef</label>
+      </node>
+      <node id="22">
+        <label>cstdint</label>
+      </node>
+      <node id="39">
+        <label>exception</label>
+      </node>
+      <node id="24">
+        <label>functional</label>
+      </node>
+      <node id="50">
+        <label>initializer_list</label>
+      </node>
+      <node id="41">
+        <label>iomanip</label>
+      </node>
+      <node id="15">
+        <label>iosfwd</label>
+      </node>
+      <node id="48">
+        <label>iterator</label>
+      </node>
+      <node id="14">
+        <label>limits</label>
+      </node>
+      <node id="65">
+        <label>map</label>
+      </node>
+      <node id="51">
+        <label>memory</label>
+      </node>
+      <node id="49">
+        <label>numeric</label>
+      </node>
+      <node id="61">
+        <label>set</label>
+      </node>
+      <node id="40">
+        <label>sstream</label>
+      </node>
+      <node id="25">
+        <label>string</label>
+      </node>
+      <node id="21">
+        <label>type_traits</label>
+      </node>
+      <node id="23">
+        <label>utility</label>
+      </node>
+      <node id="94">
+        <label>variant</label>
+      </node>
+      <node id="26">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classQuantLib_1_1QdPlusBoundaryEvaluator" prot="public">QuantLib::QdPlusBoundaryEvaluator</innerclass>
+    <innernamespace refid="namespaceQuantLib">QuantLib</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>c++;<sp/>tab-width:<sp/>4;<sp/>indent-tabs-mode:<sp/>nil;<sp/>c-basic-offset:<sp/>4<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2022<sp/>Klaus<sp/>Spanderen</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>QuantLib,<sp/>a<sp/>free-software/open-source<sp/>library</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>for<sp/>financial<sp/>quantitative<sp/>analysts<sp/>and<sp/>developers<sp/>-<sp/>http://quantlib.org/</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>QuantLib<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>QuantLib<sp/>license.<sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>copy<sp/>of<sp/>the<sp/>license<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>please<sp/>email</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>&lt;quantlib-dev@lists.sf.net&gt;.<sp/>The<sp/>license<sp/>is<sp/>also<sp/>available<sp/>online<sp/>at</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>&lt;http://quantlib.org/license.shtml&gt;.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"></highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the<sp/>license<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="exercise_8hpp" kindref="compound">ql/exercise.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="null_8hpp" kindref="compound">ql/utilities/null.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="math_2functional_8hpp" kindref="compound">ql/math/functional.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="comparison_8hpp" kindref="compound">ql/math/comparison.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="brent_8hpp" kindref="compound">ql/math/solvers1d/brent.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="ridder_8hpp" kindref="compound">ql/math/solvers1d/ridder.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="newton_8hpp" kindref="compound">ql/math/solvers1d/newton.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="chebyshevinterpolation_8hpp" kindref="compound">ql/math/interpolations/chebyshevinterpolation.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="blackcalculator_8hpp" kindref="compound">ql/pricingengines/blackcalculator.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="qdplusamericanengine_8hpp" kindref="compound">ql/pricingengines/vanilla/qdplusamericanengine.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="tanhsinhintegral_8hpp" kindref="compound">ql/math/integrals/tanhsinhintegral.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>QL_BOOST_HAS_TANH_SINH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="gausslobattointegral_8hpp" kindref="compound">ql/math/integrals/gausslobattointegral.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceQuantLib" kindref="compound">QuantLib</ref><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="classQuantLib_1_1QdPlusBoundaryEvaluator" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator" kindref="compound">QdPlusBoundaryEvaluator</ref><sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator" kindref="compound">QdPlusBoundaryEvaluator</ref>(</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>S,<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>strike,<sp/><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref><sp/>rf,<sp/><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref><sp/>dy,<sp/><ref refid="namespaceQuantLib_1ae3abfa256de5aa2b506ab6bda014e4dc" kindref="member">Volatility</ref><sp/>vol,<sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>t,<sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>T)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1afa441b30af7e377f9a7d72bd696dd81e" kindref="member">tau</ref>(t),<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a2707a2a4b7012f456a565adea9d86c33" kindref="member">K</ref>(strike),<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a0e9b8daa632250491d8d49dc392d3e2e" kindref="member">sigma</ref>(vol),<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a2820813d1719f3e8d6d3fd8d0c3a6e4c" kindref="member">sigma2</ref>(<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a0e9b8daa632250491d8d49dc392d3e2e" kindref="member">sigma</ref><sp/>*<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a0e9b8daa632250491d8d49dc392d3e2e" kindref="member">sigma</ref>),<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a44478dd8880879bb9859daefd2e5e105" kindref="member">v</ref>(<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a0e9b8daa632250491d8d49dc392d3e2e" kindref="member">sigma</ref><sp/>*<sp/>std::sqrt(<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1afa441b30af7e377f9a7d72bd696dd81e" kindref="member">tau</ref>)),<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1acdc0ac6791d25e469c63cfe69d2142e9" kindref="member">r</ref>(rf),</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aa84278113fa97d73479020ae1d23c50c" kindref="member">q</ref>(dy),<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aae9a5873bba268ad6e3d9f092df7ef7d" kindref="member">dr</ref>(std::exp(-<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1acdc0ac6791d25e469c63cfe69d2142e9" kindref="member">r</ref><sp/>*<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1afa441b30af7e377f9a7d72bd696dd81e" kindref="member">tau</ref>)),<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a9ec246b99f7b26219ce7098a97ec6901" kindref="member">dq</ref>(std::exp(-<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aa84278113fa97d73479020ae1d23c50c" kindref="member">q</ref><sp/>*<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1afa441b30af7e377f9a7d72bd696dd81e" kindref="member">tau</ref>)),</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aa9206c87a11119921b5589b9b2b2ca82" kindref="member">ddr</ref>((std::abs(<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1acdc0ac6791d25e469c63cfe69d2142e9" kindref="member">r</ref>*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1afa441b30af7e377f9a7d72bd696dd81e" kindref="member">tau</ref>)<sp/>&gt;<sp/>1e-5)?<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>(<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1acdc0ac6791d25e469c63cfe69d2142e9" kindref="member">r</ref>/(1-<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aae9a5873bba268ad6e3d9f092df7ef7d" kindref="member">dr</ref>))<sp/>:<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>(1/(<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1afa441b30af7e377f9a7d72bd696dd81e" kindref="member">tau</ref>*(1-0.5*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1acdc0ac6791d25e469c63cfe69d2142e9" kindref="member">r</ref>*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1afa441b30af7e377f9a7d72bd696dd81e" kindref="member">tau</ref>*(1-<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1acdc0ac6791d25e469c63cfe69d2142e9" kindref="member">r</ref>*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1afa441b30af7e377f9a7d72bd696dd81e" kindref="member">tau</ref>/3))))),</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1af97b0b8bdc562d8feb51259810ab649d" kindref="member">omega</ref>(2<sp/>*<sp/>(<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1acdc0ac6791d25e469c63cfe69d2142e9" kindref="member">r</ref><sp/>-<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aa84278113fa97d73479020ae1d23c50c" kindref="member">q</ref>)<sp/>/<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a2820813d1719f3e8d6d3fd8d0c3a6e4c" kindref="member">sigma2</ref>),</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aff7707c32ee62c225d7bf763c9a9e634" kindref="member">lambda</ref>(0.5<sp/>*</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(-(<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1af97b0b8bdc562d8feb51259810ab649d" kindref="member">omega</ref><sp/>-<sp/>1)<sp/>-<sp/>std::sqrt(<ref refid="namespaceQuantLib_1a24ba492c85497930da7ee785b05918b8" kindref="member">squared</ref>(<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1af97b0b8bdc562d8feb51259810ab649d" kindref="member">omega</ref><sp/>-<sp/>1)<sp/>+<sp/>8<sp/>*<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aa9206c87a11119921b5589b9b2b2ca82" kindref="member">ddr</ref><sp/>/<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a2820813d1719f3e8d6d3fd8d0c3a6e4c" kindref="member">sigma2</ref>))),</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a351eb47e87ebb24155989e940c5e1312" kindref="member">lambdaPrime</ref>(2<sp/>*<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aa9206c87a11119921b5589b9b2b2ca82" kindref="member">ddr</ref>*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aa9206c87a11119921b5589b9b2b2ca82" kindref="member">ddr</ref><sp/>/</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a2820813d1719f3e8d6d3fd8d0c3a6e4c" kindref="member">sigma2</ref><sp/>*<sp/>std::sqrt(<ref refid="namespaceQuantLib_1a24ba492c85497930da7ee785b05918b8" kindref="member">squared</ref>(<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1af97b0b8bdc562d8feb51259810ab649d" kindref="member">omega</ref><sp/>-<sp/>1)<sp/>+<sp/>8<sp/>*<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aa9206c87a11119921b5589b9b2b2ca82" kindref="member">ddr</ref><sp/>/<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a2820813d1719f3e8d6d3fd8d0c3a6e4c" kindref="member">sigma2</ref>))),</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1adfe6d7badb0bbf1b04d9c659916854bc" kindref="member">alpha</ref>(2<sp/>*<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aae9a5873bba268ad6e3d9f092df7ef7d" kindref="member">dr</ref><sp/>/<sp/>(<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a2820813d1719f3e8d6d3fd8d0c3a6e4c" kindref="member">sigma2</ref><sp/>*<sp/>(2<sp/>*<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aff7707c32ee62c225d7bf763c9a9e634" kindref="member">lambda</ref><sp/>+<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1af97b0b8bdc562d8feb51259810ab649d" kindref="member">omega</ref><sp/>-<sp/>1))),</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a7d3f262f70d685f68e0f7b83bd5d9d36" kindref="member">beta</ref>(<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1adfe6d7badb0bbf1b04d9c659916854bc" kindref="member">alpha</ref><sp/>*<sp/>(<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aa9206c87a11119921b5589b9b2b2ca82" kindref="member">ddr</ref><sp/>+<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a351eb47e87ebb24155989e940c5e1312" kindref="member">lambdaPrime</ref><sp/>/<sp/>(2<sp/>*<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aff7707c32ee62c225d7bf763c9a9e634" kindref="member">lambda</ref><sp/>+<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1af97b0b8bdc562d8feb51259810ab649d" kindref="member">omega</ref><sp/>-<sp/>1))<sp/>-<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aff7707c32ee62c225d7bf763c9a9e634" kindref="member">lambda</ref>),</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a6e48c04d3b68411d031ffe1d5d3c984e" kindref="member">xMax</ref>(<ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a09cc01d2bc72c4f667eb451de3575774" kindref="member">QdPlusAmericanEngine::xMax</ref>(strike,<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1acdc0ac6791d25e469c63cfe69d2142e9" kindref="member">r</ref>,<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aa84278113fa97d73479020ae1d23c50c" kindref="member">q</ref>)),</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a9a7df7e83b2932dc9c8ec58f25b05983" kindref="member">xMin</ref>(<ref refid="group__limitMacros_1ga4f2e6bcf6b19224bce1a5a6234286c17" kindref="member">QL_EPSILON</ref><sp/>*<sp/>1e4<sp/>*<sp/>std::min(0.5<sp/>*<sp/>(strike<sp/>+<sp/>S),<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a6e48c04d3b68411d031ffe1d5d3c984e" kindref="member">xMax</ref>)),</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a0ebe9cdf411c760359a95232e06d3f00" kindref="member">sc</ref>(<ref refid="classQuantLib_1_1Null" kindref="compound">Null&lt;Real&gt;</ref>())<sp/>{}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a2377f70b6601101e43a2c8b9bc933193" kindref="member">operator()</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>S)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a23edd06ac9a857b53df71167b66934bb" kindref="member">nrEvaluations</ref>;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(S<sp/>!=<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a0ebe9cdf411c760359a95232e06d3f00" kindref="member">sc</ref>)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1af9348c74762c3c4d1333c956faaf3465" kindref="member">preCalculate</ref>(S);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceQuantLib_1acba7cc9670305b8b6164bc87319313de" kindref="member">close_enough</ref>(<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a2707a2a4b7012f456a565adea9d86c33" kindref="member">K</ref>-S,<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a363dd87d2d48344852ce4ca4042e0baa" kindref="member">npv</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(1-<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a9ec246b99f7b26219ce7098a97ec6901" kindref="member">dq</ref>*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a794a2212c1cdb30e3489e7f486517de7" kindref="member">Phi_dp</ref>)*S<sp/>+<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1adfe6d7badb0bbf1b04d9c659916854bc" kindref="member">alpha</ref>*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a26aac5561b4e0cd14571148b81d447ae" kindref="member">theta</ref>/<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aae9a5873bba268ad6e3d9f092df7ef7d" kindref="member">dr</ref>;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>c0<sp/>=<sp/>-<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a7d3f262f70d685f68e0f7b83bd5d9d36" kindref="member">beta</ref><sp/>-<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aff7707c32ee62c225d7bf763c9a9e634" kindref="member">lambda</ref><sp/>+<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1adfe6d7badb0bbf1b04d9c659916854bc" kindref="member">alpha</ref>*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a26aac5561b4e0cd14571148b81d447ae" kindref="member">theta</ref>/(<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aae9a5873bba268ad6e3d9f092df7ef7d" kindref="member">dr</ref>*(<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a2707a2a4b7012f456a565adea9d86c33" kindref="member">K</ref>-S-<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a363dd87d2d48344852ce4ca4042e0baa" kindref="member">npv</ref>));</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(1-<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a9ec246b99f7b26219ce7098a97ec6901" kindref="member">dq</ref>*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a794a2212c1cdb30e3489e7f486517de7" kindref="member">Phi_dp</ref>)*S<sp/>+<sp/>(<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aff7707c32ee62c225d7bf763c9a9e634" kindref="member">lambda</ref>+c0)*(<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a2707a2a4b7012f456a565adea9d86c33" kindref="member">K</ref>-S-<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a363dd87d2d48344852ce4ca4042e0baa" kindref="member">npv</ref>);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1adc145e5ae984b84f12645fed3a6fec12" kindref="member">derivative</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>S)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(S<sp/>!=<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a0ebe9cdf411c760359a95232e06d3f00" kindref="member">sc</ref>)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1af9348c74762c3c4d1333c956faaf3465" kindref="member">preCalculate</ref>(S);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1<sp/>-<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a9ec246b99f7b26219ce7098a97ec6901" kindref="member">dq</ref>*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a794a2212c1cdb30e3489e7f486517de7" kindref="member">Phi_dp</ref><sp/>+<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a9ec246b99f7b26219ce7098a97ec6901" kindref="member">dq</ref>/<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a44478dd8880879bb9859daefd2e5e105" kindref="member">v</ref>*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a56af68d83a0dad5d5f4dfe5a59de8268" kindref="member">phi_dp</ref><sp/>+<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a7d3f262f70d685f68e0f7b83bd5d9d36" kindref="member">beta</ref>*(1-<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a9ec246b99f7b26219ce7098a97ec6901" kindref="member">dq</ref>*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a794a2212c1cdb30e3489e7f486517de7" kindref="member">Phi_dp</ref>)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1adfe6d7badb0bbf1b04d9c659916854bc" kindref="member">alpha</ref>/<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aae9a5873bba268ad6e3d9f092df7ef7d" kindref="member">dr</ref>*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a6282b40540fe3649d198f7001d282e6d" kindref="member">charm</ref>;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a4089d61d5dd9e3bd702c97c56f2c72f9" kindref="member">fprime2</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>S)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(S<sp/>!=<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a0ebe9cdf411c760359a95232e06d3f00" kindref="member">sc</ref>)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1af9348c74762c3c4d1333c956faaf3465" kindref="member">preCalculate</ref>(S);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>gamma<sp/>=<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a56af68d83a0dad5d5f4dfe5a59de8268" kindref="member">phi_dp</ref>*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a9ec246b99f7b26219ce7098a97ec6901" kindref="member">dq</ref>/(<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a44478dd8880879bb9859daefd2e5e105" kindref="member">v</ref>*S);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>colour<sp/>=<sp/>gamma*(<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aa84278113fa97d73479020ae1d23c50c" kindref="member">q</ref><sp/>+<sp/>(<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1acdc0ac6791d25e469c63cfe69d2142e9" kindref="member">r</ref>-<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aa84278113fa97d73479020ae1d23c50c" kindref="member">q</ref>)*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a9ffb9f58af61132830f2aa019cea6ad5" kindref="member">dp</ref>/<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a44478dd8880879bb9859daefd2e5e105" kindref="member">v</ref><sp/>+<sp/>(1-<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a9ffb9f58af61132830f2aa019cea6ad5" kindref="member">dp</ref>*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1abb50ede204e8de9876620407e0a57d59" kindref="member">dm</ref>)/(2*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1afa441b30af7e377f9a7d72bd696dd81e" kindref="member">tau</ref>));</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a9ec246b99f7b26219ce7098a97ec6901" kindref="member">dq</ref>*(<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a56af68d83a0dad5d5f4dfe5a59de8268" kindref="member">phi_dp</ref>/(S*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a44478dd8880879bb9859daefd2e5e105" kindref="member">v</ref>)<sp/>-<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a56af68d83a0dad5d5f4dfe5a59de8268" kindref="member">phi_dp</ref>*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a9ffb9f58af61132830f2aa019cea6ad5" kindref="member">dp</ref>/(S*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a44478dd8880879bb9859daefd2e5e105" kindref="member">v</ref>*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a44478dd8880879bb9859daefd2e5e105" kindref="member">v</ref>))</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a7d3f262f70d685f68e0f7b83bd5d9d36" kindref="member">beta</ref>*gamma<sp/>+<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1adfe6d7badb0bbf1b04d9c659916854bc" kindref="member">alpha</ref>/<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aae9a5873bba268ad6e3d9f092df7ef7d" kindref="member">dr</ref>*colour;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a0294892b58b0e0ab9bc6ccd024d5d149" kindref="member">xmin</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a9a7df7e83b2932dc9c8ec58f25b05983" kindref="member">xMin</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a6047a59f083543c298e5f4dacbe2b3e7" kindref="member">xmax</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a6e48c04d3b68411d031ffe1d5d3c984e" kindref="member">xMax</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a7018abcaadb126ed6ac9484acd7fc563" kindref="member">evaluations</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a23edd06ac9a857b53df71167b66934bb" kindref="member">nrEvaluations</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1af9348c74762c3c4d1333c956faaf3465" kindref="member">preCalculate</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>S)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S<sp/>=<sp/>std::max(<ref refid="group__limitMacros_1ga4f2e6bcf6b19224bce1a5a6234286c17" kindref="member">QL_EPSILON</ref>,<sp/>S);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a0ebe9cdf411c760359a95232e06d3f00" kindref="member">sc</ref><sp/>=<sp/>S;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a9ffb9f58af61132830f2aa019cea6ad5" kindref="member">dp</ref><sp/>=<sp/>std::log(S*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a9ec246b99f7b26219ce7098a97ec6901" kindref="member">dq</ref>/(<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a2707a2a4b7012f456a565adea9d86c33" kindref="member">K</ref>*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aae9a5873bba268ad6e3d9f092df7ef7d" kindref="member">dr</ref>))/<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a44478dd8880879bb9859daefd2e5e105" kindref="member">v</ref><sp/>+<sp/>0.5*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a44478dd8880879bb9859daefd2e5e105" kindref="member">v</ref>;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1abb50ede204e8de9876620407e0a57d59" kindref="member">dm</ref><sp/>=<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a9ffb9f58af61132830f2aa019cea6ad5" kindref="member">dp</ref><sp/>-<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a44478dd8880879bb9859daefd2e5e105" kindref="member">v</ref>;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a794a2212c1cdb30e3489e7f486517de7" kindref="member">Phi_dp</ref><sp/>=<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a6dde49904e163b9048c722092ac29e06" kindref="member">Phi</ref>(-<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a9ffb9f58af61132830f2aa019cea6ad5" kindref="member">dp</ref>);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a03b5b0f40ea0549a35e65f25d6776d8f" kindref="member">Phi_dm</ref><sp/>=<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a6dde49904e163b9048c722092ac29e06" kindref="member">Phi</ref>(-<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1abb50ede204e8de9876620407e0a57d59" kindref="member">dm</ref>);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a56af68d83a0dad5d5f4dfe5a59de8268" kindref="member">phi_dp</ref><sp/>=<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a126491810003358bd507a1488f1716bf" kindref="member">phi</ref>(<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a9ffb9f58af61132830f2aa019cea6ad5" kindref="member">dp</ref>);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a363dd87d2d48344852ce4ca4042e0baa" kindref="member">npv</ref><sp/>=<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aae9a5873bba268ad6e3d9f092df7ef7d" kindref="member">dr</ref>*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a2707a2a4b7012f456a565adea9d86c33" kindref="member">K</ref>*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a03b5b0f40ea0549a35e65f25d6776d8f" kindref="member">Phi_dm</ref><sp/>-<sp/>S*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a9ec246b99f7b26219ce7098a97ec6901" kindref="member">dq</ref>*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a794a2212c1cdb30e3489e7f486517de7" kindref="member">Phi_dp</ref>;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a26aac5561b4e0cd14571148b81d447ae" kindref="member">theta</ref><sp/>=<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1acdc0ac6791d25e469c63cfe69d2142e9" kindref="member">r</ref>*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a2707a2a4b7012f456a565adea9d86c33" kindref="member">K</ref>*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aae9a5873bba268ad6e3d9f092df7ef7d" kindref="member">dr</ref>*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a03b5b0f40ea0549a35e65f25d6776d8f" kindref="member">Phi_dm</ref><sp/>-<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aa84278113fa97d73479020ae1d23c50c" kindref="member">q</ref>*S*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a9ec246b99f7b26219ce7098a97ec6901" kindref="member">dq</ref>*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a794a2212c1cdb30e3489e7f486517de7" kindref="member">Phi_dp</ref><sp/>-<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a2820813d1719f3e8d6d3fd8d0c3a6e4c" kindref="member">sigma2</ref>*S/(2*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a44478dd8880879bb9859daefd2e5e105" kindref="member">v</ref>)*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a9ec246b99f7b26219ce7098a97ec6901" kindref="member">dq</ref>*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a56af68d83a0dad5d5f4dfe5a59de8268" kindref="member">phi_dp</ref>;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a6282b40540fe3649d198f7001d282e6d" kindref="member">charm</ref><sp/>=<sp/>-<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a9ec246b99f7b26219ce7098a97ec6901" kindref="member">dq</ref>*(<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a56af68d83a0dad5d5f4dfe5a59de8268" kindref="member">phi_dp</ref>*((<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1acdc0ac6791d25e469c63cfe69d2142e9" kindref="member">r</ref>-<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aa84278113fa97d73479020ae1d23c50c" kindref="member">q</ref>)/<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a44478dd8880879bb9859daefd2e5e105" kindref="member">v</ref><sp/>-<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1abb50ede204e8de9876620407e0a57d59" kindref="member">dm</ref>/(2*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1afa441b30af7e377f9a7d72bd696dd81e" kindref="member">tau</ref>))<sp/>+<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aa84278113fa97d73479020ae1d23c50c" kindref="member">q</ref>*<ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a794a2212c1cdb30e3489e7f486517de7" kindref="member">Phi_dp</ref>);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1CumulativeNormalDistribution" kindref="compound">CumulativeNormalDistribution</ref><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a6dde49904e163b9048c722092ac29e06" kindref="member">Phi</ref>;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1NormalDistribution" kindref="compound">NormalDistribution</ref><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a126491810003358bd507a1488f1716bf" kindref="member">phi</ref>;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1afa441b30af7e377f9a7d72bd696dd81e" kindref="member">tau</ref>;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a2707a2a4b7012f456a565adea9d86c33" kindref="member">K</ref>;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1ae3abfa256de5aa2b506ab6bda014e4dc" kindref="member">Volatility</ref><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a0e9b8daa632250491d8d49dc392d3e2e" kindref="member">sigma</ref>,<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a2820813d1719f3e8d6d3fd8d0c3a6e4c" kindref="member">sigma2</ref>,<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a44478dd8880879bb9859daefd2e5e105" kindref="member">v</ref>;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1acdc0ac6791d25e469c63cfe69d2142e9" kindref="member">r</ref>,<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aa84278113fa97d73479020ae1d23c50c" kindref="member">q</ref>;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a05e8e288a4bdedfe5b4e16d8cec14f1c" kindref="member">DiscountFactor</ref><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aae9a5873bba268ad6e3d9f092df7ef7d" kindref="member">dr</ref>,<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a9ec246b99f7b26219ce7098a97ec6901" kindref="member">dq</ref>,<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aa9206c87a11119921b5589b9b2b2ca82" kindref="member">ddr</ref>;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1af97b0b8bdc562d8feb51259810ab649d" kindref="member">omega</ref>,<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1aff7707c32ee62c225d7bf763c9a9e634" kindref="member">lambda</ref>,<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a351eb47e87ebb24155989e940c5e1312" kindref="member">lambdaPrime</ref>,<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1adfe6d7badb0bbf1b04d9c659916854bc" kindref="member">alpha</ref>,<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a7d3f262f70d685f68e0f7b83bd5d9d36" kindref="member">beta</ref>,<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a6e48c04d3b68411d031ffe1d5d3c984e" kindref="member">xMax</ref>,<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a9a7df7e83b2932dc9c8ec58f25b05983" kindref="member">xMin</ref>;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a23edd06ac9a857b53df71167b66934bb" kindref="member">nrEvaluations</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a0ebe9cdf411c760359a95232e06d3f00" kindref="member">sc</ref>,<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a9ffb9f58af61132830f2aa019cea6ad5" kindref="member">dp</ref>,<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1abb50ede204e8de9876620407e0a57d59" kindref="member">dm</ref>,<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a794a2212c1cdb30e3489e7f486517de7" kindref="member">Phi_dp</ref>,<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a03b5b0f40ea0549a35e65f25d6776d8f" kindref="member">Phi_dm</ref>,<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a56af68d83a0dad5d5f4dfe5a59de8268" kindref="member">phi_dp</ref>;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a363dd87d2d48344852ce4ca4042e0baa" kindref="member">npv</ref>,<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a26aac5561b4e0cd14571148b81d447ae" kindref="member">theta</ref>,<sp/><ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator_1a6282b40540fe3649d198f7001d282e6d" kindref="member">charm</ref>;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1detail_1_1QdPlusAddOnValue_1ae9655b514e95f9370882f7c7274c73b8" kindref="member">detail::QdPlusAddOnValue::QdPlusAddOnValue</ref>(</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>T,<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>S,<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>K,<sp/><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref><sp/>r,<sp/><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref><sp/>q,<sp/><ref refid="namespaceQuantLib_1ae3abfa256de5aa2b506ab6bda014e4dc" kindref="member">Volatility</ref><sp/>vol,</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>xmax,<sp/>ext::shared_ptr&lt;Interpolation&gt;<sp/>q_z)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>T_(T),<sp/>S_(S),<sp/>K_(K),<sp/>xmax_(xmax),</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>r_(r),<sp/>q_(q),<sp/>vol_(vol),<sp/>q_z_(<ref refid="namespacestd" kindref="compound">std</ref>::move(q_z))<sp/>{}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1detail_1_1QdPlusAddOnValue_1a9a5210b628b620e813f672ff8ad8005b" kindref="member">detail::QdPlusAddOnValue::operator()</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>z)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>t<sp/>=<sp/>z*z;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>q<sp/>=<sp/>(*q_z_)(2*std::sqrt(std::max(0.0,<sp/><ref refid="classQuantLib_1_1detail_1_1QdPlusAddOnValue_1adf005bf96fce3108a20d7e8877777533" kindref="member">T_</ref>-t)/<ref refid="classQuantLib_1_1detail_1_1QdPlusAddOnValue_1adf005bf96fce3108a20d7e8877777533" kindref="member">T_</ref>)<sp/>-<sp/>1,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>b_t<sp/>=<sp/><ref refid="classQuantLib_1_1detail_1_1QdPlusAddOnValue_1a79d138e6fe082b405acb276b1e120b10" kindref="member">xmax_</ref>*std::exp(-std::sqrt(std::max(0.0,<sp/>q)));</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>dr<sp/>=<sp/>std::exp(-<ref refid="classQuantLib_1_1detail_1_1QdPlusAddOnValue_1a0f3ce0a6991d3d798dcd4b12dc8f95c8" kindref="member">r_</ref>*t);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>dq<sp/>=<sp/>std::exp(-<ref refid="classQuantLib_1_1detail_1_1QdPlusAddOnValue_1a065f2bed380472f42601ac68410398fa" kindref="member">q_</ref>*t);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>v<sp/>=<sp/><ref refid="classQuantLib_1_1detail_1_1QdPlusAddOnValue_1aeb8811812d8b8c51f4830652fe59ab3e" kindref="member">vol_</ref>*std::sqrt(t);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>r;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(v<sp/>&gt;=<sp/><ref refid="group__limitMacros_1ga4f2e6bcf6b19224bce1a5a6234286c17" kindref="member">QL_EPSILON</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(b_t<sp/>&gt;<sp/><ref refid="group__limitMacros_1ga4f2e6bcf6b19224bce1a5a6234286c17" kindref="member">QL_EPSILON</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>dp<sp/>=<sp/>std::log(<ref refid="classQuantLib_1_1detail_1_1QdPlusAddOnValue_1a9b747e65bebd41c784453ac5e2d90211" kindref="member">S_</ref>*dq/(b_t*dr))/v<sp/>+<sp/>0.5*v;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>=<sp/>2*z*(<ref refid="classQuantLib_1_1detail_1_1QdPlusAddOnValue_1a0f3ce0a6991d3d798dcd4b12dc8f95c8" kindref="member">r_</ref>*<ref refid="classQuantLib_1_1detail_1_1QdPlusAddOnValue_1aad345acf5738b4d70287673a873a93fe" kindref="member">K_</ref>*dr*<ref refid="classQuantLib_1_1detail_1_1QdPlusAddOnValue_1a88f1e4bd716426e91278e68631eafec2" kindref="member">Phi_</ref>(-dp+v)<sp/>-<sp/><ref refid="classQuantLib_1_1detail_1_1QdPlusAddOnValue_1a065f2bed380472f42601ac68410398fa" kindref="member">q_</ref>*<ref refid="classQuantLib_1_1detail_1_1QdPlusAddOnValue_1a9b747e65bebd41c784453ac5e2d90211" kindref="member">S_</ref>*dq*<ref refid="classQuantLib_1_1detail_1_1QdPlusAddOnValue_1a88f1e4bd716426e91278e68631eafec2" kindref="member">Phi_</ref>(-dp));</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceQuantLib_1acba7cc9670305b8b6164bc87319313de" kindref="member">close_enough</ref>(<ref refid="classQuantLib_1_1detail_1_1QdPlusAddOnValue_1a9b747e65bebd41c784453ac5e2d90211" kindref="member">S_</ref>*dq,<sp/>b_t*dr))</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>=<sp/>z*(<ref refid="classQuantLib_1_1detail_1_1QdPlusAddOnValue_1a0f3ce0a6991d3d798dcd4b12dc8f95c8" kindref="member">r_</ref>*<ref refid="classQuantLib_1_1detail_1_1QdPlusAddOnValue_1aad345acf5738b4d70287673a873a93fe" kindref="member">K_</ref>*dr<sp/>-<sp/><ref refid="classQuantLib_1_1detail_1_1QdPlusAddOnValue_1a065f2bed380472f42601ac68410398fa" kindref="member">q_</ref>*<ref refid="classQuantLib_1_1detail_1_1QdPlusAddOnValue_1a9b747e65bebd41c784453ac5e2d90211" kindref="member">S_</ref>*dq);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(b_t*dr<sp/>&gt;<sp/><ref refid="classQuantLib_1_1detail_1_1QdPlusAddOnValue_1a9b747e65bebd41c784453ac5e2d90211" kindref="member">S_</ref>*dq)</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>=<sp/>2*z*(<ref refid="classQuantLib_1_1detail_1_1QdPlusAddOnValue_1a0f3ce0a6991d3d798dcd4b12dc8f95c8" kindref="member">r_</ref>*<ref refid="classQuantLib_1_1detail_1_1QdPlusAddOnValue_1aad345acf5738b4d70287673a873a93fe" kindref="member">K_</ref>*dr<sp/>-<sp/><ref refid="classQuantLib_1_1detail_1_1QdPlusAddOnValue_1a065f2bed380472f42601ac68410398fa" kindref="member">q_</ref>*<ref refid="classQuantLib_1_1detail_1_1QdPlusAddOnValue_1a9b747e65bebd41c784453ac5e2d90211" kindref="member">S_</ref>*dq);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1detail_1_1QdPutCallParityEngine_1a25106472fba4497fd8b3b92b6cae6942" kindref="member">detail::QdPutCallParityEngine::QdPutCallParityEngine</ref>(</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ext::shared_ptr&lt;GeneralizedBlackScholesProcess&gt;<sp/>process)</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>process_(<ref refid="namespacestd" kindref="compound">std</ref>::move(process))<sp/>{</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>registerWith(process_);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1detail_1_1QdPutCallParityEngine_1a84f99b788bca015a094a483803a26e4c" kindref="member">detail::QdPutCallParityEngine::calculate</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(<ref refid="classQuantLib_1_1GenericEngine_1ad2371cdbafa1989afb0e4733b1212c0d" kindref="member">arguments_</ref>.<ref refid="classQuantLib_1_1Option_1_1arguments_1aba6f9e789f52a09a9e27b4a5bffa13ce" kindref="member">exercise</ref>-&gt;type()<sp/>==<sp/><ref refid="classQuantLib_1_1Exercise_1add0610ca64f2c8be9355ac232cb2f322adf21ec9b24cabb0aa9ea49575f0d8486" kindref="member">Exercise::American</ref>,</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;not<sp/>an<sp/>American<sp/>option&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>payoff<sp/>=</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ext::dynamic_pointer_cast&lt;StrikedTypePayoff&gt;(<ref refid="classQuantLib_1_1GenericEngine_1ad2371cdbafa1989afb0e4733b1212c0d" kindref="member">arguments_</ref>.<ref refid="classQuantLib_1_1Option_1_1arguments_1a663a43a2a3878cf019e0c3a90123d6c4" kindref="member">payoff</ref>);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(payoff,<sp/></highlight><highlight class="stringliteral">&quot;non-striked<sp/>payoff<sp/>given&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>spot<sp/>=<sp/><ref refid="classQuantLib_1_1detail_1_1QdPutCallParityEngine_1a99454f72fb3e2c0770341e4602853f3b" kindref="member">process_</ref>-&gt;x0();</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(spot<sp/>&gt;=<sp/>0.0,<sp/></highlight><highlight class="stringliteral">&quot;negative<sp/>underlying<sp/>given&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>maturity<sp/>=<sp/><ref refid="classQuantLib_1_1GenericEngine_1ad2371cdbafa1989afb0e4733b1212c0d" kindref="member">arguments_</ref>.<ref refid="classQuantLib_1_1Option_1_1arguments_1aba6f9e789f52a09a9e27b4a5bffa13ce" kindref="member">exercise</ref>-&gt;lastDate();</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/><ref refid="namespaceQuantLib_1_1anonymous__namespace_02fdmmeshercomposite_8cpp_03_1a874329e3764c8f3ce58757813533f559" kindref="member">T</ref><sp/>=<sp/><ref refid="classQuantLib_1_1detail_1_1QdPutCallParityEngine_1a99454f72fb3e2c0770341e4602853f3b" kindref="member">process_</ref>-&gt;time(maturity);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>S<sp/>=<sp/><ref refid="classQuantLib_1_1detail_1_1QdPutCallParityEngine_1a99454f72fb3e2c0770341e4602853f3b" kindref="member">process_</ref>-&gt;x0();</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>K<sp/>=<sp/>payoff-&gt;strike();</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref><sp/>r<sp/>=<sp/>-std::log(<ref refid="classQuantLib_1_1detail_1_1QdPutCallParityEngine_1a99454f72fb3e2c0770341e4602853f3b" kindref="member">process_</ref>-&gt;riskFreeRate()-&gt;discount(maturity))/<ref refid="namespaceQuantLib_1_1anonymous__namespace_02fdmmeshercomposite_8cpp_03_1a874329e3764c8f3ce58757813533f559" kindref="member">T</ref>;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref><sp/>q<sp/>=<sp/>-std::log(<ref refid="classQuantLib_1_1detail_1_1QdPutCallParityEngine_1a99454f72fb3e2c0770341e4602853f3b" kindref="member">process_</ref>-&gt;dividendYield()-&gt;discount(maturity))/<ref refid="namespaceQuantLib_1_1anonymous__namespace_02fdmmeshercomposite_8cpp_03_1a874329e3764c8f3ce58757813533f559" kindref="member">T</ref>;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1ae3abfa256de5aa2b506ab6bda014e4dc" kindref="member">Volatility</ref><sp/>vol<sp/>=<sp/><ref refid="classQuantLib_1_1detail_1_1QdPutCallParityEngine_1a99454f72fb3e2c0770341e4602853f3b" kindref="member">process_</ref>-&gt;blackVolatility()-&gt;blackVol(T,<sp/>K);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(S<sp/>&gt;=<sp/>0,<sp/></highlight><highlight class="stringliteral">&quot;zero<sp/>or<sp/>positive<sp/>underlying<sp/>value<sp/>is<sp/>required&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(K<sp/>&gt;=<sp/>0,<sp/></highlight><highlight class="stringliteral">&quot;zero<sp/>or<sp/>positive<sp/>strike<sp/>is<sp/>required&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(vol<sp/>&gt;=<sp/>0,<sp/></highlight><highlight class="stringliteral">&quot;zero<sp/>or<sp/>positive<sp/>volatility<sp/>is<sp/>required&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(payoff-&gt;optionType()<sp/>==<sp/><ref refid="classQuantLib_1_1Option_1abaee7fc605354c444867545492cd5845aa96ffa37e51c7bbea13951f106dbd3c0" kindref="member">Option::Put</ref>)</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1GenericEngine_1a41281f2ea4990dbce90be1f9f2e231f6" kindref="member">results_</ref>.<ref refid="classQuantLib_1_1Instrument_1_1results_1a83e6af07c17237ade11121f8ad74b4e5" kindref="member">value</ref><sp/>=<sp/><ref refid="classQuantLib_1_1detail_1_1QdPutCallParityEngine_1a2f8113df036304db6ac2d91aa685e541" kindref="member">calculatePutWithEdgeCases</ref>(S,<sp/>K,<sp/>r,<sp/>q,<sp/>vol,<sp/>T);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(payoff-&gt;optionType()<sp/>==<sp/><ref refid="classQuantLib_1_1Option_1abaee7fc605354c444867545492cd5845a4f872c1ba3286c1af60485c2f4a4d3c1" kindref="member">Option::Call</ref>)</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1GenericEngine_1a41281f2ea4990dbce90be1f9f2e231f6" kindref="member">results_</ref>.<ref refid="classQuantLib_1_1Instrument_1_1results_1a83e6af07c17237ade11121f8ad74b4e5" kindref="member">value</ref><sp/>=<sp/><ref refid="classQuantLib_1_1detail_1_1QdPutCallParityEngine_1a2f8113df036304db6ac2d91aa685e541" kindref="member">calculatePutWithEdgeCases</ref>(K,<sp/>S,<sp/>q,<sp/>r,<sp/>vol,<sp/>T);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a8efe9cb3e67c8d0585e57b4d53c5d2fe" kindref="member">QL_FAIL</ref>(</highlight><highlight class="stringliteral">&quot;unknown<sp/>option<sp/>type&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1detail_1_1QdPutCallParityEngine_1a2f8113df036304db6ac2d91aa685e541" kindref="member">detail::QdPutCallParityEngine::calculatePutWithEdgeCases</ref>(</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>S,<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>K,<sp/><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref><sp/>r,<sp/><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref><sp/>q,<sp/><ref refid="namespaceQuantLib_1ae3abfa256de5aa2b506ab6bda014e4dc" kindref="member">Volatility</ref><sp/>vol,<sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>T)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceQuantLib_1a8c358786ff7da50c785ca5a003b1c9c1" kindref="member">close</ref>(K,<sp/>0.0))</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0.0;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceQuantLib_1a8c358786ff7da50c785ca5a003b1c9c1" kindref="member">close</ref>(S,<sp/>0.0))</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::max(K,<sp/>K*std::exp(-r*T));</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>&lt;=<sp/>0.0<sp/>&amp;&amp;<sp/>r<sp/>&lt;=<sp/>q)</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::max(0.0,</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BlackCalculator(<ref refid="classQuantLib_1_1Option_1abaee7fc605354c444867545492cd5845aa96ffa37e51c7bbea13951f106dbd3c0" kindref="member">Option::Put</ref>,<sp/>K,<sp/>S*std::exp((r-q)*T),</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vol*std::sqrt(T),<sp/>std::exp(-r*T)).value());</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceQuantLib_1a8c358786ff7da50c785ca5a003b1c9c1" kindref="member">close</ref>(vol,<sp/>0.0))<sp/>{</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>intrinsic<sp/>=<sp/>[&amp;](<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>t)<sp/><sp/>-&gt;<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>{</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::max(0.0,<sp/>K*std::exp(-r*t)-S*std::exp(-q*t));</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>npv0<sp/>=<sp/>intrinsic(0.0);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>npvT<sp/>=<sp/>intrinsic(T);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>extremT</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="namespaceQuantLib_1acba7cc9670305b8b6164bc87319313de" kindref="member">close_enough</ref>(r,<sp/>q)?<sp/><ref refid="group__limitMacros_1ga31675a375a563ed7a1bba05c664489af" kindref="member">QL_MAX_REAL</ref><sp/>:<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>(std::log(r*K/(q*S))/(r-q));</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(extremT<sp/>&gt;<sp/>0.0<sp/>&amp;&amp;<sp/>extremT<sp/>&lt;<sp/>T)</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::max({npv0,<sp/>npvT,<sp/>intrinsic(extremT)});</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::max(npv0,<sp/>npvT);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>calculatePut(S,<sp/>K,<sp/>r,<sp/>q,<sp/>vol,<sp/>T);</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a09cc01d2bc72c4f667eb451de3575774" kindref="member">QdPlusAmericanEngine::xMax</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>K,<sp/><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref><sp/>r,<sp/><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref><sp/>q)<sp/>{</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Table<sp/>2<sp/>from<sp/>Leif<sp/>Andersen,<sp/>Mark<sp/>Lake<sp/>(2021)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//&quot;Fast<sp/>American<sp/>Option<sp/>Pricing:<sp/>The<sp/>Double-Boundary<sp/>Case&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>&gt;<sp/>0.0<sp/>&amp;&amp;<sp/>q<sp/>&gt;<sp/>0.0)</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>K*std::min(1.0,<sp/>r/q);</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>&gt;<sp/>0.0<sp/>&amp;&amp;<sp/>q<sp/>&lt;=<sp/>0.0)</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>K;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>==<sp/>0.0<sp/>&amp;&amp;<sp/>q<sp/>&lt;<sp/>0.0)</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>K;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>==<sp/>0.0<sp/>&amp;&amp;<sp/>q<sp/>&gt;=<sp/>0.0)</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0.0;<sp/></highlight><highlight class="comment">//<sp/>Eurpoean<sp/>case</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>&lt;<sp/>0.0<sp/>&amp;&amp;<sp/>q<sp/>&gt;=<sp/>0.0)</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0.0;<sp/></highlight><highlight class="comment">//<sp/>European<sp/>case</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>&lt;<sp/>0.0<sp/>&amp;&amp;<sp/>q<sp/>&lt;<sp/>r)</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>K;<sp/></highlight><highlight class="comment">//<sp/>double<sp/>boundary<sp/>case</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>&lt;<sp/>0.0<sp/>&amp;&amp;<sp/>r<sp/>&lt;=<sp/>q<sp/>&amp;&amp;<sp/>q<sp/>&lt;<sp/>0.0)</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;<sp/></highlight><highlight class="comment">//<sp/>European<sp/>case</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a8efe9cb3e67c8d0585e57b4d53c5d2fe" kindref="member">QL_FAIL</ref>(</highlight><highlight class="stringliteral">&quot;internal<sp/>error&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1ab20f9804cb251718ba1101bb645256ce" kindref="member">QdPlusAmericanEngine::QdPlusAmericanEngine</ref>(</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ext::shared_ptr&lt;GeneralizedBlackScholesProcess&gt;<sp/>process,</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref><sp/>interpolationPoints,</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a86499519ae6cc65364fbaec705795469" kindref="member">QdPlusAmericanEngine::SolverType</ref><sp/>solverType,</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>eps,<sp/><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref><sp/>maxIter)</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>detail::QdPutCallParityEngine(<ref refid="namespacestd" kindref="compound">std</ref>::move(process)),</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>interpolationPoints_(interpolationPoints),</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>solverType_(solverType),</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>eps_(eps),</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>maxIter_((maxIter<sp/>==<sp/>Null&lt;<ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref>&gt;())<sp/>?<sp/>(</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(solverType<sp/>==<sp/>Newton</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||<sp/>solverType<sp/>==<sp/>Brent<sp/>||<sp/>solverType==<sp/>Ridder)?<sp/>100<sp/>:<sp/>10)</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>maxIter<sp/>)<sp/>{<sp/>}</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Solver&gt;</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a612e93452dc656411b29cc36e88f69a5" kindref="member">QdPlusAmericanEngine::buildInSolver</ref>(</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QdPlusBoundaryEvaluator&amp;<sp/>eval,</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Solver<sp/>solver,<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>S,<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>strike,<sp/><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref><sp/>maxIter,<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>guess)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>solver.setMaxEvaluations(maxIter);</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>solver.setLowerBound(eval.xmin());</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>fxmin<sp/>=<sp/>eval(eval.xmin());</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>xmax<sp/>=<sp/>std::max(0.5*(eval.xmax()<sp/>+<sp/>S),<sp/>eval.xmax());</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(eval(xmax)*fxmin<sp/>&gt;<sp/>0.0<sp/>&amp;&amp;<sp/>eval.evaluations()<sp/>&lt;<sp/><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a8fe71a4bd26968de5428eafe58ca1c35" kindref="member">maxIter_</ref>)</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xmax*=2;</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(guess<sp/>==<sp/>Null&lt;Real&gt;())</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>guess<sp/>=<sp/>0.5*(xmax<sp/>+<sp/>S);</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(guess<sp/>&gt;=<sp/>xmax)</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>guess<sp/>=<sp/>std::nextafter(xmax,<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>(-1));</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(guess<sp/>&lt;=<sp/>eval.xmin())</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>guess<sp/>=<sp/>std::nextafter(eval.xmin(),<sp/><ref refid="group__limitMacros_1ga31675a375a563ed7a1bba05c664489af" kindref="member">QL_MAX_REAL</ref>);</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>solver.solve(eval,<sp/><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1ab8686c69c034ff073e185135a4108fe4" kindref="member">eps_</ref>,<sp/>guess,<sp/>eval.xmin(),<sp/>xmax);</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/>std::pair&lt;Size,<sp/>Real&gt;<sp/><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1aa2573d6d0bd204e77d1d9ff8dbbcd491" kindref="member">QdPlusAmericanEngine::putExerciseBoundaryAtTau</ref>(</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>S,<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>K,<sp/><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref><sp/>r,<sp/><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref><sp/>q,</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1ae3abfa256de5aa2b506ab6bda014e4dc" kindref="member">Volatility</ref><sp/>vol,<sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>T,<sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>tau)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(tau<sp/>&lt;<sp/><ref refid="group__limitMacros_1ga4f2e6bcf6b19224bce1a5a6234286c17" kindref="member">QL_EPSILON</ref>)</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::pair&lt;Size,<sp/>Real&gt;(</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref>(0),<sp/><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a09cc01d2bc72c4f667eb451de3575774" kindref="member">xMax</ref>(K,<sp/>r,<sp/>q));</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QdPlusBoundaryEvaluator<sp/>eval(S,<sp/>K,<sp/>r,<sp/>q,<sp/>vol,<sp/>tau,<sp/>T);</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>x;</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(<ref refid="classQuantLib_1_1QdPlusAmericanEngine_1ab06531d5325bae158836eddcc534ee1c" kindref="member">solverType_</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a86499519ae6cc65364fbaec705795469a2999140f515b4f8b1c57edbe6d3b5e8a" kindref="member">Brent</ref>:</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a612e93452dc656411b29cc36e88f69a5" kindref="member">buildInSolver</ref>(eval,<sp/><ref refid="classQuantLib_1_1Brent" kindref="compound">QuantLib::Brent</ref>(),<sp/>S,<sp/>K,<sp/><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a8fe71a4bd26968de5428eafe58ca1c35" kindref="member">maxIter_</ref>);</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a86499519ae6cc65364fbaec705795469a8ed65c9fdf7419cf7e47b6b21bed83b1" kindref="member">Newton</ref>:</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a612e93452dc656411b29cc36e88f69a5" kindref="member">buildInSolver</ref>(eval,<sp/><ref refid="classQuantLib_1_1Newton" kindref="compound">QuantLib::Newton</ref>(),<sp/>S,<sp/>K,<sp/><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a8fe71a4bd26968de5428eafe58ca1c35" kindref="member">maxIter_</ref>);</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a86499519ae6cc65364fbaec705795469adecbc6e8ac40adf5066db49be14f965a" kindref="member">Ridder</ref>:</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a612e93452dc656411b29cc36e88f69a5" kindref="member">buildInSolver</ref>(eval,<sp/><ref refid="classQuantLib_1_1Ridder" kindref="compound">QuantLib::Ridder</ref>(),<sp/>S,<sp/>K,<sp/><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a8fe71a4bd26968de5428eafe58ca1c35" kindref="member">maxIter_</ref>);</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a86499519ae6cc65364fbaec705795469aa6314709c12930b3651ccc0d03e1159d" kindref="member">Halley</ref>:</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a86499519ae6cc65364fbaec705795469a628eafc2eb551083065905686d725df5" kindref="member">SuperHalley</ref>:</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>resultCloseEnough;</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>eval.xmax();</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>xOld,<sp/>fx;</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>xmin<sp/>=<sp/>eval.xmin();</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xOld<sp/>=<sp/>x;</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fx<sp/>=<sp/>eval(x);</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>fPrime<sp/>=<sp/>eval.derivative(x);</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>lf<sp/>=<sp/>fx*eval.fprime2(x)/(fPrime*fPrime);</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>step<sp/>=<sp/>(<ref refid="classQuantLib_1_1QdPlusAmericanEngine_1ab06531d5325bae158836eddcc534ee1c" kindref="member">solverType_</ref><sp/>==<sp/><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a86499519ae6cc65364fbaec705795469aa6314709c12930b3651ccc0d03e1159d" kindref="member">Halley</ref>)</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>?<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>(1/(1<sp/>-<sp/>0.5*lf)*fx/fPrime)</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>((1<sp/>+<sp/>0.5*lf/(1-lf))*fx/fPrime);</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>std::max(xmin,<sp/>x<sp/>-<sp/>step);</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>resultCloseEnough<sp/>=<sp/>std::fabs(x-xOld)<sp/>&lt;<sp/>0.5*<ref refid="classQuantLib_1_1QdPlusAmericanEngine_1ab8686c69c034ff073e185135a4108fe4" kindref="member">eps_</ref>;</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!resultCloseEnough<sp/>&amp;&amp;<sp/>eval.evaluations()<sp/>&lt;<sp/><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a8fe71a4bd26968de5428eafe58ca1c35" kindref="member">maxIter_</ref>);</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!resultCloseEnough<sp/>&amp;&amp;<sp/>!<ref refid="namespaceQuantLib_1a8c358786ff7da50c785ca5a003b1c9c1" kindref="member">close</ref>(std::fabs(fx),<sp/>0.0))<sp/>{</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a612e93452dc656411b29cc36e88f69a5" kindref="member">buildInSolver</ref>(eval,<sp/><ref refid="classQuantLib_1_1Brent" kindref="compound">QuantLib::Brent</ref>(),<sp/>S,<sp/>K,<sp/>10*<ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a8fe71a4bd26968de5428eafe58ca1c35" kindref="member">maxIter_</ref>,<sp/>x);</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a8efe9cb3e67c8d0585e57b4d53c5d2fe" kindref="member">QL_FAIL</ref>(</highlight><highlight class="stringliteral">&quot;unknown<sp/>solver<sp/>type&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::pair&lt;Size,<sp/>Real&gt;(eval.evaluations(),<sp/>x);</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/>ext::shared_ptr&lt;ChebyshevInterpolation&gt;</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a386831966e937f0c70763df289835efb" kindref="member">QdPlusAmericanEngine::getPutExerciseBoundary</ref>(</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>S,<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>K,<sp/><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref><sp/>r,<sp/><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref><sp/>q,<sp/><ref refid="namespaceQuantLib_1ae3abfa256de5aa2b506ab6bda014e4dc" kindref="member">Volatility</ref><sp/>vol,<sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>T)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>xmax<sp/>=<sp/><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a09cc01d2bc72c4f667eb451de3575774" kindref="member">xMax</ref>(K,<sp/>r,<sp/>q);</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"></highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ext::make_shared&lt;ChebyshevInterpolation&gt;(</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a0a325ee820ed6a4dfbab1fdba2955f19" kindref="member">interpolationPoints_</ref>,</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[&amp;,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">](<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>z)<sp/>{</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>x_sq<sp/>=<sp/>0.25*<ref refid="namespaceQuantLib_1_1anonymous__namespace_02fdmmeshercomposite_8cpp_03_1a874329e3764c8f3ce58757813533f559" kindref="member">T</ref>*<ref refid="namespaceQuantLib_1a24ba492c85497930da7ee785b05918b8" kindref="member">squared</ref>(1+z);</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a24ba492c85497930da7ee785b05918b8" kindref="member">squared</ref>(std::log(</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classQuantLib_1_1QdPlusAmericanEngine_1aa2573d6d0bd204e77d1d9ff8dbbcd491" kindref="member">putExerciseBoundaryAtTau</ref>(S,<sp/>K,<sp/>r,<sp/>q,<sp/>vol,<sp/>T,<sp/>x_sq)</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.second/xmax));</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1ChebyshevInterpolation_1a963352c9dd9919042be927332fb7d79babcd2e8842d53db4c56b511c788de4307" kindref="member">ChebyshevInterpolation::SecondKind</ref></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1ae8b9dcef200a5fc1a8ee76e5a2ff78cd" kindref="member">QdPlusAmericanEngine::calculatePut</ref>(</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>S,<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>K,<sp/><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref><sp/>r,<sp/><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref><sp/>q,<sp/><ref refid="namespaceQuantLib_1ae3abfa256de5aa2b506ab6bda014e4dc" kindref="member">Volatility</ref><sp/>vol,<sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>T)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"></highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>&lt;<sp/>0.0<sp/>&amp;&amp;<sp/>q<sp/>&lt;<sp/>r)</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a8efe9cb3e67c8d0585e57b4d53c5d2fe" kindref="member">QL_FAIL</ref>(</highlight><highlight class="stringliteral">&quot;double-boundary<sp/>case<sp/>q&lt;r&lt;0<sp/>for<sp/>a<sp/>put<sp/>option<sp/>is<sp/>given&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ext::shared_ptr&lt;Interpolation&gt;<sp/>q_z</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a386831966e937f0c70763df289835efb" kindref="member">getPutExerciseBoundary</ref>(S,<sp/>K,<sp/>r,<sp/>q,<sp/>vol,<sp/>T);</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>xmax<sp/>=<sp/><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a09cc01d2bc72c4f667eb451de3575774" kindref="member">xMax</ref>(K,<sp/>r,<sp/>q);</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>detail::QdPlusAddOnValue<sp/>aov(T,<sp/>S,<sp/>K,<sp/>r,<sp/>q,<sp/>vol,<sp/>xmax,<sp/>q_z);</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"></highlight></codeline>
+<codeline lineno="376"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>QL_BOOST_HAS_TANH_SINH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>addOn<sp/>=<sp/>TanhSinhIntegral(<ref refid="classQuantLib_1_1QdPlusAmericanEngine_1ab8686c69c034ff073e185135a4108fe4" kindref="member">eps_</ref>)(aov,<sp/>0.0,<sp/>std::sqrt(T));</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>addOn<sp/>=<sp/>GaussLobattoIntegral(100000,<sp/><ref refid="group__limitMacros_1ga31675a375a563ed7a1bba05c664489af" kindref="member">QL_MAX_REAL</ref>,<sp/>0.1*<ref refid="classQuantLib_1_1QdPlusAmericanEngine_1ab8686c69c034ff073e185135a4108fe4" kindref="member">eps_</ref>)</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(aov,<sp/>0.0,<sp/>std::sqrt(T));</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="382"><highlight class="normal"></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(addOn<sp/>&gt;<sp/>-10*<ref refid="classQuantLib_1_1QdPlusAmericanEngine_1ab8686c69c034ff073e185135a4108fe4" kindref="member">eps_</ref>,</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;negative<sp/>early<sp/>exercise<sp/>value<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>addOn);</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"></highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>europeanValue<sp/>=<sp/>std::max(</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0,</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BlackCalculator(</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1Option_1abaee7fc605354c444867545492cd5845aa96ffa37e51c7bbea13951f106dbd3c0" kindref="member">Option::Put</ref>,<sp/>K,</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S*std::exp((r-q)*T),</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vol*std::sqrt(T),<sp/>std::exp(-r*T)).value()</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"></highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>europeanValue<sp/>+<sp/>std::max(0.0,<sp/>addOn);</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="396"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="ql/pricingengines/vanilla/qdplusamericanengine.cpp"/>
+  </compounddef>
+</doxygen>

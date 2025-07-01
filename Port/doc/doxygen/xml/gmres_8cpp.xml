@@ -1,0 +1,416 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="gmres_8cpp" kind="file" language="C++">
+    <compoundname>gmres.cpp</compoundname>
+    <includes refid="math_2functional_8hpp" local="no">ql/math/functional.hpp</includes>
+    <includes refid="gmres_8hpp" local="no">ql/math/matrixutilities/gmres.hpp</includes>
+    <includes refid="qrdecomposition_8hpp" local="no">ql/math/matrixutilities/qrdecomposition.hpp</includes>
+    <includes local="no">numeric</includes>
+    <includes local="no">utility</includes>
+    <incdepgraph>
+      <node id="7">
+        <label>ql/config.ansi.hpp</label>
+        <link refid="config_8ansi_8hpp"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>ql/errors.hpp</label>
+        <link refid="errors_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>ql/functional.hpp</label>
+        <link refid="functional_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>ql/math/array.hpp</label>
+        <link refid="array_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ql/math/functional.hpp</label>
+        <link refid="math_2functional_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>ql/math/matrix.hpp</label>
+        <link refid="matrix_8hpp"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ql/math/matrixutilities/gmres.cpp</label>
+        <link refid="gmres_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>ql/math/matrixutilities/gmres.hpp</label>
+        <link refid="gmres_8hpp"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>ql/math/matrixutilities/qrdecomposition.hpp</label>
+        <link refid="qrdecomposition_8hpp"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>ql/mathconstants.hpp</label>
+        <link refid="mathconstants_8hpp"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ql/qldefines.hpp</label>
+        <link refid="qldefines_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>ql/shared_ptr.hpp</label>
+        <link refid="shared__ptr_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>ql/types.hpp</label>
+        <link refid="types_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>ql/userconfig.hpp</label>
+        <link refid="userconfig_8hpp"/>
+      </node>
+      <node id="13">
+        <label>ql/utilities/null.hpp</label>
+        <link refid="null_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>ql/utilities/steppingiterator.hpp</label>
+        <link refid="steppingiterator_8hpp"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>algorithm</label>
+      </node>
+      <node id="23">
+        <label>boost/assert.hpp</label>
+      </node>
+      <node id="5">
+        <label>boost/config.hpp</label>
+      </node>
+      <node id="24">
+        <label>boost/current_function.hpp</label>
+      </node>
+      <node id="22">
+        <label>boost/enable_shared_from_this.hpp</label>
+      </node>
+      <node id="21">
+        <label>boost/make_shared.hpp</label>
+      </node>
+      <node id="20">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="6">
+        <label>boost/version.hpp</label>
+      </node>
+      <node id="10">
+        <label>cmath</label>
+      </node>
+      <node id="12">
+        <label>cstddef</label>
+      </node>
+      <node id="25">
+        <label>exception</label>
+      </node>
+      <node id="29">
+        <label>functional</label>
+      </node>
+      <node id="33">
+        <label>initializer_list</label>
+      </node>
+      <node id="34">
+        <label>iomanip</label>
+      </node>
+      <node id="28">
+        <label>iterator</label>
+      </node>
+      <node id="11">
+        <label>limits</label>
+      </node>
+      <node id="37">
+        <label>list</label>
+      </node>
+      <node id="35">
+        <label>memory</label>
+      </node>
+      <node id="31">
+        <label>numeric</label>
+      </node>
+      <node id="26">
+        <label>sstream</label>
+      </node>
+      <node id="27">
+        <label>string</label>
+      </node>
+      <node id="14">
+        <label>type_traits</label>
+      </node>
+      <node id="15">
+        <label>utility</label>
+      </node>
+      <node id="32">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceQuantLib">QuantLib</innernamespace>
+    <briefdescription>
+<para>generalized minimal residual method </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>c++;<sp/>tab-width:<sp/>4;<sp/>indent-tabs-mode:<sp/>nil;<sp/>c-basic-offset:<sp/>4<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2017<sp/>Klaus<sp/>Spanderen</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>QuantLib,<sp/>a<sp/>free-software/open-source<sp/>library</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>for<sp/>financial<sp/>quantitative<sp/>analysts<sp/>and<sp/>developers<sp/>-<sp/>http://quantlib.org/</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>QuantLib<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>QuantLib<sp/>license.<sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>copy<sp/>of<sp/>the<sp/>license0/0<sp/>iee<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>please<sp/>email</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>&lt;quantlib-dev@lists.sf.net&gt;.<sp/>The<sp/>license<sp/>is<sp/>also<sp/>available<sp/>online<sp/>at</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>&lt;http://quantlib.org/license.shtml&gt;.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"></highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the<sp/>license<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="math_2functional_8hpp" kindref="compound">ql/math/functional.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="gmres_8hpp" kindref="compound">ql/math/matrixutilities/gmres.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="qrdecomposition_8hpp" kindref="compound">ql/math/matrixutilities/qrdecomposition.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;numeric&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceQuantLib" kindref="compound">QuantLib</ref><sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1GMRES_1a10788a14788ba5107334caa566b44530" kindref="member">GMRES::GMRES</ref>(<ref refid="classQuantLib_1_1GMRES_1af069357528a26c96966992f6f8bac66e" kindref="member">GMRES::MatrixMult</ref><sp/>A,<sp/><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref><sp/>maxIter,<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>relTol,<sp/><ref refid="classQuantLib_1_1GMRES_1af069357528a26c96966992f6f8bac66e" kindref="member">GMRES::MatrixMult</ref><sp/>preConditioner)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>A_(<ref refid="namespacestd" kindref="compound">std</ref>::move(A)),<sp/>M_(<ref refid="namespacestd" kindref="compound">std</ref>::move(preConditioner)),<sp/>maxIter_(maxIter),<sp/>relTol_(relTol)<sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(maxIter_<sp/>&gt;<sp/>0,<sp/></highlight><highlight class="stringliteral">&quot;maxIter<sp/>must<sp/>be<sp/>greater<sp/>than<sp/>zero&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>GMRESResult<sp/>GMRES::solve(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Array&amp;<sp/>b,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Array&amp;<sp/>x0)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GMRESResult<sp/>result<sp/>=<sp/>solveImpl(b,<sp/>x0);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(result.errors.back()<sp/>&lt;<sp/>relTol_,<sp/></highlight><highlight class="stringliteral">&quot;could<sp/>not<sp/>converge&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>GMRESResult<sp/>GMRES::solveWithRestart(</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Size<sp/>restart,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Array&amp;<sp/>b,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Array&amp;<sp/>x0)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GMRESResult<sp/>result<sp/>=<sp/>solveImpl(b,<sp/>x0);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::list&lt;Real&gt;<sp/>errors<sp/>=<sp/>result.errors;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(Size<sp/>i=0;<sp/>i<sp/>&lt;<sp/>restart-1<sp/>&amp;&amp;<sp/>result.errors.back()<sp/>&gt;=<sp/>relTol_;++i)<sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>=<sp/>solveImpl(b,<sp/>result.x);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>errors.insert(</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>errors.end(),<sp/>result.errors.begin(),<sp/>result.errors.end());</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(errors.back()<sp/>&lt;<sp/>relTol_,<sp/></highlight><highlight class="stringliteral">&quot;could<sp/>not<sp/>converge&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result.errors<sp/>=<sp/>errors;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>GMRESResult<sp/>GMRES::solveImpl(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Array&amp;<sp/>b,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Array&amp;<sp/>x0)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>bn<sp/>=<sp/><ref refid="namespaceQuantLib_1a4fe258b9e084694e3f45a68a86aa38e1" kindref="member">Norm2</ref>(b);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bn<sp/>==<sp/>0.0)<sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GMRESResult<sp/>result<sp/>=<sp/>{<sp/>std::list&lt;Real&gt;(1,<sp/>0.0),<sp/>b<sp/>};</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array<sp/>x<sp/>=<sp/>((!x0.empty())<sp/>?<sp/>x0<sp/>:<sp/>Array(b.size(),<sp/>0.0));</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array<sp/>r<sp/>=<sp/>b<sp/>-<sp/>A_(x);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>g<sp/>=<sp/><ref refid="namespaceQuantLib_1a4fe258b9e084694e3f45a68a86aa38e1" kindref="member">Norm2</ref>(r);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(g/bn<sp/>&lt;<sp/>relTol_)<sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GMRESResult<sp/>result<sp/>=<sp/>{<sp/>std::list&lt;Real&gt;(1,<sp/>g/bn),<sp/>x<sp/>};</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;Array&gt;<sp/>v(1,<sp/>r/g);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;Array&gt;<sp/>h(1,<sp/>Array(maxIter_,<sp/>0.0));</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;Real&gt;<sp/><sp/>c(maxIter_+1),<sp/>s(maxIter_+1),<sp/>z(maxIter_+1);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z[0]<sp/>=<sp/>g;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::list&lt;Real&gt;<sp/>errors(1,<sp/>g/bn);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(Size<sp/>j=0;<sp/>j<sp/>&lt;<sp/>maxIter_<sp/>&amp;&amp;<sp/>errors.back()<sp/>&gt;=<sp/>relTol_;<sp/>++j)<sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>h.emplace_back(maxIter_,<sp/>0.0);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array<sp/>w<sp/>=<sp/>A_(!M_<sp/>?<sp/>v[j]<sp/>:<sp/>M_(v[j]));</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(Size<sp/>i=0;<sp/>i<sp/>&lt;=<sp/>j;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>h[i][j]<sp/>=<sp/><ref refid="namespaceQuantLib_1aa4a9ece3a7c58b84a51c185798672654" kindref="member">DotProduct</ref>(w,<sp/>v[i]);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>w<sp/>-=<sp/>h[i][j]<sp/>*<sp/>v[i];</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>h[j+1][j]<sp/>=<sp/><ref refid="namespaceQuantLib_1a4fe258b9e084694e3f45a68a86aa38e1" kindref="member">Norm2</ref>(w);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(h[j+1][j]<sp/>&lt;<sp/><ref refid="group__limitMacros_1ga4f2e6bcf6b19224bce1a5a6234286c17" kindref="member">QL_EPSILON</ref>*<ref refid="group__limitMacros_1ga4f2e6bcf6b19224bce1a5a6234286c17" kindref="member">QL_EPSILON</ref>)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v.push_back(w<sp/>/<sp/>h[j+1][j]);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(Size<sp/>i=0;<sp/>i<sp/>&lt;<sp/>j;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>h0<sp/>=<sp/>c[i]*h[i][j]<sp/>+<sp/>s[i]*h[i+1][j];</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>h1<sp/>=-s[i]*h[i][j]<sp/>+<sp/>c[i]*h[i+1][j];</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>h[i][j]<sp/><sp/><sp/>=<sp/>h0;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>h[i+1][j]<sp/>=<sp/>h1;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>nu<sp/>=<sp/>std::sqrt(<ref refid="namespaceQuantLib_1a24ba492c85497930da7ee785b05918b8" kindref="member">squared</ref>(h[j][j])<sp/>+<sp/><ref refid="namespaceQuantLib_1a24ba492c85497930da7ee785b05918b8" kindref="member">squared</ref>(h[j+1][j]));</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c[j]<sp/>=<sp/>h[j][j]/nu;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s[j]<sp/>=<sp/>h[j+1][j]/nu;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>h[j][j]<sp/><sp/><sp/>=<sp/>nu;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>h[j+1][j]<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z[j+1]<sp/>=<sp/>-s[j]*z[j];</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z[j]<sp/>=<sp/>c[j]<sp/>*<sp/>z[j];</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>errors.push_back(std::fabs(z[j+1]/bn));</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref><sp/>k<sp/>=<sp/>v.size()-1;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array<sp/>y(k,<sp/>0.0);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y[k-1]=z[k-1]/h[k-1][k-1];</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(Integer<sp/>i=k-2;<sp/>i<sp/>&gt;=<sp/>0;<sp/>--i)<sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y[i]<sp/>=<sp/>(z[i]<sp/>-<sp/>std::inner_product(</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>h[i].begin()+i+1,<sp/>h[i].begin()+k,<sp/>y.begin()+i+1,<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>(0.0)))/h[i][i];</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array<sp/>xm<sp/>=<sp/>std::inner_product(</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v.begin(),<sp/>v.begin()+k,<sp/>y.begin(),<sp/>Array(x.size(),<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>(0.0)));</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xm<sp/>=<sp/>x<sp/>+<sp/>(!M_<sp/>?<sp/>xm<sp/>:<sp/>M_(xm));</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GMRESResult<sp/>result<sp/>=<sp/>{<sp/>errors,<sp/>xm<sp/>};</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="ql/math/matrixutilities/gmres.cpp"/>
+  </compounddef>
+</doxygen>

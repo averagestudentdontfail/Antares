@@ -1,0 +1,664 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1Period" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::Period</compoundname>
+    <includes refid="period_8hpp" local="no">period.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1Period_1abd6444b0073e4a9bf9f8adba67d568d1" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a8ac1a45a37d8d3dda438a2e59e222620" kindref="member">Integer</ref></type>
+        <definition>Integer QuantLib::Period::length_</definition>
+        <argsstring></argsstring>
+        <name>length_</name>
+        <qualifiedname>QuantLib::Period::length_</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="60" column="17" bodyfile="ql/time/period.hpp" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1Period_1ab89ff6bfdfa2b76b87767211d837aae2" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a6cdac5e2dae1e972076cc8e3302e4ad3" kindref="member">TimeUnit</ref></type>
+        <definition>TimeUnit QuantLib::Period::units_</definition>
+        <argsstring></argsstring>
+        <name>units_</name>
+        <qualifiedname>QuantLib::Period::units_</qualifiedname>
+        <initializer>= <ref refid="namespaceQuantLib_1a6cdac5e2dae1e972076cc8e3302e4ad3ac2d73aad1a6496a6481563e7b5e62b36" kindref="member">Days</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="61" column="18" bodyfile="ql/time/period.hpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1Period_1a9df0c3022cc29f947aabac03fb666afd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Period::Period</definition>
+        <argsstring>()=default</argsstring>
+        <name>Period</name>
+        <qualifiedname>QuantLib::Period::Period</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="46" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1a4d912cc3c4a725fb77047218b24cf3a5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Period::Period</definition>
+        <argsstring>(Integer n, TimeUnit units)</argsstring>
+        <name>Period</name>
+        <qualifiedname>QuantLib::Period::Period</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a8ac1a45a37d8d3dda438a2e59e222620" kindref="member">Integer</ref></type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a6cdac5e2dae1e972076cc8e3302e4ad3" kindref="member">TimeUnit</ref></type>
+          <declname>units</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="47" column="9" bodyfile="ql/time/period.hpp" bodystart="47" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1aca230d6a066970ac890c5574ab0160cd" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Period::Period</definition>
+        <argsstring>(Frequency f)</argsstring>
+        <name>Period</name>
+        <qualifiedname>QuantLib::Period::Period</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1abfa020992bcf412e2bc99f56d4381b4a" kindref="member">Frequency</ref></type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="49" column="18" bodyfile="ql/time/period.cpp" bodystart="29" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1afe6ebf1c8e7daae9ec7cc7b3e9c17393" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a8ac1a45a37d8d3dda438a2e59e222620" kindref="member">Integer</ref></type>
+        <definition>Integer QuantLib::Period::length</definition>
+        <argsstring>() const</argsstring>
+        <name>length</name>
+        <qualifiedname>QuantLib::Period::length</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="50" column="17" bodyfile="ql/time/period.hpp" bodystart="50" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1a018a5e5cf05667aef76c731ea2151d1e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a6cdac5e2dae1e972076cc8e3302e4ad3" kindref="member">TimeUnit</ref></type>
+        <definition>TimeUnit QuantLib::Period::units</definition>
+        <argsstring>() const</argsstring>
+        <name>units</name>
+        <qualifiedname>QuantLib::Period::units</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="51" column="18" bodyfile="ql/time/period.hpp" bodystart="51" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1a57710ee3a66cd258e26d3b4042987266" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1abfa020992bcf412e2bc99f56d4381b4a" kindref="member">Frequency</ref></type>
+        <definition>Frequency QuantLib::Period::frequency</definition>
+        <argsstring>() const</argsstring>
+        <name>frequency</name>
+        <qualifiedname>QuantLib::Period::frequency</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="52" column="19" bodyfile="ql/time/period.cpp" bodystart="69" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1aa940cf60cd886327890b4ab23818c2e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        <definition>Period &amp; QuantLib::Period::operator+=</definition>
+        <argsstring>(const Period &amp;)</argsstring>
+        <name>operator+=</name>
+        <qualifiedname>QuantLib::Period::operator+=</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+          <defname>p</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="53" column="16" bodyfile="ql/time/period.cpp" bodystart="134" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1ae316b747472db28201b7e23681cfa78f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        <definition>Period &amp; QuantLib::Period::operator-=</definition>
+        <argsstring>(const Period &amp;)</argsstring>
+        <name>operator-=</name>
+        <qualifiedname>QuantLib::Period::operator-=</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+          <defname>p</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="54" column="16" bodyfile="ql/time/period.cpp" bodystart="219" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1aa29345eb2594870dd33c6bc954ad87be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        <definition>Period &amp; QuantLib::Period::operator*=</definition>
+        <argsstring>(Integer)</argsstring>
+        <name>operator*=</name>
+        <qualifiedname>QuantLib::Period::operator*=</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a8ac1a45a37d8d3dda438a2e59e222620" kindref="member">Integer</ref></type>
+          <defname>n</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="55" column="16" bodyfile="ql/time/period.cpp" bodystart="223" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1a2b6bcaee6ac3e379fbc3fd6ce58814b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        <definition>Period &amp; QuantLib::Period::operator/=</definition>
+        <argsstring>(Integer)</argsstring>
+        <name>operator/=</name>
+        <qualifiedname>QuantLib::Period::operator/=</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a8ac1a45a37d8d3dda438a2e59e222620" kindref="member">Integer</ref></type>
+          <defname>n</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="56" column="16" bodyfile="ql/time/period.cpp" bodystart="228" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1ab8523c80b22d5f5c086e209d23acea68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::Period::normalize</definition>
+        <argsstring>()</argsstring>
+        <name>normalize</name>
+        <qualifiedname>QuantLib::Period::normalize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="57" column="14" bodyfile="ql/time/period.cpp" bodystart="108" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1a0610a205948581ce670e080953bcb466" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref></type>
+        <definition>Period QuantLib::Period::normalized</definition>
+        <argsstring>() const</argsstring>
+        <name>normalized</name>
+        <qualifiedname>QuantLib::Period::normalized</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="58" column="16" bodyfile="ql/time/period.hpp" bodystart="140" bodyend="144"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="related">
+      <memberdef kind="function" id="classQuantLib_1_1Period_1a06a4ee62bb93be97b4753ab5fa263f78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real years</definition>
+        <argsstring>(const Period &amp;)</argsstring>
+        <name>years</name>
+        <qualifiedname>QuantLib::Period::years</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="65" column="10" bodyfile="ql/time/period.cpp" bodystart="279" bodyend="294" declfile="ql/time/period.hpp" declline="65" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1a92a562ccbc1e5c902fd4bd4576bb12aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real months</definition>
+        <argsstring>(const Period &amp;)</argsstring>
+        <name>months</name>
+        <qualifiedname>QuantLib::Period::months</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="67" column="10" bodyfile="ql/time/period.cpp" bodystart="296" bodyend="311" declfile="ql/time/period.hpp" declline="67" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1a81fdea029a8d7c598c96d298889d4b5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real weeks</definition>
+        <argsstring>(const Period &amp;)</argsstring>
+        <name>weeks</name>
+        <qualifiedname>QuantLib::Period::weeks</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="69" column="10" bodyfile="ql/time/period.cpp" bodystart="313" bodyend="328" declfile="ql/time/period.hpp" declline="69" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1a4fe4dabf0407c1c808b1ca5a6f2b8c79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real days</definition>
+        <argsstring>(const Period &amp;)</argsstring>
+        <name>days</name>
+        <qualifiedname>QuantLib::Period::days</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="71" column="10" bodyfile="ql/time/period.cpp" bodystart="330" bodyend="345" declfile="ql/time/period.hpp" declline="71" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1a34e24f3304fe9ac4e4228ec0aa5865e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref></type>
+        <definition>Period operator*</definition>
+        <argsstring>(T n, TimeUnit units)</argsstring>
+        <name>operator*</name>
+        <qualifiedname>QuantLib::Period::operator*</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a6cdac5e2dae1e972076cc8e3302e4ad3" kindref="member">TimeUnit</ref></type>
+          <declname>units</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="74" column="24" bodyfile="ql/time/period.hpp" bodystart="147" bodyend="149" declfile="ql/time/period.hpp" declline="74" declcolumn="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1ae9caddf04a150ae3bab5c97d5a4d48ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref></type>
+        <definition>Period operator*</definition>
+        <argsstring>(TimeUnit units, T n)</argsstring>
+        <name>operator*</name>
+        <qualifiedname>QuantLib::Period::operator*</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a6cdac5e2dae1e972076cc8e3302e4ad3" kindref="member">TimeUnit</ref></type>
+          <declname>units</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="76" column="24" bodyfile="ql/time/period.hpp" bodystart="152" bodyend="154" declfile="ql/time/period.hpp" declline="76" declcolumn="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1a5fd528466f1b41de52d892efff387880" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref></type>
+        <definition>Period operator-</definition>
+        <argsstring>(const Period &amp;)</argsstring>
+        <name>operator-</name>
+        <qualifiedname>QuantLib::Period::operator-</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="79" column="12" bodyfile="ql/time/period.hpp" bodystart="156" bodyend="156" declfile="ql/time/period.hpp" declline="79" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1a180303cf15f77ffa79f9b538d9d53585" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref></type>
+        <definition>Period operator*</definition>
+        <argsstring>(Integer n, const Period &amp;)</argsstring>
+        <name>operator*</name>
+        <qualifiedname>QuantLib::Period::operator*</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a8ac1a45a37d8d3dda438a2e59e222620" kindref="member">Integer</ref></type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="82" column="12" bodyfile="ql/time/period.hpp" bodystart="158" bodyend="158" declfile="ql/time/period.hpp" declline="82" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1adea95d933011d667b70490b0ecbf4642" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref></type>
+        <definition>Period operator*</definition>
+        <argsstring>(const Period &amp;, Integer n)</argsstring>
+        <name>operator*</name>
+        <qualifiedname>QuantLib::Period::operator*</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a8ac1a45a37d8d3dda438a2e59e222620" kindref="member">Integer</ref></type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="84" column="12" bodyfile="ql/time/period.hpp" bodystart="160" bodyend="160" declfile="ql/time/period.hpp" declline="84" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1a0d21ac755a75c581ad757b81ed775841" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref></type>
+        <definition>Period operator/</definition>
+        <argsstring>(const Period &amp;, Integer n)</argsstring>
+        <name>operator/</name>
+        <qualifiedname>QuantLib::Period::operator/</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a8ac1a45a37d8d3dda438a2e59e222620" kindref="member">Integer</ref></type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="87" column="12" bodyfile="ql/time/period.cpp" bodystart="390" bodyend="394" declfile="ql/time/period.hpp" declline="87" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1a90976f7bfed01855ca09c29295fe6f75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref></type>
+        <definition>Period operator+</definition>
+        <argsstring>(const Period &amp;, const Period &amp;)</argsstring>
+        <name>operator+</name>
+        <qualifiedname>QuantLib::Period::operator+</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="90" column="12" bodyfile="ql/time/period.cpp" bodystart="380" bodyend="384" declfile="ql/time/period.hpp" declline="90" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1ad2cf128e5a3ad32209f6ba15af554d07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref></type>
+        <definition>Period operator-</definition>
+        <argsstring>(const Period &amp;, const Period &amp;)</argsstring>
+        <name>operator-</name>
+        <qualifiedname>QuantLib::Period::operator-</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="92" column="12" bodyfile="ql/time/period.cpp" bodystart="386" bodyend="388" declfile="ql/time/period.hpp" declline="92" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1a6047127848f77402654c5f6969543d39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator&lt;</definition>
+        <argsstring>(const Period &amp;, const Period &amp;)</argsstring>
+        <name>operator&lt;</name>
+        <qualifiedname>QuantLib::Period::operator&lt;</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="95" column="5" bodyfile="ql/time/period.cpp" bodystart="347" bodyend="377" declfile="ql/time/period.hpp" declline="95" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1a8db8f3ab9172629c5b4c4bf9fead21e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator==</definition>
+        <argsstring>(const Period &amp;, const Period &amp;)</argsstring>
+        <name>operator==</name>
+        <qualifiedname>QuantLib::Period::operator==</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="97" column="10" bodyfile="ql/time/period.hpp" bodystart="162" bodyend="164" declfile="ql/time/period.hpp" declline="97" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1a4e4d73db93d1b0421b234e4986f02f65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator!=</definition>
+        <argsstring>(const Period &amp;, const Period &amp;)</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>QuantLib::Period::operator!=</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="99" column="10" bodyfile="ql/time/period.hpp" bodystart="166" bodyend="168" declfile="ql/time/period.hpp" declline="99" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1a7031b0e272677d2c3058d6c6961dd718" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator&gt;</definition>
+        <argsstring>(const Period &amp;, const Period &amp;)</argsstring>
+        <name>operator&gt;</name>
+        <qualifiedname>QuantLib::Period::operator&gt;</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="101" column="10" bodyfile="ql/time/period.hpp" bodystart="170" bodyend="172" declfile="ql/time/period.hpp" declline="101" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1a433aff0d16401de60895f1866e128c0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator&lt;=</definition>
+        <argsstring>(const Period &amp;, const Period &amp;)</argsstring>
+        <name>operator&lt;=</name>
+        <qualifiedname>QuantLib::Period::operator&lt;=</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="103" column="5" bodyfile="ql/time/period.hpp" bodystart="174" bodyend="176" declfile="ql/time/period.hpp" declline="103" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1add05770a8cd5ae8c9e8fb16bc5e32dbc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator&gt;=</definition>
+        <argsstring>(const Period &amp;, const Period &amp;)</argsstring>
+        <name>operator&gt;=</name>
+        <qualifiedname>QuantLib::Period::operator&gt;=</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="105" column="10" bodyfile="ql/time/period.hpp" bodystart="178" bodyend="180" declfile="ql/time/period.hpp" declline="105" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Period_1a687e398ee8fc4236d4a6d5b402ca09a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;, const Period &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>QuantLib::Period::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.hpp" line="108" column="5" bodyfile="ql/time/period.cpp" bodystart="398" bodyend="400" declfile="ql/time/period.hpp" declline="108" declcolumn="5"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>This class provides a <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> (length + TimeUnit) class and implements a limited algebra.</para>
+<para><xrefsect id="test_1_test000023"><xreftitle>Test</xreftitle><xrefdescription><para>self-consistency of algebra is checked. </para>
+</xrefdescription></xrefsect></para>
+    </detaileddescription>
+    <location file="ql/time/period.hpp" line="44" column="5" bodyfile="ql/time/period.hpp" bodystart="44" bodyend="62"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Period_1a4fe4dabf0407c1c808b1ca5a6f2b8c79" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>days</name></member>
+      <member refid="classQuantLib_1_1Period_1a57710ee3a66cd258e26d3b4042987266" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>frequency</name></member>
+      <member refid="classQuantLib_1_1Period_1afe6ebf1c8e7daae9ec7cc7b3e9c17393" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>length</name></member>
+      <member refid="classQuantLib_1_1Period_1abd6444b0073e4a9bf9f8adba67d568d1" prot="private" virt="non-virtual"><scope>QuantLib::Period</scope><name>length_</name></member>
+      <member refid="classQuantLib_1_1Period_1a92a562ccbc1e5c902fd4bd4576bb12aa" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>months</name></member>
+      <member refid="classQuantLib_1_1Period_1ab8523c80b22d5f5c086e209d23acea68" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>normalize</name></member>
+      <member refid="classQuantLib_1_1Period_1a0610a205948581ce670e080953bcb466" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>normalized</name></member>
+      <member refid="classQuantLib_1_1Period_1a4e4d73db93d1b0421b234e4986f02f65" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>operator!=</name></member>
+      <member refid="classQuantLib_1_1Period_1a34e24f3304fe9ac4e4228ec0aa5865e5" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>operator*</name></member>
+      <member refid="classQuantLib_1_1Period_1ae9caddf04a150ae3bab5c97d5a4d48ff" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>operator*</name></member>
+      <member refid="classQuantLib_1_1Period_1a180303cf15f77ffa79f9b538d9d53585" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>operator*</name></member>
+      <member refid="classQuantLib_1_1Period_1adea95d933011d667b70490b0ecbf4642" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>operator*</name></member>
+      <member refid="classQuantLib_1_1Period_1aa29345eb2594870dd33c6bc954ad87be" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>operator*=</name></member>
+      <member refid="classQuantLib_1_1Period_1a90976f7bfed01855ca09c29295fe6f75" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>operator+</name></member>
+      <member refid="classQuantLib_1_1Period_1aa940cf60cd886327890b4ab23818c2e6" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>operator+=</name></member>
+      <member refid="classQuantLib_1_1Period_1a5fd528466f1b41de52d892efff387880" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>operator-</name></member>
+      <member refid="classQuantLib_1_1Period_1ad2cf128e5a3ad32209f6ba15af554d07" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>operator-</name></member>
+      <member refid="classQuantLib_1_1Period_1ae316b747472db28201b7e23681cfa78f" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>operator-=</name></member>
+      <member refid="classQuantLib_1_1Period_1a0d21ac755a75c581ad757b81ed775841" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>operator/</name></member>
+      <member refid="classQuantLib_1_1Period_1a2b6bcaee6ac3e379fbc3fd6ce58814b6" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>operator/=</name></member>
+      <member refid="classQuantLib_1_1Period_1a6047127848f77402654c5f6969543d39" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>operator&lt;</name></member>
+      <member refid="classQuantLib_1_1Period_1a687e398ee8fc4236d4a6d5b402ca09a6" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classQuantLib_1_1Period_1a433aff0d16401de60895f1866e128c0b" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>operator&lt;=</name></member>
+      <member refid="classQuantLib_1_1Period_1a8db8f3ab9172629c5b4c4bf9fead21e4" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>operator==</name></member>
+      <member refid="classQuantLib_1_1Period_1a7031b0e272677d2c3058d6c6961dd718" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>operator&gt;</name></member>
+      <member refid="classQuantLib_1_1Period_1add05770a8cd5ae8c9e8fb16bc5e32dbc" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>operator&gt;=</name></member>
+      <member refid="classQuantLib_1_1Period_1a9df0c3022cc29f947aabac03fb666afd" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>Period</name></member>
+      <member refid="classQuantLib_1_1Period_1a4d912cc3c4a725fb77047218b24cf3a5" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>Period</name></member>
+      <member refid="classQuantLib_1_1Period_1aca230d6a066970ac890c5574ab0160cd" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>Period</name></member>
+      <member refid="classQuantLib_1_1Period_1a018a5e5cf05667aef76c731ea2151d1e" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>units</name></member>
+      <member refid="classQuantLib_1_1Period_1ab89ff6bfdfa2b76b87767211d837aae2" prot="private" virt="non-virtual"><scope>QuantLib::Period</scope><name>units_</name></member>
+      <member refid="classQuantLib_1_1Period_1a81fdea029a8d7c598c96d298889d4b5d" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>weeks</name></member>
+      <member refid="classQuantLib_1_1Period_1a06a4ee62bb93be97b4753ab5fa263f78" prot="public" virt="non-virtual"><scope>QuantLib::Period</scope><name>years</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

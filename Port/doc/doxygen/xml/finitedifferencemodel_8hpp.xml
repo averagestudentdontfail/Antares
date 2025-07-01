@@ -1,0 +1,575 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="finitedifferencemodel_8hpp" kind="file" language="C++">
+    <compoundname>finitedifferencemodel.hpp</compoundname>
+    <includes refid="boundarycondition_8hpp" local="no">ql/methods/finitedifferences/boundarycondition.hpp</includes>
+    <includes refid="operatortraits_8hpp" local="no">ql/methods/finitedifferences/operatortraits.hpp</includes>
+    <includes refid="stepcondition_8hpp" local="no">ql/methods/finitedifferences/stepcondition.hpp</includes>
+    <includes local="no">utility</includes>
+    <includedby refid="fdm1dimsolver_8cpp" local="no">ql/methods/finitedifferences/solvers/fdm1dimsolver.cpp</includedby>
+    <includedby refid="fdmbackwardsolver_8cpp" local="no">ql/methods/finitedifferences/solvers/fdmbackwardsolver.cpp</includedby>
+    <incdepgraph>
+      <node id="54">
+        <label>ql/any.hpp</label>
+        <link refid="any_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>ql/config.ansi.hpp</label>
+        <link refid="config_8ansi_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>ql/errors.hpp</label>
+        <link refid="errors_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>ql/instrument.hpp</label>
+        <link refid="instrument_8hpp"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>ql/instruments/payoffs.hpp</label>
+        <link refid="payoffs_8hpp"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>ql/math/array.hpp</label>
+        <link refid="array_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>ql/math/comparison.hpp</label>
+        <link refid="comparison_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>ql/mathconstants.hpp</label>
+        <link refid="mathconstants_8hpp"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ql/methods/finitedifferences/boundarycondition.hpp</label>
+        <link refid="boundarycondition_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ql/methods/finitedifferences/finitedifferencemodel.hpp</label>
+        <link refid="finitedifferencemodel_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>ql/methods/finitedifferences/operatortraits.hpp</label>
+        <link refid="operatortraits_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>ql/methods/finitedifferences/stepcondition.hpp</label>
+        <link refid="stepcondition_8hpp"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>ql/methods/finitedifferences/tridiagonaloperator.hpp</label>
+        <link refid="tridiagonaloperator_8hpp"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>ql/option.hpp</label>
+        <link refid="option_8hpp"/>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>ql/patterns/lazyobject.hpp</label>
+        <link refid="lazyobject_8hpp"/>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>ql/patterns/observable.hpp</label>
+        <link refid="observable_8hpp"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>ql/patterns/singleton.hpp</label>
+        <link refid="singleton_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>ql/patterns/visitor.hpp</label>
+        <link refid="visitor_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>ql/payoff.hpp</label>
+        <link refid="payoff_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>ql/pricingengine.hpp</label>
+        <link refid="pricingengine_8hpp"/>
+        <childnode refid="42" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>ql/qldefines.hpp</label>
+        <link refid="qldefines_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>ql/shared_ptr.hpp</label>
+        <link refid="shared__ptr_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>ql/time/date.hpp</label>
+        <link refid="date_8hpp"/>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>ql/time/frequency.hpp</label>
+        <link refid="frequency_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>ql/time/period.hpp</label>
+        <link refid="period_8hpp"/>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>ql/time/timeunit.hpp</label>
+        <link refid="timeunit_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>ql/time/weekday.hpp</label>
+        <link refid="weekday_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ql/types.hpp</label>
+        <link refid="types_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>ql/userconfig.hpp</label>
+        <link refid="userconfig_8hpp"/>
+      </node>
+      <node id="3">
+        <label>ql/utilities/null.hpp</label>
+        <link refid="null_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>algorithm</label>
+      </node>
+      <node id="55">
+        <label>any</label>
+      </node>
+      <node id="22">
+        <label>boost/assert.hpp</label>
+      </node>
+      <node id="6">
+        <label>boost/config.hpp</label>
+      </node>
+      <node id="23">
+        <label>boost/current_function.hpp</label>
+      </node>
+      <node id="21">
+        <label>boost/enable_shared_from_this.hpp</label>
+      </node>
+      <node id="20">
+        <label>boost/make_shared.hpp</label>
+      </node>
+      <node id="19">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="7">
+        <label>boost/version.hpp</label>
+      </node>
+      <node id="11">
+        <label>cmath</label>
+      </node>
+      <node id="13">
+        <label>cstddef</label>
+      </node>
+      <node id="52">
+        <label>cstdint</label>
+      </node>
+      <node id="24">
+        <label>exception</label>
+      </node>
+      <node id="28">
+        <label>functional</label>
+      </node>
+      <node id="32">
+        <label>initializer_list</label>
+      </node>
+      <node id="33">
+        <label>iomanip</label>
+      </node>
+      <node id="49">
+        <label>iosfwd</label>
+      </node>
+      <node id="27">
+        <label>iterator</label>
+      </node>
+      <node id="12">
+        <label>limits</label>
+      </node>
+      <node id="56">
+        <label>map</label>
+      </node>
+      <node id="34">
+        <label>memory</label>
+      </node>
+      <node id="30">
+        <label>numeric</label>
+      </node>
+      <node id="44">
+        <label>set</label>
+      </node>
+      <node id="25">
+        <label>sstream</label>
+      </node>
+      <node id="26">
+        <label>string</label>
+      </node>
+      <node id="14">
+        <label>type_traits</label>
+      </node>
+      <node id="53">
+        <label>utility</label>
+      </node>
+      <node id="31">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>ql/methods/finitedifferences/finitedifferencemodel.hpp</label>
+        <link refid="finitedifferencemodel_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ql/methods/finitedifferences/solvers/fdm1dimsolver.cpp</label>
+        <link refid="fdm1dimsolver_8cpp"/>
+      </node>
+      <node id="3">
+        <label>ql/methods/finitedifferences/solvers/fdmbackwardsolver.cpp</label>
+        <link refid="fdmbackwardsolver_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classQuantLib_1_1FiniteDifferenceModel" prot="public">QuantLib::FiniteDifferenceModel</innerclass>
+    <innernamespace refid="namespaceQuantLib">QuantLib</innernamespace>
+    <briefdescription>
+<para>generic finite difference model </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>c++;<sp/>tab-width:<sp/>4;<sp/>indent-tabs-mode:<sp/>nil;<sp/>c-basic-offset:<sp/>4<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2000,<sp/>2001,<sp/>2002,<sp/>2003<sp/>RiskMap<sp/>srl</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>QuantLib,<sp/>a<sp/>free-software/open-source<sp/>library</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>for<sp/>financial<sp/>quantitative<sp/>analysts<sp/>and<sp/>developers<sp/>-<sp/>http://quantlib.org/</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>QuantLib<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>QuantLib<sp/>license.<sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>copy<sp/>of<sp/>the<sp/>license<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>please<sp/>email</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>&lt;quantlib-dev@lists.sf.net&gt;.<sp/>The<sp/>license<sp/>is<sp/>also<sp/>available<sp/>online<sp/>at</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>&lt;http://quantlib.org/license.shtml&gt;.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"></highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the<sp/>license<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>quantlib_finite_difference_model_hpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>quantlib_finite_difference_model_hpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="boundarycondition_8hpp" kindref="compound">ql/methods/finitedifferences/boundarycondition.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="operatortraits_8hpp" kindref="compound">ql/methods/finitedifferences/operatortraits.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="stepcondition_8hpp" kindref="compound">ql/methods/finitedifferences/stepcondition.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceQuantLib" kindref="compound">QuantLib</ref><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Evolver&gt;</highlight></codeline>
+<codeline lineno="37" refid="classQuantLib_1_1FiniteDifferenceModel" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classQuantLib_1_1FiniteDifferenceModel" kindref="compound">FiniteDifferenceModel</ref><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="39" refid="classQuantLib_1_1FiniteDifferenceModel_1a1c021ff9c00cbafa2bb3d974fbb2b387" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Evolver::traits<sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1a1c021ff9c00cbafa2bb3d974fbb2b387" kindref="member">traits</ref>;</highlight></codeline>
+<codeline lineno="40" refid="classQuantLib_1_1FiniteDifferenceModel_1aeaab93e1d540258eb57f4d26819ec1e7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>traits::operator_type<sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1aeaab93e1d540258eb57f4d26819ec1e7" kindref="member">operator_type</ref>;</highlight></codeline>
+<codeline lineno="41" refid="classQuantLib_1_1FiniteDifferenceModel_1a1e469378efa32b66d086a263d4dfcd2d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>traits::array_type<sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1a1e469378efa32b66d086a263d4dfcd2d" kindref="member">array_type</ref>;</highlight></codeline>
+<codeline lineno="42" refid="classQuantLib_1_1FiniteDifferenceModel_1a6d1136475c88b9b8d790bd0a2fc5dd7b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>traits::bc_set<sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1a6d1136475c88b9b8d790bd0a2fc5dd7b" kindref="member">bc_set</ref>;</highlight></codeline>
+<codeline lineno="43" refid="classQuantLib_1_1FiniteDifferenceModel_1aeb51e2434d3639fe65aa5591180ab1f4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>traits::condition_type<sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1aeb51e2434d3639fe65aa5591180ab1f4" kindref="member">condition_type</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>constructors</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="classQuantLib_1_1FiniteDifferenceModel_1a3d0a4fcdeccfdb877fae89b2b1f79811" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1a3d0a4fcdeccfdb877fae89b2b1f79811" kindref="member">FiniteDifferenceModel</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1aeaab93e1d540258eb57f4d26819ec1e7" kindref="member">operator_type</ref>&amp;<sp/>L,</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1a6d1136475c88b9b8d790bd0a2fc5dd7b" kindref="member">bc_set</ref>&amp;<sp/>bcs,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;Time&gt;<sp/>stoppingTimes<sp/>=<sp/>std::vector&lt;Time&gt;())</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1ab15011bd4139898cd9e47d1fc3d2f7b0" kindref="member">evolver_</ref>(L,<sp/>bcs),<sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1a992cd4b60c60e50efd41d9e489fdff2e" kindref="member">stoppingTimes_</ref>(<ref refid="namespacestd" kindref="compound">std</ref>::move(stoppingTimes))<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::sort(<ref refid="classQuantLib_1_1FiniteDifferenceModel_1a992cd4b60c60e50efd41d9e489fdff2e" kindref="member">stoppingTimes_</ref>.begin(),<sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1a992cd4b60c60e50efd41d9e489fdff2e" kindref="member">stoppingTimes_</ref>.end());</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>last<sp/>=<sp/>std::unique(<ref refid="classQuantLib_1_1FiniteDifferenceModel_1a992cd4b60c60e50efd41d9e489fdff2e" kindref="member">stoppingTimes_</ref>.begin(),<sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1a992cd4b60c60e50efd41d9e489fdff2e" kindref="member">stoppingTimes_</ref>.end());</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1a992cd4b60c60e50efd41d9e489fdff2e" kindref="member">stoppingTimes_</ref>.erase(last,<sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1a992cd4b60c60e50efd41d9e489fdff2e" kindref="member">stoppingTimes_</ref>.end());</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53" refid="classQuantLib_1_1FiniteDifferenceModel_1a65ab0e8bd399543903b16b64d217011c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1a65ab0e8bd399543903b16b64d217011c" kindref="member">FiniteDifferenceModel</ref>(Evolver<sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1acd0156a94b5e7778212ca753635e0191" kindref="member">evolver</ref>,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;Time&gt;<sp/>stoppingTimes<sp/>=<sp/>std::vector&lt;Time&gt;())</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1ab15011bd4139898cd9e47d1fc3d2f7b0" kindref="member">evolver_</ref>(<ref refid="namespacestd" kindref="compound">std</ref>::move(<ref refid="classQuantLib_1_1FiniteDifferenceModel_1acd0156a94b5e7778212ca753635e0191" kindref="member">evolver</ref>)),<sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1a992cd4b60c60e50efd41d9e489fdff2e" kindref="member">stoppingTimes_</ref>(<ref refid="namespacestd" kindref="compound">std</ref>::move(stoppingTimes))<sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::sort(<ref refid="classQuantLib_1_1FiniteDifferenceModel_1a992cd4b60c60e50efd41d9e489fdff2e" kindref="member">stoppingTimes_</ref>.begin(),<sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1a992cd4b60c60e50efd41d9e489fdff2e" kindref="member">stoppingTimes_</ref>.end());</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>last<sp/>=<sp/>std::unique(<ref refid="classQuantLib_1_1FiniteDifferenceModel_1a992cd4b60c60e50efd41d9e489fdff2e" kindref="member">stoppingTimes_</ref>.begin(),<sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1a992cd4b60c60e50efd41d9e489fdff2e" kindref="member">stoppingTimes_</ref>.end());</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1a992cd4b60c60e50efd41d9e489fdff2e" kindref="member">stoppingTimes_</ref>.erase(last,<sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1a992cd4b60c60e50efd41d9e489fdff2e" kindref="member">stoppingTimes_</ref>.end());</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>methods</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>array_type<sp/>grid()<sp/>const<sp/>{<sp/>return<sp/>evolver.xGrid();<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="classQuantLib_1_1FiniteDifferenceModel_1acd0156a94b5e7778212ca753635e0191" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Evolver&amp;<sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1acd0156a94b5e7778212ca753635e0191" kindref="member">evolver</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1ab15011bd4139898cd9e47d1fc3d2f7b0" kindref="member">evolver_</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="67" refid="classQuantLib_1_1FiniteDifferenceModel_1a871f4f05d9ac0bda0b699a0259c54237" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1a871f4f05d9ac0bda0b699a0259c54237" kindref="member">rollback</ref>(<ref refid="classQuantLib_1_1FiniteDifferenceModel_1a1e469378efa32b66d086a263d4dfcd2d" kindref="member">array_type</ref>&amp;<sp/>a,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>from,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>to,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref><sp/>steps)<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1ae4146cf17d9daf4cc138697bfb58cfe6" kindref="member">rollbackImpl</ref>(a,<sp/>from,<sp/>to,<sp/>steps,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1aeb51e2434d3639fe65aa5591180ab1f4" kindref="member">condition_type</ref>*)</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="78" refid="classQuantLib_1_1FiniteDifferenceModel_1aa992d929570d541fd6e21936c6671c27" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1aa992d929570d541fd6e21936c6671c27" kindref="member">rollback</ref>(<ref refid="classQuantLib_1_1FiniteDifferenceModel_1a1e469378efa32b66d086a263d4dfcd2d" kindref="member">array_type</ref>&amp;<sp/>a,</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>from,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>to,</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref><sp/>steps,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1aeb51e2434d3639fe65aa5591180ab1f4" kindref="member">condition_type</ref>&amp;<sp/>condition)<sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1ae4146cf17d9daf4cc138697bfb58cfe6" kindref="member">rollbackImpl</ref>(a,from,to,steps,&amp;condition);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="86" refid="classQuantLib_1_1FiniteDifferenceModel_1ae4146cf17d9daf4cc138697bfb58cfe6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1ae4146cf17d9daf4cc138697bfb58cfe6" kindref="member">rollbackImpl</ref>(<ref refid="classQuantLib_1_1FiniteDifferenceModel_1a1e469378efa32b66d086a263d4dfcd2d" kindref="member">array_type</ref>&amp;<sp/>a,</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>from,</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>to,</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref><sp/>steps,</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1aeb51e2434d3639fe65aa5591180ab1f4" kindref="member">condition_type</ref>*<sp/>condition)<sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(from<sp/>&gt;=<sp/>to,</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;trying<sp/>to<sp/>roll<sp/>back<sp/>from<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>from<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>to<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>to);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>dt<sp/>=<sp/>(from-to)/steps,<sp/>t<sp/>=<sp/>from;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1ab15011bd4139898cd9e47d1fc3d2f7b0" kindref="member">evolver_</ref>.setStep(dt);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!<ref refid="classQuantLib_1_1FiniteDifferenceModel_1a992cd4b60c60e50efd41d9e489fdff2e" kindref="member">stoppingTimes_</ref>.empty()<sp/>&amp;&amp;<sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1a992cd4b60c60e50efd41d9e489fdff2e" kindref="member">stoppingTimes_</ref>.back()<sp/>==<sp/>from)<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(condition)</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>condition-&gt;applyTo(a,from);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref><sp/>i=0;<sp/>i&lt;steps;<sp/>++i,<sp/>t<sp/>-=<sp/>dt)<sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>now<sp/>=<sp/>t;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>make<sp/>sure<sp/>last<sp/>step<sp/>ends<sp/>exactly<sp/>on<sp/>&quot;to&quot;<sp/>in<sp/>order<sp/>to<sp/>not</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>miss<sp/>a<sp/>stopping<sp/>time<sp/>at<sp/>&quot;to&quot;<sp/>due<sp/>to<sp/>numerical<sp/>issues</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>next<sp/>=<sp/>(i<sp/>&lt;<sp/>steps<sp/>-1)?<sp/>t-dt<sp/>:<sp/>to;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(std::fabs(to-next)<sp/>&lt;<sp/>std::sqrt(<ref refid="group__limitMacros_1ga4f2e6bcf6b19224bce1a5a6234286c17" kindref="member">QL_EPSILON</ref>))<sp/>next<sp/>=<sp/>to;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>hit<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="namespaceQuantLib_1a8ac1a45a37d8d3dda438a2e59e222620" kindref="member">Integer</ref><sp/>j<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="namespaceQuantLib_1a8ac1a45a37d8d3dda438a2e59e222620" kindref="member">Integer</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classQuantLib_1_1FiniteDifferenceModel_1a992cd4b60c60e50efd41d9e489fdff2e" kindref="member">stoppingTimes_</ref>.size())-1;<sp/>j<sp/>&gt;=<sp/>0<sp/>;<sp/>--j)<sp/>{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(next<sp/>&lt;=<sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1a992cd4b60c60e50efd41d9e489fdff2e" kindref="member">stoppingTimes_</ref>[j]<sp/>&amp;&amp;<sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1a992cd4b60c60e50efd41d9e489fdff2e" kindref="member">stoppingTimes_</ref>[j]<sp/>&lt;<sp/>now)<sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>a<sp/>stopping<sp/>time<sp/>was<sp/>hit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hit<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>perform<sp/>a<sp/>small<sp/>step<sp/>to<sp/>stoppingTimes_[j]...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1ab15011bd4139898cd9e47d1fc3d2f7b0" kindref="member">evolver_</ref>.setStep(now-<ref refid="classQuantLib_1_1FiniteDifferenceModel_1a992cd4b60c60e50efd41d9e489fdff2e" kindref="member">stoppingTimes_</ref>[j]);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1ab15011bd4139898cd9e47d1fc3d2f7b0" kindref="member">evolver_</ref>.step(a,now);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(condition)</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>condition-&gt;applyTo(a,<ref refid="classQuantLib_1_1FiniteDifferenceModel_1a992cd4b60c60e50efd41d9e489fdff2e" kindref="member">stoppingTimes_</ref>[j]);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>...and<sp/>continue<sp/>the<sp/>cycle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>now<sp/>=<sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1a992cd4b60c60e50efd41d9e489fdff2e" kindref="member">stoppingTimes_</ref>[j];</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>we<sp/>did<sp/>hit...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(hit)<sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>...we<sp/>might<sp/>have<sp/>to<sp/>make<sp/>a<sp/>small<sp/>step<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>complete<sp/>the<sp/>big<sp/>one...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(now<sp/>&gt;<sp/>next)<sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1ab15011bd4139898cd9e47d1fc3d2f7b0" kindref="member">evolver_</ref>.setStep(now<sp/>-<sp/>next);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1ab15011bd4139898cd9e47d1fc3d2f7b0" kindref="member">evolver_</ref>.step(a,now);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(condition)</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>condition-&gt;applyTo(a,next);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>...and<sp/>in<sp/>any<sp/>case,<sp/>we<sp/>have<sp/>to<sp/>reset<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>evolver<sp/>to<sp/>the<sp/>default<sp/>step.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1ab15011bd4139898cd9e47d1fc3d2f7b0" kindref="member">evolver_</ref>.setStep(dt);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>we<sp/>didn&apos;t,<sp/>the<sp/>evolver<sp/>is<sp/>already<sp/>set<sp/>to<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>default<sp/>step,<sp/>which<sp/>is<sp/>ok<sp/>for<sp/>us.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1ab15011bd4139898cd9e47d1fc3d2f7b0" kindref="member">evolver_</ref>.step(a,now);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(condition)</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>condition-&gt;applyTo(a,<sp/>next);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="146" refid="classQuantLib_1_1FiniteDifferenceModel_1ab15011bd4139898cd9e47d1fc3d2f7b0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Evolver<sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1ab15011bd4139898cd9e47d1fc3d2f7b0" kindref="member">evolver_</ref>;</highlight></codeline>
+<codeline lineno="147" refid="classQuantLib_1_1FiniteDifferenceModel_1a992cd4b60c60e50efd41d9e489fdff2e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;Time&gt;<sp/><ref refid="classQuantLib_1_1FiniteDifferenceModel_1a992cd4b60c60e50efd41d9e489fdff2e" kindref="member">stoppingTimes_</ref>;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="ql/methods/finitedifferences/finitedifferencemodel.hpp"/>
+  </compounddef>
+</doxygen>

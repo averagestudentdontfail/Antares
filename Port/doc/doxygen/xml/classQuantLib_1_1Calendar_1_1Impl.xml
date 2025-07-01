@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1Calendar_1_1Impl" kind="class" language="C++" prot="protected" abstract="yes">
+    <compoundname>QuantLib::Calendar::Impl</compoundname>
+    <derivedcompoundref refid="classQuantLib_1_1Calendar_1_1OrthodoxImpl" prot="public" virt="non-virtual">QuantLib::Calendar::OrthodoxImpl</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1Calendar_1_1WesternImpl" prot="public" virt="non-virtual">QuantLib::Calendar::WesternImpl</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1NullCalendar_1_1Impl" prot="public" virt="non-virtual">QuantLib::NullCalendar::Impl</derivedcompoundref>
+    <includes refid="calendar_8hpp" local="no">calendar.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1Calendar_1_1Impl_1a5970124cdb6647a72d5f6929267f33a7" prot="public" static="no" mutable="no">
+        <type>std::set&lt; <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &gt;</type>
+        <definition>std::set&lt;Date&gt; QuantLib::Calendar::Impl::addedHolidays</definition>
+        <argsstring></argsstring>
+        <name>addedHolidays</name>
+        <qualifiedname>QuantLib::Calendar::Impl::addedHolidays</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/calendar.hpp" line="70" column="22" bodyfile="ql/time/calendar.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1Calendar_1_1Impl_1a799e83eb1170cdd9ff1b29871af96fc4" prot="public" static="no" mutable="no">
+        <type>std::set&lt; <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &gt;</type>
+        <definition>std::set&lt;Date&gt; QuantLib::Calendar::Impl::removedHolidays</definition>
+        <argsstring></argsstring>
+        <name>removedHolidays</name>
+        <qualifiedname>QuantLib::Calendar::Impl::removedHolidays</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/calendar.hpp" line="70" column="36" bodyfile="ql/time/calendar.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1Calendar_1_1Impl_1ad7f00087252a73f1775d853165be3711" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual QuantLib::Calendar::Impl::~Impl</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Impl</name>
+        <qualifiedname>QuantLib::Calendar::Impl::~Impl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/calendar.hpp" line="66" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Calendar_1_1Impl_1a322d7d95757716c5f3b025b2715f3f4d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string</type>
+        <definition>virtual std::string QuantLib::Calendar::Impl::name</definition>
+        <argsstring>() const =0</argsstring>
+        <name>name</name>
+        <qualifiedname>QuantLib::Calendar::Impl::name</qualifiedname>
+        <reimplementedby refid="classQuantLib_1_1NullCalendar_1_1Impl_1a9c1934cf7bbd049cdecd30d132b19dd8">name</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/calendar.hpp" line="67" column="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Calendar_1_1Impl_1a292319943221a9fa80988e562f7d4164" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool QuantLib::Calendar::Impl::isBusinessDay</definition>
+        <argsstring>(const Date &amp;) const =0</argsstring>
+        <name>isBusinessDay</name>
+        <qualifiedname>QuantLib::Calendar::Impl::isBusinessDay</qualifiedname>
+        <reimplementedby refid="classQuantLib_1_1NullCalendar_1_1Impl_1ae8890cf997a9e66e5f84ee11f5db7d74">isBusinessDay</reimplementedby>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/calendar.hpp" line="68" column="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Calendar_1_1Impl_1aece3c88f50cc7b63247d95127f14fb86" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool QuantLib::Calendar::Impl::isWeekend</definition>
+        <argsstring>(Weekday) const =0</argsstring>
+        <name>isWeekend</name>
+        <qualifiedname>QuantLib::Calendar::Impl::isWeekend</qualifiedname>
+        <reimplementedby refid="classQuantLib_1_1Calendar_1_1WesternImpl_1a12b0990935e3dd37714889de2c52be39">isWeekend</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1Calendar_1_1OrthodoxImpl_1a14ae9ed2074fc6c9c4eb71f8676fff7b">isWeekend</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1NullCalendar_1_1Impl_1aaefe0a0ddc2b19e1f7d8979dc586852f">isWeekend</reimplementedby>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a04474aebb0bea95bba2f1dcbdd8a27a6" kindref="member">Weekday</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/calendar.hpp" line="69" column="26"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>abstract base class for calendar implementations </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>QuantLib::Calendar::Impl</label>
+        <link refid="classQuantLib_1_1Calendar_1_1Impl"/>
+      </node>
+      <node id="2">
+        <label>QuantLib::Calendar::OrthodoxImpl</label>
+        <link refid="classQuantLib_1_1Calendar_1_1OrthodoxImpl"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QuantLib::Calendar::WesternImpl</label>
+        <link refid="classQuantLib_1_1Calendar_1_1WesternImpl"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QuantLib::NullCalendar::Impl</label>
+        <link refid="classQuantLib_1_1NullCalendar_1_1Impl"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="ql/time/calendar.hpp" line="64" column="9" bodyfile="ql/time/calendar.hpp" bodystart="64" bodyend="71"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Calendar_1_1Impl_1a5970124cdb6647a72d5f6929267f33a7" prot="public" virt="non-virtual"><scope>QuantLib::Calendar::Impl</scope><name>addedHolidays</name></member>
+      <member refid="classQuantLib_1_1Calendar_1_1Impl_1a292319943221a9fa80988e562f7d4164" prot="public" virt="pure-virtual"><scope>QuantLib::Calendar::Impl</scope><name>isBusinessDay</name></member>
+      <member refid="classQuantLib_1_1Calendar_1_1Impl_1aece3c88f50cc7b63247d95127f14fb86" prot="public" virt="pure-virtual"><scope>QuantLib::Calendar::Impl</scope><name>isWeekend</name></member>
+      <member refid="classQuantLib_1_1Calendar_1_1Impl_1a322d7d95757716c5f3b025b2715f3f4d" prot="public" virt="pure-virtual"><scope>QuantLib::Calendar::Impl</scope><name>name</name></member>
+      <member refid="classQuantLib_1_1Calendar_1_1Impl_1a799e83eb1170cdd9ff1b29871af96fc4" prot="public" virt="non-virtual"><scope>QuantLib::Calendar::Impl</scope><name>removedHolidays</name></member>
+      <member refid="classQuantLib_1_1Calendar_1_1Impl_1ad7f00087252a73f1775d853165be3711" prot="public" virt="virtual"><scope>QuantLib::Calendar::Impl</scope><name>~Impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

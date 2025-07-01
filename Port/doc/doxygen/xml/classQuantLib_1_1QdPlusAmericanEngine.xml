@@ -1,0 +1,537 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1QdPlusAmericanEngine" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::QdPlusAmericanEngine</compoundname>
+    <basecompoundref refid="classQuantLib_1_1detail_1_1QdPutCallParityEngine" prot="public" virt="non-virtual">QuantLib::detail::QdPutCallParityEngine</basecompoundref>
+    <includes refid="qdplusamericanengine_8hpp" local="no">qdplusamericanengine.hpp</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classQuantLib_1_1QdPlusAmericanEngine_1a86499519ae6cc65364fbaec705795469" prot="public" static="no" strong="no">
+        <type></type>
+        <name>SolverType</name>
+        <qualifiedname>QuantLib::QdPlusAmericanEngine::SolverType</qualifiedname>
+        <enumvalue id="classQuantLib_1_1QdPlusAmericanEngine_1a86499519ae6cc65364fbaec705795469a2999140f515b4f8b1c57edbe6d3b5e8a" prot="public">
+          <name>Brent</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classQuantLib_1_1QdPlusAmericanEngine_1a86499519ae6cc65364fbaec705795469a8ed65c9fdf7419cf7e47b6b21bed83b1" prot="public">
+          <name>Newton</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classQuantLib_1_1QdPlusAmericanEngine_1a86499519ae6cc65364fbaec705795469adecbc6e8ac40adf5066db49be14f965a" prot="public">
+          <name>Ridder</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classQuantLib_1_1QdPlusAmericanEngine_1a86499519ae6cc65364fbaec705795469aa6314709c12930b3651ccc0d03e1159d" prot="public">
+          <name>Halley</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classQuantLib_1_1QdPlusAmericanEngine_1a86499519ae6cc65364fbaec705795469a628eafc2eb551083065905686d725df5" prot="public">
+          <name>SuperHalley</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/qdplusamericanengine.hpp" line="94" column="9" bodyfile="ql/pricingengines/vanilla/qdplusamericanengine.hpp" bodystart="94" bodyend="94"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1QdPlusAmericanEngine_1a0a325ee820ed6a4dfbab1fdba2955f19" prot="private" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+        <definition>const Size QuantLib::QdPlusAmericanEngine::interpolationPoints_</definition>
+        <argsstring></argsstring>
+        <name>interpolationPoints_</name>
+        <qualifiedname>QuantLib::QdPlusAmericanEngine::interpolationPoints_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/qdplusamericanengine.hpp" line="123" column="20" bodyfile="ql/pricingengines/vanilla/qdplusamericanengine.hpp" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1QdPlusAmericanEngine_1ab06531d5325bae158836eddcc534ee1c" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a86499519ae6cc65364fbaec705795469" kindref="member">SolverType</ref></type>
+        <definition>const SolverType QuantLib::QdPlusAmericanEngine::solverType_</definition>
+        <argsstring></argsstring>
+        <name>solverType_</name>
+        <qualifiedname>QuantLib::QdPlusAmericanEngine::solverType_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/qdplusamericanengine.hpp" line="124" column="26" bodyfile="ql/pricingengines/vanilla/qdplusamericanengine.hpp" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1QdPlusAmericanEngine_1ab8686c69c034ff073e185135a4108fe4" prot="private" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::QdPlusAmericanEngine::eps_</definition>
+        <argsstring></argsstring>
+        <name>eps_</name>
+        <qualifiedname>QuantLib::QdPlusAmericanEngine::eps_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/qdplusamericanengine.hpp" line="125" column="20" bodyfile="ql/pricingengines/vanilla/qdplusamericanengine.hpp" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1QdPlusAmericanEngine_1a8fe71a4bd26968de5428eafe58ca1c35" prot="private" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+        <definition>const Size QuantLib::QdPlusAmericanEngine::maxIter_</definition>
+        <argsstring></argsstring>
+        <name>maxIter_</name>
+        <qualifiedname>QuantLib::QdPlusAmericanEngine::maxIter_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/qdplusamericanengine.hpp" line="126" column="20" bodyfile="ql/pricingengines/vanilla/qdplusamericanengine.hpp" bodystart="126" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1QdPlusAmericanEngine_1ab20f9804cb251718ba1101bb645256ce" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::QdPlusAmericanEngine::QdPlusAmericanEngine</definition>
+        <argsstring>(ext::shared_ptr&lt; GeneralizedBlackScholesProcess &gt;, Size interpolationPoints=8, SolverType solverType=Halley, Real eps=1e-6, Size maxIter=Null&lt; Size &gt;())</argsstring>
+        <name>QdPlusAmericanEngine</name>
+        <qualifiedname>QuantLib::QdPlusAmericanEngine::QdPlusAmericanEngine</qualifiedname>
+        <param>
+          <type>ext::shared_ptr&lt; <ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess" kindref="compound">GeneralizedBlackScholesProcess</ref> &gt;</type>
+          <defname>process</defname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>interpolationPoints</declname>
+          <defval>8</defval>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a86499519ae6cc65364fbaec705795469" kindref="member">SolverType</ref></type>
+          <declname>solverType</declname>
+          <defval><ref refid="classQuantLib_1_1QdPlusAmericanEngine_1a86499519ae6cc65364fbaec705795469aa6314709c12930b3651ccc0d03e1159d" kindref="member">Halley</ref></defval>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>eps</declname>
+          <defval>1e-6</defval>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>maxIter</declname>
+          <defval><ref refid="classQuantLib_1_1Null" kindref="compound">Null</ref>&lt; <ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref> &gt;()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/qdplusamericanengine.hpp" line="96" column="18" bodyfile="ql/pricingengines/vanilla/qdplusamericanengine.cpp" bodystart="253" bodyend="265"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1QdPlusAmericanEngine_1aa2573d6d0bd204e77d1d9ff8dbbcd491" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::pair&lt; <ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref>, <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> &gt;</type>
+        <definition>std::pair&lt; Size, Real &gt; QuantLib::QdPlusAmericanEngine::putExerciseBoundaryAtTau</definition>
+        <argsstring>(Real S, Real K, Rate r, Rate q, Volatility vol, Time T, Time tau) const</argsstring>
+        <name>putExerciseBoundaryAtTau</name>
+        <qualifiedname>QuantLib::QdPlusAmericanEngine::putExerciseBoundaryAtTau</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>S</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>K</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref></type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref></type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1ae3abfa256de5aa2b506ab6bda014e4dc" kindref="member">Volatility</ref></type>
+          <declname>vol</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>T</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>tau</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/qdplusamericanengine.hpp" line="103" column="19" bodyfile="ql/pricingengines/vanilla/qdplusamericanengine.cpp" bodystart="291" bodyend="344"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1QdPlusAmericanEngine_1a386831966e937f0c70763df289835efb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>ext::shared_ptr&lt; <ref refid="classQuantLib_1_1ChebyshevInterpolation" kindref="compound">ChebyshevInterpolation</ref> &gt;</type>
+        <definition>ext::shared_ptr&lt; ChebyshevInterpolation &gt; QuantLib::QdPlusAmericanEngine::getPutExerciseBoundary</definition>
+        <argsstring>(Real S, Real K, Rate r, Rate q, Volatility vol, Time T) const</argsstring>
+        <name>getPutExerciseBoundary</name>
+        <qualifiedname>QuantLib::QdPlusAmericanEngine::getPutExerciseBoundary</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>S</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>K</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref></type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref></type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1ae3abfa256de5aa2b506ab6bda014e4dc" kindref="member">Volatility</ref></type>
+          <declname>vol</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>T</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/qdplusamericanengine.hpp" line="107" column="25" bodyfile="ql/pricingengines/vanilla/qdplusamericanengine.cpp" bodystart="347" bodyend="362"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classQuantLib_1_1QdPlusAmericanEngine_1a09cc01d2bc72c4f667eb451de3575774" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::QdPlusAmericanEngine::xMax</definition>
+        <argsstring>(Real K, Rate r, Rate q)</argsstring>
+        <name>xMax</name>
+        <qualifiedname>QuantLib::QdPlusAmericanEngine::xMax</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>K</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref></type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref></type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/qdplusamericanengine.hpp" line="110" column="21" bodyfile="ql/pricingengines/vanilla/qdplusamericanengine.cpp" bodystart="231" bodyend="251"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classQuantLib_1_1QdPlusAmericanEngine_1ae8b9dcef200a5fc1a8ee76e5a2ff78cd" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::QdPlusAmericanEngine::calculatePut</definition>
+        <argsstring>(Real S, Real K, Rate r, Rate q, Volatility vol, Time T) const override</argsstring>
+        <name>calculatePut</name>
+        <qualifiedname>QuantLib::QdPlusAmericanEngine::calculatePut</qualifiedname>
+        <reimplements refid="classQuantLib_1_1detail_1_1QdPutCallParityEngine_1afe09fb95d7370c04a215bb85a5ac5e4a">calculatePut</reimplements>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>S</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>K</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref></type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref></type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1ae3abfa256de5aa2b506ab6bda014e4dc" kindref="member">Volatility</ref></type>
+          <declname>vol</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>T</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/qdplusamericanengine.hpp" line="113" column="14" bodyfile="ql/pricingengines/vanilla/qdplusamericanengine.cpp" bodystart="364" bodyend="395"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classQuantLib_1_1QdPlusAmericanEngine_1a612e93452dc656411b29cc36e88f69a5" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Solver</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::QdPlusAmericanEngine::buildInSolver</definition>
+        <argsstring>(const QdPlusBoundaryEvaluator &amp;eval, Solver solver, Real S, Real strike, Size maxIter, Real guess=Null&lt; Real &gt;()) const</argsstring>
+        <name>buildInSolver</name>
+        <qualifiedname>QuantLib::QdPlusAmericanEngine::buildInSolver</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1QdPlusBoundaryEvaluator" kindref="compound">QdPlusBoundaryEvaluator</ref> &amp;</type>
+          <declname>eval</declname>
+        </param>
+        <param>
+          <type>Solver</type>
+          <declname>solver</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>S</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>strike</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>maxIter</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>guess</declname>
+          <defval><ref refid="classQuantLib_1_1Null" kindref="compound">Null</ref>&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> &gt;()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/qdplusamericanengine.hpp" line="118" column="14" bodyfile="ql/pricingengines/vanilla/qdplusamericanengine.cpp" bodystart="268" bodyend="289"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>American engine based on the QD+ approximation to the exercise boundary. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The main purpose of this engine is to provide a good initial guess to the exercise boundary for the superior fixed point American engine <ref refid="classQuantLib_1_1QdFpAmericanEngine" kindref="compound">QdFpAmericanEngine</ref></para>
+<para>References: Li, M. (2009), “Analytical Approximations for the Critical Stock Prices of American Options: A Performance Comparison,” Working paper, Georgia Institute of Technology.</para>
+<para><ulink url="https://mpra.ub.uni-muenchen.de/15018/1/MPRA_paper_15018.pdf">https://mpra.ub.uni-muenchen.de/15018/1/MPRA_paper_15018.pdf</ulink> </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>QuantLib::GenericEngine&lt; OneAssetOption::arguments, OneAssetOption::results &gt;</label>
+        <link refid="classQuantLib_1_1GenericEngine"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>QuantLib::Observable</label>
+        <link refid="classQuantLib_1_1Observable"/>
+      </node>
+      <node id="7">
+        <label>QuantLib::Observer</label>
+        <link refid="classQuantLib_1_1Observer"/>
+      </node>
+      <node id="3">
+        <label>QuantLib::OneAssetOption::engine</label>
+        <link refid="classQuantLib_1_1OneAssetOption_1_1engine"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>QuantLib::PricingEngine</label>
+        <link refid="classQuantLib_1_1PricingEngine"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::QdPlusAmericanEngine</label>
+        <link refid="classQuantLib_1_1QdPlusAmericanEngine"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::detail::QdPutCallParityEngine</label>
+        <link refid="classQuantLib_1_1detail_1_1QdPutCallParityEngine"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4">
+        <label>QuantLib::GenericEngine&lt; OneAssetOption::arguments, OneAssetOption::results &gt;</label>
+        <link refid="classQuantLib_1_1GenericEngine"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>results_</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>QuantLib::Date</label>
+        <link refid="classQuantLib_1_1Date"/>
+      </node>
+      <node id="12">
+        <label>QuantLib::Greeks</label>
+        <link refid="classQuantLib_1_1Greeks"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>QuantLib::Instrument::results</label>
+        <link refid="classQuantLib_1_1Instrument_1_1results"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>valuationDate</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>QuantLib::MoreGreeks</label>
+        <link refid="classQuantLib_1_1MoreGreeks"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>QuantLib::Observable</label>
+        <link refid="classQuantLib_1_1Observable"/>
+      </node>
+      <node id="7">
+        <label>QuantLib::Observer</label>
+        <link refid="classQuantLib_1_1Observer"/>
+      </node>
+      <node id="3">
+        <label>QuantLib::OneAssetOption::engine</label>
+        <link refid="classQuantLib_1_1OneAssetOption_1_1engine"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>QuantLib::OneAssetOption::results</label>
+        <link refid="classQuantLib_1_1OneAssetOption_1_1results"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>QuantLib::PricingEngine</label>
+        <link refid="classQuantLib_1_1PricingEngine"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>QuantLib::PricingEngine::results</label>
+        <link refid="classQuantLib_1_1PricingEngine_1_1results"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::QdPlusAmericanEngine</label>
+        <link refid="classQuantLib_1_1QdPlusAmericanEngine"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::detail::QdPutCallParityEngine</label>
+        <link refid="classQuantLib_1_1detail_1_1QdPutCallParityEngine"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/pricingengines/vanilla/qdplusamericanengine.hpp" line="92" column="5" bodyfile="ql/pricingengines/vanilla/qdplusamericanengine.hpp" bodystart="92" bodyend="127"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1GenericEngine_1ad2371cdbafa1989afb0e4733b1212c0d" prot="protected" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>arguments_</name></member>
+      <member refid="classQuantLib_1_1QdPlusAmericanEngine_1a86499519ae6cc65364fbaec705795469a2999140f515b4f8b1c57edbe6d3b5e8a" prot="public" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>Brent</name></member>
+      <member refid="classQuantLib_1_1QdPlusAmericanEngine_1a612e93452dc656411b29cc36e88f69a5" prot="private" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>buildInSolver</name></member>
+      <member refid="classQuantLib_1_1detail_1_1QdPutCallParityEngine_1a84f99b788bca015a094a483803a26e4c" prot="public" virt="virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>calculate</name></member>
+      <member refid="classQuantLib_1_1QdPlusAmericanEngine_1ae8b9dcef200a5fc1a8ee76e5a2ff78cd" prot="protected" virt="virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>calculatePut</name></member>
+      <member refid="classQuantLib_1_1detail_1_1QdPutCallParityEngine_1a2f8113df036304db6ac2d91aa685e541" prot="private" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>calculatePutWithEdgeCases</name></member>
+      <member refid="classQuantLib_1_1Observer_1acfbf794db3e7d5cfdea2cd517a195183" prot="public" virt="virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>deepUpdate</name></member>
+      <member refid="classQuantLib_1_1QdPlusAmericanEngine_1ab8686c69c034ff073e185135a4108fe4" prot="private" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>eps_</name></member>
+      <member refid="classQuantLib_1_1GenericEngine_1ad9c6e8dc65ca072d5e6e17640d74db3e" prot="public" virt="virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>getArguments</name></member>
+      <member refid="classQuantLib_1_1QdPlusAmericanEngine_1a386831966e937f0c70763df289835efb" prot="public" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>getPutExerciseBoundary</name></member>
+      <member refid="classQuantLib_1_1GenericEngine_1aea8272ef6e5e0ea1cffadfed0454fa88" prot="public" virt="virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>getResults</name></member>
+      <member refid="classQuantLib_1_1QdPlusAmericanEngine_1a86499519ae6cc65364fbaec705795469aa6314709c12930b3651ccc0d03e1159d" prot="public" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>Halley</name></member>
+      <member refid="classQuantLib_1_1QdPlusAmericanEngine_1a0a325ee820ed6a4dfbab1fdba2955f19" prot="private" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>interpolationPoints_</name></member>
+      <member refid="classQuantLib_1_1Observable_1a07ad87c2c2599551463d0a529924dec2" prot="private" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::QdPlusAmericanEngine</scope><name>iterator</name></member>
+      <member refid="classQuantLib_1_1Observer_1ad45fa6f7242ee763d17c714a3e8bb6d7" prot="public" virt="non-virtual" ambiguityscope="QuantLib::Observer::"><scope>QuantLib::QdPlusAmericanEngine</scope><name>iterator</name></member>
+      <member refid="classQuantLib_1_1QdPlusAmericanEngine_1a8fe71a4bd26968de5428eafe58ca1c35" prot="private" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>maxIter_</name></member>
+      <member refid="classQuantLib_1_1QdPlusAmericanEngine_1a86499519ae6cc65364fbaec705795469a8ed65c9fdf7419cf7e47b6b21bed83b1" prot="public" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>Newton</name></member>
+      <member refid="classQuantLib_1_1Observable_1afb67478418efdb94382ac9d7ae904b94" prot="public" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>notifyObservers</name></member>
+      <member refid="classQuantLib_1_1Observable_1ae0d19b21fab87a01f53586a6b5c15f85" prot="public" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observable_1a942cf6a572bd95341433a6772c70cb29" prot="public" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observable_1a6c35885ef344665ecdfac9b9f3a59c0e" prot="public" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observer_1a85e3adb273b706155ea7e8bd98ee460b" prot="private" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>observables_</name></member>
+      <member refid="classQuantLib_1_1Observer_1a246072080d37c0cd180013417251c70b" prot="public" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>Observer</name></member>
+      <member refid="classQuantLib_1_1Observer_1ae6e892e237db5ffe7acbef54360ef0e3" prot="public" virt="non-virtual" ambiguityscope="QuantLib::Observer::"><scope>QuantLib::QdPlusAmericanEngine</scope><name>Observer</name></member>
+      <member refid="classQuantLib_1_1Observable_1a4da6017619203dcb570d5f4174f0beea" prot="private" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>observers_</name></member>
+      <member refid="classQuantLib_1_1Observable_1ad1e086da62f05b4bc5eafa698ef6fbc3" prot="public" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::QdPlusAmericanEngine</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1Observable_1ab45941c65068ab4c8d69a7d1a72beeb7" prot="public" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::QdPlusAmericanEngine</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1Observer_1a40ad1a8bfb71e32b2916b370f3f9392c" prot="public" virt="non-virtual" ambiguityscope="QuantLib::Observer::"><scope>QuantLib::QdPlusAmericanEngine</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1detail_1_1QdPutCallParityEngine_1a99454f72fb3e2c0770341e4602853f3b" prot="protected" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>process_</name></member>
+      <member refid="classQuantLib_1_1QdPlusAmericanEngine_1aa2573d6d0bd204e77d1d9ff8dbbcd491" prot="public" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>putExerciseBoundaryAtTau</name></member>
+      <member refid="classQuantLib_1_1QdPlusAmericanEngine_1ab20f9804cb251718ba1101bb645256ce" prot="public" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>QdPlusAmericanEngine</name></member>
+      <member refid="classQuantLib_1_1detail_1_1QdPutCallParityEngine_1a25106472fba4497fd8b3b92b6cae6942" prot="public" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>QdPutCallParityEngine</name></member>
+      <member refid="classQuantLib_1_1Observable_1a1eb87a03e7e1fd43377bce32e0c21bce" prot="private" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>registerObserver</name></member>
+      <member refid="classQuantLib_1_1Observer_1a312bbe4a5386f10a1584f3477b3c2709" prot="public" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>registerWith</name></member>
+      <member refid="classQuantLib_1_1Observer_1a338928c4fe626f9ccf0b98ceb318853a" prot="public" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>registerWithObservables</name></member>
+      <member refid="classQuantLib_1_1GenericEngine_1a81c5390ba1e713e57ca87d5f841d37f2" prot="public" virt="virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>reset</name></member>
+      <member refid="classQuantLib_1_1GenericEngine_1a41281f2ea4990dbce90be1f9f2e231f6" prot="protected" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>results_</name></member>
+      <member refid="classQuantLib_1_1QdPlusAmericanEngine_1a86499519ae6cc65364fbaec705795469adecbc6e8ac40adf5066db49be14f965a" prot="public" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>Ridder</name></member>
+      <member refid="classQuantLib_1_1Observable_1a22e674e99fccc2da996de9620304f63c" prot="private" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::QdPlusAmericanEngine</scope><name>set_type</name></member>
+      <member refid="classQuantLib_1_1QdPlusAmericanEngine_1a86499519ae6cc65364fbaec705795469" prot="public" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>SolverType</name></member>
+      <member refid="classQuantLib_1_1QdPlusAmericanEngine_1ab06531d5325bae158836eddcc534ee1c" prot="private" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>solverType_</name></member>
+      <member refid="classQuantLib_1_1QdPlusAmericanEngine_1a86499519ae6cc65364fbaec705795469a628eafc2eb551083065905686d725df5" prot="public" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>SuperHalley</name></member>
+      <member refid="classQuantLib_1_1Observable_1abd81ef8b87594aa6f9d2a5bd5de3e628" prot="private" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>unregisterObserver</name></member>
+      <member refid="classQuantLib_1_1Observer_1a297d13afa77b0e7e6deae3bab777180f" prot="public" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>unregisterWith</name></member>
+      <member refid="classQuantLib_1_1Observer_1ab88925691aba7e7d96cc5188e94361ea" prot="public" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>unregisterWithAll</name></member>
+      <member refid="classQuantLib_1_1GenericEngine_1aaf5ef54d9e1abf8b1b50b48804edf3dc" prot="public" virt="virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>update</name></member>
+      <member refid="classQuantLib_1_1QdPlusAmericanEngine_1a09cc01d2bc72c4f667eb451de3575774" prot="public" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>xMax</name></member>
+      <member refid="classQuantLib_1_1Observable_1a32093a7038e9bd8d28e5d378eca9f4f7" prot="public" virt="virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>~Observable</name></member>
+      <member refid="classQuantLib_1_1Observer_1a6b5c15445bbe598d34871f5a5a3ed671" prot="public" virt="virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>~Observer</name></member>
+      <member refid="classQuantLib_1_1PricingEngine_1a66b279a54578cd7e60d402e5147eb526" prot="public" virt="non-virtual"><scope>QuantLib::QdPlusAmericanEngine</scope><name>~PricingEngine</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

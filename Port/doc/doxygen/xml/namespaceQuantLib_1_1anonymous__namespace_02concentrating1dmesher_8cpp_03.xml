@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceQuantLib_1_1anonymous__namespace_02concentrating1dmesher_8cpp_03" kind="namespace" language="C++">
+    <compoundname>QuantLib::anonymous_namespace{concentrating1dmesher.cpp}</compoundname>
+    <innerclass refid="classQuantLib_1_1anonymous__namespace_02concentrating1dmesher_8cpp_03_1_1OdeIntegrationFct" prot="public">QuantLib::anonymous_namespace{concentrating1dmesher.cpp}::OdeIntegrationFct</innerclass>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceQuantLib_1_1anonymous__namespace_02concentrating1dmesher_8cpp_03_1aa66a0207eecdfd120d4e8b9149eab02d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QuantLib::anonymous_namespace{concentrating1dmesher.cpp}::equal_on_first</definition>
+        <argsstring>(const std::pair&lt; Real, Real &gt; &amp;p1, const std::pair&lt; Real, Real &gt; &amp;p2)</argsstring>
+        <name>equal_on_first</name>
+        <qualifiedname>QuantLib::anonymous_namespace{concentrating1dmesher.cpp}::equal_on_first</qualifiedname>
+        <param>
+          <type>const std::pair&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>, <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> &gt; &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const std::pair&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>, <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> &gt; &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/meshers/concentrating1dmesher.cpp" line="134" column="14" bodyfile="ql/methods/finitedifferences/meshers/concentrating1dmesher.cpp" bodystart="134" bodyend="137"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ql/methods/finitedifferences/meshers/concentrating1dmesher.cpp" line="108" column="5"/>
+  </compounddef>
+</doxygen>

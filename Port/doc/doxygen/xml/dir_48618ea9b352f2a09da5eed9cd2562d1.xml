@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_48618ea9b352f2a09da5eed9cd2562d1" kind="dir">
+    <compoundname>ql/processes</compoundname>
+    <innerfile refid="blackscholesprocess_8cpp">blackscholesprocess.cpp</innerfile>
+    <innerfile refid="blackscholesprocess_8hpp">blackscholesprocess.hpp</innerfile>
+    <innerfile refid="eulerdiscretization_8cpp">eulerdiscretization.cpp</innerfile>
+    <innerfile refid="eulerdiscretization_8hpp">eulerdiscretization.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ql/processes/"/>
+  </compounddef>
+</doxygen>

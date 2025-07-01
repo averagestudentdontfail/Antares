@@ -1,0 +1,718 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="blackcalculator_8cpp" kind="file" language="C++">
+    <compoundname>blackcalculator.cpp</compoundname>
+    <includes refid="blackcalculator_8hpp" local="no">ql/pricingengines/blackcalculator.hpp</includes>
+    <includes refid="normaldistribution_8hpp" local="no">ql/math/distributions/normaldistribution.hpp</includes>
+    <includes refid="comparison_8hpp" local="no">ql/math/comparison.hpp</includes>
+    <incdepgraph>
+      <node id="42">
+        <label>ql/any.hpp</label>
+        <link refid="any_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>ql/config.ansi.hpp</label>
+        <link refid="config_8ansi_8hpp"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>ql/errors.hpp</label>
+        <link refid="errors_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>ql/instrument.hpp</label>
+        <link refid="instrument_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>ql/instruments/payoffs.hpp</label>
+        <link refid="payoffs_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>ql/math/comparison.hpp</label>
+        <link refid="comparison_8hpp"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>ql/math/distributions/normaldistribution.hpp</label>
+        <link refid="normaldistribution_8hpp"/>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>ql/math/errorfunction.hpp</label>
+        <link refid="errorfunction_8hpp"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>ql/mathconstants.hpp</label>
+        <link refid="mathconstants_8hpp"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ql/option.hpp</label>
+        <link refid="option_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>ql/patterns/lazyobject.hpp</label>
+        <link refid="lazyobject_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>ql/patterns/observable.hpp</label>
+        <link refid="observable_8hpp"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>ql/patterns/singleton.hpp</label>
+        <link refid="singleton_8hpp"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>ql/patterns/visitor.hpp</label>
+        <link refid="visitor_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>ql/payoff.hpp</label>
+        <link refid="payoff_8hpp"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>ql/pricingengine.hpp</label>
+        <link refid="pricingengine_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ql/pricingengines/blackcalculator.cpp</label>
+        <link refid="blackcalculator_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ql/pricingengines/blackcalculator.hpp</label>
+        <link refid="blackcalculator_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>ql/qldefines.hpp</label>
+        <link refid="qldefines_8hpp"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>ql/shared_ptr.hpp</label>
+        <link refid="shared__ptr_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>ql/time/date.hpp</label>
+        <link refid="date_8hpp"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>ql/time/frequency.hpp</label>
+        <link refid="frequency_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>ql/time/period.hpp</label>
+        <link refid="period_8hpp"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>ql/time/timeunit.hpp</label>
+        <link refid="timeunit_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>ql/time/weekday.hpp</label>
+        <link refid="weekday_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>ql/types.hpp</label>
+        <link refid="types_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>ql/userconfig.hpp</label>
+        <link refid="userconfig_8hpp"/>
+      </node>
+      <node id="32">
+        <label>ql/utilities/null.hpp</label>
+        <link refid="null_8hpp"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>any</label>
+      </node>
+      <node id="21">
+        <label>boost/assert.hpp</label>
+      </node>
+      <node id="10">
+        <label>boost/config.hpp</label>
+      </node>
+      <node id="22">
+        <label>boost/current_function.hpp</label>
+      </node>
+      <node id="20">
+        <label>boost/enable_shared_from_this.hpp</label>
+      </node>
+      <node id="19">
+        <label>boost/make_shared.hpp</label>
+      </node>
+      <node id="18">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="11">
+        <label>boost/version.hpp</label>
+      </node>
+      <node id="15">
+        <label>cmath</label>
+      </node>
+      <node id="28">
+        <label>cstddef</label>
+      </node>
+      <node id="39">
+        <label>cstdint</label>
+      </node>
+      <node id="23">
+        <label>exception</label>
+      </node>
+      <node id="41">
+        <label>functional</label>
+      </node>
+      <node id="36">
+        <label>iosfwd</label>
+      </node>
+      <node id="16">
+        <label>limits</label>
+      </node>
+      <node id="44">
+        <label>map</label>
+      </node>
+      <node id="30">
+        <label>set</label>
+      </node>
+      <node id="24">
+        <label>sstream</label>
+      </node>
+      <node id="25">
+        <label>string</label>
+      </node>
+      <node id="29">
+        <label>type_traits</label>
+      </node>
+      <node id="40">
+        <label>utility</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classQuantLib_1_1BlackCalculator_1_1Calculator" prot="public">QuantLib::BlackCalculator::Calculator</innerclass>
+    <innernamespace refid="namespaceQuantLib">QuantLib</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>c++;<sp/>tab-width:<sp/>4;<sp/>indent-tabs-mode:<sp/>nil;<sp/>c-basic-offset:<sp/>4<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2003,<sp/>2004,<sp/>2005,<sp/>2006<sp/>Ferdinando<sp/>Ametrano</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2006<sp/>StatPro<sp/>Italia<sp/>srl</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>QuantLib,<sp/>a<sp/>free-software/open-source<sp/>library</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>for<sp/>financial<sp/>quantitative<sp/>analysts<sp/>and<sp/>developers<sp/>-<sp/>http://quantlib.org/</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>QuantLib<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>QuantLib<sp/>license.<sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>copy<sp/>of<sp/>the<sp/>license<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>please<sp/>email</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>&lt;quantlib-dev@lists.sf.net&gt;.<sp/>The<sp/>license<sp/>is<sp/>also<sp/>available<sp/>online<sp/>at</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>&lt;http://quantlib.org/license.shtml&gt;.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"></highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the<sp/>license<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="blackcalculator_8hpp" kindref="compound">ql/pricingengines/blackcalculator.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="normaldistribution_8hpp" kindref="compound">ql/math/distributions/normaldistribution.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="comparison_8hpp" kindref="compound">ql/math/comparison.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceQuantLib" kindref="compound">QuantLib</ref><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="classQuantLib_1_1BlackCalculator_1_1Calculator" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classQuantLib_1_1BlackCalculator_1_1Calculator" kindref="compound">BlackCalculator::Calculator</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1AcyclicVisitor" kindref="compound">AcyclicVisitor</ref>,</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Visitor" kindref="compound">Visitor</ref>&lt;Payoff&gt;,</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Visitor" kindref="compound">Visitor</ref>&lt;PlainVanillaPayoff&gt;,</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Visitor" kindref="compound">Visitor</ref>&lt;CashOrNothingPayoff&gt;,</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Visitor" kindref="compound">Visitor</ref>&lt;AssetOrNothingPayoff&gt;,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Visitor" kindref="compound">Visitor</ref>&lt;GapPayoff&gt;<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator" kindref="compound">BlackCalculator</ref>&amp;<sp/><ref refid="classQuantLib_1_1BlackCalculator_1_1Calculator_1a34b1691246a82e4314dc82c112d809f4" kindref="member">black_</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1BlackCalculator_1_1Calculator" kindref="compound">Calculator</ref>(<ref refid="classQuantLib_1_1BlackCalculator" kindref="compound">BlackCalculator</ref>&amp;<sp/>black)<sp/>:<sp/><ref refid="classQuantLib_1_1BlackCalculator_1_1Calculator_1a34b1691246a82e4314dc82c112d809f4" kindref="member">black_</ref>(black)<sp/>{}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1BlackCalculator_1_1Calculator_1a9f7a8feb53e310f393f6812277315b88" kindref="member">visit</ref>(<ref refid="classQuantLib_1_1Payoff" kindref="compound">Payoff</ref>&amp;)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1BlackCalculator_1_1Calculator_1a9f7a8feb53e310f393f6812277315b88" kindref="member">visit</ref>(<ref refid="classQuantLib_1_1PlainVanillaPayoff" kindref="compound">PlainVanillaPayoff</ref>&amp;)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1BlackCalculator_1_1Calculator_1a9f7a8feb53e310f393f6812277315b88" kindref="member">visit</ref>(<ref refid="classQuantLib_1_1CashOrNothingPayoff" kindref="compound">CashOrNothingPayoff</ref>&amp;)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1BlackCalculator_1_1Calculator_1a9f7a8feb53e310f393f6812277315b88" kindref="member">visit</ref>(<ref refid="classQuantLib_1_1AssetOrNothingPayoff" kindref="compound">AssetOrNothingPayoff</ref>&amp;)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1BlackCalculator_1_1Calculator_1a9f7a8feb53e310f393f6812277315b88" kindref="member">visit</ref>(<ref refid="classQuantLib_1_1GapPayoff" kindref="compound">GapPayoff</ref>&amp;)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a2f564275fbdde2b5cfcc9e68915c4104" kindref="member">BlackCalculator::BlackCalculator</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ext::shared_ptr&lt;StrikedTypePayoff&gt;&amp;<sp/>p,</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>forward,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>stdDev,</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>discount)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>strike_(p-&gt;strike()),<sp/>forward_(forward),<sp/>stdDev_(stdDev),</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>discount_(discount),<sp/>variance_(stdDev*stdDev)<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1ac58ec9fe4dd92188300b53f4aeda91de" kindref="member">initialize</ref>(p);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a2f564275fbdde2b5cfcc9e68915c4104" kindref="member">BlackCalculator::BlackCalculator</ref>(<ref refid="classQuantLib_1_1Option_1abaee7fc605354c444867545492cd5845" kindref="member">Option::Type</ref><sp/>optionType,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>strike,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>forward,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>stdDev,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>discount)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a8e729a5b6565e5e242b25b3fd1cb9390" kindref="member">strike_</ref>(strike),<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a94298d108c8a779945d74f2c32968578" kindref="member">forward_</ref>(forward),<sp/><ref refid="classQuantLib_1_1BlackCalculator_1accb7da96b4304f8a7213e94afd9d1ef6" kindref="member">stdDev_</ref>(stdDev),</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a7f7c1327ac680e2c94f3f97fe409dcf6" kindref="member">discount_</ref>(discount),<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a1c84696cabcb843cd35e1073eda76038" kindref="member">variance_</ref>(stdDev*stdDev)<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1ac58ec9fe4dd92188300b53f4aeda91de" kindref="member">initialize</ref>(ext::shared_ptr&lt;StrikedTypePayoff&gt;(</highlight><highlight class="keyword">new</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1PlainVanillaPayoff" kindref="compound">PlainVanillaPayoff</ref>(optionType,<sp/>strike)));</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1BlackCalculator_1ac58ec9fe4dd92188300b53f4aeda91de" kindref="member">BlackCalculator::initialize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ext::shared_ptr&lt;StrikedTypePayoff&gt;&amp;<sp/>p)<sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(<ref refid="classQuantLib_1_1BlackCalculator_1a8e729a5b6565e5e242b25b3fd1cb9390" kindref="member">strike_</ref>&gt;=0.0,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;strike<sp/>(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a8e729a5b6565e5e242b25b3fd1cb9390" kindref="member">strike_</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)<sp/>must<sp/>be<sp/>non-negative&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(<ref refid="classQuantLib_1_1BlackCalculator_1a94298d108c8a779945d74f2c32968578" kindref="member">forward_</ref>&gt;0.0,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;forward<sp/>(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a94298d108c8a779945d74f2c32968578" kindref="member">forward_</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)<sp/>must<sp/>be<sp/>positive&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//QL_REQUIRE(displacement_&gt;=0.0,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;displacement<sp/>(&quot;<sp/>&lt;&lt;<sp/>displacement_<sp/>&lt;&lt;<sp/>&quot;)<sp/>must<sp/>be<sp/>non-negative&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(<ref refid="classQuantLib_1_1BlackCalculator_1accb7da96b4304f8a7213e94afd9d1ef6" kindref="member">stdDev_</ref>&gt;=0.0,</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;stdDev<sp/>(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classQuantLib_1_1BlackCalculator_1accb7da96b4304f8a7213e94afd9d1ef6" kindref="member">stdDev_</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)<sp/>must<sp/>be<sp/>non-negative&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(<ref refid="classQuantLib_1_1BlackCalculator_1a7f7c1327ac680e2c94f3f97fe409dcf6" kindref="member">discount_</ref>&gt;0.0,</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;discount<sp/>(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a7f7c1327ac680e2c94f3f97fe409dcf6" kindref="member">discount_</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)<sp/>must<sp/>be<sp/>positive&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classQuantLib_1_1BlackCalculator_1accb7da96b4304f8a7213e94afd9d1ef6" kindref="member">stdDev_</ref>&gt;=<ref refid="group__limitMacros_1ga4f2e6bcf6b19224bce1a5a6234286c17" kindref="member">QL_EPSILON</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceQuantLib_1a8c358786ff7da50c785ca5a003b1c9c1" kindref="member">close</ref>(<ref refid="classQuantLib_1_1BlackCalculator_1a8e729a5b6565e5e242b25b3fd1cb9390" kindref="member">strike_</ref>,<sp/>0.0))<sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1aee3f76b3355dc16777c7353be3643ac7" kindref="member">d1_</ref><sp/>=<sp/><ref refid="group__limitMacros_1ga31675a375a563ed7a1bba05c664489af" kindref="member">QL_MAX_REAL</ref>;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a23a6a091845d14d4ff8505a0ca066f84" kindref="member">d2_</ref><sp/>=<sp/><ref refid="group__limitMacros_1ga31675a375a563ed7a1bba05c664489af" kindref="member">QL_MAX_REAL</ref>;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a86c131fcc72e35f1c298dd7f829aa3cd" kindref="member">cum_d1_</ref><sp/>=<sp/>1.0;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a583b323a7f1a6ed17f01e524efe0e12a" kindref="member">cum_d2_</ref><sp/>=<sp/>1.0;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1ad5d21912266292ceb7c0918512df4dd1" kindref="member">n_d1_</ref><sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1ada465161d1cd1929606d1e04a1a739a5" kindref="member">n_d2_</ref><sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1aee3f76b3355dc16777c7353be3643ac7" kindref="member">d1_</ref><sp/>=<sp/>std::log(<ref refid="classQuantLib_1_1BlackCalculator_1a94298d108c8a779945d74f2c32968578" kindref="member">forward_</ref>/<ref refid="classQuantLib_1_1BlackCalculator_1a8e729a5b6565e5e242b25b3fd1cb9390" kindref="member">strike_</ref>)/<ref refid="classQuantLib_1_1BlackCalculator_1accb7da96b4304f8a7213e94afd9d1ef6" kindref="member">stdDev_</ref><sp/>+<sp/>0.5*<ref refid="classQuantLib_1_1BlackCalculator_1accb7da96b4304f8a7213e94afd9d1ef6" kindref="member">stdDev_</ref>;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a23a6a091845d14d4ff8505a0ca066f84" kindref="member">d2_</ref><sp/>=<sp/><ref refid="classQuantLib_1_1BlackCalculator_1aee3f76b3355dc16777c7353be3643ac7" kindref="member">d1_</ref>-<ref refid="classQuantLib_1_1BlackCalculator_1accb7da96b4304f8a7213e94afd9d1ef6" kindref="member">stdDev_</ref>;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CumulativeNormalDistribution<sp/>f;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a86c131fcc72e35f1c298dd7f829aa3cd" kindref="member">cum_d1_</ref><sp/>=<sp/>f(<ref refid="classQuantLib_1_1BlackCalculator_1aee3f76b3355dc16777c7353be3643ac7" kindref="member">d1_</ref>);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a583b323a7f1a6ed17f01e524efe0e12a" kindref="member">cum_d2_</ref><sp/>=<sp/>f(<ref refid="classQuantLib_1_1BlackCalculator_1a23a6a091845d14d4ff8505a0ca066f84" kindref="member">d2_</ref>);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1ad5d21912266292ceb7c0918512df4dd1" kindref="member">n_d1_</ref><sp/>=<sp/>f.derivative(<ref refid="classQuantLib_1_1BlackCalculator_1aee3f76b3355dc16777c7353be3643ac7" kindref="member">d1_</ref>);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1ada465161d1cd1929606d1e04a1a739a5" kindref="member">n_d2_</ref><sp/>=<sp/>f.derivative(<ref refid="classQuantLib_1_1BlackCalculator_1a23a6a091845d14d4ff8505a0ca066f84" kindref="member">d2_</ref>);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceQuantLib_1a8c358786ff7da50c785ca5a003b1c9c1" kindref="member">close</ref>(<ref refid="classQuantLib_1_1BlackCalculator_1a94298d108c8a779945d74f2c32968578" kindref="member">forward_</ref>,<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a8e729a5b6565e5e242b25b3fd1cb9390" kindref="member">strike_</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1aee3f76b3355dc16777c7353be3643ac7" kindref="member">d1_</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a23a6a091845d14d4ff8505a0ca066f84" kindref="member">d2_</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a86c131fcc72e35f1c298dd7f829aa3cd" kindref="member">cum_d1_</ref><sp/>=<sp/>0.5;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a583b323a7f1a6ed17f01e524efe0e12a" kindref="member">cum_d2_</ref><sp/>=<sp/>0.5;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1ad5d21912266292ceb7c0918512df4dd1" kindref="member">n_d1_</ref><sp/>=<sp/><ref refid="mathconstants_8hpp_1a54bca7e66258614c65e873a2fce393ac" kindref="member">M_SQRT_2</ref><sp/>*<sp/><ref refid="mathconstants_8hpp_1ab4c9368417bf8d2db0dd182facfbf86c" kindref="member">M_1_SQRTPI</ref>;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1ada465161d1cd1929606d1e04a1a739a5" kindref="member">n_d2_</ref><sp/>=<sp/><ref refid="mathconstants_8hpp_1a54bca7e66258614c65e873a2fce393ac" kindref="member">M_SQRT_2</ref><sp/>*<sp/><ref refid="mathconstants_8hpp_1ab4c9368417bf8d2db0dd182facfbf86c" kindref="member">M_1_SQRTPI</ref>;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classQuantLib_1_1BlackCalculator_1a94298d108c8a779945d74f2c32968578" kindref="member">forward_</ref>&gt;<ref refid="classQuantLib_1_1BlackCalculator_1a8e729a5b6565e5e242b25b3fd1cb9390" kindref="member">strike_</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1aee3f76b3355dc16777c7353be3643ac7" kindref="member">d1_</ref><sp/>=<sp/><ref refid="group__limitMacros_1ga31675a375a563ed7a1bba05c664489af" kindref="member">QL_MAX_REAL</ref>;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a23a6a091845d14d4ff8505a0ca066f84" kindref="member">d2_</ref><sp/>=<sp/><ref refid="group__limitMacros_1ga31675a375a563ed7a1bba05c664489af" kindref="member">QL_MAX_REAL</ref>;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a86c131fcc72e35f1c298dd7f829aa3cd" kindref="member">cum_d1_</ref><sp/>=<sp/>1.0;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a583b323a7f1a6ed17f01e524efe0e12a" kindref="member">cum_d2_</ref><sp/>=<sp/>1.0;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1ad5d21912266292ceb7c0918512df4dd1" kindref="member">n_d1_</ref><sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1ada465161d1cd1929606d1e04a1a739a5" kindref="member">n_d2_</ref><sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1aee3f76b3355dc16777c7353be3643ac7" kindref="member">d1_</ref><sp/>=<sp/><ref refid="group__limitMacros_1ga8a6736b7bfef354a1fc507317d49117a" kindref="member">QL_MIN_REAL</ref>;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a23a6a091845d14d4ff8505a0ca066f84" kindref="member">d2_</ref><sp/>=<sp/><ref refid="group__limitMacros_1ga8a6736b7bfef354a1fc507317d49117a" kindref="member">QL_MIN_REAL</ref>;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a86c131fcc72e35f1c298dd7f829aa3cd" kindref="member">cum_d1_</ref><sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a583b323a7f1a6ed17f01e524efe0e12a" kindref="member">cum_d2_</ref><sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1ad5d21912266292ceb7c0918512df4dd1" kindref="member">n_d1_</ref><sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1ada465161d1cd1929606d1e04a1a739a5" kindref="member">n_d2_</ref><sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1ae12b61e39d790a3e892e4d49add7b46a" kindref="member">x_</ref><sp/>=<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a8e729a5b6565e5e242b25b3fd1cb9390" kindref="member">strike_</ref>;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a171d3e5fdf99b1c2affd228d998cd155" kindref="member">DxDstrike_</ref><sp/>=<sp/>1.0;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>following<sp/>one<sp/>will<sp/>probably<sp/>disappear<sp/>as<sp/>soon<sp/>as</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>super-share<sp/>will<sp/>be<sp/>properly<sp/>handled</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1aa0a99e0e77161f0ace6887ea403351fd" kindref="member">DxDs_</ref><sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>this<sp/>part<sp/>is<sp/>always<sp/>executed.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>in<sp/>case<sp/>of<sp/>plain-vanilla<sp/>payoffs,<sp/>it<sp/>is<sp/>also<sp/>the<sp/>only<sp/>part</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>which<sp/>is<sp/>executed.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(p-&gt;optionType())<sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Option_1abaee7fc605354c444867545492cd5845a4f872c1ba3286c1af60485c2f4a4d3c1" kindref="member">Option::Call</ref>:</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a69b0ae6a196ef39a6c96c6edfe247dd0" kindref="member">alpha_</ref><sp/><sp/><sp/><sp/><sp/>=<sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a86c131fcc72e35f1c298dd7f829aa3cd" kindref="member">cum_d1_</ref>;</highlight><highlight class="comment">//<sp/><sp/>N(d1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a75a329a54cdd4ea705760642ee5b8c2f" kindref="member">DalphaDd1_</ref><sp/>=<sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1ad5d21912266292ceb7c0918512df4dd1" kindref="member">n_d1_</ref>;</highlight><highlight class="comment">//<sp/><sp/>n(d1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a08240a0aac426010bbb993bb5977ae51" kindref="member">beta_</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>-<ref refid="classQuantLib_1_1BlackCalculator_1a583b323a7f1a6ed17f01e524efe0e12a" kindref="member">cum_d2_</ref>;</highlight><highlight class="comment">//<sp/>-N(d2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a9cfdb9390b9e6d58e78d235679b62757" kindref="member">DbetaDd2_</ref><sp/><sp/>=<sp/>-<sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1ada465161d1cd1929606d1e04a1a739a5" kindref="member">n_d2_</ref>;</highlight><highlight class="comment">//<sp/>-n(d2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Option_1abaee7fc605354c444867545492cd5845aa96ffa37e51c7bbea13951f106dbd3c0" kindref="member">Option::Put</ref>:</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a69b0ae6a196ef39a6c96c6edfe247dd0" kindref="member">alpha_</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>-1.0+<ref refid="classQuantLib_1_1BlackCalculator_1a86c131fcc72e35f1c298dd7f829aa3cd" kindref="member">cum_d1_</ref>;</highlight><highlight class="comment">//<sp/>-N(-d1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a75a329a54cdd4ea705760642ee5b8c2f" kindref="member">DalphaDd1_</ref><sp/>=<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1ad5d21912266292ceb7c0918512df4dd1" kindref="member">n_d1_</ref>;</highlight><highlight class="comment">//<sp/><sp/>n(<sp/>d1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a08240a0aac426010bbb993bb5977ae51" kindref="member">beta_</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><sp/>1.0-<ref refid="classQuantLib_1_1BlackCalculator_1a583b323a7f1a6ed17f01e524efe0e12a" kindref="member">cum_d2_</ref>;</highlight><highlight class="comment">//<sp/><sp/>N(-d2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a9cfdb9390b9e6d58e78d235679b62757" kindref="member">DbetaDd2_</ref><sp/><sp/>=<sp/><sp/><sp/><sp/><sp/>-<sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1ada465161d1cd1929606d1e04a1a739a5" kindref="member">n_d2_</ref>;</highlight><highlight class="comment">//<sp/>-n(<sp/>d2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a8efe9cb3e67c8d0585e57b4d53c5d2fe" kindref="member">QL_FAIL</ref>(</highlight><highlight class="stringliteral">&quot;invalid<sp/>option<sp/>type&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>now<sp/>dispatch<sp/>on<sp/>type.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Calculator<sp/>calc(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p-&gt;accept(calc);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1BlackCalculator_1_1Calculator_1a9f7a8feb53e310f393f6812277315b88" kindref="member">BlackCalculator::Calculator::visit</ref>(Payoff&amp;<sp/>p)<sp/>{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a8efe9cb3e67c8d0585e57b4d53c5d2fe" kindref="member">QL_FAIL</ref>(</highlight><highlight class="stringliteral">&quot;unsupported<sp/>payoff<sp/>type:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>p.name());</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1BlackCalculator_1_1Calculator_1a9f7a8feb53e310f393f6812277315b88" kindref="member">BlackCalculator::Calculator::visit</ref>(PlainVanillaPayoff&amp;)<sp/>{}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1BlackCalculator_1_1Calculator_1a9f7a8feb53e310f393f6812277315b88" kindref="member">BlackCalculator::Calculator::visit</ref>(CashOrNothingPayoff&amp;<sp/>payoff)<sp/>{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>black_.alpha_<sp/>=<sp/>black_.DalphaDd1_<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>black_.x_<sp/>=<sp/>payoff.cashPayoff();</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>black_.DxDstrike_<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(payoff.optionType())<sp/>{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Option_1abaee7fc605354c444867545492cd5845a4f872c1ba3286c1af60485c2f4a4d3c1" kindref="member">Option::Call</ref>:</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>black_.beta_<sp/><sp/><sp/><sp/><sp/>=<sp/>black_.cum_d2_;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>black_.DbetaDd2_<sp/>=<sp/>black_.n_d2_;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Option_1abaee7fc605354c444867545492cd5845aa96ffa37e51c7bbea13951f106dbd3c0" kindref="member">Option::Put</ref>:</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>black_.beta_<sp/><sp/><sp/><sp/><sp/>=<sp/>1.0-black_.cum_d2_;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>black_.DbetaDd2_<sp/>=<sp/><sp/><sp/><sp/>-black_.n_d2_;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a8efe9cb3e67c8d0585e57b4d53c5d2fe" kindref="member">QL_FAIL</ref>(</highlight><highlight class="stringliteral">&quot;invalid<sp/>option<sp/>type&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1BlackCalculator_1_1Calculator_1a9f7a8feb53e310f393f6812277315b88" kindref="member">BlackCalculator::Calculator::visit</ref>(AssetOrNothingPayoff&amp;<sp/>payoff)<sp/>{</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>black_.beta_<sp/>=<sp/>black_.DbetaDd2_<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(payoff.optionType())<sp/>{</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Option_1abaee7fc605354c444867545492cd5845a4f872c1ba3286c1af60485c2f4a4d3c1" kindref="member">Option::Call</ref>:</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>black_.alpha_<sp/><sp/><sp/><sp/><sp/>=<sp/>black_.cum_d1_;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>black_.DalphaDd1_<sp/>=<sp/>black_.n_d1_;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Option_1abaee7fc605354c444867545492cd5845aa96ffa37e51c7bbea13951f106dbd3c0" kindref="member">Option::Put</ref>:</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>black_.alpha_<sp/><sp/><sp/><sp/><sp/>=<sp/>1.0-black_.cum_d1_;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>black_.DalphaDd1_<sp/>=<sp/>-black_.n_d1_;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a8efe9cb3e67c8d0585e57b4d53c5d2fe" kindref="member">QL_FAIL</ref>(</highlight><highlight class="stringliteral">&quot;invalid<sp/>option<sp/>type&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1BlackCalculator_1_1Calculator_1a9f7a8feb53e310f393f6812277315b88" kindref="member">BlackCalculator::Calculator::visit</ref>(GapPayoff&amp;<sp/>payoff)<sp/>{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>black_.x_<sp/>=<sp/>payoff.secondStrike();</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>black_.DxDstrike_<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a535fdf5d842b0fd7942557d4e3ccb0cd" kindref="member">BlackCalculator::value</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>result<sp/>=<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a7f7c1327ac680e2c94f3f97fe409dcf6" kindref="member">discount_</ref><sp/>*<sp/>(<ref refid="classQuantLib_1_1BlackCalculator_1a94298d108c8a779945d74f2c32968578" kindref="member">forward_</ref><sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a69b0ae6a196ef39a6c96c6edfe247dd0" kindref="member">alpha_</ref><sp/>+<sp/><ref refid="classQuantLib_1_1BlackCalculator_1ae12b61e39d790a3e892e4d49add7b46a" kindref="member">x_</ref><sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a08240a0aac426010bbb993bb5977ae51" kindref="member">beta_</ref>);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1BlackCalculator_1aa9846c129bd6263387fd03a381212df5" kindref="member">BlackCalculator::delta</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>spot)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(spot<sp/>&gt;<sp/>0.0,<sp/></highlight><highlight class="stringliteral">&quot;positive<sp/>spot<sp/>value<sp/>required:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>spot<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>not<sp/>allowed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>DforwardDs<sp/>=<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a94298d108c8a779945d74f2c32968578" kindref="member">forward_</ref><sp/>/<sp/>spot;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>temp<sp/>=<sp/><ref refid="classQuantLib_1_1BlackCalculator_1accb7da96b4304f8a7213e94afd9d1ef6" kindref="member">stdDev_</ref>*spot;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>DalphaDs<sp/>=<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a75a329a54cdd4ea705760642ee5b8c2f" kindref="member">DalphaDd1_</ref>/temp;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>DbetaDs<sp/><sp/>=<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a9cfdb9390b9e6d58e78d235679b62757" kindref="member">DbetaDd2_</ref>/temp;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>temp2<sp/>=<sp/>DalphaDs<sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a94298d108c8a779945d74f2c32968578" kindref="member">forward_</ref><sp/>+<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a69b0ae6a196ef39a6c96c6edfe247dd0" kindref="member">alpha_</ref><sp/>*<sp/>DforwardDs</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+DbetaDs<sp/><sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1ae12b61e39d790a3e892e4d49add7b46a" kindref="member">x_</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a08240a0aac426010bbb993bb5977ae51" kindref="member">beta_</ref><sp/><sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1aa0a99e0e77161f0ace6887ea403351fd" kindref="member">DxDs_</ref>;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a7f7c1327ac680e2c94f3f97fe409dcf6" kindref="member">discount_</ref><sp/>*<sp/>temp2;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1BlackCalculator_1ab4b7104872f1473291d7798c1ec787f3" kindref="member">BlackCalculator::deltaForward</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>temp<sp/>=<sp/><ref refid="classQuantLib_1_1BlackCalculator_1accb7da96b4304f8a7213e94afd9d1ef6" kindref="member">stdDev_</ref>*<ref refid="classQuantLib_1_1BlackCalculator_1a94298d108c8a779945d74f2c32968578" kindref="member">forward_</ref>;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>DalphaDforward<sp/>=<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a75a329a54cdd4ea705760642ee5b8c2f" kindref="member">DalphaDd1_</ref>/temp;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>DbetaDforward<sp/><sp/>=<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a9cfdb9390b9e6d58e78d235679b62757" kindref="member">DbetaDd2_</ref>/temp;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>temp2<sp/>=<sp/>DalphaDforward<sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a94298d108c8a779945d74f2c32968578" kindref="member">forward_</ref><sp/>+<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a69b0ae6a196ef39a6c96c6edfe247dd0" kindref="member">alpha_</ref></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+DbetaDforward<sp/><sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1ae12b61e39d790a3e892e4d49add7b46a" kindref="member">x_</ref>;<sp/></highlight><highlight class="comment">//<sp/>DXDforward<sp/>=<sp/>0.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a7f7c1327ac680e2c94f3f97fe409dcf6" kindref="member">discount_</ref><sp/>*<sp/>temp2;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a71d9b51300b2c67822b5748d51839e09" kindref="member">BlackCalculator::elasticity</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>spot)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>val<sp/>=<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a535fdf5d842b0fd7942557d4e3ccb0cd" kindref="member">value</ref>();</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>del<sp/>=<sp/><ref refid="classQuantLib_1_1BlackCalculator_1aa9846c129bd6263387fd03a381212df5" kindref="member">delta</ref>(spot);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(val&gt;<ref refid="group__limitMacros_1ga4f2e6bcf6b19224bce1a5a6234286c17" kindref="member">QL_EPSILON</ref>)</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>del/val*spot;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(std::fabs(del)&lt;<ref refid="group__limitMacros_1ga4f2e6bcf6b19224bce1a5a6234286c17" kindref="member">QL_EPSILON</ref>)</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0.0;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(del&gt;0.0)</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__limitMacros_1ga31675a375a563ed7a1bba05c664489af" kindref="member">QL_MAX_REAL</ref>;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__limitMacros_1ga8a6736b7bfef354a1fc507317d49117a" kindref="member">QL_MIN_REAL</ref>;</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1BlackCalculator_1aab7d58c6cc7b76b0b3fc028b31b9b13f" kindref="member">BlackCalculator::elasticityForward</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>val<sp/>=<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a535fdf5d842b0fd7942557d4e3ccb0cd" kindref="member">value</ref>();</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>del<sp/>=<sp/><ref refid="classQuantLib_1_1BlackCalculator_1ab4b7104872f1473291d7798c1ec787f3" kindref="member">deltaForward</ref>();</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(val&gt;<ref refid="group__limitMacros_1ga4f2e6bcf6b19224bce1a5a6234286c17" kindref="member">QL_EPSILON</ref>)</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>del/val*<ref refid="classQuantLib_1_1BlackCalculator_1a94298d108c8a779945d74f2c32968578" kindref="member">forward_</ref>;</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(std::fabs(del)&lt;<ref refid="group__limitMacros_1ga4f2e6bcf6b19224bce1a5a6234286c17" kindref="member">QL_EPSILON</ref>)</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0.0;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(del&gt;0.0)</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__limitMacros_1ga31675a375a563ed7a1bba05c664489af" kindref="member">QL_MAX_REAL</ref>;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__limitMacros_1ga8a6736b7bfef354a1fc507317d49117a" kindref="member">QL_MIN_REAL</ref>;</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a71db00d1bf27e7ac2323c6ab35fbc804" kindref="member">BlackCalculator::gamma</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>spot)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(spot<sp/>&gt;<sp/>0.0,<sp/></highlight><highlight class="stringliteral">&quot;positive<sp/>spot<sp/>value<sp/>required:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>spot<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>not<sp/>allowed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>DforwardDs<sp/>=<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a94298d108c8a779945d74f2c32968578" kindref="member">forward_</ref><sp/>/<sp/>spot;</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>temp<sp/>=<sp/><ref refid="classQuantLib_1_1BlackCalculator_1accb7da96b4304f8a7213e94afd9d1ef6" kindref="member">stdDev_</ref>*spot;</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>DalphaDs<sp/>=<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a75a329a54cdd4ea705760642ee5b8c2f" kindref="member">DalphaDd1_</ref>/temp;</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>DbetaDs<sp/><sp/>=<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a9cfdb9390b9e6d58e78d235679b62757" kindref="member">DbetaDd2_</ref>/temp;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>D2alphaDs2<sp/>=<sp/>-<sp/>DalphaDs/spot*(1+<ref refid="classQuantLib_1_1BlackCalculator_1aee3f76b3355dc16777c7353be3643ac7" kindref="member">d1_</ref>/<ref refid="classQuantLib_1_1BlackCalculator_1accb7da96b4304f8a7213e94afd9d1ef6" kindref="member">stdDev_</ref>);</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>D2betaDs2<sp/><sp/>=<sp/>-<sp/>DbetaDs<sp/>/spot*(1+<ref refid="classQuantLib_1_1BlackCalculator_1a23a6a091845d14d4ff8505a0ca066f84" kindref="member">d2_</ref>/<ref refid="classQuantLib_1_1BlackCalculator_1accb7da96b4304f8a7213e94afd9d1ef6" kindref="member">stdDev_</ref>);</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>temp2<sp/>=<sp/>D2alphaDs2<sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a94298d108c8a779945d74f2c32968578" kindref="member">forward_</ref><sp/>+<sp/>2.0<sp/>*<sp/>DalphaDs<sp/>*<sp/>DforwardDs</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+D2betaDs2<sp/><sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1ae12b61e39d790a3e892e4d49add7b46a" kindref="member">x_</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>2.0<sp/>*<sp/>DbetaDs<sp/><sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1aa0a99e0e77161f0ace6887ea403351fd" kindref="member">DxDs_</ref>;</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a7f7c1327ac680e2c94f3f97fe409dcf6" kindref="member">discount_</ref><sp/>*<sp/>temp2;</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a35fb837455db8c76bc63ecc0615cbc6b" kindref="member">BlackCalculator::gammaForward</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>temp<sp/>=<sp/><ref refid="classQuantLib_1_1BlackCalculator_1accb7da96b4304f8a7213e94afd9d1ef6" kindref="member">stdDev_</ref>*<ref refid="classQuantLib_1_1BlackCalculator_1a94298d108c8a779945d74f2c32968578" kindref="member">forward_</ref>;</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>DalphaDforward<sp/>=<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a75a329a54cdd4ea705760642ee5b8c2f" kindref="member">DalphaDd1_</ref>/temp;</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>DbetaDforward<sp/><sp/>=<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a9cfdb9390b9e6d58e78d235679b62757" kindref="member">DbetaDd2_</ref>/temp;</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>D2alphaDforward2<sp/>=<sp/>-<sp/>DalphaDforward/<ref refid="classQuantLib_1_1BlackCalculator_1a94298d108c8a779945d74f2c32968578" kindref="member">forward_</ref>*(1+<ref refid="classQuantLib_1_1BlackCalculator_1aee3f76b3355dc16777c7353be3643ac7" kindref="member">d1_</ref>/<ref refid="classQuantLib_1_1BlackCalculator_1accb7da96b4304f8a7213e94afd9d1ef6" kindref="member">stdDev_</ref>);</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>D2betaDforward2<sp/><sp/>=<sp/>-<sp/>DbetaDforward<sp/>/<ref refid="classQuantLib_1_1BlackCalculator_1a94298d108c8a779945d74f2c32968578" kindref="member">forward_</ref>*(1+<ref refid="classQuantLib_1_1BlackCalculator_1a23a6a091845d14d4ff8505a0ca066f84" kindref="member">d2_</ref>/<ref refid="classQuantLib_1_1BlackCalculator_1accb7da96b4304f8a7213e94afd9d1ef6" kindref="member">stdDev_</ref>);</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>temp2<sp/>=<sp/>D2alphaDforward2<sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a94298d108c8a779945d74f2c32968578" kindref="member">forward_</ref><sp/>+<sp/>2.0<sp/>*<sp/>DalphaDforward</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+D2betaDforward2<sp/><sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1ae12b61e39d790a3e892e4d49add7b46a" kindref="member">x_</ref>;<sp/></highlight><highlight class="comment">//<sp/>DXDforward<sp/>=<sp/>0.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a7f7c1327ac680e2c94f3f97fe409dcf6" kindref="member">discount_</ref><sp/>*<sp/>temp2;</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a63149b758ceca06ee8dfd70caea4e5cb" kindref="member">BlackCalculator::theta</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>spot,</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>maturity)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(maturity&gt;=0.0,</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;maturity<sp/>(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>maturity<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)<sp/>must<sp/>be<sp/>non-negative&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceQuantLib_1a8c358786ff7da50c785ca5a003b1c9c1" kindref="member">close</ref>(maturity,<sp/>0.0))<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0.0;</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-(<sp/>std::log(<ref refid="classQuantLib_1_1BlackCalculator_1a7f7c1327ac680e2c94f3f97fe409dcf6" kindref="member">discount_</ref>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a535fdf5d842b0fd7942557d4e3ccb0cd" kindref="member">value</ref>()</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+std::log(<ref refid="classQuantLib_1_1BlackCalculator_1a94298d108c8a779945d74f2c32968578" kindref="member">forward_</ref>/spot)<sp/>*<sp/>spot<sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1aa9846c129bd6263387fd03a381212df5" kindref="member">delta</ref>(spot)</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+0.5*<ref refid="classQuantLib_1_1BlackCalculator_1a1c84696cabcb843cd35e1073eda76038" kindref="member">variance_</ref><sp/>*<sp/>spot<sp/><sp/>*<sp/>spot<sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a71db00d1bf27e7ac2323c6ab35fbc804" kindref="member">gamma</ref>(spot))/maturity;</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1BlackCalculator_1abb4353d573e419d244d95c1ee1c3b7fa" kindref="member">BlackCalculator::vega</ref>(<ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>maturity)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(maturity&gt;=0.0,</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;negative<sp/>maturity<sp/>not<sp/>allowed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>temp<sp/>=<sp/>std::log(<ref refid="classQuantLib_1_1BlackCalculator_1a8e729a5b6565e5e242b25b3fd1cb9390" kindref="member">strike_</ref>/<ref refid="classQuantLib_1_1BlackCalculator_1a94298d108c8a779945d74f2c32968578" kindref="member">forward_</ref>)/<ref refid="classQuantLib_1_1BlackCalculator_1a1c84696cabcb843cd35e1073eda76038" kindref="member">variance_</ref>;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>actually<sp/>DalphaDsigma<sp/>/<sp/>SQRT(T)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>DalphaDsigma<sp/>=<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a75a329a54cdd4ea705760642ee5b8c2f" kindref="member">DalphaDd1_</ref>*(temp+0.5);</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>DbetaDsigma<sp/><sp/>=<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a9cfdb9390b9e6d58e78d235679b62757" kindref="member">DbetaDd2_</ref><sp/>*(temp-0.5);</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>temp2<sp/>=<sp/>DalphaDsigma<sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a94298d108c8a779945d74f2c32968578" kindref="member">forward_</ref><sp/>+<sp/>DbetaDsigma<sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1ae12b61e39d790a3e892e4d49add7b46a" kindref="member">x_</ref>;</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a7f7c1327ac680e2c94f3f97fe409dcf6" kindref="member">discount_</ref><sp/>*<sp/>std::sqrt(maturity)<sp/>*<sp/>temp2;</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1BlackCalculator_1ad31b3ae03d8801a89462030fc872d707" kindref="member">BlackCalculator::rho</ref>(<ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>maturity)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(maturity&gt;=0.0,</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;negative<sp/>maturity<sp/>not<sp/>allowed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>actually<sp/>DalphaDr<sp/>/<sp/>T</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>DalphaDr<sp/>=<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a75a329a54cdd4ea705760642ee5b8c2f" kindref="member">DalphaDd1_</ref>/<ref refid="classQuantLib_1_1BlackCalculator_1accb7da96b4304f8a7213e94afd9d1ef6" kindref="member">stdDev_</ref>;</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>DbetaDr<sp/><sp/>=<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a9cfdb9390b9e6d58e78d235679b62757" kindref="member">DbetaDd2_</ref>/<ref refid="classQuantLib_1_1BlackCalculator_1accb7da96b4304f8a7213e94afd9d1ef6" kindref="member">stdDev_</ref>;</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>temp<sp/>=<sp/>DalphaDr<sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a94298d108c8a779945d74f2c32968578" kindref="member">forward_</ref><sp/>+<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a69b0ae6a196ef39a6c96c6edfe247dd0" kindref="member">alpha_</ref><sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a94298d108c8a779945d74f2c32968578" kindref="member">forward_</ref><sp/>+<sp/>DbetaDr<sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1ae12b61e39d790a3e892e4d49add7b46a" kindref="member">x_</ref>;</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>maturity<sp/>*<sp/>(<ref refid="classQuantLib_1_1BlackCalculator_1a7f7c1327ac680e2c94f3f97fe409dcf6" kindref="member">discount_</ref><sp/>*<sp/>temp<sp/>-<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a535fdf5d842b0fd7942557d4e3ccb0cd" kindref="member">value</ref>());</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1BlackCalculator_1af1fab342c1ed6149c0d2ca1db27d71bf" kindref="member">BlackCalculator::dividendRho</ref>(<ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>maturity)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(maturity&gt;=0.0,</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;negative<sp/>maturity<sp/>not<sp/>allowed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>actually<sp/>DalphaDq<sp/>/<sp/>T</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>DalphaDq<sp/>=<sp/>-<ref refid="classQuantLib_1_1BlackCalculator_1a75a329a54cdd4ea705760642ee5b8c2f" kindref="member">DalphaDd1_</ref>/<ref refid="classQuantLib_1_1BlackCalculator_1accb7da96b4304f8a7213e94afd9d1ef6" kindref="member">stdDev_</ref>;</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>DbetaDq<sp/><sp/>=<sp/>-<ref refid="classQuantLib_1_1BlackCalculator_1a9cfdb9390b9e6d58e78d235679b62757" kindref="member">DbetaDd2_</ref>/<ref refid="classQuantLib_1_1BlackCalculator_1accb7da96b4304f8a7213e94afd9d1ef6" kindref="member">stdDev_</ref>;</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>temp<sp/>=<sp/>DalphaDq<sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a94298d108c8a779945d74f2c32968578" kindref="member">forward_</ref><sp/>-<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a69b0ae6a196ef39a6c96c6edfe247dd0" kindref="member">alpha_</ref><sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a94298d108c8a779945d74f2c32968578" kindref="member">forward_</ref><sp/>+<sp/>DbetaDq<sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1ae12b61e39d790a3e892e4d49add7b46a" kindref="member">x_</ref>;</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>maturity<sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a7f7c1327ac680e2c94f3f97fe409dcf6" kindref="member">discount_</ref><sp/>*<sp/>temp;</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a11b979381ecdb9082156bf7f06dd5216" kindref="member">BlackCalculator::strikeSensitivity</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>temp<sp/>=<sp/><ref refid="classQuantLib_1_1BlackCalculator_1accb7da96b4304f8a7213e94afd9d1ef6" kindref="member">stdDev_</ref>*<ref refid="classQuantLib_1_1BlackCalculator_1a8e729a5b6565e5e242b25b3fd1cb9390" kindref="member">strike_</ref>;</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>DalphaDstrike<sp/>=<sp/>-<ref refid="classQuantLib_1_1BlackCalculator_1a75a329a54cdd4ea705760642ee5b8c2f" kindref="member">DalphaDd1_</ref>/temp;</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>DbetaDstrike<sp/><sp/>=<sp/>-<ref refid="classQuantLib_1_1BlackCalculator_1a9cfdb9390b9e6d58e78d235679b62757" kindref="member">DbetaDd2_</ref>/temp;</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>temp2<sp/>=</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DalphaDstrike<sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a94298d108c8a779945d74f2c32968578" kindref="member">forward_</ref><sp/>+<sp/>DbetaDstrike<sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1ae12b61e39d790a3e892e4d49add7b46a" kindref="member">x_</ref><sp/>+<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a08240a0aac426010bbb993bb5977ae51" kindref="member">beta_</ref><sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a171d3e5fdf99b1c2affd228d998cd155" kindref="member">DxDstrike_</ref>;</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a7f7c1327ac680e2c94f3f97fe409dcf6" kindref="member">discount_</ref><sp/>*<sp/>temp2;</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a9ef011bec7b2ed1755d922717bcdfa8d" kindref="member">BlackCalculator::strikeGamma</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>temp<sp/>=<sp/><ref refid="classQuantLib_1_1BlackCalculator_1accb7da96b4304f8a7213e94afd9d1ef6" kindref="member">stdDev_</ref>*<ref refid="classQuantLib_1_1BlackCalculator_1a8e729a5b6565e5e242b25b3fd1cb9390" kindref="member">strike_</ref>;</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>DalphaDstrike<sp/>=<sp/>-<ref refid="classQuantLib_1_1BlackCalculator_1a75a329a54cdd4ea705760642ee5b8c2f" kindref="member">DalphaDd1_</ref>/temp;</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>DbetaDstrike<sp/><sp/>=<sp/>-<ref refid="classQuantLib_1_1BlackCalculator_1a9cfdb9390b9e6d58e78d235679b62757" kindref="member">DbetaDd2_</ref>/temp;</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>D2alphaD2strike<sp/>=<sp/>-DalphaDstrike/<ref refid="classQuantLib_1_1BlackCalculator_1a8e729a5b6565e5e242b25b3fd1cb9390" kindref="member">strike_</ref>*(1-<ref refid="classQuantLib_1_1BlackCalculator_1aee3f76b3355dc16777c7353be3643ac7" kindref="member">d1_</ref>/<ref refid="classQuantLib_1_1BlackCalculator_1accb7da96b4304f8a7213e94afd9d1ef6" kindref="member">stdDev_</ref>);</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>D2betaD2strike<sp/><sp/>=<sp/>-DbetaDstrike<sp/>/<ref refid="classQuantLib_1_1BlackCalculator_1a8e729a5b6565e5e242b25b3fd1cb9390" kindref="member">strike_</ref>*(1-<ref refid="classQuantLib_1_1BlackCalculator_1a23a6a091845d14d4ff8505a0ca066f84" kindref="member">d2_</ref>/<ref refid="classQuantLib_1_1BlackCalculator_1accb7da96b4304f8a7213e94afd9d1ef6" kindref="member">stdDev_</ref>);</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"></highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>temp2<sp/>=</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>D2alphaD2strike<sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1a94298d108c8a779945d74f2c32968578" kindref="member">forward_</ref><sp/>+<sp/>D2betaD2strike<sp/>*<sp/><ref refid="classQuantLib_1_1BlackCalculator_1ae12b61e39d790a3e892e4d49add7b46a" kindref="member">x_</ref></highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>2.0*DbetaDstrike<sp/>*<ref refid="classQuantLib_1_1BlackCalculator_1a171d3e5fdf99b1c2affd228d998cd155" kindref="member">DxDstrike_</ref>;</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"></highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1BlackCalculator_1a7f7c1327ac680e2c94f3f97fe409dcf6" kindref="member">discount_</ref><sp/>*<sp/>temp2;</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="369"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="ql/pricingengines/blackcalculator.cpp"/>
+  </compounddef>
+</doxygen>

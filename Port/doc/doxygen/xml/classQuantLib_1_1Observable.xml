@@ -1,0 +1,596 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1Observable" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::Observable</compoundname>
+    <derivedcompoundref refid="classQuantLib_1_1Event" prot="public" virt="virtual">QuantLib::Event</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1FdmQuantoHelper" prot="public" virt="non-virtual">QuantLib::FdmQuantoHelper</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1Handle_1_1Link" prot="public" virt="non-virtual">QuantLib::Handle&lt; T &gt;::Link</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1LazyObject" prot="public" virt="virtual">QuantLib::LazyObject</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1PricingEngine" prot="public" virt="non-virtual">QuantLib::PricingEngine</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1Quote" prot="public" virt="virtual">QuantLib::Quote</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1StochasticProcess" prot="public" virt="non-virtual">QuantLib::StochasticProcess</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1TermStructure" prot="public" virt="virtual">QuantLib::TermStructure</derivedcompoundref>
+    <includes refid="observable_8hpp" local="no">observable.hpp</includes>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classQuantLib_1_1Observable_1a22e674e99fccc2da996de9620304f63c" prot="private" static="no">
+        <type>std::set&lt; <ref refid="classQuantLib_1_1Observer" kindref="compound">Observer</ref> * &gt;</type>
+        <definition>typedef std::set&lt;Observer*&gt; QuantLib::Observable::set_type</definition>
+        <argsstring></argsstring>
+        <name>set_type</name>
+        <qualifiedname>QuantLib::Observable::set_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/patterns/observable.hpp" line="79" column="26" bodyfile="ql/patterns/observable.hpp" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1Observable_1a07ad87c2c2599551463d0a529924dec2" prot="private" static="no">
+        <type>set_type::iterator</type>
+        <definition>typedef set_type::iterator QuantLib::Observable::iterator</definition>
+        <argsstring></argsstring>
+        <name>iterator</name>
+        <qualifiedname>QuantLib::Observable::iterator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/patterns/observable.hpp" line="80" column="36" bodyfile="ql/patterns/observable.hpp" bodystart="80" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classQuantLib_1_1Observable_1a1bc1613ca5d6d0e8b2fbce5ef15dd38f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class Observer</definition>
+        <argsstring></argsstring>
+        <name>Observer</name>
+        <qualifiedname>QuantLib::Observable::Observer</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Observer" kindref="compound">Observer</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/patterns/observable.hpp" line="63" column="22" bodyfile="ql/patterns/observable.hpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classQuantLib_1_1Observable_1aaae43652e0c95f7b5f1ac3209e633ce2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class ObservableSettings</definition>
+        <argsstring></argsstring>
+        <name>ObservableSettings</name>
+        <qualifiedname>QuantLib::Observable::ObservableSettings</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1ObservableSettings" kindref="compound">ObservableSettings</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/patterns/observable.hpp" line="64" column="22" bodyfile="ql/patterns/observable.hpp" bodystart="64" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1Observable_1a4da6017619203dcb570d5f4174f0beea" prot="private" static="no" mutable="no">
+        <type><ref refid="classQuantLib_1_1Observable_1a22e674e99fccc2da996de9620304f63c" kindref="member">set_type</ref></type>
+        <definition>set_type QuantLib::Observable::observers_</definition>
+        <argsstring></argsstring>
+        <name>observers_</name>
+        <qualifiedname>QuantLib::Observable::observers_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/patterns/observable.hpp" line="83" column="18" bodyfile="ql/patterns/observable.hpp" bodystart="83" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1Observable_1ae0d19b21fab87a01f53586a6b5c15f85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Observable::Observable</definition>
+        <argsstring>()=default</argsstring>
+        <name>Observable</name>
+        <qualifiedname>QuantLib::Observable::Observable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/patterns/observable.hpp" line="67" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Observable_1a942cf6a572bd95341433a6772c70cb29" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Observable::Observable</definition>
+        <argsstring>(const Observable &amp;)</argsstring>
+        <name>Observable</name>
+        <qualifiedname>QuantLib::Observable::Observable</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Observable" kindref="compound">Observable</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/patterns/observable.hpp" line="68" column="9" bodyfile="ql/patterns/observable.hpp" bodystart="171" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Observable_1ad1e086da62f05b4bc5eafa698ef6fbc3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Observable" kindref="compound">Observable</ref> &amp;</type>
+        <definition>Observable &amp; QuantLib::Observable::operator=</definition>
+        <argsstring>(const Observable &amp;)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>QuantLib::Observable::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Observable" kindref="compound">Observable</ref> &amp;</type>
+          <defname>o</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="warning"><para>notification is sent before the copy constructor has a chance of actually change the data members. Therefore, observers whose update() method tries to use their observables will not see the updated values. It is suggested that the update() method just raise a flag in order to trigger a later recalculation. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/patterns/observable.hpp" line="69" column="20" bodyfile="ql/patterns/observable.hpp" bodystart="184" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Observable_1a6c35885ef344665ecdfac9b9f3a59c0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Observable::Observable</definition>
+        <argsstring>(Observable &amp;&amp;)=delete</argsstring>
+        <name>Observable</name>
+        <qualifiedname>QuantLib::Observable::Observable</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Observable" kindref="compound">Observable</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/patterns/observable.hpp" line="71" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Observable_1ab45941c65068ab4c8d69a7d1a72beeb7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Observable" kindref="compound">Observable</ref> &amp;</type>
+        <definition>Observable &amp; QuantLib::Observable::operator=</definition>
+        <argsstring>(Observable &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>QuantLib::Observable::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Observable" kindref="compound">Observable</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/patterns/observable.hpp" line="72" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Observable_1a32093a7038e9bd8d28e5d378eca9f4f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual QuantLib::Observable::~Observable</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Observable</name>
+        <qualifiedname>QuantLib::Observable::~Observable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/patterns/observable.hpp" line="73" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Observable_1afb67478418efdb94382ac9d7ae904b94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::Observable::notifyObservers</definition>
+        <argsstring>()</argsstring>
+        <name>notifyObservers</name>
+        <qualifiedname>QuantLib::Observable::notifyObservers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method should be called at the end of non-const methods or when the programmer desires to notify any changes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/patterns/observable.hpp" line="77" column="14" bodyfile="ql/patterns/observable.cpp" bodystart="56" bodyend="84"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classQuantLib_1_1Observable_1a1eb87a03e7e1fd43377bce32e0c21bce" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::pair&lt; <ref refid="classQuantLib_1_1Observable_1a07ad87c2c2599551463d0a529924dec2" kindref="member">iterator</ref>, bool &gt;</type>
+        <definition>std::pair&lt; Observable::iterator, bool &gt; QuantLib::Observable::registerObserver</definition>
+        <argsstring>(Observer *)</argsstring>
+        <name>registerObserver</name>
+        <qualifiedname>QuantLib::Observable::registerObserver</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Observer" kindref="compound">Observer</ref> *</type>
+          <defname>o</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/patterns/observable.hpp" line="81" column="19" bodyfile="ql/patterns/observable.hpp" bodystart="193" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Observable_1abd81ef8b87594aa6f9d2a5bd5de3e628" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+        <definition>Size QuantLib::Observable::unregisterObserver</definition>
+        <argsstring>(Observer *)</argsstring>
+        <name>unregisterObserver</name>
+        <qualifiedname>QuantLib::Observable::unregisterObserver</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Observer" kindref="compound">Observer</ref> *</type>
+          <defname>o</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/patterns/observable.hpp" line="82" column="14" bodyfile="ql/patterns/observable.hpp" bodystart="197" bodyend="202"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Object that notifies its changes to a set of observers. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="21">
+        <label>QuantLib::GenericEngine&lt; BasketOption::arguments, BasketOption::results &gt;</label>
+        <link refid="classQuantLib_1_1GenericEngine"/>
+        <childnode refid="20" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>QuantLib::GenericEngine&lt; MultiAssetOption::arguments, MultiAssetOption::results &gt;</label>
+        <link refid="classQuantLib_1_1GenericEngine"/>
+        <childnode refid="20" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>QuantLib::GenericEngine&lt; OneAssetOption::arguments, OneAssetOption::results &gt;</label>
+        <link refid="classQuantLib_1_1GenericEngine"/>
+        <childnode refid="20" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>QuantLib::BasketOption</label>
+        <link refid="classQuantLib_1_1BasketOption"/>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>QuantLib::BasketOption::engine</label>
+        <link refid="classQuantLib_1_1BasketOption_1_1engine"/>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>QuantLib::BlackConstantVol</label>
+        <link refid="classQuantLib_1_1BlackConstantVol"/>
+        <childnode refid="45" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>QuantLib::BlackProcess</label>
+        <link refid="classQuantLib_1_1BlackProcess"/>
+        <childnode refid="35" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>QuantLib::BlackScholesMertonProcess</label>
+        <link refid="classQuantLib_1_1BlackScholesMertonProcess"/>
+        <childnode refid="35" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>QuantLib::BlackScholesProcess</label>
+        <link refid="classQuantLib_1_1BlackScholesProcess"/>
+        <childnode refid="35" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>QuantLib::BlackVarianceCurve</label>
+        <link refid="classQuantLib_1_1BlackVarianceCurve"/>
+        <childnode refid="43" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>QuantLib::BlackVarianceTermStructure</label>
+        <link refid="classQuantLib_1_1BlackVarianceTermStructure"/>
+        <childnode refid="42" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>QuantLib::BlackVolTermStructure</label>
+        <link refid="classQuantLib_1_1BlackVolTermStructure"/>
+        <childnode refid="41" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>QuantLib::BlackVolatilityTermStructure</label>
+        <link refid="classQuantLib_1_1BlackVolatilityTermStructure"/>
+        <childnode refid="42" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QuantLib::CashFlow</label>
+        <link refid="classQuantLib_1_1CashFlow"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QuantLib::Dividend</label>
+        <link refid="classQuantLib_1_1Dividend"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::Event</label>
+        <link refid="classQuantLib_1_1Event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>QuantLib::Fdm1DimSolver</label>
+        <link refid="classQuantLib_1_1Fdm1DimSolver"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>QuantLib::FdmBlackScholesSolver</label>
+        <link refid="classQuantLib_1_1FdmBlackScholesSolver"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>QuantLib::FdmQuantoHelper</label>
+        <link refid="classQuantLib_1_1FdmQuantoHelper"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>QuantLib::FixedDividend</label>
+        <link refid="classQuantLib_1_1FixedDividend"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>QuantLib::FlatForward</label>
+        <link refid="classQuantLib_1_1FlatForward"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+        <childnode refid="51" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>QuantLib::FractionalDividend</label>
+        <link refid="classQuantLib_1_1FractionalDividend"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>QuantLib::GarmanKohlagenProcess</label>
+        <link refid="classQuantLib_1_1GarmanKohlagenProcess"/>
+        <childnode refid="35" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>QuantLib::GeneralizedBlackScholesProcess</label>
+        <link refid="classQuantLib_1_1GeneralizedBlackScholesProcess"/>
+        <childnode refid="34" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>QuantLib::GenericEngine&lt; ArgumentsType, ResultsType &gt;</label>
+        <link refid="classQuantLib_1_1GenericEngine"/>
+        <childnode refid="20" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>QuantLib::Handle&lt; T &gt;::Link</label>
+        <link refid="classQuantLib_1_1Handle_1_1Link"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>QuantLib::Instrument</label>
+        <link refid="classQuantLib_1_1Instrument"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>QuantLib::LazyObject</label>
+        <link refid="classQuantLib_1_1LazyObject"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>QuantLib::LocalConstantVol</label>
+        <link refid="classQuantLib_1_1LocalConstantVol"/>
+        <childnode refid="47" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>QuantLib::LocalVolCurve</label>
+        <link refid="classQuantLib_1_1LocalVolCurve"/>
+        <childnode refid="47" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>QuantLib::LocalVolSurface</label>
+        <link refid="classQuantLib_1_1LocalVolSurface"/>
+        <childnode refid="47" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>QuantLib::LocalVolTermStructure</label>
+        <link refid="classQuantLib_1_1LocalVolTermStructure"/>
+        <childnode refid="41" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>QuantLib::MultiAssetOption</label>
+        <link refid="classQuantLib_1_1MultiAssetOption"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>QuantLib::MultiAssetOption::engine</label>
+        <link refid="classQuantLib_1_1MultiAssetOption_1_1engine"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::Observable</label>
+        <link refid="classQuantLib_1_1Observable"/>
+      </node>
+      <node id="18">
+        <label>QuantLib::OneAssetOption</label>
+        <link refid="classQuantLib_1_1OneAssetOption"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>QuantLib::OneAssetOption::engine</label>
+        <link refid="classQuantLib_1_1OneAssetOption_1_1engine"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>QuantLib::Option</label>
+        <link refid="classQuantLib_1_1Option"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>QuantLib::PricingEngine</label>
+        <link refid="classQuantLib_1_1PricingEngine"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>QuantLib::QdFpAmericanEngine</label>
+        <link refid="classQuantLib_1_1QdFpAmericanEngine"/>
+        <childnode refid="27" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>QuantLib::QdPlusAmericanEngine</label>
+        <link refid="classQuantLib_1_1QdPlusAmericanEngine"/>
+        <childnode refid="27" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>QuantLib::QuantoTermStructure</label>
+        <link refid="classQuantLib_1_1QuantoTermStructure"/>
+        <childnode refid="52" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>QuantLib::Quote</label>
+        <link refid="classQuantLib_1_1Quote"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>QuantLib::SimpleQuote</label>
+        <link refid="classQuantLib_1_1SimpleQuote"/>
+        <childnode refid="31" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>QuantLib::StochasticProcess</label>
+        <link refid="classQuantLib_1_1StochasticProcess"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>QuantLib::StochasticProcess1D</label>
+        <link refid="classQuantLib_1_1StochasticProcess1D"/>
+        <childnode refid="33" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>QuantLib::TermStructure</label>
+        <link refid="classQuantLib_1_1TermStructure"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>QuantLib::VanillaOption</label>
+        <link refid="classQuantLib_1_1VanillaOption"/>
+        <childnode refid="18" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>QuantLib::VolatilityTermStructure</label>
+        <link refid="classQuantLib_1_1VolatilityTermStructure"/>
+        <childnode refid="40" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>QuantLib::YieldTermStructure</label>
+        <link refid="classQuantLib_1_1YieldTermStructure"/>
+        <childnode refid="40" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>QuantLib::ZeroYieldStructure</label>
+        <link refid="classQuantLib_1_1ZeroYieldStructure"/>
+        <childnode refid="51" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>QuantLib::detail::QdPutCallParityEngine</label>
+        <link refid="classQuantLib_1_1detail_1_1QdPutCallParityEngine"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>QuantLib::detail::simple_event</label>
+        <link refid="classQuantLib_1_1detail_1_1simple__event"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="ql/patterns/observable.hpp" line="62" column="5" bodyfile="ql/patterns/observable.hpp" bodystart="62" bodyend="84"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Observable_1a07ad87c2c2599551463d0a529924dec2" prot="private" virt="non-virtual"><scope>QuantLib::Observable</scope><name>iterator</name></member>
+      <member refid="classQuantLib_1_1Observable_1afb67478418efdb94382ac9d7ae904b94" prot="public" virt="non-virtual"><scope>QuantLib::Observable</scope><name>notifyObservers</name></member>
+      <member refid="classQuantLib_1_1Observable_1ae0d19b21fab87a01f53586a6b5c15f85" prot="public" virt="non-virtual"><scope>QuantLib::Observable</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observable_1a942cf6a572bd95341433a6772c70cb29" prot="public" virt="non-virtual"><scope>QuantLib::Observable</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observable_1a6c35885ef344665ecdfac9b9f3a59c0e" prot="public" virt="non-virtual"><scope>QuantLib::Observable</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observable_1aaae43652e0c95f7b5f1ac3209e633ce2" prot="private" virt="non-virtual"><scope>QuantLib::Observable</scope><name>ObservableSettings</name></member>
+      <member refid="classQuantLib_1_1Observable_1a1bc1613ca5d6d0e8b2fbce5ef15dd38f" prot="private" virt="non-virtual"><scope>QuantLib::Observable</scope><name>Observer</name></member>
+      <member refid="classQuantLib_1_1Observable_1a4da6017619203dcb570d5f4174f0beea" prot="private" virt="non-virtual"><scope>QuantLib::Observable</scope><name>observers_</name></member>
+      <member refid="classQuantLib_1_1Observable_1ad1e086da62f05b4bc5eafa698ef6fbc3" prot="public" virt="non-virtual"><scope>QuantLib::Observable</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1Observable_1ab45941c65068ab4c8d69a7d1a72beeb7" prot="public" virt="non-virtual"><scope>QuantLib::Observable</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1Observable_1a1eb87a03e7e1fd43377bce32e0c21bce" prot="private" virt="non-virtual"><scope>QuantLib::Observable</scope><name>registerObserver</name></member>
+      <member refid="classQuantLib_1_1Observable_1a22e674e99fccc2da996de9620304f63c" prot="private" virt="non-virtual"><scope>QuantLib::Observable</scope><name>set_type</name></member>
+      <member refid="classQuantLib_1_1Observable_1abd81ef8b87594aa6f9d2a5bd5de3e628" prot="private" virt="non-virtual"><scope>QuantLib::Observable</scope><name>unregisterObserver</name></member>
+      <member refid="classQuantLib_1_1Observable_1a32093a7038e9bd8d28e5d378eca9f4f7" prot="public" virt="virtual"><scope>QuantLib::Observable</scope><name>~Observable</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

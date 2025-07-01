@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_f90279b538dfcbce2575712409d081ba" kind="dir">
+    <compoundname>ql/math/interpolations</compoundname>
+    <innerfile refid="chebyshevinterpolation_8cpp">chebyshevinterpolation.cpp</innerfile>
+    <innerfile refid="chebyshevinterpolation_8hpp">chebyshevinterpolation.hpp</innerfile>
+    <innerfile refid="cubicinterpolation_8hpp">cubicinterpolation.hpp</innerfile>
+    <innerfile refid="extrapolation_8hpp">extrapolation.hpp</innerfile>
+    <innerfile refid="lagrangeinterpolation_8hpp">lagrangeinterpolation.hpp</innerfile>
+    <innerfile refid="linearinterpolation_8hpp">linearinterpolation.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ql/math/interpolations/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structQuantLib_1_1detail_1_1power__of__two__holder" kind="struct" language="C++" prot="public">
+    <compoundname>QuantLib::detail::power_of_two_holder</compoundname>
+    <includes refid="dataformatters_8hpp" local="no">dataformatters.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structQuantLib_1_1detail_1_1power__of__two__holder_1a935e2a9a094b407727afc6f62d0e3856" prot="public" static="no" mutable="no">
+        <type>T</type>
+        <definition>T QuantLib::detail::power_of_two_holder&lt; T &gt;::n</definition>
+        <argsstring></argsstring>
+        <name>n</name>
+        <qualifiedname>QuantLib::detail::power_of_two_holder::n</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/utilities/dataformatters.hpp" line="49" column="15" bodyfile="ql/utilities/dataformatters.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structQuantLib_1_1detail_1_1power__of__two__holder_1a020bda0e8495592ee6b70c75b392b3cd" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::detail::power_of_two_holder&lt; T &gt;::power_of_two_holder</definition>
+        <argsstring>(T n)</argsstring>
+        <name>power_of_two_holder</name>
+        <qualifiedname>QuantLib::detail::power_of_two_holder::power_of_two_holder</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/utilities/dataformatters.hpp" line="48" column="22" bodyfile="ql/utilities/dataformatters.hpp" bodystart="48" bodyend="48"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ql/utilities/dataformatters.hpp" line="47" column="20" bodyfile="ql/utilities/dataformatters.hpp" bodystart="47" bodyend="50"/>
+    <listofallmembers>
+      <member refid="structQuantLib_1_1detail_1_1power__of__two__holder_1a935e2a9a094b407727afc6f62d0e3856" prot="public" virt="non-virtual"><scope>QuantLib::detail::power_of_two_holder</scope><name>n</name></member>
+      <member refid="structQuantLib_1_1detail_1_1power__of__two__holder_1a020bda0e8495592ee6b70c75b392b3cd" prot="public" virt="non-virtual"><scope>QuantLib::detail::power_of_two_holder</scope><name>power_of_two_holder</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

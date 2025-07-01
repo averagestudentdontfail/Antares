@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structQuantLib_1_1MidPoint" kind="struct" language="C++" prot="public">
+    <compoundname>QuantLib::MidPoint</compoundname>
+    <includes refid="trapezoidintegral_8hpp" local="no">trapezoidintegral.hpp</includes>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structQuantLib_1_1MidPoint_1ac6ae42aaa9e45d8aa3e4b19bea78b958" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>static Real QuantLib::MidPoint::integrate</definition>
+        <argsstring>(const std::function&lt; Real(Real)&gt; &amp;f, Real a, Real b, Real I, Size N)</argsstring>
+        <name>integrate</name>
+        <qualifiedname>QuantLib::MidPoint::integrate</qualifiedname>
+        <param>
+          <type>const std::function&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>)&gt; &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>I</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/integrals/trapezoidintegral.hpp" line="102" column="21" bodyfile="ql/math/integrals/trapezoidintegral.hpp" bodystart="102" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="structQuantLib_1_1MidPoint_1a9a998b0c8df3eb7245ef24b3bd6ac5f8" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+        <definition>static Size QuantLib::MidPoint::nbEvalutions</definition>
+        <argsstring>()</argsstring>
+        <name>nbEvalutions</name>
+        <qualifiedname>QuantLib::MidPoint::nbEvalutions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/integrals/trapezoidintegral.hpp" line="116" column="21" bodyfile="ql/math/integrals/trapezoidintegral.hpp" bodystart="116" bodyend="116"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ql/math/integrals/trapezoidintegral.hpp" line="101" column="5" bodyfile="ql/math/integrals/trapezoidintegral.hpp" bodystart="101" bodyend="117"/>
+    <listofallmembers>
+      <member refid="structQuantLib_1_1MidPoint_1ac6ae42aaa9e45d8aa3e4b19bea78b958" prot="public" virt="non-virtual"><scope>QuantLib::MidPoint</scope><name>integrate</name></member>
+      <member refid="structQuantLib_1_1MidPoint_1a9a998b0c8df3eb7245ef24b3bd6ac5f8" prot="public" virt="non-virtual"><scope>QuantLib::MidPoint</scope><name>nbEvalutions</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

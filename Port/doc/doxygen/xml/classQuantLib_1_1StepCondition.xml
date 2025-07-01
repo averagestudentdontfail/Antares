@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1StepCondition" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>QuantLib::StepCondition</compoundname>
+    <derivedcompoundref refid="classQuantLib_1_1NullCondition" prot="public" virt="non-virtual">QuantLib::NullCondition&lt; array_type &gt;</derivedcompoundref>
+    <includes refid="stepcondition_8hpp" local="no">stepcondition.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>class array_type</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1StepCondition_1a0867129678b1b4ae02e4d5630ee598ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual QuantLib::StepCondition&lt; array_type &gt;::~StepCondition</definition>
+        <argsstring>()=default</argsstring>
+        <name>~StepCondition</name>
+        <qualifiedname>QuantLib::StepCondition::~StepCondition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/stepcondition.hpp" line="37" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1StepCondition_1afff61b9eaacd16620791a39dd69b90bb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void QuantLib::StepCondition&lt; array_type &gt;::applyTo</definition>
+        <argsstring>(array_type &amp;a, Time t) const =0</argsstring>
+        <name>applyTo</name>
+        <qualifiedname>QuantLib::StepCondition::applyTo</qualifiedname>
+        <reimplementedby refid="classQuantLib_1_1FdmBermudanStepCondition_1a978dbe646cd917e786e1595a6b04570e">applyTo</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1FdmSnapshotCondition_1aedfe08b7007f0b50fbff35ae9f04f3cf">applyTo</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1FdmStepConditionComposite_1a894de89c567a2c020ae49db6215f97f4">applyTo</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1FdmDividendHandler_1af0a5e1c95844d087488e18152b3ba4c3">applyTo</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1FdmAmericanStepCondition_1aeaa95876dfe0b3ebb37ba7e6872e43e6">applyTo</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1NullCondition_1ab8128a8d70e11a137621b272f83681e0">applyTo</reimplementedby>
+        <param>
+          <type>array_type &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/stepcondition.hpp" line="38" column="22"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>condition to be applied at every time step </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>QuantLib::NullCondition&lt; array_type &gt;</label>
+        <link refid="classQuantLib_1_1NullCondition"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::StepCondition&lt; array_type &gt;</label>
+        <link refid="classQuantLib_1_1StepCondition"/>
+      </node>
+    </inheritancegraph>
+    <location file="ql/methods/finitedifferences/stepcondition.hpp" line="35" column="5" bodyfile="ql/methods/finitedifferences/stepcondition.hpp" bodystart="35" bodyend="39"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1StepCondition_1afff61b9eaacd16620791a39dd69b90bb" prot="public" virt="pure-virtual"><scope>QuantLib::StepCondition</scope><name>applyTo</name></member>
+      <member refid="classQuantLib_1_1StepCondition_1a0867129678b1b4ae02e4d5630ee598ac" prot="public" virt="virtual"><scope>QuantLib::StepCondition</scope><name>~StepCondition</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

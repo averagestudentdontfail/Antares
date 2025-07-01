@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1GaussChebyshevIntegration" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::GaussChebyshevIntegration</compoundname>
+    <basecompoundref refid="classQuantLib_1_1GaussianQuadrature" prot="public" virt="non-virtual">QuantLib::GaussianQuadrature</basecompoundref>
+    <includes refid="gaussianquadratures_8hpp" local="no">gaussianquadratures.hpp</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1GaussChebyshevIntegration_1aed5e84b296a2513d42d484120daf47f2" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::GaussChebyshevIntegration::GaussChebyshevIntegration</definition>
+        <argsstring>(Size n)</argsstring>
+        <name>GaussChebyshevIntegration</name>
+        <qualifiedname>QuantLib::GaussChebyshevIntegration::GaussChebyshevIntegration</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/integrals/gaussianquadratures.hpp" line="190" column="18" bodyfile="ql/math/integrals/gaussianquadratures.hpp" bodystart="190" bodyend="191"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Gauss-Chebyshev integration. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class performs a 1-dimensional Gauss-Chebyshev integration.  <formula id="19">\[
+\int_{-1}^{1} f(x) \mathrm{d}x
+\]</formula> The weighting function is  <formula id="23">\[
+    w(x)=(1-x^2)^{-1/2}
+\]</formula> </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>QuantLib::GaussChebyshevIntegration</label>
+        <link refid="classQuantLib_1_1GaussChebyshevIntegration"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::GaussianQuadrature</label>
+        <link refid="classQuantLib_1_1GaussianQuadrature"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>QuantLib::Array</label>
+        <link refid="classQuantLib_1_1Array"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::GaussChebyshevIntegration</label>
+        <link refid="classQuantLib_1_1GaussChebyshevIntegration"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::GaussianQuadrature</label>
+        <link refid="classQuantLib_1_1GaussianQuadrature"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>w_</edgelabel>
+          <edgelabel>x_</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/math/integrals/gaussianquadratures.hpp" line="188" column="5" bodyfile="ql/math/integrals/gaussianquadratures.hpp" bodystart="188" bodyend="192"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1GaussChebyshevIntegration_1aed5e84b296a2513d42d484120daf47f2" prot="public" virt="non-virtual"><scope>QuantLib::GaussChebyshevIntegration</scope><name>GaussChebyshevIntegration</name></member>
+      <member refid="classQuantLib_1_1GaussianQuadrature_1ac7f0a881087bb0965190c2fe437fb012" prot="public" virt="non-virtual"><scope>QuantLib::GaussChebyshevIntegration</scope><name>GaussianQuadrature</name></member>
+      <member refid="classQuantLib_1_1GaussianQuadrature_1a45646ffb4d6c362fa8ec2c47f314dba9" prot="public" virt="non-virtual"><scope>QuantLib::GaussChebyshevIntegration</scope><name>operator()</name></member>
+      <member refid="classQuantLib_1_1GaussianQuadrature_1aa9e5b142244bbcfc3d9ff43b43dad1f4" prot="public" virt="non-virtual"><scope>QuantLib::GaussChebyshevIntegration</scope><name>order</name></member>
+      <member refid="classQuantLib_1_1GaussianQuadrature_1ad4114a4dd71f01763ec24d3278f1b7e5" prot="protected" virt="non-virtual"><scope>QuantLib::GaussChebyshevIntegration</scope><name>w_</name></member>
+      <member refid="classQuantLib_1_1GaussianQuadrature_1a33a37156ceaf36316578ec6c6bcad40d" prot="public" virt="non-virtual"><scope>QuantLib::GaussChebyshevIntegration</scope><name>weights</name></member>
+      <member refid="classQuantLib_1_1GaussianQuadrature_1a7b1baf894ae392488221ce03fdffcdd0" prot="public" virt="non-virtual"><scope>QuantLib::GaussChebyshevIntegration</scope><name>x</name></member>
+      <member refid="classQuantLib_1_1GaussianQuadrature_1af3e1ece245b0a7ac19ed50228e4fc23d" prot="protected" virt="non-virtual"><scope>QuantLib::GaussChebyshevIntegration</scope><name>x_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

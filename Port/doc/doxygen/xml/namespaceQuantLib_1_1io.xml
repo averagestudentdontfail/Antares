@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceQuantLib_1_1io" kind="namespace" language="C++">
+    <compoundname>QuantLib::io</compoundname>
+    <sectiondef kind="var">
+      <member refid="group__manips_1gad167f4e6391385217e46dfa4827884bc" kind="variable"><name>long_weekday</name></member>
+      <member refid="group__manips_1ga5be437350e5e56a699ba0f53bf25b2ce" kind="variable"><name>short_weekday</name></member>
+      <member refid="group__manips_1ga951de1277920bcbcfb757a4f5a254d03" kind="variable"><name>shortest_weekday</name></member>
+      <member refid="group__manips_1ga99123ed23086645a51814084d01650f8" kind="variable"><name>checknull</name></member>
+      <member refid="group__manips_1ga1aec40d03e1902f486894d1f4946f14c" kind="variable"><name>power_of_two</name></member>
+    </sectiondef>
+    <sectiondef kind="func">
+      <member refid="group__manips_1gab9e306f9ec0855319cbb452f6a7b3627" kind="function"><name>short_date</name></member>
+      <member refid="group__manips_1gad2cba1797c1cf63c02d899696b343ee8" kind="function"><name>long_date</name></member>
+      <member refid="group__manips_1ga0921b3ae46195feff93b2a4388e05d63" kind="function"><name>iso_date</name></member>
+      <member refid="group__manips_1ga8fa78f7a218d5b62e45e1a2d3ae369a4" kind="function"><name>formatted_date</name></member>
+      <member refid="group__manips_1ga21b63d20c9f70f1d56fe664a5d10932e" kind="function"><name>long_period</name></member>
+      <member refid="group__manips_1gafd478859146a0e3cdb97a51a4f7839a3" kind="function"><name>short_period</name></member>
+      <member refid="group__manips_1ga9645f8136bf2eabd3bca2955ce5be730" kind="function"><name>ordinal</name></member>
+      <member refid="group__manips_1gad6429b50a94e20956091bff348f5fda3" kind="function"><name>percent</name></member>
+      <member refid="group__manips_1gac9152aad6a69c41f5d30bb1dcb9b2236" kind="function"><name>rate</name></member>
+      <member refid="group__manips_1ga9890b88f8d11494a518492be973b9046" kind="function"><name>volatility</name></member>
+      <member refid="group__manips_1gadafc7499c9eb17fd7b18d60ca3c797a7" kind="function"><name>sequence</name></member>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ql/time/date.cpp" line="982" column="5"/>
+  </compounddef>
+</doxygen>

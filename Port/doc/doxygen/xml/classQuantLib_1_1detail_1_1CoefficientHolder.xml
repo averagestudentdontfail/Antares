@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1detail_1_1CoefficientHolder" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::detail::CoefficientHolder</compoundname>
+    <derivedcompoundref refid="classQuantLib_1_1detail_1_1CubicInterpolationImpl" prot="public" virt="non-virtual">QuantLib::detail::CubicInterpolationImpl&lt; I1, I2 &gt;</derivedcompoundref>
+    <includes refid="cubicinterpolation_8hpp" local="no">cubicinterpolation.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1detail_1_1CoefficientHolder_1a64c69dd54aa7e76fe36f9847661c724d" prot="public" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+        <definition>Size QuantLib::detail::CoefficientHolder::n_</definition>
+        <argsstring></argsstring>
+        <name>n_</name>
+        <qualifiedname>QuantLib::detail::CoefficientHolder::n_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/cubicinterpolation.hpp" line="48" column="18" bodyfile="ql/math/interpolations/cubicinterpolation.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1detail_1_1CoefficientHolder_1aea766d3597798ed87177a110eb6b8f1f" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> &gt;</type>
+        <definition>std::vector&lt;Real&gt; QuantLib::detail::CoefficientHolder::primitiveConst_</definition>
+        <argsstring></argsstring>
+        <name>primitiveConst_</name>
+        <qualifiedname>QuantLib::detail::CoefficientHolder::primitiveConst_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/cubicinterpolation.hpp" line="53" column="25" bodyfile="ql/math/interpolations/cubicinterpolation.hpp" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1detail_1_1CoefficientHolder_1a8acc4f29e052a398aa1ea72097b65a32" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> &gt;</type>
+        <definition>std::vector&lt;Real&gt; QuantLib::detail::CoefficientHolder::a_</definition>
+        <argsstring></argsstring>
+        <name>a_</name>
+        <qualifiedname>QuantLib::detail::CoefficientHolder::a_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/cubicinterpolation.hpp" line="53" column="41" bodyfile="ql/math/interpolations/cubicinterpolation.hpp" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1detail_1_1CoefficientHolder_1acbf9bee68fb8d13dba9b44d349f75dd8" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> &gt;</type>
+        <definition>std::vector&lt;Real&gt; QuantLib::detail::CoefficientHolder::b_</definition>
+        <argsstring></argsstring>
+        <name>b_</name>
+        <qualifiedname>QuantLib::detail::CoefficientHolder::b_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/cubicinterpolation.hpp" line="53" column="44" bodyfile="ql/math/interpolations/cubicinterpolation.hpp" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1detail_1_1CoefficientHolder_1a2aedc602998bda34827a09e4a92ab683" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> &gt;</type>
+        <definition>std::vector&lt;Real&gt; QuantLib::detail::CoefficientHolder::c_</definition>
+        <argsstring></argsstring>
+        <name>c_</name>
+        <qualifiedname>QuantLib::detail::CoefficientHolder::c_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/cubicinterpolation.hpp" line="53" column="47" bodyfile="ql/math/interpolations/cubicinterpolation.hpp" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1detail_1_1CoefficientHolder_1aced4d46a4d1e45e5e0d7d5c87cd4a899" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; bool &gt;</type>
+        <definition>std::vector&lt;bool&gt; QuantLib::detail::CoefficientHolder::monotonicityAdjustments_</definition>
+        <argsstring></argsstring>
+        <name>monotonicityAdjustments_</name>
+        <qualifiedname>QuantLib::detail::CoefficientHolder::monotonicityAdjustments_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/cubicinterpolation.hpp" line="54" column="25" bodyfile="ql/math/interpolations/cubicinterpolation.hpp" bodystart="54" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1detail_1_1CoefficientHolder_1adc039680a253501528d9d93a20d0d112" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::detail::CoefficientHolder::CoefficientHolder</definition>
+        <argsstring>(Size n)</argsstring>
+        <name>CoefficientHolder</name>
+        <qualifiedname>QuantLib::detail::CoefficientHolder::CoefficientHolder</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/cubicinterpolation.hpp" line="44" column="22" bodyfile="ql/math/interpolations/cubicinterpolation.hpp" bodystart="44" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1detail_1_1CoefficientHolder_1a983d356663bec120236e6e478d81e96d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual QuantLib::detail::CoefficientHolder::~CoefficientHolder</definition>
+        <argsstring>()=default</argsstring>
+        <name>~CoefficientHolder</name>
+        <qualifiedname>QuantLib::detail::CoefficientHolder::~CoefficientHolder</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/cubicinterpolation.hpp" line="47" column="21"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>QuantLib::detail::CoefficientHolder</label>
+        <link refid="classQuantLib_1_1detail_1_1CoefficientHolder"/>
+      </node>
+      <node id="2">
+        <label>QuantLib::detail::CubicInterpolationImpl&lt; I1, I2 &gt;</label>
+        <link refid="classQuantLib_1_1detail_1_1CubicInterpolationImpl"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="ql/math/interpolations/cubicinterpolation.hpp" line="42" column="9" bodyfile="ql/math/interpolations/cubicinterpolation.hpp" bodystart="42" bodyend="55"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1detail_1_1CoefficientHolder_1a8acc4f29e052a398aa1ea72097b65a32" prot="public" virt="non-virtual"><scope>QuantLib::detail::CoefficientHolder</scope><name>a_</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CoefficientHolder_1acbf9bee68fb8d13dba9b44d349f75dd8" prot="public" virt="non-virtual"><scope>QuantLib::detail::CoefficientHolder</scope><name>b_</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CoefficientHolder_1a2aedc602998bda34827a09e4a92ab683" prot="public" virt="non-virtual"><scope>QuantLib::detail::CoefficientHolder</scope><name>c_</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CoefficientHolder_1adc039680a253501528d9d93a20d0d112" prot="public" virt="non-virtual"><scope>QuantLib::detail::CoefficientHolder</scope><name>CoefficientHolder</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CoefficientHolder_1aced4d46a4d1e45e5e0d7d5c87cd4a899" prot="public" virt="non-virtual"><scope>QuantLib::detail::CoefficientHolder</scope><name>monotonicityAdjustments_</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CoefficientHolder_1a64c69dd54aa7e76fe36f9847661c724d" prot="public" virt="non-virtual"><scope>QuantLib::detail::CoefficientHolder</scope><name>n_</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CoefficientHolder_1aea766d3597798ed87177a110eb6b8f1f" prot="public" virt="non-virtual"><scope>QuantLib::detail::CoefficientHolder</scope><name>primitiveConst_</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CoefficientHolder_1a983d356663bec120236e6e478d81e96d" prot="public" virt="virtual"><scope>QuantLib::detail::CoefficientHolder</scope><name>~CoefficientHolder</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

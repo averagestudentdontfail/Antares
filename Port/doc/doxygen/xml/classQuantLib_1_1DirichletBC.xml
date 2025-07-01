@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1DirichletBC" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::DirichletBC</compoundname>
+    <basecompoundref refid="classQuantLib_1_1BoundaryCondition" prot="public" virt="non-virtual">QuantLib::BoundaryCondition&lt; TridiagonalOperator &gt;</basecompoundref>
+    <includes refid="boundarycondition_8hpp" local="no">boundarycondition.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1DirichletBC_1afe2a67feb2c0d93149688dc0fa650909" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::DirichletBC::value_</definition>
+        <argsstring></argsstring>
+        <name>value_</name>
+        <qualifiedname>QuantLib::DirichletBC::value_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/boundarycondition.hpp" line="107" column="14" bodyfile="ql/methods/finitedifferences/boundarycondition.hpp" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1DirichletBC_1a7ee6daa1c8df2b14034dc1466641a445" prot="private" static="no" mutable="no">
+        <type><ref refid="classQuantLib_1_1BoundaryCondition_1ab685ab8e5ea909d20f659fab031a3dcb" kindref="member">Side</ref></type>
+        <definition>Side QuantLib::DirichletBC::side_</definition>
+        <argsstring></argsstring>
+        <name>side_</name>
+        <qualifiedname>QuantLib::DirichletBC::side_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/boundarycondition.hpp" line="108" column="14" bodyfile="ql/methods/finitedifferences/boundarycondition.hpp" bodystart="108" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1DirichletBC_1a240e30e7f1fb2d6db8a0969a5b9dd454" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::DirichletBC::DirichletBC</definition>
+        <argsstring>(Real value, Side side)</argsstring>
+        <name>DirichletBC</name>
+        <qualifiedname>QuantLib::DirichletBC::DirichletBC</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1BoundaryCondition_1ab685ab8e5ea909d20f659fab031a3dcb" kindref="member">Side</ref></type>
+          <declname>side</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/boundarycondition.hpp" line="98" column="9" bodyfile="ql/methods/finitedifferences/boundarycondition.cpp" bodystart="73" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1DirichletBC_1a3121ac03df8ca5b4c050318ed601226d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QuantLib::DirichletBC::applyBeforeApplying</definition>
+        <argsstring>(TridiagonalOperator &amp;) const override</argsstring>
+        <name>applyBeforeApplying</name>
+        <qualifiedname>QuantLib::DirichletBC::applyBeforeApplying</qualifiedname>
+        <reimplements refid="classQuantLib_1_1BoundaryCondition_1a090e687cdd747c7131aa95d564a26cff">applyBeforeApplying</reimplements>
+        <param>
+          <type><ref refid="classQuantLib_1_1TridiagonalOperator" kindref="compound">TridiagonalOperator</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method modifies an operator <formula id="53">$ L $</formula> before it is applied to an array <formula id="54">$ u $</formula> so that <formula id="55">$ v = Lu $</formula> will satisfy the given condition. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/boundarycondition.hpp" line="100" column="14" bodyfile="ql/methods/finitedifferences/boundarycondition.cpp" bodystart="76" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1DirichletBC_1a107da3510517ee27cbe5711a01ddc17e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::DirichletBC::applyAfterApplying</definition>
+        <argsstring>(Array &amp;) const override</argsstring>
+        <name>applyAfterApplying</name>
+        <qualifiedname>QuantLib::DirichletBC::applyAfterApplying</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <defname>u</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/boundarycondition.hpp" line="101" column="14" bodyfile="ql/methods/finitedifferences/boundarycondition.cpp" bodystart="89" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1DirichletBC_1adf82dd5aa567ffd92d677983329e42fd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::DirichletBC::applyBeforeSolving</definition>
+        <argsstring>(TridiagonalOperator &amp;, Array &amp;rhs) const override</argsstring>
+        <name>applyBeforeSolving</name>
+        <qualifiedname>QuantLib::DirichletBC::applyBeforeSolving</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1TridiagonalOperator" kindref="compound">TridiagonalOperator</ref> &amp;</type>
+          <defname>L</defname>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/boundarycondition.hpp" line="102" column="14" bodyfile="ql/methods/finitedifferences/boundarycondition.cpp" bodystart="102" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1DirichletBC_1a4873c11ee8d117df6557c8123fe21b5c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::DirichletBC::applyAfterSolving</definition>
+        <argsstring>(Array &amp;) const override</argsstring>
+        <name>applyAfterSolving</name>
+        <qualifiedname>QuantLib::DirichletBC::applyAfterSolving</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/boundarycondition.hpp" line="103" column="14" bodyfile="ql/methods/finitedifferences/boundarycondition.cpp" bodystart="118" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1DirichletBC_1ad0e0a84f21eca06bce8d8eff830f9fa2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void QuantLib::DirichletBC::setTime</definition>
+        <argsstring>(Time) override</argsstring>
+        <name>setTime</name>
+        <qualifiedname>QuantLib::DirichletBC::setTime</qualifiedname>
+        <reimplements refid="classQuantLib_1_1BoundaryCondition_1a391ec4058846a3d2f0cd49324c3de790">setTime</reimplements>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method sets the current time for time-dependent boundary conditions. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/boundarycondition.hpp" line="104" column="14" bodyfile="ql/methods/finitedifferences/boundarycondition.hpp" bodystart="104" bodyend="104"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Dirichlet boundary condition (i.e., constant value) </para>
+    </briefdescription>
+    <detaileddescription>
+<para><xrefsect id="todo_1_todo000005"><xreftitle>Todo</xreftitle><xrefdescription><para>generalize to time-dependent conditions.</para>
+</xrefdescription></xrefsect></para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>QuantLib::BoundaryCondition&lt; TridiagonalOperator &gt;</label>
+        <link refid="classQuantLib_1_1BoundaryCondition"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::DirichletBC</label>
+        <link refid="classQuantLib_1_1DirichletBC"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>QuantLib::BoundaryCondition&lt; TridiagonalOperator &gt;</label>
+        <link refid="classQuantLib_1_1BoundaryCondition"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::DirichletBC</label>
+        <link refid="classQuantLib_1_1DirichletBC"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/methods/finitedifferences/boundarycondition.hpp" line="96" column="5" bodyfile="ql/methods/finitedifferences/boundarycondition.hpp" bodystart="96" bodyend="109"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1DirichletBC_1a107da3510517ee27cbe5711a01ddc17e" prot="public" virt="non-virtual"><scope>QuantLib::DirichletBC</scope><name>applyAfterApplying</name></member>
+      <member refid="classQuantLib_1_1BoundaryCondition_1af885136ffc2b670924fd6579b6fb360e" prot="public" virt="pure-virtual" ambiguityscope="BoundaryCondition&lt; TridiagonalOperator &gt;::"><scope>QuantLib::DirichletBC</scope><name>applyAfterApplying</name></member>
+      <member refid="classQuantLib_1_1DirichletBC_1a4873c11ee8d117df6557c8123fe21b5c" prot="public" virt="non-virtual"><scope>QuantLib::DirichletBC</scope><name>applyAfterSolving</name></member>
+      <member refid="classQuantLib_1_1BoundaryCondition_1ab63c69a9c991dcb908d399c2e6304970" prot="public" virt="pure-virtual" ambiguityscope="BoundaryCondition&lt; TridiagonalOperator &gt;::"><scope>QuantLib::DirichletBC</scope><name>applyAfterSolving</name></member>
+      <member refid="classQuantLib_1_1DirichletBC_1a3121ac03df8ca5b4c050318ed601226d" prot="public" virt="virtual"><scope>QuantLib::DirichletBC</scope><name>applyBeforeApplying</name></member>
+      <member refid="classQuantLib_1_1DirichletBC_1adf82dd5aa567ffd92d677983329e42fd" prot="public" virt="non-virtual"><scope>QuantLib::DirichletBC</scope><name>applyBeforeSolving</name></member>
+      <member refid="classQuantLib_1_1BoundaryCondition_1a1d5d7879dbecac59bef8df64e3b10fa7" prot="public" virt="pure-virtual" ambiguityscope="BoundaryCondition&lt; TridiagonalOperator &gt;::"><scope>QuantLib::DirichletBC</scope><name>applyBeforeSolving</name></member>
+      <member refid="classQuantLib_1_1BoundaryCondition_1a61ad23b096be9049f1fe9402c95956da" prot="public" virt="non-virtual"><scope>QuantLib::DirichletBC</scope><name>array_type</name></member>
+      <member refid="classQuantLib_1_1DirichletBC_1a240e30e7f1fb2d6db8a0969a5b9dd454" prot="public" virt="non-virtual"><scope>QuantLib::DirichletBC</scope><name>DirichletBC</name></member>
+      <member refid="classQuantLib_1_1BoundaryCondition_1ab685ab8e5ea909d20f659fab031a3dcbafddc4f73585f67e4c01a46c1baf4d3e6" prot="public" virt="non-virtual"><scope>QuantLib::DirichletBC</scope><name>Lower</name></member>
+      <member refid="classQuantLib_1_1BoundaryCondition_1ab685ab8e5ea909d20f659fab031a3dcba48c5df323aff7c2236f668e0d163972a" prot="public" virt="non-virtual"><scope>QuantLib::DirichletBC</scope><name>None</name></member>
+      <member refid="classQuantLib_1_1BoundaryCondition_1adcd0cbae913cd891085312f3719efb3c" prot="public" virt="non-virtual"><scope>QuantLib::DirichletBC</scope><name>operator_type</name></member>
+      <member refid="classQuantLib_1_1DirichletBC_1ad0e0a84f21eca06bce8d8eff830f9fa2" prot="public" virt="virtual"><scope>QuantLib::DirichletBC</scope><name>setTime</name></member>
+      <member refid="classQuantLib_1_1BoundaryCondition_1ab685ab8e5ea909d20f659fab031a3dcb" prot="public" virt="non-virtual"><scope>QuantLib::DirichletBC</scope><name>Side</name></member>
+      <member refid="classQuantLib_1_1DirichletBC_1a7ee6daa1c8df2b14034dc1466641a445" prot="private" virt="non-virtual"><scope>QuantLib::DirichletBC</scope><name>side_</name></member>
+      <member refid="classQuantLib_1_1BoundaryCondition_1ab685ab8e5ea909d20f659fab031a3dcba3d5d43fcd0df2653be0ec400275f1c44" prot="public" virt="non-virtual"><scope>QuantLib::DirichletBC</scope><name>Upper</name></member>
+      <member refid="classQuantLib_1_1DirichletBC_1afe2a67feb2c0d93149688dc0fa650909" prot="private" virt="non-virtual"><scope>QuantLib::DirichletBC</scope><name>value_</name></member>
+      <member refid="classQuantLib_1_1BoundaryCondition_1ab0b634722e1c2ffe8e994b443decd603" prot="public" virt="virtual"><scope>QuantLib::DirichletBC</scope><name>~BoundaryCondition</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1952 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1Array" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::Array</compoundname>
+    <includes refid="array_8hpp" local="no">array.hpp</includes>
+    <sectiondef kind="user-defined">
+      <header>Inspectors</header>
+      <memberdef kind="typedef" id="classQuantLib_1_1Array_1aeb3bcd9e5fc8e44f27d39508b37cb944" prot="public" static="no">
+        <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+        <definition>typedef Size QuantLib::Array::size_type</definition>
+        <argsstring></argsstring>
+        <name>size_type</name>
+        <qualifiedname>QuantLib::Array::size_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="123" column="22" bodyfile="ql/math/array.hpp" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1Array_1aee40583321fcdc8230d6e85c8c9e017f" prot="public" static="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>typedef Real QuantLib::Array::value_type</definition>
+        <argsstring></argsstring>
+        <name>value_type</name>
+        <qualifiedname>QuantLib::Array::value_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="124" column="22" bodyfile="ql/math/array.hpp" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1Array_1afaec53b95e4bb9bbd3a199ba40bdeae7" prot="public" static="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> *</type>
+        <definition>typedef Real* QuantLib::Array::iterator</definition>
+        <argsstring></argsstring>
+        <name>iterator</name>
+        <qualifiedname>QuantLib::Array::iterator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="125" column="22" bodyfile="ql/math/array.hpp" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1Array_1a21aef19036a54f73a22f55ac5ec32240" prot="public" static="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> *</type>
+        <definition>typedef const Real* QuantLib::Array::const_iterator</definition>
+        <argsstring></argsstring>
+        <name>const_iterator</name>
+        <qualifiedname>QuantLib::Array::const_iterator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="126" column="28" bodyfile="ql/math/array.hpp" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1Array_1a9fd1e64d3a52f0a6f00bc43c1210202e" prot="public" static="no">
+        <type>std::reverse_iterator&lt; <ref refid="classQuantLib_1_1Array_1afaec53b95e4bb9bbd3a199ba40bdeae7" kindref="member">iterator</ref> &gt;</type>
+        <definition>typedef std::reverse_iterator&lt;iterator&gt; QuantLib::Array::reverse_iterator</definition>
+        <argsstring></argsstring>
+        <name>reverse_iterator</name>
+        <qualifiedname>QuantLib::Array::reverse_iterator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="127" column="39" bodyfile="ql/math/array.hpp" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1Array_1a051267f5321888e20e8b3d82632f0a49" prot="public" static="no">
+        <type>std::reverse_iterator&lt; <ref refid="classQuantLib_1_1Array_1a21aef19036a54f73a22f55ac5ec32240" kindref="member">const_iterator</ref> &gt;</type>
+        <definition>typedef std::reverse_iterator&lt;const_iterator&gt; QuantLib::Array::const_reverse_iterator</definition>
+        <argsstring></argsstring>
+        <name>const_reverse_iterator</name>
+        <qualifiedname>QuantLib::Array::const_reverse_iterator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="128" column="39" bodyfile="ql/math/array.hpp" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a68ffa4a150e1d8d8bc3b5a212ffc1d35" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+        <definition>Size QuantLib::Array::size</definition>
+        <argsstring>() const</argsstring>
+        <name>size</name>
+        <qualifiedname>QuantLib::Array::size</qualifiedname>
+        <briefdescription>
+<para>dimension of the array </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="119" column="14" bodyfile="ql/math/array.hpp" bodystart="483" bodyend="485"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1ab3f46d50556544f8affb06232abb6e8f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QuantLib::Array::empty</definition>
+        <argsstring>() const</argsstring>
+        <name>empty</name>
+        <qualifiedname>QuantLib::Array::empty</qualifiedname>
+        <briefdescription>
+<para>whether the array is empty </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="121" column="14" bodyfile="ql/math/array.hpp" bodystart="487" bodyend="489"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <header>Utilities</header>
+      <memberdef kind="variable" id="classQuantLib_1_1Array_1a6e0882f8cf7f1586757e5c47bb1a3aae" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>[]&gt;</type>
+        <definition>std::unique_ptr&lt;Real[]&gt; QuantLib::Array::data_</definition>
+        <argsstring></argsstring>
+        <name>data_</name>
+        <qualifiedname>QuantLib::Array::data_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="147" column="25" bodyfile="ql/math/array.hpp" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1Array_1acbe5b73b09d63338580f3e3b41632fe8" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+        <definition>Size QuantLib::Array::n_</definition>
+        <argsstring></argsstring>
+        <name>n_</name>
+        <qualifiedname>QuantLib::Array::n_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="148" column="14" bodyfile="ql/math/array.hpp" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1adc980959cbabb7fa44137e3994dd0166" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::Array::resize</definition>
+        <argsstring>(Size n)</argsstring>
+        <name>resize</name>
+        <qualifiedname>QuantLib::Array::resize</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="142" column="14" bodyfile="ql/math/array.hpp" bodystart="523" bodyend="532"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a1a996589597062aaeb308ddc144656a7" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::Array::swap</definition>
+        <argsstring>(Array &amp;) noexcept</argsstring>
+        <name>swap</name>
+        <qualifiedname>QuantLib::Array::swap</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <defname>from</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="143" column="14" bodyfile="ql/math/array.hpp" bodystart="534" bodyend="537"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <header>Constructors, destructor, and assignment</header>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1afb07361c5c804c9a6fd5e6462ffa6a00" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Array::Array</definition>
+        <argsstring>()</argsstring>
+        <name>Array</name>
+        <qualifiedname>QuantLib::Array::Array</qualifiedname>
+        <briefdescription>
+<para>creates the array with size 0 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="57" column="9" bodyfile="ql/math/array.hpp" bodystart="57" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1ac5827c4b589410669aee9bb192f959bf" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Array::Array</definition>
+        <argsstring>(Size size)</argsstring>
+        <name>Array</name>
+        <qualifiedname>QuantLib::Array::Array</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>creates the array with the given dimension </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="59" column="18" bodyfile="ql/math/array.hpp" bodystart="267" bodyend="268"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a5d75454ee245139e84d905c15da2d226" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Array::Array</definition>
+        <argsstring>(Size size, Real value)</argsstring>
+        <name>Array</name>
+        <qualifiedname>QuantLib::Array::Array</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>creates the array and fills it with <computeroutput>value</computeroutput> </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="61" column="9" bodyfile="ql/math/array.hpp" bodystart="270" bodyend="273"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1ae3558d63cf6bd42ec926c2c7d90e0688" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Array::Array</definition>
+        <argsstring>(Size size, Real value, Real increment)</argsstring>
+        <name>Array</name>
+        <qualifiedname>QuantLib::Array::Array</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>increment</declname>
+        </param>
+        <briefdescription>
+<para>creates the array and fills it according to <formula id="3">$ a_{0} = value, a_{i}=a_{i-1}+increment $</formula> </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="65" column="9" bodyfile="ql/math/array.hpp" bodystart="275" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a66f62ab0baa614670b06f2573db21f05" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Array::Array</definition>
+        <argsstring>(const Array &amp;)</argsstring>
+        <name>Array</name>
+        <qualifiedname>QuantLib::Array::Array</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <defname>from</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="66" column="9" bodyfile="ql/math/array.hpp" bodystart="281" bodyend="285"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1addef208f41c2d4ff07291c3654ec6a6f" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Array::Array</definition>
+        <argsstring>(Array &amp;&amp;) noexcept</argsstring>
+        <name>Array</name>
+        <qualifiedname>QuantLib::Array::Array</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+          <defname>from</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="67" column="9" bodyfile="ql/math/array.hpp" bodystart="287" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a864450f0550571c5fcd1ceaf47156e15" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Array::Array</definition>
+        <argsstring>(std::initializer_list&lt; Real &gt;)</argsstring>
+        <name>Array</name>
+        <qualifiedname>QuantLib::Array::Array</qualifiedname>
+        <param>
+          <type>std::initializer_list&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> &gt;</type>
+          <defname>init</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="68" column="9" bodyfile="ql/math/array.hpp" bodystart="329" bodyend="332"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a38ea8150f5ae40184b24e1eb4d237499" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename</type>
+            <defval>std::enable_if_t&lt;std::is_convertible_v&lt;T, <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>&gt;&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>QuantLib::Array::Array</definition>
+        <argsstring>(std::initializer_list&lt; T &gt; init)</argsstring>
+        <name>Array</name>
+        <qualifiedname>QuantLib::Array::Array</qualifiedname>
+        <param>
+          <type>std::initializer_list&lt; T &gt;</type>
+          <declname>init</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="70" column="9" bodyfile="ql/math/array.hpp" bodystart="343" bodyend="345"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a5db759a94538011cbf56552e39cab254" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class ForwardIterator</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>QuantLib::Array::Array</definition>
+        <argsstring>(ForwardIterator begin, ForwardIterator end)</argsstring>
+        <name>Array</name>
+        <qualifiedname>QuantLib::Array::Array</qualifiedname>
+        <param>
+          <type>ForwardIterator</type>
+          <declname>begin</declname>
+        </param>
+        <param>
+          <type>ForwardIterator</type>
+          <declname>end</declname>
+        </param>
+        <briefdescription>
+<para>creates the array from an iterable sequence </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="73" column="9" bodyfile="ql/math/array.hpp" bodystart="335" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a0ef5f170c539ccdca8c6a77361f1ed47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Array::~Array</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Array</name>
+        <qualifiedname>QuantLib::Array::~Array</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="74" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1aa8a4329575408b284f73b6a80efefb7b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        <definition>Array &amp; QuantLib::Array::operator=</definition>
+        <argsstring>(const Array &amp;)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>QuantLib::Array::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <defname>from</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="76" column="15" bodyfile="ql/math/array.hpp" bodystart="347" bodyend="352"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a1843d717ceea2c27b225203058b288ac" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        <definition>Array &amp; QuantLib::Array::operator=</definition>
+        <argsstring>(Array &amp;&amp;) noexcept</argsstring>
+        <name>operator=</name>
+        <qualifiedname>QuantLib::Array::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+          <defname>from</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="77" column="15" bodyfile="ql/math/array.hpp" bodystart="354" bodyend="357"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a2ad2d9cd37eed4fb9d95f6f086449025" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QuantLib::Array::operator==</definition>
+        <argsstring>(const Array &amp;) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>QuantLib::Array::operator==</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <defname>to</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="79" column="14" bodyfile="ql/math/array.hpp" bodystart="359" bodyend="361"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1aba34e26e0119831dfa8d4a382c42ecbe" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QuantLib::Array::operator!=</definition>
+        <argsstring>(const Array &amp;) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>QuantLib::Array::operator!=</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <defname>to</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="80" column="14" bodyfile="ql/math/array.hpp" bodystart="363" bodyend="365"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <header>Vector algebra</header>
+      <description><para><computeroutput>v += x</computeroutput> and similar operation involving a scalar value are shortcuts for <formula id="4">$ \forall i : v_i = v_i + x $</formula></para>
+<para><computeroutput>v *= w</computeroutput> and similar operation involving two vectors are shortcuts for <formula id="5">$ \forall i : v_i = v_i \times w_i $</formula></para>
+<para><simplesect kind="pre"><para>all arrays involved in an algebraic expression must have the same size. </para>
+</simplesect>
+</para>
+</description>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a6535b654fa4a61202e23965e675f58b9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        <definition>const Array &amp; QuantLib::Array::operator+=</definition>
+        <argsstring>(const Array &amp;)</argsstring>
+        <name>operator+=</name>
+        <qualifiedname>QuantLib::Array::operator+=</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <defname>v</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="94" column="21" bodyfile="ql/math/array.hpp" bodystart="367" bodyend="373"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1aa4d1dc710eb02ebbec9275ce90522a4b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        <definition>const Array &amp; QuantLib::Array::operator+=</definition>
+        <argsstring>(Real)</argsstring>
+        <name>operator+=</name>
+        <qualifiedname>QuantLib::Array::operator+=</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="95" column="21" bodyfile="ql/math/array.hpp" bodystart="376" bodyend="379"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a56e20fee974585ecb2b81b8732d348ba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        <definition>const Array &amp; QuantLib::Array::operator-=</definition>
+        <argsstring>(const Array &amp;)</argsstring>
+        <name>operator-=</name>
+        <qualifiedname>QuantLib::Array::operator-=</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <defname>v</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="96" column="21" bodyfile="ql/math/array.hpp" bodystart="381" bodyend="387"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a813ef4f8146a0c572124c252d8280495" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        <definition>const Array &amp; QuantLib::Array::operator-=</definition>
+        <argsstring>(Real)</argsstring>
+        <name>operator-=</name>
+        <qualifiedname>QuantLib::Array::operator-=</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="97" column="21" bodyfile="ql/math/array.hpp" bodystart="389" bodyend="392"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1ac9fbea92e049e1ca524712e0ec8fce3c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        <definition>const Array &amp; QuantLib::Array::operator*=</definition>
+        <argsstring>(const Array &amp;)</argsstring>
+        <name>operator*=</name>
+        <qualifiedname>QuantLib::Array::operator*=</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <defname>v</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="98" column="21" bodyfile="ql/math/array.hpp" bodystart="394" bodyend="400"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a57401a4cac66404fb19eea5d0f912d0e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        <definition>const Array &amp; QuantLib::Array::operator*=</definition>
+        <argsstring>(Real)</argsstring>
+        <name>operator*=</name>
+        <qualifiedname>QuantLib::Array::operator*=</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="99" column="21" bodyfile="ql/math/array.hpp" bodystart="402" bodyend="405"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1afa66eaefecb2025b0c52032f25d9bca5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        <definition>const Array &amp; QuantLib::Array::operator/=</definition>
+        <argsstring>(const Array &amp;)</argsstring>
+        <name>operator/=</name>
+        <qualifiedname>QuantLib::Array::operator/=</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <defname>v</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="100" column="21" bodyfile="ql/math/array.hpp" bodystart="407" bodyend="413"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a030d18fea67f51ce08fff233b0b12b25" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        <definition>const Array &amp; QuantLib::Array::operator/=</definition>
+        <argsstring>(Real)</argsstring>
+        <name>operator/=</name>
+        <qualifiedname>QuantLib::Array::operator/=</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="101" column="21" bodyfile="ql/math/array.hpp" bodystart="415" bodyend="421"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <header>Element access</header>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1aad430222997b55f1d862b1cdfb70c7bd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::Array::operator[]</definition>
+        <argsstring>(Size) const</argsstring>
+        <name>operator[]</name>
+        <qualifiedname>QuantLib::Array::operator[]</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <defname>i</defname>
+        </param>
+        <briefdescription>
+<para>read-only </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="106" column="14" bodyfile="ql/math/array.hpp" bodystart="423" bodyend="430"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1adece285fded78033a93d70af3d04199d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::Array::at</definition>
+        <argsstring>(Size) const</argsstring>
+        <name>at</name>
+        <qualifiedname>QuantLib::Array::at</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <defname>i</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="107" column="14" bodyfile="ql/math/array.hpp" bodystart="432" bodyend="437"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a0e9f29175a978a989f1916d68f518fd9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::Array::front</definition>
+        <argsstring>() const</argsstring>
+        <name>front</name>
+        <qualifiedname>QuantLib::Array::front</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="108" column="14" bodyfile="ql/math/array.hpp" bodystart="439" bodyend="444"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1ab6048f852091ddd9932d3d433586f5c1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::Array::back</definition>
+        <argsstring>() const</argsstring>
+        <name>back</name>
+        <qualifiedname>QuantLib::Array::back</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="109" column="14" bodyfile="ql/math/array.hpp" bodystart="446" bodyend="451"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1ac3273986c6ee2251115989ab73893a95" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> &amp;</type>
+        <definition>Real &amp; QuantLib::Array::operator[]</definition>
+        <argsstring>(Size)</argsstring>
+        <name>operator[]</name>
+        <qualifiedname>QuantLib::Array::operator[]</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <defname>i</defname>
+        </param>
+        <briefdescription>
+<para>read-write </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="111" column="14" bodyfile="ql/math/array.hpp" bodystart="453" bodyend="460"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a1960312b852524ca78a4312b770a8ee7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> &amp;</type>
+        <definition>Real &amp; QuantLib::Array::at</definition>
+        <argsstring>(Size)</argsstring>
+        <name>at</name>
+        <qualifiedname>QuantLib::Array::at</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <defname>i</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="112" column="14" bodyfile="ql/math/array.hpp" bodystart="462" bodyend="467"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1ac47bd957f53eea97a3249ce7653a7afc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> &amp;</type>
+        <definition>Real &amp; QuantLib::Array::front</definition>
+        <argsstring>()</argsstring>
+        <name>front</name>
+        <qualifiedname>QuantLib::Array::front</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="113" column="14" bodyfile="ql/math/array.hpp" bodystart="469" bodyend="474"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a390b95c0cc7e4623675132fd3a12f4dd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> &amp;</type>
+        <definition>Real &amp; QuantLib::Array::back</definition>
+        <argsstring>()</argsstring>
+        <name>back</name>
+        <qualifiedname>QuantLib::Array::back</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="114" column="14" bodyfile="ql/math/array.hpp" bodystart="476" bodyend="481"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <header>Iterator access</header>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1ac107d1ffe2ddf00bf1b7c2be03beab83" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array_1a21aef19036a54f73a22f55ac5ec32240" kindref="member">const_iterator</ref></type>
+        <definition>Array::const_iterator QuantLib::Array::begin</definition>
+        <argsstring>() const</argsstring>
+        <name>begin</name>
+        <qualifiedname>QuantLib::Array::begin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="131" column="24" bodyfile="ql/math/array.hpp" bodystart="491" bodyend="493"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1aae5b24655a71e7ce3a59c6a0ccc4c3c0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array_1afaec53b95e4bb9bbd3a199ba40bdeae7" kindref="member">iterator</ref></type>
+        <definition>Array::iterator QuantLib::Array::begin</definition>
+        <argsstring>()</argsstring>
+        <name>begin</name>
+        <qualifiedname>QuantLib::Array::begin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="132" column="18" bodyfile="ql/math/array.hpp" bodystart="495" bodyend="497"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1ad27b5de4ada539cb0bd429bf14a5c23b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array_1a21aef19036a54f73a22f55ac5ec32240" kindref="member">const_iterator</ref></type>
+        <definition>Array::const_iterator QuantLib::Array::end</definition>
+        <argsstring>() const</argsstring>
+        <name>end</name>
+        <qualifiedname>QuantLib::Array::end</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="133" column="24" bodyfile="ql/math/array.hpp" bodystart="499" bodyend="501"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a1e19834bac88279826c1c4a8c89c7a89" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array_1afaec53b95e4bb9bbd3a199ba40bdeae7" kindref="member">iterator</ref></type>
+        <definition>Array::iterator QuantLib::Array::end</definition>
+        <argsstring>()</argsstring>
+        <name>end</name>
+        <qualifiedname>QuantLib::Array::end</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="134" column="18" bodyfile="ql/math/array.hpp" bodystart="503" bodyend="505"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1aa04f541cd9ea687c3a50be4760a49103" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array_1a051267f5321888e20e8b3d82632f0a49" kindref="member">const_reverse_iterator</ref></type>
+        <definition>Array::const_reverse_iterator QuantLib::Array::rbegin</definition>
+        <argsstring>() const</argsstring>
+        <name>rbegin</name>
+        <qualifiedname>QuantLib::Array::rbegin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="135" column="32" bodyfile="ql/math/array.hpp" bodystart="507" bodyend="509"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1af467e6b359d8e4833e2b416cabba8ffe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array_1a9fd1e64d3a52f0a6f00bc43c1210202e" kindref="member">reverse_iterator</ref></type>
+        <definition>Array::reverse_iterator QuantLib::Array::rbegin</definition>
+        <argsstring>()</argsstring>
+        <name>rbegin</name>
+        <qualifiedname>QuantLib::Array::rbegin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="136" column="26" bodyfile="ql/math/array.hpp" bodystart="511" bodyend="513"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a6c794222013bddb1d19bb3210e183afa" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array_1a051267f5321888e20e8b3d82632f0a49" kindref="member">const_reverse_iterator</ref></type>
+        <definition>Array::const_reverse_iterator QuantLib::Array::rend</definition>
+        <argsstring>() const</argsstring>
+        <name>rend</name>
+        <qualifiedname>QuantLib::Array::rend</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="137" column="32" bodyfile="ql/math/array.hpp" bodystart="515" bodyend="517"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1ae3c91e92f85cf413c84b76d8b9d62071" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array_1a9fd1e64d3a52f0a6f00bc43c1210202e" kindref="member">reverse_iterator</ref></type>
+        <definition>Array::reverse_iterator QuantLib::Array::rend</definition>
+        <argsstring>()</argsstring>
+        <name>rend</name>
+        <qualifiedname>QuantLib::Array::rend</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="138" column="26" bodyfile="ql/math/array.hpp" bodystart="519" bodyend="521"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="related">
+      <memberdef kind="function" id="classQuantLib_1_1Array_1afd78eeec99ca45607a2c64520a45633c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real DotProduct</definition>
+        <argsstring>(const Array &amp;, const Array &amp;)</argsstring>
+        <name>DotProduct</name>
+        <qualifiedname>QuantLib::Array::DotProduct</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="153" column="10" bodyfile="ql/math/array.hpp" bodystart="541" bodyend="546" declfile="ql/math/array.hpp" declline="153" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a9e87629195c1f207492ed40027714342" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real Norm2</definition>
+        <argsstring>(const Array &amp;)</argsstring>
+        <name>Norm2</name>
+        <qualifiedname>QuantLib::Array::Norm2</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="156" column="10" bodyfile="ql/math/array.hpp" bodystart="548" bodyend="550" declfile="ql/math/array.hpp" declline="156" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1abde196d298d8f5d28aee9cd17b9130be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator+</definition>
+        <argsstring>(const Array &amp;v)</argsstring>
+        <name>operator+</name>
+        <qualifiedname>QuantLib::Array::operator+</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="160" column="11" bodyfile="ql/math/array.hpp" bodystart="556" bodyend="559" declfile="ql/math/array.hpp" declline="160" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a811c75057cc8f6057dcdecafcbcad1d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator+</definition>
+        <argsstring>(Array &amp;&amp;v)</argsstring>
+        <name>operator+</name>
+        <qualifiedname>QuantLib::Array::operator+</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="162" column="11" bodyfile="ql/math/array.hpp" bodystart="561" bodyend="563" declfile="ql/math/array.hpp" declline="162" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a5720ef02a8bb50b354c9436e6e096be5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator-</definition>
+        <argsstring>(const Array &amp;v)</argsstring>
+        <name>operator-</name>
+        <qualifiedname>QuantLib::Array::operator-</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="164" column="11" bodyfile="ql/math/array.hpp" bodystart="565" bodyend="569" declfile="ql/math/array.hpp" declline="164" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1aa0d555ebb393c23d4c2de8711376e493" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator-</definition>
+        <argsstring>(Array &amp;&amp;v)</argsstring>
+        <name>operator-</name>
+        <qualifiedname>QuantLib::Array::operator-</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="166" column="11" bodyfile="ql/math/array.hpp" bodystart="571" bodyend="575" declfile="ql/math/array.hpp" declline="166" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1ad2c47ac8d5e51f022da8c22e5e4b195f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator+</definition>
+        <argsstring>(const Array &amp;, const Array &amp;)</argsstring>
+        <name>operator+</name>
+        <qualifiedname>QuantLib::Array::operator+</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="170" column="11" bodyfile="ql/math/array.hpp" bodystart="579" bodyend="586" declfile="ql/math/array.hpp" declline="170" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a712a8e4b405fa7dafa483d4875b28959" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator+</definition>
+        <argsstring>(const Array &amp;, Array &amp;&amp;)</argsstring>
+        <name>operator+</name>
+        <qualifiedname>QuantLib::Array::operator+</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="172" column="11" bodyfile="ql/math/array.hpp" bodystart="588" bodyend="595" declfile="ql/math/array.hpp" declline="172" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a1d1d9543375851500c10670c3b0b8497" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator+</definition>
+        <argsstring>(Array &amp;&amp;, const Array &amp;)</argsstring>
+        <name>operator+</name>
+        <qualifiedname>QuantLib::Array::operator+</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="174" column="11" bodyfile="ql/math/array.hpp" bodystart="597" bodyend="604" declfile="ql/math/array.hpp" declline="174" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a7e465754f03ca14ac0543395b023db9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator+</definition>
+        <argsstring>(Array &amp;&amp;, Array &amp;&amp;)</argsstring>
+        <name>operator+</name>
+        <qualifiedname>QuantLib::Array::operator+</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="176" column="11" bodyfile="ql/math/array.hpp" bodystart="606" bodyend="613" declfile="ql/math/array.hpp" declline="176" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1ac7eb993004291f5b193279e18fa9355d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator+</definition>
+        <argsstring>(const Array &amp;, Real)</argsstring>
+        <name>operator+</name>
+        <qualifiedname>QuantLib::Array::operator+</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="178" column="11" bodyfile="ql/math/array.hpp" bodystart="615" bodyend="619" declfile="ql/math/array.hpp" declline="178" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a2c654e24aae4792477f02667d768b79b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator+</definition>
+        <argsstring>(Array &amp;&amp;, Real)</argsstring>
+        <name>operator+</name>
+        <qualifiedname>QuantLib::Array::operator+</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="180" column="11" bodyfile="ql/math/array.hpp" bodystart="621" bodyend="625" declfile="ql/math/array.hpp" declline="180" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1adc0ba300e515b04a08e8b70ab34e51b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator+</definition>
+        <argsstring>(Real, const Array &amp;)</argsstring>
+        <name>operator+</name>
+        <qualifiedname>QuantLib::Array::operator+</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="182" column="11" bodyfile="ql/math/array.hpp" bodystart="627" bodyend="631" declfile="ql/math/array.hpp" declline="182" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1ac4d9358bb36825e49fb34bb82759b8c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator+</definition>
+        <argsstring>(Real, Array &amp;&amp;)</argsstring>
+        <name>operator+</name>
+        <qualifiedname>QuantLib::Array::operator+</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="184" column="11" bodyfile="ql/math/array.hpp" bodystart="633" bodyend="637" declfile="ql/math/array.hpp" declline="184" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1ac6b4eab63ff35c8c1934d8d787b90006" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator-</definition>
+        <argsstring>(const Array &amp;, const Array &amp;)</argsstring>
+        <name>operator-</name>
+        <qualifiedname>QuantLib::Array::operator-</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="186" column="11" bodyfile="ql/math/array.hpp" bodystart="639" bodyend="646" declfile="ql/math/array.hpp" declline="186" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1ac35e4d45d6aa28edd2b6e245a4dcc558" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator-</definition>
+        <argsstring>(const Array &amp;, Array &amp;&amp;)</argsstring>
+        <name>operator-</name>
+        <qualifiedname>QuantLib::Array::operator-</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="188" column="11" bodyfile="ql/math/array.hpp" bodystart="648" bodyend="655" declfile="ql/math/array.hpp" declline="188" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a55d2f1ff7d5411388b6c7eeb8636412b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator-</definition>
+        <argsstring>(Array &amp;&amp;, const Array &amp;)</argsstring>
+        <name>operator-</name>
+        <qualifiedname>QuantLib::Array::operator-</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="190" column="11" bodyfile="ql/math/array.hpp" bodystart="657" bodyend="664" declfile="ql/math/array.hpp" declline="190" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a010a49a49234d60e34059ec5c9a3c4ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator-</definition>
+        <argsstring>(Array &amp;&amp;, Array &amp;&amp;)</argsstring>
+        <name>operator-</name>
+        <qualifiedname>QuantLib::Array::operator-</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="192" column="11" bodyfile="ql/math/array.hpp" bodystart="666" bodyend="673" declfile="ql/math/array.hpp" declline="192" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a9b1dd6721d0e09398159120188d18286" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator-</definition>
+        <argsstring>(const Array &amp;, Real)</argsstring>
+        <name>operator-</name>
+        <qualifiedname>QuantLib::Array::operator-</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="194" column="11" bodyfile="ql/math/array.hpp" bodystart="675" bodyend="679" declfile="ql/math/array.hpp" declline="194" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1abbf2ff948c024511199ccbfbaf9249b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator-</definition>
+        <argsstring>(Real, const Array &amp;)</argsstring>
+        <name>operator-</name>
+        <qualifiedname>QuantLib::Array::operator-</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="196" column="11" bodyfile="ql/math/array.hpp" bodystart="687" bodyend="691" declfile="ql/math/array.hpp" declline="196" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1abfa17a99447324e7d3ab4340fb380986" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator-</definition>
+        <argsstring>(Array &amp;&amp;, Real)</argsstring>
+        <name>operator-</name>
+        <qualifiedname>QuantLib::Array::operator-</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="198" column="11" bodyfile="ql/math/array.hpp" bodystart="681" bodyend="685" declfile="ql/math/array.hpp" declline="198" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a4ab109544714d650098543db766ec05f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator-</definition>
+        <argsstring>(Real, Array &amp;&amp;)</argsstring>
+        <name>operator-</name>
+        <qualifiedname>QuantLib::Array::operator-</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="200" column="11" bodyfile="ql/math/array.hpp" bodystart="693" bodyend="697" declfile="ql/math/array.hpp" declline="200" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a93485c66c2ceef6cfb75a228f1a82fdd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator*</definition>
+        <argsstring>(const Array &amp;, const Array &amp;)</argsstring>
+        <name>operator*</name>
+        <qualifiedname>QuantLib::Array::operator*</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="202" column="11" bodyfile="ql/math/array.hpp" bodystart="699" bodyend="706" declfile="ql/math/array.hpp" declline="202" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a991a2ec82ace924595397ab0d92a1722" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator*</definition>
+        <argsstring>(const Array &amp;, Array &amp;&amp;)</argsstring>
+        <name>operator*</name>
+        <qualifiedname>QuantLib::Array::operator*</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="204" column="11" bodyfile="ql/math/array.hpp" bodystart="708" bodyend="715" declfile="ql/math/array.hpp" declline="204" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1ae20ec87b8bb460d9c5a36768643d1f46" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator*</definition>
+        <argsstring>(Array &amp;&amp;, const Array &amp;)</argsstring>
+        <name>operator*</name>
+        <qualifiedname>QuantLib::Array::operator*</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="206" column="11" bodyfile="ql/math/array.hpp" bodystart="717" bodyend="724" declfile="ql/math/array.hpp" declline="206" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a2c1c0515ff8fe1bce116e392ccf90a42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator*</definition>
+        <argsstring>(Array &amp;&amp;, Array &amp;&amp;)</argsstring>
+        <name>operator*</name>
+        <qualifiedname>QuantLib::Array::operator*</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="208" column="11" bodyfile="ql/math/array.hpp" bodystart="726" bodyend="733" declfile="ql/math/array.hpp" declline="208" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1ae688732716c32a4d6de2d9584c9e43e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator*</definition>
+        <argsstring>(const Array &amp;, Real)</argsstring>
+        <name>operator*</name>
+        <qualifiedname>QuantLib::Array::operator*</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="210" column="11" bodyfile="ql/math/array.hpp" bodystart="735" bodyend="739" declfile="ql/math/array.hpp" declline="210" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a160977868615e8d684ffb05fa99c73ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator*</definition>
+        <argsstring>(Real, const Array &amp;)</argsstring>
+        <name>operator*</name>
+        <qualifiedname>QuantLib::Array::operator*</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="212" column="11" bodyfile="ql/math/array.hpp" bodystart="747" bodyend="751" declfile="ql/math/array.hpp" declline="212" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1ac76599dc7284a566ae2925b150679f4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator*</definition>
+        <argsstring>(Array &amp;&amp;, Real)</argsstring>
+        <name>operator*</name>
+        <qualifiedname>QuantLib::Array::operator*</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="214" column="11" bodyfile="ql/math/array.hpp" bodystart="741" bodyend="745" declfile="ql/math/array.hpp" declline="214" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a02456b947a149119fd4a0101495319de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator*</definition>
+        <argsstring>(Real, Array &amp;&amp;)</argsstring>
+        <name>operator*</name>
+        <qualifiedname>QuantLib::Array::operator*</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="216" column="11" bodyfile="ql/math/array.hpp" bodystart="753" bodyend="757" declfile="ql/math/array.hpp" declline="216" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a280443733f0e45cfbe370408ea16f175" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator/</definition>
+        <argsstring>(const Array &amp;, const Array &amp;)</argsstring>
+        <name>operator/</name>
+        <qualifiedname>QuantLib::Array::operator/</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="218" column="11" bodyfile="ql/math/array.hpp" bodystart="759" bodyend="766" declfile="ql/math/array.hpp" declline="218" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1ac62e640d8390172ae1ce9a3926608a93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator/</definition>
+        <argsstring>(const Array &amp;, Array &amp;&amp;)</argsstring>
+        <name>operator/</name>
+        <qualifiedname>QuantLib::Array::operator/</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="220" column="11" bodyfile="ql/math/array.hpp" bodystart="768" bodyend="775" declfile="ql/math/array.hpp" declline="220" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a0ba38dd3993557f95ae4abfe8125902b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator/</definition>
+        <argsstring>(Array &amp;&amp;, const Array &amp;)</argsstring>
+        <name>operator/</name>
+        <qualifiedname>QuantLib::Array::operator/</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="222" column="11" bodyfile="ql/math/array.hpp" bodystart="777" bodyend="784" declfile="ql/math/array.hpp" declline="222" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1ade64c1ba1b6c440af07166a418cd421a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator/</definition>
+        <argsstring>(Array &amp;&amp;, Array &amp;&amp;)</argsstring>
+        <name>operator/</name>
+        <qualifiedname>QuantLib::Array::operator/</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="224" column="11" bodyfile="ql/math/array.hpp" bodystart="786" bodyend="793" declfile="ql/math/array.hpp" declline="224" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a84f9ff875f9503bb0bc31e52e8fbb959" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator/</definition>
+        <argsstring>(const Array &amp;, Real)</argsstring>
+        <name>operator/</name>
+        <qualifiedname>QuantLib::Array::operator/</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="226" column="11" bodyfile="ql/math/array.hpp" bodystart="795" bodyend="799" declfile="ql/math/array.hpp" declline="226" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a3cad923323302ede64614f6e7632f35d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator/</definition>
+        <argsstring>(Real, const Array &amp;)</argsstring>
+        <name>operator/</name>
+        <qualifiedname>QuantLib::Array::operator/</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="228" column="11" bodyfile="ql/math/array.hpp" bodystart="807" bodyend="811" declfile="ql/math/array.hpp" declline="228" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1ad9dabf43fecbaac5fab6682e6d480f87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator/</definition>
+        <argsstring>(Array &amp;&amp;, Real)</argsstring>
+        <name>operator/</name>
+        <qualifiedname>QuantLib::Array::operator/</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="230" column="11" bodyfile="ql/math/array.hpp" bodystart="801" bodyend="805" declfile="ql/math/array.hpp" declline="230" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a862882f79aa00e71985094dd7803261d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array operator/</definition>
+        <argsstring>(Real, Array &amp;&amp;)</argsstring>
+        <name>operator/</name>
+        <qualifiedname>QuantLib::Array::operator/</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="232" column="11" bodyfile="ql/math/array.hpp" bodystart="813" bodyend="817" declfile="ql/math/array.hpp" declline="232" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a0668e394c26fb5a3162ebce2c9b1d487" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array Abs</definition>
+        <argsstring>(const Array &amp;)</argsstring>
+        <name>Abs</name>
+        <qualifiedname>QuantLib::Array::Abs</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="236" column="11" bodyfile="ql/math/array.hpp" bodystart="821" bodyend="826" declfile="ql/math/array.hpp" declline="236" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a50e718ecd8a3c041f8415abd84da8e67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array Abs</definition>
+        <argsstring>(Array &amp;&amp;)</argsstring>
+        <name>Abs</name>
+        <qualifiedname>QuantLib::Array::Abs</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="238" column="11" bodyfile="ql/math/array.hpp" bodystart="828" bodyend="833" declfile="ql/math/array.hpp" declline="238" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a8c77413983a52abf16be6a770dfa9fc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array Sqrt</definition>
+        <argsstring>(const Array &amp;)</argsstring>
+        <name>Sqrt</name>
+        <qualifiedname>QuantLib::Array::Sqrt</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="240" column="11" bodyfile="ql/math/array.hpp" bodystart="835" bodyend="840" declfile="ql/math/array.hpp" declline="240" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1ab75125f04b8460fdc5ace882b72c7f44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array Sqrt</definition>
+        <argsstring>(Array &amp;&amp;)</argsstring>
+        <name>Sqrt</name>
+        <qualifiedname>QuantLib::Array::Sqrt</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="242" column="11" bodyfile="ql/math/array.hpp" bodystart="842" bodyend="847" declfile="ql/math/array.hpp" declline="242" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a8f2fb0a84f46165aa11f4a0e6536f71f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array Log</definition>
+        <argsstring>(const Array &amp;)</argsstring>
+        <name>Log</name>
+        <qualifiedname>QuantLib::Array::Log</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="244" column="11" bodyfile="ql/math/array.hpp" bodystart="849" bodyend="854" declfile="ql/math/array.hpp" declline="244" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a40456dfca61e193e173175ebbef815b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array Log</definition>
+        <argsstring>(Array &amp;&amp;)</argsstring>
+        <name>Log</name>
+        <qualifiedname>QuantLib::Array::Log</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="246" column="11" bodyfile="ql/math/array.hpp" bodystart="856" bodyend="861" declfile="ql/math/array.hpp" declline="246" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a8559b762b10f29f45940d358f6ea1df5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array Exp</definition>
+        <argsstring>(const Array &amp;)</argsstring>
+        <name>Exp</name>
+        <qualifiedname>QuantLib::Array::Exp</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="248" column="11" bodyfile="ql/math/array.hpp" bodystart="863" bodyend="868" declfile="ql/math/array.hpp" declline="248" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a560f794217bdb15d71360d08e45fc6cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array Exp</definition>
+        <argsstring>(Array &amp;&amp;)</argsstring>
+        <name>Exp</name>
+        <qualifiedname>QuantLib::Array::Exp</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="250" column="11" bodyfile="ql/math/array.hpp" bodystart="870" bodyend="875" declfile="ql/math/array.hpp" declline="250" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a2feacdf88afc5b01cfd21d91ea4db883" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array Pow</definition>
+        <argsstring>(const Array &amp;, Real)</argsstring>
+        <name>Pow</name>
+        <qualifiedname>QuantLib::Array::Pow</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="252" column="11" bodyfile="ql/math/array.hpp" bodystart="877" bodyend="882" declfile="ql/math/array.hpp" declline="252" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a6407cbdfbdbdd826cd3750ffa200360b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array Pow</definition>
+        <argsstring>(Array &amp;&amp;, Real)</argsstring>
+        <name>Pow</name>
+        <qualifiedname>QuantLib::Array::Pow</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;&amp;</type>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="254" column="11" bodyfile="ql/math/array.hpp" bodystart="884" bodyend="889" declfile="ql/math/array.hpp" declline="254" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1aae5d5314f907b522ebd83fddb4d1fc92" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void swap</definition>
+        <argsstring>(Array &amp;, Array &amp;) noexcept</argsstring>
+        <name>swap</name>
+        <qualifiedname>QuantLib::Array::swap</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="258" column="10" bodyfile="ql/math/array.hpp" bodystart="891" bodyend="893" declfile="ql/math/array.hpp" declline="258" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Array_1a3290708c171149766f28ea1ea40fe18a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;, const Array &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>QuantLib::Array::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="262" column="5" bodyfile="ql/math/array.hpp" bodystart="895" bodyend="905" declfile="ql/math/array.hpp" declline="262" declcolumn="5"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>1-D array used in linear algebra. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class implements the concept of vector as used in linear algebra. As such, it is <bold>not</bold> meant to be used as a container - <computeroutput>std::vector</computeroutput> should be used instead.</para>
+<para><xrefsect id="test_1_test000003"><xreftitle>Test</xreftitle><xrefdescription><para>construction of arrays is checked in a number of cases </para>
+</xrefdescription></xrefsect></para>
+    </detaileddescription>
+    <location file="ql/math/array.hpp" line="52" column="5" bodyfile="ql/math/array.hpp" bodystart="52" bodyend="149"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Array_1a0668e394c26fb5a3162ebce2c9b1d487" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>Abs</name></member>
+      <member refid="classQuantLib_1_1Array_1a50e718ecd8a3c041f8415abd84da8e67" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>Abs</name></member>
+      <member refid="classQuantLib_1_1Array_1afb07361c5c804c9a6fd5e6462ffa6a00" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>Array</name></member>
+      <member refid="classQuantLib_1_1Array_1ac5827c4b589410669aee9bb192f959bf" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>Array</name></member>
+      <member refid="classQuantLib_1_1Array_1a5d75454ee245139e84d905c15da2d226" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>Array</name></member>
+      <member refid="classQuantLib_1_1Array_1ae3558d63cf6bd42ec926c2c7d90e0688" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>Array</name></member>
+      <member refid="classQuantLib_1_1Array_1a66f62ab0baa614670b06f2573db21f05" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>Array</name></member>
+      <member refid="classQuantLib_1_1Array_1addef208f41c2d4ff07291c3654ec6a6f" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>Array</name></member>
+      <member refid="classQuantLib_1_1Array_1a864450f0550571c5fcd1ceaf47156e15" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>Array</name></member>
+      <member refid="classQuantLib_1_1Array_1a38ea8150f5ae40184b24e1eb4d237499" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>Array</name></member>
+      <member refid="classQuantLib_1_1Array_1a5db759a94538011cbf56552e39cab254" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>Array</name></member>
+      <member refid="classQuantLib_1_1Array_1adece285fded78033a93d70af3d04199d" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>at</name></member>
+      <member refid="classQuantLib_1_1Array_1a1960312b852524ca78a4312b770a8ee7" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>at</name></member>
+      <member refid="classQuantLib_1_1Array_1ab6048f852091ddd9932d3d433586f5c1" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>back</name></member>
+      <member refid="classQuantLib_1_1Array_1a390b95c0cc7e4623675132fd3a12f4dd" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>back</name></member>
+      <member refid="classQuantLib_1_1Array_1ac107d1ffe2ddf00bf1b7c2be03beab83" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>begin</name></member>
+      <member refid="classQuantLib_1_1Array_1aae5b24655a71e7ce3a59c6a0ccc4c3c0" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>begin</name></member>
+      <member refid="classQuantLib_1_1Array_1a21aef19036a54f73a22f55ac5ec32240" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>const_iterator</name></member>
+      <member refid="classQuantLib_1_1Array_1a051267f5321888e20e8b3d82632f0a49" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>const_reverse_iterator</name></member>
+      <member refid="classQuantLib_1_1Array_1a6e0882f8cf7f1586757e5c47bb1a3aae" prot="private" virt="non-virtual"><scope>QuantLib::Array</scope><name>data_</name></member>
+      <member refid="classQuantLib_1_1Array_1afd78eeec99ca45607a2c64520a45633c" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>DotProduct</name></member>
+      <member refid="classQuantLib_1_1Array_1ab3f46d50556544f8affb06232abb6e8f" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>empty</name></member>
+      <member refid="classQuantLib_1_1Array_1ad27b5de4ada539cb0bd429bf14a5c23b" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>end</name></member>
+      <member refid="classQuantLib_1_1Array_1a1e19834bac88279826c1c4a8c89c7a89" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>end</name></member>
+      <member refid="classQuantLib_1_1Array_1a8559b762b10f29f45940d358f6ea1df5" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>Exp</name></member>
+      <member refid="classQuantLib_1_1Array_1a560f794217bdb15d71360d08e45fc6cc" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>Exp</name></member>
+      <member refid="classQuantLib_1_1Array_1a0e9f29175a978a989f1916d68f518fd9" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>front</name></member>
+      <member refid="classQuantLib_1_1Array_1ac47bd957f53eea97a3249ce7653a7afc" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>front</name></member>
+      <member refid="classQuantLib_1_1Array_1afaec53b95e4bb9bbd3a199ba40bdeae7" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>iterator</name></member>
+      <member refid="classQuantLib_1_1Array_1a8f2fb0a84f46165aa11f4a0e6536f71f" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>Log</name></member>
+      <member refid="classQuantLib_1_1Array_1a40456dfca61e193e173175ebbef815b1" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>Log</name></member>
+      <member refid="classQuantLib_1_1Array_1acbe5b73b09d63338580f3e3b41632fe8" prot="private" virt="non-virtual"><scope>QuantLib::Array</scope><name>n_</name></member>
+      <member refid="classQuantLib_1_1Array_1a9e87629195c1f207492ed40027714342" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>Norm2</name></member>
+      <member refid="classQuantLib_1_1Array_1aba34e26e0119831dfa8d4a382c42ecbe" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator!=</name></member>
+      <member refid="classQuantLib_1_1Array_1a93485c66c2ceef6cfb75a228f1a82fdd" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator*</name></member>
+      <member refid="classQuantLib_1_1Array_1a991a2ec82ace924595397ab0d92a1722" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator*</name></member>
+      <member refid="classQuantLib_1_1Array_1ae20ec87b8bb460d9c5a36768643d1f46" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator*</name></member>
+      <member refid="classQuantLib_1_1Array_1a2c1c0515ff8fe1bce116e392ccf90a42" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator*</name></member>
+      <member refid="classQuantLib_1_1Array_1ae688732716c32a4d6de2d9584c9e43e9" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator*</name></member>
+      <member refid="classQuantLib_1_1Array_1a160977868615e8d684ffb05fa99c73ea" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator*</name></member>
+      <member refid="classQuantLib_1_1Array_1ac76599dc7284a566ae2925b150679f4e" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator*</name></member>
+      <member refid="classQuantLib_1_1Array_1a02456b947a149119fd4a0101495319de" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator*</name></member>
+      <member refid="classQuantLib_1_1Array_1ac9fbea92e049e1ca524712e0ec8fce3c" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator*=</name></member>
+      <member refid="classQuantLib_1_1Array_1a57401a4cac66404fb19eea5d0f912d0e" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator*=</name></member>
+      <member refid="classQuantLib_1_1Array_1abde196d298d8f5d28aee9cd17b9130be" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator+</name></member>
+      <member refid="classQuantLib_1_1Array_1a811c75057cc8f6057dcdecafcbcad1d5" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator+</name></member>
+      <member refid="classQuantLib_1_1Array_1ad2c47ac8d5e51f022da8c22e5e4b195f" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator+</name></member>
+      <member refid="classQuantLib_1_1Array_1a712a8e4b405fa7dafa483d4875b28959" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator+</name></member>
+      <member refid="classQuantLib_1_1Array_1a1d1d9543375851500c10670c3b0b8497" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator+</name></member>
+      <member refid="classQuantLib_1_1Array_1a7e465754f03ca14ac0543395b023db9d" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator+</name></member>
+      <member refid="classQuantLib_1_1Array_1ac7eb993004291f5b193279e18fa9355d" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator+</name></member>
+      <member refid="classQuantLib_1_1Array_1a2c654e24aae4792477f02667d768b79b" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator+</name></member>
+      <member refid="classQuantLib_1_1Array_1adc0ba300e515b04a08e8b70ab34e51b0" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator+</name></member>
+      <member refid="classQuantLib_1_1Array_1ac4d9358bb36825e49fb34bb82759b8c7" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator+</name></member>
+      <member refid="classQuantLib_1_1Array_1a6535b654fa4a61202e23965e675f58b9" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator+=</name></member>
+      <member refid="classQuantLib_1_1Array_1aa4d1dc710eb02ebbec9275ce90522a4b" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator+=</name></member>
+      <member refid="classQuantLib_1_1Array_1a5720ef02a8bb50b354c9436e6e096be5" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator-</name></member>
+      <member refid="classQuantLib_1_1Array_1aa0d555ebb393c23d4c2de8711376e493" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator-</name></member>
+      <member refid="classQuantLib_1_1Array_1ac6b4eab63ff35c8c1934d8d787b90006" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator-</name></member>
+      <member refid="classQuantLib_1_1Array_1ac35e4d45d6aa28edd2b6e245a4dcc558" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator-</name></member>
+      <member refid="classQuantLib_1_1Array_1a55d2f1ff7d5411388b6c7eeb8636412b" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator-</name></member>
+      <member refid="classQuantLib_1_1Array_1a010a49a49234d60e34059ec5c9a3c4ea" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator-</name></member>
+      <member refid="classQuantLib_1_1Array_1a9b1dd6721d0e09398159120188d18286" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator-</name></member>
+      <member refid="classQuantLib_1_1Array_1abbf2ff948c024511199ccbfbaf9249b6" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator-</name></member>
+      <member refid="classQuantLib_1_1Array_1abfa17a99447324e7d3ab4340fb380986" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator-</name></member>
+      <member refid="classQuantLib_1_1Array_1a4ab109544714d650098543db766ec05f" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator-</name></member>
+      <member refid="classQuantLib_1_1Array_1a56e20fee974585ecb2b81b8732d348ba" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator-=</name></member>
+      <member refid="classQuantLib_1_1Array_1a813ef4f8146a0c572124c252d8280495" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator-=</name></member>
+      <member refid="classQuantLib_1_1Array_1a280443733f0e45cfbe370408ea16f175" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator/</name></member>
+      <member refid="classQuantLib_1_1Array_1ac62e640d8390172ae1ce9a3926608a93" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator/</name></member>
+      <member refid="classQuantLib_1_1Array_1a0ba38dd3993557f95ae4abfe8125902b" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator/</name></member>
+      <member refid="classQuantLib_1_1Array_1ade64c1ba1b6c440af07166a418cd421a" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator/</name></member>
+      <member refid="classQuantLib_1_1Array_1a84f9ff875f9503bb0bc31e52e8fbb959" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator/</name></member>
+      <member refid="classQuantLib_1_1Array_1a3cad923323302ede64614f6e7632f35d" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator/</name></member>
+      <member refid="classQuantLib_1_1Array_1ad9dabf43fecbaac5fab6682e6d480f87" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator/</name></member>
+      <member refid="classQuantLib_1_1Array_1a862882f79aa00e71985094dd7803261d" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator/</name></member>
+      <member refid="classQuantLib_1_1Array_1afa66eaefecb2025b0c52032f25d9bca5" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator/=</name></member>
+      <member refid="classQuantLib_1_1Array_1a030d18fea67f51ce08fff233b0b12b25" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator/=</name></member>
+      <member refid="classQuantLib_1_1Array_1a3290708c171149766f28ea1ea40fe18a" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classQuantLib_1_1Array_1aa8a4329575408b284f73b6a80efefb7b" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1Array_1a1843d717ceea2c27b225203058b288ac" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1Array_1a2ad2d9cd37eed4fb9d95f6f086449025" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator==</name></member>
+      <member refid="classQuantLib_1_1Array_1aad430222997b55f1d862b1cdfb70c7bd" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator[]</name></member>
+      <member refid="classQuantLib_1_1Array_1ac3273986c6ee2251115989ab73893a95" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>operator[]</name></member>
+      <member refid="classQuantLib_1_1Array_1a2feacdf88afc5b01cfd21d91ea4db883" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>Pow</name></member>
+      <member refid="classQuantLib_1_1Array_1a6407cbdfbdbdd826cd3750ffa200360b" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>Pow</name></member>
+      <member refid="classQuantLib_1_1Array_1aa04f541cd9ea687c3a50be4760a49103" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>rbegin</name></member>
+      <member refid="classQuantLib_1_1Array_1af467e6b359d8e4833e2b416cabba8ffe" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>rbegin</name></member>
+      <member refid="classQuantLib_1_1Array_1a6c794222013bddb1d19bb3210e183afa" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>rend</name></member>
+      <member refid="classQuantLib_1_1Array_1ae3c91e92f85cf413c84b76d8b9d62071" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>rend</name></member>
+      <member refid="classQuantLib_1_1Array_1adc980959cbabb7fa44137e3994dd0166" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>resize</name></member>
+      <member refid="classQuantLib_1_1Array_1a9fd1e64d3a52f0a6f00bc43c1210202e" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>reverse_iterator</name></member>
+      <member refid="classQuantLib_1_1Array_1a68ffa4a150e1d8d8bc3b5a212ffc1d35" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>size</name></member>
+      <member refid="classQuantLib_1_1Array_1aeb3bcd9e5fc8e44f27d39508b37cb944" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>size_type</name></member>
+      <member refid="classQuantLib_1_1Array_1a8c77413983a52abf16be6a770dfa9fc7" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>Sqrt</name></member>
+      <member refid="classQuantLib_1_1Array_1ab75125f04b8460fdc5ace882b72c7f44" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>Sqrt</name></member>
+      <member refid="classQuantLib_1_1Array_1a1a996589597062aaeb308ddc144656a7" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>swap</name></member>
+      <member refid="classQuantLib_1_1Array_1aae5d5314f907b522ebd83fddb4d1fc92" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>swap</name></member>
+      <member refid="classQuantLib_1_1Array_1aee40583321fcdc8230d6e85c8c9e017f" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>value_type</name></member>
+      <member refid="classQuantLib_1_1Array_1a0ef5f170c539ccdca8c6a77361f1ed47" prot="public" virt="non-virtual"><scope>QuantLib::Array</scope><name>~Array</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

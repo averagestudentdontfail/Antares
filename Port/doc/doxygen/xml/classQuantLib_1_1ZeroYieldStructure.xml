@@ -1,0 +1,339 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1ZeroYieldStructure" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>QuantLib::ZeroYieldStructure</compoundname>
+    <basecompoundref refid="classQuantLib_1_1YieldTermStructure" prot="public" virt="non-virtual">QuantLib::YieldTermStructure</basecompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1QuantoTermStructure" prot="public" virt="non-virtual">QuantLib::QuantoTermStructure</derivedcompoundref>
+    <includes refid="zeroyieldstructure_8hpp" local="no">zeroyieldstructure.hpp</includes>
+    <sectiondef kind="user-defined">
+      <header>Constructors</header>
+      <description><para>See the <ref refid="classQuantLib_1_1TermStructure" kindref="compound">TermStructure</ref> documentation for issues regarding constructors. </para>
+</description>
+      <memberdef kind="function" id="classQuantLib_1_1ZeroYieldStructure_1ac4add8d8f321aba324aea6a3d8da72ec" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::ZeroYieldStructure::ZeroYieldStructure</definition>
+        <argsstring>(const DayCounter &amp;dc=DayCounter())</argsstring>
+        <name>ZeroYieldStructure</name>
+        <qualifiedname>QuantLib::ZeroYieldStructure::ZeroYieldStructure</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref> &amp;</type>
+          <declname>dc</declname>
+          <defval><ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/yield/zeroyieldstructure.hpp" line="51" column="18" bodyfile="ql/termstructures/yield/zeroyieldstructure.cpp" bodystart="26" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1ZeroYieldStructure_1abcce7f1b129425e19f97a9355c07b4f9" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::ZeroYieldStructure::ZeroYieldStructure</definition>
+        <argsstring>(const Date &amp;referenceDate, const Calendar &amp;calendar=Calendar(), const DayCounter &amp;dc=DayCounter(), const std::vector&lt; Handle&lt; Quote &gt; &gt; &amp;jumps={}, const std::vector&lt; Date &gt; &amp;jumpDates={})</argsstring>
+        <name>ZeroYieldStructure</name>
+        <qualifiedname>QuantLib::ZeroYieldStructure::ZeroYieldStructure</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+          <declname>referenceDate</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Calendar" kindref="compound">Calendar</ref> &amp;</type>
+          <declname>calendar</declname>
+          <defval><ref refid="classQuantLib_1_1Calendar" kindref="compound">Calendar</ref>()</defval>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref> &amp;</type>
+          <declname>dc</declname>
+          <defval><ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref>()</defval>
+        </param>
+        <param>
+          <type>const std::vector&lt; <ref refid="classQuantLib_1_1Handle" kindref="compound">Handle</ref>&lt; <ref refid="classQuantLib_1_1Quote" kindref="compound">Quote</ref> &gt; &gt; &amp;</type>
+          <declname>jumps</declname>
+          <defval>{}</defval>
+        </param>
+        <param>
+          <type>const std::vector&lt; <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &gt; &amp;</type>
+          <declname>jumpDates</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/yield/zeroyieldstructure.hpp" line="53" column="18" bodyfile="ql/termstructures/yield/zeroyieldstructure.cpp" bodystart="29" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1ZeroYieldStructure_1a736793978e95b9f1d5da87acfa4c2d36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::ZeroYieldStructure::ZeroYieldStructure</definition>
+        <argsstring>(Natural settlementDays, const Calendar &amp;calendar, const DayCounter &amp;dc=DayCounter(), const std::vector&lt; Handle&lt; Quote &gt; &gt; &amp;jumps={}, const std::vector&lt; Date &gt; &amp;jumpDates={})</argsstring>
+        <name>ZeroYieldStructure</name>
+        <qualifiedname>QuantLib::ZeroYieldStructure::ZeroYieldStructure</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a9adc2615d630d6006896b3402b09b03b" kindref="member">Natural</ref></type>
+          <declname>settlementDays</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Calendar" kindref="compound">Calendar</ref> &amp;</type>
+          <declname>calendar</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref> &amp;</type>
+          <declname>dc</declname>
+          <defval><ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref>()</defval>
+        </param>
+        <param>
+          <type>const std::vector&lt; <ref refid="classQuantLib_1_1Handle" kindref="compound">Handle</ref>&lt; <ref refid="classQuantLib_1_1Quote" kindref="compound">Quote</ref> &gt; &gt; &amp;</type>
+          <declname>jumps</declname>
+          <defval>{}</defval>
+        </param>
+        <param>
+          <type>const std::vector&lt; <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &gt; &amp;</type>
+          <declname>jumpDates</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/yield/zeroyieldstructure.hpp" line="59" column="9" bodyfile="ql/termstructures/yield/zeroyieldstructure.cpp" bodystart="37" bodyend="43"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <header>Calculations</header>
+      <description><para>This method must be implemented in derived classes to perform the actual calculations. When it is called, range check has already been performed; therefore, it must assume that extrapolation is required. </para>
+</description>
+      <memberdef kind="function" id="classQuantLib_1_1ZeroYieldStructure_1a321205d4885240169b67adc986e14078" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref></type>
+        <definition>virtual Rate QuantLib::ZeroYieldStructure::zeroYieldImpl</definition>
+        <argsstring>(Time) const =0</argsstring>
+        <name>zeroYieldImpl</name>
+        <qualifiedname>QuantLib::ZeroYieldStructure::zeroYieldImpl</qualifiedname>
+        <reimplementedby refid="classQuantLib_1_1QuantoTermStructure_1a0c9cd8dec9d888670e79f23893d10398">zeroYieldImpl</reimplementedby>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+        </param>
+        <briefdescription>
+<para>zero-yield calculation </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/yield/zeroyieldstructure.hpp" line="76" column="22"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <header>YieldTermStructure implementation</header>
+      <memberdef kind="function" id="classQuantLib_1_1ZeroYieldStructure_1a16ba143ac6c7b44a9648b52966afd357" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="namespaceQuantLib_1a05e8e288a4bdedfe5b4e16d8cec14f1c" kindref="member">DiscountFactor</ref></type>
+        <definition>DiscountFactor QuantLib::ZeroYieldStructure::discountImpl</definition>
+        <argsstring>(Time) const override</argsstring>
+        <name>discountImpl</name>
+        <qualifiedname>QuantLib::ZeroYieldStructure::discountImpl</qualifiedname>
+        <reimplements refid="classQuantLib_1_1YieldTermStructure_1a5c8dd504b1ed73f96c61dce6d8bfed81">discountImpl</reimplements>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <defname>t</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the discount factor for the given date calculating it from the zero yield. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/yield/zeroyieldstructure.hpp" line="84" column="24" bodyfile="ql/termstructures/yield/zeroyieldstructure.hpp" bodystart="90" bodyend="96"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Zero-yield term structure. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This abstract class acts as an adapter to <ref refid="classQuantLib_1_1YieldTermStructure" kindref="compound">YieldTermStructure</ref> allowing the programmer to implement only the <computeroutput>zeroYieldImpl(Time)</computeroutput> method in derived classes.</para>
+<para>Discount and forward are calculated from zero yields.</para>
+<para>Zero rates are assumed to be annual continuous compounding. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="6">
+        <label>QuantLib::Extrapolator</label>
+        <link refid="classQuantLib_1_1Extrapolator"/>
+      </node>
+      <node id="5">
+        <label>QuantLib::Observable</label>
+        <link refid="classQuantLib_1_1Observable"/>
+      </node>
+      <node id="4">
+        <label>QuantLib::Observer</label>
+        <link refid="classQuantLib_1_1Observer"/>
+      </node>
+      <node id="7">
+        <label>QuantLib::QuantoTermStructure</label>
+        <link refid="classQuantLib_1_1QuantoTermStructure"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QuantLib::TermStructure</label>
+        <link refid="classQuantLib_1_1TermStructure"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::YieldTermStructure</label>
+        <link refid="classQuantLib_1_1YieldTermStructure"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::ZeroYieldStructure</label>
+        <link refid="classQuantLib_1_1ZeroYieldStructure"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="7">
+        <label>QuantLib::Calendar</label>
+        <link refid="classQuantLib_1_1Calendar"/>
+      </node>
+      <node id="8">
+        <label>QuantLib::Date</label>
+        <link refid="classQuantLib_1_1Date"/>
+      </node>
+      <node id="9">
+        <label>QuantLib::DayCounter</label>
+        <link refid="classQuantLib_1_1DayCounter"/>
+      </node>
+      <node id="6">
+        <label>QuantLib::Extrapolator</label>
+        <link refid="classQuantLib_1_1Extrapolator"/>
+      </node>
+      <node id="5">
+        <label>QuantLib::Observable</label>
+        <link refid="classQuantLib_1_1Observable"/>
+      </node>
+      <node id="4">
+        <label>QuantLib::Observer</label>
+        <link refid="classQuantLib_1_1Observer"/>
+      </node>
+      <node id="3">
+        <label>QuantLib::TermStructure</label>
+        <link refid="classQuantLib_1_1TermStructure"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>calendar_</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>referenceDate_</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>dayCounter_</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::YieldTermStructure</label>
+        <link refid="classQuantLib_1_1YieldTermStructure"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>latestReference_</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::ZeroYieldStructure</label>
+        <link refid="classQuantLib_1_1ZeroYieldStructure"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/termstructures/yield/zeroyieldstructure.hpp" line="44" column="5" bodyfile="ql/termstructures/yield/zeroyieldstructure.hpp" bodystart="44" bodyend="86"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Extrapolator_1ab3936a9b5b5c163d3e511437c16c1d9e" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>allowsExtrapolation</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1ac4ea5cbce495c9a47a44eeaedf7a9d45" prot="public" virt="virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>calendar</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1a0a09e3fa8cdfbc9aa9685da0c35ccb90" prot="protected" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>calendar_</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1aa7297742ffbeeb0c7611f90a0f7d15bf" prot="protected" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>checkRange</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1a4d246bcb13b7518a75088bf7cf01ea75" prot="protected" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>checkRange</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1ac03e725e4e0685b209caa626b00924ca" prot="public" virt="virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>dayCounter</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1ab7dbb0cc1b2a4c5b5ee840b4822dc55e" prot="private" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>dayCounter_</name></member>
+      <member refid="classQuantLib_1_1Observer_1acfbf794db3e7d5cfdea2cd517a195183" prot="public" virt="virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>deepUpdate</name></member>
+      <member refid="classQuantLib_1_1Extrapolator_1a6af69387d5cae0fe84d6a0c858406218" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>disableExtrapolation</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1ae7ebb1a52720c8275b40752e505834b8" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>discount</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1a0f98239d6aa04b7bb905da1f36e93f05" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>discount</name></member>
+      <member refid="classQuantLib_1_1ZeroYieldStructure_1a16ba143ac6c7b44a9648b52966afd357" prot="protected" virt="virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>discountImpl</name></member>
+      <member refid="classQuantLib_1_1Extrapolator_1a5f7b5650a44d6c63095bc739470c8bfb" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>enableExtrapolation</name></member>
+      <member refid="classQuantLib_1_1Extrapolator_1a9a45b840a003c411ad1c2b71578e329a" prot="private" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>extrapolate_</name></member>
+      <member refid="classQuantLib_1_1Extrapolator_1af1c3adaccdfaf07d3d07edaa234444f7" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>Extrapolator</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1a1e1ae6ff3486bb692f6a27a00c88deb0" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>forwardRate</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1a54d4939c63eae4aa5c96cdc50a6384b5" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>forwardRate</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1a5d109bba7336c36026652266be7abd0c" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>forwardRate</name></member>
+      <member refid="classQuantLib_1_1Observer_1ad45fa6f7242ee763d17c714a3e8bb6d7" prot="public" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::ZeroYieldStructure</scope><name>iterator</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1a1121c8d1e731832496182bda33ba8d45" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>jumpDates</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1abb0dd012c9c0fb492ad683ec69e93a40" prot="private" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>jumpDates_</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1a695c29e6164bddd6cc0db183dd1e9649" prot="private" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>jumps_</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1ae34149edb2c2f604b0f1469b2268e517" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>jumpTimes</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1a4fdef8c6b55317cd8604ecf9115d0a64" prot="private" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>jumpTimes_</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1ac090b5d7653dd28dfae598627f36aff9" prot="private" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>latestReference_</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1ae9af756bbddc15962711f77f514f08fa" prot="public" virt="pure-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>maxDate</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1a2f820c32e198e1046d97ca3dd9a807c5" prot="public" virt="virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>maxTime</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1a8319e5c2c37b09a825d61210c9cb8e2a" prot="protected" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>moving_</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1ac7ae5be010c465ff793d9508711c3559" prot="private" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>nJumps_</name></member>
+      <member refid="classQuantLib_1_1Observable_1afb67478418efdb94382ac9d7ae904b94" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>notifyObservers</name></member>
+      <member refid="classQuantLib_1_1Observable_1ae0d19b21fab87a01f53586a6b5c15f85" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observable_1a942cf6a572bd95341433a6772c70cb29" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observable_1a6c35885ef344665ecdfac9b9f3a59c0e" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observer_1a85e3adb273b706155ea7e8bd98ee460b" prot="private" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>observables_</name></member>
+      <member refid="classQuantLib_1_1Observer_1a246072080d37c0cd180013417251c70b" prot="public" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::ZeroYieldStructure</scope><name>Observer</name></member>
+      <member refid="classQuantLib_1_1Observer_1ae6e892e237db5ffe7acbef54360ef0e3" prot="public" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::ZeroYieldStructure</scope><name>Observer</name></member>
+      <member refid="classQuantLib_1_1Observable_1a4da6017619203dcb570d5f4174f0beea" prot="private" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>observers_</name></member>
+      <member refid="classQuantLib_1_1Observer_1a40ad1a8bfb71e32b2916b370f3f9392c" prot="public" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::ZeroYieldStructure</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1Observable_1ad1e086da62f05b4bc5eafa698ef6fbc3" prot="public" virt="non-virtual" ambiguityscope="QuantLib::Observable::"><scope>QuantLib::ZeroYieldStructure</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1Observable_1ab45941c65068ab4c8d69a7d1a72beeb7" prot="public" virt="non-virtual" ambiguityscope="QuantLib::Observable::"><scope>QuantLib::ZeroYieldStructure</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1accbf3d4af41db0333d456eb5616c4e1e" prot="public" virt="virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>referenceDate</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1ae710961574841a314aaee208cd8fd9d2" prot="private" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>referenceDate_</name></member>
+      <member refid="classQuantLib_1_1Observable_1a1eb87a03e7e1fd43377bce32e0c21bce" prot="private" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>registerObserver</name></member>
+      <member refid="classQuantLib_1_1Observer_1a312bbe4a5386f10a1584f3477b3c2709" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>registerWith</name></member>
+      <member refid="classQuantLib_1_1Observer_1a338928c4fe626f9ccf0b98ceb318853a" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>registerWithObservables</name></member>
+      <member refid="classQuantLib_1_1Observer_1a3dcd7d8542d1142f29da8326919e863f" prot="private" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::ZeroYieldStructure</scope><name>set_type</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1ae2c9e322b272582ee6456fb7e83c0066" prot="private" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>setJumps</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1abeb79eefda70a9414f206ca9e70ced0f" prot="public" virt="virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>settlementDays</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1aaf8d92d98e6e398e43eb57cd29248ee9" prot="private" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>settlementDays_</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1ac8365997e6d41134b4e0998fe6b4e949" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>TermStructure</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1a95764a49e0368b653eadbe619d9ef334" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>TermStructure</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1aab73d2acafdc8fbdf9336e7084bd88a1" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>TermStructure</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1ac8da61eb0f06ae07a35e8e4bbe7146b0" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>timeFromReference</name></member>
+      <member refid="classQuantLib_1_1Observable_1abd81ef8b87594aa6f9d2a5bd5de3e628" prot="private" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>unregisterObserver</name></member>
+      <member refid="classQuantLib_1_1Observer_1a297d13afa77b0e7e6deae3bab777180f" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>unregisterWith</name></member>
+      <member refid="classQuantLib_1_1Observer_1ab88925691aba7e7d96cc5188e94361ea" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>unregisterWithAll</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1af8c4936ba1b89c3dd94445159e7c330f" prot="public" virt="virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>update</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1a2fcf1c78e57786ad5c123f52dbf619e8" prot="protected" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>updated_</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1a2f77f6a92f1e48450c801debadd6c5d1" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>YieldTermStructure</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1a1512e59ec18b51681936cd84c1381b28" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>YieldTermStructure</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1a1c4ed273e8b8b8631139fc784edb399c" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>YieldTermStructure</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1a2c3ff5cd67f7a14b9d917fbe6491c096" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>zeroRate</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1a081055025072ce474e54ba29a250c786" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>zeroRate</name></member>
+      <member refid="classQuantLib_1_1ZeroYieldStructure_1a321205d4885240169b67adc986e14078" prot="protected" virt="pure-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>zeroYieldImpl</name></member>
+      <member refid="classQuantLib_1_1ZeroYieldStructure_1ac4add8d8f321aba324aea6a3d8da72ec" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>ZeroYieldStructure</name></member>
+      <member refid="classQuantLib_1_1ZeroYieldStructure_1abcce7f1b129425e19f97a9355c07b4f9" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>ZeroYieldStructure</name></member>
+      <member refid="classQuantLib_1_1ZeroYieldStructure_1a736793978e95b9f1d5da87acfa4c2d36" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>ZeroYieldStructure</name></member>
+      <member refid="classQuantLib_1_1Extrapolator_1af0ca0156436ffbce159183198eb27e2e" prot="public" virt="virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>~Extrapolator</name></member>
+      <member refid="classQuantLib_1_1Observable_1a32093a7038e9bd8d28e5d378eca9f4f7" prot="public" virt="virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>~Observable</name></member>
+      <member refid="classQuantLib_1_1Observer_1a6b5c15445bbe598d34871f5a5a3ed671" prot="public" virt="virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>~Observer</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1ad202ddcc14fc4a6c16686d6164d7b36c" prot="public" virt="non-virtual"><scope>QuantLib::ZeroYieldStructure</scope><name>~TermStructure</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

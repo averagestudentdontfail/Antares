@@ -1,0 +1,677 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="trbdf2scheme_8hpp" kind="file" language="C++">
+    <compoundname>trbdf2scheme.hpp</compoundname>
+    <includes refid="functional_8hpp" local="no">ql/functional.hpp</includes>
+    <includes refid="math_2functional_8hpp" local="no">ql/math/functional.hpp</includes>
+    <includes refid="bicgstab_8hpp" local="no">ql/math/matrixutilities/bicgstab.hpp</includes>
+    <includes refid="gmres_8hpp" local="no">ql/math/matrixutilities/gmres.hpp</includes>
+    <includes refid="fdmlinearopcomposite_8hpp" local="no">ql/methods/finitedifferences/operators/fdmlinearopcomposite.hpp</includes>
+    <includes refid="operatortraits_8hpp" local="no">ql/methods/finitedifferences/operatortraits.hpp</includes>
+    <includes refid="boundaryconditionschemehelper_8hpp" local="no">ql/methods/finitedifferences/schemes/boundaryconditionschemehelper.hpp</includes>
+    <includes local="no">utility</includes>
+    <includedby refid="fdmbackwardsolver_8cpp" local="no">ql/methods/finitedifferences/solvers/fdmbackwardsolver.cpp</includedby>
+    <incdepgraph>
+      <node id="63">
+        <label>ql/any.hpp</label>
+        <link refid="any_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>ql/config.ansi.hpp</label>
+        <link refid="config_8ansi_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>ql/errors.hpp</label>
+        <link refid="errors_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ql/functional.hpp</label>
+        <link refid="functional_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>ql/instrument.hpp</label>
+        <link refid="instrument_8hpp"/>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>ql/instruments/payoffs.hpp</label>
+        <link refid="payoffs_8hpp"/>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>ql/math/array.hpp</label>
+        <link refid="array_8hpp"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>ql/math/comparison.hpp</label>
+        <link refid="comparison_8hpp"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>ql/math/functional.hpp</label>
+        <link refid="math_2functional_8hpp"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>ql/math/matrixutilities/bicgstab.hpp</label>
+        <link refid="bicgstab_8hpp"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>ql/math/matrixutilities/gmres.hpp</label>
+        <link refid="gmres_8hpp"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>ql/math/matrixutilities/sparsematrix.hpp</label>
+        <link refid="sparsematrix_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>ql/mathconstants.hpp</label>
+        <link refid="mathconstants_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>ql/methods/finitedifferences/boundarycondition.hpp</label>
+        <link refid="boundarycondition_8hpp"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>ql/methods/finitedifferences/operators/fdmlinearop.hpp</label>
+        <link refid="fdmlinearop_8hpp"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>ql/methods/finitedifferences/operators/fdmlinearopcomposite.hpp</label>
+        <link refid="fdmlinearopcomposite_8hpp"/>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>ql/methods/finitedifferences/operatortraits.hpp</label>
+        <link refid="operatortraits_8hpp"/>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>ql/methods/finitedifferences/schemes/boundaryconditionschemehelper.hpp</label>
+        <link refid="boundaryconditionschemehelper_8hpp"/>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ql/methods/finitedifferences/schemes/trbdf2scheme.hpp</label>
+        <link refid="trbdf2scheme_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>ql/methods/finitedifferences/stepcondition.hpp</label>
+        <link refid="stepcondition_8hpp"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>ql/methods/finitedifferences/tridiagonaloperator.hpp</label>
+        <link refid="tridiagonaloperator_8hpp"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="69">
+        <label>ql/methods/finitedifferences/utilities/fdmboundaryconditionset.hpp</label>
+        <link refid="fdmboundaryconditionset_8hpp"/>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>ql/option.hpp</label>
+        <link refid="option_8hpp"/>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>ql/patterns/lazyobject.hpp</label>
+        <link refid="lazyobject_8hpp"/>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>ql/patterns/observable.hpp</label>
+        <link refid="observable_8hpp"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>ql/patterns/singleton.hpp</label>
+        <link refid="singleton_8hpp"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="67">
+        <label>ql/patterns/visitor.hpp</label>
+        <link refid="visitor_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>ql/payoff.hpp</label>
+        <link refid="payoff_8hpp"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>ql/pricingengine.hpp</label>
+        <link refid="pricingengine_8hpp"/>
+        <childnode refid="52" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>ql/qldefines.hpp</label>
+        <link refid="qldefines_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>ql/shared_ptr.hpp</label>
+        <link refid="shared__ptr_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>ql/time/date.hpp</label>
+        <link refid="date_8hpp"/>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>ql/time/frequency.hpp</label>
+        <link refid="frequency_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>ql/time/period.hpp</label>
+        <link refid="period_8hpp"/>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>ql/time/timeunit.hpp</label>
+        <link refid="timeunit_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+      </node>
+      <node id="61">
+        <label>ql/time/weekday.hpp</label>
+        <link refid="weekday_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>ql/types.hpp</label>
+        <link refid="types_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>ql/userconfig.hpp</label>
+        <link refid="userconfig_8hpp"/>
+      </node>
+      <node id="15">
+        <label>ql/utilities/null.hpp</label>
+        <link refid="null_8hpp"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>algorithm</label>
+      </node>
+      <node id="64">
+        <label>any</label>
+      </node>
+      <node id="25">
+        <label>boost/assert.hpp</label>
+      </node>
+      <node id="4">
+        <label>boost/config.hpp</label>
+      </node>
+      <node id="26">
+        <label>boost/current_function.hpp</label>
+      </node>
+      <node id="24">
+        <label>boost/enable_shared_from_this.hpp</label>
+      </node>
+      <node id="23">
+        <label>boost/make_shared.hpp</label>
+      </node>
+      <node id="41">
+        <label>boost/numeric/ublas/matrix_sparse.hpp</label>
+      </node>
+      <node id="22">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="5">
+        <label>boost/version.hpp</label>
+      </node>
+      <node id="9">
+        <label>cmath</label>
+      </node>
+      <node id="14">
+        <label>cstddef</label>
+      </node>
+      <node id="62">
+        <label>cstdint</label>
+      </node>
+      <node id="27">
+        <label>exception</label>
+      </node>
+      <node id="11">
+        <label>functional</label>
+      </node>
+      <node id="34">
+        <label>initializer_list</label>
+      </node>
+      <node id="35">
+        <label>iomanip</label>
+      </node>
+      <node id="59">
+        <label>iosfwd</label>
+      </node>
+      <node id="30">
+        <label>iterator</label>
+      </node>
+      <node id="10">
+        <label>limits</label>
+      </node>
+      <node id="38">
+        <label>list</label>
+      </node>
+      <node id="65">
+        <label>map</label>
+      </node>
+      <node id="36">
+        <label>memory</label>
+      </node>
+      <node id="32">
+        <label>numeric</label>
+      </node>
+      <node id="54">
+        <label>set</label>
+      </node>
+      <node id="28">
+        <label>sstream</label>
+      </node>
+      <node id="29">
+        <label>string</label>
+      </node>
+      <node id="16">
+        <label>type_traits</label>
+      </node>
+      <node id="17">
+        <label>utility</label>
+      </node>
+      <node id="33">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>ql/methods/finitedifferences/schemes/trbdf2scheme.hpp</label>
+        <link refid="trbdf2scheme_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ql/methods/finitedifferences/solvers/fdmbackwardsolver.cpp</label>
+        <link refid="fdmbackwardsolver_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classQuantLib_1_1TrBDF2Scheme" prot="public">QuantLib::TrBDF2Scheme</innerclass>
+    <innernamespace refid="namespaceQuantLib">QuantLib</innernamespace>
+    <briefdescription>
+<para>trapezoidal BDF2 scheme </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>c++;<sp/>tab-width:<sp/>4;<sp/>indent-tabs-mode:<sp/>nil;<sp/>c-basic-offset:<sp/>4<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2018<sp/>Klaus<sp/>Spanderen</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>QuantLib,<sp/>a<sp/>free-software/open-source<sp/>library</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>for<sp/>financial<sp/>quantitative<sp/>analysts<sp/>and<sp/>developers<sp/>-<sp/>http://quantlib.org/</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>QuantLib<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>QuantLib<sp/>license.<sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>copy<sp/>of<sp/>the<sp/>license<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>please<sp/>email</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>&lt;quantlib-dev@lists.sf.net&gt;.<sp/>The<sp/>license<sp/>is<sp/>also<sp/>available<sp/>online<sp/>at</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>&lt;http://quantlib.org/license.shtml&gt;.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"></highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the<sp/>license<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>quantlib_tr_bdf2_scheme_hpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>quantlib_tr_bdf2_scheme_hpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="functional_8hpp" kindref="compound">ql/functional.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="math_2functional_8hpp" kindref="compound">ql/math/functional.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="bicgstab_8hpp" kindref="compound">ql/math/matrixutilities/bicgstab.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="gmres_8hpp" kindref="compound">ql/math/matrixutilities/gmres.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="fdmlinearopcomposite_8hpp" kindref="compound">ql/methods/finitedifferences/operators/fdmlinearopcomposite.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="operatortraits_8hpp" kindref="compound">ql/methods/finitedifferences/operatortraits.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="boundaryconditionschemehelper_8hpp" kindref="compound">ql/methods/finitedifferences/schemes/boundaryconditionschemehelper.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceQuantLib" kindref="compound">QuantLib</ref><sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Trapezo</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">alScheme&gt;</highlight></codeline>
+<codeline lineno="39" refid="classQuantLib_1_1TrBDF2Scheme" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classQuantLib_1_1TrBDF2Scheme" kindref="compound">TrBDF2Scheme</ref><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="41" refid="classQuantLib_1_1TrBDF2Scheme_1a2f22a03fcf2fcd31ac8429fd305b2311a7eab566f65844d02c141ee36148d8553" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1a2f22a03fcf2fcd31ac8429fd305b2311" kindref="member">SolverType</ref><sp/>{<sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1a2f22a03fcf2fcd31ac8429fd305b2311a7eab566f65844d02c141ee36148d8553" kindref="member">BiCGstab</ref>,<sp/><ref refid="classQuantLib_1_1GMRES" kindref="compound">GMRES</ref><sp/>};</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>typedefs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="classQuantLib_1_1TrBDF2Scheme_1a3ee02278cd8d07e880576d1656be7a29" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1OperatorTraits" kindref="compound">OperatorTraits&lt;FdmLinearOp&gt;</ref><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1a3ee02278cd8d07e880576d1656be7a29" kindref="member">traits</ref>;</highlight></codeline>
+<codeline lineno="45" refid="classQuantLib_1_1TrBDF2Scheme_1aa79d1ab74cf8dda83e93701c332f78bc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1FdmLinearOp" kindref="compound">traits::operator_type</ref><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1aa79d1ab74cf8dda83e93701c332f78bc" kindref="member">operator_type</ref>;</highlight></codeline>
+<codeline lineno="46" refid="classQuantLib_1_1TrBDF2Scheme_1aee8fe9bbae71683893cbd1936869e9a6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1OperatorTraits_1a8b93c7b87d132e84abc2a170df02f9d2" kindref="member">traits::array_type</ref><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1aee8fe9bbae71683893cbd1936869e9a6" kindref="member">array_type</ref>;</highlight></codeline>
+<codeline lineno="47" refid="classQuantLib_1_1TrBDF2Scheme_1a5d3b4ac427d69c711cfc9cf272eb32e8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1OperatorTraits_1a36e452286290e4446d658377e6487d00" kindref="member">traits::bc_set</ref><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1a5d3b4ac427d69c711cfc9cf272eb32e8" kindref="member">bc_set</ref>;</highlight></codeline>
+<codeline lineno="48" refid="classQuantLib_1_1TrBDF2Scheme_1a63d17308ce96b578d6bd3ea7f9fafd19" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1OperatorTraits_1afba7e06f490184e83ac81ac711dc7e1e" kindref="member">traits::condition_type</ref><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1a63d17308ce96b578d6bd3ea7f9fafd19" kindref="member">condition_type</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>constructors</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme" kindref="compound">TrBDF2Scheme</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>alpha,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ext::shared_ptr&lt;FdmLinearOpComposite&gt;<sp/>map,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ext::shared_ptr&lt;TrapezoidalScheme&gt;&amp;<sp/>trapezoidalScheme,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1a5d3b4ac427d69c711cfc9cf272eb32e8" kindref="member">bc_set</ref>&amp;<sp/>bcSet<sp/>=<sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1a5d3b4ac427d69c711cfc9cf272eb32e8" kindref="member">bc_set</ref>(),</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>relTol<sp/>=<sp/>1e-8,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1a2f22a03fcf2fcd31ac8429fd305b2311" kindref="member">SolverType</ref><sp/>solverType<sp/>=<sp/><ref refid="classQuantLib_1_1BiCGstab" kindref="compound">BiCGstab</ref>);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1a7e77ed2742e64d3a1925744673420db4" kindref="member">step</ref>(<ref refid="classQuantLib_1_1TrBDF2Scheme_1aee8fe9bbae71683893cbd1936869e9a6" kindref="member">array_type</ref>&amp;<sp/>a,<sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>t);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1a4f634749959d17e979081827ed0e0d46" kindref="member">setStep</ref>(<ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>dt);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1aab5e3a62f07e3a31cdbc17bd0fc80c36" kindref="member">numberOfIterations</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1af75199068bbb6ac0d9900d40eb366972" kindref="member">apply</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref>&amp;<sp/>r)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="classQuantLib_1_1TrBDF2Scheme_1a443bc55c2d9fb0ee96b71f9b82cc8392" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1a443bc55c2d9fb0ee96b71f9b82cc8392" kindref="member">dt_</ref>;</highlight></codeline>
+<codeline lineno="66" refid="classQuantLib_1_1TrBDF2Scheme_1a25b04b33c62ab1da9673e73adff8b576" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1a25b04b33c62ab1da9673e73adff8b576" kindref="member">beta_</ref>;</highlight></codeline>
+<codeline lineno="67" refid="classQuantLib_1_1TrBDF2Scheme_1a1e48c191dba6324fbae21aa4c3b4fc87" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ext::shared_ptr&lt;Size&gt;<sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1a1e48c191dba6324fbae21aa4c3b4fc87" kindref="member">iterations_</ref>;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="classQuantLib_1_1TrBDF2Scheme_1a799f2b4ef3666a63d0f365af69a716b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1a799f2b4ef3666a63d0f365af69a716b4" kindref="member">alpha_</ref>;</highlight></codeline>
+<codeline lineno="70" refid="classQuantLib_1_1TrBDF2Scheme_1a8847b2965e60c5c8404c72de39ca3f1e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ext::shared_ptr&lt;FdmLinearOpComposite&gt;<sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1a8847b2965e60c5c8404c72de39ca3f1e" kindref="member">map_</ref>;</highlight></codeline>
+<codeline lineno="71" refid="classQuantLib_1_1TrBDF2Scheme_1acbea8ee80494cb5dce2885551a36d3ad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ext::shared_ptr&lt;TrapezoidalScheme&gt;&amp;<sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1acbea8ee80494cb5dce2885551a36d3ad" kindref="member">trapezoidalScheme_</ref>;</highlight></codeline>
+<codeline lineno="72" refid="classQuantLib_1_1TrBDF2Scheme_1a550d48c9d040a51cdf73145cf3a11278" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1BoundaryConditionSchemeHelper" kindref="compound">BoundaryConditionSchemeHelper</ref><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1a550d48c9d040a51cdf73145cf3a11278" kindref="member">bcSet_</ref>;</highlight></codeline>
+<codeline lineno="73" refid="classQuantLib_1_1TrBDF2Scheme_1a837257f34b768ffeb82016e39642368b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1a837257f34b768ffeb82016e39642368b" kindref="member">relTol_</ref>;</highlight></codeline>
+<codeline lineno="74" refid="classQuantLib_1_1TrBDF2Scheme_1a1f61b55660d484d148edfe3b35ef9264" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1a2f22a03fcf2fcd31ac8429fd305b2311" kindref="member">SolverType</ref><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1a1f61b55660d484d148edfe3b35ef9264" kindref="member">solverType_</ref>;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Trapezo</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">alScheme&gt;</highlight></codeline>
+<codeline lineno="78" refid="classQuantLib_1_1TrBDF2Scheme_1a348ea5103d4a1229ec2358e69d70428f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1a348ea5103d4a1229ec2358e69d70428f" kindref="member">TrBDF2Scheme&lt;TrapezoidalScheme&gt;::TrBDF2Scheme</ref>(</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>alpha,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ext::shared_ptr&lt;FdmLinearOpComposite&gt;<sp/>map,</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ext::shared_ptr&lt;TrapezoidalScheme&gt;&amp;<sp/>trapezoidalScheme,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1a5d3b4ac427d69c711cfc9cf272eb32e8" kindref="member">bc_set</ref>&amp;<sp/>bcSet,</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>relTol,</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1a2f22a03fcf2fcd31ac8429fd305b2311" kindref="member">SolverType</ref><sp/>solverType)</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>dt_(<ref refid="classQuantLib_1_1Null" kindref="compound">Null</ref>&lt;<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>&gt;()),<sp/>beta_(<ref refid="classQuantLib_1_1Null" kindref="compound">Null</ref>&lt;<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>&gt;()),<sp/>iterations_(ext::make_shared&lt;<ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref>&gt;(0U)),</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>alpha_(alpha),<sp/>map_(<ref refid="namespacestd" kindref="compound">std</ref>::move(map)),<sp/>trapezoidalScheme_(trapezoidalScheme),<sp/>bcSet_(bcSet),</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>relTol_(relTol),<sp/>solverType_(solverType)<sp/>{}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Trapezo</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">alScheme&gt;</highlight></codeline>
+<codeline lineno="90" refid="classQuantLib_1_1TrBDF2Scheme_1a4f634749959d17e979081827ed0e0d46" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1a4f634749959d17e979081827ed0e0d46" kindref="member">TrBDF2Scheme&lt;TrapezoidalScheme&gt;::setStep</ref>(<ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>dt)<sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dt_=dt;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>beta_=<sp/>(1.0-alpha_)/(2.0-alpha_)*dt_;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Trapezo</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">alScheme&gt;</highlight></codeline>
+<codeline lineno="96" refid="classQuantLib_1_1TrBDF2Scheme_1aab5e3a62f07e3a31cdbc17bd0fc80c36" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1aab5e3a62f07e3a31cdbc17bd0fc80c36" kindref="member">TrBDF2Scheme&lt;TrapezoidalScheme&gt;::numberOfIterations</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*iterations_;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Trapezo</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">alScheme&gt;</highlight></codeline>
+<codeline lineno="101" refid="classQuantLib_1_1TrBDF2Scheme_1af75199068bbb6ac0d9900d40eb366972" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1af75199068bbb6ac0d9900d40eb366972" kindref="member">TrBDF2Scheme&lt;TrapezoidalScheme&gt;::apply</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref>&amp;<sp/>r)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r<sp/>-<sp/>beta_*map_-&gt;apply(r);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Trapezo</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">alScheme&gt;</highlight></codeline>
+<codeline lineno="106" refid="classQuantLib_1_1TrBDF2Scheme_1a7e77ed2742e64d3a1925744673420db4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1a7e77ed2742e64d3a1925744673420db4" kindref="member">TrBDF2Scheme&lt;TrapezoidalScheme&gt;::step</ref>(<ref refid="classQuantLib_1_1TrBDF2Scheme_1aee8fe9bbae71683893cbd1936869e9a6" kindref="member">array_type</ref>&amp;<sp/>fn,<sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>t)<sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(t-dt_<sp/>&gt;<sp/>-1e-8,<sp/></highlight><highlight class="stringliteral">&quot;a<sp/>step<sp/>towards<sp/>negative<sp/>time<sp/>given&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>intermediateTimeStep<sp/>=<sp/>dt_*alpha_;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1aee8fe9bbae71683893cbd1936869e9a6" kindref="member">array_type</ref><sp/>fStar<sp/>=<sp/>fn;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>trapezoidalScheme_-&gt;setStep(intermediateTimeStep);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>trapezoidalScheme_-&gt;step(fStar,<sp/>t);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bcSet_.setTime(std::max(0.0,<sp/>t-dt_));</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bcSet_.applyBeforeSolving(*map_,<sp/>fn);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1TrBDF2Scheme_1aee8fe9bbae71683893cbd1936869e9a6" kindref="member">array_type</ref><sp/>f<sp/>=</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(1/alpha_*fStar<sp/>-<sp/><ref refid="namespaceQuantLib_1a24ba492c85497930da7ee785b05918b8" kindref="member">squared</ref>(1-alpha_)/alpha_*fn)/(2-alpha_);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(map_-&gt;size()<sp/>==<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fn<sp/>=<sp/>map_-&gt;solve_splitting(0,<sp/>f,<sp/>-beta_);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>preconditioner<sp/>=<sp/>[&amp;](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref>&amp;<sp/>_a){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>map_-&gt;preconditioner(_a,<sp/>-beta_);<sp/>};</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>applyF<sp/>=<sp/>[&amp;](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref>&amp;<sp/>_a){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>apply(_a);<sp/>};</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(solverType_<sp/>==<sp/><ref refid="classQuantLib_1_1BiCGstab" kindref="compound">BiCGstab</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structQuantLib_1_1BiCGStabResult" kindref="compound">BiCGStabResult</ref><sp/>result<sp/>=</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BiCGstab" kindref="compound">QuantLib::BiCGstab</ref>(applyF,<sp/>std::max(<ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref>(10),<sp/>fn.size()),</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>relTol_,<sp/>preconditioner).<ref refid="classQuantLib_1_1BiCGstab_1a4ef0e12a8c55ee62d644828f0e28658c" kindref="member">solve</ref>(f,<sp/>f);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*iterations_)<sp/>+=<sp/>result.<ref refid="structQuantLib_1_1BiCGStabResult_1a3a8c2b7aaadb337a8c3e8515d2a57901" kindref="member">iterations</ref>;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fn<sp/>=<sp/>result.<ref refid="structQuantLib_1_1BiCGStabResult_1aa826d951b596dbaedfc31cc7a195412a" kindref="member">x</ref>;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(solverType_<sp/>==<sp/><ref refid="classQuantLib_1_1GMRES" kindref="compound">GMRES</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structQuantLib_1_1GMRESResult" kindref="compound">GMRESResult</ref><sp/>result<sp/>=</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1GMRES" kindref="compound">QuantLib::GMRES</ref>(applyF,<sp/>std::max(<ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref>(10),<sp/>fn.size()<sp/>/<sp/>10U),<sp/>relTol_,</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>preconditioner)</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="classQuantLib_1_1GMRES_1abc13cf5a870bda06a556055bdc0c4343" kindref="member">solve</ref>(f,<sp/>f);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*iterations_)<sp/>+=<sp/>result.<ref refid="structQuantLib_1_1GMRESResult_1a2766f22a320e540486eb665156eacff5" kindref="member">errors</ref>.size();</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fn<sp/>=<sp/>result.<ref refid="structQuantLib_1_1GMRESResult_1a3ba31a686788329d0268abe6b60e6730" kindref="member">x</ref>;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a8efe9cb3e67c8d0585e57b4d53c5d2fe" kindref="member">QL_FAIL</ref>(</highlight><highlight class="stringliteral">&quot;unknown/illegal<sp/>solver<sp/>type&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bcSet_.applyAfterSolving(fn);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp"/>
+  </compounddef>
+</doxygen>

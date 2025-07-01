@@ -1,0 +1,293 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="fdminnervaluecalculator_8hpp" kind="file" language="C++">
+    <compoundname>fdminnervaluecalculator.hpp</compoundname>
+    <includes refid="types_8hpp" local="no">ql/types.hpp</includes>
+    <includes refid="shared__ptr_8hpp" local="no">ql/shared_ptr.hpp</includes>
+    <includes refid="functional_8hpp" local="no">ql/functional.hpp</includes>
+    <includes local="no">vector</includes>
+    <includedby refid="fdm1dimsolver_8cpp" local="no">ql/methods/finitedifferences/solvers/fdm1dimsolver.cpp</includedby>
+    <includedby refid="fdmamericanstepcondition_8hpp" local="no">ql/methods/finitedifferences/stepconditions/fdmamericanstepcondition.hpp</includedby>
+    <includedby refid="fdmbermudanstepcondition_8cpp" local="no">ql/methods/finitedifferences/stepconditions/fdmbermudanstepcondition.cpp</includedby>
+    <includedby refid="fdmstepconditioncomposite_8cpp" local="no">ql/methods/finitedifferences/stepconditions/fdmstepconditioncomposite.cpp</includedby>
+    <includedby refid="fdmescrowedloginnervaluecalculator_8hpp" local="no">ql/methods/finitedifferences/utilities/fdmescrowedloginnervaluecalculator.hpp</includedby>
+    <includedby refid="fdminnervaluecalculator_8cpp" local="no">ql/methods/finitedifferences/utilities/fdminnervaluecalculator.cpp</includedby>
+    <includedby refid="fdblackscholesvanillaengine_8cpp" local="no">ql/pricingengines/vanilla/fdblackscholesvanillaengine.cpp</includedby>
+    <incdepgraph>
+      <node id="6">
+        <label>ql/config.ansi.hpp</label>
+        <link refid="config_8ansi_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>ql/functional.hpp</label>
+        <link refid="functional_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>ql/mathconstants.hpp</label>
+        <link refid="mathconstants_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ql/methods/finitedifferences/utilities/fdminnervaluecalculator.hpp</label>
+        <link refid="fdminnervaluecalculator_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>ql/qldefines.hpp</label>
+        <link refid="qldefines_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>ql/shared_ptr.hpp</label>
+        <link refid="shared__ptr_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ql/types.hpp</label>
+        <link refid="types_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>ql/userconfig.hpp</label>
+        <link refid="userconfig_8hpp"/>
+      </node>
+      <node id="4">
+        <label>boost/config.hpp</label>
+      </node>
+      <node id="15">
+        <label>boost/enable_shared_from_this.hpp</label>
+      </node>
+      <node id="14">
+        <label>boost/make_shared.hpp</label>
+      </node>
+      <node id="13">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="5">
+        <label>boost/version.hpp</label>
+      </node>
+      <node id="9">
+        <label>cmath</label>
+      </node>
+      <node id="11">
+        <label>cstddef</label>
+      </node>
+      <node id="17">
+        <label>functional</label>
+      </node>
+      <node id="10">
+        <label>limits</label>
+      </node>
+      <node id="18">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>ql/methods/finitedifferences/solvers/fdm1dimsolver.cpp</label>
+        <link refid="fdm1dimsolver_8cpp"/>
+      </node>
+      <node id="4">
+        <label>ql/methods/finitedifferences/stepconditions/fdmamericanstepcondition.cpp</label>
+        <link refid="fdmamericanstepcondition_8cpp"/>
+      </node>
+      <node id="3">
+        <label>ql/methods/finitedifferences/stepconditions/fdmamericanstepcondition.hpp</label>
+        <link refid="fdmamericanstepcondition_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>ql/methods/finitedifferences/stepconditions/fdmbermudanstepcondition.cpp</label>
+        <link refid="fdmbermudanstepcondition_8cpp"/>
+      </node>
+      <node id="5">
+        <label>ql/methods/finitedifferences/stepconditions/fdmstepconditioncomposite.cpp</label>
+        <link refid="fdmstepconditioncomposite_8cpp"/>
+      </node>
+      <node id="8">
+        <label>ql/methods/finitedifferences/utilities/fdmescrowedloginnervaluecalculator.cpp</label>
+        <link refid="fdmescrowedloginnervaluecalculator_8cpp"/>
+      </node>
+      <node id="7">
+        <label>ql/methods/finitedifferences/utilities/fdmescrowedloginnervaluecalculator.hpp</label>
+        <link refid="fdmescrowedloginnervaluecalculator_8hpp"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>ql/methods/finitedifferences/utilities/fdminnervaluecalculator.cpp</label>
+        <link refid="fdminnervaluecalculator_8cpp"/>
+      </node>
+      <node id="1">
+        <label>ql/methods/finitedifferences/utilities/fdminnervaluecalculator.hpp</label>
+        <link refid="fdminnervaluecalculator_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>ql/pricingengines/vanilla/fdblackscholesvanillaengine.cpp</label>
+        <link refid="fdblackscholesvanillaengine_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classQuantLib_1_1FdmInnerValueCalculator" prot="public">QuantLib::FdmInnerValueCalculator</innerclass>
+    <innerclass refid="classQuantLib_1_1FdmCellAveragingInnerValue" prot="public">QuantLib::FdmCellAveragingInnerValue</innerclass>
+    <innerclass refid="classQuantLib_1_1FdmLogInnerValue" prot="public">QuantLib::FdmLogInnerValue</innerclass>
+    <innerclass refid="classQuantLib_1_1FdmLogBasketInnerValue" prot="public">QuantLib::FdmLogBasketInnerValue</innerclass>
+    <innerclass refid="classQuantLib_1_1FdmZeroInnerValue" prot="public">QuantLib::FdmZeroInnerValue</innerclass>
+    <innernamespace refid="namespaceQuantLib">QuantLib</innernamespace>
+    <briefdescription>
+<para>layer of abstraction to calculate the inner value </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>c++;<sp/>tab-width:<sp/>4;<sp/>indent-tabs-mode:<sp/>nil;<sp/>c-basic-offset:<sp/>4<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2008<sp/>Andreas<sp/>Gaida</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2008,<sp/>2009<sp/>Ralph<sp/>Schreyer</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2008,<sp/>2009<sp/>Klaus<sp/>Spanderen</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>QuantLib,<sp/>a<sp/>free-software/open-source<sp/>library</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>for<sp/>financial<sp/>quantitative<sp/>analysts<sp/>and<sp/>developers<sp/>-<sp/>http://quantlib.org/</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"></highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>QuantLib<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>QuantLib<sp/>license.<sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>copy<sp/>of<sp/>the<sp/>license<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>please<sp/>email</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>&lt;quantlib-dev@lists.sf.net&gt;.<sp/>The<sp/>license<sp/>is<sp/>also<sp/>available<sp/>online<sp/>at</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>&lt;http://quantlib.org/license.shtml&gt;.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"></highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the<sp/>license<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>quantlib_fdm_inner_value_calculator_hpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>quantlib_fdm_inner_value_calculator_hpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="types_8hpp" kindref="compound">ql/types.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="shared__ptr_8hpp" kindref="compound">ql/shared_ptr.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="functional_8hpp" kindref="compound">ql/functional.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceQuantLib" kindref="compound">QuantLib</ref><sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Payoff;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">BasketPayoff;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">FdmMesher;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">FdmLinearOpIterator;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="classQuantLib_1_1FdmInnerValueCalculator" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classQuantLib_1_1FdmInnerValueCalculator" kindref="compound">FdmInnerValueCalculator</ref><sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="45" refid="classQuantLib_1_1FdmInnerValueCalculator_1a1b3c1c8fee1ba2a36865bf33448356d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1FdmInnerValueCalculator_1a1b3c1c8fee1ba2a36865bf33448356d2" kindref="member">~FdmInnerValueCalculator</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="classQuantLib_1_1FdmInnerValueCalculator_1a4d2d3f1662b2fd49d8e4eae0552c0e31" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1FdmInnerValueCalculator_1a4d2d3f1662b2fd49d8e4eae0552c0e31" kindref="member">innerValue</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1FdmLinearOpIterator" kindref="compound">FdmLinearOpIterator</ref>&amp;<sp/>iter,<sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>t)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="48" refid="classQuantLib_1_1FdmInnerValueCalculator_1a13880813a06e160827c992a198b7856a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1FdmInnerValueCalculator_1a13880813a06e160827c992a198b7856a" kindref="member">avgInnerValue</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1FdmLinearOpIterator" kindref="compound">FdmLinearOpIterator</ref>&amp;<sp/>iter,<sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>t)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="classQuantLib_1_1FdmCellAveragingInnerValue" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classQuantLib_1_1FdmCellAveragingInnerValue" kindref="compound">FdmCellAveragingInnerValue</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1FdmInnerValueCalculator" kindref="compound">FdmInnerValueCalculator</ref><sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1FdmCellAveragingInnerValue" kindref="compound">FdmCellAveragingInnerValue</ref>(ext::shared_ptr&lt;Payoff&gt;<sp/>payoff,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ext::shared_ptr&lt;FdmMesher&gt;<sp/>mesher,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref><sp/>direction,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::function&lt;<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>)&gt;<sp/>gridMapping<sp/>=<sp/>[](<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>x){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x;<sp/>});</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1FdmCellAveragingInnerValue_1a5228fffb6e9a3a44ff670102790ddb9e" kindref="member">innerValue</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1FdmLinearOpIterator" kindref="compound">FdmLinearOpIterator</ref>&amp;<sp/>iter,<sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref>)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1FdmCellAveragingInnerValue_1aecad2fe0249c25d8ef5da68a8ebee885" kindref="member">avgInnerValue</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1FdmLinearOpIterator" kindref="compound">FdmLinearOpIterator</ref>&amp;<sp/>iter,<sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>t)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1FdmCellAveragingInnerValue_1a68936dba002c4bc5e0933ffd14e6493a" kindref="member">avgInnerValueCalc</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1FdmLinearOpIterator" kindref="compound">FdmLinearOpIterator</ref>&amp;<sp/>iter,<sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>t);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="classQuantLib_1_1FdmCellAveragingInnerValue_1a60ae26e7b6f46ac8ede4d0f930264d81" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ext::shared_ptr&lt;Payoff&gt;<sp/><ref refid="classQuantLib_1_1FdmCellAveragingInnerValue_1a60ae26e7b6f46ac8ede4d0f930264d81" kindref="member">payoff_</ref>;</highlight></codeline>
+<codeline lineno="66" refid="classQuantLib_1_1FdmCellAveragingInnerValue_1a046bcf3a3491edbb9020cb454aed2f9e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ext::shared_ptr&lt;FdmMesher&gt;<sp/><ref refid="classQuantLib_1_1FdmCellAveragingInnerValue_1a046bcf3a3491edbb9020cb454aed2f9e" kindref="member">mesher_</ref>;</highlight></codeline>
+<codeline lineno="67" refid="classQuantLib_1_1FdmCellAveragingInnerValue_1a20e901c7b11229b12221d7320d04094b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref><sp/><ref refid="classQuantLib_1_1FdmCellAveragingInnerValue_1a20e901c7b11229b12221d7320d04094b" kindref="member">direction_</ref>;</highlight></codeline>
+<codeline lineno="68" refid="classQuantLib_1_1FdmCellAveragingInnerValue_1ad223918793c75dd094d4c93252d4adb9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::function&lt;<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>)&gt;<sp/><ref refid="classQuantLib_1_1FdmCellAveragingInnerValue_1ad223918793c75dd094d4c93252d4adb9" kindref="member">gridMapping_</ref>;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="classQuantLib_1_1FdmCellAveragingInnerValue_1a3e113c51ce599cfd05eb2c4b69509a80" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;Real&gt;<sp/><ref refid="classQuantLib_1_1FdmCellAveragingInnerValue_1a3e113c51ce599cfd05eb2c4b69509a80" kindref="member">avgInnerValues_</ref>;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="classQuantLib_1_1FdmLogInnerValue" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classQuantLib_1_1FdmLogInnerValue" kindref="compound">FdmLogInnerValue</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1FdmCellAveragingInnerValue" kindref="compound">FdmCellAveragingInnerValue</ref><sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1FdmLogInnerValue" kindref="compound">FdmLogInnerValue</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ext::shared_ptr&lt;Payoff&gt;&amp;<sp/>payoff,</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ext::shared_ptr&lt;FdmMesher&gt;&amp;<sp/>mesher,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref><sp/>direction);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="classQuantLib_1_1FdmLogBasketInnerValue" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classQuantLib_1_1FdmLogBasketInnerValue" kindref="compound">FdmLogBasketInnerValue</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1FdmInnerValueCalculator" kindref="compound">FdmInnerValueCalculator</ref><sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1FdmLogBasketInnerValue" kindref="compound">FdmLogBasketInnerValue</ref>(ext::shared_ptr&lt;BasketPayoff&gt;<sp/>payoff,</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ext::shared_ptr&lt;FdmMesher&gt;<sp/>mesher);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1FdmLogBasketInnerValue_1a4fca0c9b54472e1b3fd193b790f3f843" kindref="member">innerValue</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1FdmLinearOpIterator" kindref="compound">FdmLinearOpIterator</ref>&amp;<sp/>iter,<sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref>)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1FdmLogBasketInnerValue_1a33edc1d3bf432059ef3969f14ed64aab" kindref="member">avgInnerValue</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1FdmLinearOpIterator" kindref="compound">FdmLinearOpIterator</ref>&amp;<sp/>iter,<sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref>)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="89" refid="classQuantLib_1_1FdmLogBasketInnerValue_1a976ba6d08e09668545c1f7cb3c1bcc25" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ext::shared_ptr&lt;BasketPayoff&gt;<sp/><ref refid="classQuantLib_1_1FdmLogBasketInnerValue_1a976ba6d08e09668545c1f7cb3c1bcc25" kindref="member">payoff_</ref>;</highlight></codeline>
+<codeline lineno="90" refid="classQuantLib_1_1FdmLogBasketInnerValue_1a4bec84be7fab291d20a69605dac84c67" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ext::shared_ptr&lt;FdmMesher&gt;<sp/><ref refid="classQuantLib_1_1FdmLogBasketInnerValue_1a4bec84be7fab291d20a69605dac84c67" kindref="member">mesher_</ref>;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="classQuantLib_1_1FdmZeroInnerValue" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classQuantLib_1_1FdmZeroInnerValue" kindref="compound">FdmZeroInnerValue</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1FdmInnerValueCalculator" kindref="compound">FdmInnerValueCalculator</ref><sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="95" refid="classQuantLib_1_1FdmZeroInnerValue_1a4210323586acc07602ae510c1bd97e8d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1FdmZeroInnerValue_1a4210323586acc07602ae510c1bd97e8d" kindref="member">innerValue</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1FdmLinearOpIterator" kindref="compound">FdmLinearOpIterator</ref>&amp;,<sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref>)</highlight><highlight class="keyword"><sp/>override<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0.0;<sp/>}</highlight></codeline>
+<codeline lineno="96" refid="classQuantLib_1_1FdmZeroInnerValue_1ade25f26ba42fa35d7e49f5fcb5965cab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1FdmZeroInnerValue_1ade25f26ba42fa35d7e49f5fcb5965cab" kindref="member">avgInnerValue</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1FdmLinearOpIterator" kindref="compound">FdmLinearOpIterator</ref>&amp;,<sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref>)</highlight><highlight class="keyword"><sp/>override<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0.0;<sp/>}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="ql/methods/finitedifferences/utilities/fdminnervaluecalculator.hpp"/>
+  </compounddef>
+</doxygen>

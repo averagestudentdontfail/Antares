@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1NeumannBC" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::NeumannBC</compoundname>
+    <basecompoundref refid="classQuantLib_1_1BoundaryCondition" prot="public" virt="non-virtual">QuantLib::BoundaryCondition&lt; TridiagonalOperator &gt;</basecompoundref>
+    <includes refid="boundarycondition_8hpp" local="no">boundarycondition.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1NeumannBC_1a657915e0c4d2c4b2ea4ce394ac943f50" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::NeumannBC::value_</definition>
+        <argsstring></argsstring>
+        <name>value_</name>
+        <qualifiedname>QuantLib::NeumannBC::value_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/boundarycondition.hpp" line="87" column="14" bodyfile="ql/methods/finitedifferences/boundarycondition.hpp" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1NeumannBC_1a629f725afc891a4d06acbfe9cab1238c" prot="private" static="no" mutable="no">
+        <type><ref refid="classQuantLib_1_1BoundaryCondition_1ab685ab8e5ea909d20f659fab031a3dcb" kindref="member">Side</ref></type>
+        <definition>Side QuantLib::NeumannBC::side_</definition>
+        <argsstring></argsstring>
+        <name>side_</name>
+        <qualifiedname>QuantLib::NeumannBC::side_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/boundarycondition.hpp" line="88" column="14" bodyfile="ql/methods/finitedifferences/boundarycondition.hpp" bodystart="88" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1NeumannBC_1a5e0c847cd8ece536605c0735d2112a14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::NeumannBC::NeumannBC</definition>
+        <argsstring>(Real value, Side side)</argsstring>
+        <name>NeumannBC</name>
+        <qualifiedname>QuantLib::NeumannBC::NeumannBC</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1BoundaryCondition_1ab685ab8e5ea909d20f659fab031a3dcb" kindref="member">Side</ref></type>
+          <declname>side</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/boundarycondition.hpp" line="78" column="9" bodyfile="ql/methods/finitedifferences/boundarycondition.cpp" bodystart="24" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1NeumannBC_1aee8d2b79d26946bae0fff30bf6c9ae10" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QuantLib::NeumannBC::applyBeforeApplying</definition>
+        <argsstring>(TridiagonalOperator &amp;) const override</argsstring>
+        <name>applyBeforeApplying</name>
+        <qualifiedname>QuantLib::NeumannBC::applyBeforeApplying</qualifiedname>
+        <reimplements refid="classQuantLib_1_1BoundaryCondition_1a090e687cdd747c7131aa95d564a26cff">applyBeforeApplying</reimplements>
+        <param>
+          <type><ref refid="classQuantLib_1_1TridiagonalOperator" kindref="compound">TridiagonalOperator</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method modifies an operator <formula id="53">$ L $</formula> before it is applied to an array <formula id="54">$ u $</formula> so that <formula id="55">$ v = Lu $</formula> will satisfy the given condition. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/boundarycondition.hpp" line="80" column="14" bodyfile="ql/methods/finitedifferences/boundarycondition.cpp" bodystart="27" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1NeumannBC_1a46574aeb587edd7da26c8b8697e7e027" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::NeumannBC::applyAfterApplying</definition>
+        <argsstring>(Array &amp;) const override</argsstring>
+        <name>applyAfterApplying</name>
+        <qualifiedname>QuantLib::NeumannBC::applyAfterApplying</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <defname>u</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/boundarycondition.hpp" line="81" column="14" bodyfile="ql/methods/finitedifferences/boundarycondition.cpp" bodystart="40" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1NeumannBC_1a0b65a0a6818fb1ddcd4cd1dc85751777" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::NeumannBC::applyBeforeSolving</definition>
+        <argsstring>(TridiagonalOperator &amp;, Array &amp;rhs) const override</argsstring>
+        <name>applyBeforeSolving</name>
+        <qualifiedname>QuantLib::NeumannBC::applyBeforeSolving</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1TridiagonalOperator" kindref="compound">TridiagonalOperator</ref> &amp;</type>
+          <defname>L</defname>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/boundarycondition.hpp" line="82" column="14" bodyfile="ql/methods/finitedifferences/boundarycondition.cpp" bodystart="53" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1NeumannBC_1a21148dd45b0e910f60319966ef539ccb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::NeumannBC::applyAfterSolving</definition>
+        <argsstring>(Array &amp;) const override</argsstring>
+        <name>applyAfterSolving</name>
+        <qualifiedname>QuantLib::NeumannBC::applyAfterSolving</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/boundarycondition.hpp" line="83" column="14" bodyfile="ql/methods/finitedifferences/boundarycondition.cpp" bodystart="69" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1NeumannBC_1a959a84d01a7c46ad5ed042278d85f5c8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void QuantLib::NeumannBC::setTime</definition>
+        <argsstring>(Time) override</argsstring>
+        <name>setTime</name>
+        <qualifiedname>QuantLib::NeumannBC::setTime</qualifiedname>
+        <reimplements refid="classQuantLib_1_1BoundaryCondition_1a391ec4058846a3d2f0cd49324c3de790">setTime</reimplements>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method sets the current time for time-dependent boundary conditions. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/boundarycondition.hpp" line="84" column="14" bodyfile="ql/methods/finitedifferences/boundarycondition.hpp" bodystart="84" bodyend="84"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Neumann boundary condition (i.e., constant derivative) </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="warning"><para>The value passed must not be the value of the derivative. Instead, it must be comprehensive of the grid step between the first two points<ndash/>i.e., it must be the difference between f[0] and f[1]. </para>
+</simplesect>
+<xrefsect id="todo_1_todo000004"><xreftitle>Todo</xreftitle><xrefdescription><para>generalize to time-dependent conditions.</para>
+</xrefdescription></xrefsect></para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>QuantLib::BoundaryCondition&lt; TridiagonalOperator &gt;</label>
+        <link refid="classQuantLib_1_1BoundaryCondition"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::NeumannBC</label>
+        <link refid="classQuantLib_1_1NeumannBC"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>QuantLib::BoundaryCondition&lt; TridiagonalOperator &gt;</label>
+        <link refid="classQuantLib_1_1BoundaryCondition"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::NeumannBC</label>
+        <link refid="classQuantLib_1_1NeumannBC"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/methods/finitedifferences/boundarycondition.hpp" line="76" column="5" bodyfile="ql/methods/finitedifferences/boundarycondition.hpp" bodystart="76" bodyend="89"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1NeumannBC_1a46574aeb587edd7da26c8b8697e7e027" prot="public" virt="non-virtual"><scope>QuantLib::NeumannBC</scope><name>applyAfterApplying</name></member>
+      <member refid="classQuantLib_1_1BoundaryCondition_1af885136ffc2b670924fd6579b6fb360e" prot="public" virt="pure-virtual" ambiguityscope="BoundaryCondition&lt; TridiagonalOperator &gt;::"><scope>QuantLib::NeumannBC</scope><name>applyAfterApplying</name></member>
+      <member refid="classQuantLib_1_1NeumannBC_1a21148dd45b0e910f60319966ef539ccb" prot="public" virt="non-virtual"><scope>QuantLib::NeumannBC</scope><name>applyAfterSolving</name></member>
+      <member refid="classQuantLib_1_1BoundaryCondition_1ab63c69a9c991dcb908d399c2e6304970" prot="public" virt="pure-virtual" ambiguityscope="BoundaryCondition&lt; TridiagonalOperator &gt;::"><scope>QuantLib::NeumannBC</scope><name>applyAfterSolving</name></member>
+      <member refid="classQuantLib_1_1NeumannBC_1aee8d2b79d26946bae0fff30bf6c9ae10" prot="public" virt="virtual"><scope>QuantLib::NeumannBC</scope><name>applyBeforeApplying</name></member>
+      <member refid="classQuantLib_1_1NeumannBC_1a0b65a0a6818fb1ddcd4cd1dc85751777" prot="public" virt="non-virtual"><scope>QuantLib::NeumannBC</scope><name>applyBeforeSolving</name></member>
+      <member refid="classQuantLib_1_1BoundaryCondition_1a1d5d7879dbecac59bef8df64e3b10fa7" prot="public" virt="pure-virtual" ambiguityscope="BoundaryCondition&lt; TridiagonalOperator &gt;::"><scope>QuantLib::NeumannBC</scope><name>applyBeforeSolving</name></member>
+      <member refid="classQuantLib_1_1BoundaryCondition_1a61ad23b096be9049f1fe9402c95956da" prot="public" virt="non-virtual"><scope>QuantLib::NeumannBC</scope><name>array_type</name></member>
+      <member refid="classQuantLib_1_1BoundaryCondition_1ab685ab8e5ea909d20f659fab031a3dcbafddc4f73585f67e4c01a46c1baf4d3e6" prot="public" virt="non-virtual"><scope>QuantLib::NeumannBC</scope><name>Lower</name></member>
+      <member refid="classQuantLib_1_1NeumannBC_1a5e0c847cd8ece536605c0735d2112a14" prot="public" virt="non-virtual"><scope>QuantLib::NeumannBC</scope><name>NeumannBC</name></member>
+      <member refid="classQuantLib_1_1BoundaryCondition_1ab685ab8e5ea909d20f659fab031a3dcba48c5df323aff7c2236f668e0d163972a" prot="public" virt="non-virtual"><scope>QuantLib::NeumannBC</scope><name>None</name></member>
+      <member refid="classQuantLib_1_1BoundaryCondition_1adcd0cbae913cd891085312f3719efb3c" prot="public" virt="non-virtual"><scope>QuantLib::NeumannBC</scope><name>operator_type</name></member>
+      <member refid="classQuantLib_1_1NeumannBC_1a959a84d01a7c46ad5ed042278d85f5c8" prot="public" virt="virtual"><scope>QuantLib::NeumannBC</scope><name>setTime</name></member>
+      <member refid="classQuantLib_1_1BoundaryCondition_1ab685ab8e5ea909d20f659fab031a3dcb" prot="public" virt="non-virtual"><scope>QuantLib::NeumannBC</scope><name>Side</name></member>
+      <member refid="classQuantLib_1_1NeumannBC_1a629f725afc891a4d06acbfe9cab1238c" prot="private" virt="non-virtual"><scope>QuantLib::NeumannBC</scope><name>side_</name></member>
+      <member refid="classQuantLib_1_1BoundaryCondition_1ab685ab8e5ea909d20f659fab031a3dcba3d5d43fcd0df2653be0ec400275f1c44" prot="public" virt="non-virtual"><scope>QuantLib::NeumannBC</scope><name>Upper</name></member>
+      <member refid="classQuantLib_1_1NeumannBC_1a657915e0c4d2c4b2ea4ce394ac943f50" prot="private" virt="non-virtual"><scope>QuantLib::NeumannBC</scope><name>value_</name></member>
+      <member refid="classQuantLib_1_1BoundaryCondition_1ab0b634722e1c2ffe8e994b443decd603" prot="public" virt="virtual"><scope>QuantLib::NeumannBC</scope><name>~BoundaryCondition</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

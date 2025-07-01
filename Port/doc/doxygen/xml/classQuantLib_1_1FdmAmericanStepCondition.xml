@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1FdmAmericanStepCondition" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::FdmAmericanStepCondition</compoundname>
+    <basecompoundref refid="classQuantLib_1_1StepCondition" prot="public" virt="non-virtual">QuantLib::StepCondition&lt; Array &gt;</basecompoundref>
+    <includes refid="fdmamericanstepcondition_8hpp" local="no">fdmamericanstepcondition.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1FdmAmericanStepCondition_1a4bc9012e54355f548e7927a9c0697958" prot="private" static="no" mutable="no">
+        <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmMesher" kindref="compound">FdmMesher</ref> &gt;</type>
+        <definition>const ext::shared_ptr&lt;FdmMesher&gt; QuantLib::FdmAmericanStepCondition::mesher_</definition>
+        <argsstring></argsstring>
+        <name>mesher_</name>
+        <qualifiedname>QuantLib::FdmAmericanStepCondition::mesher_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/stepconditions/fdmamericanstepcondition.hpp" line="43" column="31" bodyfile="ql/methods/finitedifferences/stepconditions/fdmamericanstepcondition.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1FdmAmericanStepCondition_1a9b6466d1a247299e0f797f0773e5f1c0" prot="private" static="no" mutable="no">
+        <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmInnerValueCalculator" kindref="compound">FdmInnerValueCalculator</ref> &gt;</type>
+        <definition>const ext::shared_ptr&lt;FdmInnerValueCalculator&gt; QuantLib::FdmAmericanStepCondition::calculator_</definition>
+        <argsstring></argsstring>
+        <name>calculator_</name>
+        <qualifiedname>QuantLib::FdmAmericanStepCondition::calculator_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/stepconditions/fdmamericanstepcondition.hpp" line="44" column="31" bodyfile="ql/methods/finitedifferences/stepconditions/fdmamericanstepcondition.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1FdmAmericanStepCondition_1ace1f94503bb818916360d0d464657230" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::FdmAmericanStepCondition::FdmAmericanStepCondition</definition>
+        <argsstring>(ext::shared_ptr&lt; FdmMesher &gt; mesher, ext::shared_ptr&lt; FdmInnerValueCalculator &gt; calculator)</argsstring>
+        <name>FdmAmericanStepCondition</name>
+        <qualifiedname>QuantLib::FdmAmericanStepCondition::FdmAmericanStepCondition</qualifiedname>
+        <param>
+          <type>ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmMesher" kindref="compound">FdmMesher</ref> &gt;</type>
+          <declname>mesher</declname>
+        </param>
+        <param>
+          <type>ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmInnerValueCalculator" kindref="compound">FdmInnerValueCalculator</ref> &gt;</type>
+          <declname>calculator</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/stepconditions/fdmamericanstepcondition.hpp" line="37" column="9" bodyfile="ql/methods/finitedifferences/stepconditions/fdmamericanstepcondition.cpp" bodystart="28" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1FdmAmericanStepCondition_1aeaa95876dfe0b3ebb37ba7e6872e43e6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QuantLib::FdmAmericanStepCondition::applyTo</definition>
+        <argsstring>(Array &amp;a, Time) const override</argsstring>
+        <name>applyTo</name>
+        <qualifiedname>QuantLib::FdmAmericanStepCondition::applyTo</qualifiedname>
+        <reimplements refid="classQuantLib_1_1StepCondition_1afff61b9eaacd16620791a39dd69b90bb">applyTo</reimplements>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <defname>t</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/stepconditions/fdmamericanstepcondition.hpp" line="40" column="14" bodyfile="ql/methods/finitedifferences/stepconditions/fdmamericanstepcondition.cpp" bodystart="32" bodyend="42"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>QuantLib::FdmAmericanStepCondition</label>
+        <link refid="classQuantLib_1_1FdmAmericanStepCondition"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::StepCondition&lt; Array &gt;</label>
+        <link refid="classQuantLib_1_1StepCondition"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>QuantLib::FdmAmericanStepCondition</label>
+        <link refid="classQuantLib_1_1FdmAmericanStepCondition"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::StepCondition&lt; Array &gt;</label>
+        <link refid="classQuantLib_1_1StepCondition"/>
+      </node>
+    </collaborationgraph>
+    <location file="ql/methods/finitedifferences/stepconditions/fdmamericanstepcondition.hpp" line="35" column="5" bodyfile="ql/methods/finitedifferences/stepconditions/fdmamericanstepcondition.hpp" bodystart="35" bodyend="45"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1FdmAmericanStepCondition_1aeaa95876dfe0b3ebb37ba7e6872e43e6" prot="public" virt="virtual"><scope>QuantLib::FdmAmericanStepCondition</scope><name>applyTo</name></member>
+      <member refid="classQuantLib_1_1FdmAmericanStepCondition_1a9b6466d1a247299e0f797f0773e5f1c0" prot="private" virt="non-virtual"><scope>QuantLib::FdmAmericanStepCondition</scope><name>calculator_</name></member>
+      <member refid="classQuantLib_1_1FdmAmericanStepCondition_1ace1f94503bb818916360d0d464657230" prot="public" virt="non-virtual"><scope>QuantLib::FdmAmericanStepCondition</scope><name>FdmAmericanStepCondition</name></member>
+      <member refid="classQuantLib_1_1FdmAmericanStepCondition_1a4bc9012e54355f548e7927a9c0697958" prot="private" virt="non-virtual"><scope>QuantLib::FdmAmericanStepCondition</scope><name>mesher_</name></member>
+      <member refid="classQuantLib_1_1StepCondition_1a0867129678b1b4ae02e4d5630ee598ac" prot="public" virt="virtual"><scope>QuantLib::FdmAmericanStepCondition</scope><name>~StepCondition</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

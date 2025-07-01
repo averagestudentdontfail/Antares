@@ -1,0 +1,317 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1FractionalDividend" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::FractionalDividend</compoundname>
+    <basecompoundref refid="classQuantLib_1_1Dividend" prot="public" virt="non-virtual">QuantLib::Dividend</basecompoundref>
+    <includes refid="dividend_8hpp" local="no">dividend.hpp</includes>
+    <sectiondef kind="user-defined">
+      <header>Inspectors</header>
+      <memberdef kind="variable" id="classQuantLib_1_1FractionalDividend_1a447124c49530d0ae7c1e9cee606d5e98" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::FractionalDividend::rate_</definition>
+        <argsstring></argsstring>
+        <name>rate_</name>
+        <qualifiedname>QuantLib::FractionalDividend::rate_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/cashflows/dividend.hpp" line="95" column="14" bodyfile="ql/cashflows/dividend.hpp" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1FractionalDividend_1a67423226ef7ba4efce33475d8ace2e27" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::FractionalDividend::nominal_</definition>
+        <argsstring></argsstring>
+        <name>nominal_</name>
+        <qualifiedname>QuantLib::FractionalDividend::nominal_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/cashflows/dividend.hpp" line="96" column="14" bodyfile="ql/cashflows/dividend.hpp" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1FractionalDividend_1abc63c3191bfb8904c207085dc0a86e4f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::FractionalDividend::rate</definition>
+        <argsstring>() const</argsstring>
+        <name>rate</name>
+        <qualifiedname>QuantLib::FractionalDividend::rate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/cashflows/dividend.hpp" line="91" column="14" bodyfile="ql/cashflows/dividend.hpp" bodystart="91" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1FractionalDividend_1af5d4e03845e391abec617650f036962f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::FractionalDividend::nominal</definition>
+        <argsstring>() const</argsstring>
+        <name>nominal</name>
+        <qualifiedname>QuantLib::FractionalDividend::nominal</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/cashflows/dividend.hpp" line="92" column="14" bodyfile="ql/cashflows/dividend.hpp" bodystart="92" bodyend="92"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <header>Dividend interface</header>
+      <memberdef kind="function" id="classQuantLib_1_1FractionalDividend_1aebde5100d89ffca82927ec916f0e1e4b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::FractionalDividend::amount</definition>
+        <argsstring>() const override</argsstring>
+        <name>amount</name>
+        <qualifiedname>QuantLib::FractionalDividend::amount</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Dividend_1ae70257b2c7ad9a8f090cac60ea8c5e44">amount</reimplements>
+        <briefdescription>
+<para>returns the amount of the cash flow </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>The amount is not discounted, i.e., it is the actual amount paid at the cash flow date. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/cashflows/dividend.hpp" line="83" column="14" bodyfile="ql/cashflows/dividend.hpp" bodystart="83" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1FractionalDividend_1a93cad5d95e1f71fa6f2725974af32de5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::FractionalDividend::amount</definition>
+        <argsstring>(Real underlying) const override</argsstring>
+        <name>amount</name>
+        <qualifiedname>QuantLib::FractionalDividend::amount</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Dividend_1a2a4ef97ccce94a6fc78da35020d4ee3f">amount</reimplements>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>underlying</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/cashflows/dividend.hpp" line="87" column="14" bodyfile="ql/cashflows/dividend.hpp" bodystart="87" bodyend="87"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1FractionalDividend_1a04299b6c9d826583ba4998260eeeb1b2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::FractionalDividend::FractionalDividend</definition>
+        <argsstring>(Real rate, const Date &amp;date)</argsstring>
+        <name>FractionalDividend</name>
+        <qualifiedname>QuantLib::FractionalDividend::FractionalDividend</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>rate</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+          <declname>date</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/cashflows/dividend.hpp" line="76" column="9" bodyfile="ql/cashflows/dividend.hpp" bodystart="76" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1FractionalDividend_1ad8b74e36b151d697824d0144c3ccd5e8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::FractionalDividend::FractionalDividend</definition>
+        <argsstring>(Real rate, Real nominal, const Date &amp;date)</argsstring>
+        <name>FractionalDividend</name>
+        <qualifiedname>QuantLib::FractionalDividend::FractionalDividend</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>rate</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>nominal</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+          <declname>date</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/cashflows/dividend.hpp" line="79" column="9" bodyfile="ql/cashflows/dividend.hpp" bodystart="79" bodyend="80"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Predetermined cash flow. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This cash flow pays a fractional amount at a given date. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>QuantLib::CashFlow</label>
+        <link refid="classQuantLib_1_1CashFlow"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::Dividend</label>
+        <link refid="classQuantLib_1_1Dividend"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QuantLib::Event</label>
+        <link refid="classQuantLib_1_1Event"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::FractionalDividend</label>
+        <link refid="classQuantLib_1_1FractionalDividend"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>QuantLib::LazyObject</label>
+        <link refid="classQuantLib_1_1LazyObject"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>QuantLib::Observable</label>
+        <link refid="classQuantLib_1_1Observable"/>
+      </node>
+      <node id="7">
+        <label>QuantLib::Observer</label>
+        <link refid="classQuantLib_1_1Observer"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>QuantLib::CashFlow</label>
+        <link refid="classQuantLib_1_1CashFlow"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>QuantLib::Date</label>
+        <link refid="classQuantLib_1_1Date"/>
+      </node>
+      <node id="2">
+        <label>QuantLib::Dividend</label>
+        <link refid="classQuantLib_1_1Dividend"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>date_</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QuantLib::Event</label>
+        <link refid="classQuantLib_1_1Event"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::FractionalDividend</label>
+        <link refid="classQuantLib_1_1FractionalDividend"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>QuantLib::LazyObject</label>
+        <link refid="classQuantLib_1_1LazyObject"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>QuantLib::Observable</label>
+        <link refid="classQuantLib_1_1Observable"/>
+      </node>
+      <node id="7">
+        <label>QuantLib::Observer</label>
+        <link refid="classQuantLib_1_1Observer"/>
+      </node>
+    </collaborationgraph>
+    <location file="ql/cashflows/dividend.hpp" line="74" column="5" bodyfile="ql/cashflows/dividend.hpp" bodystart="74" bodyend="97"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Dividend_1a9eb7784a468fda372c65ccd4046d92d0" prot="public" virt="virtual"><scope>QuantLib::FractionalDividend</scope><name>accept</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a02070ea7442d30625992c1711030d4b8" prot="protected" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>alwaysForward_</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a17c9433135a259e4776baec66204a484" prot="public" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>alwaysForwardNotifications</name></member>
+      <member refid="classQuantLib_1_1FractionalDividend_1aebde5100d89ffca82927ec916f0e1e4b" prot="public" virt="virtual"><scope>QuantLib::FractionalDividend</scope><name>amount</name></member>
+      <member refid="classQuantLib_1_1FractionalDividend_1a93cad5d95e1f71fa6f2725974af32de5" prot="public" virt="virtual"><scope>QuantLib::FractionalDividend</scope><name>amount</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a5244c7f83592375a0ea9048296435fd1" prot="protected" virt="virtual"><scope>QuantLib::FractionalDividend</scope><name>calculate</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a58b4986a80efa18634483a92c121e26e" prot="protected" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>calculated_</name></member>
+      <member refid="classQuantLib_1_1Dividend_1a412d3b03b3f8728c0a41d306f4790f61" prot="public" virt="virtual"><scope>QuantLib::FractionalDividend</scope><name>date</name></member>
+      <member refid="classQuantLib_1_1Dividend_1a504a918617a0f417846db91c3853f158" prot="protected" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>date_</name></member>
+      <member refid="classQuantLib_1_1Observer_1acfbf794db3e7d5cfdea2cd517a195183" prot="public" virt="virtual"><scope>QuantLib::FractionalDividend</scope><name>deepUpdate</name></member>
+      <member refid="classQuantLib_1_1Dividend_1ab775f358eab7390197de1bf7ba011cdb" prot="public" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>Dividend</name></member>
+      <member refid="classQuantLib_1_1CashFlow_1a235e2205946f507de2d3b2cbfaf8cd89" prot="public" virt="virtual"><scope>QuantLib::FractionalDividend</scope><name>exCouponDate</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1afac6ee19c3107c453e1347dd8000e023" prot="public" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>forwardFirstNotificationOnly</name></member>
+      <member refid="classQuantLib_1_1FractionalDividend_1a04299b6c9d826583ba4998260eeeb1b2" prot="public" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>FractionalDividend</name></member>
+      <member refid="classQuantLib_1_1FractionalDividend_1ad8b74e36b151d697824d0144c3ccd5e8" prot="public" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>FractionalDividend</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a7157f41e83f2c5d924f5c5bafda04d1d" prot="public" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>freeze</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a7bb721fe00c6854e602758aba629ab77" prot="protected" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>frozen_</name></member>
+      <member refid="classQuantLib_1_1CashFlow_1a42691c396f43dde0b5ed37f4a014b0e8" prot="public" virt="virtual"><scope>QuantLib::FractionalDividend</scope><name>hasOccurred</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a0a7c5d42815a4e16ee2158e24dbfc748" prot="public" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>isCalculated</name></member>
+      <member refid="classQuantLib_1_1Observable_1a07ad87c2c2599551463d0a529924dec2" prot="private" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::FractionalDividend</scope><name>iterator</name></member>
+      <member refid="classQuantLib_1_1Observer_1ad45fa6f7242ee763d17c714a3e8bb6d7" prot="public" virt="non-virtual" ambiguityscope="QuantLib::LazyObject::QuantLib::Observer::"><scope>QuantLib::FractionalDividend</scope><name>iterator</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a26f18f4ff7faaaebd8eae50e064b493e" prot="public" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>LazyObject</name></member>
+      <member refid="classQuantLib_1_1FractionalDividend_1af5d4e03845e391abec617650f036962f" prot="public" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>nominal</name></member>
+      <member refid="classQuantLib_1_1FractionalDividend_1a67423226ef7ba4efce33475d8ace2e27" prot="protected" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>nominal_</name></member>
+      <member refid="classQuantLib_1_1Observable_1afb67478418efdb94382ac9d7ae904b94" prot="public" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>notifyObservers</name></member>
+      <member refid="classQuantLib_1_1Observable_1ae0d19b21fab87a01f53586a6b5c15f85" prot="public" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observable_1a942cf6a572bd95341433a6772c70cb29" prot="public" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observable_1a6c35885ef344665ecdfac9b9f3a59c0e" prot="public" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observer_1a85e3adb273b706155ea7e8bd98ee460b" prot="private" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>observables_</name></member>
+      <member refid="classQuantLib_1_1Observer_1a246072080d37c0cd180013417251c70b" prot="public" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>Observer</name></member>
+      <member refid="classQuantLib_1_1Observer_1ae6e892e237db5ffe7acbef54360ef0e3" prot="public" virt="non-virtual" ambiguityscope="QuantLib::Observer::"><scope>QuantLib::FractionalDividend</scope><name>Observer</name></member>
+      <member refid="classQuantLib_1_1Observable_1a4da6017619203dcb570d5f4174f0beea" prot="private" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>observers_</name></member>
+      <member refid="classQuantLib_1_1Observable_1ad1e086da62f05b4bc5eafa698ef6fbc3" prot="public" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::FractionalDividend</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1Observable_1ab45941c65068ab4c8d69a7d1a72beeb7" prot="public" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::FractionalDividend</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1Observer_1a40ad1a8bfb71e32b2916b370f3f9392c" prot="public" virt="non-virtual" ambiguityscope="QuantLib::LazyObject::QuantLib::Observer::"><scope>QuantLib::FractionalDividend</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1CashFlow_1af9cd641e3841cdcf5aba9c8d5121ce91" prot="public" virt="virtual"><scope>QuantLib::FractionalDividend</scope><name>performCalculations</name></member>
+      <member refid="classQuantLib_1_1FractionalDividend_1abc63c3191bfb8904c207085dc0a86e4f" prot="public" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>rate</name></member>
+      <member refid="classQuantLib_1_1FractionalDividend_1a447124c49530d0ae7c1e9cee606d5e98" prot="protected" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>rate_</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a70c9b24e50132408d8d9ce4f6674662a" prot="public" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>recalculate</name></member>
+      <member refid="classQuantLib_1_1Observable_1a1eb87a03e7e1fd43377bce32e0c21bce" prot="private" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>registerObserver</name></member>
+      <member refid="classQuantLib_1_1Observer_1a312bbe4a5386f10a1584f3477b3c2709" prot="public" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>registerWith</name></member>
+      <member refid="classQuantLib_1_1Observer_1a338928c4fe626f9ccf0b98ceb318853a" prot="public" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>registerWithObservables</name></member>
+      <member refid="classQuantLib_1_1Observable_1a22e674e99fccc2da996de9620304f63c" prot="private" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>set_type</name></member>
+      <member refid="classQuantLib_1_1CashFlow_1a103a14e1657bd2d7cb6574bf6dcf96d0" prot="public" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>tradingExCoupon</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a2e0e4786666453024b9d4e0761f2770b" prot="public" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>unfreeze</name></member>
+      <member refid="classQuantLib_1_1Observable_1abd81ef8b87594aa6f9d2a5bd5de3e628" prot="private" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>unregisterObserver</name></member>
+      <member refid="classQuantLib_1_1Observer_1a297d13afa77b0e7e6deae3bab777180f" prot="public" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>unregisterWith</name></member>
+      <member refid="classQuantLib_1_1Observer_1ab88925691aba7e7d96cc5188e94361ea" prot="public" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>unregisterWithAll</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1adee2bf49be5c4c78736be293321a856d" prot="public" virt="virtual"><scope>QuantLib::FractionalDividend</scope><name>update</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1ae2c605a452787b38d6a64cf20395a075" prot="private" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>updating_</name></member>
+      <member refid="classQuantLib_1_1CashFlow_1a4ac3d8fa6eeb8c307345ada96b25cecf" prot="public" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>~CashFlow</name></member>
+      <member refid="classQuantLib_1_1Event_1a26cef5942731bfb52ed77e74abdcfe9f" prot="public" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>~Event</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a9d719c43bb627177a90d7d12324a2d6e" prot="public" virt="non-virtual"><scope>QuantLib::FractionalDividend</scope><name>~LazyObject</name></member>
+      <member refid="classQuantLib_1_1Observable_1a32093a7038e9bd8d28e5d378eca9f4f7" prot="public" virt="virtual"><scope>QuantLib::FractionalDividend</scope><name>~Observable</name></member>
+      <member refid="classQuantLib_1_1Observer_1a6b5c15445bbe598d34871f5a5a3ed671" prot="public" virt="virtual"><scope>QuantLib::FractionalDividend</scope><name>~Observer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

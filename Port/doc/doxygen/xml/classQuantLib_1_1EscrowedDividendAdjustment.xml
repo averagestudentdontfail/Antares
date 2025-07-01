@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1EscrowedDividendAdjustment" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::EscrowedDividendAdjustment</compoundname>
+    <includes refid="escroweddividendadjustment_8hpp" local="no">escroweddividendadjustment.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1EscrowedDividendAdjustment_1a87ff5a7e907bf04e08e66400b75776cb" prot="private" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a0a379fde0de6fd228a3365e3c519fe68" kindref="member">DividendSchedule</ref></type>
+        <definition>const DividendSchedule QuantLib::EscrowedDividendAdjustment::dividendSchedule_</definition>
+        <argsstring></argsstring>
+        <name>dividendSchedule_</name>
+        <qualifiedname>QuantLib::EscrowedDividendAdjustment::dividendSchedule_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/escroweddividendadjustment.hpp" line="48" column="32" bodyfile="ql/methods/finitedifferences/utilities/escroweddividendadjustment.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1EscrowedDividendAdjustment_1addd853babcabbee853e096da7bdb2a66" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classQuantLib_1_1Handle" kindref="compound">Handle</ref>&lt; <ref refid="classQuantLib_1_1YieldTermStructure" kindref="compound">YieldTermStructure</ref> &gt;</type>
+        <definition>const Handle&lt;YieldTermStructure&gt; QuantLib::EscrowedDividendAdjustment::rTS_</definition>
+        <argsstring></argsstring>
+        <name>rTS_</name>
+        <qualifiedname>QuantLib::EscrowedDividendAdjustment::rTS_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/escroweddividendadjustment.hpp" line="49" column="22" bodyfile="ql/methods/finitedifferences/utilities/escroweddividendadjustment.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1EscrowedDividendAdjustment_1a0ed8629cbe571017f88ee4a1a12d5be1" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classQuantLib_1_1Handle" kindref="compound">Handle</ref>&lt; <ref refid="classQuantLib_1_1YieldTermStructure" kindref="compound">YieldTermStructure</ref> &gt;</type>
+        <definition>const Handle&lt;YieldTermStructure&gt; QuantLib::EscrowedDividendAdjustment::qTS_</definition>
+        <argsstring></argsstring>
+        <name>qTS_</name>
+        <qualifiedname>QuantLib::EscrowedDividendAdjustment::qTS_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/escroweddividendadjustment.hpp" line="49" column="27" bodyfile="ql/methods/finitedifferences/utilities/escroweddividendadjustment.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1EscrowedDividendAdjustment_1abb2ee86d9efda4f9864b266fac2e8d5f" prot="private" static="no" mutable="no">
+        <type>const std::function&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>(<ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref>)&gt;</type>
+        <definition>const std::function&lt;Real(Date)&gt; QuantLib::EscrowedDividendAdjustment::toTime_</definition>
+        <argsstring></argsstring>
+        <name>toTime_</name>
+        <qualifiedname>QuantLib::EscrowedDividendAdjustment::toTime_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/escroweddividendadjustment.hpp" line="50" column="29" bodyfile="ql/methods/finitedifferences/utilities/escroweddividendadjustment.hpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1EscrowedDividendAdjustment_1a1d2848cf619fcf49c49b7b764b47a7da" prot="private" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+        <definition>const Time QuantLib::EscrowedDividendAdjustment::maturity_</definition>
+        <argsstring></argsstring>
+        <name>maturity_</name>
+        <qualifiedname>QuantLib::EscrowedDividendAdjustment::maturity_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/escroweddividendadjustment.hpp" line="51" column="20" bodyfile="ql/methods/finitedifferences/utilities/escroweddividendadjustment.hpp" bodystart="51" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1EscrowedDividendAdjustment_1abd4988efb0599c740b4e238e72309452" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::EscrowedDividendAdjustment::EscrowedDividendAdjustment</definition>
+        <argsstring>(DividendSchedule dividendSchedule, Handle&lt; YieldTermStructure &gt; rTS, Handle&lt; YieldTermStructure &gt; qTS, std::function&lt; Real(Date)&gt; toTime, Time maturity)</argsstring>
+        <name>EscrowedDividendAdjustment</name>
+        <qualifiedname>QuantLib::EscrowedDividendAdjustment::EscrowedDividendAdjustment</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a0a379fde0de6fd228a3365e3c519fe68" kindref="member">DividendSchedule</ref></type>
+          <declname>dividendSchedule</declname>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle</ref>&lt; <ref refid="classQuantLib_1_1YieldTermStructure" kindref="compound">YieldTermStructure</ref> &gt;</type>
+          <declname>rTS</declname>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle</ref>&lt; <ref refid="classQuantLib_1_1YieldTermStructure" kindref="compound">YieldTermStructure</ref> &gt;</type>
+          <declname>qTS</declname>
+        </param>
+        <param>
+          <type>std::function&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>(<ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref>)&gt;</type>
+          <declname>toTime</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>maturity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/escroweddividendadjustment.hpp" line="35" column="9" bodyfile="ql/methods/finitedifferences/utilities/escroweddividendadjustment.cpp" bodystart="26" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1EscrowedDividendAdjustment_1aa99b833e2f37ae2e938ef9becef28836" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::EscrowedDividendAdjustment::dividendAdjustment</definition>
+        <argsstring>(Time t) const</argsstring>
+        <name>dividendAdjustment</name>
+        <qualifiedname>QuantLib::EscrowedDividendAdjustment::dividendAdjustment</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/escroweddividendadjustment.hpp" line="42" column="14" bodyfile="ql/methods/finitedifferences/utilities/escroweddividendadjustment.cpp" bodystart="37" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1EscrowedDividendAdjustment_1ac15038fb3772e72bce0fec32c2800ed5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classQuantLib_1_1Handle" kindref="compound">Handle</ref>&lt; <ref refid="classQuantLib_1_1YieldTermStructure" kindref="compound">YieldTermStructure</ref> &gt; &amp;</type>
+        <definition>const Handle&lt; YieldTermStructure &gt; &amp; QuantLib::EscrowedDividendAdjustment::riskFreeRate</definition>
+        <argsstring>() const</argsstring>
+        <name>riskFreeRate</name>
+        <qualifiedname>QuantLib::EscrowedDividendAdjustment::riskFreeRate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/escroweddividendadjustment.hpp" line="44" column="22" bodyfile="ql/methods/finitedifferences/utilities/escroweddividendadjustment.cpp" bodystart="53" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1EscrowedDividendAdjustment_1a6f8d25be567e73dcce4d02e0a9fd4531" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classQuantLib_1_1Handle" kindref="compound">Handle</ref>&lt; <ref refid="classQuantLib_1_1YieldTermStructure" kindref="compound">YieldTermStructure</ref> &gt; &amp;</type>
+        <definition>const Handle&lt; YieldTermStructure &gt; &amp; QuantLib::EscrowedDividendAdjustment::dividendYield</definition>
+        <argsstring>() const</argsstring>
+        <name>dividendYield</name>
+        <qualifiedname>QuantLib::EscrowedDividendAdjustment::dividendYield</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/escroweddividendadjustment.hpp" line="45" column="22" bodyfile="ql/methods/finitedifferences/utilities/escroweddividendadjustment.cpp" bodystart="58" bodyend="60"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>QuantLib::Handle&lt; QuantLib::YieldTermStructure &gt;</label>
+        <link refid="classQuantLib_1_1Handle"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::EscrowedDividendAdjustment</label>
+        <link refid="classQuantLib_1_1EscrowedDividendAdjustment"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>qTS_</edgelabel>
+          <edgelabel>rTS_</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/methods/finitedifferences/utilities/escroweddividendadjustment.hpp" line="33" column="5" bodyfile="ql/methods/finitedifferences/utilities/escroweddividendadjustment.hpp" bodystart="33" bodyend="52"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1EscrowedDividendAdjustment_1aa99b833e2f37ae2e938ef9becef28836" prot="public" virt="non-virtual"><scope>QuantLib::EscrowedDividendAdjustment</scope><name>dividendAdjustment</name></member>
+      <member refid="classQuantLib_1_1EscrowedDividendAdjustment_1a87ff5a7e907bf04e08e66400b75776cb" prot="private" virt="non-virtual"><scope>QuantLib::EscrowedDividendAdjustment</scope><name>dividendSchedule_</name></member>
+      <member refid="classQuantLib_1_1EscrowedDividendAdjustment_1a6f8d25be567e73dcce4d02e0a9fd4531" prot="public" virt="non-virtual"><scope>QuantLib::EscrowedDividendAdjustment</scope><name>dividendYield</name></member>
+      <member refid="classQuantLib_1_1EscrowedDividendAdjustment_1abd4988efb0599c740b4e238e72309452" prot="public" virt="non-virtual"><scope>QuantLib::EscrowedDividendAdjustment</scope><name>EscrowedDividendAdjustment</name></member>
+      <member refid="classQuantLib_1_1EscrowedDividendAdjustment_1a1d2848cf619fcf49c49b7b764b47a7da" prot="private" virt="non-virtual"><scope>QuantLib::EscrowedDividendAdjustment</scope><name>maturity_</name></member>
+      <member refid="classQuantLib_1_1EscrowedDividendAdjustment_1a0ed8629cbe571017f88ee4a1a12d5be1" prot="private" virt="non-virtual"><scope>QuantLib::EscrowedDividendAdjustment</scope><name>qTS_</name></member>
+      <member refid="classQuantLib_1_1EscrowedDividendAdjustment_1ac15038fb3772e72bce0fec32c2800ed5" prot="public" virt="non-virtual"><scope>QuantLib::EscrowedDividendAdjustment</scope><name>riskFreeRate</name></member>
+      <member refid="classQuantLib_1_1EscrowedDividendAdjustment_1addd853babcabbee853e096da7bdb2a66" prot="private" virt="non-virtual"><scope>QuantLib::EscrowedDividendAdjustment</scope><name>rTS_</name></member>
+      <member refid="classQuantLib_1_1EscrowedDividendAdjustment_1abb2ee86d9efda4f9864b266fac2e8d5f" prot="private" virt="non-virtual"><scope>QuantLib::EscrowedDividendAdjustment</scope><name>toTime_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

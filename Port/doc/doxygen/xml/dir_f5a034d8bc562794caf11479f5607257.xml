@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_f5a034d8bc562794caf11479f5607257" kind="dir">
+    <compoundname>ql/methods/finitedifferences</compoundname>
+    <innerdir refid="dir_29132e8eebf6e2ae720e91e68c4cc1a4">ql/methods/finitedifferences/meshers</innerdir>
+    <innerdir refid="dir_e3bc0285ec5765a343cfdeddb6f9c115">ql/methods/finitedifferences/operators</innerdir>
+    <innerdir refid="dir_e2f330ef852bd3afb8cb192d8380610d">ql/methods/finitedifferences/schemes</innerdir>
+    <innerdir refid="dir_dddf3abad1bb4428d7b0d7fca8dad3f7">ql/methods/finitedifferences/solvers</innerdir>
+    <innerdir refid="dir_686d421bf4539b657de59acbe5dac303">ql/methods/finitedifferences/stepconditions</innerdir>
+    <innerdir refid="dir_2b13e832241a7ab4123f95ad7c15bec7">ql/methods/finitedifferences/utilities</innerdir>
+    <innerfile refid="boundarycondition_8cpp">boundarycondition.cpp</innerfile>
+    <innerfile refid="boundarycondition_8hpp">boundarycondition.hpp</innerfile>
+    <innerfile refid="finitedifferencemodel_8hpp">finitedifferencemodel.hpp</innerfile>
+    <innerfile refid="operatortraits_8hpp">operatortraits.hpp</innerfile>
+    <innerfile refid="stepcondition_8hpp">stepcondition.hpp</innerfile>
+    <innerfile refid="tridiagonaloperator_8cpp">tridiagonaloperator.cpp</innerfile>
+    <innerfile refid="tridiagonaloperator_8hpp">tridiagonaloperator.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ql/methods/finitedifferences/"/>
+  </compounddef>
+</doxygen>

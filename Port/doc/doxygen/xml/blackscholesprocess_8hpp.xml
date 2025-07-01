@@ -1,0 +1,770 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="blackscholesprocess_8hpp" kind="file" language="C++">
+    <compoundname>blackscholesprocess.hpp</compoundname>
+    <includes refid="stochasticprocess_8hpp" local="no">ql/stochasticprocess.hpp</includes>
+    <includes refid="eulerdiscretization_8hpp" local="no">ql/processes/eulerdiscretization.hpp</includes>
+    <includes refid="yieldtermstructure_8hpp" local="no">ql/termstructures/yieldtermstructure.hpp</includes>
+    <includes refid="blackvoltermstructure_8hpp" local="no">ql/termstructures/volatility/equityfx/blackvoltermstructure.hpp</includes>
+    <includes refid="localvoltermstructure_8hpp" local="no">ql/termstructures/volatility/equityfx/localvoltermstructure.hpp</includes>
+    <includes refid="quote_8hpp" local="no">ql/quote.hpp</includes>
+    <includedby refid="impliedvolatility_8hpp" local="no">ql/instruments/impliedvolatility.hpp</includedby>
+    <includedby refid="fdmblackscholesmesher_8cpp" local="no">ql/methods/finitedifferences/meshers/fdmblackscholesmesher.cpp</includedby>
+    <includedby refid="fdmblackscholesop_8hpp" local="no">ql/methods/finitedifferences/operators/fdmblackscholesop.hpp</includedby>
+    <includedby refid="fdmblackscholessolver_8cpp" local="no">ql/methods/finitedifferences/solvers/fdmblackscholessolver.cpp</includedby>
+    <includedby refid="analyticdividendeuropeanengine_8hpp" local="no">ql/pricingengines/vanilla/analyticdividendeuropeanengine.hpp</includedby>
+    <includedby refid="analyticeuropeanengine_8hpp" local="no">ql/pricingengines/vanilla/analyticeuropeanengine.hpp</includedby>
+    <includedby refid="fdblackscholesvanillaengine_8cpp" local="no">ql/pricingengines/vanilla/fdblackscholesvanillaengine.cpp</includedby>
+    <includedby refid="qdplusamericanengine_8hpp" local="no">ql/pricingengines/vanilla/qdplusamericanengine.hpp</includedby>
+    <includedby refid="blackscholesprocess_8cpp" local="no">ql/processes/blackscholesprocess.cpp</includedby>
+    <incdepgraph>
+      <node id="60">
+        <label>ql/compounding.hpp</label>
+        <link refid="compounding_8hpp"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>ql/config.ansi.hpp</label>
+        <link refid="config_8ansi_8hpp"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>ql/errors.hpp</label>
+        <link refid="errors_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>ql/handle.hpp</label>
+        <link refid="handle_8hpp"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="59">
+        <label>ql/interestrate.hpp</label>
+        <link refid="interestrate_8hpp"/>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>ql/math/array.hpp</label>
+        <link refid="array_8hpp"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>ql/math/interpolations/extrapolation.hpp</label>
+        <link refid="extrapolation_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>ql/math/matrix.hpp</label>
+        <link refid="matrix_8hpp"/>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>ql/mathconstants.hpp</label>
+        <link refid="mathconstants_8hpp"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>ql/optional.hpp</label>
+        <link refid="optional_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>ql/patterns/observable.hpp</label>
+        <link refid="observable_8hpp"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>ql/patterns/singleton.hpp</label>
+        <link refid="singleton_8hpp"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>ql/patterns/visitor.hpp</label>
+        <link refid="visitor_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ql/processes/blackscholesprocess.hpp</label>
+        <link refid="blackscholesprocess_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>ql/processes/eulerdiscretization.hpp</label>
+        <link refid="eulerdiscretization_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>ql/qldefines.hpp</label>
+        <link refid="qldefines_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="62">
+        <label>ql/quote.hpp</label>
+        <link refid="quote_8hpp"/>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>ql/settings.hpp</label>
+        <link refid="settings_8hpp"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>ql/shared_ptr.hpp</label>
+        <link refid="shared__ptr_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ql/stochasticprocess.hpp</label>
+        <link refid="stochasticprocess_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>ql/termstructure.hpp</label>
+        <link refid="termstructure_8hpp"/>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>ql/termstructures/volatility/equityfx/blackvoltermstructure.hpp</label>
+        <link refid="blackvoltermstructure_8hpp"/>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+      </node>
+      <node id="67">
+        <label>ql/termstructures/volatility/equityfx/localvoltermstructure.hpp</label>
+        <link refid="localvoltermstructure_8hpp"/>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+      </node>
+      <node id="65">
+        <label>ql/termstructures/voltermstructure.hpp</label>
+        <link refid="voltermstructure_8hpp"/>
+        <childnode refid="49" relation="include">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>ql/termstructures/yieldtermstructure.hpp</label>
+        <link refid="yieldtermstructure_8hpp"/>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>ql/time/businessdayconvention.hpp</label>
+        <link refid="businessdayconvention_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>ql/time/calendar.hpp</label>
+        <link refid="calendar_8hpp"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>ql/time/date.hpp</label>
+        <link refid="date_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>ql/time/daycounter.hpp</label>
+        <link refid="daycounter_8hpp"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="61">
+        <label>ql/time/daycounters/actual365fixed.hpp</label>
+        <link refid="actual365fixed_8hpp"/>
+        <childnode refid="52" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>ql/time/frequency.hpp</label>
+        <link refid="frequency_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ql/time/period.hpp</label>
+        <link refid="period_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>ql/time/timeunit.hpp</label>
+        <link refid="timeunit_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>ql/time/weekday.hpp</label>
+        <link refid="weekday_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>ql/types.hpp</label>
+        <link refid="types_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>ql/userconfig.hpp</label>
+        <link refid="userconfig_8hpp"/>
+      </node>
+      <node id="19">
+        <label>ql/utilities/null.hpp</label>
+        <link refid="null_8hpp"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>ql/utilities/observablevalue.hpp</label>
+        <link refid="observablevalue_8hpp"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>ql/utilities/steppingiterator.hpp</label>
+        <link refid="steppingiterator_8hpp"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>algorithm</label>
+      </node>
+      <node id="31">
+        <label>boost/assert.hpp</label>
+      </node>
+      <node id="7">
+        <label>boost/config.hpp</label>
+      </node>
+      <node id="32">
+        <label>boost/current_function.hpp</label>
+      </node>
+      <node id="30">
+        <label>boost/enable_shared_from_this.hpp</label>
+      </node>
+      <node id="29">
+        <label>boost/make_shared.hpp</label>
+      </node>
+      <node id="56">
+        <label>boost/optional.hpp</label>
+      </node>
+      <node id="28">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="8">
+        <label>boost/version.hpp</label>
+      </node>
+      <node id="12">
+        <label>cmath</label>
+      </node>
+      <node id="17">
+        <label>cstddef</label>
+      </node>
+      <node id="21">
+        <label>cstdint</label>
+      </node>
+      <node id="33">
+        <label>exception</label>
+      </node>
+      <node id="23">
+        <label>functional</label>
+      </node>
+      <node id="43">
+        <label>initializer_list</label>
+      </node>
+      <node id="44">
+        <label>iomanip</label>
+      </node>
+      <node id="14">
+        <label>iosfwd</label>
+      </node>
+      <node id="39">
+        <label>iterator</label>
+      </node>
+      <node id="13">
+        <label>limits</label>
+      </node>
+      <node id="45">
+        <label>memory</label>
+      </node>
+      <node id="41">
+        <label>numeric</label>
+      </node>
+      <node id="36">
+        <label>set</label>
+      </node>
+      <node id="34">
+        <label>sstream</label>
+      </node>
+      <node id="24">
+        <label>string</label>
+      </node>
+      <node id="20">
+        <label>type_traits</label>
+      </node>
+      <node id="22">
+        <label>utility</label>
+      </node>
+      <node id="63">
+        <label>variant</label>
+      </node>
+      <node id="42">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>ql/instruments/impliedvolatility.cpp</label>
+        <link refid="impliedvolatility_8cpp"/>
+      </node>
+      <node id="2">
+        <label>ql/instruments/impliedvolatility.hpp</label>
+        <link refid="impliedvolatility_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ql/instruments/vanillaoption.cpp</label>
+        <link refid="vanillaoption_8cpp"/>
+      </node>
+      <node id="5">
+        <label>ql/methods/finitedifferences/meshers/fdmblackscholesmesher.cpp</label>
+        <link refid="fdmblackscholesmesher_8cpp"/>
+      </node>
+      <node id="7">
+        <label>ql/methods/finitedifferences/operators/fdmblackscholesop.cpp</label>
+        <link refid="fdmblackscholesop_8cpp"/>
+      </node>
+      <node id="6">
+        <label>ql/methods/finitedifferences/operators/fdmblackscholesop.hpp</label>
+        <link refid="fdmblackscholesop_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>ql/methods/finitedifferences/solvers/fdmblackscholessolver.cpp</label>
+        <link refid="fdmblackscholessolver_8cpp"/>
+      </node>
+      <node id="10">
+        <label>ql/pricingengines/vanilla/analyticdividendeuropeanengine.cpp</label>
+        <link refid="analyticdividendeuropeanengine_8cpp"/>
+      </node>
+      <node id="9">
+        <label>ql/pricingengines/vanilla/analyticdividendeuropeanengine.hpp</label>
+        <link refid="analyticdividendeuropeanengine_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>ql/pricingengines/vanilla/analyticeuropeanengine.cpp</label>
+        <link refid="analyticeuropeanengine_8cpp"/>
+      </node>
+      <node id="11">
+        <label>ql/pricingengines/vanilla/analyticeuropeanengine.hpp</label>
+        <link refid="analyticeuropeanengine_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>ql/pricingengines/vanilla/fdblackscholesvanillaengine.cpp</label>
+        <link refid="fdblackscholesvanillaengine_8cpp"/>
+      </node>
+      <node id="16">
+        <label>ql/pricingengines/vanilla/qdfpamericanengine.cpp</label>
+        <link refid="qdfpamericanengine_8cpp"/>
+      </node>
+      <node id="15">
+        <label>ql/pricingengines/vanilla/qdfpamericanengine.hpp</label>
+        <link refid="qdfpamericanengine_8hpp"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>ql/pricingengines/vanilla/qdplusamericanengine.cpp</label>
+        <link refid="qdplusamericanengine_8cpp"/>
+      </node>
+      <node id="14">
+        <label>ql/pricingengines/vanilla/qdplusamericanengine.hpp</label>
+        <link refid="qdplusamericanengine_8hpp"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>ql/processes/blackscholesprocess.cpp</label>
+        <link refid="blackscholesprocess_8cpp"/>
+      </node>
+      <node id="1">
+        <label>ql/processes/blackscholesprocess.hpp</label>
+        <link refid="blackscholesprocess_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classQuantLib_1_1GeneralizedBlackScholesProcess" prot="public">QuantLib::GeneralizedBlackScholesProcess</innerclass>
+    <innerclass refid="classQuantLib_1_1BlackScholesProcess" prot="public">QuantLib::BlackScholesProcess</innerclass>
+    <innerclass refid="classQuantLib_1_1BlackScholesMertonProcess" prot="public">QuantLib::BlackScholesMertonProcess</innerclass>
+    <innerclass refid="classQuantLib_1_1BlackProcess" prot="public">QuantLib::BlackProcess</innerclass>
+    <innerclass refid="classQuantLib_1_1GarmanKohlagenProcess" prot="public">QuantLib::GarmanKohlagenProcess</innerclass>
+    <innernamespace refid="namespaceQuantLib">QuantLib</innernamespace>
+    <briefdescription>
+<para>Black-Scholes processes. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>c++;<sp/>tab-width:<sp/>4;<sp/>indent-tabs-mode:<sp/>nil;<sp/>c-basic-offset:<sp/>4<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2001,<sp/>2002,<sp/>2003<sp/>Sadruddin<sp/>Rejeb</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2003<sp/>Ferdinando<sp/>Ametrano</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2004,<sp/>2005,<sp/>2006,<sp/>2007,<sp/>2009<sp/>StatPro<sp/>Italia<sp/>srl</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2015<sp/>Peter<sp/>Caspers</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>QuantLib,<sp/>a<sp/>free-software/open-source<sp/>library</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>for<sp/>financial<sp/>quantitative<sp/>analysts<sp/>and<sp/>developers<sp/>-<sp/>http://quantlib.org/</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"></highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>QuantLib<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>QuantLib<sp/>license.<sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>copy<sp/>of<sp/>the<sp/>license<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>please<sp/>email</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>&lt;quantlib-dev@lists.sf.net&gt;.<sp/>The<sp/>license<sp/>is<sp/>also<sp/>available<sp/>online<sp/>at</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>&lt;http://quantlib.org/license.shtml&gt;.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"></highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the<sp/>license<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="21"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>quantlib_black_scholes_process_hpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>quantlib_black_scholes_process_hpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="stochasticprocess_8hpp" kindref="compound">ql/stochasticprocess.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="eulerdiscretization_8hpp" kindref="compound">ql/processes/eulerdiscretization.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="yieldtermstructure_8hpp" kindref="compound">ql/termstructures/yieldtermstructure.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="blackvoltermstructure_8hpp" kindref="compound">ql/termstructures/volatility/equityfx/blackvoltermstructure.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="localvoltermstructure_8hpp" kindref="compound">ql/termstructures/volatility/equityfx/localvoltermstructure.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="quote_8hpp" kindref="compound">ql/quote.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceQuantLib" kindref="compound">QuantLib</ref><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">LocalConstantVol;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">LocalVolCurve;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="classQuantLib_1_1GeneralizedBlackScholesProcess" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess" kindref="compound">GeneralizedBlackScholesProcess</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1StochasticProcess1D" kindref="compound">StochasticProcess1D</ref><sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess" kindref="compound">GeneralizedBlackScholesProcess</ref>(<ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;Quote&gt;</ref><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1ae765ed8c43a8a485adf8baf3dcf608ba" kindref="member">x0</ref>,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;YieldTermStructure&gt;</ref><sp/>dividendTS,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;YieldTermStructure&gt;</ref><sp/>riskFreeTS,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;BlackVolTermStructure&gt;</ref><sp/>blackVolTS,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ext::shared_ptr&lt;discretization&gt;&amp;<sp/>d<sp/>=</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ext::shared_ptr&lt;discretization&gt;(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1EulerDiscretization" kindref="compound">EulerDiscretization</ref>),</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>forceDiscretization<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess" kindref="compound">GeneralizedBlackScholesProcess</ref>(<ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;Quote&gt;</ref><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1ae765ed8c43a8a485adf8baf3dcf608ba" kindref="member">x0</ref>,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;YieldTermStructure&gt;</ref><sp/>dividendTS,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;YieldTermStructure&gt;</ref><sp/>riskFreeTS,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;BlackVolTermStructure&gt;</ref><sp/>blackVolTS,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;LocalVolTermStructure&gt;</ref><sp/>localVolTS);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1ae765ed8c43a8a485adf8baf3dcf608ba" kindref="member">x0</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1abf46d8ac312c489f2fcf00fefc734953" kindref="member">drift</ref>(<ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>t,<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>x)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1a72dbcf1a1c410debf2b0b1d07124a3bf" kindref="member">diffusion</ref>(<ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>t,<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>x)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1af138c8d7679ab9ee3c1196db728a309c" kindref="member">apply</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1ae765ed8c43a8a485adf8baf3dcf608ba" kindref="member">x0</ref>,<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>dx)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1a942429a2002692b5ceb0cfc646beb174" kindref="member">expectation</ref>(<ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>t0,<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1ae765ed8c43a8a485adf8baf3dcf608ba" kindref="member">x0</ref>,<sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>dt)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1a7eacd46b71b39baa72872d454acdeeaf" kindref="member">stdDeviation</ref>(<ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>t0,<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1ae765ed8c43a8a485adf8baf3dcf608ba" kindref="member">x0</ref>,<sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>dt)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1a17b17c60b8a56d8eab8ed63ad7ff64d1" kindref="member">variance</ref>(<ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>t0,<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1ae765ed8c43a8a485adf8baf3dcf608ba" kindref="member">x0</ref>,<sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>dt)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1a208d564850f58a2e14f5711bba553e34" kindref="member">evolve</ref>(<ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>t0,<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1ae765ed8c43a8a485adf8baf3dcf608ba" kindref="member">x0</ref>,<sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>dt,<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>dw)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1aadbaae308a4066e94a3aa913b444ed52" kindref="member">time</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref>&amp;)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1a3a8724db10cd68b424d5572a4ebc7a62" kindref="member">update</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;Quote&gt;</ref>&amp;<sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1a2fe1299eb59ac276c49a9f7544e16f19" kindref="member">stateVariable</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;YieldTermStructure&gt;</ref>&amp;<sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1af0b5ea3952602e4e9fb96cd63228ff1b" kindref="member">dividendYield</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;YieldTermStructure&gt;</ref>&amp;<sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1aefe8b195c9074f66515647d1ddc7f16c" kindref="member">riskFreeRate</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;BlackVolTermStructure&gt;</ref>&amp;<sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1a6da3dae01e3435556a3b14a06887aaa1" kindref="member">blackVolatility</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;LocalVolTermStructure&gt;</ref>&amp;<sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1aeb481d0cd90e889c59593a433416f3f0" kindref="member">localVolatility</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="101" refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1a3ff5941b67ba2be9b59b16519bb795e0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;Quote&gt;</ref><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1a3ff5941b67ba2be9b59b16519bb795e0" kindref="member">x0_</ref>;</highlight></codeline>
+<codeline lineno="102" refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1a28e309e4c23ce613ad03ce6e6f43e756" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;YieldTermStructure&gt;</ref><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1a5c225dd089833f460a1025e1379febbe" kindref="member">riskFreeRate_</ref>,<sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1a28e309e4c23ce613ad03ce6e6f43e756" kindref="member">dividendYield_</ref>;</highlight></codeline>
+<codeline lineno="103" refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1a9b218cfaa19894f11dbe7e76e09efbb3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;BlackVolTermStructure&gt;</ref><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1a9b218cfaa19894f11dbe7e76e09efbb3" kindref="member">blackVolatility_</ref>;</highlight></codeline>
+<codeline lineno="104" refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1afcc420dec2f8f374e0c0fb7c3139577b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;LocalVolTermStructure&gt;</ref><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1afcc420dec2f8f374e0c0fb7c3139577b" kindref="member">externalLocalVolTS_</ref>;</highlight></codeline>
+<codeline lineno="105" refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1a01901a9e22b45706dfcbc59be5341066" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1a01901a9e22b45706dfcbc59be5341066" kindref="member">forceDiscretization_</ref>;</highlight></codeline>
+<codeline lineno="106" refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1ad9d39bd485c87ffd5d57cc267751948f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1ad9d39bd485c87ffd5d57cc267751948f" kindref="member">hasExternalLocalVol_</ref>;</highlight></codeline>
+<codeline lineno="107" refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1aa87d7c4188d91737c019c2b136227fae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1RelinkableHandle" kindref="compound">RelinkableHandle&lt;LocalVolTermStructure&gt;</ref><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1aa87d7c4188d91737c019c2b136227fae" kindref="member">localVolatility_</ref>;</highlight></codeline>
+<codeline lineno="108" refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1aca13e238e040922695d4e69ec4b19872" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1ad3800d0625aab0a0e18d09f62439a6ef" kindref="member">updated_</ref>,<sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1aca13e238e040922695d4e69ec4b19872" kindref="member">isStrikeIndependent_</ref>;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="classQuantLib_1_1BlackScholesProcess" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classQuantLib_1_1BlackScholesProcess" kindref="compound">BlackScholesProcess</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess" kindref="compound">GeneralizedBlackScholesProcess</ref><sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackScholesProcess" kindref="compound">BlackScholesProcess</ref>(</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;Quote&gt;</ref>&amp;<sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1ae765ed8c43a8a485adf8baf3dcf608ba" kindref="member">x0</ref>,</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;YieldTermStructure&gt;</ref>&amp;<sp/>riskFreeTS,</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;BlackVolTermStructure&gt;</ref>&amp;<sp/>blackVolTS,</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ext::shared_ptr&lt;discretization&gt;&amp;<sp/>d<sp/>=</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ext::shared_ptr&lt;discretization&gt;(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1EulerDiscretization" kindref="compound">EulerDiscretization</ref>),</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>forceDiscretization<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144" refid="classQuantLib_1_1BlackScholesMertonProcess" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classQuantLib_1_1BlackScholesMertonProcess" kindref="compound">BlackScholesMertonProcess</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess" kindref="compound">GeneralizedBlackScholesProcess</ref><sp/>{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackScholesMertonProcess" kindref="compound">BlackScholesMertonProcess</ref>(</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;Quote&gt;</ref>&amp;<sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1ae765ed8c43a8a485adf8baf3dcf608ba" kindref="member">x0</ref>,</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;YieldTermStructure&gt;</ref>&amp;<sp/>dividendTS,</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;YieldTermStructure&gt;</ref>&amp;<sp/>riskFreeTS,</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;BlackVolTermStructure&gt;</ref>&amp;<sp/>blackVolTS,</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ext::shared_ptr&lt;discretization&gt;&amp;<sp/>d<sp/>=</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ext::shared_ptr&lt;discretization&gt;(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1EulerDiscretization" kindref="compound">EulerDiscretization</ref>),</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>forceDiscretization<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168" refid="classQuantLib_1_1BlackProcess" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classQuantLib_1_1BlackProcess" kindref="compound">BlackProcess</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess" kindref="compound">GeneralizedBlackScholesProcess</ref><sp/>{</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1BlackProcess" kindref="compound">BlackProcess</ref>(</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;Quote&gt;</ref>&amp;<sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1ae765ed8c43a8a485adf8baf3dcf608ba" kindref="member">x0</ref>,</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;YieldTermStructure&gt;</ref>&amp;<sp/>riskFreeTS,</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;BlackVolTermStructure&gt;</ref>&amp;<sp/>blackVolTS,</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ext::shared_ptr&lt;discretization&gt;&amp;<sp/>d<sp/>=</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ext::shared_ptr&lt;discretization&gt;(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1EulerDiscretization" kindref="compound">EulerDiscretization</ref>),</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>forceDiscretization<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192" refid="classQuantLib_1_1GarmanKohlagenProcess" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classQuantLib_1_1GarmanKohlagenProcess" kindref="compound">GarmanKohlagenProcess</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess" kindref="compound">GeneralizedBlackScholesProcess</ref><sp/>{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1GarmanKohlagenProcess" kindref="compound">GarmanKohlagenProcess</ref>(</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;Quote&gt;</ref>&amp;<sp/><ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1ae765ed8c43a8a485adf8baf3dcf608ba" kindref="member">x0</ref>,</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;YieldTermStructure&gt;</ref>&amp;<sp/>foreignRiskFreeTS,</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;YieldTermStructure&gt;</ref>&amp;<sp/>domesticRiskFreeTS,</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle&lt;BlackVolTermStructure&gt;</ref>&amp;<sp/>blackVolTS,</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ext::shared_ptr&lt;discretization&gt;&amp;<sp/>d<sp/>=</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ext::shared_ptr&lt;discretization&gt;(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1EulerDiscretization" kindref="compound">EulerDiscretization</ref>),</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>forceDiscretization<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="ql/processes/blackscholesprocess.hpp"/>
+  </compounddef>
+</doxygen>

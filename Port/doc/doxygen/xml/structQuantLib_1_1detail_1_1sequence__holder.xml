@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structQuantLib_1_1detail_1_1sequence__holder" kind="struct" language="C++" prot="public">
+    <compoundname>QuantLib::detail::sequence_holder</compoundname>
+    <includes refid="dataformatters_8hpp" local="no">dataformatters.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename InputIterator</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structQuantLib_1_1detail_1_1sequence__holder_1aec7d70dfa53217b042d609d868b41cc6" prot="public" static="no" mutable="no">
+        <type>InputIterator</type>
+        <definition>InputIterator QuantLib::detail::sequence_holder&lt; InputIterator &gt;::begin</definition>
+        <argsstring></argsstring>
+        <name>begin</name>
+        <qualifiedname>QuantLib::detail::sequence_holder::begin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/utilities/dataformatters.hpp" line="64" column="27" bodyfile="ql/utilities/dataformatters.hpp" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structQuantLib_1_1detail_1_1sequence__holder_1ade4c2a73bac62f184d3133435bf252f4" prot="public" static="no" mutable="no">
+        <type>InputIterator</type>
+        <definition>InputIterator QuantLib::detail::sequence_holder&lt; InputIterator &gt;::end</definition>
+        <argsstring></argsstring>
+        <name>end</name>
+        <qualifiedname>QuantLib::detail::sequence_holder::end</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/utilities/dataformatters.hpp" line="64" column="33" bodyfile="ql/utilities/dataformatters.hpp" bodystart="64" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structQuantLib_1_1detail_1_1sequence__holder_1a2fab48d23643f13d097ab924b2da3364" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::detail::sequence_holder&lt; InputIterator &gt;::sequence_holder</definition>
+        <argsstring>(InputIterator begin, InputIterator end)</argsstring>
+        <name>sequence_holder</name>
+        <qualifiedname>QuantLib::detail::sequence_holder::sequence_holder</qualifiedname>
+        <param>
+          <type>InputIterator</type>
+          <declname>begin</declname>
+        </param>
+        <param>
+          <type>InputIterator</type>
+          <declname>end</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/utilities/dataformatters.hpp" line="62" column="13" bodyfile="ql/utilities/dataformatters.hpp" bodystart="62" bodyend="63"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ql/utilities/dataformatters.hpp" line="61" column="20" bodyfile="ql/utilities/dataformatters.hpp" bodystart="61" bodyend="65"/>
+    <listofallmembers>
+      <member refid="structQuantLib_1_1detail_1_1sequence__holder_1aec7d70dfa53217b042d609d868b41cc6" prot="public" virt="non-virtual"><scope>QuantLib::detail::sequence_holder</scope><name>begin</name></member>
+      <member refid="structQuantLib_1_1detail_1_1sequence__holder_1ade4c2a73bac62f184d3133435bf252f4" prot="public" virt="non-virtual"><scope>QuantLib::detail::sequence_holder</scope><name>end</name></member>
+      <member refid="structQuantLib_1_1detail_1_1sequence__holder_1a2fab48d23643f13d097ab924b2da3364" prot="public" virt="non-virtual"><scope>QuantLib::detail::sequence_holder</scope><name>sequence_holder</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

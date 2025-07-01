@@ -1,0 +1,232 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1FdmStepConditionComposite" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::FdmStepConditionComposite</compoundname>
+    <basecompoundref refid="classQuantLib_1_1StepCondition" prot="public" virt="non-virtual">QuantLib::StepCondition&lt; Array &gt;</basecompoundref>
+    <includes refid="fdmstepconditioncomposite_8hpp" local="no">fdmstepconditioncomposite.hpp</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classQuantLib_1_1FdmStepConditionComposite_1a4cb33bd8a8b7c308d065c2a66802adda" prot="public" static="no">
+        <type>std::list&lt; ext::shared_ptr&lt; <ref refid="classQuantLib_1_1StepCondition" kindref="compound">StepCondition</ref>&lt; <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &gt; &gt; &gt;</type>
+        <definition>typedef std::list&lt;ext::shared_ptr&lt;StepCondition&lt;Array&gt; &gt; &gt; QuantLib::FdmStepConditionComposite::Conditions</definition>
+        <argsstring></argsstring>
+        <name>Conditions</name>
+        <qualifiedname>QuantLib::FdmStepConditionComposite::Conditions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/stepconditions/fdmstepconditioncomposite.hpp" line="45" column="27" bodyfile="ql/methods/finitedifferences/stepconditions/fdmstepconditioncomposite.hpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1FdmStepConditionComposite_1ad704c4504dac44648a7e94ded99fadba" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref> &gt;</type>
+        <definition>std::vector&lt;Time&gt; QuantLib::FdmStepConditionComposite::stoppingTimes_</definition>
+        <argsstring></argsstring>
+        <name>stoppingTimes_</name>
+        <qualifiedname>QuantLib::FdmStepConditionComposite::stoppingTimes_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/stepconditions/fdmstepconditioncomposite.hpp" line="67" column="21" bodyfile="ql/methods/finitedifferences/stepconditions/fdmstepconditioncomposite.hpp" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1FdmStepConditionComposite_1a17d2c13ce6c81508abe2cdf834bbbdef" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classQuantLib_1_1FdmStepConditionComposite_1a4cb33bd8a8b7c308d065c2a66802adda" kindref="member">Conditions</ref></type>
+        <definition>const Conditions QuantLib::FdmStepConditionComposite::conditions_</definition>
+        <argsstring></argsstring>
+        <name>conditions_</name>
+        <qualifiedname>QuantLib::FdmStepConditionComposite::conditions_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/stepconditions/fdmstepconditioncomposite.hpp" line="68" column="26" bodyfile="ql/methods/finitedifferences/stepconditions/fdmstepconditioncomposite.hpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1FdmStepConditionComposite_1ae40bb99e322dbecc38ca4c513fad6b69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::FdmStepConditionComposite::FdmStepConditionComposite</definition>
+        <argsstring>(const std::list&lt; std::vector&lt; Time &gt; &gt; &amp;stoppingTimes, Conditions conditions)</argsstring>
+        <name>FdmStepConditionComposite</name>
+        <qualifiedname>QuantLib::FdmStepConditionComposite::FdmStepConditionComposite</qualifiedname>
+        <param>
+          <type>const std::list&lt; std::vector&lt; <ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref> &gt; &gt; &amp;</type>
+          <declname>stoppingTimes</declname>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1FdmStepConditionComposite_1a4cb33bd8a8b7c308d065c2a66802adda" kindref="member">Conditions</ref></type>
+          <declname>conditions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/stepconditions/fdmstepconditioncomposite.hpp" line="47" column="9" bodyfile="ql/methods/finitedifferences/stepconditions/fdmstepconditioncomposite.cpp" bodystart="36" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1FdmStepConditionComposite_1a894de89c567a2c020ae49db6215f97f4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QuantLib::FdmStepConditionComposite::applyTo</definition>
+        <argsstring>(Array &amp;a, Time t) const override</argsstring>
+        <name>applyTo</name>
+        <qualifiedname>QuantLib::FdmStepConditionComposite::applyTo</qualifiedname>
+        <reimplements refid="classQuantLib_1_1StepCondition_1afff61b9eaacd16620791a39dd69b90bb">applyTo</reimplements>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/stepconditions/fdmstepconditioncomposite.hpp" line="50" column="14" bodyfile="ql/methods/finitedifferences/stepconditions/fdmstepconditioncomposite.cpp" bodystart="57" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1FdmStepConditionComposite_1aace354ac215c009ff9880f3bbd2e311e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; <ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref> &gt; &amp;</type>
+        <definition>const std::vector&lt; Time &gt; &amp; QuantLib::FdmStepConditionComposite::stoppingTimes</definition>
+        <argsstring>() const</argsstring>
+        <name>stoppingTimes</name>
+        <qualifiedname>QuantLib::FdmStepConditionComposite::stoppingTimes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/stepconditions/fdmstepconditioncomposite.hpp" line="51" column="27" bodyfile="ql/methods/finitedifferences/stepconditions/fdmstepconditioncomposite.cpp" bodystart="53" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1FdmStepConditionComposite_1a7fd874b46f753ffcd22cb045ddbd2678" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classQuantLib_1_1FdmStepConditionComposite_1a4cb33bd8a8b7c308d065c2a66802adda" kindref="member">Conditions</ref> &amp;</type>
+        <definition>const FdmStepConditionComposite::Conditions &amp; QuantLib::FdmStepConditionComposite::conditions</definition>
+        <argsstring>() const</argsstring>
+        <name>conditions</name>
+        <qualifiedname>QuantLib::FdmStepConditionComposite::conditions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/stepconditions/fdmstepconditioncomposite.hpp" line="52" column="26" bodyfile="ql/methods/finitedifferences/stepconditions/fdmstepconditioncomposite.cpp" bodystart="49" bodyend="51"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classQuantLib_1_1FdmStepConditionComposite_1a2700e136adc7a38d9a5c32d92c41c22b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmStepConditionComposite" kindref="compound">FdmStepConditionComposite</ref> &gt;</type>
+        <definition>ext::shared_ptr&lt; FdmStepConditionComposite &gt; QuantLib::FdmStepConditionComposite::joinConditions</definition>
+        <argsstring>(const ext::shared_ptr&lt; FdmSnapshotCondition &gt; &amp;c1, const ext::shared_ptr&lt; FdmStepConditionComposite &gt; &amp;c2)</argsstring>
+        <name>joinConditions</name>
+        <qualifiedname>QuantLib::FdmStepConditionComposite::joinConditions</qualifiedname>
+        <param>
+          <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmSnapshotCondition" kindref="compound">FdmSnapshotCondition</ref> &gt; &amp;</type>
+          <declname>c1</declname>
+        </param>
+        <param>
+          <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmStepConditionComposite" kindref="compound">FdmStepConditionComposite</ref> &gt; &amp;</type>
+          <declname>c2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/stepconditions/fdmstepconditioncomposite.hpp" line="54" column="32" bodyfile="ql/methods/finitedifferences/stepconditions/fdmstepconditioncomposite.cpp" bodystart="64" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1FdmStepConditionComposite_1ab34d118399f3c3f53fcd3baf02d3fa01" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmStepConditionComposite" kindref="compound">FdmStepConditionComposite</ref> &gt;</type>
+        <definition>ext::shared_ptr&lt; FdmStepConditionComposite &gt; QuantLib::FdmStepConditionComposite::vanillaComposite</definition>
+        <argsstring>(const DividendSchedule &amp;schedule, const ext::shared_ptr&lt; Exercise &gt; &amp;exercise, const ext::shared_ptr&lt; FdmMesher &gt; &amp;mesher, const ext::shared_ptr&lt; FdmInnerValueCalculator &gt; &amp;calculator, const Date &amp;refDate, const DayCounter &amp;dayCounter)</argsstring>
+        <name>vanillaComposite</name>
+        <qualifiedname>QuantLib::FdmStepConditionComposite::vanillaComposite</qualifiedname>
+        <param>
+          <type>const <ref refid="namespaceQuantLib_1a0a379fde0de6fd228a3365e3c519fe68" kindref="member">DividendSchedule</ref> &amp;</type>
+          <declname>schedule</declname>
+        </param>
+        <param>
+          <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1Exercise" kindref="compound">Exercise</ref> &gt; &amp;</type>
+          <declname>exercise</declname>
+        </param>
+        <param>
+          <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmMesher" kindref="compound">FdmMesher</ref> &gt; &amp;</type>
+          <declname>mesher</declname>
+        </param>
+        <param>
+          <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmInnerValueCalculator" kindref="compound">FdmInnerValueCalculator</ref> &gt; &amp;</type>
+          <declname>calculator</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+          <declname>refDate</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref> &amp;</type>
+          <declname>dayCounter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/stepconditions/fdmstepconditioncomposite.hpp" line="58" column="32" bodyfile="ql/methods/finitedifferences/stepconditions/fdmstepconditioncomposite.cpp" bodystart="81" bodyend="132"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>QuantLib::FdmStepConditionComposite</label>
+        <link refid="classQuantLib_1_1FdmStepConditionComposite"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::StepCondition&lt; Array &gt;</label>
+        <link refid="classQuantLib_1_1StepCondition"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>QuantLib::FdmStepConditionComposite</label>
+        <link refid="classQuantLib_1_1FdmStepConditionComposite"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::StepCondition&lt; Array &gt;</label>
+        <link refid="classQuantLib_1_1StepCondition"/>
+      </node>
+    </collaborationgraph>
+    <location file="ql/methods/finitedifferences/stepconditions/fdmstepconditioncomposite.hpp" line="43" column="5" bodyfile="ql/methods/finitedifferences/stepconditions/fdmstepconditioncomposite.hpp" bodystart="43" bodyend="69"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1FdmStepConditionComposite_1a894de89c567a2c020ae49db6215f97f4" prot="public" virt="virtual"><scope>QuantLib::FdmStepConditionComposite</scope><name>applyTo</name></member>
+      <member refid="classQuantLib_1_1FdmStepConditionComposite_1a4cb33bd8a8b7c308d065c2a66802adda" prot="public" virt="non-virtual"><scope>QuantLib::FdmStepConditionComposite</scope><name>Conditions</name></member>
+      <member refid="classQuantLib_1_1FdmStepConditionComposite_1a7fd874b46f753ffcd22cb045ddbd2678" prot="public" virt="non-virtual"><scope>QuantLib::FdmStepConditionComposite</scope><name>conditions</name></member>
+      <member refid="classQuantLib_1_1FdmStepConditionComposite_1a17d2c13ce6c81508abe2cdf834bbbdef" prot="private" virt="non-virtual"><scope>QuantLib::FdmStepConditionComposite</scope><name>conditions_</name></member>
+      <member refid="classQuantLib_1_1FdmStepConditionComposite_1ae40bb99e322dbecc38ca4c513fad6b69" prot="public" virt="non-virtual"><scope>QuantLib::FdmStepConditionComposite</scope><name>FdmStepConditionComposite</name></member>
+      <member refid="classQuantLib_1_1FdmStepConditionComposite_1a2700e136adc7a38d9a5c32d92c41c22b" prot="public" virt="non-virtual"><scope>QuantLib::FdmStepConditionComposite</scope><name>joinConditions</name></member>
+      <member refid="classQuantLib_1_1FdmStepConditionComposite_1aace354ac215c009ff9880f3bbd2e311e" prot="public" virt="non-virtual"><scope>QuantLib::FdmStepConditionComposite</scope><name>stoppingTimes</name></member>
+      <member refid="classQuantLib_1_1FdmStepConditionComposite_1ad704c4504dac44648a7e94ded99fadba" prot="private" virt="non-virtual"><scope>QuantLib::FdmStepConditionComposite</scope><name>stoppingTimes_</name></member>
+      <member refid="classQuantLib_1_1FdmStepConditionComposite_1ab34d118399f3c3f53fcd3baf02d3fa01" prot="public" virt="non-virtual"><scope>QuantLib::FdmStepConditionComposite</scope><name>vanillaComposite</name></member>
+      <member refid="classQuantLib_1_1StepCondition_1a0867129678b1b4ae02e4d5630ee598ac" prot="public" virt="virtual"><scope>QuantLib::FdmStepConditionComposite</scope><name>~StepCondition</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

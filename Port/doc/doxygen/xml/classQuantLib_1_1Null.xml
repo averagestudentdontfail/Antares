@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1Null" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::Null</compoundname>
+    <includes refid="null_8hpp" local="no">null.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1Null_1a4ec23760601df085f2fc636f023dc701" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Null&lt; T &gt;::Null</definition>
+        <argsstring>()=default</argsstring>
+        <name>Null</name>
+        <qualifiedname>QuantLib::Null::Null</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/utilities/null.hpp" line="61" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Null_1aac276182c4db0f3e5ff436612631540c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Null&lt; T &gt;::operator T</definition>
+        <argsstring>() const</argsstring>
+        <name>operator T</name>
+        <qualifiedname>QuantLib::Null::operator T</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/utilities/null.hpp" line="62" column="9" bodyfile="ql/utilities/null.hpp" bodystart="62" bodyend="72"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>template class providing a null value for a given type. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ql/utilities/null.hpp" line="59" column="5" bodyfile="ql/utilities/null.hpp" bodystart="59" bodyend="73"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Null_1a4ec23760601df085f2fc636f023dc701" prot="public" virt="non-virtual"><scope>QuantLib::Null</scope><name>Null</name></member>
+      <member refid="classQuantLib_1_1Null_1aac276182c4db0f3e5ff436612631540c" prot="public" virt="non-virtual"><scope>QuantLib::Null</scope><name>operator T</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

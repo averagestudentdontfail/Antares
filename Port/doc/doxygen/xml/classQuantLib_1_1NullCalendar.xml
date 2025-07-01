@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1NullCalendar" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::NullCalendar</compoundname>
+    <basecompoundref refid="classQuantLib_1_1Calendar" prot="public" virt="non-virtual">QuantLib::Calendar</basecompoundref>
+    <includes refid="nullcalendar_8hpp" local="no">nullcalendar.hpp</includes>
+    <innerclass refid="classQuantLib_1_1NullCalendar_1_1Impl" prot="private">QuantLib::NullCalendar::Impl</innerclass>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1NullCalendar_1aedadd6f8955532ac8511abecef299c29" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::NullCalendar::NullCalendar</definition>
+        <argsstring>()</argsstring>
+        <name>NullCalendar</name>
+        <qualifiedname>QuantLib::NullCalendar::NullCalendar</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/calendars/nullcalendar.hpp" line="47" column="9" bodyfile="ql/time/calendars/nullcalendar.hpp" bodystart="47" bodyend="49"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Calendar for reproducing theoretical calculations. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This calendar has no holidays. It ensures that dates at whole-month distances have the same day of month. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>QuantLib::Calendar</label>
+        <link refid="classQuantLib_1_1Calendar"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::NullCalendar</label>
+        <link refid="classQuantLib_1_1NullCalendar"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>QuantLib::Calendar</label>
+        <link refid="classQuantLib_1_1Calendar"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::NullCalendar</label>
+        <link refid="classQuantLib_1_1NullCalendar"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/time/calendars/nullcalendar.hpp" line="38" column="5" bodyfile="ql/time/calendars/nullcalendar.hpp" bodystart="38" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Calendar_1a6a4d3e633df1a1faae6f58389e8a3c09" prot="public" virt="non-virtual"><scope>QuantLib::NullCalendar</scope><name>addedHolidays</name></member>
+      <member refid="classQuantLib_1_1Calendar_1aa564e41e48b07fa36e1edf310664375b" prot="public" virt="non-virtual"><scope>QuantLib::NullCalendar</scope><name>addHoliday</name></member>
+      <member refid="classQuantLib_1_1Calendar_1a0bb53b37b787d8d6a01b4b002814b438" prot="public" virt="non-virtual"><scope>QuantLib::NullCalendar</scope><name>adjust</name></member>
+      <member refid="classQuantLib_1_1Calendar_1a8235b8094fc4514319ea342602d3fdcc" prot="public" virt="non-virtual"><scope>QuantLib::NullCalendar</scope><name>advance</name></member>
+      <member refid="classQuantLib_1_1Calendar_1a92dc96242cb2211a42bccbe6a1cce048" prot="public" virt="non-virtual"><scope>QuantLib::NullCalendar</scope><name>advance</name></member>
+      <member refid="classQuantLib_1_1Calendar_1af2b4f3307e646c559811a2061f8d3fb9" prot="public" virt="non-virtual"><scope>QuantLib::NullCalendar</scope><name>businessDayList</name></member>
+      <member refid="classQuantLib_1_1Calendar_1a18748866f25d5af17761e45e2e167bb6" prot="public" virt="non-virtual"><scope>QuantLib::NullCalendar</scope><name>businessDaysBetween</name></member>
+      <member refid="classQuantLib_1_1Calendar_1aa62d06afe73f208076a806c9fa534255" prot="public" virt="non-virtual"><scope>QuantLib::NullCalendar</scope><name>Calendar</name></member>
+      <member refid="classQuantLib_1_1Calendar_1aa859aa631ee2c6968431505119f693da" prot="public" virt="non-virtual"><scope>QuantLib::NullCalendar</scope><name>empty</name></member>
+      <member refid="classQuantLib_1_1Calendar_1a0638994ad2f61be6cdc66f3da2c0b3b3" prot="public" virt="non-virtual"><scope>QuantLib::NullCalendar</scope><name>endOfMonth</name></member>
+      <member refid="classQuantLib_1_1Calendar_1ab65e58d8c20c0cf6f4ea2369ab242244" prot="public" virt="non-virtual"><scope>QuantLib::NullCalendar</scope><name>holidayList</name></member>
+      <member refid="classQuantLib_1_1Calendar_1acc625997293c78eb94aeefbb3cf395cb" prot="protected" virt="non-virtual"><scope>QuantLib::NullCalendar</scope><name>impl_</name></member>
+      <member refid="classQuantLib_1_1Calendar_1a4a5f6f7ded0bf681f69850a8b4009da2" prot="public" virt="non-virtual"><scope>QuantLib::NullCalendar</scope><name>isBusinessDay</name></member>
+      <member refid="classQuantLib_1_1Calendar_1a145f2f578a9b170c72d3247d8d3ae286" prot="public" virt="non-virtual"><scope>QuantLib::NullCalendar</scope><name>isEndOfMonth</name></member>
+      <member refid="classQuantLib_1_1Calendar_1ad35c33853f0462c7ee0722e5b40e04c8" prot="public" virt="non-virtual"><scope>QuantLib::NullCalendar</scope><name>isHoliday</name></member>
+      <member refid="classQuantLib_1_1Calendar_1a455a3cddc37b9cd8d2d165977697d4e2" prot="public" virt="non-virtual"><scope>QuantLib::NullCalendar</scope><name>isStartOfMonth</name></member>
+      <member refid="classQuantLib_1_1Calendar_1a1294b93fa51c86f66c3c9a0a8a9901db" prot="public" virt="non-virtual"><scope>QuantLib::NullCalendar</scope><name>isWeekend</name></member>
+      <member refid="classQuantLib_1_1Calendar_1a6ce060465e43d0d3b9343e20a774cadc" prot="public" virt="non-virtual"><scope>QuantLib::NullCalendar</scope><name>name</name></member>
+      <member refid="classQuantLib_1_1NullCalendar_1aedadd6f8955532ac8511abecef299c29" prot="public" virt="non-virtual"><scope>QuantLib::NullCalendar</scope><name>NullCalendar</name></member>
+      <member refid="classQuantLib_1_1Calendar_1af842d77a8aacbc167a64749dba1a3a87" prot="public" virt="non-virtual"><scope>QuantLib::NullCalendar</scope><name>operator!=</name></member>
+      <member refid="classQuantLib_1_1Calendar_1aab055e8665c0e69976ecbe4aebd47a8f" prot="public" virt="non-virtual"><scope>QuantLib::NullCalendar</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classQuantLib_1_1Calendar_1ae9d6f7766f633f5d75cc3acd7826bc9f" prot="public" virt="non-virtual"><scope>QuantLib::NullCalendar</scope><name>operator==</name></member>
+      <member refid="classQuantLib_1_1Calendar_1a67a6f5b0bc3219711a5f6e60108127be" prot="public" virt="non-virtual"><scope>QuantLib::NullCalendar</scope><name>removedHolidays</name></member>
+      <member refid="classQuantLib_1_1Calendar_1a5e9840da40b5f4a4a0283e12d302a53c" prot="public" virt="non-virtual"><scope>QuantLib::NullCalendar</scope><name>removeHoliday</name></member>
+      <member refid="classQuantLib_1_1Calendar_1a241bbfff329946c512776c6147d7a886" prot="public" virt="non-virtual"><scope>QuantLib::NullCalendar</scope><name>resetAddedAndRemovedHolidays</name></member>
+      <member refid="classQuantLib_1_1Calendar_1a445cd35bcc1988dc42c377e292b2f486" prot="public" virt="non-virtual"><scope>QuantLib::NullCalendar</scope><name>startOfMonth</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

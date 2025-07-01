@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_423f2072e9cd936da613a6814a4fd174" kind="dir">
+    <compoundname>ql/time</compoundname>
+    <innerdir refid="dir_8d17c58e2a9c0afc5675430cfe8524a9">ql/time/calendars</innerdir>
+    <innerdir refid="dir_22f498108643b7c5c611d8f89caf9bc0">ql/time/daycounters</innerdir>
+    <innerfile refid="businessdayconvention_8cpp">businessdayconvention.cpp</innerfile>
+    <innerfile refid="businessdayconvention_8hpp">businessdayconvention.hpp</innerfile>
+    <innerfile refid="calendar_8cpp">calendar.cpp</innerfile>
+    <innerfile refid="calendar_8hpp">calendar.hpp</innerfile>
+    <innerfile refid="date_8cpp">date.cpp</innerfile>
+    <innerfile refid="date_8hpp">date.hpp</innerfile>
+    <innerfile refid="daycounter_8hpp">daycounter.hpp</innerfile>
+    <innerfile refid="frequency_8cpp">frequency.cpp</innerfile>
+    <innerfile refid="frequency_8hpp">frequency.hpp</innerfile>
+    <innerfile refid="period_8cpp">period.cpp</innerfile>
+    <innerfile refid="period_8hpp">period.hpp</innerfile>
+    <innerfile refid="timeunit_8cpp">timeunit.cpp</innerfile>
+    <innerfile refid="timeunit_8hpp">timeunit.hpp</innerfile>
+    <innerfile refid="weekday_8cpp">weekday.cpp</innerfile>
+    <innerfile refid="weekday_8hpp">weekday.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ql/time/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1TanhSinhIntegral" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::TanhSinhIntegral</compoundname>
+    <basecompoundref refid="classQuantLib_1_1Integrator" prot="public" virt="non-virtual">QuantLib::Integrator</basecompoundref>
+    <includes refid="tanhsinhintegral_8hpp" local="no">tanhsinhintegral.hpp</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1TanhSinhIntegral_1a31b43f59f238a170df23f48e668829b2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::TanhSinhIntegral::TanhSinhIntegral</definition>
+        <argsstring>(Real relTolerance=0, Size maxRefinements=0, Real minComplement=0)</argsstring>
+        <name>TanhSinhIntegral</name>
+        <qualifiedname>QuantLib::TanhSinhIntegral::TanhSinhIntegral</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>relTolerance</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>maxRefinements</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>minComplement</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/integrals/tanhsinhintegral.hpp" line="79" column="9" bodyfile="ql/math/integrals/tanhsinhintegral.hpp" bodystart="79" bodyend="82"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classQuantLib_1_1TanhSinhIntegral_1a307ed1697b21df4ce075ac7bd2231b04" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::TanhSinhIntegral::integrate</definition>
+        <argsstring>(const std::function&lt; Real(Real)&gt; &amp;f, Real a, Real b) const override</argsstring>
+        <name>integrate</name>
+        <qualifiedname>QuantLib::TanhSinhIntegral::integrate</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Integrator_1a6ec7c11d79c2d1553de8b8e5822c0402">integrate</reimplements>
+        <param>
+          <type>const std::function&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>)&gt; &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/integrals/tanhsinhintegral.hpp" line="85" column="14" bodyfile="ql/math/integrals/tanhsinhintegral.hpp" bodystart="85" bodyend="87"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>QuantLib::Integrator</label>
+        <link refid="classQuantLib_1_1Integrator"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::TanhSinhIntegral</label>
+        <link refid="classQuantLib_1_1TanhSinhIntegral"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>QuantLib::Integrator</label>
+        <link refid="classQuantLib_1_1Integrator"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::TanhSinhIntegral</label>
+        <link refid="classQuantLib_1_1TanhSinhIntegral"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/math/integrals/tanhsinhintegral.hpp" line="77" column="5" bodyfile="ql/math/integrals/tanhsinhintegral.hpp" bodystart="77" bodyend="88"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Integrator_1a780bcd96e38c5cbd5674abc2a82ed204" prot="public" virt="non-virtual"><scope>QuantLib::TanhSinhIntegral</scope><name>absoluteAccuracy</name></member>
+      <member refid="classQuantLib_1_1Integrator_1af30c23b7bd23002620e869a9cef523a8" prot="private" virt="non-virtual"><scope>QuantLib::TanhSinhIntegral</scope><name>absoluteAccuracy_</name></member>
+      <member refid="classQuantLib_1_1Integrator_1a457e00ab72b659e9e5455ab7ef695a21" prot="public" virt="non-virtual"><scope>QuantLib::TanhSinhIntegral</scope><name>absoluteError</name></member>
+      <member refid="classQuantLib_1_1Integrator_1a513c90604c0ae1ad4dbafd87c713d922" prot="private" virt="non-virtual"><scope>QuantLib::TanhSinhIntegral</scope><name>absoluteError_</name></member>
+      <member refid="classQuantLib_1_1Integrator_1a5bb88222d38207e2f261ff55bacc9e70" prot="private" virt="non-virtual"><scope>QuantLib::TanhSinhIntegral</scope><name>evaluations_</name></member>
+      <member refid="classQuantLib_1_1Integrator_1a5ec592d87089c83ed43b13dc3b89e3d5" prot="protected" virt="non-virtual"><scope>QuantLib::TanhSinhIntegral</scope><name>increaseNumberOfEvaluations</name></member>
+      <member refid="classQuantLib_1_1TanhSinhIntegral_1a307ed1697b21df4ce075ac7bd2231b04" prot="protected" virt="virtual"><scope>QuantLib::TanhSinhIntegral</scope><name>integrate</name></member>
+      <member refid="classQuantLib_1_1Integrator_1a3f9e803134fa741989ca1864bf32b1be" prot="public" virt="virtual"><scope>QuantLib::TanhSinhIntegral</scope><name>integrationSuccess</name></member>
+      <member refid="classQuantLib_1_1Integrator_1af1b1a6639727b55ddf35989fef19376e" prot="public" virt="non-virtual"><scope>QuantLib::TanhSinhIntegral</scope><name>Integrator</name></member>
+      <member refid="classQuantLib_1_1Integrator_1ae33afd264a1fd8c04da749f81fd0c5da" prot="public" virt="non-virtual"><scope>QuantLib::TanhSinhIntegral</scope><name>maxEvaluations</name></member>
+      <member refid="classQuantLib_1_1Integrator_1a16f0862ffd8f5583784dfb760ed828d1" prot="private" virt="non-virtual"><scope>QuantLib::TanhSinhIntegral</scope><name>maxEvaluations_</name></member>
+      <member refid="classQuantLib_1_1Integrator_1a90cc40e34213c30b55e96243ed3ed484" prot="public" virt="non-virtual"><scope>QuantLib::TanhSinhIntegral</scope><name>numberOfEvaluations</name></member>
+      <member refid="classQuantLib_1_1Integrator_1a6ced5a1acd0d08e620198f476b4717b9" prot="public" virt="non-virtual"><scope>QuantLib::TanhSinhIntegral</scope><name>operator()</name></member>
+      <member refid="classQuantLib_1_1Integrator_1a73631092f9449fe296b6ac5a35a33364" prot="public" virt="non-virtual"><scope>QuantLib::TanhSinhIntegral</scope><name>setAbsoluteAccuracy</name></member>
+      <member refid="classQuantLib_1_1Integrator_1a4aa6a7c87024c497457607db03d80bf8" prot="protected" virt="non-virtual"><scope>QuantLib::TanhSinhIntegral</scope><name>setAbsoluteError</name></member>
+      <member refid="classQuantLib_1_1Integrator_1aeec56c0f0fbfe04a7c15e4766d224d44" prot="public" virt="non-virtual"><scope>QuantLib::TanhSinhIntegral</scope><name>setMaxEvaluations</name></member>
+      <member refid="classQuantLib_1_1Integrator_1a53c93a2ae74e97752d1c8bd176c5cb7f" prot="protected" virt="non-virtual"><scope>QuantLib::TanhSinhIntegral</scope><name>setNumberOfEvaluations</name></member>
+      <member refid="classQuantLib_1_1TanhSinhIntegral_1a31b43f59f238a170df23f48e668829b2" prot="public" virt="non-virtual"><scope>QuantLib::TanhSinhIntegral</scope><name>TanhSinhIntegral</name></member>
+      <member refid="classQuantLib_1_1Integrator_1a56e54bf50cc21384d1f96234d5a3332a" prot="public" virt="virtual"><scope>QuantLib::TanhSinhIntegral</scope><name>~Integrator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

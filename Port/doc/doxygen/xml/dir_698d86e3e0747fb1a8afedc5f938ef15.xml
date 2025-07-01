@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_698d86e3e0747fb1a8afedc5f938ef15" kind="dir">
+    <compoundname>ql/math</compoundname>
+    <innerdir refid="dir_1dbd1d8b9d926d915e49d8a40874096e">ql/math/distributions</innerdir>
+    <innerdir refid="dir_b5deec0df5198403cce220a0ca14370d">ql/math/integrals</innerdir>
+    <innerdir refid="dir_f90279b538dfcbce2575712409d081ba">ql/math/interpolations</innerdir>
+    <innerdir refid="dir_e57750ea043109b97ce8dd7b556b4c4d">ql/math/matrixutilities</innerdir>
+    <innerdir refid="dir_6b0770713ab9555ab082e0877cc9184b">ql/math/ode</innerdir>
+    <innerdir refid="dir_0ed949cfaf2a554caaefa27979f8da10">ql/math/optimization</innerdir>
+    <innerdir refid="dir_386d4efe9b845332e9157e8737f14645">ql/math/solvers1d</innerdir>
+    <innerfile refid="array_8hpp">array.hpp</innerfile>
+    <innerfile refid="comparison_8hpp">comparison.hpp</innerfile>
+    <innerfile refid="errorfunction_8cpp">errorfunction.cpp</innerfile>
+    <innerfile refid="errorfunction_8hpp">errorfunction.hpp</innerfile>
+    <innerfile refid="math_2functional_8hpp">functional.hpp</innerfile>
+    <innerfile refid="interpolation_8hpp">interpolation.hpp</innerfile>
+    <innerfile refid="matrix_8cpp">matrix.cpp</innerfile>
+    <innerfile refid="matrix_8hpp">matrix.hpp</innerfile>
+    <innerfile refid="solver1d_8hpp">solver1d.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ql/math/"/>
+  </compounddef>
+</doxygen>

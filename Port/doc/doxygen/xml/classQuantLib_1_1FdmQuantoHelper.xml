@@ -1,0 +1,219 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1FdmQuantoHelper" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::FdmQuantoHelper</compoundname>
+    <basecompoundref refid="classQuantLib_1_1Observable" prot="public" virt="non-virtual">QuantLib::Observable</basecompoundref>
+    <includes refid="fdmquantohelper_8hpp" local="no">fdmquantohelper.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1FdmQuantoHelper_1a3611c7cd1510a4a5c8da0d64d82cdc56" prot="public" static="no" mutable="no">
+        <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1YieldTermStructure" kindref="compound">YieldTermStructure</ref> &gt;</type>
+        <definition>const ext::shared_ptr&lt;YieldTermStructure&gt; QuantLib::FdmQuantoHelper::rTS_</definition>
+        <argsstring></argsstring>
+        <name>rTS_</name>
+        <qualifiedname>QuantLib::FdmQuantoHelper::rTS_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/fdmquantohelper.hpp" line="47" column="29" bodyfile="ql/methods/finitedifferences/utilities/fdmquantohelper.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1FdmQuantoHelper_1ad527e3c127701b0db78d37fa79066224" prot="public" static="no" mutable="no">
+        <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1YieldTermStructure" kindref="compound">YieldTermStructure</ref> &gt;</type>
+        <definition>const ext::shared_ptr&lt;YieldTermStructure&gt; QuantLib::FdmQuantoHelper::fTS_</definition>
+        <argsstring></argsstring>
+        <name>fTS_</name>
+        <qualifiedname>QuantLib::FdmQuantoHelper::fTS_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/fdmquantohelper.hpp" line="47" column="34" bodyfile="ql/methods/finitedifferences/utilities/fdmquantohelper.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1FdmQuantoHelper_1add3b9f0347dd86280d621111dc7a51ef" prot="public" static="no" mutable="no">
+        <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1BlackVolTermStructure" kindref="compound">BlackVolTermStructure</ref> &gt;</type>
+        <definition>const ext::shared_ptr&lt;BlackVolTermStructure&gt; QuantLib::FdmQuantoHelper::fxVolTS_</definition>
+        <argsstring></argsstring>
+        <name>fxVolTS_</name>
+        <qualifiedname>QuantLib::FdmQuantoHelper::fxVolTS_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/fdmquantohelper.hpp" line="48" column="29" bodyfile="ql/methods/finitedifferences/utilities/fdmquantohelper.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1FdmQuantoHelper_1a1ce5e30776d8702ad135fef23715acc6" prot="public" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::FdmQuantoHelper::equityFxCorrelation_</definition>
+        <argsstring></argsstring>
+        <name>equityFxCorrelation_</name>
+        <qualifiedname>QuantLib::FdmQuantoHelper::equityFxCorrelation_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/fdmquantohelper.hpp" line="49" column="18" bodyfile="ql/methods/finitedifferences/utilities/fdmquantohelper.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1FdmQuantoHelper_1af138e8cecd4b333dfff5cb91c21549cd" prot="public" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::FdmQuantoHelper::exchRateATMlevel_</definition>
+        <argsstring></argsstring>
+        <name>exchRateATMlevel_</name>
+        <qualifiedname>QuantLib::FdmQuantoHelper::exchRateATMlevel_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/fdmquantohelper.hpp" line="50" column="18" bodyfile="ql/methods/finitedifferences/utilities/fdmquantohelper.hpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1FdmQuantoHelper_1a9512e4d767fc273048a5dc14845d771c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::FdmQuantoHelper::FdmQuantoHelper</definition>
+        <argsstring>(ext::shared_ptr&lt; YieldTermStructure &gt; rTS, ext::shared_ptr&lt; YieldTermStructure &gt; fTS, ext::shared_ptr&lt; BlackVolTermStructure &gt; fxVolTS, Real equityFxCorrelation, Real exchRateATMlevel)</argsstring>
+        <name>FdmQuantoHelper</name>
+        <qualifiedname>QuantLib::FdmQuantoHelper::FdmQuantoHelper</qualifiedname>
+        <param>
+          <type>ext::shared_ptr&lt; <ref refid="classQuantLib_1_1YieldTermStructure" kindref="compound">YieldTermStructure</ref> &gt;</type>
+          <declname>rTS</declname>
+        </param>
+        <param>
+          <type>ext::shared_ptr&lt; <ref refid="classQuantLib_1_1YieldTermStructure" kindref="compound">YieldTermStructure</ref> &gt;</type>
+          <declname>fTS</declname>
+        </param>
+        <param>
+          <type>ext::shared_ptr&lt; <ref refid="classQuantLib_1_1BlackVolTermStructure" kindref="compound">BlackVolTermStructure</ref> &gt;</type>
+          <declname>fxVolTS</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>equityFxCorrelation</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>exchRateATMlevel</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/fdmquantohelper.hpp" line="38" column="7" bodyfile="ql/methods/finitedifferences/utilities/fdmquantohelper.cpp" bodystart="32" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1FdmQuantoHelper_1a9b68263465b5964bb3ed36780a8e0e5b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref></type>
+        <definition>Rate QuantLib::FdmQuantoHelper::quantoAdjustment</definition>
+        <argsstring>(Volatility equityVol, Time t1, Time t2) const</argsstring>
+        <name>quantoAdjustment</name>
+        <qualifiedname>QuantLib::FdmQuantoHelper::quantoAdjustment</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1ae3abfa256de5aa2b506ab6bda014e4dc" kindref="member">Volatility</ref></type>
+          <declname>equityVol</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>t1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>t2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/fdmquantohelper.hpp" line="44" column="12" bodyfile="ql/methods/finitedifferences/utilities/fdmquantohelper.cpp" bodystart="40" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1FdmQuantoHelper_1a33cd1929994c654edcd5bbb713d13d36" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array QuantLib::FdmQuantoHelper::quantoAdjustment</definition>
+        <argsstring>(const Array &amp;equityVol, Time t1, Time t2) const</argsstring>
+        <name>quantoAdjustment</name>
+        <qualifiedname>QuantLib::FdmQuantoHelper::quantoAdjustment</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>equityVol</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>t1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>t2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/fdmquantohelper.hpp" line="45" column="13" bodyfile="ql/methods/finitedifferences/utilities/fdmquantohelper.cpp" bodystart="50" bodyend="64"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>QuantLib::FdmQuantoHelper</label>
+        <link refid="classQuantLib_1_1FdmQuantoHelper"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::Observable</label>
+        <link refid="classQuantLib_1_1Observable"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>QuantLib::FdmQuantoHelper</label>
+        <link refid="classQuantLib_1_1FdmQuantoHelper"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::Observable</label>
+        <link refid="classQuantLib_1_1Observable"/>
+      </node>
+    </collaborationgraph>
+    <location file="ql/methods/finitedifferences/utilities/fdmquantohelper.hpp" line="36" column="5" bodyfile="ql/methods/finitedifferences/utilities/fdmquantohelper.hpp" bodystart="36" bodyend="51"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1FdmQuantoHelper_1a1ce5e30776d8702ad135fef23715acc6" prot="public" virt="non-virtual"><scope>QuantLib::FdmQuantoHelper</scope><name>equityFxCorrelation_</name></member>
+      <member refid="classQuantLib_1_1FdmQuantoHelper_1af138e8cecd4b333dfff5cb91c21549cd" prot="public" virt="non-virtual"><scope>QuantLib::FdmQuantoHelper</scope><name>exchRateATMlevel_</name></member>
+      <member refid="classQuantLib_1_1FdmQuantoHelper_1a9512e4d767fc273048a5dc14845d771c" prot="public" virt="non-virtual"><scope>QuantLib::FdmQuantoHelper</scope><name>FdmQuantoHelper</name></member>
+      <member refid="classQuantLib_1_1FdmQuantoHelper_1ad527e3c127701b0db78d37fa79066224" prot="public" virt="non-virtual"><scope>QuantLib::FdmQuantoHelper</scope><name>fTS_</name></member>
+      <member refid="classQuantLib_1_1FdmQuantoHelper_1add3b9f0347dd86280d621111dc7a51ef" prot="public" virt="non-virtual"><scope>QuantLib::FdmQuantoHelper</scope><name>fxVolTS_</name></member>
+      <member refid="classQuantLib_1_1Observable_1a07ad87c2c2599551463d0a529924dec2" prot="private" virt="non-virtual"><scope>QuantLib::FdmQuantoHelper</scope><name>iterator</name></member>
+      <member refid="classQuantLib_1_1Observable_1afb67478418efdb94382ac9d7ae904b94" prot="public" virt="non-virtual"><scope>QuantLib::FdmQuantoHelper</scope><name>notifyObservers</name></member>
+      <member refid="classQuantLib_1_1Observable_1ae0d19b21fab87a01f53586a6b5c15f85" prot="public" virt="non-virtual"><scope>QuantLib::FdmQuantoHelper</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observable_1a942cf6a572bd95341433a6772c70cb29" prot="public" virt="non-virtual"><scope>QuantLib::FdmQuantoHelper</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observable_1a6c35885ef344665ecdfac9b9f3a59c0e" prot="public" virt="non-virtual"><scope>QuantLib::FdmQuantoHelper</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observable_1a4da6017619203dcb570d5f4174f0beea" prot="private" virt="non-virtual"><scope>QuantLib::FdmQuantoHelper</scope><name>observers_</name></member>
+      <member refid="classQuantLib_1_1Observable_1ad1e086da62f05b4bc5eafa698ef6fbc3" prot="public" virt="non-virtual"><scope>QuantLib::FdmQuantoHelper</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1Observable_1ab45941c65068ab4c8d69a7d1a72beeb7" prot="public" virt="non-virtual"><scope>QuantLib::FdmQuantoHelper</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1FdmQuantoHelper_1a9b68263465b5964bb3ed36780a8e0e5b" prot="public" virt="non-virtual"><scope>QuantLib::FdmQuantoHelper</scope><name>quantoAdjustment</name></member>
+      <member refid="classQuantLib_1_1FdmQuantoHelper_1a33cd1929994c654edcd5bbb713d13d36" prot="public" virt="non-virtual"><scope>QuantLib::FdmQuantoHelper</scope><name>quantoAdjustment</name></member>
+      <member refid="classQuantLib_1_1Observable_1a1eb87a03e7e1fd43377bce32e0c21bce" prot="private" virt="non-virtual"><scope>QuantLib::FdmQuantoHelper</scope><name>registerObserver</name></member>
+      <member refid="classQuantLib_1_1FdmQuantoHelper_1a3611c7cd1510a4a5c8da0d64d82cdc56" prot="public" virt="non-virtual"><scope>QuantLib::FdmQuantoHelper</scope><name>rTS_</name></member>
+      <member refid="classQuantLib_1_1Observable_1a22e674e99fccc2da996de9620304f63c" prot="private" virt="non-virtual"><scope>QuantLib::FdmQuantoHelper</scope><name>set_type</name></member>
+      <member refid="classQuantLib_1_1Observable_1abd81ef8b87594aa6f9d2a5bd5de3e628" prot="private" virt="non-virtual"><scope>QuantLib::FdmQuantoHelper</scope><name>unregisterObserver</name></member>
+      <member refid="classQuantLib_1_1Observable_1a32093a7038e9bd8d28e5d378eca9f4f7" prot="public" virt="virtual"><scope>QuantLib::FdmQuantoHelper</scope><name>~Observable</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

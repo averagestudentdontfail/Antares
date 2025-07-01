@@ -1,0 +1,335 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1DqFpEquation" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>QuantLib::DqFpEquation</compoundname>
+    <derivedcompoundref refid="classQuantLib_1_1DqFpEquation__A" prot="public" virt="non-virtual">QuantLib::DqFpEquation_A</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1DqFpEquation__B" prot="public" virt="non-virtual">QuantLib::DqFpEquation_B</derivedcompoundref>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1DqFpEquation_1abcc170e4b5783d9703bc4f3a5b0a6668" prot="protected" static="no" mutable="no">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array QuantLib::DqFpEquation::x_i</definition>
+        <argsstring></argsstring>
+        <name>x_i</name>
+        <qualifiedname>QuantLib::DqFpEquation::x_i</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/qdfpamericanengine.cpp" line="149" column="15" bodyfile="ql/pricingengines/vanilla/qdfpamericanengine.cpp" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1DqFpEquation_1ada6fc9b1a34c4448d431c8fc14ad211a" prot="protected" static="no" mutable="no">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array QuantLib::DqFpEquation::w_i</definition>
+        <argsstring></argsstring>
+        <name>w_i</name>
+        <qualifiedname>QuantLib::DqFpEquation::w_i</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/qdfpamericanengine.cpp" line="149" column="19" bodyfile="ql/pricingengines/vanilla/qdfpamericanengine.cpp" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1DqFpEquation_1afdc5c6cf6f76f9d5a3ec8143e7982238" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref></type>
+        <definition>const Rate QuantLib::DqFpEquation::r</definition>
+        <argsstring></argsstring>
+        <name>r</name>
+        <qualifiedname>QuantLib::DqFpEquation::r</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/qdfpamericanengine.cpp" line="150" column="20" bodyfile="ql/pricingengines/vanilla/qdfpamericanengine.cpp" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1DqFpEquation_1a8af58bc68313cd42b1bc304319d5a51a" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref></type>
+        <definition>const Rate QuantLib::DqFpEquation::q</definition>
+        <argsstring></argsstring>
+        <name>q</name>
+        <qualifiedname>QuantLib::DqFpEquation::q</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/qdfpamericanengine.cpp" line="150" column="22" bodyfile="ql/pricingengines/vanilla/qdfpamericanengine.cpp" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1DqFpEquation_1a6fcd3d751c6662cb0efa08c07a89a0f5" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1ae3abfa256de5aa2b506ab6bda014e4dc" kindref="member">Volatility</ref></type>
+        <definition>const Volatility QuantLib::DqFpEquation::vol</definition>
+        <argsstring></argsstring>
+        <name>vol</name>
+        <qualifiedname>QuantLib::DqFpEquation::vol</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/qdfpamericanengine.cpp" line="151" column="26" bodyfile="ql/pricingengines/vanilla/qdfpamericanengine.cpp" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1DqFpEquation_1a474905e6cbfb5cdf1fe19a4295c5b534" prot="protected" static="no" mutable="no">
+        <type>const std::function&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>)&gt;</type>
+        <definition>const std::function&lt;Real(Real)&gt; QuantLib::DqFpEquation::B</definition>
+        <argsstring></argsstring>
+        <name>B</name>
+        <qualifiedname>QuantLib::DqFpEquation::B</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/qdfpamericanengine.cpp" line="153" column="29" bodyfile="ql/pricingengines/vanilla/qdfpamericanengine.cpp" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1DqFpEquation_1abc0e4fffdb04a71d6907a10cfb8774d8" prot="protected" static="no" mutable="no">
+        <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1Integrator" kindref="compound">Integrator</ref> &gt;</type>
+        <definition>const ext::shared_ptr&lt;Integrator&gt; QuantLib::DqFpEquation::integrator</definition>
+        <argsstring></argsstring>
+        <name>integrator</name>
+        <qualifiedname>QuantLib::DqFpEquation::integrator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/qdfpamericanengine.cpp" line="154" column="31" bodyfile="ql/pricingengines/vanilla/qdfpamericanengine.cpp" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1DqFpEquation_1ac6cfe401186bf1184aea724ac3c065c2" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="classQuantLib_1_1NormalDistribution" kindref="compound">NormalDistribution</ref></type>
+        <definition>const NormalDistribution QuantLib::DqFpEquation::phi</definition>
+        <argsstring></argsstring>
+        <name>phi</name>
+        <qualifiedname>QuantLib::DqFpEquation::phi</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/qdfpamericanengine.cpp" line="156" column="34" bodyfile="ql/pricingengines/vanilla/qdfpamericanengine.cpp" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1DqFpEquation_1a5952d335702a7e46f310e62f45880aae" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="classQuantLib_1_1CumulativeNormalDistribution" kindref="compound">CumulativeNormalDistribution</ref></type>
+        <definition>const CumulativeNormalDistribution QuantLib::DqFpEquation::Phi</definition>
+        <argsstring></argsstring>
+        <name>Phi</name>
+        <qualifiedname>QuantLib::DqFpEquation::Phi</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/qdfpamericanengine.cpp" line="157" column="44" bodyfile="ql/pricingengines/vanilla/qdfpamericanengine.cpp" bodystart="157" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1DqFpEquation_1af41b5114bdf5d0fa4e1e408bdec22498" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::DqFpEquation::DqFpEquation</definition>
+        <argsstring>(Rate _r, Rate _q, Volatility _vol, std::function&lt; Real(Real)&gt; B, ext::shared_ptr&lt; Integrator &gt; _integrator)</argsstring>
+        <name>DqFpEquation</name>
+        <qualifiedname>QuantLib::DqFpEquation::DqFpEquation</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref></type>
+          <declname>_r</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref></type>
+          <declname>_q</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1ae3abfa256de5aa2b506ab6bda014e4dc" kindref="member">Volatility</ref></type>
+          <declname>_vol</declname>
+        </param>
+        <param>
+          <type>std::function&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>)&gt;</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type>ext::shared_ptr&lt; <ref refid="classQuantLib_1_1Integrator" kindref="compound">Integrator</ref> &gt;</type>
+          <declname>_integrator</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/qdfpamericanengine.cpp" line="121" column="9" bodyfile="ql/pricingengines/vanilla/qdfpamericanengine.cpp" bodystart="121" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1DqFpEquation_1a45522965c9ad5c3093bd9f28a3b7f571" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::pair&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>, <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> &gt;</type>
+        <definition>virtual std::pair&lt; Real, Real &gt; QuantLib::DqFpEquation::NDd</definition>
+        <argsstring>(Real tau, Real b) const =0</argsstring>
+        <name>NDd</name>
+        <qualifiedname>QuantLib::DqFpEquation::NDd</qualifiedname>
+        <reimplementedby refid="classQuantLib_1_1DqFpEquation__B_1a25d8acdfe0d239a17cb5f118a2119174">NDd</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1DqFpEquation__A_1ad555614ab9c4d553c35656733e3b92e9">NDd</reimplementedby>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>tau</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/qdfpamericanengine.cpp" line="136" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1DqFpEquation_1afbe6fa25dc5723bf4fd3991f733feccd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::tuple&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>, <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>, <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> &gt;</type>
+        <definition>virtual std::tuple&lt; Real, Real, Real &gt; QuantLib::DqFpEquation::f</definition>
+        <argsstring>(Real tau, Real b) const =0</argsstring>
+        <name>f</name>
+        <qualifiedname>QuantLib::DqFpEquation::f</qualifiedname>
+        <reimplementedby refid="classQuantLib_1_1DqFpEquation__B_1a403165ab3cfddae499ef05913dee604f">f</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1DqFpEquation__A_1ae419d8accbccea19fb3a5b40b8ec1ca7">f</reimplementedby>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>tau</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/qdfpamericanengine.cpp" line="137" column="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1DqFpEquation_1ac378994e016b5c3fdb00807088be0e19" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual QuantLib::DqFpEquation::~DqFpEquation</definition>
+        <argsstring>()=default</argsstring>
+        <name>~DqFpEquation</name>
+        <qualifiedname>QuantLib::DqFpEquation::~DqFpEquation</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/qdfpamericanengine.cpp" line="139" column="17"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classQuantLib_1_1DqFpEquation_1af6840dd8fc3197ff0adc04be8b560ef4" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::pair&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>, <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> &gt;</type>
+        <definition>std::pair&lt; Real, Real &gt; QuantLib::DqFpEquation::d</definition>
+        <argsstring>(Time t, Real z) const</argsstring>
+        <name>d</name>
+        <qualifiedname>QuantLib::DqFpEquation::d</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/qdfpamericanengine.cpp" line="142" column="19" bodyfile="ql/pricingengines/vanilla/qdfpamericanengine.cpp" bodystart="142" bodyend="147"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>QuantLib::DqFpEquation</label>
+        <link refid="classQuantLib_1_1DqFpEquation"/>
+      </node>
+      <node id="2">
+        <label>QuantLib::DqFpEquation_A</label>
+        <link refid="classQuantLib_1_1DqFpEquation__A"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QuantLib::DqFpEquation_B</label>
+        <link refid="classQuantLib_1_1DqFpEquation__B"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>QuantLib::Array</label>
+        <link refid="classQuantLib_1_1Array"/>
+      </node>
+      <node id="4">
+        <label>QuantLib::CumulativeNormalDistribution</label>
+        <link refid="classQuantLib_1_1CumulativeNormalDistribution"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>gaussian_</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>errorFunction_</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::DqFpEquation</label>
+        <link refid="classQuantLib_1_1DqFpEquation"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>w_i</edgelabel>
+          <edgelabel>x_i</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>phi</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>Phi</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>QuantLib::ErrorFunction</label>
+        <link refid="classQuantLib_1_1ErrorFunction"/>
+      </node>
+      <node id="3">
+        <label>QuantLib::NormalDistribution</label>
+        <link refid="classQuantLib_1_1NormalDistribution"/>
+      </node>
+    </collaborationgraph>
+    <location file="ql/pricingengines/vanilla/qdfpamericanengine.cpp" line="119" column="5" bodyfile="ql/pricingengines/vanilla/qdfpamericanengine.cpp" bodystart="119" bodyend="158"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1DqFpEquation_1a474905e6cbfb5cdf1fe19a4295c5b534" prot="protected" virt="non-virtual"><scope>QuantLib::DqFpEquation</scope><name>B</name></member>
+      <member refid="classQuantLib_1_1DqFpEquation_1af6840dd8fc3197ff0adc04be8b560ef4" prot="protected" virt="non-virtual"><scope>QuantLib::DqFpEquation</scope><name>d</name></member>
+      <member refid="classQuantLib_1_1DqFpEquation_1af41b5114bdf5d0fa4e1e408bdec22498" prot="public" virt="non-virtual"><scope>QuantLib::DqFpEquation</scope><name>DqFpEquation</name></member>
+      <member refid="classQuantLib_1_1DqFpEquation_1afbe6fa25dc5723bf4fd3991f733feccd" prot="public" virt="pure-virtual"><scope>QuantLib::DqFpEquation</scope><name>f</name></member>
+      <member refid="classQuantLib_1_1DqFpEquation_1abc0e4fffdb04a71d6907a10cfb8774d8" prot="protected" virt="non-virtual"><scope>QuantLib::DqFpEquation</scope><name>integrator</name></member>
+      <member refid="classQuantLib_1_1DqFpEquation_1a45522965c9ad5c3093bd9f28a3b7f571" prot="public" virt="pure-virtual"><scope>QuantLib::DqFpEquation</scope><name>NDd</name></member>
+      <member refid="classQuantLib_1_1DqFpEquation_1ac6cfe401186bf1184aea724ac3c065c2" prot="protected" virt="non-virtual"><scope>QuantLib::DqFpEquation</scope><name>phi</name></member>
+      <member refid="classQuantLib_1_1DqFpEquation_1a5952d335702a7e46f310e62f45880aae" prot="protected" virt="non-virtual"><scope>QuantLib::DqFpEquation</scope><name>Phi</name></member>
+      <member refid="classQuantLib_1_1DqFpEquation_1a8af58bc68313cd42b1bc304319d5a51a" prot="protected" virt="non-virtual"><scope>QuantLib::DqFpEquation</scope><name>q</name></member>
+      <member refid="classQuantLib_1_1DqFpEquation_1afdc5c6cf6f76f9d5a3ec8143e7982238" prot="protected" virt="non-virtual"><scope>QuantLib::DqFpEquation</scope><name>r</name></member>
+      <member refid="classQuantLib_1_1DqFpEquation_1a6fcd3d751c6662cb0efa08c07a89a0f5" prot="protected" virt="non-virtual"><scope>QuantLib::DqFpEquation</scope><name>vol</name></member>
+      <member refid="classQuantLib_1_1DqFpEquation_1ada6fc9b1a34c4448d431c8fc14ad211a" prot="protected" virt="non-virtual"><scope>QuantLib::DqFpEquation</scope><name>w_i</name></member>
+      <member refid="classQuantLib_1_1DqFpEquation_1abcc170e4b5783d9703bc4f3a5b0a6668" prot="protected" virt="non-virtual"><scope>QuantLib::DqFpEquation</scope><name>x_i</name></member>
+      <member refid="classQuantLib_1_1DqFpEquation_1ac378994e016b5c3fdb00807088be0e19" prot="public" virt="virtual"><scope>QuantLib::DqFpEquation</scope><name>~DqFpEquation</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

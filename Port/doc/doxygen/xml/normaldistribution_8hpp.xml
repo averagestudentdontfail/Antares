@@ -1,0 +1,458 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="normaldistribution_8hpp" kind="file" language="C++">
+    <compoundname>normaldistribution.hpp</compoundname>
+    <includes refid="errorfunction_8hpp" local="no">ql/math/errorfunction.hpp</includes>
+    <includes refid="errors_8hpp" local="no">ql/errors.hpp</includes>
+    <includedby refid="normaldistribution_8cpp" local="no">ql/math/distributions/normaldistribution.cpp</includedby>
+    <includedby refid="fdmblackscholesmesher_8cpp" local="no">ql/methods/finitedifferences/meshers/fdmblackscholesmesher.cpp</includedby>
+    <includedby refid="blackcalculator_8cpp" local="no">ql/pricingengines/blackcalculator.cpp</includedby>
+    <includedby refid="qdfpamericanengine_8cpp" local="no">ql/pricingengines/vanilla/qdfpamericanengine.cpp</includedby>
+    <includedby refid="qdplusamericanengine_8hpp" local="no">ql/pricingengines/vanilla/qdplusamericanengine.hpp</includedby>
+    <incdepgraph>
+      <node id="7">
+        <label>ql/config.ansi.hpp</label>
+        <link refid="config_8ansi_8hpp"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>ql/errors.hpp</label>
+        <link refid="errors_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ql/math/distributions/normaldistribution.hpp</label>
+        <link refid="normaldistribution_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ql/math/errorfunction.hpp</label>
+        <link refid="errorfunction_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>ql/mathconstants.hpp</label>
+        <link refid="mathconstants_8hpp"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ql/qldefines.hpp</label>
+        <link refid="qldefines_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>ql/shared_ptr.hpp</label>
+        <link refid="shared__ptr_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>ql/types.hpp</label>
+        <link refid="types_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>ql/userconfig.hpp</label>
+        <link refid="userconfig_8hpp"/>
+      </node>
+      <node id="19">
+        <label>boost/assert.hpp</label>
+      </node>
+      <node id="5">
+        <label>boost/config.hpp</label>
+      </node>
+      <node id="20">
+        <label>boost/current_function.hpp</label>
+      </node>
+      <node id="18">
+        <label>boost/enable_shared_from_this.hpp</label>
+      </node>
+      <node id="17">
+        <label>boost/make_shared.hpp</label>
+      </node>
+      <node id="16">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="6">
+        <label>boost/version.hpp</label>
+      </node>
+      <node id="10">
+        <label>cmath</label>
+      </node>
+      <node id="12">
+        <label>cstddef</label>
+      </node>
+      <node id="21">
+        <label>exception</label>
+      </node>
+      <node id="13">
+        <label>functional</label>
+      </node>
+      <node id="11">
+        <label>limits</label>
+      </node>
+      <node id="22">
+        <label>sstream</label>
+      </node>
+      <node id="23">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>ql/math/distributions/normaldistribution.cpp</label>
+        <link refid="normaldistribution_8cpp"/>
+      </node>
+      <node id="1">
+        <label>ql/math/distributions/normaldistribution.hpp</label>
+        <link refid="normaldistribution_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>ql/methods/finitedifferences/meshers/fdmblackscholesmesher.cpp</label>
+        <link refid="fdmblackscholesmesher_8cpp"/>
+      </node>
+      <node id="4">
+        <label>ql/pricingengines/blackcalculator.cpp</label>
+        <link refid="blackcalculator_8cpp"/>
+      </node>
+      <node id="5">
+        <label>ql/pricingengines/vanilla/qdfpamericanengine.cpp</label>
+        <link refid="qdfpamericanengine_8cpp"/>
+      </node>
+      <node id="7">
+        <label>ql/pricingengines/vanilla/qdfpamericanengine.hpp</label>
+        <link refid="qdfpamericanengine_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>ql/pricingengines/vanilla/qdplusamericanengine.cpp</label>
+        <link refid="qdplusamericanengine_8cpp"/>
+      </node>
+      <node id="6">
+        <label>ql/pricingengines/vanilla/qdplusamericanengine.hpp</label>
+        <link refid="qdplusamericanengine_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classQuantLib_1_1NormalDistribution" prot="public">QuantLib::NormalDistribution</innerclass>
+    <innerclass refid="classQuantLib_1_1CumulativeNormalDistribution" prot="public">QuantLib::CumulativeNormalDistribution</innerclass>
+    <innerclass refid="classQuantLib_1_1InverseCumulativeNormal" prot="public">QuantLib::InverseCumulativeNormal</innerclass>
+    <innerclass refid="classQuantLib_1_1MoroInverseCumulativeNormal" prot="public">QuantLib::MoroInverseCumulativeNormal</innerclass>
+    <innerclass refid="classQuantLib_1_1MaddockInverseCumulativeNormal" prot="public">QuantLib::MaddockInverseCumulativeNormal</innerclass>
+    <innerclass refid="classQuantLib_1_1MaddockCumulativeNormal" prot="public">QuantLib::MaddockCumulativeNormal</innerclass>
+    <innernamespace refid="namespaceQuantLib">QuantLib</innernamespace>
+    <briefdescription>
+<para>normal, cumulative and inverse cumulative distributions </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>c++;<sp/>tab-width:<sp/>4;<sp/>indent-tabs-mode:<sp/>nil;<sp/>c-basic-offset:<sp/>4<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2002,<sp/>2003<sp/>Ferdinando<sp/>Ametrano</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2000,<sp/>2001,<sp/>2002,<sp/>2003<sp/>RiskMap<sp/>srl</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2010<sp/>Kakhkhor<sp/>Abdijalilov</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>QuantLib,<sp/>a<sp/>free-software/open-source<sp/>library</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>for<sp/>financial<sp/>quantitative<sp/>analysts<sp/>and<sp/>developers<sp/>-<sp/>http://quantlib.org/</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"></highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>QuantLib<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>QuantLib<sp/>license.<sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>copy<sp/>of<sp/>the<sp/>license<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>please<sp/>email</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>&lt;quantlib-dev@lists.sf.net&gt;.<sp/>The<sp/>license<sp/>is<sp/>also<sp/>available<sp/>online<sp/>at</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>&lt;http://quantlib.org/license.shtml&gt;.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"></highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the<sp/>license<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>quantlib_normal_distribution_hpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>quantlib_normal_distribution_hpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="errorfunction_8hpp" kindref="compound">ql/math/errorfunction.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="errors_8hpp" kindref="compound">ql/errors.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceQuantLib" kindref="compound">QuantLib</ref><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="classQuantLib_1_1NormalDistribution" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classQuantLib_1_1NormalDistribution" kindref="compound">NormalDistribution</ref><sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1NormalDistribution" kindref="compound">NormalDistribution</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>average<sp/>=<sp/>0.0,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>sigma<sp/>=<sp/>1.0);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1NormalDistribution_1ad24c33922b89543594ec477c00f7c2c7" kindref="member">operator()</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1NormalDistribution_1a1dbf8647a391b134d6f428aae7653ecc" kindref="member">derivative</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="52" refid="classQuantLib_1_1NormalDistribution_1a8f513283ac499627864a3267679cb742" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1NormalDistribution_1a8f513283ac499627864a3267679cb742" kindref="member">average_</ref>,<sp/><ref refid="classQuantLib_1_1NormalDistribution_1a8526582db1f460af1412c5e887fb45d7" kindref="member">sigma_</ref>,<sp/><ref refid="classQuantLib_1_1NormalDistribution_1a9cd9743d5e8c231e551feb19385933ee" kindref="member">normalizationFactor_</ref>,<sp/><ref refid="classQuantLib_1_1NormalDistribution_1a577d859382bca2d453e8587d79f472cb" kindref="member">denominator_</ref>,</highlight></codeline>
+<codeline lineno="53" refid="classQuantLib_1_1NormalDistribution_1a2ec1710b4f6d15e70edf55e7cfcfef24" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1NormalDistribution_1a2ec1710b4f6d15e70edf55e7cfcfef24" kindref="member">derNormalizationFactor_</ref>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="namespaceQuantLib_1a06fe4de3ddef540084a4102898ef08dc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1NormalDistribution" kindref="compound">NormalDistribution</ref><sp/><ref refid="namespaceQuantLib_1a06fe4de3ddef540084a4102898ef08dc" kindref="member">GaussianDistribution</ref>;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="classQuantLib_1_1CumulativeNormalDistribution" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classQuantLib_1_1CumulativeNormalDistribution" kindref="compound">CumulativeNormalDistribution</ref><sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1CumulativeNormalDistribution" kindref="compound">CumulativeNormalDistribution</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>average<sp/>=<sp/>0.0,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>sigma<sp/><sp/><sp/>=<sp/>1.0);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1CumulativeNormalDistribution_1aae667074551e83f4ce38b72fc951f669" kindref="member">operator()</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1CumulativeNormalDistribution_1aa17baade8d27fc1212c52415dbe5e9b4" kindref="member">derivative</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="76" refid="classQuantLib_1_1CumulativeNormalDistribution_1a4c1be050448a40440602f7ea440b14c2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1CumulativeNormalDistribution_1a4c1be050448a40440602f7ea440b14c2" kindref="member">average_</ref>,<sp/><ref refid="classQuantLib_1_1CumulativeNormalDistribution_1a3f810a0ada8939b7f50c35b8f75a2fc5" kindref="member">sigma_</ref>;</highlight></codeline>
+<codeline lineno="77" refid="classQuantLib_1_1CumulativeNormalDistribution_1aa23792f1c276e755b7a738374cfefe0a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1NormalDistribution" kindref="compound">NormalDistribution</ref><sp/><ref refid="classQuantLib_1_1CumulativeNormalDistribution_1aa23792f1c276e755b7a738374cfefe0a" kindref="member">gaussian_</ref>;</highlight></codeline>
+<codeline lineno="78" refid="classQuantLib_1_1CumulativeNormalDistribution_1a83262f19294542fccd506e8a34550c26" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1ErrorFunction" kindref="compound">ErrorFunction</ref><sp/><ref refid="classQuantLib_1_1CumulativeNormalDistribution_1a83262f19294542fccd506e8a34550c26" kindref="member">errorFunction_</ref>;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="classQuantLib_1_1InverseCumulativeNormal" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classQuantLib_1_1InverseCumulativeNormal" kindref="compound">InverseCumulativeNormal</ref><sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal" kindref="compound">InverseCumulativeNormal</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>average<sp/>=<sp/>0.0,</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>sigma<sp/><sp/><sp/>=<sp/>1.0);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="classQuantLib_1_1InverseCumulativeNormal_1a9c3a2bee8ba5f3f79f150d8575bfbb3b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1a9c3a2bee8ba5f3f79f150d8575bfbb3b" kindref="member">operator()</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>x)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1a1c8c8e7dc6b5fde673a6168b62896de6" kindref="member">average_</ref><sp/>+<sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1a73108ea505af95262fff6383061349dd" kindref="member">sigma_</ref>*<ref refid="classQuantLib_1_1InverseCumulativeNormal_1a33237133c66f2eabd8d8cfa79b846717" kindref="member">standard_value</ref>(x);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>value<sp/>for<sp/>average=0,<sp/>sigma=1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Compared<sp/>to<sp/>operator(),<sp/>this<sp/>method<sp/>avoids<sp/>2<sp/>floating<sp/>point</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>operations<sp/>(we<sp/>use<sp/>average=0<sp/>and<sp/>sigma=1<sp/>most<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time).<sp/>The<sp/>speed<sp/>difference<sp/>is<sp/>noticeable.</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="classQuantLib_1_1InverseCumulativeNormal_1a33237133c66f2eabd8d8cfa79b846717" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1a33237133c66f2eabd8d8cfa79b846717" kindref="member">standard_value</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>x)<sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>z;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(x<sp/>&lt;<sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1a61ee64d817beca47c71351b7be7768c2" kindref="member">x_low_</ref><sp/>||<sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1a47e84203c3573443b6c3590e3f1a57f7" kindref="member">x_high_</ref><sp/>&lt;<sp/>x)<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z<sp/>=<sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1a64bd700c164b8118e3065f4cea15012e" kindref="member">tail_value</ref>(x);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z<sp/>=<sp/>x<sp/>-<sp/>0.5;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>r<sp/>=<sp/>z*z;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z<sp/>=<sp/>(((((<ref refid="classQuantLib_1_1InverseCumulativeNormal_1aa5c4ca22778db0e32e6e97a6b90bf98b" kindref="member">a1_</ref>*r+<ref refid="classQuantLib_1_1InverseCumulativeNormal_1af4e5464b19312873d10203197b07fc3e" kindref="member">a2_</ref>)*r+<ref refid="classQuantLib_1_1InverseCumulativeNormal_1a136d90b79e00bf885a9ce9739bcf0448" kindref="member">a3_</ref>)*r+<ref refid="classQuantLib_1_1InverseCumulativeNormal_1ab89bf1ad1d8b906276a7c64f89d9c8b7" kindref="member">a4_</ref>)*r+<ref refid="classQuantLib_1_1InverseCumulativeNormal_1a3fb52665bb115e443b8ea80a5ac0c873" kindref="member">a5_</ref>)*r+<ref refid="classQuantLib_1_1InverseCumulativeNormal_1a02ab764faec5ed464aa48c1ec8d52657" kindref="member">a6_</ref>)*z<sp/>/</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(((((<ref refid="classQuantLib_1_1InverseCumulativeNormal_1ae2d35c76061b58607891bfd80973083d" kindref="member">b1_</ref>*r+<ref refid="classQuantLib_1_1InverseCumulativeNormal_1a8767f2e0c9be038a98c9a40114d1d5fa" kindref="member">b2_</ref>)*r+<ref refid="classQuantLib_1_1InverseCumulativeNormal_1ae66af0fbad41177c67e5108057791b1d" kindref="member">b3_</ref>)*r+<ref refid="classQuantLib_1_1InverseCumulativeNormal_1a5753bdcd9e9e70c457723a5cf4f05666" kindref="member">b4_</ref>)*r+<ref refid="classQuantLib_1_1InverseCumulativeNormal_1af362842e0460ca6607f0c7cad4ea83be" kindref="member">b5_</ref>)*r+1.0);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>relative<sp/>error<sp/>of<sp/>the<sp/>approximation<sp/>has<sp/>absolute<sp/>value<sp/>less</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>than<sp/>1.15e-9.<sp/><sp/>One<sp/>iteration<sp/>of<sp/>Halley&apos;s<sp/>rational<sp/>method<sp/>(third</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>order)<sp/>gives<sp/>full<sp/>machine<sp/>precision.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>#define<sp/>REFINE_TO_FULL_MACHINE_PRECISION_USING_HALLEYS_METHOD</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#ifdef<sp/>REFINE_TO_FULL_MACHINE_PRECISION_USING_HALLEYS_METHOD</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>error<sp/>(f_(z)<sp/>-<sp/>x)<sp/>divided<sp/>by<sp/>the<sp/>cumulative&apos;s<sp/>derivative</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>r<sp/>=<sp/>(<ref refid="classQuantLib_1_1InverseCumulativeNormal_1a273b5c80ff8c7bbdab08456d7a57b7a1" kindref="member">f_</ref>(z)<sp/>-<sp/>x)<sp/>*<sp/><ref refid="mathconstants_8hpp_1a66b3ab30f1332874326ed93969e496e0" kindref="member">M_SQRT2</ref><sp/>*<sp/><ref refid="mathconstants_8hpp_1a038b1a0fa919904840281cdab8e09211" kindref="member">M_SQRTPI</ref><sp/>*<sp/>exp(0.5<sp/>*<sp/>z*z);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>Halley&apos;s<sp/>method</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>z<sp/>-=<sp/>r/(1+0.5*z*r);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>z;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Handling<sp/>tails<sp/>moved<sp/>into<sp/>a<sp/>separate<sp/>method,<sp/>which<sp/>should</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>make<sp/>the<sp/>inlining<sp/>of<sp/>operator()<sp/>and<sp/>standard_value<sp/>method</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>easier.<sp/>tail_value<sp/>is<sp/>called<sp/>rarely<sp/>and<sp/>doesn&apos;t<sp/>need<sp/>to<sp/>be</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inlined.</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1a64bd700c164b8118e3065f4cea15012e" kindref="member">tail_value</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>x);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#if<sp/>defined(QL_PATCH_SOLARIS)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1CumulativeNormalDistribution" kindref="compound">CumulativeNormalDistribution</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1a273b5c80ff8c7bbdab08456d7a57b7a1" kindref="member">f_</ref>;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147" refid="classQuantLib_1_1InverseCumulativeNormal_1a273b5c80ff8c7bbdab08456d7a57b7a1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1CumulativeNormalDistribution" kindref="compound">CumulativeNormalDistribution</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1a273b5c80ff8c7bbdab08456d7a57b7a1" kindref="member">f_</ref>;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="classQuantLib_1_1InverseCumulativeNormal_1a1c8c8e7dc6b5fde673a6168b62896de6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1a1c8c8e7dc6b5fde673a6168b62896de6" kindref="member">average_</ref>,<sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1a73108ea505af95262fff6383061349dd" kindref="member">sigma_</ref>;</highlight></codeline>
+<codeline lineno="150" refid="classQuantLib_1_1InverseCumulativeNormal_1aa5c4ca22778db0e32e6e97a6b90bf98b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1aa5c4ca22778db0e32e6e97a6b90bf98b" kindref="member">a1_</ref>;</highlight></codeline>
+<codeline lineno="151" refid="classQuantLib_1_1InverseCumulativeNormal_1af4e5464b19312873d10203197b07fc3e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1af4e5464b19312873d10203197b07fc3e" kindref="member">a2_</ref>;</highlight></codeline>
+<codeline lineno="152" refid="classQuantLib_1_1InverseCumulativeNormal_1a136d90b79e00bf885a9ce9739bcf0448" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1a136d90b79e00bf885a9ce9739bcf0448" kindref="member">a3_</ref>;</highlight></codeline>
+<codeline lineno="153" refid="classQuantLib_1_1InverseCumulativeNormal_1ab89bf1ad1d8b906276a7c64f89d9c8b7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1ab89bf1ad1d8b906276a7c64f89d9c8b7" kindref="member">a4_</ref>;</highlight></codeline>
+<codeline lineno="154" refid="classQuantLib_1_1InverseCumulativeNormal_1a3fb52665bb115e443b8ea80a5ac0c873" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1a3fb52665bb115e443b8ea80a5ac0c873" kindref="member">a5_</ref>;</highlight></codeline>
+<codeline lineno="155" refid="classQuantLib_1_1InverseCumulativeNormal_1a02ab764faec5ed464aa48c1ec8d52657" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1a02ab764faec5ed464aa48c1ec8d52657" kindref="member">a6_</ref>;</highlight></codeline>
+<codeline lineno="156" refid="classQuantLib_1_1InverseCumulativeNormal_1ae2d35c76061b58607891bfd80973083d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1ae2d35c76061b58607891bfd80973083d" kindref="member">b1_</ref>;</highlight></codeline>
+<codeline lineno="157" refid="classQuantLib_1_1InverseCumulativeNormal_1a8767f2e0c9be038a98c9a40114d1d5fa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1a8767f2e0c9be038a98c9a40114d1d5fa" kindref="member">b2_</ref>;</highlight></codeline>
+<codeline lineno="158" refid="classQuantLib_1_1InverseCumulativeNormal_1ae66af0fbad41177c67e5108057791b1d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1ae66af0fbad41177c67e5108057791b1d" kindref="member">b3_</ref>;</highlight></codeline>
+<codeline lineno="159" refid="classQuantLib_1_1InverseCumulativeNormal_1a5753bdcd9e9e70c457723a5cf4f05666" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1a5753bdcd9e9e70c457723a5cf4f05666" kindref="member">b4_</ref>;</highlight></codeline>
+<codeline lineno="160" refid="classQuantLib_1_1InverseCumulativeNormal_1af362842e0460ca6607f0c7cad4ea83be" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1af362842e0460ca6607f0c7cad4ea83be" kindref="member">b5_</ref>;</highlight></codeline>
+<codeline lineno="161" refid="classQuantLib_1_1InverseCumulativeNormal_1aa4cbd357aaf811fdb78eaa098c6f9e7b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1aa4cbd357aaf811fdb78eaa098c6f9e7b" kindref="member">c1_</ref>;</highlight></codeline>
+<codeline lineno="162" refid="classQuantLib_1_1InverseCumulativeNormal_1af789cb42b3e6e28f9dcd6b3201981454" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1af789cb42b3e6e28f9dcd6b3201981454" kindref="member">c2_</ref>;</highlight></codeline>
+<codeline lineno="163" refid="classQuantLib_1_1InverseCumulativeNormal_1a018fcd769e23e8e8627cf25ce544933a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1a018fcd769e23e8e8627cf25ce544933a" kindref="member">c3_</ref>;</highlight></codeline>
+<codeline lineno="164" refid="classQuantLib_1_1InverseCumulativeNormal_1ac500307167dc71b20cfd3862e79a3301" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1ac500307167dc71b20cfd3862e79a3301" kindref="member">c4_</ref>;</highlight></codeline>
+<codeline lineno="165" refid="classQuantLib_1_1InverseCumulativeNormal_1a02d6354eb094b4ba2e32062362bf4a5b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1a02d6354eb094b4ba2e32062362bf4a5b" kindref="member">c5_</ref>;</highlight></codeline>
+<codeline lineno="166" refid="classQuantLib_1_1InverseCumulativeNormal_1a357214481943e298736dfc04c3ae3c6e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1a357214481943e298736dfc04c3ae3c6e" kindref="member">c6_</ref>;</highlight></codeline>
+<codeline lineno="167" refid="classQuantLib_1_1InverseCumulativeNormal_1af80c0deaa1f468c73560b4aa6a36028c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1af80c0deaa1f468c73560b4aa6a36028c" kindref="member">d1_</ref>;</highlight></codeline>
+<codeline lineno="168" refid="classQuantLib_1_1InverseCumulativeNormal_1a6a36a1cab33dcf47411fd98e8baeb613" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1a6a36a1cab33dcf47411fd98e8baeb613" kindref="member">d2_</ref>;</highlight></codeline>
+<codeline lineno="169" refid="classQuantLib_1_1InverseCumulativeNormal_1ae7a74b687cfcba8f9255f63fadace84f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1ae7a74b687cfcba8f9255f63fadace84f" kindref="member">d3_</ref>;</highlight></codeline>
+<codeline lineno="170" refid="classQuantLib_1_1InverseCumulativeNormal_1a23341b94e4f648f904416ce7c84fe1c2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1a23341b94e4f648f904416ce7c84fe1c2" kindref="member">d4_</ref>;</highlight></codeline>
+<codeline lineno="171" refid="classQuantLib_1_1InverseCumulativeNormal_1a61ee64d817beca47c71351b7be7768c2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1a61ee64d817beca47c71351b7be7768c2" kindref="member">x_low_</ref>;</highlight></codeline>
+<codeline lineno="172" refid="classQuantLib_1_1InverseCumulativeNormal_1a47e84203c3573443b6c3590e3f1a57f7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1a47e84203c3573443b6c3590e3f1a57f7" kindref="member">x_high_</ref>;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>backward<sp/>compatibility</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176" refid="namespaceQuantLib_1aa9e247bbdf728a8239a22b609bef9491" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal" kindref="compound">InverseCumulativeNormal</ref><sp/><ref refid="namespaceQuantLib_1aa9e247bbdf728a8239a22b609bef9491" kindref="member">InvCumulativeNormalDistribution</ref>;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198" refid="classQuantLib_1_1MoroInverseCumulativeNormal" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classQuantLib_1_1MoroInverseCumulativeNormal" kindref="compound">MoroInverseCumulativeNormal</ref><sp/>{</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1MoroInverseCumulativeNormal" kindref="compound">MoroInverseCumulativeNormal</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>average<sp/>=<sp/>0.0,</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>sigma<sp/><sp/><sp/>=<sp/>1.0);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a005a787de0b504994868d77e1b351e44" kindref="member">operator()</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="205" refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a0e65c14d48c3cd81d1adc9f1f8b7b388" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a0e65c14d48c3cd81d1adc9f1f8b7b388" kindref="member">average_</ref>,<sp/><ref refid="classQuantLib_1_1MoroInverseCumulativeNormal_1ac91e7039d4519df476648abc61e40d86" kindref="member">sigma_</ref>;</highlight></codeline>
+<codeline lineno="206" refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a83a9845ffb7adfd7a6713bc44c4ec393" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a83a9845ffb7adfd7a6713bc44c4ec393" kindref="member">a0_</ref>;</highlight></codeline>
+<codeline lineno="207" refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a57a8feefa32ea9b266528a611f9bc4ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a57a8feefa32ea9b266528a611f9bc4ce" kindref="member">a1_</ref>;</highlight></codeline>
+<codeline lineno="208" refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a339d7ce411f63ae235fd901cd62ab0f7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a339d7ce411f63ae235fd901cd62ab0f7" kindref="member">a2_</ref>;</highlight></codeline>
+<codeline lineno="209" refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a87f240233a914a16c60fc698f5daaabe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a87f240233a914a16c60fc698f5daaabe" kindref="member">a3_</ref>;</highlight></codeline>
+<codeline lineno="210" refid="classQuantLib_1_1MoroInverseCumulativeNormal_1aac5ced0832c62e61a39bc2f591e2abd2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1MoroInverseCumulativeNormal_1aac5ced0832c62e61a39bc2f591e2abd2" kindref="member">b0_</ref>;</highlight></codeline>
+<codeline lineno="211" refid="classQuantLib_1_1MoroInverseCumulativeNormal_1af969e52c031137cf0e786b3d68b751c4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1MoroInverseCumulativeNormal_1af969e52c031137cf0e786b3d68b751c4" kindref="member">b1_</ref>;</highlight></codeline>
+<codeline lineno="212" refid="classQuantLib_1_1MoroInverseCumulativeNormal_1ae967922723d27ea2a87e2996dba82405" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1MoroInverseCumulativeNormal_1ae967922723d27ea2a87e2996dba82405" kindref="member">b2_</ref>;</highlight></codeline>
+<codeline lineno="213" refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a4676efaf297abff0d886ffd54d3f3003" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a4676efaf297abff0d886ffd54d3f3003" kindref="member">b3_</ref>;</highlight></codeline>
+<codeline lineno="214" refid="classQuantLib_1_1MoroInverseCumulativeNormal_1aa1c42055a3705d1b98422339a08a0244" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1MoroInverseCumulativeNormal_1aa1c42055a3705d1b98422339a08a0244" kindref="member">c0_</ref>;</highlight></codeline>
+<codeline lineno="215" refid="classQuantLib_1_1MoroInverseCumulativeNormal_1aceca3b9b51498d6396531eb2fd9fa8ea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1MoroInverseCumulativeNormal_1aceca3b9b51498d6396531eb2fd9fa8ea" kindref="member">c1_</ref>;</highlight></codeline>
+<codeline lineno="216" refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a74c8cb392c26d746db8fa8d6bfa4da2b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a74c8cb392c26d746db8fa8d6bfa4da2b" kindref="member">c2_</ref>;</highlight></codeline>
+<codeline lineno="217" refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a8e9579ae73e0e37c18797ee6f826f730" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a8e9579ae73e0e37c18797ee6f826f730" kindref="member">c3_</ref>;</highlight></codeline>
+<codeline lineno="218" refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a74ed2c14dde4eac29097cc3018b52096" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a74ed2c14dde4eac29097cc3018b52096" kindref="member">c4_</ref>;</highlight></codeline>
+<codeline lineno="219" refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a1e73ffb6d1a5aa0d6e4b7ffbea24b8f2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a1e73ffb6d1a5aa0d6e4b7ffbea24b8f2" kindref="member">c5_</ref>;</highlight></codeline>
+<codeline lineno="220" refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a601e731aea6cbf909687eef4a991f824" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a601e731aea6cbf909687eef4a991f824" kindref="member">c6_</ref>;</highlight></codeline>
+<codeline lineno="221" refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a46bd54898892fbeab169a06cfd23853c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a46bd54898892fbeab169a06cfd23853c" kindref="member">c7_</ref>;</highlight></codeline>
+<codeline lineno="222" refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a3c2ac255e47ccec13bf5f407937e6dbd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a3c2ac255e47ccec13bf5f407937e6dbd" kindref="member">c8_</ref>;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238" refid="classQuantLib_1_1MaddockInverseCumulativeNormal" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classQuantLib_1_1MaddockInverseCumulativeNormal" kindref="compound">MaddockInverseCumulativeNormal</ref><sp/>{</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1MaddockInverseCumulativeNormal" kindref="compound">MaddockInverseCumulativeNormal</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>average<sp/>=<sp/>0.0,</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>sigma<sp/><sp/><sp/>=<sp/>1.0);</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1MaddockInverseCumulativeNormal_1a3b0b17049e3532fbb2eb5e6f781b40eb" kindref="member">operator()</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="245" refid="classQuantLib_1_1MaddockInverseCumulativeNormal_1a3cf5adf77f61b19bd61ada704e94048f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1MaddockInverseCumulativeNormal_1a3cf5adf77f61b19bd61ada704e94048f" kindref="member">average_</ref>,<sp/><ref refid="classQuantLib_1_1MaddockInverseCumulativeNormal_1a42b2a3ac362f95a9e414c7aa049f2975" kindref="member">sigma_</ref>;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249" refid="classQuantLib_1_1MaddockCumulativeNormal" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classQuantLib_1_1MaddockCumulativeNormal" kindref="compound">MaddockCumulativeNormal</ref><sp/>{</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1MaddockCumulativeNormal" kindref="compound">MaddockCumulativeNormal</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>average<sp/>=<sp/>0.0,</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>sigma<sp/><sp/><sp/>=<sp/>1.0);</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1MaddockCumulativeNormal_1a2f22f2d238636ae5e197c9ac4ba8fd64" kindref="member">operator()</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="256" refid="classQuantLib_1_1MaddockCumulativeNormal_1acc93a535c5a6632a3d4c8803644f3a7d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1MaddockCumulativeNormal_1acc93a535c5a6632a3d4c8803644f3a7d" kindref="member">average_</ref>,<sp/><ref refid="classQuantLib_1_1MaddockCumulativeNormal_1a6c3c6177eab30ae0ce90a349b4d5d73d" kindref="member">sigma_</ref>;</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>inline<sp/>definitions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262" refid="classQuantLib_1_1NormalDistribution_1adf5a960e30951a0911ef58c4d86ab4a3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1NormalDistribution_1adf5a960e30951a0911ef58c4d86ab4a3" kindref="member">NormalDistribution::NormalDistribution</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>average,</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>sigma)</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>average_(average),<sp/>sigma_(sigma)<sp/>{</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(<ref refid="classQuantLib_1_1NormalDistribution_1a8526582db1f460af1412c5e887fb45d7" kindref="member">sigma_</ref>&gt;0.0,</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;sigma<sp/>must<sp/>be<sp/>greater<sp/>than<sp/>0.0<sp/>(&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/><ref refid="classQuantLib_1_1NormalDistribution_1a8526582db1f460af1412c5e887fb45d7" kindref="member">sigma_</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>not<sp/>allowed)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1NormalDistribution_1a9cd9743d5e8c231e551feb19385933ee" kindref="member">normalizationFactor_</ref><sp/>=<sp/><ref refid="mathconstants_8hpp_1a54bca7e66258614c65e873a2fce393ac" kindref="member">M_SQRT_2</ref>*<ref refid="mathconstants_8hpp_1ab4c9368417bf8d2db0dd182facfbf86c" kindref="member">M_1_SQRTPI</ref>/<ref refid="classQuantLib_1_1NormalDistribution_1a8526582db1f460af1412c5e887fb45d7" kindref="member">sigma_</ref>;</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1NormalDistribution_1a2ec1710b4f6d15e70edf55e7cfcfef24" kindref="member">derNormalizationFactor_</ref><sp/>=<sp/><ref refid="classQuantLib_1_1NormalDistribution_1a8526582db1f460af1412c5e887fb45d7" kindref="member">sigma_</ref>*<ref refid="classQuantLib_1_1NormalDistribution_1a8526582db1f460af1412c5e887fb45d7" kindref="member">sigma_</ref>;</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1NormalDistribution_1a577d859382bca2d453e8587d79f472cb" kindref="member">denominator_</ref><sp/>=<sp/>2.0*<ref refid="classQuantLib_1_1NormalDistribution_1a2ec1710b4f6d15e70edf55e7cfcfef24" kindref="member">derNormalizationFactor_</ref>;</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275" refid="classQuantLib_1_1NormalDistribution_1ad24c33922b89543594ec477c00f7c2c7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1NormalDistribution_1ad24c33922b89543594ec477c00f7c2c7" kindref="member">NormalDistribution::operator()</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>x)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>deltax<sp/>=<sp/>x-<ref refid="classQuantLib_1_1NormalDistribution_1a8f513283ac499627864a3267679cb742" kindref="member">average_</ref>;</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>exponent<sp/>=<sp/>-(deltax*deltax)/<ref refid="classQuantLib_1_1NormalDistribution_1a577d859382bca2d453e8587d79f472cb" kindref="member">denominator_</ref>;</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>debian<sp/>alpha<sp/>had<sp/>some<sp/>strange<sp/>problem<sp/>in<sp/>the<sp/>very-low<sp/>range</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>exponent<sp/>&lt;=<sp/>-690.0<sp/>?<sp/>0.0<sp/>:<sp/><sp/></highlight><highlight class="comment">//<sp/>exp(x)<sp/>&lt;<sp/>1.0e-300<sp/>anyway</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>(<ref refid="classQuantLib_1_1NormalDistribution_1a9cd9743d5e8c231e551feb19385933ee" kindref="member">normalizationFactor_</ref>*std::exp(exponent));</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283" refid="classQuantLib_1_1NormalDistribution_1a1dbf8647a391b134d6f428aae7653ecc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1NormalDistribution_1a1dbf8647a391b134d6f428aae7653ecc" kindref="member">NormalDistribution::derivative</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>x)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((*</highlight><highlight class="keyword">this</highlight><highlight class="normal">)(x)<sp/>*<sp/>(<ref refid="classQuantLib_1_1NormalDistribution_1a8f513283ac499627864a3267679cb742" kindref="member">average_</ref><sp/>-<sp/>x))<sp/>/<sp/><ref refid="classQuantLib_1_1NormalDistribution_1a2ec1710b4f6d15e70edf55e7cfcfef24" kindref="member">derNormalizationFactor_</ref>;</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight></codeline>
+<codeline lineno="287" refid="classQuantLib_1_1CumulativeNormalDistribution_1a62909f9485d7a860e350d6cba731b240" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1CumulativeNormalDistribution_1a62909f9485d7a860e350d6cba731b240" kindref="member">CumulativeNormalDistribution::CumulativeNormalDistribution</ref>(</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>average,<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>sigma)</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>average_(average),<sp/>sigma_(sigma)<sp/>{</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(<ref refid="classQuantLib_1_1CumulativeNormalDistribution_1a3f810a0ada8939b7f50c35b8f75a2fc5" kindref="member">sigma_</ref>&gt;0.0,</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;sigma<sp/>must<sp/>be<sp/>greater<sp/>than<sp/>0.0<sp/>(&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/><ref refid="classQuantLib_1_1CumulativeNormalDistribution_1a3f810a0ada8939b7f50c35b8f75a2fc5" kindref="member">sigma_</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>not<sp/>allowed)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296" refid="classQuantLib_1_1CumulativeNormalDistribution_1aa17baade8d27fc1212c52415dbe5e9b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1CumulativeNormalDistribution_1aa17baade8d27fc1212c52415dbe5e9b4" kindref="member">CumulativeNormalDistribution::derivative</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>x)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>xn<sp/>=<sp/>(x<sp/>-<sp/><ref refid="classQuantLib_1_1CumulativeNormalDistribution_1a4c1be050448a40440602f7ea440b14c2" kindref="member">average_</ref>)<sp/>/<sp/><ref refid="classQuantLib_1_1CumulativeNormalDistribution_1a3f810a0ada8939b7f50c35b8f75a2fc5" kindref="member">sigma_</ref>;</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1CumulativeNormalDistribution_1aa23792f1c276e755b7a738374cfefe0a" kindref="member">gaussian_</ref>(xn)<sp/>/<sp/><ref refid="classQuantLib_1_1CumulativeNormalDistribution_1a3f810a0ada8939b7f50c35b8f75a2fc5" kindref="member">sigma_</ref>;</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="301" refid="classQuantLib_1_1InverseCumulativeNormal_1a6ba59313bfd692ad53cc5a75179c7292" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1a6ba59313bfd692ad53cc5a75179c7292" kindref="member">InverseCumulativeNormal::InverseCumulativeNormal</ref>(</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>average,<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>sigma)</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>average_(average),<sp/>sigma_(sigma)<sp/>{</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(<ref refid="classQuantLib_1_1InverseCumulativeNormal_1a73108ea505af95262fff6383061349dd" kindref="member">sigma_</ref>&gt;0.0,</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;sigma<sp/>must<sp/>be<sp/>greater<sp/>than<sp/>0.0<sp/>(&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/><ref refid="classQuantLib_1_1InverseCumulativeNormal_1a73108ea505af95262fff6383061349dd" kindref="member">sigma_</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>not<sp/>allowed)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight></codeline>
+<codeline lineno="310" refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a8c986257e9ebefaee6c99ddb5ddb109c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1MoroInverseCumulativeNormal_1a8c986257e9ebefaee6c99ddb5ddb109c" kindref="member">MoroInverseCumulativeNormal::MoroInverseCumulativeNormal</ref>(</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>average,<sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>sigma)</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>average_(average),<sp/>sigma_(sigma)<sp/>{</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(<ref refid="classQuantLib_1_1MoroInverseCumulativeNormal_1ac91e7039d4519df476648abc61e40d86" kindref="member">sigma_</ref>&gt;0.0,</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;sigma<sp/>must<sp/>be<sp/>greater<sp/>than<sp/>0.0<sp/>(&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/><ref refid="classQuantLib_1_1MoroInverseCumulativeNormal_1ac91e7039d4519df476648abc61e40d86" kindref="member">sigma_</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>not<sp/>allowed)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="ql/math/distributions/normaldistribution.hpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1Actual365Fixed_1_1CA__Impl" kind="class" language="C++" prot="private" final="yes">
+    <compoundname>QuantLib::Actual365Fixed::CA_Impl</compoundname>
+    <basecompoundref refid="classQuantLib_1_1DayCounter_1_1Impl" prot="public" virt="non-virtual">QuantLib::DayCounter::Impl</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1Actual365Fixed_1_1CA__Impl_1a86460153744e45f8ba11c2034761a59c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string QuantLib::Actual365Fixed::CA_Impl::name</definition>
+        <argsstring>() const override</argsstring>
+        <name>name</name>
+        <qualifiedname>QuantLib::Actual365Fixed::CA_Impl::name</qualifiedname>
+        <reimplements refid="classQuantLib_1_1DayCounter_1_1Impl_1ad9af2d93e4958ece45a4baaf65bd6238">name</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/daycounters/actual365fixed.hpp" line="62" column="25" bodyfile="ql/time/daycounters/actual365fixed.hpp" bodystart="62" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Actual365Fixed_1_1CA__Impl_1afa573d50d8508ee2d7b37ea2607de43d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+        <definition>Time QuantLib::Actual365Fixed::CA_Impl::yearFraction</definition>
+        <argsstring>(const Date &amp;d1, const Date &amp;d2, const Date &amp;refPeriodStart, const Date &amp;refPeriodEnd) const override</argsstring>
+        <name>yearFraction</name>
+        <qualifiedname>QuantLib::Actual365Fixed::CA_Impl::yearFraction</qualifiedname>
+        <reimplements refid="classQuantLib_1_1DayCounter_1_1Impl_1abda9f7752adf4175b68d22b0ef700695">yearFraction</reimplements>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+          <declname>d1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+          <declname>d2</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+          <declname>refPeriodStart</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+          <declname>refPeriodEnd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/daycounters/actual365fixed.hpp" line="65" column="18" bodyfile="ql/time/daycounters/actual365fixed.cpp" bodystart="40" bodyend="67"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>QuantLib::Actual365Fixed::CA_Impl</label>
+        <link refid="classQuantLib_1_1Actual365Fixed_1_1CA__Impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::DayCounter::Impl</label>
+        <link refid="classQuantLib_1_1DayCounter_1_1Impl"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>QuantLib::Actual365Fixed::CA_Impl</label>
+        <link refid="classQuantLib_1_1Actual365Fixed_1_1CA__Impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::DayCounter::Impl</label>
+        <link refid="classQuantLib_1_1DayCounter_1_1Impl"/>
+      </node>
+    </collaborationgraph>
+    <location file="ql/time/daycounters/actual365fixed.hpp" line="60" column="9" bodyfile="ql/time/daycounters/actual365fixed.hpp" bodystart="60" bodyend="69"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1DayCounter_1_1Impl_1aa2c5874246720f350c7005b0ea6550e7" prot="public" virt="virtual"><scope>QuantLib::Actual365Fixed::CA_Impl</scope><name>dayCount</name></member>
+      <member refid="classQuantLib_1_1Actual365Fixed_1_1CA__Impl_1a86460153744e45f8ba11c2034761a59c" prot="public" virt="virtual"><scope>QuantLib::Actual365Fixed::CA_Impl</scope><name>name</name></member>
+      <member refid="classQuantLib_1_1Actual365Fixed_1_1CA__Impl_1afa573d50d8508ee2d7b37ea2607de43d" prot="public" virt="virtual"><scope>QuantLib::Actual365Fixed::CA_Impl</scope><name>yearFraction</name></member>
+      <member refid="classQuantLib_1_1DayCounter_1_1Impl_1a03ea32e7af36fa3235163e21fa8c1b03" prot="public" virt="virtual"><scope>QuantLib::Actual365Fixed::CA_Impl</scope><name>~Impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

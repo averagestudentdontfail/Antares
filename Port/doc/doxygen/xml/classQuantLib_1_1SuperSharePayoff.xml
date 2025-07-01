@@ -1,0 +1,238 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1SuperSharePayoff" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::SuperSharePayoff</compoundname>
+    <basecompoundref refid="classQuantLib_1_1StrikedTypePayoff" prot="public" virt="non-virtual">QuantLib::StrikedTypePayoff</basecompoundref>
+    <includes refid="payoffs_8hpp" local="no">payoffs.hpp</includes>
+    <sectiondef kind="user-defined">
+      <header>Payoff interface</header>
+      <memberdef kind="variable" id="classQuantLib_1_1SuperSharePayoff_1af6e68ebb2adc94d601ff17bc2bfeae03" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::SuperSharePayoff::secondStrike_</definition>
+        <argsstring></argsstring>
+        <name>secondStrike_</name>
+        <qualifiedname>QuantLib::SuperSharePayoff::secondStrike_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/payoffs.hpp" line="254" column="14" bodyfile="ql/instruments/payoffs.hpp" bodystart="254" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1SuperSharePayoff_1a61721ea24d966e472cd0c1e98da1e3fd" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::SuperSharePayoff::cashPayoff_</definition>
+        <argsstring></argsstring>
+        <name>cashPayoff_</name>
+        <qualifiedname>QuantLib::SuperSharePayoff::cashPayoff_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/payoffs.hpp" line="255" column="14" bodyfile="ql/instruments/payoffs.hpp" bodystart="255" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1SuperSharePayoff_1adb6160d39bb140fbc00236a5eb58e94f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string QuantLib::SuperSharePayoff::name</definition>
+        <argsstring>() const override</argsstring>
+        <name>name</name>
+        <qualifiedname>QuantLib::SuperSharePayoff::name</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Payoff_1aceb029d314fb74ab5797d7bc7752d0c8">name</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="warning"><para>This method is used for output and comparison between payoffs. It is <bold>not</bold> meant to be used for writing switch-on-type code. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/payoffs.hpp" line="246" column="21" bodyfile="ql/instruments/payoffs.hpp" bodystart="246" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1SuperSharePayoff_1aae875387cb91dcd8ded8c521461f2180" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string QuantLib::SuperSharePayoff::description</definition>
+        <argsstring>() const override</argsstring>
+        <name>description</name>
+        <qualifiedname>QuantLib::SuperSharePayoff::description</qualifiedname>
+        <reimplements refid="classQuantLib_1_1StrikedTypePayoff_1a947973d3f9750cd112178fa0d8bd6fef">description</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/payoffs.hpp" line="247" column="21" bodyfile="ql/instruments/payoffs.cpp" bodystart="208" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1SuperSharePayoff_1afc6d6becb81868aaf6a996954a950cf3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::SuperSharePayoff::operator()</definition>
+        <argsstring>(Real price) const override</argsstring>
+        <name>operator()</name>
+        <qualifiedname>QuantLib::SuperSharePayoff::operator()</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Payoff_1a1b10d7224a8089b21a56eb1fa0562c37">operator()</reimplements>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>price</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/payoffs.hpp" line="248" column="14" bodyfile="ql/instruments/payoffs.cpp" bodystart="214" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1SuperSharePayoff_1a8ced9416331b3f20a69bbb32a9b02a21" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QuantLib::SuperSharePayoff::accept</definition>
+        <argsstring>(AcyclicVisitor &amp;) override</argsstring>
+        <name>accept</name>
+        <qualifiedname>QuantLib::SuperSharePayoff::accept</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Payoff_1ac2902d1c8e84743671f759180fbff190">accept</reimplements>
+        <param>
+          <type><ref refid="classQuantLib_1_1AcyclicVisitor" kindref="compound">AcyclicVisitor</ref> &amp;</type>
+          <defname>v</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/payoffs.hpp" line="249" column="14" bodyfile="ql/instruments/payoffs.cpp" bodystart="218" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1SuperSharePayoff_1a9760f0e9f8b9052f8f1336bebe1c7479" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::SuperSharePayoff::secondStrike</definition>
+        <argsstring>() const</argsstring>
+        <name>secondStrike</name>
+        <qualifiedname>QuantLib::SuperSharePayoff::secondStrike</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/payoffs.hpp" line="251" column="14" bodyfile="ql/instruments/payoffs.hpp" bodystart="251" bodyend="251"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1SuperSharePayoff_1a65a5e104bb77c94e1213a99279edbbd6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::SuperSharePayoff::cashPayoff</definition>
+        <argsstring>() const</argsstring>
+        <name>cashPayoff</name>
+        <qualifiedname>QuantLib::SuperSharePayoff::cashPayoff</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/payoffs.hpp" line="252" column="14" bodyfile="ql/instruments/payoffs.hpp" bodystart="252" bodyend="252"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1SuperSharePayoff_1afcfeba6de950adaed55d23c42d948032" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::SuperSharePayoff::SuperSharePayoff</definition>
+        <argsstring>(Real strike, Real secondStrike, Real cashPayoff)</argsstring>
+        <name>SuperSharePayoff</name>
+        <qualifiedname>QuantLib::SuperSharePayoff::SuperSharePayoff</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>strike</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>secondStrike</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>cashPayoff</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/payoffs.hpp" line="234" column="9" bodyfile="ql/instruments/payoffs.hpp" bodystart="234" bodyend="242"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Binary supershare payoff. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>QuantLib::Payoff</label>
+        <link refid="classQuantLib_1_1Payoff"/>
+      </node>
+      <node id="2">
+        <label>QuantLib::StrikedTypePayoff</label>
+        <link refid="classQuantLib_1_1StrikedTypePayoff"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::SuperSharePayoff</label>
+        <link refid="classQuantLib_1_1SuperSharePayoff"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QuantLib::TypePayoff</label>
+        <link refid="classQuantLib_1_1TypePayoff"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4">
+        <label>QuantLib::Payoff</label>
+        <link refid="classQuantLib_1_1Payoff"/>
+      </node>
+      <node id="2">
+        <label>QuantLib::StrikedTypePayoff</label>
+        <link refid="classQuantLib_1_1StrikedTypePayoff"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::SuperSharePayoff</label>
+        <link refid="classQuantLib_1_1SuperSharePayoff"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QuantLib::TypePayoff</label>
+        <link refid="classQuantLib_1_1TypePayoff"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/instruments/payoffs.hpp" line="232" column="5" bodyfile="ql/instruments/payoffs.hpp" bodystart="232" bodyend="256"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1SuperSharePayoff_1a8ced9416331b3f20a69bbb32a9b02a21" prot="public" virt="virtual"><scope>QuantLib::SuperSharePayoff</scope><name>accept</name></member>
+      <member refid="classQuantLib_1_1SuperSharePayoff_1a65a5e104bb77c94e1213a99279edbbd6" prot="public" virt="non-virtual"><scope>QuantLib::SuperSharePayoff</scope><name>cashPayoff</name></member>
+      <member refid="classQuantLib_1_1SuperSharePayoff_1a61721ea24d966e472cd0c1e98da1e3fd" prot="protected" virt="non-virtual"><scope>QuantLib::SuperSharePayoff</scope><name>cashPayoff_</name></member>
+      <member refid="classQuantLib_1_1SuperSharePayoff_1aae875387cb91dcd8ded8c521461f2180" prot="public" virt="virtual"><scope>QuantLib::SuperSharePayoff</scope><name>description</name></member>
+      <member refid="classQuantLib_1_1SuperSharePayoff_1adb6160d39bb140fbc00236a5eb58e94f" prot="public" virt="virtual"><scope>QuantLib::SuperSharePayoff</scope><name>name</name></member>
+      <member refid="classQuantLib_1_1SuperSharePayoff_1afc6d6becb81868aaf6a996954a950cf3" prot="public" virt="virtual"><scope>QuantLib::SuperSharePayoff</scope><name>operator()</name></member>
+      <member refid="classQuantLib_1_1TypePayoff_1a65d88064f1dd8a1d832061dbfc604812" prot="public" virt="non-virtual"><scope>QuantLib::SuperSharePayoff</scope><name>optionType</name></member>
+      <member refid="classQuantLib_1_1SuperSharePayoff_1a9760f0e9f8b9052f8f1336bebe1c7479" prot="public" virt="non-virtual"><scope>QuantLib::SuperSharePayoff</scope><name>secondStrike</name></member>
+      <member refid="classQuantLib_1_1SuperSharePayoff_1af6e68ebb2adc94d601ff17bc2bfeae03" prot="protected" virt="non-virtual"><scope>QuantLib::SuperSharePayoff</scope><name>secondStrike_</name></member>
+      <member refid="classQuantLib_1_1StrikedTypePayoff_1a3c01bf0738a40de8dfd81e1a7127e3e7" prot="public" virt="non-virtual"><scope>QuantLib::SuperSharePayoff</scope><name>strike</name></member>
+      <member refid="classQuantLib_1_1StrikedTypePayoff_1a1a8dfb6b6f557d30b497ef63a92e12d0" prot="protected" virt="non-virtual"><scope>QuantLib::SuperSharePayoff</scope><name>strike_</name></member>
+      <member refid="classQuantLib_1_1StrikedTypePayoff_1a68f84b64d373d6e9cf49e0fb633880d3" prot="protected" virt="non-virtual"><scope>QuantLib::SuperSharePayoff</scope><name>StrikedTypePayoff</name></member>
+      <member refid="classQuantLib_1_1SuperSharePayoff_1afcfeba6de950adaed55d23c42d948032" prot="public" virt="non-virtual"><scope>QuantLib::SuperSharePayoff</scope><name>SuperSharePayoff</name></member>
+      <member refid="classQuantLib_1_1TypePayoff_1af4e5a4d11b0c069fcde370573be46191" prot="protected" virt="non-virtual"><scope>QuantLib::SuperSharePayoff</scope><name>type_</name></member>
+      <member refid="classQuantLib_1_1TypePayoff_1ad79b48279b590d246a611009bca455c1" prot="protected" virt="non-virtual"><scope>QuantLib::SuperSharePayoff</scope><name>TypePayoff</name></member>
+      <member refid="classQuantLib_1_1Payoff_1a7067fc920554af30af0ac5b82d0f4650" prot="public" virt="virtual"><scope>QuantLib::SuperSharePayoff</scope><name>~Payoff</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

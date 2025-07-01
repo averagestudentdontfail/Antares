@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="bug" kind="page">
+    <compoundname>bug</compoundname>
+    <title>Bug List</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><variablelist>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1BlackCalculator" kindref="compound">QuantLib::BlackCalculator</ref>  </term></varlistentry>
+<listitem><para><anchor id="bug_1_bug000001"/>When the variance is null, division by zero occur during the calculation of delta, delta forward, gamma, gamma forward, rho, dividend rho, vega, and strike sensitivity.  </para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1LocalVolSurface" kindref="compound">QuantLib::LocalVolSurface</ref>  </term></varlistentry>
+<listitem><para><anchor id="bug_1_bug000002"/>this class is untested, probably unreliable. </para>
+</listitem>
+</variablelist>
+</para>
+    </detaileddescription>
+    <location file="bug"/>
+  </compounddef>
+</doxygen>

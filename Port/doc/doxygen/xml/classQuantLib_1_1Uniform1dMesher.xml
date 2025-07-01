@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1Uniform1dMesher" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::Uniform1dMesher</compoundname>
+    <basecompoundref refid="classQuantLib_1_1Fdm1dMesher" prot="public" virt="non-virtual">QuantLib::Fdm1dMesher</basecompoundref>
+    <includes refid="uniform1dmesher_8hpp" local="no">uniform1dmesher.hpp</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1Uniform1dMesher_1ad7e8eff329453ea9d705e38aaf113efc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Uniform1dMesher::Uniform1dMesher</definition>
+        <argsstring>(Real start, Real end, Size size)</argsstring>
+        <name>Uniform1dMesher</name>
+        <qualifiedname>QuantLib::Uniform1dMesher::Uniform1dMesher</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/meshers/uniform1dmesher.hpp" line="37" column="9" bodyfile="ql/methods/finitedifferences/meshers/uniform1dmesher.hpp" bodystart="37" bodyend="50"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>QuantLib::Fdm1dMesher</label>
+        <link refid="classQuantLib_1_1Fdm1dMesher"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::Uniform1dMesher</label>
+        <link refid="classQuantLib_1_1Uniform1dMesher"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>QuantLib::Fdm1dMesher</label>
+        <link refid="classQuantLib_1_1Fdm1dMesher"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::Uniform1dMesher</label>
+        <link refid="classQuantLib_1_1Uniform1dMesher"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/methods/finitedifferences/meshers/uniform1dmesher.hpp" line="35" column="5" bodyfile="ql/methods/finitedifferences/meshers/uniform1dmesher.hpp" bodystart="35" bodyend="51"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Fdm1dMesher_1af6a6b40f4c404b3198995ce20590a410" prot="public" virt="non-virtual"><scope>QuantLib::Uniform1dMesher</scope><name>dminus</name></member>
+      <member refid="classQuantLib_1_1Fdm1dMesher_1a663945077bed74ac77aa9263e72daa86" prot="protected" virt="non-virtual"><scope>QuantLib::Uniform1dMesher</scope><name>dminus_</name></member>
+      <member refid="classQuantLib_1_1Fdm1dMesher_1ae12ae1bbc510c8ba6b41ec96efdb3073" prot="public" virt="non-virtual"><scope>QuantLib::Uniform1dMesher</scope><name>dplus</name></member>
+      <member refid="classQuantLib_1_1Fdm1dMesher_1af98e56b199e717effdde88076177901c" prot="protected" virt="non-virtual"><scope>QuantLib::Uniform1dMesher</scope><name>dplus_</name></member>
+      <member refid="classQuantLib_1_1Fdm1dMesher_1a5367680ba14e2c946b344ca75c73d0bd" prot="public" virt="non-virtual"><scope>QuantLib::Uniform1dMesher</scope><name>Fdm1dMesher</name></member>
+      <member refid="classQuantLib_1_1Fdm1dMesher_1aaa56294b3e4aa5e814c6e32a748ecd2f" prot="public" virt="non-virtual"><scope>QuantLib::Uniform1dMesher</scope><name>location</name></member>
+      <member refid="classQuantLib_1_1Fdm1dMesher_1a0dfdfea910ddf7c11fdf33cbe95e71d7" prot="public" virt="non-virtual"><scope>QuantLib::Uniform1dMesher</scope><name>locations</name></member>
+      <member refid="classQuantLib_1_1Fdm1dMesher_1a10c310f04a295d8e8f59b9184a099398" prot="protected" virt="non-virtual"><scope>QuantLib::Uniform1dMesher</scope><name>locations_</name></member>
+      <member refid="classQuantLib_1_1Fdm1dMesher_1aabe033deb1598c0d78fef55bded13204" prot="public" virt="non-virtual"><scope>QuantLib::Uniform1dMesher</scope><name>size</name></member>
+      <member refid="classQuantLib_1_1Uniform1dMesher_1ad7e8eff329453ea9d705e38aaf113efc" prot="public" virt="non-virtual"><scope>QuantLib::Uniform1dMesher</scope><name>Uniform1dMesher</name></member>
+      <member refid="classQuantLib_1_1Fdm1dMesher_1a7ac7413653e669b7976f5419a147a67b" prot="public" virt="virtual"><scope>QuantLib::Uniform1dMesher</scope><name>~Fdm1dMesher</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

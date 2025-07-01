@@ -1,0 +1,289 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1MethodOfLinesScheme" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::MethodOfLinesScheme</compoundname>
+    <includes refid="methodoflinesscheme_8hpp" local="no">methodoflinesscheme.hpp</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classQuantLib_1_1MethodOfLinesScheme_1a253f38ccdc607b85e6ff136aa33c1615" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1OperatorTraits" kindref="compound">OperatorTraits</ref>&lt; <ref refid="classQuantLib_1_1FdmLinearOp" kindref="compound">FdmLinearOp</ref> &gt;</type>
+        <definition>typedef OperatorTraits&lt;FdmLinearOp&gt; QuantLib::MethodOfLinesScheme::traits</definition>
+        <argsstring></argsstring>
+        <name>traits</name>
+        <qualifiedname>QuantLib::MethodOfLinesScheme::traits</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/methodoflinesscheme.hpp" line="36" column="32" bodyfile="ql/methods/finitedifferences/schemes/methodoflinesscheme.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1MethodOfLinesScheme_1a023badf3af750f209634c9843c1f0fd2" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1OperatorTraits_1a7f201b1bba2d13ab18324758b388d586" kindref="member">traits::operator_type</ref></type>
+        <definition>typedef traits::operator_type QuantLib::MethodOfLinesScheme::operator_type</definition>
+        <argsstring></argsstring>
+        <name>operator_type</name>
+        <qualifiedname>QuantLib::MethodOfLinesScheme::operator_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/methodoflinesscheme.hpp" line="37" column="39" bodyfile="ql/methods/finitedifferences/schemes/methodoflinesscheme.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1MethodOfLinesScheme_1a612acf615c0e9712c52d6a1647519588" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1OperatorTraits_1a8b93c7b87d132e84abc2a170df02f9d2" kindref="member">traits::array_type</ref></type>
+        <definition>typedef traits::array_type QuantLib::MethodOfLinesScheme::array_type</definition>
+        <argsstring></argsstring>
+        <name>array_type</name>
+        <qualifiedname>QuantLib::MethodOfLinesScheme::array_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/methodoflinesscheme.hpp" line="38" column="36" bodyfile="ql/methods/finitedifferences/schemes/methodoflinesscheme.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1MethodOfLinesScheme_1a499da80bd736df35d2f0e94db0107b94" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1OperatorTraits_1a36e452286290e4446d658377e6487d00" kindref="member">traits::bc_set</ref></type>
+        <definition>typedef traits::bc_set QuantLib::MethodOfLinesScheme::bc_set</definition>
+        <argsstring></argsstring>
+        <name>bc_set</name>
+        <qualifiedname>QuantLib::MethodOfLinesScheme::bc_set</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/methodoflinesscheme.hpp" line="39" column="32" bodyfile="ql/methods/finitedifferences/schemes/methodoflinesscheme.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1MethodOfLinesScheme_1ad0be3286bfc0ef90630fdf9e3c1dd556" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1OperatorTraits_1afba7e06f490184e83ac81ac711dc7e1e" kindref="member">traits::condition_type</ref></type>
+        <definition>typedef traits::condition_type QuantLib::MethodOfLinesScheme::condition_type</definition>
+        <argsstring></argsstring>
+        <name>condition_type</name>
+        <qualifiedname>QuantLib::MethodOfLinesScheme::condition_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/methodoflinesscheme.hpp" line="40" column="40" bodyfile="ql/methods/finitedifferences/schemes/methodoflinesscheme.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1MethodOfLinesScheme_1afb048e4dd4560eec06512b4d01c6ee70" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+        <definition>Time QuantLib::MethodOfLinesScheme::dt_</definition>
+        <argsstring></argsstring>
+        <name>dt_</name>
+        <qualifiedname>QuantLib::MethodOfLinesScheme::dt_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/methodoflinesscheme.hpp" line="55" column="14" bodyfile="ql/methods/finitedifferences/schemes/methodoflinesscheme.hpp" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1MethodOfLinesScheme_1ac180217a098a7f05032ee044126ed5f8" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::MethodOfLinesScheme::eps_</definition>
+        <argsstring></argsstring>
+        <name>eps_</name>
+        <qualifiedname>QuantLib::MethodOfLinesScheme::eps_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/methodoflinesscheme.hpp" line="56" column="20" bodyfile="ql/methods/finitedifferences/schemes/methodoflinesscheme.hpp" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1MethodOfLinesScheme_1af0e821252ea37e66f547e07be104424a" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::MethodOfLinesScheme::relInitStepSize_</definition>
+        <argsstring></argsstring>
+        <name>relInitStepSize_</name>
+        <qualifiedname>QuantLib::MethodOfLinesScheme::relInitStepSize_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/methodoflinesscheme.hpp" line="56" column="25" bodyfile="ql/methods/finitedifferences/schemes/methodoflinesscheme.hpp" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1MethodOfLinesScheme_1ade383ba1c4490b97d04ad184a39069ae" prot="protected" static="no" mutable="no">
+        <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmLinearOpComposite" kindref="compound">FdmLinearOpComposite</ref> &gt;</type>
+        <definition>const ext::shared_ptr&lt;FdmLinearOpComposite&gt; QuantLib::MethodOfLinesScheme::map_</definition>
+        <argsstring></argsstring>
+        <name>map_</name>
+        <qualifiedname>QuantLib::MethodOfLinesScheme::map_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/methodoflinesscheme.hpp" line="57" column="31" bodyfile="ql/methods/finitedifferences/schemes/methodoflinesscheme.hpp" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1MethodOfLinesScheme_1a1eba68ac1c3a91fbca25d303668dd98b" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="classQuantLib_1_1BoundaryConditionSchemeHelper" kindref="compound">BoundaryConditionSchemeHelper</ref></type>
+        <definition>const BoundaryConditionSchemeHelper QuantLib::MethodOfLinesScheme::bcSet_</definition>
+        <argsstring></argsstring>
+        <name>bcSet_</name>
+        <qualifiedname>QuantLib::MethodOfLinesScheme::bcSet_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/methodoflinesscheme.hpp" line="58" column="45" bodyfile="ql/methods/finitedifferences/schemes/methodoflinesscheme.hpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1MethodOfLinesScheme_1a9b7e209f5c0982787bc08cf358eb6c5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::MethodOfLinesScheme::MethodOfLinesScheme</definition>
+        <argsstring>(Real eps, Real relInitStepSize, ext::shared_ptr&lt; FdmLinearOpComposite &gt; map, const bc_set &amp;bcSet=bc_set())</argsstring>
+        <name>MethodOfLinesScheme</name>
+        <qualifiedname>QuantLib::MethodOfLinesScheme::MethodOfLinesScheme</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>eps</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>relInitStepSize</declname>
+        </param>
+        <param>
+          <type>ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmLinearOpComposite" kindref="compound">FdmLinearOpComposite</ref> &gt;</type>
+          <declname>map</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1MethodOfLinesScheme_1a499da80bd736df35d2f0e94db0107b94" kindref="member">bc_set</ref> &amp;</type>
+          <declname>bcSet</declname>
+          <defval><ref refid="classQuantLib_1_1MethodOfLinesScheme_1a499da80bd736df35d2f0e94db0107b94" kindref="member">bc_set</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/methodoflinesscheme.hpp" line="43" column="9" bodyfile="ql/methods/finitedifferences/schemes/methodoflinesscheme.cpp" bodystart="26" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1MethodOfLinesScheme_1afb086ab1d4b3d7b19928205a5f0c97fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::MethodOfLinesScheme::step</definition>
+        <argsstring>(array_type &amp;a, Time t)</argsstring>
+        <name>step</name>
+        <qualifiedname>QuantLib::MethodOfLinesScheme::step</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1MethodOfLinesScheme_1a612acf615c0e9712c52d6a1647519588" kindref="member">array_type</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/methodoflinesscheme.hpp" line="48" column="14" bodyfile="ql/methods/finitedifferences/schemes/methodoflinesscheme.cpp" bodystart="43" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1MethodOfLinesScheme_1ada9e865833c81c0f8bf9ebff8c487cde" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::MethodOfLinesScheme::setStep</definition>
+        <argsstring>(Time dt)</argsstring>
+        <name>setStep</name>
+        <qualifiedname>QuantLib::MethodOfLinesScheme::setStep</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/methodoflinesscheme.hpp" line="49" column="14" bodyfile="ql/methods/finitedifferences/schemes/methodoflinesscheme.cpp" bodystart="59" bodyend="61"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classQuantLib_1_1MethodOfLinesScheme_1a5174fd3e7fb91512fdb76c70917aeb6b" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> &gt;</type>
+        <definition>std::vector&lt; Real &gt; QuantLib::MethodOfLinesScheme::apply</definition>
+        <argsstring>(Time, const std::vector&lt; Real &gt; &amp;) const</argsstring>
+        <name>apply</name>
+        <qualifiedname>QuantLib::MethodOfLinesScheme::apply</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <defname>t</defname>
+        </param>
+        <param>
+          <type>const std::vector&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> &gt; &amp;</type>
+          <defname>u</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/methodoflinesscheme.hpp" line="53" column="21" bodyfile="ql/methods/finitedifferences/schemes/methodoflinesscheme.cpp" bodystart="34" bodyend="41"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>QuantLib::OperatorTraits&lt; QuantLib::FdmLinearOp &gt;</label>
+        <link refid="classQuantLib_1_1OperatorTraits"/>
+      </node>
+      <node id="2">
+        <label>QuantLib::BoundaryConditionSchemeHelper</label>
+        <link refid="classQuantLib_1_1BoundaryConditionSchemeHelper"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>bcSet_</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::MethodOfLinesScheme</label>
+        <link refid="classQuantLib_1_1MethodOfLinesScheme"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>bcSet_</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/methods/finitedifferences/schemes/methodoflinesscheme.hpp" line="33" column="5" bodyfile="ql/methods/finitedifferences/schemes/methodoflinesscheme.hpp" bodystart="33" bodyend="59"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1MethodOfLinesScheme_1a5174fd3e7fb91512fdb76c70917aeb6b" prot="protected" virt="non-virtual"><scope>QuantLib::MethodOfLinesScheme</scope><name>apply</name></member>
+      <member refid="classQuantLib_1_1MethodOfLinesScheme_1a612acf615c0e9712c52d6a1647519588" prot="public" virt="non-virtual"><scope>QuantLib::MethodOfLinesScheme</scope><name>array_type</name></member>
+      <member refid="classQuantLib_1_1MethodOfLinesScheme_1a499da80bd736df35d2f0e94db0107b94" prot="public" virt="non-virtual"><scope>QuantLib::MethodOfLinesScheme</scope><name>bc_set</name></member>
+      <member refid="classQuantLib_1_1MethodOfLinesScheme_1a1eba68ac1c3a91fbca25d303668dd98b" prot="protected" virt="non-virtual"><scope>QuantLib::MethodOfLinesScheme</scope><name>bcSet_</name></member>
+      <member refid="classQuantLib_1_1MethodOfLinesScheme_1ad0be3286bfc0ef90630fdf9e3c1dd556" prot="public" virt="non-virtual"><scope>QuantLib::MethodOfLinesScheme</scope><name>condition_type</name></member>
+      <member refid="classQuantLib_1_1MethodOfLinesScheme_1afb048e4dd4560eec06512b4d01c6ee70" prot="protected" virt="non-virtual"><scope>QuantLib::MethodOfLinesScheme</scope><name>dt_</name></member>
+      <member refid="classQuantLib_1_1MethodOfLinesScheme_1ac180217a098a7f05032ee044126ed5f8" prot="protected" virt="non-virtual"><scope>QuantLib::MethodOfLinesScheme</scope><name>eps_</name></member>
+      <member refid="classQuantLib_1_1MethodOfLinesScheme_1ade383ba1c4490b97d04ad184a39069ae" prot="protected" virt="non-virtual"><scope>QuantLib::MethodOfLinesScheme</scope><name>map_</name></member>
+      <member refid="classQuantLib_1_1MethodOfLinesScheme_1a9b7e209f5c0982787bc08cf358eb6c5a" prot="public" virt="non-virtual"><scope>QuantLib::MethodOfLinesScheme</scope><name>MethodOfLinesScheme</name></member>
+      <member refid="classQuantLib_1_1MethodOfLinesScheme_1a023badf3af750f209634c9843c1f0fd2" prot="public" virt="non-virtual"><scope>QuantLib::MethodOfLinesScheme</scope><name>operator_type</name></member>
+      <member refid="classQuantLib_1_1MethodOfLinesScheme_1af0e821252ea37e66f547e07be104424a" prot="protected" virt="non-virtual"><scope>QuantLib::MethodOfLinesScheme</scope><name>relInitStepSize_</name></member>
+      <member refid="classQuantLib_1_1MethodOfLinesScheme_1ada9e865833c81c0f8bf9ebff8c487cde" prot="public" virt="non-virtual"><scope>QuantLib::MethodOfLinesScheme</scope><name>setStep</name></member>
+      <member refid="classQuantLib_1_1MethodOfLinesScheme_1afb086ab1d4b3d7b19928205a5f0c97fa" prot="public" virt="non-virtual"><scope>QuantLib::MethodOfLinesScheme</scope><name>step</name></member>
+      <member refid="classQuantLib_1_1MethodOfLinesScheme_1a253f38ccdc607b85e6ff136aa33c1615" prot="public" virt="non-virtual"><scope>QuantLib::MethodOfLinesScheme</scope><name>traits</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

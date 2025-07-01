@@ -1,0 +1,397 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1ImplicitEulerScheme" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::ImplicitEulerScheme</compoundname>
+    <includes refid="impliciteulerscheme_8hpp" local="no">impliciteulerscheme.hpp</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classQuantLib_1_1ImplicitEulerScheme_1a5de5933ffea21851b2bf3a619d262ee8" prot="public" static="no" strong="no">
+        <type></type>
+        <name>SolverType</name>
+        <qualifiedname>QuantLib::ImplicitEulerScheme::SolverType</qualifiedname>
+        <enumvalue id="classQuantLib_1_1ImplicitEulerScheme_1a5de5933ffea21851b2bf3a619d262ee8ad79f7b50944114fb0fda185f9ae3e0bf" prot="public">
+          <name>BiCGstab</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classQuantLib_1_1ImplicitEulerScheme_1a5de5933ffea21851b2bf3a619d262ee8a19c3a488d6a9c179ff9f7a676181c2e1" prot="public">
+          <name>GMRES</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" line="37" column="9" bodyfile="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" bodystart="37" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1ImplicitEulerScheme_1a776b233a14e7bd72a105f55c43846546" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1OperatorTraits" kindref="compound">OperatorTraits</ref>&lt; <ref refid="classQuantLib_1_1FdmLinearOp" kindref="compound">FdmLinearOp</ref> &gt;</type>
+        <definition>typedef OperatorTraits&lt;FdmLinearOp&gt; QuantLib::ImplicitEulerScheme::traits</definition>
+        <argsstring></argsstring>
+        <name>traits</name>
+        <qualifiedname>QuantLib::ImplicitEulerScheme::traits</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" line="40" column="32" bodyfile="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1ImplicitEulerScheme_1a3f254932253534634e7ba3e123b30377" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1OperatorTraits_1a7f201b1bba2d13ab18324758b388d586" kindref="member">traits::operator_type</ref></type>
+        <definition>typedef traits::operator_type QuantLib::ImplicitEulerScheme::operator_type</definition>
+        <argsstring></argsstring>
+        <name>operator_type</name>
+        <qualifiedname>QuantLib::ImplicitEulerScheme::operator_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" line="41" column="39" bodyfile="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1ImplicitEulerScheme_1a6178ebb6921507491498960f331bbeaf" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1OperatorTraits_1a8b93c7b87d132e84abc2a170df02f9d2" kindref="member">traits::array_type</ref></type>
+        <definition>typedef traits::array_type QuantLib::ImplicitEulerScheme::array_type</definition>
+        <argsstring></argsstring>
+        <name>array_type</name>
+        <qualifiedname>QuantLib::ImplicitEulerScheme::array_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" line="42" column="36" bodyfile="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1ImplicitEulerScheme_1a49fc409196c787385a61eba79e59732f" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1OperatorTraits_1a36e452286290e4446d658377e6487d00" kindref="member">traits::bc_set</ref></type>
+        <definition>typedef traits::bc_set QuantLib::ImplicitEulerScheme::bc_set</definition>
+        <argsstring></argsstring>
+        <name>bc_set</name>
+        <qualifiedname>QuantLib::ImplicitEulerScheme::bc_set</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" line="43" column="32" bodyfile="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1ImplicitEulerScheme_1a779c8fb73c3b44755a3a5e4ac67c04c5" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1OperatorTraits_1afba7e06f490184e83ac81ac711dc7e1e" kindref="member">traits::condition_type</ref></type>
+        <definition>typedef traits::condition_type QuantLib::ImplicitEulerScheme::condition_type</definition>
+        <argsstring></argsstring>
+        <name>condition_type</name>
+        <qualifiedname>QuantLib::ImplicitEulerScheme::condition_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" line="44" column="40" bodyfile="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classQuantLib_1_1ImplicitEulerScheme_1ab7e5629bec7cbc3009b21f5bfb2e6b8e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class CrankNicolsonScheme</definition>
+        <argsstring></argsstring>
+        <name>CrankNicolsonScheme</name>
+        <qualifiedname>QuantLib::ImplicitEulerScheme::CrankNicolsonScheme</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1CrankNicolsonScheme" kindref="compound">CrankNicolsonScheme</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" line="57" column="22" bodyfile="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" bodystart="57" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1ImplicitEulerScheme_1ac1e4f634d140216b85021d8fc68ed4d7" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+        <definition>Time QuantLib::ImplicitEulerScheme::dt_</definition>
+        <argsstring></argsstring>
+        <name>dt_</name>
+        <qualifiedname>QuantLib::ImplicitEulerScheme::dt_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" line="62" column="14" bodyfile="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ImplicitEulerScheme_1aed3c72ffa81a8a367b9e8f79d4f43472" prot="protected" static="no" mutable="no">
+        <type>ext::shared_ptr&lt; <ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref> &gt;</type>
+        <definition>ext::shared_ptr&lt;Size&gt; QuantLib::ImplicitEulerScheme::iterations_</definition>
+        <argsstring></argsstring>
+        <name>iterations_</name>
+        <qualifiedname>QuantLib::ImplicitEulerScheme::iterations_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" line="63" column="25" bodyfile="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ImplicitEulerScheme_1a2ed71de9d53d030ca53d5ad969d2d05b" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ImplicitEulerScheme::relTol_</definition>
+        <argsstring></argsstring>
+        <name>relTol_</name>
+        <qualifiedname>QuantLib::ImplicitEulerScheme::relTol_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" line="65" column="20" bodyfile="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ImplicitEulerScheme_1a015054a0589d7eb8718f28d5a713a0c2" prot="protected" static="no" mutable="no">
+        <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmLinearOpComposite" kindref="compound">FdmLinearOpComposite</ref> &gt;</type>
+        <definition>const ext::shared_ptr&lt;FdmLinearOpComposite&gt; QuantLib::ImplicitEulerScheme::map_</definition>
+        <argsstring></argsstring>
+        <name>map_</name>
+        <qualifiedname>QuantLib::ImplicitEulerScheme::map_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" line="66" column="31" bodyfile="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ImplicitEulerScheme_1a86342c030c21ca79008a8cc84f727d72" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="classQuantLib_1_1BoundaryConditionSchemeHelper" kindref="compound">BoundaryConditionSchemeHelper</ref></type>
+        <definition>const BoundaryConditionSchemeHelper QuantLib::ImplicitEulerScheme::bcSet_</definition>
+        <argsstring></argsstring>
+        <name>bcSet_</name>
+        <qualifiedname>QuantLib::ImplicitEulerScheme::bcSet_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" line="67" column="45" bodyfile="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ImplicitEulerScheme_1a62f7bcfcd88964781cd856d45d71b912" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="classQuantLib_1_1ImplicitEulerScheme_1a5de5933ffea21851b2bf3a619d262ee8" kindref="member">SolverType</ref></type>
+        <definition>const SolverType QuantLib::ImplicitEulerScheme::solverType_</definition>
+        <argsstring></argsstring>
+        <name>solverType_</name>
+        <qualifiedname>QuantLib::ImplicitEulerScheme::solverType_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" line="68" column="26" bodyfile="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1ImplicitEulerScheme_1a643b4353680e6a11c12078e1b5173d8f" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::ImplicitEulerScheme::ImplicitEulerScheme</definition>
+        <argsstring>(ext::shared_ptr&lt; FdmLinearOpComposite &gt; map, const bc_set &amp;bcSet=bc_set(), Real relTol=1e-8, SolverType solverType=BiCGstab)</argsstring>
+        <name>ImplicitEulerScheme</name>
+        <qualifiedname>QuantLib::ImplicitEulerScheme::ImplicitEulerScheme</qualifiedname>
+        <param>
+          <type>ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmLinearOpComposite" kindref="compound">FdmLinearOpComposite</ref> &gt;</type>
+          <declname>map</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1ImplicitEulerScheme_1a49fc409196c787385a61eba79e59732f" kindref="member">bc_set</ref> &amp;</type>
+          <declname>bcSet</declname>
+          <defval><ref refid="classQuantLib_1_1ImplicitEulerScheme_1a49fc409196c787385a61eba79e59732f" kindref="member">bc_set</ref>()</defval>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>relTol</declname>
+          <defval>1e-8</defval>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1ImplicitEulerScheme_1a5de5933ffea21851b2bf3a619d262ee8" kindref="member">SolverType</ref></type>
+          <declname>solverType</declname>
+          <defval><ref refid="classQuantLib_1_1BiCGstab" kindref="compound">BiCGstab</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" line="47" column="18" bodyfile="ql/methods/finitedifferences/schemes/impliciteulerscheme.cpp" bodystart="30" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1ImplicitEulerScheme_1af539502c4a70a0980d69c783f3941953" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::ImplicitEulerScheme::step</definition>
+        <argsstring>(array_type &amp;a, Time t)</argsstring>
+        <name>step</name>
+        <qualifiedname>QuantLib::ImplicitEulerScheme::step</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1ImplicitEulerScheme_1a6178ebb6921507491498960f331bbeaf" kindref="member">array_type</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" line="52" column="14" bodyfile="ql/methods/finitedifferences/schemes/impliciteulerscheme.cpp" bodystart="41" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1ImplicitEulerScheme_1a1e0c135d4126cabc2b6432e3b323393b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::ImplicitEulerScheme::setStep</definition>
+        <argsstring>(Time dt)</argsstring>
+        <name>setStep</name>
+        <qualifiedname>QuantLib::ImplicitEulerScheme::setStep</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" line="53" column="14" bodyfile="ql/methods/finitedifferences/schemes/impliciteulerscheme.cpp" bodystart="82" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1ImplicitEulerScheme_1a6c84ccc74acd74c3ec3cbc4173896a79" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+        <definition>Size QuantLib::ImplicitEulerScheme::numberOfIterations</definition>
+        <argsstring>() const</argsstring>
+        <name>numberOfIterations</name>
+        <qualifiedname>QuantLib::ImplicitEulerScheme::numberOfIterations</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" line="55" column="14" bodyfile="ql/methods/finitedifferences/schemes/impliciteulerscheme.cpp" bodystart="86" bodyend="88"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classQuantLib_1_1ImplicitEulerScheme_1ac1eeafdcd6aee6cd51e252af229aa664" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::ImplicitEulerScheme::step</definition>
+        <argsstring>(array_type &amp;a, Time t, Real theta)</argsstring>
+        <name>step</name>
+        <qualifiedname>QuantLib::ImplicitEulerScheme::step</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1ImplicitEulerScheme_1a6178ebb6921507491498960f331bbeaf" kindref="member">array_type</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>theta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" line="58" column="14" bodyfile="ql/methods/finitedifferences/schemes/impliciteulerscheme.cpp" bodystart="45" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1ImplicitEulerScheme_1a491eae0e237f9828fb46c9cb6b40ecb9" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array QuantLib::ImplicitEulerScheme::apply</definition>
+        <argsstring>(const Array &amp;r, Real theta) const</argsstring>
+        <name>apply</name>
+        <qualifiedname>QuantLib::ImplicitEulerScheme::apply</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>theta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" line="60" column="15" bodyfile="ql/methods/finitedifferences/schemes/impliciteulerscheme.cpp" bodystart="37" bodyend="39"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>QuantLib::OperatorTraits&lt; QuantLib::FdmLinearOp &gt;</label>
+        <link refid="classQuantLib_1_1OperatorTraits"/>
+      </node>
+      <node id="2">
+        <label>QuantLib::BoundaryConditionSchemeHelper</label>
+        <link refid="classQuantLib_1_1BoundaryConditionSchemeHelper"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>bcSet_</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::ImplicitEulerScheme</label>
+        <link refid="classQuantLib_1_1ImplicitEulerScheme"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>bcSet_</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" line="35" column="5" bodyfile="ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp" bodystart="35" bodyend="69"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1ImplicitEulerScheme_1a491eae0e237f9828fb46c9cb6b40ecb9" prot="protected" virt="non-virtual"><scope>QuantLib::ImplicitEulerScheme</scope><name>apply</name></member>
+      <member refid="classQuantLib_1_1ImplicitEulerScheme_1a6178ebb6921507491498960f331bbeaf" prot="public" virt="non-virtual"><scope>QuantLib::ImplicitEulerScheme</scope><name>array_type</name></member>
+      <member refid="classQuantLib_1_1ImplicitEulerScheme_1a49fc409196c787385a61eba79e59732f" prot="public" virt="non-virtual"><scope>QuantLib::ImplicitEulerScheme</scope><name>bc_set</name></member>
+      <member refid="classQuantLib_1_1ImplicitEulerScheme_1a86342c030c21ca79008a8cc84f727d72" prot="protected" virt="non-virtual"><scope>QuantLib::ImplicitEulerScheme</scope><name>bcSet_</name></member>
+      <member refid="classQuantLib_1_1ImplicitEulerScheme_1a5de5933ffea21851b2bf3a619d262ee8ad79f7b50944114fb0fda185f9ae3e0bf" prot="public" virt="non-virtual"><scope>QuantLib::ImplicitEulerScheme</scope><name>BiCGstab</name></member>
+      <member refid="classQuantLib_1_1ImplicitEulerScheme_1a779c8fb73c3b44755a3a5e4ac67c04c5" prot="public" virt="non-virtual"><scope>QuantLib::ImplicitEulerScheme</scope><name>condition_type</name></member>
+      <member refid="classQuantLib_1_1ImplicitEulerScheme_1ab7e5629bec7cbc3009b21f5bfb2e6b8e" prot="protected" virt="non-virtual"><scope>QuantLib::ImplicitEulerScheme</scope><name>CrankNicolsonScheme</name></member>
+      <member refid="classQuantLib_1_1ImplicitEulerScheme_1ac1e4f634d140216b85021d8fc68ed4d7" prot="protected" virt="non-virtual"><scope>QuantLib::ImplicitEulerScheme</scope><name>dt_</name></member>
+      <member refid="classQuantLib_1_1ImplicitEulerScheme_1a5de5933ffea21851b2bf3a619d262ee8a19c3a488d6a9c179ff9f7a676181c2e1" prot="public" virt="non-virtual"><scope>QuantLib::ImplicitEulerScheme</scope><name>GMRES</name></member>
+      <member refid="classQuantLib_1_1ImplicitEulerScheme_1a643b4353680e6a11c12078e1b5173d8f" prot="public" virt="non-virtual"><scope>QuantLib::ImplicitEulerScheme</scope><name>ImplicitEulerScheme</name></member>
+      <member refid="classQuantLib_1_1ImplicitEulerScheme_1aed3c72ffa81a8a367b9e8f79d4f43472" prot="protected" virt="non-virtual"><scope>QuantLib::ImplicitEulerScheme</scope><name>iterations_</name></member>
+      <member refid="classQuantLib_1_1ImplicitEulerScheme_1a015054a0589d7eb8718f28d5a713a0c2" prot="protected" virt="non-virtual"><scope>QuantLib::ImplicitEulerScheme</scope><name>map_</name></member>
+      <member refid="classQuantLib_1_1ImplicitEulerScheme_1a6c84ccc74acd74c3ec3cbc4173896a79" prot="public" virt="non-virtual"><scope>QuantLib::ImplicitEulerScheme</scope><name>numberOfIterations</name></member>
+      <member refid="classQuantLib_1_1ImplicitEulerScheme_1a3f254932253534634e7ba3e123b30377" prot="public" virt="non-virtual"><scope>QuantLib::ImplicitEulerScheme</scope><name>operator_type</name></member>
+      <member refid="classQuantLib_1_1ImplicitEulerScheme_1a2ed71de9d53d030ca53d5ad969d2d05b" prot="protected" virt="non-virtual"><scope>QuantLib::ImplicitEulerScheme</scope><name>relTol_</name></member>
+      <member refid="classQuantLib_1_1ImplicitEulerScheme_1a1e0c135d4126cabc2b6432e3b323393b" prot="public" virt="non-virtual"><scope>QuantLib::ImplicitEulerScheme</scope><name>setStep</name></member>
+      <member refid="classQuantLib_1_1ImplicitEulerScheme_1a5de5933ffea21851b2bf3a619d262ee8" prot="public" virt="non-virtual"><scope>QuantLib::ImplicitEulerScheme</scope><name>SolverType</name></member>
+      <member refid="classQuantLib_1_1ImplicitEulerScheme_1a62f7bcfcd88964781cd856d45d71b912" prot="protected" virt="non-virtual"><scope>QuantLib::ImplicitEulerScheme</scope><name>solverType_</name></member>
+      <member refid="classQuantLib_1_1ImplicitEulerScheme_1af539502c4a70a0980d69c783f3941953" prot="public" virt="non-virtual"><scope>QuantLib::ImplicitEulerScheme</scope><name>step</name></member>
+      <member refid="classQuantLib_1_1ImplicitEulerScheme_1ac1eeafdcd6aee6cd51e252af229aa664" prot="protected" virt="non-virtual"><scope>QuantLib::ImplicitEulerScheme</scope><name>step</name></member>
+      <member refid="classQuantLib_1_1ImplicitEulerScheme_1a776b233a14e7bd72a105f55c43846546" prot="public" virt="non-virtual"><scope>QuantLib::ImplicitEulerScheme</scope><name>traits</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

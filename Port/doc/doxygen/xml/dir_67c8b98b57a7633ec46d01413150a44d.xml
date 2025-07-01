@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_67c8b98b57a7633ec46d01413150a44d" kind="dir">
+    <compoundname>ql/pricingengines/vanilla</compoundname>
+    <innerfile refid="analyticdividendeuropeanengine_8cpp">analyticdividendeuropeanengine.cpp</innerfile>
+    <innerfile refid="analyticdividendeuropeanengine_8hpp">analyticdividendeuropeanengine.hpp</innerfile>
+    <innerfile refid="analyticeuropeanengine_8cpp">analyticeuropeanengine.cpp</innerfile>
+    <innerfile refid="analyticeuropeanengine_8hpp">analyticeuropeanengine.hpp</innerfile>
+    <innerfile refid="fdblackscholesvanillaengine_8cpp">fdblackscholesvanillaengine.cpp</innerfile>
+    <innerfile refid="fdblackscholesvanillaengine_8hpp">fdblackscholesvanillaengine.hpp</innerfile>
+    <innerfile refid="qdfpamericanengine_8cpp">qdfpamericanengine.cpp</innerfile>
+    <innerfile refid="qdfpamericanengine_8hpp">qdfpamericanengine.hpp</innerfile>
+    <innerfile refid="qdplusamericanengine_8cpp">qdplusamericanengine.cpp</innerfile>
+    <innerfile refid="qdplusamericanengine_8hpp">qdplusamericanengine.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ql/pricingengines/vanilla/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1FdmLinearOpComposite" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>QuantLib::FdmLinearOpComposite</compoundname>
+    <basecompoundref refid="classQuantLib_1_1FdmLinearOp" prot="public" virt="non-virtual">QuantLib::FdmLinearOp</basecompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1FdmBlackScholesOp" prot="public" virt="non-virtual">QuantLib::FdmBlackScholesOp</derivedcompoundref>
+    <includes refid="fdmlinearopcomposite_8hpp" local="no">fdmlinearopcomposite.hpp</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1FdmLinearOpComposite_1aea89ff84d04c901c37823de66b392018" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+        <definition>virtual Size QuantLib::FdmLinearOpComposite::size</definition>
+        <argsstring>() const =0</argsstring>
+        <name>size</name>
+        <qualifiedname>QuantLib::FdmLinearOpComposite::size</qualifiedname>
+        <reimplementedby refid="classQuantLib_1_1FdmBlackScholesOp_1a76e3d6851279988ee79b35ead0e9bd09">size</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/operators/fdmlinearopcomposite.hpp" line="37" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1FdmLinearOpComposite_1ab635911759d6a1bde11c501d15515872" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void QuantLib::FdmLinearOpComposite::setTime</definition>
+        <argsstring>(Time t1, Time t2)=0</argsstring>
+        <name>setTime</name>
+        <qualifiedname>QuantLib::FdmLinearOpComposite::setTime</qualifiedname>
+        <reimplementedby refid="classQuantLib_1_1FdmBlackScholesOp_1a7a94ea92ea06fd01751e02c57ddf9dbd">setTime</reimplementedby>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>t1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>t2</declname>
+        </param>
+        <briefdescription>
+<para>Time <formula id="58">$t1 &lt;= t2$</formula> is required. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/operators/fdmlinearopcomposite.hpp" line="40" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1FdmLinearOpComposite_1a162fe1437fb3060475f7824d73b72ff7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>virtual Array QuantLib::FdmLinearOpComposite::apply_mixed</definition>
+        <argsstring>(const Array &amp;r) const =0</argsstring>
+        <name>apply_mixed</name>
+        <qualifiedname>QuantLib::FdmLinearOpComposite::apply_mixed</qualifiedname>
+        <reimplementedby refid="classQuantLib_1_1FdmBlackScholesOp_1af4366860796258033c3ef9f6e6764ccb">apply_mixed</reimplementedby>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>r</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/operators/fdmlinearopcomposite.hpp" line="42" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1FdmLinearOpComposite_1aa9f8c9bcd1596637b3eaaa74c64ad83c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>virtual Array QuantLib::FdmLinearOpComposite::apply_direction</definition>
+        <argsstring>(Size direction, const Array &amp;r) const =0</argsstring>
+        <name>apply_direction</name>
+        <qualifiedname>QuantLib::FdmLinearOpComposite::apply_direction</qualifiedname>
+        <reimplementedby refid="classQuantLib_1_1FdmBlackScholesOp_1a947e5b0220ce618d18354015739df1d8">apply_direction</reimplementedby>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>direction</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>r</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/operators/fdmlinearopcomposite.hpp" line="44" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1FdmLinearOpComposite_1a1ea6ebafd3a36a95a6acb6e1c189e21f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>virtual Array QuantLib::FdmLinearOpComposite::solve_splitting</definition>
+        <argsstring>(Size direction, const Array &amp;r, Real s) const =0</argsstring>
+        <name>solve_splitting</name>
+        <qualifiedname>QuantLib::FdmLinearOpComposite::solve_splitting</qualifiedname>
+        <reimplementedby refid="classQuantLib_1_1FdmBlackScholesOp_1a540da69b014362f619bdb81f3339c7f3">solve_splitting</reimplementedby>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>direction</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/operators/fdmlinearopcomposite.hpp" line="45" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1FdmLinearOpComposite_1a3122983a62d53799ffd1c03922660e6c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>virtual Array QuantLib::FdmLinearOpComposite::preconditioner</definition>
+        <argsstring>(const Array &amp;r, Real s) const =0</argsstring>
+        <name>preconditioner</name>
+        <qualifiedname>QuantLib::FdmLinearOpComposite::preconditioner</qualifiedname>
+        <reimplementedby refid="classQuantLib_1_1FdmBlackScholesOp_1a8ebfd50f5822be75e32c455dfd663163">preconditioner</reimplementedby>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/operators/fdmlinearopcomposite.hpp" line="46" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1FdmLinearOpComposite_1aae06b697cc0d041a8cbdd9b259ec34b9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::vector&lt; <ref refid="namespaceQuantLib_1a92b8d18d2ff98d5c92d103939bba4a52" kindref="member">SparseMatrix</ref> &gt;</type>
+        <definition>virtual std::vector&lt; SparseMatrix &gt; QuantLib::FdmLinearOpComposite::toMatrixDecomp</definition>
+        <argsstring>() const</argsstring>
+        <name>toMatrixDecomp</name>
+        <qualifiedname>QuantLib::FdmLinearOpComposite::toMatrixDecomp</qualifiedname>
+        <reimplementedby refid="classQuantLib_1_1FdmBlackScholesOp_1a4c8bb144966a0bea10cd8acccbf5c8be">toMatrixDecomp</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/operators/fdmlinearopcomposite.hpp" line="48" column="29" bodyfile="ql/methods/finitedifferences/operators/fdmlinearopcomposite.hpp" bodystart="48" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1FdmLinearOpComposite_1abca0364ae63b5b0e714fcd3ac9e8a73b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="namespaceQuantLib_1a92b8d18d2ff98d5c92d103939bba4a52" kindref="member">SparseMatrix</ref></type>
+        <definition>SparseMatrix QuantLib::FdmLinearOpComposite::toMatrix</definition>
+        <argsstring>() const override</argsstring>
+        <name>toMatrix</name>
+        <qualifiedname>QuantLib::FdmLinearOpComposite::toMatrix</qualifiedname>
+        <reimplements refid="classQuantLib_1_1FdmLinearOp_1a32b6761dc11909646700747d33ef710c">toMatrix</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/operators/fdmlinearopcomposite.hpp" line="52" column="22" bodyfile="ql/methods/finitedifferences/operators/fdmlinearopcomposite.hpp" bodystart="52" bodyend="56"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>QuantLib::FdmBlackScholesOp</label>
+        <link refid="classQuantLib_1_1FdmBlackScholesOp"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::FdmLinearOp</label>
+        <link refid="classQuantLib_1_1FdmLinearOp"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::FdmLinearOpComposite</label>
+        <link refid="classQuantLib_1_1FdmLinearOpComposite"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>QuantLib::FdmLinearOp</label>
+        <link refid="classQuantLib_1_1FdmLinearOp"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::FdmLinearOpComposite</label>
+        <link refid="classQuantLib_1_1FdmLinearOpComposite"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/methods/finitedifferences/operators/fdmlinearopcomposite.hpp" line="35" column="5" bodyfile="ql/methods/finitedifferences/operators/fdmlinearopcomposite.hpp" bodystart="35" bodyend="58"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1FdmLinearOp_1a9d59d8bb3597206db60f61c3f448c211" prot="public" virt="pure-virtual"><scope>QuantLib::FdmLinearOpComposite</scope><name>apply</name></member>
+      <member refid="classQuantLib_1_1FdmLinearOpComposite_1aa9f8c9bcd1596637b3eaaa74c64ad83c" prot="public" virt="pure-virtual"><scope>QuantLib::FdmLinearOpComposite</scope><name>apply_direction</name></member>
+      <member refid="classQuantLib_1_1FdmLinearOpComposite_1a162fe1437fb3060475f7824d73b72ff7" prot="public" virt="pure-virtual"><scope>QuantLib::FdmLinearOpComposite</scope><name>apply_mixed</name></member>
+      <member refid="classQuantLib_1_1FdmLinearOp_1af55693593c0cf7e885c67fd848f76e49" prot="public" virt="non-virtual"><scope>QuantLib::FdmLinearOpComposite</scope><name>array_type</name></member>
+      <member refid="classQuantLib_1_1FdmLinearOpComposite_1a3122983a62d53799ffd1c03922660e6c" prot="public" virt="pure-virtual"><scope>QuantLib::FdmLinearOpComposite</scope><name>preconditioner</name></member>
+      <member refid="classQuantLib_1_1FdmLinearOpComposite_1ab635911759d6a1bde11c501d15515872" prot="public" virt="pure-virtual"><scope>QuantLib::FdmLinearOpComposite</scope><name>setTime</name></member>
+      <member refid="classQuantLib_1_1FdmLinearOpComposite_1aea89ff84d04c901c37823de66b392018" prot="public" virt="pure-virtual"><scope>QuantLib::FdmLinearOpComposite</scope><name>size</name></member>
+      <member refid="classQuantLib_1_1FdmLinearOpComposite_1a1ea6ebafd3a36a95a6acb6e1c189e21f" prot="public" virt="pure-virtual"><scope>QuantLib::FdmLinearOpComposite</scope><name>solve_splitting</name></member>
+      <member refid="classQuantLib_1_1FdmLinearOpComposite_1abca0364ae63b5b0e714fcd3ac9e8a73b" prot="public" virt="virtual"><scope>QuantLib::FdmLinearOpComposite</scope><name>toMatrix</name></member>
+      <member refid="classQuantLib_1_1FdmLinearOpComposite_1aae06b697cc0d041a8cbdd9b259ec34b9" prot="public" virt="virtual"><scope>QuantLib::FdmLinearOpComposite</scope><name>toMatrixDecomp</name></member>
+      <member refid="classQuantLib_1_1FdmLinearOp_1aa6f29eb6144a1848c73c21e392f023e4" prot="public" virt="virtual"><scope>QuantLib::FdmLinearOpComposite</scope><name>~FdmLinearOp</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

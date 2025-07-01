@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structQuantLib_1_1BiCGStabResult" kind="struct" language="C++" prot="public">
+    <compoundname>QuantLib::BiCGStabResult</compoundname>
+    <includes refid="bicgstab_8hpp" local="no">bicgstab.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structQuantLib_1_1BiCGStabResult_1a3a8c2b7aaadb337a8c3e8515d2a57901" prot="public" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+        <definition>Size QuantLib::BiCGStabResult::iterations</definition>
+        <argsstring></argsstring>
+        <name>iterations</name>
+        <qualifiedname>QuantLib::BiCGStabResult::iterations</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/matrixutilities/bicgstab.hpp" line="34" column="14" bodyfile="ql/math/matrixutilities/bicgstab.hpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structQuantLib_1_1BiCGStabResult_1a9978c0ff8052a892e75c4c7e68f1fbda" prot="public" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::BiCGStabResult::error</definition>
+        <argsstring></argsstring>
+        <name>error</name>
+        <qualifiedname>QuantLib::BiCGStabResult::error</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/matrixutilities/bicgstab.hpp" line="35" column="14" bodyfile="ql/math/matrixutilities/bicgstab.hpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structQuantLib_1_1BiCGStabResult_1aa826d951b596dbaedfc31cc7a195412a" prot="public" static="no" mutable="no">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array QuantLib::BiCGStabResult::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>QuantLib::BiCGStabResult::x</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/matrixutilities/bicgstab.hpp" line="36" column="15" bodyfile="ql/math/matrixutilities/bicgstab.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>QuantLib::Array</label>
+        <link refid="classQuantLib_1_1Array"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::BiCGStabResult</label>
+        <link refid="structQuantLib_1_1BiCGStabResult"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>x</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/math/matrixutilities/bicgstab.hpp" line="33" column="5" bodyfile="ql/math/matrixutilities/bicgstab.hpp" bodystart="33" bodyend="37"/>
+    <listofallmembers>
+      <member refid="structQuantLib_1_1BiCGStabResult_1a9978c0ff8052a892e75c4c7e68f1fbda" prot="public" virt="non-virtual"><scope>QuantLib::BiCGStabResult</scope><name>error</name></member>
+      <member refid="structQuantLib_1_1BiCGStabResult_1a3a8c2b7aaadb337a8c3e8515d2a57901" prot="public" virt="non-virtual"><scope>QuantLib::BiCGStabResult</scope><name>iterations</name></member>
+      <member refid="structQuantLib_1_1BiCGStabResult_1aa826d951b596dbaedfc31cc7a195412a" prot="public" virt="non-virtual"><scope>QuantLib::BiCGStabResult</scope><name>x</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

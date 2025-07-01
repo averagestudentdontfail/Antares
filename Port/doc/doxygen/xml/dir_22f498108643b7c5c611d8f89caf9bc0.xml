@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_22f498108643b7c5c611d8f89caf9bc0" kind="dir">
+    <compoundname>ql/time/daycounters</compoundname>
+    <innerfile refid="actual365fixed_8cpp">actual365fixed.cpp</innerfile>
+    <innerfile refid="actual365fixed_8hpp">actual365fixed.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ql/time/daycounters/"/>
+  </compounddef>
+</doxygen>

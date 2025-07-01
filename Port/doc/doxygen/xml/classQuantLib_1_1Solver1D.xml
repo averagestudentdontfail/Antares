@@ -1,0 +1,418 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1Solver1D" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::Solver1D</compoundname>
+    <basecompoundref refid="classQuantLib_1_1CuriouslyRecurringTemplate" prot="public" virt="non-virtual">QuantLib::CuriouslyRecurringTemplate&lt; Impl &gt;</basecompoundref>
+    <includes refid="solver1d_8hpp" local="no">solver1d.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>class Impl</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="user-defined">
+      <header>Modifiers</header>
+      <memberdef kind="variable" id="classQuantLib_1_1Solver1D_1a46e7eef8c49eb4373dc314a031cd5667" prot="protected" static="no" mutable="yes">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::Solver1D&lt; Impl &gt;::root_</definition>
+        <argsstring></argsstring>
+        <name>root_</name>
+        <qualifiedname>QuantLib::Solver1D::root_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/solver1d.hpp" line="225" column="22" bodyfile="ql/math/solver1d.hpp" bodystart="225" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1Solver1D_1add1dba15498ab66fc7602416407ea197" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::Solver1D&lt; Impl &gt;::xMin_</definition>
+        <argsstring></argsstring>
+        <name>xMin_</name>
+        <qualifiedname>QuantLib::Solver1D::xMin_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/solver1d.hpp" line="225" column="28" bodyfile="ql/math/solver1d.hpp" bodystart="225" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1Solver1D_1a6978d11bba08a7a57cf07ac8b11d3ddf" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::Solver1D&lt; Impl &gt;::xMax_</definition>
+        <argsstring></argsstring>
+        <name>xMax_</name>
+        <qualifiedname>QuantLib::Solver1D::xMax_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/solver1d.hpp" line="225" column="34" bodyfile="ql/math/solver1d.hpp" bodystart="225" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1Solver1D_1a7a73999214b63193b6ace9b1182f9cc8" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::Solver1D&lt; Impl &gt;::fxMin_</definition>
+        <argsstring></argsstring>
+        <name>fxMin_</name>
+        <qualifiedname>QuantLib::Solver1D::fxMin_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/solver1d.hpp" line="225" column="40" bodyfile="ql/math/solver1d.hpp" bodystart="225" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1Solver1D_1afacd8dbc5fa9ac5239e9bab250736b4b" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::Solver1D&lt; Impl &gt;::fxMax_</definition>
+        <argsstring></argsstring>
+        <name>fxMax_</name>
+        <qualifiedname>QuantLib::Solver1D::fxMax_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/solver1d.hpp" line="225" column="47" bodyfile="ql/math/solver1d.hpp" bodystart="225" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1Solver1D_1a01fc52f3d9b09d3aa6a03cf00ad3f7d7" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+        <definition>Size QuantLib::Solver1D&lt; Impl &gt;::maxEvaluations_</definition>
+        <argsstring></argsstring>
+        <name>maxEvaluations_</name>
+        <qualifiedname>QuantLib::Solver1D::maxEvaluations_</qualifiedname>
+        <initializer>= <ref refid="solver1d_8hpp_1a90a9e46cbef4d61b0e6125c3a50ea9b5" kindref="member">MAX_FUNCTION_EVALUATIONS</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/solver1d.hpp" line="226" column="14" bodyfile="ql/math/solver1d.hpp" bodystart="226" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1Solver1D_1a635d7da1f44ebb6da5acabc30c18da1c" prot="protected" static="no" mutable="yes">
+        <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+        <definition>Size QuantLib::Solver1D&lt; Impl &gt;::evaluationNumber_</definition>
+        <argsstring></argsstring>
+        <name>evaluationNumber_</name>
+        <qualifiedname>QuantLib::Solver1D::evaluationNumber_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/solver1d.hpp" line="227" column="22" bodyfile="ql/math/solver1d.hpp" bodystart="227" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1Solver1D_1a8ba71b082b75ddaa93365156432ee11a" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::Solver1D&lt; Impl &gt;::lowerBound_</definition>
+        <argsstring></argsstring>
+        <name>lowerBound_</name>
+        <qualifiedname>QuantLib::Solver1D::lowerBound_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/solver1d.hpp" line="230" column="14" bodyfile="ql/math/solver1d.hpp" bodystart="230" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1Solver1D_1a56446e9ddcef4eb34241db1c776d2ba4" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::Solver1D&lt; Impl &gt;::upperBound_</definition>
+        <argsstring></argsstring>
+        <name>upperBound_</name>
+        <qualifiedname>QuantLib::Solver1D::upperBound_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/solver1d.hpp" line="230" column="26" bodyfile="ql/math/solver1d.hpp" bodystart="230" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1Solver1D_1a0733ce2d2812021ebd69365261dff9c6" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool QuantLib::Solver1D&lt; Impl &gt;::lowerBoundEnforced_</definition>
+        <argsstring></argsstring>
+        <name>lowerBoundEnforced_</name>
+        <qualifiedname>QuantLib::Solver1D::lowerBoundEnforced_</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/solver1d.hpp" line="231" column="14" bodyfile="ql/math/solver1d.hpp" bodystart="231" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1Solver1D_1ac86dda5177d15c09a638a0a99f565925" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool QuantLib::Solver1D&lt; Impl &gt;::upperBoundEnforced_</definition>
+        <argsstring></argsstring>
+        <name>upperBoundEnforced_</name>
+        <qualifiedname>QuantLib::Solver1D::upperBoundEnforced_</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/solver1d.hpp" line="231" column="35" bodyfile="ql/math/solver1d.hpp" bodystart="231" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Solver1D_1a137cd2caf0042ad6fd2c409a9ebc8226" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::Solver1D&lt; Impl &gt;::solve</definition>
+        <argsstring>(const F &amp;f, Real accuracy, Real guess, Real step) const</argsstring>
+        <name>solve</name>
+        <qualifiedname>QuantLib::Solver1D::solve</qualifiedname>
+        <param>
+          <type>const F &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>accuracy</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>guess</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>step</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method returns the zero of the function <formula id="27">$ f $</formula>, determined with the given accuracy <formula id="26">$ \epsilon $</formula>; depending on the particular solver, this might mean that the returned <formula id="36">$ x $</formula> is such that <formula id="46">$ |f(x)| &lt; \epsilon
+$</formula>, or that <formula id="47">$ |x-\xi| &lt; \epsilon $</formula> where <formula id="48">$ \xi $</formula> is the real zero.</para>
+<para>This method contains a bracketing routine to which an initial guess must be supplied as well as a step used to scan the range of the possible bracketing values. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/solver1d.hpp" line="84" column="14" bodyfile="ql/math/solver1d.hpp" bodystart="84" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Solver1D_1a97ae7284c76079d4162e25d29304280a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::Solver1D&lt; Impl &gt;::solve</definition>
+        <argsstring>(const F &amp;f, Real accuracy, Real guess, Real xMin, Real xMax) const</argsstring>
+        <name>solve</name>
+        <qualifiedname>QuantLib::Solver1D::solve</qualifiedname>
+        <param>
+          <type>const F &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>accuracy</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>guess</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>xMin</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>xMax</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method returns the zero of the function <formula id="27">$ f $</formula>, determined with the given accuracy <formula id="26">$ \epsilon $</formula>; depending on the particular solver, this might mean that the returned <formula id="36">$ x $</formula> is such that <formula id="46">$ |f(x)| &lt; \epsilon
+$</formula>, or that <formula id="47">$ |x-\xi| &lt; \epsilon $</formula> where <formula id="48">$ \xi $</formula> is the real zero.</para>
+<para>An initial guess must be supplied, as well as two values <formula id="49">$ x_\mathrm{min} $</formula> and <formula id="50">$ x_\mathrm{max} $</formula> which must bracket the zero (i.e., either <formula id="51">$ f(x_\mathrm{min})
+\leq 0 \leq f(x_\mathrm{max}) $</formula>, or <formula id="52">$
+f(x_\mathrm{max}) \leq 0 \leq f(x_\mathrm{min}) $</formula> must be true). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/solver1d.hpp" line="163" column="14" bodyfile="ql/math/solver1d.hpp" bodystart="163" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Solver1D_1a65b912b5ea70e93f3a942c3f1ed020b0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::Solver1D&lt; T &gt;::setMaxEvaluations</definition>
+        <argsstring>(Size evaluations)</argsstring>
+        <name>setMaxEvaluations</name>
+        <qualifiedname>QuantLib::Solver1D::setMaxEvaluations</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>evaluations</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method sets the maximum number of function evaluations for the bracketing routine. An error is thrown if a bracket is not found after this number of evaluations. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/solver1d.hpp" line="218" column="14" bodyfile="ql/math/solver1d.hpp" bodystart="238" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Solver1D_1a57eb73760b942c3f4d854e38fa73c891" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::Solver1D&lt; T &gt;::setLowerBound</definition>
+        <argsstring>(Real lowerBound)</argsstring>
+        <name>setLowerBound</name>
+        <qualifiedname>QuantLib::Solver1D::setLowerBound</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>lowerBound</declname>
+        </param>
+        <briefdescription>
+<para>sets the lower bound for the function domain </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/solver1d.hpp" line="220" column="14" bodyfile="ql/math/solver1d.hpp" bodystart="243" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Solver1D_1a07328db55592cda94906b710407c4b5a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::Solver1D&lt; T &gt;::setUpperBound</definition>
+        <argsstring>(Real upperBound)</argsstring>
+        <name>setUpperBound</name>
+        <qualifiedname>QuantLib::Solver1D::setUpperBound</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>upperBound</declname>
+        </param>
+        <briefdescription>
+<para>sets the upper bound for the function domain </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/solver1d.hpp" line="222" column="14" bodyfile="ql/math/solver1d.hpp" bodystart="249" bodyend="252"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Solver1D_1a60eedbb1ee36d7575c30e6dc5007f656" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::Solver1D&lt; T &gt;::enforceBounds_</definition>
+        <argsstring>(Real x) const</argsstring>
+        <name>enforceBounds_</name>
+        <qualifiedname>QuantLib::Solver1D::enforceBounds_</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/solver1d.hpp" line="229" column="14" bodyfile="ql/math/solver1d.hpp" bodystart="255" bodyend="261"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1Solver1D_1af76a2a43fb01058eaa60873b173c8644" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Solver1D&lt; Impl &gt;::Solver1D</definition>
+        <argsstring>()=default</argsstring>
+        <name>Solver1D</name>
+        <qualifiedname>QuantLib::Solver1D::Solver1D</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/solver1d.hpp" line="69" column="9"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Base class for 1-D solvers. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The implementation of this class uses the so-called &quot;Barton-Nackman trick&quot;, also known as &quot;the curiously recurring
+template pattern&quot;. Concrete solvers will be declared as: <programlisting><codeline><highlight class="keyword">class<sp/></highlight><highlight class="normal">Foo<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Solver1D_1af76a2a43fb01058eaa60873b173c8644" kindref="member">Solver1D</ref>&lt;Foo&gt;<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>F&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>solveImpl(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>F&amp;<sp/>f,<sp/>Real<sp/>accuracy)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+</programlisting> Before calling <computeroutput>solveImpl</computeroutput>, the base class will set its protected data members so that:<itemizedlist>
+<listitem><para><computeroutput>xMin_</computeroutput> and <computeroutput>xMax_</computeroutput> form a valid bracket;</para>
+</listitem><listitem><para><computeroutput>fxMin_</computeroutput> and <computeroutput>fxMax_</computeroutput> contain the values of the function in <computeroutput>xMin_</computeroutput> and <computeroutput>xMax_</computeroutput>;</para>
+</listitem><listitem><para><computeroutput>root_</computeroutput> is a valid initial guess. The implementation of <computeroutput>solveImpl</computeroutput> can safely assume all of the above.</para>
+<para><xrefsect id="todo_1_todo000003"><xreftitle>Todo</xreftitle><xrefdescription></xrefdescription></xrefsect></para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>QuantLib::CuriouslyRecurringTemplate&lt; Impl &gt;</label>
+        <link refid="classQuantLib_1_1CuriouslyRecurringTemplate"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::Solver1D&lt; Impl &gt;</label>
+        <link refid="classQuantLib_1_1Solver1D"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>QuantLib::CuriouslyRecurringTemplate&lt; Impl &gt;</label>
+        <link refid="classQuantLib_1_1CuriouslyRecurringTemplate"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::Solver1D&lt; Impl &gt;</label>
+        <link refid="classQuantLib_1_1Solver1D"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/math/solver1d.hpp" line="67" column="5" bodyfile="ql/math/solver1d.hpp" bodystart="67" bodyend="232"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1CuriouslyRecurringTemplate_1ac51e69d7c3e616686e8777fcabebf954" prot="protected" virt="non-virtual"><scope>QuantLib::Solver1D</scope><name>CuriouslyRecurringTemplate</name></member>
+      <member refid="classQuantLib_1_1Solver1D_1a60eedbb1ee36d7575c30e6dc5007f656" prot="private" virt="non-virtual"><scope>QuantLib::Solver1D</scope><name>enforceBounds_</name></member>
+      <member refid="classQuantLib_1_1Solver1D_1a635d7da1f44ebb6da5acabc30c18da1c" prot="protected" virt="non-virtual"><scope>QuantLib::Solver1D</scope><name>evaluationNumber_</name></member>
+      <member refid="classQuantLib_1_1Solver1D_1afacd8dbc5fa9ac5239e9bab250736b4b" prot="protected" virt="non-virtual"><scope>QuantLib::Solver1D</scope><name>fxMax_</name></member>
+      <member refid="classQuantLib_1_1Solver1D_1a7a73999214b63193b6ace9b1182f9cc8" prot="protected" virt="non-virtual"><scope>QuantLib::Solver1D</scope><name>fxMin_</name></member>
+      <member refid="classQuantLib_1_1CuriouslyRecurringTemplate_1a72c11590c74c9d0085fd43f17cdfe96e" prot="protected" virt="non-virtual"><scope>QuantLib::Solver1D</scope><name>impl</name></member>
+      <member refid="classQuantLib_1_1CuriouslyRecurringTemplate_1a9efaa4c38bfca1e148ed265a809ed220" prot="protected" virt="non-virtual"><scope>QuantLib::Solver1D</scope><name>impl</name></member>
+      <member refid="classQuantLib_1_1Solver1D_1a8ba71b082b75ddaa93365156432ee11a" prot="private" virt="non-virtual"><scope>QuantLib::Solver1D</scope><name>lowerBound_</name></member>
+      <member refid="classQuantLib_1_1Solver1D_1a0733ce2d2812021ebd69365261dff9c6" prot="private" virt="non-virtual"><scope>QuantLib::Solver1D</scope><name>lowerBoundEnforced_</name></member>
+      <member refid="classQuantLib_1_1Solver1D_1a01fc52f3d9b09d3aa6a03cf00ad3f7d7" prot="protected" virt="non-virtual"><scope>QuantLib::Solver1D</scope><name>maxEvaluations_</name></member>
+      <member refid="classQuantLib_1_1Solver1D_1a46e7eef8c49eb4373dc314a031cd5667" prot="protected" virt="non-virtual"><scope>QuantLib::Solver1D</scope><name>root_</name></member>
+      <member refid="classQuantLib_1_1Solver1D_1a57eb73760b942c3f4d854e38fa73c891" prot="public" virt="non-virtual"><scope>QuantLib::Solver1D</scope><name>setLowerBound</name></member>
+      <member refid="classQuantLib_1_1Solver1D_1a65b912b5ea70e93f3a942c3f1ed020b0" prot="public" virt="non-virtual"><scope>QuantLib::Solver1D</scope><name>setMaxEvaluations</name></member>
+      <member refid="classQuantLib_1_1Solver1D_1a07328db55592cda94906b710407c4b5a" prot="public" virt="non-virtual"><scope>QuantLib::Solver1D</scope><name>setUpperBound</name></member>
+      <member refid="classQuantLib_1_1Solver1D_1a137cd2caf0042ad6fd2c409a9ebc8226" prot="public" virt="non-virtual"><scope>QuantLib::Solver1D</scope><name>solve</name></member>
+      <member refid="classQuantLib_1_1Solver1D_1a97ae7284c76079d4162e25d29304280a" prot="public" virt="non-virtual"><scope>QuantLib::Solver1D</scope><name>solve</name></member>
+      <member refid="classQuantLib_1_1Solver1D_1af76a2a43fb01058eaa60873b173c8644" prot="public" virt="non-virtual"><scope>QuantLib::Solver1D</scope><name>Solver1D</name></member>
+      <member refid="classQuantLib_1_1Solver1D_1a56446e9ddcef4eb34241db1c776d2ba4" prot="private" virt="non-virtual"><scope>QuantLib::Solver1D</scope><name>upperBound_</name></member>
+      <member refid="classQuantLib_1_1Solver1D_1ac86dda5177d15c09a638a0a99f565925" prot="private" virt="non-virtual"><scope>QuantLib::Solver1D</scope><name>upperBoundEnforced_</name></member>
+      <member refid="classQuantLib_1_1Solver1D_1a6978d11bba08a7a57cf07ac8b11d3ddf" prot="protected" virt="non-virtual"><scope>QuantLib::Solver1D</scope><name>xMax_</name></member>
+      <member refid="classQuantLib_1_1Solver1D_1add1dba15498ab66fc7602416407ea197" prot="protected" virt="non-virtual"><scope>QuantLib::Solver1D</scope><name>xMin_</name></member>
+      <member refid="classQuantLib_1_1CuriouslyRecurringTemplate_1ae22b4353d3c05a5aad5f5b8769392b05" prot="protected" virt="non-virtual"><scope>QuantLib::Solver1D</scope><name>~CuriouslyRecurringTemplate</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

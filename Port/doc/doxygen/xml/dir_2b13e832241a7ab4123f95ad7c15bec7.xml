@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_2b13e832241a7ab4123f95ad7c15bec7" kind="dir">
+    <compoundname>ql/methods/finitedifferences/utilities</compoundname>
+    <innerfile refid="escroweddividendadjustment_8cpp">escroweddividendadjustment.cpp</innerfile>
+    <innerfile refid="escroweddividendadjustment_8hpp">escroweddividendadjustment.hpp</innerfile>
+    <innerfile refid="fdmboundaryconditionset_8hpp">fdmboundaryconditionset.hpp</innerfile>
+    <innerfile refid="fdmdividendhandler_8cpp">fdmdividendhandler.cpp</innerfile>
+    <innerfile refid="fdmdividendhandler_8hpp">fdmdividendhandler.hpp</innerfile>
+    <innerfile refid="fdmescrowedloginnervaluecalculator_8cpp">fdmescrowedloginnervaluecalculator.cpp</innerfile>
+    <innerfile refid="fdmescrowedloginnervaluecalculator_8hpp">fdmescrowedloginnervaluecalculator.hpp</innerfile>
+    <innerfile refid="fdminnervaluecalculator_8cpp">fdminnervaluecalculator.cpp</innerfile>
+    <innerfile refid="fdminnervaluecalculator_8hpp">fdminnervaluecalculator.hpp</innerfile>
+    <innerfile refid="fdmquantohelper_8cpp">fdmquantohelper.cpp</innerfile>
+    <innerfile refid="fdmquantohelper_8hpp">fdmquantohelper.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ql/methods/finitedifferences/utilities/"/>
+  </compounddef>
+</doxygen>

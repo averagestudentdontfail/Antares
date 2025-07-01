@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="test" kind="page">
+    <compoundname>test</compoundname>
+    <title>Test List</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><variablelist>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1AnalyticDividendEuropeanEngine" kindref="compound">QuantLib::AnalyticDividendEuropeanEngine</ref>  </term></varlistentry>
+<listitem><para><anchor id="test_1_test000016"/>the correctness of the returned greeks is tested by reproducing numerical derivatives.  </para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1AnalyticEuropeanEngine" kindref="compound">QuantLib::AnalyticEuropeanEngine</ref>  </term></varlistentry>
+<listitem><para><anchor id="test_1_test000017"/><itemizedlist>
+<listitem><para>the correctness of the returned value is tested by reproducing results available in literature.</para>
+</listitem><listitem><para>the correctness of the returned greeks is tested by reproducing results available in literature.</para>
+</listitem><listitem><para>the correctness of the returned greeks is tested by reproducing numerical derivatives.</para>
+</listitem><listitem><para>the correctness of the returned implied volatility is tested by using it for reproducing the target value.</para>
+</listitem><listitem><para>the implied-volatility calculation is tested by checking that it does not modify the option.</para>
+</listitem><listitem><para>the correctness of the returned value in case of cash-or-nothing digital payoff is tested by reproducing results available in literature.</para>
+</listitem><listitem><para>the correctness of the returned value in case of asset-or-nothing digital payoff is tested by reproducing results available in literature.</para>
+</listitem><listitem><para>the correctness of the returned value in case of gap digital payoff is tested by reproducing results available in literature.</para>
+</listitem><listitem><para>the correctness of the returned greeks in case of cash-or-nothing digital payoff is tested by reproducing numerical derivatives.  </para>
+</listitem></itemizedlist>
+</para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1Array" kindref="compound">QuantLib::Array</ref>  </term></varlistentry>
+<listitem><para><anchor id="test_1_test000003"/>construction of arrays is checked in a number of cases  </para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1Brent" kindref="compound">QuantLib::Brent</ref>  </term></varlistentry>
+<listitem><para><anchor id="test_1_test000012"/>the correctness of the returned values is tested by checking them against known good results. </para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1Calendar" kindref="compound">QuantLib::Calendar</ref>  </term></varlistentry>
+<listitem><para><anchor id="test_1_test000021"/>the methods for adding and removing holidays are tested by inspecting the calendar before and after their invocation.  </para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1CubicInterpolation" kindref="compound">QuantLib::CubicInterpolation</ref>  </term></varlistentry>
+<listitem><para><anchor id="test_1_test000009"/>to be adapted from old ones. </para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1Date" kindref="compound">QuantLib::Date</ref>  </term></varlistentry>
+<listitem><para><anchor id="test_1_test000022"/>self-consistency of dates, serial numbers, days of month, months, and weekdays is checked over the whole date range.  </para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1FdBlackScholesVanillaEngine" kindref="compound">QuantLib::FdBlackScholesVanillaEngine</ref>  </term></varlistentry>
+<listitem><para><anchor id="test_1_test000018"/>the correctness of the returned value is tested by reproducing results available in web/literature and comparison with Black pricing.  </para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1GammaFunction" kindref="compound">QuantLib::GammaFunction</ref>  </term></varlistentry>
+<listitem><para><anchor id="test_1_test000004"/>the correctness of the returned value is tested by checking it against known good results.  </para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1GaussianQuadrature" kindref="compound">QuantLib::GaussianQuadrature</ref>  </term></varlistentry>
+<listitem><para><anchor id="test_1_test000006"/>the correctness of the result is tested by checking it against known good values.  </para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1Instrument" kindref="compound">QuantLib::Instrument</ref>  </term></varlistentry>
+<listitem><para><anchor id="test_1_test000001"/>observability of class instances is checked.  </para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1InterestRate" kindref="compound">QuantLib::InterestRate</ref>  </term></varlistentry>
+<listitem><para><anchor id="test_1_test000002"/>Converted rates are checked against known good results  </para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1Newton" kindref="compound">QuantLib::Newton</ref>  </term></varlistentry>
+<listitem><para><anchor id="test_1_test000013"/>the correctness of the returned values is tested by checking them against known good results. </para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1NewtonSafe" kindref="compound">QuantLib::NewtonSafe</ref>  </term></varlistentry>
+<listitem><para><anchor id="test_1_test000014"/>the correctness of the returned values is tested by checking them against known good results. </para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1NormalDistribution" kindref="compound">QuantLib::NormalDistribution</ref>  </term></varlistentry>
+<listitem><para><anchor id="test_1_test000005"/>the correctness of the returned value is tested by checking it against numerical calculations. Cross-checks are also performed against the <ref refid="classQuantLib_1_1CumulativeNormalDistribution" kindref="compound">CumulativeNormalDistribution</ref> and <ref refid="classQuantLib_1_1InverseCumulativeNormal" kindref="compound">InverseCumulativeNormal</ref> classes.  </para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1Period" kindref="compound">QuantLib::Period</ref>  </term></varlistentry>
+<listitem><para><anchor id="test_1_test000023"/>self-consistency of algebra is checked.  </para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1Quote" kindref="compound">QuantLib::Quote</ref>  </term></varlistentry>
+<listitem><para><anchor id="test_1_test000019"/>the observability of class instances is tested.  </para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1Ridder" kindref="compound">QuantLib::Ridder</ref>  </term></varlistentry>
+<listitem><para><anchor id="test_1_test000015"/>the correctness of the returned values is tested by checking them against known good results. </para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1SimpsonIntegral" kindref="compound">QuantLib::SimpsonIntegral</ref>  </term></varlistentry>
+<listitem><para><anchor id="test_1_test000007"/>the correctness of the result is tested by checking it against known good values.  </para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1SymmetricSchurDecomposition" kindref="compound">QuantLib::SymmetricSchurDecomposition</ref>  </term></varlistentry>
+<listitem><para><anchor id="test_1_test000010"/>the correctness of the returned values is tested by checking their properties.  </para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1TqrEigenDecomposition" kindref="compound">QuantLib::TqrEigenDecomposition</ref>  </term></varlistentry>
+<listitem><para><anchor id="test_1_test000011"/>the correctness of the result is tested by checking it against known good values.  </para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1TrapezoidIntegral" kindref="compound">QuantLib::TrapezoidIntegral&lt; IntegrationPolicy &gt;</ref>  </term></varlistentry>
+<listitem><para><anchor id="test_1_test000008"/>the correctness of the result is tested by checking it against known good values.  </para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1YieldTermStructure" kindref="compound">QuantLib::YieldTermStructure</ref>  </term></varlistentry>
+<listitem><para><anchor id="test_1_test000020"/>observability against evaluation date changes is checked. </para>
+</listitem>
+</variablelist>
+</para>
+    </detaileddescription>
+    <location file="test"/>
+  </compounddef>
+</doxygen>
