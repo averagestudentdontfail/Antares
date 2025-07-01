@@ -1,5 +1,6 @@
 # Build outputs
 Antares.Build/
+Antares.Depreciate/
 
 # Visual Studio / VS Code
 .vs/

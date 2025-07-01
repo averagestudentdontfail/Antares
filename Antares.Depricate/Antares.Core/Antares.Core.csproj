@@ -7,4 +7,9 @@
   <ItemGroup>
     <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Antares.Distribution\Antares.Distribution.csproj" />
+    <ProjectReference Include="..\Antares.Root\Antares.Root.csproj" />
+  </ItemGroup>
 </Project>

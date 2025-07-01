@@ -1,7 +1,7 @@
 using System;
 using Antares.Interpolation.Interpolators;
-using Antares.Solver;
 using Antares.Root;
+using Antares.Distribution;
 
 namespace Antares.Engine
 {
