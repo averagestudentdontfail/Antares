@@ -1,7 +1,5 @@
 # Build outputs
 Antares.Build/
-Antares.Deprecate/
-
 # Visual Studio / VS Code
 .vs/
 .vscode/
