@@ -1,4 +1,4 @@
-// C# code for BlackScholesProcess.cs
+// Blackscholesprocess.cs
 
 using System;
 using System.Collections.Generic;
