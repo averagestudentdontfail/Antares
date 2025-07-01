@@ -1,4 +1,4 @@
-// userconfig.cs
+// Userconfig.cs
 
 namespace Antares
 {
