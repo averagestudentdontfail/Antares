@@ -1,4 +1,4 @@
-// NullCalendar.cs
+// Nullcalendar.cs
 
 namespace Antares.Time.Calendar
 {

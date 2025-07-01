@@ -1,4 +1,4 @@
-// C# code for Actual365Fixed.cs
+// Actual365fixed.cs
 
 using System;
 
