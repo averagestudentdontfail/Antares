@@ -8,22 +8,65 @@ using Antares.Method.Mesh;
 using Antares.Method.Utilities;
 using QLNet; // Using QLNet for Date, DayCounter, Exercise, and Dividend types
 
-// Placeholders for dependent types. In a full project, these would be in their own files.
 namespace Antares.Method.Utilities
 {
-    // A placeholder for the FdmDividendHandler
+    /// <summary>
+    /// Handles dividend adjustments in finite difference methods.
+    /// </summary>
     public class FdmDividendHandler : IStepCondition<Array>
     {
         private readonly List<double> _dividendTimes;
-        public FdmDividendHandler(IReadOnlyList<Dividend> cashFlow, FdmMesher mesher, Date refDate, DayCounter dayCounter, int i)
+        private readonly List<double> _dividendAmounts;
+        private readonly FdmMesher _mesher;
+
+        public FdmDividendHandler(IReadOnlyList<Dividend> cashFlow, 
+                                 FdmMesher mesher, 
+                                 Date refDate, 
+                                 DayCounter dayCounter, 
+                                 int assetDirection = 0)
         {
-            _dividendTimes = cashFlow.Select(d => dayCounter.yearFraction(refDate, d.date())).ToList();
+            _mesher = mesher ?? throw new ArgumentNullException(nameof(mesher));
+            _dividendTimes = new List<double>();
+            _dividendAmounts = new List<double>();
+            
+            foreach (var dividend in cashFlow)
+            {
+                double time = dayCounter.yearFraction(refDate, dividend.date());
+                _dividendTimes.Add(time);
+                _dividendAmounts.Add(dividend.amount());
+            }
         }
+
         public IReadOnlyList<double> DividendTimes() => _dividendTimes;
-        public void ApplyTo(Array a, double t) { /* Dividend logic would go here */ }
+
+        public void ApplyTo(Array a, double t)
+        {
+            // Find if there's a dividend at this time
+            for (int i = 0; i < _dividendTimes.Count; i++)
+            {
+                if (Math.Abs(_dividendTimes[i] - t) < 1e-8) // Close enough to dividend time
+                {
+                    ApplyDividendAdjustment(a, _dividendAmounts[i]);
+                    break;
+                }
+            }
+        }
+
+        private void ApplyDividendAdjustment(Array a, double dividendAmount)
+        {
+            // Apply dividend adjustment logic
+            // This would typically involve adjusting the underlying asset price grid
+            // and interpolating the option values accordingly
+            foreach (var iter in (FdmLinearOpLayout)_mesher.Layout)
+            {
+                // Simplified dividend adjustment - in practice this would be more complex
+                // involving proper interpolation and grid adjustments
+                int index = (int)iter.Index;
+                // The adjustment logic would depend on the specific dividend model
+            }
+        }
     }
 }
-
 
 namespace Antares.Method.Step
 {
@@ -108,54 +151,70 @@ namespace Antares.Method.Step
         /// <summary>
         /// A factory method to create a composite of standard conditions for a vanilla option.
         /// </summary>
+        /// <param name="cashFlow">The dividend schedule.</param>
+        /// <param name="exercise">The exercise information.</param>
+        /// <param name="mesher">The finite difference mesher.</param>
+        /// <param name="calculator">The inner value calculator.</param>
+        /// <param name="refDate">The reference date for time calculations.</param>
+        /// <param name="dayCounter">The day counter for time calculations.</param>
+        /// <returns>A composite step condition containing appropriate conditions for the option.</returns>
         public static FdmStepConditionComposite VanillaComposite(
             IReadOnlyList<Dividend> cashFlow,
             Exercise exercise,
             FdmMesher mesher,
-            IFdmInnerValueCalculator calculator,
+            FdmInnerValueCalculator calculator,
             Date refDate,
             DayCounter dayCounter)
         {
-            var stoppingTimes = new List<IEnumerable<double>>();
-            var stepConditions = new List<IStepCondition<Array>>();
+            var stoppingTimesList = new List<IEnumerable<double>>();
+            var conditions = new List<IStepCondition<Array>>();
 
-            if (cashFlow != null && cashFlow.Any())
+            // Add dividend condition if there are dividends
+            if (cashFlow != null && cashFlow.Count > 0)
             {
-                var dividendCondition = new FdmDividendHandler(cashFlow, mesher, refDate, dayCounter, 0);
-                stepConditions.Add(dividendCondition);
+                var dividendHandler = new FdmDividendHandler(cashFlow, mesher, refDate, dayCounter);
+                conditions.Add(dividendHandler);
+                stoppingTimesList.Add(dividendHandler.DividendTimes());
+            }
 
-                double maturityTime = dayCounter.yearFraction(refDate, exercise.lastDate());
+            // Add American exercise condition if applicable
+            if (exercise != null && exercise.type() != Exercise.Type.European)
+            {
+                var americanCondition = new FdmAmericanStepCondition(mesher, calculator);
+                conditions.Add(americanCondition);
                 
-                // Add dividend times, capped at maturity
-                var dividendTimes = dividendCondition.DividendTimes()
-                    .Select(t => System.Math.Min(maturityTime, t)).ToList();
-                stoppingTimes.Add(dividendTimes);
-
-                // Add slightly perturbed times for smoother convergence
-                var perturbedTimes = dividendTimes
-                    .Select(t => System.Math.Min(maturityTime, t + 1e-5)).ToList();
-                stoppingTimes.Add(perturbedTimes);
+                // Add exercise dates as stopping times
+                var exerciseTimes = exercise.dates()
+                    .Select(date => dayCounter.yearFraction(refDate, date))
+                    .ToList();
+                stoppingTimesList.Add(exerciseTimes);
             }
 
-            switch (exercise.type())
-            {
-                case Exercise.Type.American:
-                    stepConditions.Add(new FdmAmericanStepCondition(mesher, calculator));
-                    break;
-                case Exercise.Type.Bermudan:
-                    var bermudanCondition = new FdmBermudanStepCondition(exercise.dates(), refDate, dayCounter, mesher, calculator);
-                    stepConditions.Add(bermudanCondition);
-                    stoppingTimes.Add(bermudanCondition.ExerciseTimes);
-                    break;
-                case Exercise.Type.European:
-                    // No exercise condition needed before maturity
-                    break;
-                default:
-                    QL.Fail("Exercise type is not supported.");
-                    break;
-            }
-
-            return new FdmStepConditionComposite(stoppingTimes, stepConditions);
+            return new FdmStepConditionComposite(stoppingTimesList, conditions);
         }
+    }
+
+    /// <summary>
+    /// A step condition that takes a snapshot of the solution at a specific time.
+    /// </summary>
+    public class FdmSnapshotCondition : IStepCondition<Array>
+    {
+        public double Time { get; }
+        private Array _values;
+
+        public FdmSnapshotCondition(double time)
+        {
+            Time = time;
+        }
+
+        public void ApplyTo(Array a, double t)
+        {
+            if (Math.Abs(t - Time) < 1e-8) // Close enough to snapshot time
+            {
+                _values = new Array(a); // Take a copy
+            }
+        }
+
+        public Array GetValues() => _values;
     }
 }

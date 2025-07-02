@@ -5,19 +5,6 @@ using Antares.Method.Mesh;
 using Antares.Method.Operator;
 using Antares.Method.Utilities;
 
-// Placeholders for dependent types. In a full project, these would be in their own files.
-namespace Antares.Method.Utilities
-{
-    /// <summary>
-    /// Placeholder for the FdmInnerValueCalculator interface.
-    /// This defines the contract for calculating the intrinsic value of an option at a grid point.
-    /// </summary>
-    public interface IFdmInnerValueCalculator
-    {
-        double InnerValue(IFdmLinearOpIterator iter, double t);
-    }
-}
-
 namespace Antares.Method
 {
     /// <summary>
@@ -29,7 +16,6 @@ namespace Antares.Method
         void ApplyTo(TArray a, double t);
     }
 }
-
 
 namespace Antares.Method.Step
 {
@@ -43,17 +29,17 @@ namespace Antares.Method.Step
     public class FdmAmericanStepCondition : IStepCondition<Array>
     {
         private readonly FdmMesher _mesher;
-        private readonly IFdmInnerValueCalculator _calculator;
+        private readonly FdmInnerValueCalculator _calculator;
 
         /// <summary>
         /// Initializes a new instance of the FdmAmericanStepCondition class.
         /// </summary>
         /// <param name="mesher">The FDM mesher, which provides the grid layout.</param>
         /// <param name="calculator">The calculator for the option's intrinsic value.</param>
-        public FdmAmericanStepCondition(FdmMesher mesher, IFdmInnerValueCalculator calculator)
+        public FdmAmericanStepCondition(FdmMesher mesher, FdmInnerValueCalculator calculator)
         {
-            _mesher = mesher;
-            _calculator = calculator;
+            _mesher = mesher ?? throw new ArgumentNullException(nameof(mesher));
+            _calculator = calculator ?? throw new ArgumentNullException(nameof(calculator));
         }
 
         /// <summary>
@@ -63,13 +49,14 @@ namespace Antares.Method.Step
         /// <param name="t">The current time.</param>
         public void ApplyTo(Array a, double t)
         {
-            QL.Require(_mesher.Layout.Size == a.Count, "Inconsistent array dimensions.");
+            QL.Require(((FdmLinearOpLayout)_mesher.Layout).Size == a.Count, 
+                      "Inconsistent array dimensions.");
 
             // The loop iterates over all points in the multi-dimensional grid.
             foreach (var iter in (FdmLinearOpLayout)_mesher.Layout)
             {
                 double innerValue = _calculator.InnerValue(iter, t);
-                int index = iter.Index;
+                int index = (int)iter.Index;
 
                 if (innerValue > a[index])
                 {

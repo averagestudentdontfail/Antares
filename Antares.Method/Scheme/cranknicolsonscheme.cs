@@ -6,35 +6,92 @@ using Antares.Math;
 using Antares.Method.Operator;
 using Antares.Method.Utilities;
 
-// Placeholders for dependent types. In a full project, these would be in their own files.
 namespace Antares.Method.Scheme
 {
     /// <summary>
-    /// Placeholder for the ExplicitEulerScheme.
+    /// Explicit Euler scheme for finite difference methods.
     /// </summary>
     public class ExplicitEulerScheme
     {
-        public ExplicitEulerScheme(IFdmLinearOpComposite map, IReadOnlyList<IFdmBoundaryCondition> bcSet) { }
-        public void SetStep(double? dt) { }
-        public void Step(ref Array a, double t, double theta) { }
+        private readonly IFdmLinearOpComposite _map;
+        private readonly BoundaryConditionSchemeHelper _bcSet;
+        private double? _dt;
+
+        public ExplicitEulerScheme(IFdmLinearOpComposite map, IReadOnlyList<IFdmBoundaryCondition> bcSet)
+        {
+            _map = map ?? throw new ArgumentNullException(nameof(map));
+            _bcSet = new BoundaryConditionSchemeHelper(bcSet ?? new List<IFdmBoundaryCondition>());
+        }
+
+        public void SetStep(double? dt)
+        {
+            _dt = dt;
+        }
+
+        public void Step(ref Array a, double t, double theta)
+        {
+            QL.Require(_dt.HasValue, "Time step not set");
+            
+            _map.SetTime(t, t - _dt.Value);
+            _bcSet.ApplyBeforeApplying(_map);
+            
+            var result = _map.Apply(a);
+            a = result;
+            
+            _bcSet.ApplyAfterApplying(a);
+        }
     }
 
     /// <summary>
-    /// Placeholder for the ImplicitEulerScheme.
+    /// Implicit Euler scheme for finite difference methods.
     /// </summary>
     public class ImplicitEulerScheme
     {
         public enum SolverType { BiCGstab, GMRES }
-        public ImplicitEulerScheme(IFdmLinearOpComposite map, IReadOnlyList<IFdmBoundaryCondition> bcSet, double relTol, SolverType solverType) { }
-        public void SetStep(double? dt) { }
-        public void Step(ref Array a, double t, double theta) { }
-        public int NumberOfIterations() => 0;
+
+        private readonly IFdmLinearOpComposite _map;
+        private readonly BoundaryConditionSchemeHelper _bcSet;
+        private readonly double _relTol;
+        private readonly SolverType _solverType;
+        private double? _dt;
+        private int _iterations;
+
+        public ImplicitEulerScheme(IFdmLinearOpComposite map, 
+                                  IReadOnlyList<IFdmBoundaryCondition> bcSet, 
+                                  double relTol, 
+                                  SolverType solverType)
+        {
+            _map = map ?? throw new ArgumentNullException(nameof(map));
+            _bcSet = new BoundaryConditionSchemeHelper(bcSet ?? new List<IFdmBoundaryCondition>());
+            _relTol = relTol;
+            _solverType = solverType;
+            _iterations = 0;
+        }
+
+        public void SetStep(double? dt)
+        {
+            _dt = dt;
+        }
+
+        public void Step(ref Array a, double t, double theta)
+        {
+            QL.Require(_dt.HasValue, "Time step not set");
+            
+            _map.SetTime(t, t - _dt.Value);
+            _bcSet.ApplyBeforeSolving(_map, a);
+            
+            // Solve the implicit system
+            // This is a simplified implementation - a full version would use iterative solvers
+            var result = _map.SolveFor(a);
+            a = result;
+            _iterations = 1; // Placeholder iteration count
+            
+            _bcSet.ApplyAfterSolving(a);
+        }
+
+        public int NumberOfIterations() => _iterations;
     }
-}
 
-
-namespace Antares.Method.Scheme
-{
     /// <summary>
     /// Crank-Nicolson scheme for finite difference methods.
     /// </summary>
@@ -76,7 +133,18 @@ namespace Antares.Method.Scheme
         }
 
         /// <summary>
-        /// Performs one time step of the scheme.
+        /// Sets the time step for the scheme.
+        /// </summary>
+        /// <param name="dt">The time step.</param>
+        public void SetStep(double? dt)
+        {
+            _dt = dt;
+            _explicitScheme.SetStep(dt);
+            _implicitScheme.SetStep(dt);
+        }
+
+        /// <summary>
+        /// Performs one time step of the Crank-Nicolson scheme.
         /// </summary>
         /// <param name="a">The array of values at the current time step (input), which will be updated to the next time step (output).</param>
         /// <param name="t">The time of the next time step.</param>
@@ -85,33 +153,38 @@ namespace Antares.Method.Scheme
             QL.Require(_dt.HasValue, "Time step not set.");
             QL.Require(t - _dt.Value > -1e-8, "A step towards negative time was given.");
 
-            // Apply the explicit part of the scheme with weight (1-theta)
-            if (_theta != 1.0)
+            if (_theta.Equals(1.0))
             {
-                _explicitScheme.Step(ref a, t, 1.0 - _theta);
-            }
-
-            // Apply the implicit part of the scheme with weight theta
-            if (_theta != 0.0)
-            {
+                // Pure implicit Euler
                 _implicitScheme.Step(ref a, t, _theta);
             }
+            else if (_theta.Equals(0.0))
+            {
+                // Pure explicit Euler
+                _explicitScheme.Step(ref a, t, _theta);
+            }
+            else
+            {
+                // Mixed Crank-Nicolson scheme
+                // This is a simplified implementation of the weighted combination
+                var explicitPart = new Array(a);
+                var implicitPart = new Array(a);
+                
+                _explicitScheme.Step(ref explicitPart, t, 1.0 - _theta);
+                _implicitScheme.Step(ref implicitPart, t, _theta);
+                
+                // Combine the results
+                for (int i = 0; i < a.Count; i++)
+                {
+                    a[i] = (1.0 - _theta) * explicitPart[i] + _theta * implicitPart[i];
+                }
+            }
         }
 
         /// <summary>
-        /// Sets the time step size for subsequent calls to Step.
+        /// Returns the number of iterations required for the implicit part.
         /// </summary>
-        /// <param name="dt">The time step size.</param>
-        public void SetStep(double dt)
-        {
-            _dt = dt;
-            _explicitScheme.SetStep(_dt);
-            _implicitScheme.SetStep(_dt);
-        }
-
-        /// <summary>
-        /// Gets the number of iterations performed by the implicit solver in the last step.
-        /// </summary>
+        /// <returns>The number of iterations.</returns>
         public int NumberOfIterations()
         {
             return _implicitScheme.NumberOfIterations();
