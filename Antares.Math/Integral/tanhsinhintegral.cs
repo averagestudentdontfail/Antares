@@ -16,6 +16,9 @@ namespace Antares.Math.Integral
     /// 
     /// This implementation provides a pure C# version of tanh-sinh quadrature,
     /// replacing the boost library dependency with a custom implementation.
+    /// 
+    /// Should check validity, as this is more complex, than what is beholden to the
+    /// eye at first glance.
     /// </remarks>
     public class TanhSinhIntegral : Integrator
     {
