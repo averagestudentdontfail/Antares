@@ -4,59 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using QLNet.Time;
+using Antares.Pattern;
 
 // A Leg is a sequence of cash flows.
 global using Leg = System.Collections.Generic.IReadOnlyList<Antares.ICashFlow>;
 
 namespace Antares
 {
-    #region Supporting Infrastructure (Normally in separate files)
-    // This infrastructure is included to make the file self-contained and compilable.
-    // In a real project, these would be in their own files.
-
-    public interface IObserver { void Update(); }
-    public interface IObservable { void RegisterWith(IObserver observer); void UnregisterWith(IObserver observer); }
-    public interface IAcyclicVisitor { }
-    public interface IVisitor<in T> : IAcyclicVisitor { void Visit(T element); }
-
-    public class Observable : IObservable
-    {
-        private readonly List<IObserver> _observers = new List<IObserver>();
-        public void RegisterWith(IObserver observer) { if (!_observers.Contains(observer)) _observers.Add(observer); }
-        public void UnregisterWith(IObserver observer) => _observers.Remove(observer);
-        public void NotifyObservers()
-        {
-            var observersCopy = new List<IObserver>(_observers);
-            foreach (var observer in observersCopy) observer.Update();
-        }
-    }
-
-    public abstract class LazyObject : IObserver, IObservable
-    {
-        private readonly Observable _observable = new Observable();
-        protected bool _calculated;
-        public virtual void Update() { _calculated = false; NotifyObservers(); }
-        public virtual void Calculate() { if (!_calculated) { _calculated = true; PerformCalculations(); } }
-        protected abstract void PerformCalculations();
-        public void RegisterWith(IObserver observer) => _observable.RegisterWith(observer);
-        public void UnregisterWith(IObserver observer) => _observable.UnregisterWith(observer);
-        protected void NotifyObservers() => _observable.NotifyObservers();
-    }
-
-    public interface IEvent : IObservable
-    {
-        Date Date { get; }
-        bool HasOccurred(Date refDate = null, bool? includeRefDate = null);
-        void Accept(IAcyclicVisitor v);
-    }
-
-    // Placeholder for Settings class
-    public static partial class Settings
-    {
-        public static bool? IncludeTodaysCashFlows { get; set; }
-    }
-    #endregion
-
     /// <summary>
     /// Base interface for cash flows.
     /// </summary>

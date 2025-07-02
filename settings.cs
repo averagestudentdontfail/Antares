@@ -1,87 +1,12 @@
 // Settings.cs
 
 using System;
-using System.Collections.Generic;
 using QLNet;
 using QLNet.Time;
+using Antares.Utility;
 
 namespace Antares
 {
-    #region Supporting Infrastructure (Normally in separate files)
-    // This infrastructure is included to make the file self-contained and compilable.
-    // In a real project, these would be in their own files.
-
-    /// <summary>
-    /// Observer interface for the observer pattern.
-    /// </summary>
-    public interface IObserver
-    {
-        void Update();
-    }
-
-    /// <summary>
-    /// Observable interface for the observer pattern.
-    /// </summary>
-    public interface IObservable
-    {
-        void RegisterWith(IObserver observer);
-        void UnregisterWith(IObserver observer);
-    }
-
-    /// <summary>
-    /// Concrete implementation of IObservable to be used via composition.
-    /// </summary>
-    public class Observable : IObservable
-    {
-        private readonly List<IObserver> _observers = new List<IObserver>();
-
-        public void RegisterWith(IObserver observer)
-        {
-            if (!_observers.Contains(observer))
-                _observers.Add(observer);
-        }
-
-        public void UnregisterWith(IObserver observer) => _observers.Remove(observer);
-
-        public void NotifyObservers()
-        {
-            var observersCopy = new List<IObserver>(_observers);
-            foreach (var observer in observersCopy)
-                observer.Update();
-        }
-    }
-
-    /// <summary>
-    /// A value that notifies observers when it changes.
-    /// </summary>
-    public class ObservableValue<T> : IObservable
-    {
-        private readonly Observable _observable = new Observable();
-        private T _value;
-
-        public ObservableValue(T value)
-        {
-            _value = value;
-        }
-
-        public T Value
-        {
-            get => _value;
-            set
-            {
-                if (!EqualityComparer<T>.Default.Equals(_value, value))
-                {
-                    _value = value;
-                    _observable.NotifyObservers();
-                }
-            }
-        }
-
-        public void RegisterWith(IObserver observer) => _observable.RegisterWith(observer);
-        public void UnregisterWith(IObserver observer) => _observable.UnregisterWith(observer);
-    }
-    #endregion
-
     /// <summary>
     /// Global repository for run-time library settings.
     /// </summary>
@@ -98,142 +23,105 @@ namespace Antares
             public DateProxy() : base(new Date()) { }
 
             /// <summary>
-            /// Implicit conversion to Date. Returns today's date if the stored date is null,
-            /// otherwise returns the stored date.
+            /// Implicit conversion to Date.
             /// </summary>
-            public static implicit operator Date(DateProxy proxy)
+            public static implicit operator Date(DateProxy proxy) => proxy.Value;
+
+            /// <summary>
+            /// Returns the evaluation date; if a null date is specified, today's date is used.
+            /// </summary>
+            public Date EvaluationDate
             {
-                // QLNet's default Date() is a null date.
-                if (proxy.Value == new Date())
-                    return Date.Today;
-                return proxy.Value;
-            }
-
-            public override string ToString()
-            {
-                return ((Date)this).ToString();
+                get
+                {
+                    Date date = Value;
+                    return date ?? Date.Today;
+                }
             }
         }
 
-        private static readonly DateProxy evaluationDateProxy = new DateProxy();
-        private static bool _includeReferenceDateEvents = false;
-        private static bool? _includeTodaysCashFlows;
-        private static bool _enforcesTodaysHistoricFixings = false;
+        private static readonly DateProxy _evaluationDate = new DateProxy();
+        private static readonly ObservableValue<bool> _includeReferenceDateEvents = new ObservableValue<bool>(false);
+        private static readonly ObservableValue<bool?> _includeTodaysCashFlows = new ObservableValue<bool?>(null);
+        private static readonly ObservableValue<bool> _enforcesTodaysHistoricFixings = new ObservableValue<bool>(false);
 
         /// <summary>
-        /// The date at which pricing is to be performed.
-        /// <para>
-        /// Client code can inspect the evaluation date, set it to a new value,
-        /// and register with it to be notified of changes.
-        /// </para>
-        /// <para>
-        /// If the underlying value is null, this property will return today's date.
-        /// </para>
-        /// <example>
-        /// <code>
-        /// // Get the effective evaluation date
-        /// Date d = Settings.EvaluationDate;
-        ///
-        /// // Set a fixed evaluation date
-        /// Settings.EvaluationDate.Value = new Date(15, Month.May, 2023);
-        ///
-        /// // Register for notifications
-        /// Settings.EvaluationDate.RegisterWith(myObserver);
-        /// </code>
-        /// </example>
+        /// Gets or sets the global evaluation date.
         /// </summary>
-        public static DateProxy EvaluationDate => evaluationDateProxy;
-
-        /// <summary>
-        /// Call this to prevent the evaluation date from changing at midnight.
-        /// If no evaluation date was previously set, it is set to today's date.
-        /// If an evaluation date was already set, this has no effect.
-        /// </summary>
-        public static void AnchorEvaluationDate()
+        /// <remarks>
+        /// This is the date at which instruments are valued, curves are built, etc.
+        /// Setting this will notify all observers.
+        /// </remarks>
+        public static Date EvaluationDate
         {
-            // Set to today's date only if it's not already set (i.e., is null).
-            if (evaluationDateProxy.Value == new Date())
-                evaluationDateProxy.Value = Date.Today;
+            get => _evaluationDate.EvaluationDate;
+            set => _evaluationDate.Value = value;
         }
 
         /// <summary>
-        /// Call this to reset the evaluation date to be today's date and allow it to
-        /// change at midnight. This is achieved by setting the underlying value to null.
+        /// Gets the evaluation date proxy for advanced usage scenarios where observer registration is needed.
         /// </summary>
-        public static void ResetEvaluationDate()
-        {
-            evaluationDateProxy.Value = new Date();
-        }
+        public static DateProxy EvaluationDateProxy => _evaluationDate;
 
         /// <summary>
-        /// This flag specifies whether or not Events occurring on the reference
-        /// date should, by default, be taken into account as not happened yet.
+        /// Gets or sets whether events occurring on the reference date should be considered as having already occurred.
         /// </summary>
+        /// <remarks>
+        /// This affects the behavior of event.HasOccurred() when called on the evaluation date.
+        /// </remarks>
         public static bool IncludeReferenceDateEvents
         {
-            get => _includeReferenceDateEvents;
-            set => _includeReferenceDateEvents = value;
+            get => _includeReferenceDateEvents.Value;
+            set => _includeReferenceDateEvents.Value = value;
         }
 
         /// <summary>
-        /// If set, this flag specifies whether or not CashFlows occurring on today's
-        /// date should enter the NPV. When the NPV date equals today's date, this
-        /// flag overrides the behavior chosen for IncludeReferenceDateEvents.
+        /// Gets or sets whether cash flows occurring on today's date should be included in calculations.
         /// </summary>
+        /// <remarks>
+        /// This is a nullable boolean: null means "use the global IncludeReferenceDateEvents setting".
+        /// </remarks>
         public static bool? IncludeTodaysCashFlows
         {
-            get => _includeTodaysCashFlows;
-            set => _includeTodaysCashFlows = value;
+            get => _includeTodaysCashFlows.Value;
+            set => _includeTodaysCashFlows.Value = value;
         }
 
         /// <summary>
-        /// If set, this flag specifies whether or not historical fixings for today's date
-        /// are enforced.
+        /// Gets or sets whether today's fixings should be enforced for historic fixings.
         /// </summary>
+        /// <remarks>
+        /// When true, missing fixings for today's date will cause an error.
+        /// When false, missing fixings for today's date will be treated like any other missing fixing.
+        /// </remarks>
         public static bool EnforcesTodaysHistoricFixings
         {
-            get => _enforcesTodaysHistoricFixings;
-            set => _enforcesTodaysHistoricFixings = value;
-        }
-    }
-
-
-    /// <summary>
-    /// Helper class to temporarily and safely change the global settings.
-    /// When an instance of this class is disposed (e.g., at the end of a 'using' block),
-    /// the settings are restored to their state at the time of construction.
-    /// </summary>
-    public class SavedSettings : IDisposable
-    {
-        private readonly Date _evaluationDate;
-        private readonly bool _includeReferenceDateEvents;
-        private readonly bool? _includeTodaysCashFlows;
-        private readonly bool _enforcesTodaysHistoricFixings;
-        private readonly Date _rawEvaluationDate;
-
-        public SavedSettings()
-        {
-            _evaluationDate = Settings.EvaluationDate; // Implicit conversion gets effective date
-            _rawEvaluationDate = Settings.EvaluationDate.Value; // Get the underlying value
-            _includeReferenceDateEvents = Settings.IncludeReferenceDateEvents;
-            _includeTodaysCashFlows = Settings.IncludeTodaysCashFlows;
-            _enforcesTodaysHistoricFixings = Settings.EnforcesTodaysHistoricFixings;
+            get => _enforcesTodaysHistoricFixings.Value;
+            set => _enforcesTodaysHistoricFixings.Value = value;
         }
 
-        public void Dispose()
+        /// <summary>
+        /// Settings specific to Lazy Object calculations.
+        /// </summary>
+        public static class LazyObjectSettings
         {
-            // Restore settings. The logic here carefully replicates the C++ RAII behavior.
-            // If the date was floating, it will be restored to its original floating state
-            // unless the effective date changed for other reasons (e.g. day roll-over).
-            Date currentEvaluationDate = Settings.EvaluationDate;
-            if (currentEvaluationDate != _evaluationDate)
+            private static readonly ObservableValue<bool> _fasterLazyObjects = new ObservableValue<bool>(true);
+
+            /// <summary>
+            /// Gets or sets whether to use faster lazy object calculations.
+            /// </summary>
+            /// <remarks>
+            /// When true, lazy objects skip some redundant notifications for better performance.
+            /// When false, all notifications are forwarded (safer but slower).
+            /// </remarks>
+            public static bool FasterLazyObjects
             {
-                Settings.EvaluationDate.Value = _rawEvaluationDate;
+                get => _fasterLazyObjects.Value;
+                set => _fasterLazyObjects.Value = value;
             }
-
-            Settings.IncludeReferenceDateEvents = _includeReferenceDateEvents;
-            Settings.IncludeTodaysCashFlows = _includeTodaysCashFlows;
-            Settings.EnforcesTodaysHistoricFixings = _enforcesTodaysHistoricFixings;
         }
+
+        // Convenient accessor for backward compatibility
+        public static bool FasterLazyObjects => LazyObjectSettings.FasterLazyObjects;
     }
 }

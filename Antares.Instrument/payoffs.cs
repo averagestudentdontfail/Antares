@@ -6,11 +6,15 @@ using Antares.Time;
 
 namespace Antares.Instrument
 {
-    #region Supporting Infrastructure (Placeholders)
-    // This infrastructure is included to make the file self-contained and compilable.
-    // In a real project, these would be referenced via `using` statements.
+    public interface IPayoff
+    {
+        string Name { get; }
+        string Description { get; }
+        Real GetValue(Real price);
+        void Accept(IAcyclicVisitor v);
+    }
 
-    public abstract class Payoff
+    public abstract class Payoff : IPayoff
     {
         public abstract string Name { get; }
         public abstract string Description { get; }
@@ -26,7 +30,6 @@ namespace Antares.Instrument
     {
         public enum Type { Put = -1, Call = 1 }
     }
-    #endregion
 
     /// <summary>
     /// Dummy payoff class.
@@ -89,6 +92,15 @@ namespace Antares.Instrument
     }
 
     /// <summary>
+    /// Interface for payoffs with a fixed strike.
+    /// </summary>
+    public interface IStrikedTypePayoff : IPayoff
+    {
+        Real Strike { get; }
+        Option.Type OptionType { get; }
+    }
+
+    /// <summary>
     /// Plain-vanilla payoff.
     /// </summary>
     public sealed class PlainVanillaPayoff : StrikedTypePayoff
@@ -112,18 +124,20 @@ namespace Antares.Instrument
     }
 
     /// <summary>
-    /// Payoff with strike expressed as percentage.
+    /// Percentage strike payoff.
     /// </summary>
     public sealed class PercentageStrikePayoff : StrikedTypePayoff
     {
         public PercentageStrikePayoff(Option.Type type, Real moneyness) : base(type, moneyness) { }
+        public Real Moneyness => Strike;
         public override string Name => "PercentageStrike";
+        public override string Description => $"{OptionType} {Moneyness} moneyness";
         public override Real GetValue(Real price)
         {
             return OptionType switch
             {
-                Option.Type.Call => price * Math.Max(1.0 - Strike, 0.0),
-                Option.Type.Put => price * Math.Max(Strike - 1.0, 0.0),
+                Option.Type.Call => Math.Max(price - Moneyness * price, 0.0),
+                Option.Type.Put => Math.Max(Moneyness * price - price, 0.0),
                 _ => QL.Fail("unknown/illegal option type")
             };
         }
@@ -212,15 +226,19 @@ namespace Antares.Instrument
     /// </summary>
     public sealed class SuperFundPayoff : StrikedTypePayoff
     {
+        public SuperFundPayoff(Option.Type type, Real strike, Real secondStrike) : base(type, strike) { SecondStrike = secondStrike; }
         public Real SecondStrike { get; }
-        public SuperFundPayoff(Real strike, Real secondStrike) : base(Option.Type.Call, strike)
-        {
-            QL.Require(strike > 0.0, $"strike ({strike}) must be positive");
-            QL.Require(secondStrike > strike, $"second strike ({secondStrike}) must be higher than first strike ({strike})");
-            SecondStrike = secondStrike;
-        }
         public override string Name => "SuperFund";
-        public override Real GetValue(Real price) => (price >= Strike && price < SecondStrike) ? price / Strike : 0.0;
+        public override string Description => $"{base.Description}, {SecondStrike} second strike";
+        public override Real GetValue(Real price)
+        {
+            return OptionType switch
+            {
+                Option.Type.Call => (price - Strike >= 0.0 ? SecondStrike : 0.0),
+                Option.Type.Put => (Strike - price >= 0.0 ? SecondStrike : 0.0),
+                _ => QL.Fail("unknown/illegal option type")
+            };
+        }
         public override void Accept(IAcyclicVisitor v)
         {
             if (v is IVisitor<SuperFundPayoff> visitor) visitor.Visit(this);
@@ -231,19 +249,24 @@ namespace Antares.Instrument
     /// <summary>
     /// Binary supershare payoff.
     /// </summary>
-    public sealed class SuperSharePayoff : StrikedTypePayoff
+    public sealed class SuperSharePayoff : Payoff
     {
-        public Real SecondStrike { get; }
-        public Real CashPayoff { get; }
-        public SuperSharePayoff(Real strike, Real secondStrike, Real cashPayoff) : base(Option.Type.Call, strike)
+        public SuperSharePayoff(Real strike, Real secondStrike)
         {
-            QL.Require(secondStrike > strike, $"second strike ({secondStrike}) must be higher than first strike ({strike})");
+            Strike = strike;
             SecondStrike = secondStrike;
-            CashPayoff = cashPayoff;
+            QL.Require(Strike > 0.0, "Strike must be positive");
+            QL.Require(SecondStrike > Strike, "SecondStrike must be higher than strike");
         }
+
+        public Real Strike { get; }
+        public Real SecondStrike { get; }
         public override string Name => "SuperShare";
-        public override string Description => $"{base.Description}, {SecondStrike} second strike, {CashPayoff} amount";
-        public override Real GetValue(Real price) => (price >= Strike && price < SecondStrike) ? CashPayoff : 0.0;
+        public override string Description => $"{Name} {Strike} {SecondStrike}";
+        public override Real GetValue(Real price)
+        {
+            return (price >= Strike && price < SecondStrike) ? price / Strike : 0.0;
+        }
         public override void Accept(IAcyclicVisitor v)
         {
             if (v is IVisitor<SuperSharePayoff> visitor) visitor.Visit(this);

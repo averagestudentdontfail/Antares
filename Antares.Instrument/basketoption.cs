@@ -1,60 +1,60 @@
-// C# code for BasketOption.cs
+// BasketOption.cs
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using Antares.Pattern;
-using Antares.Time;
 using MathNet.Numerics.LinearAlgebra;
+using Antares.Instrument;
+using Antares.Pattern;
 
-// Type alias for clarity.
+// Type aliases for clarity
 using Vector = MathNet.Numerics.LinearAlgebra.Vector<double>;
 
 namespace Antares.Instrument
 {
-    #region Supporting Infrastructure (Placeholders)
-    // This infrastructure is included to make the file self-contained and compilable.
-    // In a real project, these would be referenced via `using` statements.
-
-    public abstract class Payoff
-    {
-        public abstract string Name { get; }
-        public abstract string Description { get; }
-        public abstract Real GetValue(Real price);
-        public virtual void Accept(IAcyclicVisitor v) { }
-    }
-
-    public abstract class MultiAssetOption : Option
-    {
-        protected MultiAssetOption(IPayoff payoff, IExercise exercise) : base(payoff, exercise) { }
-    }
-    #endregion
-
     /// <summary>
-    /// Base interface for basket payoffs.
+    /// Base interface for multi-asset payoffs.
     /// </summary>
-    public interface IBasketPayoff : IPayoff
+    public interface IBasketPayoff
     {
-        IPayoff BasePayoff { get; }
-        Real GetValue(Vector a);
-        Real Accumulate(Vector a);
+        Real GetValue(Vector underlyingValues);
     }
 
     /// <summary>
-    /// Abstract base class for basket payoffs.
+    /// Base class for payoffs depending on multiple assets.
     /// </summary>
-    public abstract class BasketPayoff : Payoff, IBasketPayoff
+    public abstract class BasketPayoff : IBasketPayoff
     {
-        protected BasketPayoff(IPayoff p) { BasePayoff = p; }
+        protected readonly IPayoff _basePayoff;
 
-        public IPayoff BasePayoff { get; }
+        protected BasketPayoff(IPayoff p)
+        {
+            _basePayoff = p ?? throw new ArgumentNullException(nameof(p));
+        }
 
-        public override string Name => BasePayoff.Name;
-        public override string Description => BasePayoff.Description;
-        public override Real GetValue(Real price) => BasePayoff.GetValue(price);
+        public IPayoff BasePayoff => _basePayoff;
 
-        public Real GetValue(Vector a) => BasePayoff.GetValue(Accumulate(a));
+        /// <summary>
+        /// This method accumulates the values of the underlying assets.
+        /// It is called by operator() after accumulation to get the value of the payoff.
+        /// </summary>
         public abstract Real Accumulate(Vector a);
+
+        /// <summary>
+        /// Calculates the payoff based on the underlying asset values.
+        /// </summary>
+        public virtual Real GetValue(Vector underlyingValues)
+        {
+            Real basketValue = Accumulate(underlyingValues);
+            return _basePayoff.GetValue(basketValue);
+        }
+
+        public virtual void Accept(IAcyclicVisitor v)
+        {
+            if (v is IVisitor<BasketPayoff> visitor)
+                visitor.Visit(this);
+            else if (_basePayoff != null)
+                _basePayoff.Accept(v);
+        }
     }
 
     /// <summary>

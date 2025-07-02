@@ -1,4 +1,4 @@
-// C# code for VanillaOption.cs
+// VanillaOption.cs
 
 using System;
 using System.Collections.Generic;
@@ -18,52 +18,6 @@ using DividendSchedule = System.Collections.Generic.IReadOnlyList<Antares.Cashfl
 
 namespace Antares.Instrument
 {
-    #region Supporting Infrastructure (Placeholders for other files)
-    // This infrastructure is included to make the file self-contained and compilable.
-    // In a real project, these would be referenced via `using` statements.
-
-    public interface IStrikedTypePayoff : IPayoff { }
-
-    public abstract class OneAssetOption : Option
-    {
-        protected OneAssetOption(IPayoff payoff, IExercise exercise) : base(payoff, exercise) { }
-    }
-
-    // --- Pricing Engine Placeholders ---
-    public class AnalyticEuropeanEngine : IPricingEngine
-    {
-        public AnalyticEuropeanEngine(GeneralizedBlackScholesProcess process) { }
-        public IPricingEngine.IArguments GetArguments() => null;
-        public IPricingEngine.IResults GetResults() => null;
-        public void Reset() { }
-        public void Calculate() { /* Dummy implementation */ }
-        public void RegisterWith(IObserver observer) { }
-        public void UnregisterWith(IObserver observer) { }
-    }
-
-    public class AnalyticDividendEuropeanEngine : IPricingEngine
-    {
-        public AnalyticDividendEuropeanEngine(GeneralizedBlackScholesProcess process, DividendSchedule dividends) { }
-        public IPricingEngine.IArguments GetArguments() => null;
-        public IPricingEngine.IResults GetResults() => null;
-        public void Reset() { }
-        public void Calculate() { /* Dummy implementation */ }
-        public void RegisterWith(IObserver observer) { }
-        public void UnregisterWith(IObserver observer) { }
-    }
-
-    public class FdBlackScholesVanillaEngine : IPricingEngine
-    {
-        public FdBlackScholesVanillaEngine(GeneralizedBlackScholesProcess process, DividendSchedule dividends = null) { }
-        public IPricingEngine.IArguments GetArguments() => null;
-        public IPricingEngine.IResults GetResults() => null;
-        public void Reset() { }
-        public void Calculate() { /* Dummy implementation */ }
-        public void RegisterWith(IObserver observer) { }
-        public void UnregisterWith(IObserver observer) { }
-    }
-    #endregion
-
     /// <summary>
     /// Vanilla option on a single asset.
     /// </summary>
@@ -75,142 +29,163 @@ namespace Antares.Instrument
         /// <summary>
         /// Calculates the implied volatility of the option.
         /// </summary>
-        /// <param name="targetValue">The market price of the option.</param>
-        /// <param name="process">The underlying stochastic process.</param>
-        /// <param name="accuracy">The desired accuracy of the result.</param>
-        /// <param name="maxEvaluations">The maximum number of iterations for the solver.</param>
-        /// <param name="minVol">The lower bound for the volatility search.</param>
-        /// <param name="maxVol">The upper bound for the volatility search.</param>
+        /// <param name="targetValue">The target option price to match.</param>
+        /// <param name="process">The Black-Scholes process with zero volatility.</param>
+        /// <param name="accuracy">Desired accuracy of the implied volatility.</param>
+        /// <param name="maxEvaluations">Maximum number of function evaluations.</param>
+        /// <param name="minVol">Minimum volatility boundary.</param>
+        /// <param name="maxVol">Maximum volatility boundary.</param>
         /// <returns>The implied volatility.</returns>
-        public Volatility ImpliedVolatility(
-            Real targetValue,
-            GeneralizedBlackScholesProcess process,
-            Real accuracy = 1.0e-4,
-            int maxEvaluations = 100,
-            Volatility minVol = 1.0e-7,
-            Volatility maxVol = 4.0)
-        {
-            return ImpliedVolatility(targetValue, process, new List<IDividend>(),
-                                     accuracy, maxEvaluations, minVol, maxVol);
-        }
-
-        /// <summary>
-        /// Calculates the implied volatility of the option.
-        /// </summary>
-        /// <remarks>
-        /// Currently, this method uses analytic formulas for European options and
-        /// a finite-difference method for American and Bermudan options. It will
-        /// give inconsistent results if the pricing was performed with any other methods.
-        /// </remarks>
-        public Volatility ImpliedVolatility(
-            Real targetValue,
-            GeneralizedBlackScholesProcess process,
-            DividendSchedule dividends,
-            Real accuracy = 1.0e-4,
-            int maxEvaluations = 100,
-            Volatility minVol = 1.0e-7,
-            Volatility maxVol = 4.0)
+        public Volatility ImpliedVolatility(Real targetValue,
+                                          GeneralizedBlackScholesProcess process,
+                                          Real accuracy = 1.0e-4,
+                                          int maxEvaluations = 100,
+                                          Volatility minVol = 1.0e-7,
+                                          Volatility maxVol = 4.0)
         {
             QL.Require(!IsExpired, "option expired");
 
-            var volQuote = new SimpleQuote();
-
-            // Clone the process and link its volatility to the quote
-            var newProcess = ImpliedVolatilityHelper.Clone(process, new Handle<IQuote>(volQuote));
-
-            // Engines are built-in for the time being
-            IPricingEngine engine;
-            switch (Exercise.Type)
-            {
-                case Exercise.ExerciseType.European:
-                    if (dividends == null || dividends.Count == 0)
-                        engine = new AnalyticEuropeanEngine(newProcess);
-                    else
-                        engine = new AnalyticDividendEuropeanEngine(newProcess, dividends);
-                    break;
-                case Exercise.ExerciseType.American:
-                case Exercise.ExerciseType.Bermudan:
-                    engine = new FdBlackScholesVanillaEngine(newProcess, dividends);
-                    break;
-                default:
-                    QL.Fail("unknown exercise type");
-                    return 0; // Unreachable
-            }
-
-            return ImpliedVolatilityHelper.Calculate(this, engine, volQuote, targetValue,
-                                                     accuracy, maxEvaluations, minVol, maxVol);
-        }
-    }
-
-    /// <summary>
-    /// Helper class for implied volatility calculation.
-    /// This corresponds to the `detail::ImpliedVolatilityHelper` pattern in QuantLib.
-    /// </summary>
-    internal static class ImpliedVolatilityHelper
-    {
-        /// <summary>
-        /// Clones a process, replacing its volatility structure with one linked to a given quote.
-        /// </summary>
-        public static GeneralizedBlackScholesProcess Clone(GeneralizedBlackScholesProcess process, Handle<IQuote> volQuote)
-        {
-            // We create a new BlackConstantVol linked to the volQuote.
-            // This new vol term structure will be used in the cloned process.
-            var tempVol = new BlackConstantVol(
-                process.RiskFreeRate.Value.ReferenceDate,
-                process.RiskFreeRate.Value.Calendar,
-                volQuote,
-                process.RiskFreeRate.Value.DayCounter);
-
-            // Create the new process, which is identical to the original except for the volatility structure.
-            var newProcess = new BlackScholesMertonProcess(
-                process.StateVariable,
-                process.DividendYield,
-                process.RiskFreeRate,
-                new Handle<BlackVolTermStructure>(tempVol));
+            var originalVol = process.BlackVolatility.Value.BlackVol(Exercise.LastDate, Payoff.Strike);
             
-            return newProcess;
-        }
-
-        /// <summary>
-        /// Performs the root-finding calculation to find the implied volatility.
-        /// </summary>
-        public static Volatility Calculate(
-            VanillaOption option,
-            IPricingEngine engine,
-            SimpleQuote volQuote,
-            Real targetValue,
-            Real accuracy,
-            int maxEvaluations,
-            Volatility minVol,
-            Volatility maxVol)
-        {
-            // Set the pricing engine on a temporary (cloned) option
-            // to avoid altering the original instrument's state.
-            var tempOption = new VanillaOption((IStrikedTypePayoff)option.Payoff, option.Exercise);
-            tempOption.SetPricingEngine(engine);
-
-            // The function whose root we want to find
-            Func<double, double> f = vol =>
+            Func<double, double> f = (vol) =>
             {
-                volQuote.SetValue(vol);
-                return tempOption.NPV - targetValue;
+                var volQuote = new SimpleQuote(vol);
+                var volHandle = new Handle<IQuote>(volQuote);
+                var volTS = new BlackConstantVol(process.RiskFreeRate.Value.ReferenceDate,
+                                               new NullCalendar(), volHandle,
+                                               new Actual365Fixed());
+                var volTSHandle = new Handle<BlackVolTermStructure>(volTS);
+
+                var newProcess = new GeneralizedBlackScholesProcess(
+                    process.StateVariable,
+                    process.DividendYield,
+                    process.RiskFreeRate,
+                    volTSHandle);
+
+                var engine = new AnalyticEuropeanEngine(newProcess);
+                SetPricingEngine(engine);
+                
+                return NPV - targetValue;
             };
 
-            // Use a robust solver to find the root
             try
             {
-                double result = Brent.FindRoot(f, minVol, maxVol, accuracy, maxEvaluations);
-                if (double.IsNaN(result))
-                {
-                    QL.Fail($"failed to converge: root not bracketed by ({minVol}, {maxVol})");
-                }
-                return result;
+                return Brent.FindRoot(f, minVol, maxVol, accuracy, maxEvaluations);
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                QL.Fail($"failed to converge: {e.Message}");
-                return 0; // Unreachable
+                throw new ArgumentException($"Failed to calculate implied volatility: {ex.Message}", ex);
             }
         }
+
+        /// <summary>
+        /// Calculates the Black-Scholes delta of the option.
+        /// </summary>
+        public Real Delta
+        {
+            get
+            {
+                Calculate();
+                return Result<Real>("delta");
+            }
+        }
+
+        /// <summary>
+        /// Calculates the Black-Scholes gamma of the option.
+        /// </summary>
+        public Real Gamma
+        {
+            get
+            {
+                Calculate();
+                return Result<Real>("gamma");
+            }
+        }
+
+        /// <summary>
+        /// Calculates the Black-Scholes theta of the option.
+        /// </summary>
+        public Real Theta
+        {
+            get
+            {
+                Calculate();
+                return Result<Real>("theta");
+            }
+        }
+
+        /// <summary>
+        /// Calculates the Black-Scholes vega of the option.
+        /// </summary>
+        public Real Vega
+        {
+            get
+            {
+                Calculate();
+                return Result<Real>("vega");
+            }
+        }
+
+        /// <summary>
+        /// Calculates the Black-Scholes rho of the option.
+        /// </summary>
+        public Real Rho
+        {
+            get
+            {
+                Calculate();
+                return Result<Real>("rho");
+            }
+        }
+
+        /// <summary>
+        /// Calculates the Black-Scholes dividend rho of the option.
+        /// </summary>
+        public Real DividendRho
+        {
+            get
+            {
+                Calculate();
+                return Result<Real>("dividendRho");
+            }
+        }
+
+        /// <summary>
+        /// Returns the strike price of the option.
+        /// </summary>
+        public Real Strike => ((IStrikedTypePayoff)Payoff).Strike;
+
+        /// <summary>
+        /// Returns the option type (Call or Put).
+        /// </summary>
+        public Option.Type OptionType => ((IStrikedTypePayoff)Payoff).OptionType;
+
+        #region Engine Registration Helpers
+        /// <summary>
+        /// Registers an analytic European engine for the option.
+        /// </summary>
+        public void UseAnalyticEuropeanEngine(GeneralizedBlackScholesProcess process)
+        {
+            SetPricingEngine(new AnalyticEuropeanEngine(process));
+        }
+
+        /// <summary>
+        /// Registers an analytic dividend European engine for the option.
+        /// </summary>
+        public void UseAnalyticDividendEuropeanEngine(GeneralizedBlackScholesProcess process, 
+                                                     DividendSchedule dividends)
+        {
+            SetPricingEngine(new AnalyticDividendEuropeanEngine(process, dividends));
+        }
+
+        /// <summary>
+        /// Registers a finite difference Black-Scholes engine for the option.
+        /// </summary>
+        public void UseFdBlackScholesEngine(GeneralizedBlackScholesProcess process, 
+                                           DividendSchedule dividends = null)
+        {
+            SetPricingEngine(new FdBlackScholesVanillaEngine(process, dividends));
+        }
+        #endregion
     }
 }

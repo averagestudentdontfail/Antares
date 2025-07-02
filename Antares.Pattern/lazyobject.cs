@@ -1,55 +1,9 @@
-// C# code for LazyObject.cs
+// LazyObject.cs
 
 using System;
-using System.Collections.Generic;
 
 namespace Antares.Pattern
 {
-    #region Supporting Infrastructure (Normally in separate files)
-    // This infrastructure is included to make the file self-contained and compilable.
-    // In a real project, these would be in their own files.
-
-    /// <summary>
-    /// Observer interface for the observer pattern.
-    /// </summary>
-    public interface IObserver
-    {
-        void Update();
-    }
-
-    /// <summary>
-    /// Observable interface for the observer pattern.
-    /// </summary>
-    public interface IObservable
-    {
-        void RegisterWith(IObserver observer);
-        void UnregisterWith(IObserver observer);
-    }
-
-    /// <summary>
-    /// Concrete implementation of IObservable to be used via composition.
-    /// </summary>
-    public class Observable : IObservable
-    {
-        private readonly List<IObserver> _observers = new List<IObserver>();
-        public void RegisterWith(IObserver observer) { if (!_observers.Contains(observer)) _observers.Add(observer); }
-        public void UnregisterWith(IObserver observer) => _observers.Remove(observer);
-        public void NotifyObservers()
-        {
-            var observersCopy = new List<IObserver>(_observers);
-            foreach (var observer in observersCopy) observer.Update();
-        }
-    }
-
-    // Placeholder for Settings from userconfig.cs
-    public static partial class Settings
-    {
-        // public static readonly bool ThrowInCycles = false;
-        // public static readonly bool FasterLazyObjects = true;
-    }
-    #endregion
-
-
     /// <summary>
     /// Framework for calculation on demand and result caching.
     /// </summary>
@@ -80,49 +34,37 @@ namespace Antares.Pattern
         /// </summary>
         public virtual void Update()
         {
-            if (_updating)
-            {
-                if (Settings.ThrowInCycles)
-                {
-                    QL.Fail("recursive notification loop detected; you probably created an object cycle");
-                }
-                return; // break the cycle
-            }
+            // Skip if the calculation was explicitly frozen
+            if (_frozen) return;
 
-            // This sets _updating to true and will set it back to false when we exit this scope.
-            // This is the C# equivalent of the C++ RAII UpdateChecker.
-            _updating = true;
-            try
-            {
-                // Forwards notifications only the first time.
-                if (_calculated || _alwaysForward)
-                {
-                    // Set to false early to prevent infinite recursion and to ensure
-                    // non-lazy observers are served fresh data.
-                    _calculated = false;
+            // Skip if we're already updating to avoid infinite recursion
+            if (_updating) return;
 
-                    // Observers don't expect notifications from frozen objects.
-                    if (!_frozen)
-                    {
-                        NotifyObservers();
-                    }
-                }
-            }
-            finally
+            bool wasCalculated = _calculated;
+            _calculated = false;
+
+            // Only forward the notification if:
+            // 1. We always forward notifications (_alwaysForward is true), OR
+            // 2. The object was calculated before (wasCalculated is true)
+            if (_alwaysForward || wasCalculated)
             {
-                _updating = false;
+                _updating = true;
+                try
+                {
+                    NotifyObservers();
+                }
+                finally
+                {
+                    _updating = false;
+                }
             }
         }
 
-        #region Calculation methods
         /// <summary>
-        /// Forces the recalculation of any results which would otherwise be cached.
+        /// This method forces the recalculation of any results which would otherwise be cached.
+        /// It is not called automatically; the user must call it explicitly.
         /// </summary>
-        /// <remarks>
-        /// Explicit invocation of this method is not necessary if the object
-        /// registered itself as an observer of the structures on which its results depend.
-        /// </remarks>
-        public void Recalculate()
+        public virtual void Recalculate()
         {
             bool wasFrozen = _frozen;
             _calculated = false;
@@ -131,50 +73,39 @@ namespace Antares.Pattern
             {
                 Calculate();
             }
-            catch
+            finally
             {
                 _frozen = wasFrozen;
-                NotifyObservers(); // Notify of failure
-                throw;
             }
-
-            _frozen = wasFrozen;
-            NotifyObservers(); // Notify of success
         }
 
         /// <summary>
-        /// Constrains the object to return the presently cached results on successive
-        /// invocations, even if arguments upon which they depend should change.
+        /// This method constrains the object to return the presently cached results on successive invocations,
+        /// even if the inputs which the results depend upon change.
         /// </summary>
-        public void Freeze()
+        public virtual void Freeze()
         {
             _frozen = true;
         }
 
         /// <summary>
-        /// Reverts the effect of the Freeze method, thus re-enabling recalculations.
+        /// This method reverts the effect of the freeze method.
         /// </summary>
-        public void Unfreeze()
+        public virtual void Unfreeze()
         {
-            // Send notifications, just in case we lost any, but only once if it was frozen.
-            if (_frozen)
-            {
-                _frozen = false;
-                NotifyObservers();
-            }
+            _frozen = false;
+
+            // If there was any result invalidation while we were frozen, we need to signal it now
+            NotifyObservers();
         }
 
         /// <summary>
-        /// This method performs all needed calculations by calling PerformCalculations().
+        /// This method performs all needed calculations by calling the performCalculations method.
+        /// Objects cache the results of the previous calculation.
+        /// Such results will be returned upon later invocations of calculate until the object is invalidated.
+        /// When the object is invalidated a new calculation will be performed the next time calculate is called.
         /// </summary>
-        /// <remarks>
-        /// Objects cache the results of the previous calculation. Such results will be
-        /// returned upon later invocations of Calculate(). When the results depend on
-        /// arguments which could change between invocations, the lazy object must
-        /// register itself as an observer of such objects for the calculations to be
-        /// performed again when they change.
-        /// </remarks>
-        protected virtual void Calculate()
+        public virtual void Calculate()
         {
             if (!_calculated && !_frozen)
             {
@@ -185,7 +116,7 @@ namespace Antares.Pattern
                 }
                 catch
                 {
-                    _calculated = false; // allow recalculation on error
+                    _calculated = false;
                     throw;
                 }
             }
@@ -193,30 +124,24 @@ namespace Antares.Pattern
 
         /// <summary>
         /// This method must implement any calculations which must be (re)done
-        /// in order to calculate the desired results.
+        /// in order to calculate the results which will be returned by the method of the object.
         /// </summary>
         protected abstract void PerformCalculations();
-        #endregion
-
-        #region Notification settings
-        /// <summary>
-        /// Causes the object to forward only the first notification received,
-        // and discard others until recalculated. This is the default "faster" behavior.
-        /// </summary>
-        public void ForwardFirstNotificationOnly()
-        {
-            _alwaysForward = false;
-        }
 
         /// <summary>
-        /// Causes the object to forward all notifications received.
-        /// Although safer, this behavior is slower.
+        /// This method sets the object to always forward all notifications,
+        /// even when not calculated. After calling this method,
+        /// the object will forward the first notification received,
+        /// and all subsequent ones until recalculation is triggered.
+        /// The object will not forward notifications whose generation is triggered by recalculation.
         /// </summary>
-        public void AlwaysForwardNotifications()
+        /// <remarks>
+        /// For backwards compatibility, this is enabled by default unless Settings.FasterLazyObjects is true.
+        /// </remarks>
+        protected void SetAlwaysForward()
         {
             _alwaysForward = true;
         }
-        #endregion
 
         #region IObservable implementation
         public void RegisterWith(IObserver observer) => _observable.RegisterWith(observer);

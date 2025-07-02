@@ -1,56 +1,9 @@
 // Pricingengine.cs
 
-using System;
-using System.Collections.Generic;
+using Antares.Pattern;
 
 namespace Antares
 {
-    #region Supporting Infrastructure (Normally in separate files)
-    // This infrastructure is included to make the file self-contained and compilable.
-    // In a real project, these would be in their own files.
-
-    /// <summary>
-    /// Observer interface for the observer pattern.
-    /// </summary>
-    public interface IObserver
-    {
-        void Update();
-    }
-
-    /// <summary>
-    /// Observable interface for the observer pattern.
-    /// </summary>
-    public interface IObservable
-    {
-        void RegisterWith(IObserver observer);
-        void UnregisterWith(IObserver observer);
-    }
-
-    /// <summary>
-    /// Concrete implementation of IObservable to be used via composition.
-    /// </summary>
-    public class Observable : IObservable
-    {
-        private readonly List<IObserver> _observers = new List<IObserver>();
-
-        public void RegisterWith(IObserver observer)
-        {
-            if (!_observers.Contains(observer))
-                _observers.Add(observer);
-        }
-
-        public void UnregisterWith(IObserver observer) => _observers.Remove(observer);
-
-        public void NotifyObservers()
-        {
-            var observersCopy = new List<IObserver>(_observers);
-            foreach (var observer in observersCopy)
-                observer.Update();
-        }
-    }
-    #endregion
-
-
     /// <summary>
     /// Interface for pricing engines.
     /// </summary>
@@ -98,7 +51,6 @@ namespace Antares
         /// </summary>
         void Calculate();
     }
-
 
     /// <summary>
     /// Template base class for pricing engines.

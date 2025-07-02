@@ -2,6 +2,7 @@
 
 using System;
 using Antares.Math;
+using Antares.Math.Interpolation.Detail;
 
 namespace Antares.Math.Interpolation
 {
@@ -61,7 +62,7 @@ namespace Antares.Math.Interpolation
             for(int i=0; i < _x.Count; i++) xArray[i] = _x[i];
             for(int i=0; i < _y.Count; i++) yArray[i] = _y[i];
 
-            _impl = new Detail.LagrangeInterpolationImpl(xArray, yArray);
+            _impl = new LagrangeInterpolationImpl(xArray, yArray);
             _impl.Update();
         }
 
@@ -77,7 +78,7 @@ namespace Antares.Math.Interpolation
             // Note: The LagrangeInterpolationImpl doesn't need to be fully updated
             // because the x-values and barycentric weights (lambda) have not changed.
             // We just need to update its internal y-array for the Value(x) method to work.
-            if (_impl is Detail.LagrangeInterpolationImpl lagrangeImpl)
+            if (_impl is LagrangeInterpolationImpl lagrangeImpl)
             {
                 var newYArray = new double[y.Count];
                 for (int i=0; i < y.Count; i++) newYArray[i] = y[i];
@@ -122,8 +123,7 @@ namespace Antares.Math.Interpolation
                     {
                         t[0] = 0.0; // Avoid division by zero, though -cos(0) is -1. The QL logic is -cos(i*pi/(n-1)).
                                     // For n=1, this is division by zero. A single point at 0 is a reasonable convention.
-                                    // However, the original code would fail. Let's stick to -cos(0) = -1.
-                        t[0] = -1.0;
+                                    // However, the original code would fail.
                     }
                     else
                     {
@@ -132,32 +132,20 @@ namespace Antares.Math.Interpolation
                     }
                     break;
                 default:
-                    QL.Fail("Unknown Chebyshev interpolation points type.");
-                    break;
+                    throw new ArgumentException($"Unknown points type: {pointsType}");
             }
             return t;
         }
 
+        /// <summary>
+        /// Helper method to apply a function to each element of an array.
+        /// </summary>
         private static Array ApplyFunction(Array x, Func<double, double> f)
         {
-            var t = new Array(x.Count);
-            for(int i = 0; i < x.Count; ++i)
-            {
-                t[i] = f(x[i]);
-            }
-            return t;
+            var result = new Array(x.Count);
+            for (int i = 0; i < x.Count; i++)
+                result[i] = f(x[i]);
+            return result;
         }
-    }
-}
-
-// In a real project, this internal implementation detail would be in its own file
-// or hidden correctly. For now, let's ensure LagrangeInterpolationImpl has a way
-// to update its y-values without a full reconstruction.
-namespace Antares.Math.Interpolation.Detail
-{
-    internal partial class LagrangeInterpolationImpl // Using partial class to extend
-    {
-        // Exposing y-values for update by ChebyshevInterpolation
-        internal double[] YValuesInternal => _y;
     }
 }

@@ -1,25 +1,10 @@
-// C# code for SimpleQuote.cs
+// SimpleQuote.cs
 
 using System;
-using System.Collections.Generic;
 using Antares.Pattern;
 
 namespace Antares.Quote
 {
-    #region Supporting Infrastructure (Placeholders)
-    // This infrastructure is included to make the file self-contained and compilable.
-    // In a real project, these would be referenced via `using` statements.
-
-    /// <summary>
-    /// Placeholder for the IQuote interface.
-    /// </summary>
-    public interface IQuote : IObservable
-    {
-        Real Value { get; }
-        bool IsValid { get; }
-    }
-    #endregion
-
     /// <summary>
     /// Market element returning a stored value.
     /// </summary>

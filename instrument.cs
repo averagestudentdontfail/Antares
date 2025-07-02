@@ -4,74 +4,10 @@ using System;
 using System.Collections.Generic;
 using QLNet;
 using QLNet.Time;
+using Antares.Pattern;
 
 namespace Antares
 {
-    #region Supporting Infrastructure (Placeholders)
-    // This infrastructure is included to make the file self-contained and compilable.
-    // In a real project, these would be in their own files.
-
-    /// <summary>
-    /// Base class for objects that can be calculated lazily.
-    /// This is a C# translation of QuantLib's LazyObject.
-    /// </summary>
-    public abstract class LazyObject : IObserver, IObservable
-    {
-        private readonly Observable _observable = new Observable();
-        [ThreadStatic]
-        private static bool _frozen;
-        [ThreadStatic]
-        private static bool _triggerNotifications;
-
-        protected bool _calculated;
-
-        protected LazyObject()
-        {
-            // In C#, there's no need to explicitly register with Settings.EvaluationDate
-            // if the object doesn't have a moving reference date.
-            // Derived classes like TermStructure will handle this.
-            // For a general Instrument, this is handled by registering with its engine.
-        }
-
-        public virtual void Update()
-        {
-            _calculated = false;
-            if (_frozen)
-            {
-                _triggerNotifications = true;
-            }
-            else
-            {
-                NotifyObservers();
-            }
-        }
-
-        public virtual void Calculate()
-        {
-            if (!_calculated && !_frozen)
-            {
-                _calculated = true; // prevent infinite recursion
-                try
-                {
-                    PerformCalculations();
-                }
-                catch
-                {
-                    _calculated = false; // allow recalculation
-                    throw;
-                }
-            }
-        }
-
-        protected abstract void PerformCalculations();
-
-        public void RegisterWith(IObserver observer) => _observable.RegisterWith(observer);
-        public void UnregisterWith(IObserver observer) => _observable.UnregisterWith(observer);
-        protected void NotifyObservers() => _observable.NotifyObservers();
-    }
-
-    #endregion
-
     /// <summary>
     /// Abstract instrument class.
     /// </summary>
@@ -169,103 +105,105 @@ namespace Antares
         /// <summary>
         /// Sets the pricing engine to be used.
         /// </summary>
-        public void SetPricingEngine(IPricingEngine engine)
+        /// <remarks>
+        /// Calling this method will trigger a recalculation of the instrument value.
+        /// </remarks>
+        public void SetPricingEngine(IPricingEngine e)
         {
             if (_engine != null)
                 _engine.UnregisterWith(this);
-
-            _engine = engine;
-
+            _engine = e;
             if (_engine != null)
                 _engine.RegisterWith(this);
-
-            // Trigger (lazy) recalculation and notify observers
-            Update();
+            Update(); // trigger recalculation when engine changes
         }
         #endregion
 
+        #region Results
         /// <summary>
-        /// When a derived argument structure is defined for an instrument, this method
-        /// should be overridden to fill it. This is mandatory if a pricing engine is used.
+        /// When a derived instrument defines additional results, it should call this method to notify the base class.
         /// </summary>
-        public virtual void SetupArguments(IPricingEngine.IArguments args)
+        protected void SetupArguments(IPricingEngine.IArguments args)
         {
-            throw new NotImplementedException("Instrument.SetupArguments() must be implemented in a derived class.");
+            throw new NotImplementedException("setupArguments() must be overridden");
         }
 
         /// <summary>
-        /// When a derived result structure is defined for an instrument, this method
-        /// should be overridden to read from it. This is mandatory if a pricing engine is used.
+        /// When a derived instrument defines additional results, it should call this method to notify the base class.
         /// </summary>
-        public virtual void FetchResults(IPricingEngine.IResults r)
+        protected void FetchResults(IPricingEngine.IResults r)
         {
-            if (r is not Results results)
-                throw new InvalidOperationException("No results returned from pricing engine or wrong result type.");
-
-            _npv = results.Value;
-            _errorEstimate = results.ErrorEstimate;
-            _valuationDate = results.ValuationDate;
-            _additionalResults = results.AdditionalResults ?? new Dictionary<string, object>();
-        }
-
-        #region Calculations
-        public override void Calculate()
-        {
-            if (!_calculated)
+            var results = r as Instrument.Results;
+            if (results != null)
             {
-                if (IsExpired)
-                {
-                    SetupExpired();
-                    _calculated = true;
-                }
-                else
-                {
-                    base.Calculate();
-                }
+                _npv = results.Value;
+                _errorEstimate = results.ErrorEstimate;
+                _valuationDate = results.ValuationDate;
+                _additionalResults = new Dictionary<string, object>(results.AdditionalResults);
+            }
+            else
+            {
+                _npv = null;
+                _errorEstimate = null;
+                _valuationDate = null;
+                _additionalResults.Clear();
             }
         }
+        #endregion
 
+        #region LazyObject interface
         /// <summary>
-        /// This method must leave the instrument in a consistent state when the expiration condition is met.
-        /// </summary>
-        protected virtual void SetupExpired()
-        {
-            _npv = 0.0;
-            _errorEstimate = 0.0;
-            _valuationDate = null;
-            _additionalResults.Clear();
-        }
-
-        /// <summary>
-        /// If a pricing engine is used, this method performs the actual calculations.
+        /// This method must be implemented in derived classes to provide the specific calculations.
+        /// In the base Instrument class, it delegates to the pricing engine.
         /// </summary>
         protected override void PerformCalculations()
         {
             if (_engine == null)
-                throw new InvalidOperationException("Null pricing engine.");
+                throw new InvalidOperationException("No pricing engine provided");
 
-            _engine.Reset();
+            // Reset our previous results
+            _npv = null;
+            _errorEstimate = null;
+            _valuationDate = null;
+            _additionalResults.Clear();
 
-            var arguments = _engine.GetArguments();
-            SetupArguments(arguments);
-            arguments.Validate();
-
-            _engine.Calculate();
-
-            var results = _engine.GetResults();
-            FetchResults(results);
+            // Set up the engine's arguments and calculate
+            try
+            {
+                SetupArguments(_engine.GetArguments());
+                _engine.GetArguments().Validate();
+                _engine.Calculate();
+                FetchResults(_engine.GetResults());
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidOperationException($"Pricing failed: {ex.Message}", ex);
+            }
         }
         #endregion
 
+        #region Engine interface
         /// <summary>
-        /// Base class for instrument results.
+        /// Arguments required for instrument pricing.
+        /// </summary>
+        public class Arguments : IPricingEngine.IArguments
+        {
+            public virtual void Validate()
+            {
+                // Base implementation does nothing.
+                // Derived classes should override this to validate their specific arguments.
+            }
+        }
+
+        /// <summary>
+        /// Results returned by instrument pricing.
         /// </summary>
         public class Results : IPricingEngine.IResults
         {
             public double? Value { get; set; }
             public double? ErrorEstimate { get; set; }
             public Date ValuationDate { get; set; }
-            public Dictionary<string, object> AdditionalResults { get; set; } = new Dictionary<string, object>();
+            public Dictionary<string, object> AdditionalResults { get; private set; } = new Dictionary<string, object>();
 
             public virtual void Reset()
             {
@@ -275,5 +213,6 @@ namespace Antares
                 AdditionalResults.Clear();
             }
         }
+        #endregion
     }
 }
