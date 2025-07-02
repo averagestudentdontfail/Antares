@@ -1,76 +1,64 @@
-// LagrangeInterpolation.cs
+// C# code for Lagrange.cs
 
 using System;
-using System.Linq;
-using Antares.Math; 
 
 namespace Antares.Math.Interpolation
 {
     /// <summary>
-    /// Defines an interface for interpolations that can be re-evaluated
-    /// with a new set of y-values without requiring a full update.
-    /// This is specific to algorithms like Lagrange interpolation.
+    /// Lagrange interpolation factory and option class.
     /// </summary>
-    public interface IUpdatedYInterpolation
+    public class Lagrange
     {
-        double Value(Array yValues, double x);
+        public const bool Global = true;
+        public const int RequiredPoints = 2;
+
+        /// <summary>
+        /// Creates a new LagrangeInterpolation instance.
+        /// </summary>
+        public Interpolation Interpolate(double[] x, double[] y)
+        {
+            return new LagrangeInterpolation(x, y);
+        }
     }
 
     /// <summary>
-    /// Barycentric Lagrange interpolation.
+    /// Lagrange interpolation implementation.
     /// </summary>
-    /// <remarks>
-    /// References:
-    /// J-P. Berrut and L.N. Trefethen, Barycentric Lagrange interpolation,
-    /// SIAM Review, 46(3):501–517, 2004.
-    /// https://people.maths.ox.ac.uk/trefethen/barycentric.pdf
-    ///
-    /// See the base Interpolation class for information about the
-    /// required lifetime of the underlying data.
-    /// </remarks>
     public class LagrangeInterpolation : Interpolation, IUpdatedYInterpolation
     {
-        /// <summary>
-        /// Creates a Lagrange interpolation from the given coordinates.
-        /// </summary>
-        /// <param name="x">The x-coordinates, which must be unique.</param>
-        /// <param name="y">The y-coordinates.</param>
         public LagrangeInterpolation(double[] x, double[] y)
+            : base(new LagrangeInterpolationImpl(x, y), true)
         {
-            _impl = new Detail.LagrangeInterpolationImpl(x, y);
-            _impl.Update();
         }
 
-        /// <summary>
-        /// Interpolates with a new set of y-values for a given x-value.
-        /// </summary>
-        /// <param name="y">The new y-values.</param>
-        /// <param name="x">The x-value at which to interpolate.</param>
-        /// <returns>The interpolated value.</returns>
-        public double Value(Array y, double x)
-        {
-            // The implementation is directly castable to the required interface.
-            return ((IUpdatedYInterpolation)_impl).Value(y, x);
-        }
+        public double Value(Array y, double x) => ((LagrangeInterpolationImpl)impl_).Value(y, x);
     }
 
     namespace Detail
     {
+        /// <summary>
+        /// Implementation class for Lagrange interpolation using the barycentric formula.
+        /// </summary>
         internal class LagrangeInterpolationImpl : Interpolation.TemplateImpl, IUpdatedYInterpolation
         {
+            private readonly double[] _lambda;
             private readonly int _n;
-            private readonly Array _lambda;
 
             public LagrangeInterpolationImpl(double[] x, double[] y)
-                : base(x, y)
+                : base(x, y, Lagrange.RequiredPoints)
             {
                 _n = x.Length;
-                _lambda = new Array(_n);
+                _lambda = new double[_n];
 
                 #if DEBUG
-                // Safety check for duplicate x values, mimicking QL_EXTRA_SAFETY_CHECKS
-                if (x.Distinct().Count() != _n)
-                    throw new ArgumentException("x values must not contain duplicates.", nameof(x));
+                // Check that x coordinates are distinct
+                for (int i = 0; i < _n - 1; ++i)
+                {
+                    for (int j = i + 1; j < _n; ++j)
+                    {
+                        QL.Require(_x[i] != _x[j], "x values must be distinct for Lagrange interpolation", nameof(x));
+                    }
+                }
                 #endif
             }
 
@@ -141,7 +129,7 @@ namespace Antares.Math.Interpolation
 
                 // Check if x is very close to one of the grid points.
                 // Using Array.BinarySearch for an efficient search.
-                int idx = Array.BinarySearch(_x, x - eps);
+                int idx = System.Array.BinarySearch(_x, x - eps);
                 if (idx < 0) idx = ~idx; // If not found, get insertion point.
                 
                 if (idx < _n && _x[idx] - x < eps)

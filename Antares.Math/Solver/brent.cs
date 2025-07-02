@@ -85,8 +85,7 @@ namespace Antares.Math.Solver
                     p = System.Math.Abs(p);
                     min1 = 3.0 * xMid * q - System.Math.Abs(xAcc1 * q);
                     min2 = System.Math.Abs(e * q);
-
-                    if (2.0 * p < System.Math.Min(min1, min2))
+                    if (2.0 * p < (min1 < min2 ? min1 : min2))
                     {
                         e = d; // Accept interpolation
                         d = p / q;
@@ -99,8 +98,7 @@ namespace Antares.Math.Solver
                 }
                 else
                 {
-                    // Bounds decreasing too slowly, use bisection
-                    d = xMid;
+                    d = xMid; // Bounds decreasing too slowly, use bisection
                     e = d;
                 }
 
@@ -110,14 +108,14 @@ namespace Antares.Math.Solver
                 if (System.Math.Abs(d) > xAcc1)
                     Root += d;
                 else
-                    Root += System.Math.CopySign(xAcc1, xMid);
+                    Root += xMid >= 0.0 ? xAcc1 : -xAcc1;
 
                 froot = f(Root);
                 EvaluationNumber++;
             }
 
-            QL.Fail($"maximum number of function evaluations ({MaxEvaluations}) exceeded");
-            return 0; // Unreachable
+            QL.Require(false, $"maximum number of function evaluations ({MaxEvaluations}) exceeded");
+            return 0.0; // Never reached
         }
     }
 }

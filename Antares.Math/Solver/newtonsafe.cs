@@ -158,7 +158,7 @@ namespace Antares.Math.Solver
                     xh = Root;
             }
 
-            QL.Fail($"maximum number of function evaluations ({MaxEvaluations}) exceeded");
+            Antares.QL.Fail($"maximum number of function evaluations ({MaxEvaluations}) exceeded");
             return 0; // Unreachable
         }
     }

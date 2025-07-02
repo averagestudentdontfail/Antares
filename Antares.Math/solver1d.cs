@@ -4,20 +4,6 @@ using System;
 
 namespace Antares.Math
 {
-    #region Supporting Infrastructure
-    // Placeholders for dependencies. In a real project, these would be in their own files.
-    
-    public static class Comparison
-    {
-        public static bool Close(double x, double y) => System.Math.Abs(x - y) < 1e-12;
-    }
-
-    public static class QLDefines
-    {
-        public const double EPSILON = 2.2204460492503131e-016;
-    }
-    #endregion
-
     /// <summary>
     /// Base class for 1-D solvers.
     /// </summary>
@@ -50,79 +36,12 @@ namespace Antares.Math
         /// <summary>
         /// Solves for the root of a function by first bracketing it and then calling the specific solver implementation.
         /// </summary>
-        public double Solve(Func<double, double> f, double accuracy, double guess, double step)
-        {
-            QL.Require(accuracy > 0.0, $"accuracy ({accuracy}) must be positive");
-            accuracy = System.Math.Max(accuracy, QLDefines.EPSILON);
-
-            const double growthFactor = 1.6;
-            int flipflop = -1;
-
-            Root = guess;
-            FxMax = f(Root);
-
-            if (Comparison.Close(FxMax, 0.0))
-                return Root;
-            
-            if (FxMax > 0.0)
-            {
-                XMin = EnforceBounds(Root - step);
-                FxMin = f(XMin);
-                XMax = Root;
-            }
-            else
-            {
-                XMin = Root;
-                FxMin = FxMax;
-                XMax = EnforceBounds(Root + step);
-                FxMax = f(XMax);
-            }
-
-            EvaluationNumber = 2;
-            while (EvaluationNumber <= MaxEvaluations)
-            {
-                if (FxMin * FxMax <= 0.0)
-                {
-                    if (Comparison.Close(FxMin, 0.0)) return XMin;
-                    if (Comparison.Close(FxMax, 0.0)) return XMax;
-                    Root = (XMax + XMin) / 2.0;
-                    return ((TImpl)this).SolveImpl(f, accuracy);
-                }
-
-                if (System.Math.Abs(FxMin) < System.Math.Abs(FxMax))
-                {
-                    XMin = EnforceBounds(XMin + growthFactor * (XMin - XMax));
-                    FxMin = f(XMin);
-                }
-                else if (System.Math.Abs(FxMin) > System.Math.Abs(FxMax))
-                {
-                    XMax = EnforceBounds(XMax + growthFactor * (XMax - XMin));
-                    FxMax = f(XMax);
-                }
-                else if (flipflop == -1)
-                {
-                    XMin = EnforceBounds(XMin + growthFactor * (XMin - XMax));
-                    FxMin = f(XMin);
-                    EvaluationNumber++;
-                    flipflop = 1;
-                }
-                else if (flipflop == 1)
-                {
-                    XMax = EnforceBounds(XMax + growthFactor * (XMax - XMin));
-                    FxMax = f(XMax);
-                    flipflop = -1;
-                }
-                EvaluationNumber++;
-            }
-
-            QL.Fail($"unable to bracket root in {MaxEvaluations} function evaluations (last bracket attempt: " +
-                    $"f[{XMin},{XMax}] -> [{FxMin},{FxMax}])");
-            return 0; // Unreachable
-        }
-
-        /// <summary>
-        /// Solves for the root of a function given a bracketed range.
-        /// </summary>
+        /// <param name="f">The function whose root is to be found.</param>
+        /// <param name="accuracy">The required accuracy of the solution.</param>
+        /// <param name="guess">The initial guess for the root.</param>
+        /// <param name="xMin">The minimum value of the search interval.</param>
+        /// <param name="xMax">The maximum value of the search interval.</param>
+        /// <returns>The root of the function.</returns>
         public double Solve(Func<double, double> f, double accuracy, double guess, double xMin, double xMax)
         {
             QL.Require(accuracy > 0.0, $"accuracy ({accuracy}) must be positive");
@@ -152,6 +71,14 @@ namespace Antares.Math
 
             return ((TImpl)this).SolveImpl(f, accuracy);
         }
+
+        /// <summary>
+        /// This method must be implemented by the concrete solver.
+        /// </summary>
+        /// <param name="f">The function to solve.</param>
+        /// <param name="xAccuracy">The required accuracy.</param>
+        /// <returns>The root of the function.</returns>
+        public abstract double SolveImpl(Func<double, double> f, double xAccuracy);
 
         /// <summary>
         /// Sets the maximum number of function evaluations for the bracketing routine.

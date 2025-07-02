@@ -1,19 +1,9 @@
 // C# code for Comparison.cs
 
 using System;
-using Antares.Pattern;
 
 namespace Antares.Math
 {
-    #region Supporting Infrastructure
-    // Placeholders for dependencies. In a real project, these would be in their own files.
-    
-    public static class QLDefines
-    {
-        public const double EPSILON = 2.2204460492503131e-016;
-    }
-    #endregion
-    
     /// <summary>
     /// Provides methods for floating-point comparisons.
     /// </summary>

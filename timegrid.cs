@@ -4,23 +4,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Antares.Math;
 
 namespace Antares
 {
-    // TODO: This is a minimal stand-in for ql/math/comparison.hpp 
-    // It will be replaced by a full port of the corresponding file later.
-    internal static class Comparison
-    {
-        private const double QL_EPSILON = 1.0e-15;
-
-        public static bool CloseEnough(double x, double y, int n = 42)
-        {
-            double diff = Math.Abs(x - y);
-            double tolerance = n * QL_EPSILON * Math.Max(1.0, Math.Max(Math.Abs(x), Math.Abs(y)));
-            return diff <= tolerance;
-        }
-    }
-
     /// <summary>
     /// Time grid class
     /// </summary>

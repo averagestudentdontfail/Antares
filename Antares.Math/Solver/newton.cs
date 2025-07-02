@@ -182,7 +182,7 @@ namespace Antares.Math.Solver
                     throw new InvalidOperationException("Newton solver encountered a zero derivative during iteration.");
             }
 
-            QL.Fail($"maximum number of function evaluations ({MaxEvaluations}) exceeded");
+            Antares.QL.Fail($"maximum number of function evaluations ({MaxEvaluations}) exceeded");
             return 0; // Unreachable
         }
     }

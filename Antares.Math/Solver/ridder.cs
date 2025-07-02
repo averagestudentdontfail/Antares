@@ -32,7 +32,7 @@ namespace Antares.Math.Solver
                 EvaluationNumber++;
 
                 double s = System.Math.Sqrt(fxMid * fxMid - FxMin * FxMax);
-                if (Comparison.Close(s, 0.0))
+                if (Antares.Math.Comparison.Close(s, 0.0))
                 {
                     f(Root); // Final evaluation
                     EvaluationNumber++;
@@ -55,7 +55,7 @@ namespace Antares.Math.Solver
                 double froot = f(Root);
                 EvaluationNumber++;
 
-                if (Comparison.Close(froot, 0.0))
+                if (Antares.Math.Comparison.Close(froot, 0.0))
                     return Root;
 
                 // Bookkeeping to keep the root bracketed on next iteration
@@ -78,7 +78,7 @@ namespace Antares.Math.Solver
                 }
                 else
                 {
-                    QL.Fail("never get here.");
+                    Antares.QL.Fail("never get here.");
                 }
 
                 if (System.Math.Abs(XMax - XMin) <= xAccuracy)
@@ -89,7 +89,7 @@ namespace Antares.Math.Solver
                 }
             }
 
-            QL.Fail($"maximum number of function evaluations ({MaxEvaluations}) exceeded");
+            Antares.QL.Fail($"maximum number of function evaluations ({MaxEvaluations}) exceeded");
             return 0; // Unreachable
         }
     }
