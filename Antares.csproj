@@ -1,37 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <!-- Project-specific properties only - common properties are in Directory.Build.props -->
     <PackageId>Antares</PackageId>
-    <Version>1.0.0</Version>
-    <Authors>Antares Team</Authors>
-    <Company>Antares Financial Library</Company>
-    <Product>Antares</Product>
     <Description>Core types, utilities, and base classes for the Antares financial library - a pure C# port of QuantLib's American option pricing engine</Description>
     <PackageTags>quantlib;financial;derivatives;options;pricing</PackageTags>
-    <RepositoryType>git</RepositoryType>
-    <LangVersion>latest</LangVersion>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <WarningsNotAsErrors>CS1591</WarningsNotAsErrors> <!-- Missing XML comment warnings -->
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <DebugSymbols>true</DebugSymbols>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <Optimize>false</Optimize>
-    <DebugType>full</DebugType>
-    <DebugSymbols>true</DebugSymbols>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>

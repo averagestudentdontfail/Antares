@@ -2,7 +2,7 @@
   
   <!-- 
     This file automatically applies to all projects in the solution.
-    It redirects all build outputs to the Antares.Build directory.
+    It centralizes common assembly properties and redirects all build outputs to the Antares.Build directory.
   -->
   
   <PropertyGroup>
@@ -15,9 +15,49 @@
     
     <!-- Ensure directories exist -->
     <EnableDefaultItems>true</EnableDefaultItems>
+  </PropertyGroup>
+
+  <!-- Centralized Assembly Properties - Applied to all projects -->
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
     
-    <!-- Disable automatic assembly info generation -->
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <!-- Assembly versioning -->
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Version>1.0.0</Version>
+    
+    <!-- Common assembly metadata -->
+    <Authors>Antares Team</Authors>
+    <Company>Antares Financial Library</Company>
+    <Product>Antares</Product>
+    <RepositoryType>git</RepositoryType>
+    
+    <!-- Package generation -->
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    
+    <!-- Documentation -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <WarningsNotAsErrors>CS1591</WarningsNotAsErrors> <!-- Missing XML comment warnings -->
+    
+    <!-- Warning handling -->
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <!-- Configuration-specific settings -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>false</Optimize>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
   </PropertyGroup>
 
   <!-- Create the build directories if they don't exist -->

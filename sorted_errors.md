@@ -2,7 +2,7 @@
 
 
     0 Warning(s)
-    872 Error(s)
+    880 Error(s)
   All projects are up-to-date for restore.
   Determining projects to restore...
 /home/send2/.projects/Antares/Antares.Build/Antares.Engine/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs(4,12): error CS0579: Duplicate 'global::System.Runtime.Versioning.TargetFrameworkAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
@@ -103,16 +103,16 @@
 /home/send2/.projects/Antares/Antares.Build/Antares.Process/obj/Debug/net8.0/Antares.Process.AssemblyInfo.cs(14,12): error CS0579: Duplicate 'System.Reflection.AssemblyConfigurationAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
 /home/send2/.projects/Antares/Antares.Build/Antares.Process/obj/Debug/net8.0/Antares.Process.AssemblyInfo.cs(15,12): error CS0579: Duplicate 'System.Reflection.AssemblyDescriptionAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
 /home/send2/.projects/Antares/Antares.Build/Antares.Process/obj/Debug/net8.0/Antares.Process.AssemblyInfo.cs(15,12): error CS0579: Duplicate 'System.Reflection.AssemblyDescriptionAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/Antares.Build/Antares.Process/obj/Debug/net8.0/Antares.Process.AssemblyInfo.cs(16,12): error CS0579: Duplicate 'System.Reflection.AssemblyFileVersionAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/Antares.Build/Antares.Process/obj/Debug/net8.0/Antares.Process.AssemblyInfo.cs(16,12): error CS0579: Duplicate 'System.Reflection.AssemblyFileVersionAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/Antares.Build/Antares.Process/obj/Debug/net8.0/Antares.Process.AssemblyInfo.cs(17,12): error CS0579: Duplicate 'System.Reflection.AssemblyInformationalVersionAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/Antares.Build/Antares.Process/obj/Debug/net8.0/Antares.Process.AssemblyInfo.cs(17,12): error CS0579: Duplicate 'System.Reflection.AssemblyInformationalVersionAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/Antares.Build/Antares.Process/obj/Debug/net8.0/Antares.Process.AssemblyInfo.cs(18,12): error CS0579: Duplicate 'System.Reflection.AssemblyProductAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/Antares.Build/Antares.Process/obj/Debug/net8.0/Antares.Process.AssemblyInfo.cs(18,12): error CS0579: Duplicate 'System.Reflection.AssemblyProductAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/Antares.Build/Antares.Process/obj/Debug/net8.0/Antares.Process.AssemblyInfo.cs(19,12): error CS0579: Duplicate 'System.Reflection.AssemblyTitleAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/Antares.Build/Antares.Process/obj/Debug/net8.0/Antares.Process.AssemblyInfo.cs(19,12): error CS0579: Duplicate 'System.Reflection.AssemblyTitleAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/Antares.Build/Antares.Process/obj/Debug/net8.0/Antares.Process.AssemblyInfo.cs(20,12): error CS0579: Duplicate 'System.Reflection.AssemblyVersionAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/Antares.Build/Antares.Process/obj/Debug/net8.0/Antares.Process.AssemblyInfo.cs(20,12): error CS0579: Duplicate 'System.Reflection.AssemblyVersionAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
+/home/send2/.projects/Antares/Antares.Build/Antares.Process/obj/Debug/net8.0/Antares.Process.AssemblyInfo.cs(17,12): error CS0579: Duplicate 'System.Reflection.AssemblyFileVersionAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
+/home/send2/.projects/Antares/Antares.Build/Antares.Process/obj/Debug/net8.0/Antares.Process.AssemblyInfo.cs(17,12): error CS0579: Duplicate 'System.Reflection.AssemblyFileVersionAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
+/home/send2/.projects/Antares/Antares.Build/Antares.Process/obj/Debug/net8.0/Antares.Process.AssemblyInfo.cs(18,12): error CS0579: Duplicate 'System.Reflection.AssemblyInformationalVersionAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
+/home/send2/.projects/Antares/Antares.Build/Antares.Process/obj/Debug/net8.0/Antares.Process.AssemblyInfo.cs(18,12): error CS0579: Duplicate 'System.Reflection.AssemblyInformationalVersionAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
+/home/send2/.projects/Antares/Antares.Build/Antares.Process/obj/Debug/net8.0/Antares.Process.AssemblyInfo.cs(19,12): error CS0579: Duplicate 'System.Reflection.AssemblyProductAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
+/home/send2/.projects/Antares/Antares.Build/Antares.Process/obj/Debug/net8.0/Antares.Process.AssemblyInfo.cs(19,12): error CS0579: Duplicate 'System.Reflection.AssemblyProductAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
+/home/send2/.projects/Antares/Antares.Build/Antares.Process/obj/Debug/net8.0/Antares.Process.AssemblyInfo.cs(20,12): error CS0579: Duplicate 'System.Reflection.AssemblyTitleAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
+/home/send2/.projects/Antares/Antares.Build/Antares.Process/obj/Debug/net8.0/Antares.Process.AssemblyInfo.cs(20,12): error CS0579: Duplicate 'System.Reflection.AssemblyTitleAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
+/home/send2/.projects/Antares/Antares.Build/Antares.Process/obj/Debug/net8.0/Antares.Process.AssemblyInfo.cs(21,12): error CS0579: Duplicate 'System.Reflection.AssemblyVersionAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
+/home/send2/.projects/Antares/Antares.Build/Antares.Process/obj/Debug/net8.0/Antares.Process.AssemblyInfo.cs(21,12): error CS0579: Duplicate 'System.Reflection.AssemblyVersionAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
 /home/send2/.projects/Antares/Antares.Build/Antares.Quote/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs(4,12): error CS0579: Duplicate 'global::System.Runtime.Versioning.TargetFrameworkAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
 /home/send2/.projects/Antares/Antares.Build/Antares.Quote/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs(4,12): error CS0579: Duplicate 'global::System.Runtime.Versioning.TargetFrameworkAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
 /home/send2/.projects/Antares/Antares.Build/Antares.Quote/obj/Debug/net8.0/Antares.Quote.AssemblyInfo.cs(13,12): error CS0579: Duplicate 'System.Reflection.AssemblyCompanyAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
@@ -187,6 +187,22 @@
 /home/send2/.projects/Antares/Antares.Build/Antares.Utility/obj/Debug/net8.0/Antares.Utility.AssemblyInfo.cs(20,12): error CS0579: Duplicate 'System.Reflection.AssemblyVersionAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
 /home/send2/.projects/Antares/Antares.Build/Antares/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs(4,12): error CS0579: Duplicate 'global::System.Runtime.Versioning.TargetFrameworkAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
 /home/send2/.projects/Antares/Antares.Build/Antares/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs(4,12): error CS0579: Duplicate 'global::System.Runtime.Versioning.TargetFrameworkAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
+/home/send2/.projects/Antares/Antares.Build/Antares/obj/Debug/net8.0/Antares.AssemblyInfo.cs(13,12): error CS0579: Duplicate 'System.Reflection.AssemblyCompanyAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
+/home/send2/.projects/Antares/Antares.Build/Antares/obj/Debug/net8.0/Antares.AssemblyInfo.cs(13,12): error CS0579: Duplicate 'System.Reflection.AssemblyCompanyAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
+/home/send2/.projects/Antares/Antares.Build/Antares/obj/Debug/net8.0/Antares.AssemblyInfo.cs(14,12): error CS0579: Duplicate 'System.Reflection.AssemblyConfigurationAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
+/home/send2/.projects/Antares/Antares.Build/Antares/obj/Debug/net8.0/Antares.AssemblyInfo.cs(14,12): error CS0579: Duplicate 'System.Reflection.AssemblyConfigurationAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
+/home/send2/.projects/Antares/Antares.Build/Antares/obj/Debug/net8.0/Antares.AssemblyInfo.cs(15,12): error CS0579: Duplicate 'System.Reflection.AssemblyDescriptionAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
+/home/send2/.projects/Antares/Antares.Build/Antares/obj/Debug/net8.0/Antares.AssemblyInfo.cs(15,12): error CS0579: Duplicate 'System.Reflection.AssemblyDescriptionAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
+/home/send2/.projects/Antares/Antares.Build/Antares/obj/Debug/net8.0/Antares.AssemblyInfo.cs(17,12): error CS0579: Duplicate 'System.Reflection.AssemblyFileVersionAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
+/home/send2/.projects/Antares/Antares.Build/Antares/obj/Debug/net8.0/Antares.AssemblyInfo.cs(17,12): error CS0579: Duplicate 'System.Reflection.AssemblyFileVersionAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
+/home/send2/.projects/Antares/Antares.Build/Antares/obj/Debug/net8.0/Antares.AssemblyInfo.cs(18,12): error CS0579: Duplicate 'System.Reflection.AssemblyInformationalVersionAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
+/home/send2/.projects/Antares/Antares.Build/Antares/obj/Debug/net8.0/Antares.AssemblyInfo.cs(18,12): error CS0579: Duplicate 'System.Reflection.AssemblyInformationalVersionAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
+/home/send2/.projects/Antares/Antares.Build/Antares/obj/Debug/net8.0/Antares.AssemblyInfo.cs(19,12): error CS0579: Duplicate 'System.Reflection.AssemblyProductAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
+/home/send2/.projects/Antares/Antares.Build/Antares/obj/Debug/net8.0/Antares.AssemblyInfo.cs(19,12): error CS0579: Duplicate 'System.Reflection.AssemblyProductAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
+/home/send2/.projects/Antares/Antares.Build/Antares/obj/Debug/net8.0/Antares.AssemblyInfo.cs(20,12): error CS0579: Duplicate 'System.Reflection.AssemblyTitleAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
+/home/send2/.projects/Antares/Antares.Build/Antares/obj/Debug/net8.0/Antares.AssemblyInfo.cs(20,12): error CS0579: Duplicate 'System.Reflection.AssemblyTitleAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
+/home/send2/.projects/Antares/Antares.Build/Antares/obj/Debug/net8.0/Antares.AssemblyInfo.cs(21,12): error CS0579: Duplicate 'System.Reflection.AssemblyVersionAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
+/home/send2/.projects/Antares/Antares.Build/Antares/obj/Debug/net8.0/Antares.AssemblyInfo.cs(21,12): error CS0579: Duplicate 'System.Reflection.AssemblyVersionAttribute' attribute [/home/send2/.projects/Antares/Antares.csproj]
 /home/send2/.projects/Antares/Antares.Cashflow/dividend.cs(109,30): error CS0102: The type 'FractionalDividend' already contains a definition for 'Amount' [/home/send2/.projects/Antares/Antares.csproj]
 /home/send2/.projects/Antares/Antares.Cashflow/dividend.cs(109,30): error CS0102: The type 'FractionalDividend' already contains a definition for 'Amount' [/home/send2/.projects/Antares/Antares.csproj]
 /home/send2/.projects/Antares/Antares.Cashflow/dividend.cs(19,14): error CS0108: 'IDividend.Amount(double)' hides inherited member 'ICashFlow.Amount'. Use the new keyword if hiding was intended. [/home/send2/.projects/Antares/Antares.csproj]
@@ -1750,4 +1766,4 @@
 /home/send2/.projects/Antares/userconfig.cs(9,25): error CS0101: The namespace 'Antares' already contains a definition for 'Settings' [/home/send2/.projects/Antares/Antares.csproj]
 /home/send2/.projects/Antares/userconfig.cs(9,25): error CS0101: The namespace 'Antares' already contains a definition for 'Settings' [/home/send2/.projects/Antares/Antares.csproj]
 Build FAILED.
-Time Elapsed 00:00:01.45
+Time Elapsed 00:00:01.99

@@ -1,37 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Antares.Utility</PackageId>
-    <Version>1.0.0</Version>
-    <Authors>Antares Team</Authors>
-    <Company>Antares Financial Library</Company>
-    <Product>Antares</Product>
     <Description>Utility classes and helper functions for the Antares financial library</Description>
     <PackageTags>quantlib;financial;utilities;helpers;common</PackageTags>
-    <RepositoryType>git</RepositoryType>
-    <LangVersion>latest</LangVersion>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors> <!-- Temporarily disable to fix XML errors -->
-    <WarningsNotAsErrors>CS1591;CS1570</WarningsNotAsErrors> <!-- Ignore XML documentation warnings for now -->
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <DebugSymbols>true</DebugSymbols>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <Optimize>false</Optimize>
-    <DebugType>full</DebugType>
-    <DebugSymbols>true</DebugSymbols>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <!-- Override warning settings for this project -->
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsNotAsErrors>CS1591;CS1570</WarningsNotAsErrors>
   </PropertyGroup>
 
   <ItemGroup>
@@ -45,7 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <!-- Link to utility files in the source directory -->
     <Compile Include="..\..\Antares.Utility\*.cs" Link="Utility\%(Filename)%(Extension)" />
   </ItemGroup>
 
