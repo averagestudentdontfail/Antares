@@ -2,10 +2,7 @@
 
 using System;
 using System.Collections.Generic;
-using QLNet;
-using QLNet.Time;
-using QLNet.Time.Calendars;
-using QLNet.Time.DayCounters;
+using Antares.Time;
 
 namespace Antares
 {

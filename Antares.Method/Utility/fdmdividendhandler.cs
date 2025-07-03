@@ -3,8 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using QLNet.Time;
-using QLNet.Time.DayCounters;
+using Antares.Time;
 
 namespace Antares.Method.Utility
 {

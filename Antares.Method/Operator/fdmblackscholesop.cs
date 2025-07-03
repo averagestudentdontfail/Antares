@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using Antares.Math;
 using Antares.Math.Matrix;
 using Antares.Method.Utility;
-using QLNet;
-using QLNet.Processes;
-using QLNet.Termstructures;
+using Antares.Time;
+using Antares.Process;
+using Antares.Term;
 
 namespace Antares.Method.Operator
 {

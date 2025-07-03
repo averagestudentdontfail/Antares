@@ -1,7 +1,7 @@
 // Event.cs
 
 using System;
-using QLNet.Time;
+using Antares.Time;
 using Antares.Pattern;
 
 namespace Antares

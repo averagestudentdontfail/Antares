@@ -6,7 +6,7 @@ using System.Linq;
 using Antares.Math;
 using Antares.Method.Mesh;
 using Antares.Method.Utilities;
-using QLNet; // Using QLNet for Date, DayCounter, Exercise, and Dividend types
+using Antares.Time;
 
 namespace Antares.Method.Utilities
 {

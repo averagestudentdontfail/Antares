@@ -6,7 +6,7 @@ using System.Linq;
 using Antares.Math;
 using Antares.Method.Mesh;
 using Antares.Method.Utilities;
-using QLNet.Time; // Using QLNet for Date and DayCounter as per guidelines
+using Antares.Time;
 
 namespace Antares.Method.Step
 {

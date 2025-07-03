@@ -3,7 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using QLNet.Time;
+using Antares.Time;
 using Antares.Pattern;
 
 // A Leg is a sequence of cash flows.

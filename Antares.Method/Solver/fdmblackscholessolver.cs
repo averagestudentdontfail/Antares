@@ -7,7 +7,7 @@ using Antares.Method.Finitedifferences.Operators;
 using Antares.Method.Finitedifferences.Utilities;
 using Antares.Patterns;
 using Antares.Processes;
-using QLNet;
+using Antares.Time;
 
 namespace Antares.Method.Solver
 {

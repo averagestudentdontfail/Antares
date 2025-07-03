@@ -3,9 +3,7 @@
 using System;
 using System.Globalization;
 using System.Text;
-using QLNet;
-using QLNet.Time;
-using QLNet.Time.DayCounters;
+using Antares.Time;
 
 namespace Antares
 {

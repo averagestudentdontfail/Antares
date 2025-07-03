@@ -3,7 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using QLNet;
+using Antares.Time;
 using Antares.Instrument;
 
 namespace Antares

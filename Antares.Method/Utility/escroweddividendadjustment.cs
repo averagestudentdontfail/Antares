@@ -2,7 +2,7 @@
 
 using System;
 using System.Collections.Generic;
-using QLNet.Time;
+using Antares.Time;
 
 namespace Antares.Method.Utility
 {

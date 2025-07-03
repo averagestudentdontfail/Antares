@@ -2,7 +2,7 @@
 
 using System;
 using MathNet.Numerics.LinearAlgebra;
-using QLNet.Time;
+using Antares.Time;
 using Antares.Pattern;
 
 // Type aliases for clarity and consistency with QuantLib's naming

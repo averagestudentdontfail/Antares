@@ -1,8 +1,7 @@
 // Settings.cs
 
 using System;
-using QLNet;
-using QLNet.Time;
+using Antares.Time;
 using Antares.Utility;
 
 namespace Antares

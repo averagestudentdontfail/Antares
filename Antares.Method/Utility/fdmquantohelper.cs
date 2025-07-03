@@ -3,8 +3,8 @@
 using System;
 using Antares.Math;
 using Antares.Pattern;
-using QLNet;
-using QLNet.Termstructures;
+using Antares.Time;
+using Antares.Term;
 
 namespace Antares.Method.Utility
 {
