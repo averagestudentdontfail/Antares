@@ -108,7 +108,7 @@ namespace Antares
         }
 
         /// <summary>
-        /// Accept a visitor. This implementation tries to dispatch to a CashFlow visitor
+        /// Accept a visitor. This implementation tries to dispatch to a <see cref="ICashFlow"/> visitor
         /// first, and then falls back to an Event visitor.
         /// </summary>
         public virtual void Accept(IAcyclicVisitor v)
@@ -136,7 +136,7 @@ namespace Antares
 
     /// <summary>
     /// Provides comparison logic for cash flows.
-    /// Corresponds to the C++ struct 'earlier_than<CashFlow>'.
+    /// Corresponds to the C++ struct 'earlier_than&lt;CashFlow&gt;'.
     /// </summary>
     public static class CashFlowComparer
     {

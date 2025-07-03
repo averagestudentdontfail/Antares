@@ -18,7 +18,6 @@ namespace Antares.Ext
     /// and C# language features (like `#pragma warning`). There is no need for a
     /// direct translation of these files.
     /// </para>
-    /// </summary>
     /// <para>
     /// The primary functional purpose of these files was to include `userconfig.hpp`,
     /// which has already been ported to `Antares.Settings` in `userconfig.cs`.

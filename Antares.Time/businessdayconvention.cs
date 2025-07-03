@@ -39,12 +39,16 @@ namespace Antares.Time
         Unadjusted,
 
         /// <summary>
-        /// Choose the first business day after the given holiday unless that day crosses the mid-month (15th) or the end of month, in which case choose the first business day before the holiday.
+        /// Choose the first business day after the given holiday unless that day
+        /// crosses the mid-month (15th) or the end of month, in which case choose
+        /// the first business day before the holiday.
         /// </summary>
         HalfMonthModifiedFollowing,
 
         /// <summary>
-        /// Choose the nearest business day to the given holiday. If both the previous and next business days are equally near, choose the following business day.
+        /// Choose the nearest business day to the given holiday. If both the
+        /// preceding and following business days are equally far away, the
+        /// following one is chosen.
         /// </summary>
         Nearest
     }
@@ -56,7 +60,7 @@ namespace Antares.Time
     {
         /// <summary>
         /// Returns a string representation of the business day convention.
-        /// This method mimics the C++ operator<< and provides error checking for invalid enum values.
+        /// This method mimics the C++ operator&lt;&lt; and provides error checking for invalid enum values.
         /// </summary>
         /// <param name="b">The BusinessDayConvention enum value.</param>
         /// <returns>A formatted string representation of the convention.</returns>

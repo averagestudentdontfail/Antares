@@ -23,7 +23,7 @@ namespace Antares.Ext
     ///     </description>
     ///   </item>
     ///   <item>
-    ///     <term>C++ any_cast&lt;T&gt;</term>
+    ///     <term>C++ any_cast<T></term>
     ///     <description>
     ///       Use a standard C# cast (T). This will throw an <see cref="InvalidCastException"/> if the underlying type is not convertible to T.
     ///       <code>

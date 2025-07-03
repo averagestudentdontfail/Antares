@@ -10,49 +10,14 @@ namespace Antares.Time
     /// </summary>
     public enum TimeUnit
     {
-        /// <summary>
-        /// Days.
-        /// </summary>
         Days,
-
-        /// <summary>
-        /// Weeks.
-        /// </summary>
         Weeks,
-
-        /// <summary>
-        /// Months.
-        /// </summary>
         Months,
-
-        /// <summary>
-        /// Years.
-        /// </summary>
         Years,
-
-        /// <summary>
-        /// Hours.
-        /// </summary>
         Hours,
-
-        /// <summary>
-        /// Minutes.
-        /// </summary>
         Minutes,
-
-        /// <summary>
-        /// Seconds.
-        /// </summary>
         Seconds,
-
-        /// <summary>
-        /// Milliseconds.
-        /// </summary>
         Milliseconds,
-
-        /// <summary>
-        /// Microseconds.
-        /// </summary>
         Microseconds
     }
 
@@ -63,7 +28,7 @@ namespace Antares.Time
     {
         /// <summary>
         /// Returns a string representation of the time unit.
-        /// This method mimics the C++ operator<< and provides error checking for invalid enum values.
+        /// This method mimics the C++ operator&lt;&lt; and provides error checking for invalid enum values.
         /// </summary>
         /// <param name="tu">The TimeUnit enum value.</param>
         /// <returns>A string representation of the enum member name.</returns>

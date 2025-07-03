@@ -24,12 +24,12 @@ namespace Antares
     }
 
     /// <summary>
-    /// Contains helper methods related to IQuote.
+    /// Contains helper methods related to <see cref="IQuote"/>.
     /// </summary>
     public static class Quote
     {
         /// <summary>
-        /// Creates a Handle<IQuote> from a variant input, which can be either a Real or an existing Handle<IQuote>.
+        /// Creates a Handle&lt;IQuote&gt; from a variant input, which can be either a Real or an existing Handle&lt;IQuote&gt;.
         /// </summary>
         /// <param name="value">The input value, which must be of type Real (double) or Handle&lt;IQuote&gt;.</param>
         /// <returns>A valid Handle&lt;IQuote&gt;.</returns>

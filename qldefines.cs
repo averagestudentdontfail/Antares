@@ -42,19 +42,19 @@ namespace Antares
         public const double MAX_REAL = double.MaxValue;
 
         /// <summary>
-        /// Defines the value of the smallest representable positive normalized double value.
+        /// Defines the value of the smallest representable positive normalized value.
         /// Corresponds to QL_MIN_POSITIVE_REAL.
         /// Note: This is not the same as .NET's double.Epsilon, which is the smallest subnormal value.
-        /// This value matches C++'s std::numeric_limits<double>::min().
+        /// This value matches C++'s std::numeric_limits&lt;double&gt;::min().
         /// </summary>
         public const double MIN_POSITIVE_REAL = 2.2250738585072014e-308;
 
         /// <summary>
-        /// Defines the machine precision for operations over doubles.
+        /// Defines the machine precision for operations over double values.
         /// Corresponds to QL_EPSILON.
         /// This is the smallest value 'e' such that (1.0 + e) != 1.0.
         /// Note: This is not the same as .NET's double.Epsilon.
-        /// This value matches C++'s std::numeric_limits<double>::epsilon().
+        /// This value matches C++'s std::numeric_limits&lt;double&gt;::epsilon().
         /// </summary>
         public const double EPSILON = 2.2204460492503131e-016;
     }

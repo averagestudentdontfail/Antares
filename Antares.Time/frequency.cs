@@ -22,10 +22,7 @@ namespace Antares.Time
         Biweekly = 26,         //!< every second week
         Weekly = 52,           //!< once a week
         Daily = 365,           //!< once a day
-        /// <summary>
-        /// Some other unknown frequency.
-        /// </summary>
-        OtherFrequency = 999
+        OtherFrequency = 999   //!< some other unknown frequency
     }
 
     /// <summary>
@@ -35,7 +32,7 @@ namespace Antares.Time
     {
         /// <summary>
         /// Returns a string representation of the frequency.
-        /// This method mimics the C++ operator<< and provides error checking for invalid enum values.
+        /// This method mimics the C++ operator&lt;&lt; and provides error checking for invalid enum values.
         /// </summary>
         /// <param name="f">The Frequency enum value.</param>
         /// <returns>A string representation of the frequency.</returns>
