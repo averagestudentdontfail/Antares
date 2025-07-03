@@ -29,7 +29,7 @@ namespace Antares.Utility
     ///       // std::variant<int, string> v = "hello";
     ///       // std::visit(variant_visitor{
     ///       //     [](int i) { /* handle int */ },
-    ///       //     [](const string& s) { /* handle string */ }
+    ///       //     [](const string&s) { /* handle string */ }
     ///       // }, v);
     ///
     ///       // C# equivalent:

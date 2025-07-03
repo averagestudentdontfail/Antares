@@ -52,7 +52,7 @@ namespace Antares.Math.Distribution
     public class GammaFunction
     {
         /// <summary>
-        /// Gamma function implementation placeholder.
+        /// Initializes a new instance of the GammaFunction class.
         /// </summary>
         /// <remarks>
         /// This class is provided as a placeholder to match the original interface.
