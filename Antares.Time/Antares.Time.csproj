@@ -1,0 +1,57 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Antares.Time</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Antares Team</Authors>
+    <Company>Antares Financial Library</Company>
+    <Product>Antares</Product>
+    <Description>Time and date utilities for the Antares financial library including calendars, day counters, and time periods</Description>
+    <PackageTags>quantlib;financial;time;calendar;dates</PackageTags>
+    <RepositoryType>git</RepositoryType>
+    <LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsNotAsErrors>CS1591</WarningsNotAsErrors>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>false</Optimize>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NodaTime" Version="3.0.5" />
+    <PackageReference Include="QLNet" Version="1.13.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Antares.Core\Antares.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Time-related files -->
+    <Compile Include="..\..\Antares.Time\*.cs" Link="Time\%(Filename)%(Extension)" />
+    
+    <!-- Day counter subdirectory if it exists -->
+    <Compile Include="..\..\Antares.Time\Day\*.cs" Link="Time\Day\%(Filename)%(Extension)" />
+    
+    <!-- Calendar subdirectory if it exists -->
+    <Compile Include="..\..\Antares.Time\Calendar\*.cs" Link="Time\Calendar\%(Filename)%(Extension)" />
+  </ItemGroup>
+
+</Project>

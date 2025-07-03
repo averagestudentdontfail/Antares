@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Antares.Pattern</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Antares Team</Authors>
+    <Company>Antares Financial Library</Company>
+    <Product>Antares</Product>
+    <Description>Design patterns and utilities for the Antares financial library including Observer, LazyObject, and other common patterns</Description>
+    <PackageTags>quantlib;financial;patterns;observer;lazy</PackageTags>
+    <RepositoryType>git</RepositoryType>
+    <LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsNotAsErrors>CS1591</WarningsNotAsErrors>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>false</Optimize>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Antares.Core\Antares.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Pattern-related files -->
+    <Compile Include="..\..\Antares.Pattern\*.cs" Link="Pattern\%(Filename)%(Extension)" />
+  </ItemGroup>
+
+</Project>

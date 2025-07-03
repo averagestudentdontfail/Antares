@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Antares.Term</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Antares Team</Authors>
+    <Company>Antares Financial Library</Company>
+    <Product>Antares</Product>
+    <Description>Term structure components for the Antares financial library including yield curves and volatility surfaces</Description>
+    <PackageTags>quantlib;financial;term-structure;yield-curve;volatility</PackageTags>
+    <RepositoryType>git</RepositoryType>
+    <LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsNotAsErrors>CS1591</WarningsNotAsErrors>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>false</Optimize>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Antares.Core\Antares.Core.csproj" />
+    <ProjectReference Include="..\Antares.Math\Antares.Math.csproj" />
+    <ProjectReference Include="..\Antares.Time\Antares.Time.csproj" />
+    <ProjectReference Include="..\Antares.Pattern\Antares.Pattern.csproj" />
+    <ProjectReference Include="..\Antares.Quote\Antares.Quote.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\Antares.Term\*.cs" Link="Term\%(Filename)%(Extension)" />
+    <Compile Include="..\..\Antares.Term\Yield\*.cs" Link="Term\Yield\%(Filename)%(Extension)" />
+    <Compile Include="..\..\Antares.Term\Volatility\*.cs" Link="Term\Volatility\%(Filename)%(Extension)" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Antares.Process</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Antares Team</Authors>
+    <Company>Antares Financial Library</Company>
+    <Product>Antares</Product>
+    <Description>Stochastic processes for the Antares financial library</Description>
+    <PackageTags>quantlib;financial;stochastic-processes;monte-carlo</PackageTags>
+    <RepositoryType>git</RepositoryType>
+    <LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsNotAsErrors>CS1591</WarningsNotAsErrors>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>false</Optimize>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Antares.Core\Antares.Core.csproj" />
+    <ProjectReference Include="..\Antares.Math\Antares.Math.csproj" />
+    <ProjectReference Include="..\Antares.Time\Antares.Time.csproj" />
+    <ProjectReference Include="..\Antares.Pattern\Antares.Pattern.csproj" />
+    <ProjectReference Include="..\Antares.Quote\Antares.Quote.csproj" />
+    <ProjectReference Include="..\Antares.Term\Antares.Term.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\Antares.Process\*.cs" Link="Process\%(Filename)%(Extension)" />
+  </ItemGroup>
+
+</Project>

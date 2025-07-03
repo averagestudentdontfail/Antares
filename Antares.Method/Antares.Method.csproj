@@ -1,0 +1,61 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Antares.Method</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Antares Team</Authors>
+    <Company>Antares Financial Library</Company>
+    <Product>Antares</Product>
+    <Description>Finite difference methods for the Antares financial library including meshers, operators, and schemes</Description>
+    <PackageTags>quantlib;financial;finite-difference;numerical-methods;pde</PackageTags>
+    <RepositoryType>git</RepositoryType>
+    <LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsNotAsErrors>CS1591</WarningsNotAsErrors>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>false</Optimize>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Antares.Core\Antares.Core.csproj" />
+    <ProjectReference Include="..\Antares.Math\Antares.Math.csproj" />
+    <ProjectReference Include="..\Antares.Pattern\Antares.Pattern.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Method base files -->
+    <Compile Include="..\..\Antares.Method\*.cs" Link="Method\%(Filename)%(Extension)" />
+    
+    <!-- Mesh subdirectory -->
+    <Compile Include="..\..\Antares.Method\Mesh\*.cs" Link="Method\Mesh\%(Filename)%(Extension)" />
+    
+    <!-- Operator subdirectory -->
+    <Compile Include="..\..\Antares.Method\Operator\*.cs" Link="Method\Operator\%(Filename)%(Extension)" />
+    
+    <!-- Scheme subdirectory -->
+    <Compile Include="..\..\Antares.Method\Scheme\*.cs" Link="Method\Scheme\%(Filename)%(Extension)" />
+  </ItemGroup>
+
+</Project>
