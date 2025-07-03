@@ -1,0 +1,26 @@
+<Project>
+  
+  <!-- 
+    This file automatically applies to all projects in the solution.
+    It redirects all build outputs to the Antares.Build directory.
+  -->
+  
+  <PropertyGroup>
+    <!-- Root build directory -->
+    <AntaresBuildRoot>$(MSBuildThisFileDirectory)Antares.Build</AntaresBuildRoot>
+    
+    <!-- Redirect output directories -->
+    <BaseOutputPath>$(AntaresBuildRoot)\$(MSBuildProjectName)\bin\</BaseOutputPath>
+    <BaseIntermediateOutputPath>$(AntaresBuildRoot)\$(MSBuildProjectName)\obj\</BaseIntermediateOutputPath>
+    
+    <!-- Ensure directories exist -->
+    <EnableDefaultItems>true</EnableDefaultItems>
+  </PropertyGroup>
+
+  <!-- Create the build directories if they don't exist -->
+  <Target Name="CreateBuildDirectories" BeforeTargets="Build">
+    <MakeDir Directories="$(BaseOutputPath)" Condition="!Exists('$(BaseOutputPath)')" />
+    <MakeDir Directories="$(BaseIntermediateOutputPath)" Condition="!Exists('$(BaseIntermediateOutputPath)')" />
+  </Target>
+
+</Project>
