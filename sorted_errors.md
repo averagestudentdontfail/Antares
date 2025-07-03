@@ -1750,4 +1750,4 @@
 /home/send2/.projects/Antares/userconfig.cs(9,25): error CS0101: The namespace 'Antares' already contains a definition for 'Settings' [/home/send2/.projects/Antares/Antares.csproj]
 /home/send2/.projects/Antares/userconfig.cs(9,25): error CS0101: The namespace 'Antares' already contains a definition for 'Settings' [/home/send2/.projects/Antares/Antares.csproj]
 Build FAILED.
-Time Elapsed 00:00:01.16
+Time Elapsed 00:00:01.45
