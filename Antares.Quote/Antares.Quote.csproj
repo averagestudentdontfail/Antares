@@ -35,7 +35,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Antares.Core\Antares.Core.csproj" />
+    <ProjectReference Include="..\Antares.csproj" />
     <ProjectReference Include="..\Antares.Pattern\Antares.Pattern.csproj" />
   </ItemGroup>
 

@@ -42,7 +42,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Antares.Core\Antares.Core.csproj" />
+    <ProjectReference Include="..\Antares.csproj" />
     <ProjectReference Include="..\Antares.Utility\Antares.Utility.csproj" />
   </ItemGroup>
 

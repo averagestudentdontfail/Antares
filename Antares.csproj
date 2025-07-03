@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageId>Antares.Core</PackageId>
+    <PackageId>Antares</PackageId>
     <Version>1.0.0</Version>
     <Authors>Antares Team</Authors>
     <Company>Antares Financial Library</Company>
@@ -42,18 +42,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <!-- Core types and utilities -->
-    <Compile Include="..\..\types.cs" Link="Core\types.cs" />
-    <Compile Include="..\..\errors.cs" Link="Core\errors.cs" />
-    <Compile Include="..\..\config.cs" Link="Core\config.cs" />
-    
-    <!-- Base instrument and pricing infrastructure -->
-    <Compile Include="..\..\instrument.cs" Link="Core\instrument.cs" />
-    <Compile Include="..\..\pricingengine.cs" Link="Core\pricingengine.cs" />
-    <Compile Include="..\..\termstructure.cs" Link="Core\termstructure.cs" />
-    
     <!-- Extension classes -->
-    <Compile Include="..\..\Antares.Ext\*.cs" Link="Extensions\%(Filename)%(Extension)" />
+    <Compile Include="Antares.Ext\*.cs" Link="Extensions\%(Filename)%(Extension)" />
   </ItemGroup>
 
   <!-- Compile all files from source directories as linked files -->

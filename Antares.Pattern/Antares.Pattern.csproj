@@ -35,11 +35,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Antares.Core\Antares.Core.csproj" />
+    <ProjectReference Include="..\Antares.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <!-- Pattern-related files -->
     <Compile Include="..\..\Antares.Pattern\*.cs" Link="Pattern\%(Filename)%(Extension)" />
   </ItemGroup>
 

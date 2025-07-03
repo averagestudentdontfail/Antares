@@ -39,7 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Antares.Core\Antares.Core.csproj" />
+    <ProjectReference Include="..\Antares.csproj" />
     <ProjectReference Include="..\Antares.Math\Antares.Math.csproj" />
     <ProjectReference Include="..\Antares.Time\Antares.Time.csproj" />
     <ProjectReference Include="..\Antares.Pattern\Antares.Pattern.csproj" />
