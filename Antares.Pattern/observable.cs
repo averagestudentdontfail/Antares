@@ -110,7 +110,7 @@ namespace Antares.Pattern
     public interface IObservable
     {
         /// <summary>
-        // Registers an observer to be notified of changes.
+        /// Registers an observer to be notified of changes.
         /// </summary>
         void RegisterWith(IObserver observer);
 
@@ -273,5 +273,10 @@ namespace Antares.Pattern
             Dispose(false);
         }
         #endregion
+
+        /// <summary>
+        /// Returns true if the observer is disposed.
+        /// </summary>
+        public bool IsDisposed => _disposed;
     }
 }

@@ -25,7 +25,7 @@ namespace Antares.Math.Distribution
         public CumulativeGammaDistribution(double a)
         {
             if (a <= 0.0)
-                throw new ArgumentException("Invalid parameter for gamma distribution. 'a' must be positive.", nameof(a));
+                throw new ArgumentOutOfRangeException(nameof(a), "Shape parameter 'a' must be positive.");
             _a = a;
         }
 
@@ -38,8 +38,7 @@ namespace Antares.Math.Distribution
         {
             if (x <= 0.0)
                 return 0.0;
-
-            // The standard gamma distribution has a rate (beta) of 1.0.
+            // Use MathNet.Numerics for the CDF
             return Gamma.CDF(_a, 1.0, x);
         }
     }
@@ -49,12 +48,20 @@ namespace Antares.Math.Distribution
     /// </summary>
     /// <remarks>
     /// This is a function defined by Γ(z) = ∫[0,∞] t^(z-1)e^(-t)dt.
-    /// The implementation of the algorithm from the original C++ code (a Lanczos
-    /// approximation) has been replaced by calls to the highly optimized special
-    /// functions in the MathNet.Numerics library.
     /// </remarks>
     public class GammaFunction
     {
+        /// <summary>
+        /// Gamma function implementation placeholder.
+        /// </summary>
+        /// <remarks>
+        /// This class is provided as a placeholder to match the original interface.
+        /// The actual implementation uses MathNet.Numerics.SpecialFunctions.
+        /// </remarks>
+        public GammaFunction()
+        {
+        }
+
         /// <summary>
         /// Calculates the value of the Gamma function, Γ(x).
         /// </summary>

@@ -58,7 +58,7 @@ namespace Antares.Utility
 
         #region Implicit Conversion
         /// <summary>
-        /// Allows implicit conversion from an ObservableValue<T> to its underlying type T.
+        /// Allows implicit conversion from an ObservableValue&lt;T&gt; to its underlying type T.
         /// This enables read-only access where a T is expected.
         /// </summary>
         public static implicit operator T(ObservableValue<T> ov)

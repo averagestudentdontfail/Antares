@@ -10,7 +10,7 @@ namespace Antares.Pattern
     /// in "C++ Gems" (1996). It allows a base class to access members of its
     /// derived class without using virtual methods, enabling a form of static polymorphism.
     /// <para>
-    /// A derived class `MyImpl` would be defined as `class MyImpl : CuriouslyRecurringTemplate<MyImpl>`.
+    /// A derived class `MyImpl` would be defined as <c>class MyImpl : CuriouslyRecurringTemplate&lt;MyImpl&gt;</c>.
     /// </para>
     /// </remarks>
     /// <typeparam name="TImpl">

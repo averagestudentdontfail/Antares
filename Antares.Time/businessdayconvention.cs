@@ -39,16 +39,12 @@ namespace Antares.Time
         Unadjusted,
 
         /// <summary>
-        /// Choose the first business day after the given holiday unless that day
-        /// crosses the mid-month (15th) or the end of month, in which case choose
-        /// the first business day before the holiday.
+        /// Choose the first business day after the given holiday unless that day crosses the mid-month (15th) or the end of month, in which case choose the first business day before the holiday.
         /// </summary>
         HalfMonthModifiedFollowing,
 
         /// <summary>
-        /// Choose the nearest business day to the given holiday. If both the
-        /// preceding and following business days are equally far away, the
-        /// following one is chosen.
+        /// Choose the nearest business day to the given holiday. If both the previous and next business days are equally near, choose the following business day.
         /// </summary>
         Nearest
     }

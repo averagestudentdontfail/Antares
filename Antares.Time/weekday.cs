@@ -72,7 +72,7 @@ namespace Antares.Time
 
         /// <summary>
         /// Returns the two-letter abbreviation of the weekday (e.g., "Su").
-        /// This corresponds to the C++ `io::shortest_weekday` manipulator.
+        /// This corresponds to the C++ io::shortest_weekday manipulator.
         /// </summary>
         /// <param name="w">The weekday.</param>
         /// <returns>The two-letter abbreviation of the weekday.</returns>
@@ -93,7 +93,7 @@ namespace Antares.Time
 
         /// <summary>
         /// Returns a string representation of the weekday. Defaults to the long format.
-        /// This corresponds to the C++ `operator<<` overload for Weekday.
+        /// This corresponds to the C++ operator<< overload for Weekday.
         /// </summary>
         /// <param name="w">The weekday.</param>
         /// <returns>The full name of the weekday.</returns>

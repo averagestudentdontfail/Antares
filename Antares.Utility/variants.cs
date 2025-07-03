@@ -6,25 +6,22 @@ namespace Antares.Utility
 {
     /// <summary>
     /// This class is a placeholder corresponding to the C++ 'ql/utilities/variants.hpp' header.
-    /// In C++, this header provides a `variant_visitor` helper struct to simplify using
-    /// `std::visit` with `std::variant`.
+    /// In C++, this header provides a variant_visitor helper struct to simplify using std::visit with std::variant.
     /// <para>
     /// This entire pattern is a C++-specific language feature for handling discriminated unions.
-    /// In C#, this problem is solved differently and more idiomatically using built-in
-    /// language features, making a direct port of `variant_visitor` unnecessary.
+    /// In C#, this problem is solved differently and more idiomatically using built-in language features, making a direct port of variant_visitor unnecessary.
     /// </para>
     /// <list type="bullet">
     ///   <item>
-    ///     <term>C++ `std::variant`</term>
+    ///     <term>C++ std::variant</term>
     ///     <description>
-    ///       The C# equivalent of a variable that can hold one of several types is
-    ///       the universal base class <see cref="System.Object"/>.
+    ///       The C# equivalent of a variable that can hold one of several types is the universal base class <see cref="System.Object"/>.
     ///     </description>
     ///   </item>
     ///   <item>
-    ///     <term>C++ `std::visit` with `variant_visitor`</term>
+    ///     <term>C++ std::visit with variant_visitor</term>
     ///     <description>
-    ///       The C# equivalent is a `switch` statement with type-pattern matching.
+    ///       The C# equivalent is a switch statement with type-pattern matching.
     ///       This allows for clean, type-safe dispatch based on the runtime type of an object.
     ///       <example>
     ///       <code>

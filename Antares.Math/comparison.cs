@@ -17,8 +17,8 @@ namespace Antares.Math
         /// <remarks>
         /// Follows the advice of Knuth on checking for floating-point equality.
         /// The closeness relationship is:
-        /// `|x-y| <= tolerance * |x| AND |x-y| <= tolerance * |y|`
-        /// where tolerance is `n` times the machine epsilon.
+        /// <c>|x-y| &lt;= tolerance * |x| AND |x-y| &lt;= tolerance * |y|</c>
+        /// where tolerance is <c>n</c> times the machine epsilon.
         /// </remarks>
         /// <param name="x">The first value.</param>
         /// <param name="y">The second value.</param>
@@ -48,8 +48,8 @@ namespace Antares.Math
         /// <remarks>
         /// Follows the advice of Knuth on checking for floating-point equality.
         /// The closeness relationship is:
-        /// `|x-y| <= tolerance * |x| OR |x-y| <= tolerance * |y|`
-        /// where tolerance is `n` times the machine epsilon.
+        /// <c>|x-y| &lt;= tolerance * |x| OR |x-y| &lt;= tolerance * |y|</c>
+        /// where tolerance is <c>n</c> times the machine epsilon.
         /// </remarks>
         /// <param name="x">The first value.</param>
         /// <param name="y">The second value.</param>

@@ -10,14 +10,49 @@ namespace Antares.Time
     /// </summary>
     public enum TimeUnit
     {
+        /// <summary>
+        /// Days.
+        /// </summary>
         Days,
+
+        /// <summary>
+        /// Weeks.
+        /// </summary>
         Weeks,
+
+        /// <summary>
+        /// Months.
+        /// </summary>
         Months,
+
+        /// <summary>
+        /// Years.
+        /// </summary>
         Years,
+
+        /// <summary>
+        /// Hours.
+        /// </summary>
         Hours,
+
+        /// <summary>
+        /// Minutes.
+        /// </summary>
         Minutes,
+
+        /// <summary>
+        /// Seconds.
+        /// </summary>
         Seconds,
+
+        /// <summary>
+        /// Milliseconds.
+        /// </summary>
         Milliseconds,
+
+        /// <summary>
+        /// Microseconds.
+        /// </summary>
         Microseconds
     }
 

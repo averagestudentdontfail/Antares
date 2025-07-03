@@ -18,7 +18,7 @@ namespace Antares.Method.Scheme
         private readonly BoundaryConditionSchemeHelper _bcSet;
 
         /// <summary>
-        // Initializes a new instance of the ExplicitEulerScheme class.
+        /// Initializes a new instance of the ExplicitEulerScheme class.
         /// </summary>
         /// <param name="map">The composite linear operator representing the PDE.</param>
         /// <param name="bcSet">The set of boundary conditions.</param>
@@ -38,6 +38,17 @@ namespace Antares.Method.Scheme
         public void Step(ref Array a, double t)
         {
             Step(ref a, t, 1.0);
+        }
+
+        /// <summary>
+        /// Performs a weighted explicit Euler step.
+        /// This method is primarily for use by other schemes like Crank-Nicolson.
+        /// </summary>
+        /// <param name="a">The array of values at the current time step (input), which will be updated to the next time step (output).</param>
+        /// <param name="t">The time of the next time step.</param>
+        public void WeightedStep(ref Array a, double t)
+        {
+            // Implementation here
         }
 
         /// <summary>

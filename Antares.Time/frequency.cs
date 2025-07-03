@@ -22,7 +22,10 @@ namespace Antares.Time
         Biweekly = 26,         //!< every second week
         Weekly = 52,           //!< once a week
         Daily = 365,           //!< once a day
-        OtherFrequency = 999   //!< some other unknown frequency
+        /// <summary>
+        /// Some other unknown frequency.
+        /// </summary>
+        OtherFrequency = 999
     }
 
     /// <summary>

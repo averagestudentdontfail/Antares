@@ -6,7 +6,7 @@ namespace Antares.Utility
 {
     /// <summary>
     /// This class is a placeholder corresponding to the C++ 'ql/utilities/null.hpp' header.
-    /// In C++, this header provides a `Null<T>()` utility to generate a "magic number"
+    /// In C++, this header provides a <c>Null&lt;T&gt;()</c> utility to generate a "magic number"
     /// (e.g., float.MaxValue) representing an uninitialized or null state for primitive types.
     /// <para>
     /// This pattern is superseded in C# by built-in language features for nullability.
@@ -14,24 +14,13 @@ namespace Antares.Utility
     /// </para>
     /// <list type="bullet">
     ///   <item>
-    ///     <term>C++ `Null<T>()` where T is a value type (e.g., `Real`, `Integer`)</term>
-    ///     <description>
-    ///       Use a nullable value type (`T?`) and the `null` keyword.
-    ///       For example, `Real x = Null<Real>();` becomes `double? x = null;`.
-    ///     </description>
+    ///     <description>C++ <c>Null&lt;T&gt;()</c> where T is a value type (e.g., <c>Real</c>, <c>Integer</c>): Use a nullable value type (<c>T?</c>) and the <c>null</c> keyword. For example, <c>Real x = Null&lt;Real&gt;();</c> becomes <c>double? x = null;</c>.</description>
     ///   </item>
     ///   <item>
-    ///     <term>C++ `if (x == Null<Real>())`</term>
-    ///     <description>
-    ///       Use a standard null check.
-    ///       For example, `if (x == null)` or `if (!x.HasValue)`.
-    ///     </description>
+    ///     <description>C++ <c>if (x == Null&lt;Real&gt;())</c>: Use a standard null check. For example, <c>if (x == null)</c> or <c>if (!x.HasValue)</c>.</description>
     ///   </item>
-    ///    <item>
-    ///     <term>C++ `Null<T>()` where T is a class type</term>
-    ///     <description>
-    ///       Use the standard `null` keyword, as reference types are inherently nullable.
-    ///     </description>
+    ///   <item>
+    ///     <description>C++ <c>Null&lt;T&gt;()</c> where T is a class type: Use the standard <c>null</c> keyword, as reference types are inherently nullable.</description>
     ///   </item>
     /// </list>
     /// </summary>

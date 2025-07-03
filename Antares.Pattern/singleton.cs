@@ -7,25 +7,25 @@ namespace Antares.Pattern
 {
     /// <summary>
     /// Base class for creating a thread-safe, application-wide singleton.
-    /// This corresponds to the C++ `Singleton<T, std::true_type>` or the default
+    /// This corresponds to the C++ Singleton&lt;T, std::true_type&gt; or the default
     /// behavior when sessions are disabled.
     /// </summary>
     /// <remarks>
     /// The typical use of this class is:
-    /// <code>
-    /// class MyGlobalService : Singleton<MyGlobalService>
-    /// {
-    ///     // A private or protected constructor is recommended.
-    ///     private MyGlobalService() { }
     ///
-    ///     public void DoWork() { /* ... */ }
-    /// }
+    ///     class MyGlobalService : Singleton&lt;MyGlobalService&gt;
+    ///     {
+    ///         // A private or protected constructor is recommended.
+    ///         private MyGlobalService() { }
     ///
-    /// // Usage:
-    /// MyGlobalService.Instance.DoWork();
-    /// </code>
-    /// This implementation uses `System.Lazy` to ensure thread-safe, lazy initialization.
-    /// It uses reflection to call a non-public constructor, mimicking the C++ `friend` pattern.
+    ///         public void DoWork() { /* ... */ }
+    ///     }
+    ///
+    /// Usage:
+    ///     MyGlobalService.Instance.DoWork();
+    ///
+    /// This implementation uses System.Lazy to ensure thread-safe, lazy initialization.
+    /// It uses reflection to call a non-public constructor, mimicking the C++ friend pattern.
     /// </remarks>
     /// <typeparam name="T">The type of the singleton class itself.</typeparam>
     public abstract class Singleton<T> where T : class
@@ -48,23 +48,23 @@ namespace Antares.Pattern
 
     /// <summary>
     /// Base class for creating a per-thread (session) singleton.
-    /// This corresponds to the C++ `Singleton<T>` (with the default `Global = false`)
-    /// when `QL_ENABLE_SESSIONS` is active.
+    /// This corresponds to the C++ Singleton&lt;T&gt; (with the default Global = false)
+    /// when QL_ENABLE_SESSIONS is active.
     /// </summary>
     /// <remarks>
-    /// Each thread accessing the `Instance` property will receive its own unique
+    /// Each thread accessing the Instance property will receive its own unique
     /// instance of the class.
-    /// <code>
-    /// class MySessionData : SessionSingleton<MySessionData>
-    /// {
-    ///     private MySessionData() { }
-    ///     public int ThreadSpecificValue { get; set; }
-    /// }
     ///
-    /// // Usage:
-    /// MySessionData.Instance.ThreadSpecificValue = 123; // This value is local to the current thread.
-    /// </code>
-    /// This implementation uses `System.Threading.ThreadLocal` to ensure per-thread
+    ///     class MySessionData : SessionSingleton&lt;MySessionData&gt;
+    ///     {
+    ///         private MySessionData() { }
+    ///         public int ThreadSpecificValue { get; set; }
+    ///     }
+    ///
+    /// Usage:
+    ///     MySessionData.Instance.ThreadSpecificValue = 123; // This value is local to the current thread.
+    ///
+    /// This implementation uses System.Threading.ThreadLocal to ensure per-thread
     /// lazy initialization.
     /// </remarks>
     /// <typeparam name="T">The type of the singleton class itself.</typeparam>

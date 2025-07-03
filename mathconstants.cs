@@ -95,7 +95,7 @@ namespace Antares
         public const double OneOverSqrtPi = 0.564189583547756286948;
 
         /// <summary>
-        // Two divided by the square root of pi.
+        /// Two divided by the square root of pi.
         /// Corresponds to M_2_SQRTPI.
         /// </summary>
         public const double TwoOverSqrtPi = 1.12837916709551257390;

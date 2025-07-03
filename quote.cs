@@ -31,8 +31,8 @@ namespace Antares
         /// <summary>
         /// Creates a Handle<IQuote> from a variant input, which can be either a Real or an existing Handle<IQuote>.
         /// </summary>
-        /// <param name="value">The input value, which must be of type Real (double) or Handle<IQuote>.</param>
-        /// <returns>A valid Handle<IQuote>.</returns>
+        /// <param name="value">The input value, which must be of type Real (double) or Handle&lt;IQuote&gt;.</param>
+        /// <returns>A valid Handle&lt;IQuote&gt;.</returns>
         /// <exception cref="ArgumentException">Thrown if the input object is not of a supported type.</exception>
         public static Handle<IQuote> HandleFromVariant(object value)
         {

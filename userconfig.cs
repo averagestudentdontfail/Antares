@@ -30,9 +30,7 @@ namespace Antares
         public static readonly bool EnableTracing = false;
 
         /// <summary>
-        /// If set to true, extra run-time checks are added to a few
-        /// functions. This can prevent their inlining and degrade
-        * performance.
+        /// If set to true, extra run-time checks are added to a few functions. This can prevent their inlining and degrade performance.
         /// </summary>
         public static readonly bool EnableExtraSafetyChecks = false;
 
@@ -52,10 +50,8 @@ namespace Antares
         public static readonly bool EnableSessions = false;
 
         /// <summary>
-        /// If set to true, a thread-safe (but less performant) version of the
-        /// observer pattern is used. You should set this to true if you want to use
-        /// the library in a multi-threaded environment where different threads
-        /// can modify and observe the same objects concurrently.
+        /// If set to true, a thread-safe (but less performant) version of the observer pattern is used. You should set this to true if you want to use
+        /// the observer pattern in a multi-threaded environment.
         /// </summary>
         public static readonly bool EnableThreadSafeObserverPattern = false;
 

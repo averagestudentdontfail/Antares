@@ -10,18 +10,18 @@ namespace Antares.Math
     /// <remarks>
     /// The implementation of this class uses the Curiously Recurring Template Pattern (CRTP).
     /// Concrete solvers will be declared as:
-    /// <code>
-    /// public class MySolver : Solver1D<MySolver>
-    /// {
-    ///     public double SolveImpl(Func<double, double> f, double accuracy)
+    ///
+    ///     public class MySolver : Solver1D&lt;MySolver&gt;
     ///     {
-    ///         // ... implementation ...
+    ///         public double SolveImpl(Func&lt;double, double&gt; f, double accuracy)
+    ///         {
+    ///             // ... implementation ...
+    ///         }
     ///     }
-    /// }
-    /// </code>
-    /// Before calling `SolveImpl`, the base class will set its protected data members
-    /// so that `XMin` and `XMax` form a valid bracket, `FxMin` and `FxMax` contain
-    /// the function values, and `Root` is a valid initial guess.
+    ///
+    /// Before calling SolveImpl, the base class will set its protected data members
+    /// so that XMin and XMax form a valid bracket, FxMin and FxMax contain
+    /// the function values, and Root is a valid initial guess.
     /// </remarks>
     /// <typeparam name="TImpl">The concrete solver class inheriting from this base.</typeparam>
     public abstract class Solver1D<TImpl> where TImpl : Solver1D<TImpl>

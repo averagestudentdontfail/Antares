@@ -14,12 +14,12 @@ namespace Antares.Instrument
     /// <summary>
     /// This class is a placeholder corresponding to the C++ 'ql/instruments/dividendschedule.hpp' header.
     /// <para>
-    /// The original header defines `DividendSchedule` as a type alias (typedef) for a
-    /// `std::vector` of `Dividend` smart pointers. In C#, this concept is best represented
-    // by a collection interface, and we use a `global using` directive to create the alias.
+    /// The original header defines <c>DividendSchedule</c> as a type alias (typedef) for a
+    /// <c>std::vector</c> of <c>Dividend</c> smart pointers. In C#, this concept is best represented
+    /// by a collection interface, and we use a <c>global using</c> directive to create the alias.
     /// </para>
     /// <para>
-    /// See the `global using` directive at the top of this file.
+    /// See the <c>global using</c> directive at the top of this file.
     /// </para>
     /// </summary>
     public static class DividendScheduleType

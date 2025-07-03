@@ -8,7 +8,7 @@ namespace Antares.Ext
     /// This class is a placeholder corresponding to the C++ configuration files
     /// (config.hpp, config.msvc.hpp, config.ansi.hpp, etc.).
     /// <para>
-    // In C++, these headers are used for platform- and compiler-specific settings,
+    /// In C++, these headers are used for platform- and compiler-specific settings,
     /// such as disabling certain warnings, defining platform-specific macros, or
     /// handling compiler bugs.
     /// </para>
@@ -18,6 +18,7 @@ namespace Antares.Ext
     /// and C# language features (like `#pragma warning`). There is no need for a
     /// direct translation of these files.
     /// </para>
+    /// </summary>
     /// <para>
     /// The primary functional purpose of these files was to include `userconfig.hpp`,
     /// which has already been ported to `Antares.Settings` in `userconfig.cs`.

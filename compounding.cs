@@ -39,7 +39,7 @@ namespace Antares
     {
         /// <summary>
         /// Returns a string representation of the compounding rule.
-        /// This method mimics the C++ operator<< and provides error checking for invalid enum values.
+        /// This method mimics the C++ operator&lt;&lt; and provides error checking for invalid enum values.
         /// </summary>
         /// <param name="c">The Compounding enum value.</param>
         /// <returns>A string representation of the enum member name.</returns>

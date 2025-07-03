@@ -8,7 +8,7 @@ namespace Antares.Ext
     /// <summary>
     /// This class is a placeholder corresponding to the C++ 'ql/functional.hpp' header.
     /// In C++, that header provides compatibility aliases for functional programming utilities
-    /// like `std::function`, `std::bind`, and `std::placeholders`, all marked as deprecated.
+    /// like <c>std::function</c>, <c>std::bind</c>, and <c>std::placeholders</c>, all marked as deprecated.
     /// <para>
     /// In C#, these features are fundamental language and Base Class Library (BCL) constructs.
     /// There is no need for a compatibility layer. This class is marked as obsolete to guide
@@ -16,28 +16,28 @@ namespace Antares.Ext
     /// </para>
     /// <list type="bullet">
     ///   <item>
-    ///     <term>C++ `std::function`</term>
+    ///     <term>C++ <c>std::function</c></term>
     ///     <description>
     ///       Use the built-in delegate types <see cref="System.Func{TResult}"/> or <see cref="System.Action"/>.
-    ///       For example, `std::function<double(double, int)>` becomes `Func<double, int, double>`.
+    ///       For example, <c>std::function&lt;double(double, int)&gt;</c> becomes <c>Func&lt;double, int, double&gt;</c>.
     ///     </description>
     ///   </item>
     ///   <item>
-    ///     <term>C++ `std::bind` and `std::placeholders`</term>
+    ///     <term>C++ <c>std::bind</c> and <c>std::placeholders</c></term>
     ///     <description>
     ///       Use C# lambda expressions to create closures. This is the modern, type-safe, and more readable
     ///       equivalent of binding arguments. For example:
-    ///       <code>
-    ///       // C++: auto bound_func = std::bind(my_func, 10, std::placeholders::_1);
-    ///       // C#: Func<ArgType, ReturnType> boundFunc = (arg) => MyFunc(10, arg);
-    ///       </code>
+    ///       <para>
+    ///       <c>// C++: auto bound_func = std::bind(my_func, 10, std::placeholders::_1);</c>
+    ///       <c>// C#: Func&lt;ArgType, ReturnType&gt; boundFunc = (arg) =&gt; MyFunc(10, arg);</c>
+    ///       </para>
     ///     </description>
     ///   </item>
     ///   <item>
-    ///     <term>C++ `std::ref` and `std::cref`</term>
+    ///     <term>C++ <c>std::ref</c> and <c>std::cref</c></term>
     ///     <description>
-    ///       These are used in C++ to pass arguments by reference to `std::bind`. In C#, this is handled
-    ///       natively by the language. Methods can accept parameters by reference using the `ref` or `in` keywords.
+    ///       These are used in C++ to pass arguments by reference to <c>std::bind</c>. In C#, this is handled
+    ///       natively by the language. Methods can accept parameters by reference using the <c>ref</c> or <c>in</c> keywords.
     ///       Lambda expressions also capture the variable's reference, not its value, achieving a similar effect.
     ///     </description>
     ///   </item>
