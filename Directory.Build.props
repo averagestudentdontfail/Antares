@@ -15,6 +15,9 @@
     
     <!-- Ensure directories exist -->
     <EnableDefaultItems>true</EnableDefaultItems>
+    
+    <!-- Disable automatic assembly info generation -->
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
   <!-- Create the build directories if they don't exist -->
