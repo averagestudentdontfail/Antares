@@ -1,5 +1,7 @@
 # Build outputs
 Antares.Build/
+Antares.Port/
+
 # Visual Studio / VS Code
 .vs/
 .vscode/
