@@ -16,20 +16,20 @@ namespace Antares.Ext
     ///     <term>C++ std::any or boost::any</term>
     ///     <description>
     ///       Use the built-in <see cref="System.Object"/> type. A variable of type object can hold a value of any type. Value types will be boxed.
-    ///       <code>
+    ///       <code><![CDATA[
     ///       // C++: std::any myAny = 10.0;
     ///       // C#: object myAny = 10.0;
-    ///       </code>
+    ///       ]]></code>
     ///     </description>
     ///   </item>
     ///   <item>
     ///     <term>C++ any_cast<T></term>
     ///     <description>
     ///       Use a standard C# cast (T). This will throw an <see cref="InvalidCastException"/> if the underlying type is not convertible to T.
-    ///       <code>
+    ///       <code><![CDATA[
     ///       // C++: double value = std::any_cast<double>(myAny);
     ///       // C#: double value = (double)myAny;
-    ///       </code>
+    ///       ]]></code>
     ///       For a non-throwing cast with reference types, use the as operator, which returns null on failure.
     ///     </description>
     ///   </item>

@@ -45,7 +45,7 @@ namespace Antares
         /// different threads; in particular, this means that the evaluation
         /// date, the stored index fixings and any other settings will be
         /// per-thread.
-        /// In C#, this can be implemented using ThreadLocal<T>.
+        /// In C#, this can be implemented using <see cref="System.Threading.ThreadLocal{T}"/>.
         /// </summary>
         public static readonly bool EnableSessions = false;
 

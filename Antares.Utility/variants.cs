@@ -24,7 +24,7 @@ namespace Antares.Utility
     ///       The C# equivalent is a switch statement with type-pattern matching.
     ///       This allows for clean, type-safe dispatch based on the runtime type of an object.
     ///       <example>
-    ///       <code>
+    ///       <code><![CDATA[
     ///       // C++ code:
     ///       // std::variant<int, string> v = "hello";
     ///       // std::visit(variant_visitor{
@@ -43,7 +43,7 @@ namespace Antares.Utility
     ///               // handle string
     ///               break;
     ///       }
-    ///       </code>
+    ///       ]]></code>
     ///       </example>
     ///     </description>
     ///   </item>
