@@ -1,6 +1,7 @@
 // LazyObject.cs
 
 using System;
+using Antares;
 
 namespace Antares.Pattern
 {
@@ -20,7 +21,7 @@ namespace Antares.Pattern
             _calculated = false;
             _frozen = false;
             _updating = false;
-            _alwaysForward = !Settings.FasterLazyObjects; // Defaults.ForwardsAllNotifications
+            _alwaysForward = !Antares.Settings.FasterLazyObjects; // Defaults.ForwardsAllNotifications
         }
 
         /// <summary>

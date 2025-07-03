@@ -24,6 +24,10 @@
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
     
+    <!-- Disable automatic assembly info generation -->
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+    
     <!-- Assembly versioning -->
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>

@@ -37,7 +37,17 @@ namespace Antares.Pattern
         /// <summary>
         /// Provides access to the unique, global instance of the class.
         /// </summary>
-        public static T Instance => lazyInstance.Value;
+        public static T Instance
+        {
+            get
+            {
+                if (lazyInstance.Value == null)
+                {
+                    throw new InvalidOperationException($"Failed to create an instance of {typeof(T).FullName}.");
+                }
+                return lazyInstance.Value;
+            }
+        }
 
         /// <summary>
         /// Protected constructor to prevent direct instantiation.
@@ -76,11 +86,14 @@ namespace Antares.Pattern
         /// <summary>
         /// Provides access to the unique, per-thread instance of the class.
         /// </summary>
-        public static T Instance => sessionInstance.Value;
-
-        /// <summary>
-        /// Protected constructor to prevent direct instantiation.
-        /// </summary>
-        protected SessionSingleton() { }
-    }
-}
+        public static T Instance
+        {
+            get
+            {
+                if (sessionInstance.Value == null)
+                {
+                    throw new InvalidOperationException($"Failed to create an instance of {typeof(T).FullName} for the current thread.");
+                }
+                return sessionInstance.Value;
+            }
+        }

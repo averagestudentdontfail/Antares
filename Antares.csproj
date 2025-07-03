@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     <!-- Project-specific properties only - common properties are in Directory.Build.props -->
     <PackageId>Antares</PackageId>
     <Description>Core types, utilities, and base classes for the Antares financial library - a pure C# port of QuantLib's American option pricing engine</Description>
@@ -23,6 +24,7 @@
   <ItemGroup>
     <None Include="Directory.Build.props" />
     <None Include="Directory.Build.targets" />
+    <Compile Include="Antares.AssemblyInfo.cs" />
   </ItemGroup>
 
 </Project>

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using QLNet;
 
 namespace Antares.Pattern
 {
@@ -18,7 +19,7 @@ namespace Antares.Pattern
         [ThreadStatic]
         private static bool _updatesDeferred = false;
         [ThreadStatic]
-        private static HashSet<IObserver> _deferredObservers;
+        private static HashSet<IObserver> _deferredObservers = new HashSet<IObserver>();
 
         /// <summary>
         /// Gets a value indicating whether updates are currently enabled.
@@ -74,7 +75,10 @@ namespace Antares.Pattern
                     }
                 }
 
-                QL.Ensure(successful, $"Could not notify one or more observers: {errMsg}");
+                if (!successful)
+                {
+                    throw new Exception($"Could not notify one or more observers: {errMsg}");
+                }
             }
         }
 
@@ -88,7 +92,10 @@ namespace Antares.Pattern
 
         internal static void UnregisterDeferredObserver(IObserver observer)
         {
-            _deferredObservers?.Remove(observer);
+            if (observer != null)
+            {
+                _deferredObservers?.Remove(observer);
+            }
         }
     }
 
@@ -155,7 +162,10 @@ namespace Antares.Pattern
                         errMsg.AppendLine(e.Message);
                     }
                 }
-                QL.Ensure(successful, $"Could not notify one or more observers: {errMsg}");
+                if (!successful)
+                {
+                    throw new Exception($"Could not notify one or more observers: {errMsg}");
+                }
             }
         }
 
