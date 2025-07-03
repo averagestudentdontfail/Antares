@@ -31,7 +31,7 @@ namespace Antares.Pattern
     public abstract class Singleton<T> where T : class
     {
         private static readonly Lazy<T> lazyInstance =
-            new Lazy<T>(() => (T)Activator.CreateInstance(typeof(T), true),
+            new Lazy<T>(() => (T)Activator.CreateInstance(typeof(T), true)!,
                         LazyThreadSafetyMode.ExecutionAndPublication);
 
         /// <summary>
@@ -41,11 +41,12 @@ namespace Antares.Pattern
         {
             get
             {
-                if (lazyInstance.Value == null)
+                var instance = lazyInstance.Value;
+                if (instance == null)
                 {
                     throw new InvalidOperationException($"Failed to create an instance of {typeof(T).FullName}.");
                 }
-                return lazyInstance.Value;
+                return instance;
             }
         }
 
@@ -54,7 +55,6 @@ namespace Antares.Pattern
         /// </summary>
         protected Singleton() { }
     }
-
 
     /// <summary>
     /// Base class for creating a per-thread (session) singleton.
@@ -81,7 +81,7 @@ namespace Antares.Pattern
     public abstract class SessionSingleton<T> where T : class
     {
         private static readonly ThreadLocal<T> sessionInstance =
-            new ThreadLocal<T>(() => (T)Activator.CreateInstance(typeof(T), true));
+            new ThreadLocal<T>(() => (T)Activator.CreateInstance(typeof(T), true)!);
 
         /// <summary>
         /// Provides access to the unique, per-thread instance of the class.
@@ -90,10 +90,26 @@ namespace Antares.Pattern
         {
             get
             {
-                if (sessionInstance.Value == null)
+                var instance = sessionInstance.Value;
+                if (instance == null)
                 {
                     throw new InvalidOperationException($"Failed to create an instance of {typeof(T).FullName} for the current thread.");
                 }
-                return sessionInstance.Value;
+                return instance;
             }
         }
+
+        /// <summary>
+        /// Protected constructor to prevent direct instantiation.
+        /// </summary>
+        protected SessionSingleton() { }
+
+        /// <summary>
+        /// Disposes the ThreadLocal instance when the SessionSingleton is disposed.
+        /// </summary>
+        static SessionSingleton()
+        {
+            AppDomain.CurrentDomain.DomainUnload += (sender, e) => sessionInstance.Dispose();
+        }
+    }
+}

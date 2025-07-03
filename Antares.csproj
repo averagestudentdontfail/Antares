@@ -25,6 +25,16 @@
     <None Include="Directory.Build.props" />
     <None Include="Directory.Build.targets" />
     <Compile Include="Antares.AssemblyInfo.cs" />
+    <!-- Add the core source files that define Settings, QL, etc. -->
+    <Compile Include="userconfig.cs" />
+    <Compile Include="settings.cs" />
+    <Compile Include="errors.cs" />
+    <Compile Include="types.cs" />
+    <Compile Include="option.cs" />
+    <Compile Include="event.cs" />
+    <Compile Include="cashflow.cs" />
+    <Compile Include="handle.cs" />
+    <Compile Include="termstructure.cs" />
   </ItemGroup>
 
 </Project>

@@ -4,52 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using QLNet;
+using Antares.Instrument;
 
 namespace Antares
 {
-    #region Supporting Infrastructure (Placeholders for other files)
-
-    /// <summary>
-    /// Base class for all financial instruments.
-    /// This is a simplified placeholder for the actual Instrument class.
-    /// </summary>
-    public abstract class Instrument : IObservable
-    {
-        private readonly Observable _observable = new Observable();
-        protected IPricingEngine _engine;
-
-        public abstract bool IsExpired { get; }
-
-        public abstract void SetupArguments(IPricingEngine.IArguments args);
-
-        public void SetPricingEngine(IPricingEngine engine)
-        {
-            _engine = engine;
-            if (_engine != null)
-                _engine.RegisterWith(new InstrumentObserver(this));
-            NotifyObservers();
-        }
-
-        protected void NotifyObservers() => _observable.NotifyObservers();
-        public void RegisterWith(IObserver observer) => _observable.RegisterWith(observer);
-        public void UnregisterWith(IObserver observer) => _observable.UnregisterWith(observer);
-
-        // Inner class to proxy notifications
-        private class InstrumentObserver : IObserver
-        {
-            private readonly Instrument _instrument;
-            public InstrumentObserver(Instrument instrument) => _instrument = instrument;
-            public void Update() => _instrument.NotifyObservers();
-        }
-    }
-
-    /// <summary>
-    /// Base interface for instrument exercise schedules.
-    /// </summary>
-    public interface IExercise { }
-
-    #endregion
-
     /// <summary>
     /// Base option class.
     /// </summary>

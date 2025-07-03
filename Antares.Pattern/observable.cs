@@ -19,7 +19,7 @@ namespace Antares.Pattern
         [ThreadStatic]
         private static bool _updatesDeferred = false;
         [ThreadStatic]
-        private static HashSet<IObserver> _deferredObservers = new HashSet<IObserver>();
+        private static HashSet<IObserver>? _deferredObservers = new HashSet<IObserver>();
 
         /// <summary>
         /// Gets a value indicating whether updates are currently enabled.
@@ -98,7 +98,6 @@ namespace Antares.Pattern
             }
         }
     }
-
 
     /// <summary>
     /// Observer interface for the observer pattern.
@@ -229,13 +228,13 @@ namespace Antares.Pattern
         /// <summary>
         /// Unregisters this observer from the given observable object.
         /// </summary>
-        public void UnregisterWith(IObservable h)
+        public void UnregisterWith(IObservable? h)
         {
             if (h != null)
             {
                 h.UnregisterWith(this);
+                _observables.Remove(h); // Fixed: this is now safe since h is not null
             }
-            _observables.Remove(h);
         }
 
         /// <summary>

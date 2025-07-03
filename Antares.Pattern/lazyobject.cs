@@ -21,7 +21,7 @@ namespace Antares.Pattern
             _calculated = false;
             _frozen = false;
             _updating = false;
-            _alwaysForward = !Antares.Settings.FasterLazyObjects; // Defaults.ForwardsAllNotifications
+            _alwaysForward = !Settings.FasterLazyObjects; // Fixed: removed Antares. prefix
         }
 
         /// <summary>
