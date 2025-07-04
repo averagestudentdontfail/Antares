@@ -8,7 +8,7 @@
     <AssemblyName>Antares</AssemblyName>
     <PackageId>Antares</PackageId>
     <PackageVersion>1.13.1</PackageVersion>
-    <Authors>Andrea Maggiulli</Authors>
+    <Authors>Sunny</Authors>
     <Company />
     <Description>A free and open-source library for quantitative finance</Description>
     <PackageTags>Antares</PackageTags>
