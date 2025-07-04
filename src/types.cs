@@ -286,12 +286,12 @@ namespace Antares
     /// </summary>
     public static class NullValues
     {
-        public static Real Real() => Real.NaN;
-        public static Integer Integer() => int.MinValue;
-        public static Size Size() => int.MinValue;
-        public static Time Time() => Real.NaN;
-        public static Rate Rate() => Real.NaN;
-        public static DiscountFactor DiscountFactor() => Real.NaN;
+        public static Real NullReal => Real.NaN;
+        public static Integer NullInteger => int.MinValue;
+        public static Size NullSize => int.MinValue;
+        public static Time NullTime => Real.NaN;
+        public static Rate NullRate => Real.NaN;
+        public static DiscountFactor NullDiscountFactor => Real.NaN;
     }
 
     #endregion
@@ -312,17 +312,10 @@ namespace Antares
         }
 
         /// <summary>
-        /// Checks if an Integer value is effectively null.
+        /// Checks if an Integer/Size value is effectively null.
+        /// Note: Since Integer and Size are both aliases for int, this method handles both types.
         /// </summary>
-        public static bool IsNullValue(this Integer value)
-        {
-            return value == int.MinValue;
-        }
-
-        /// <summary>
-        /// Checks if a Size value is effectively null.
-        /// </summary>
-        public static bool IsNullValue(this Size value)
+        public static bool IsNullValue(this int value)
         {
             return value == int.MinValue;
         }

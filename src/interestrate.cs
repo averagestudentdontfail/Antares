@@ -72,12 +72,12 @@ namespace Antares
         public override int GetHashCode() => name()?.GetHashCode() ?? 0;
         public override string ToString() => name() ?? "No day counter implementation provided";
         
-        public static bool operator ==(DayCounter d1, DayCounter d2)
+        public static bool operator ==(DayCounter? d1, DayCounter? d2)
         {
             if (d1 is null) return d2 is null;
             return d1.Equals(d2);
         }
-        public static bool operator !=(DayCounter d1, DayCounter d2) => !(d1 == d2);
+        public static bool operator !=(DayCounter? d1, DayCounter? d2) => !(d1 == d2);
     }
 
     /// <summary>
@@ -119,6 +119,7 @@ namespace Antares
         public InterestRate()
         {
             _rate = null;
+            _dayCounter = new Actual365Fixed(); // Provide a default non-null value
         }
 
         /// <summary>
@@ -127,7 +128,7 @@ namespace Antares
         public InterestRate(Rate r, DayCounter dc, Compounding comp, Frequency freq)
         {
             _rate = r;
-            _dayCounter = dc;
+            _dayCounter = dc ?? throw new ArgumentNullException(nameof(dc));
             _compounding = comp;
             _freqMakesSense = false;
 

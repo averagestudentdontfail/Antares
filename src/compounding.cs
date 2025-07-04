@@ -55,7 +55,7 @@ namespace Antares
             // This line assumes the existence of the QL helper class from the 'errors.cs' port.
             // It faithfully replicates the behavior of QL_FAIL.
             QL.Fail($"Unknown compounding type: {(int)c}");
-            return null; // Unreachable code
+            return string.Empty; // This will never be reached due to QL.Fail throwing an exception
         }
     }
 }

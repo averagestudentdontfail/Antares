@@ -29,7 +29,7 @@ namespace Antares
             get => _value;
             set
             {
-                if (!EqualityComparer<T>.Default.Equals(_value, value))
+                if (!EqualityComparer<T?>.Default.Equals(_value, value))
                 {
                     _value = value;
                     _observable.NotifyObservers();

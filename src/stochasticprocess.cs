@@ -28,13 +28,16 @@ namespace Antares
             Matrix Covariance(StochasticProcess process, Time t0, Vector x0, Time dt);
         }
 
-        protected readonly IDiscretization _discretization;
+        protected readonly IDiscretization? _discretization;
 
-        protected StochasticProcess() { }
+        protected StochasticProcess() 
+        {
+            _discretization = null;
+        }
 
         protected StochasticProcess(IDiscretization discretization)
         {
-            _discretization = discretization;
+            _discretization = discretization ?? throw new ArgumentNullException(nameof(discretization));
         }
 
         #region Stochastic process interface
@@ -68,6 +71,8 @@ namespace Antares
         /// </summary>
         public virtual Vector expectation(Time t0, Vector x0, Time dt)
         {
+            if (_discretization == null)
+                throw new InvalidOperationException("Discretization not set");
             return apply(x0, _discretization.Drift(this, t0, x0, dt));
         }
 
@@ -76,6 +81,8 @@ namespace Antares
         /// </summary>
         public virtual Matrix stdDeviation(Time t0, Vector x0, Time dt)
         {
+            if (_discretization == null)
+                throw new InvalidOperationException("Discretization not set");
             return _discretization.Diffusion(this, t0, x0, dt);
         }
 
@@ -84,6 +91,8 @@ namespace Antares
         /// </summary>
         public virtual Matrix covariance(Time t0, Vector x0, Time dt)
         {
+            if (_discretization == null)
+                throw new InvalidOperationException("Discretization not set");
             return _discretization.Covariance(this, t0, x0, dt);
         }
 
@@ -144,13 +153,16 @@ namespace Antares
             Real Variance(StochasticProcess1D process, Time t0, Real x0, Time dt);
         }
 
-        private readonly new IDiscretization _discretization;
+        private readonly new IDiscretization? _discretization;
 
-        protected StochasticProcess1D() { }
+        protected StochasticProcess1D() 
+        {
+            _discretization = null;
+        }
 
         protected StochasticProcess1D(IDiscretization discretization)
         {
-            _discretization = discretization;
+            _discretization = discretization ?? throw new ArgumentNullException(nameof(discretization));
         }
 
         #region 1-D stochastic process interface
@@ -174,6 +186,8 @@ namespace Antares
         /// </summary>
         public virtual Real expectation(Time t0, Real x0, Time dt)
         {
+            if (_discretization == null)
+                throw new InvalidOperationException("Discretization not set");
             return apply(x0, _discretization.Drift(this, t0, x0, dt));
         }
 
@@ -182,6 +196,8 @@ namespace Antares
         /// </summary>
         public virtual Real stdDeviation(Time t0, Real x0, Time dt)
         {
+            if (_discretization == null)
+                throw new InvalidOperationException("Discretization not set");
             return _discretization.Diffusion(this, t0, x0, dt);
         }
 
@@ -190,6 +206,8 @@ namespace Antares
         /// </summary>
         public virtual Real variance(Time t0, Real x0, Time dt)
         {
+            if (_discretization == null)
+                throw new InvalidOperationException("Discretization not set");
             return _discretization.Variance(this, t0, x0, dt);
         }
 

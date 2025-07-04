@@ -14,7 +14,7 @@ namespace Antares
         Exercise.ExerciseType Type { get; }
         IReadOnlyList<Date> Dates { get; }
         Date LastDate { get; }
-        Date Date(int index);
+        Date GetDate(int index);
     }
 
     /// <summary>
@@ -29,7 +29,7 @@ namespace Antares
             European
         }
 
-        protected List<Date> _dates;
+        protected List<Date> _dates = new List<Date>();
 
         protected Exercise(ExerciseType type)
         {
@@ -50,7 +50,7 @@ namespace Antares
             }
         }
 
-        public Date Date(int index) => _dates[index];
+        public Date GetDate(int index) => _dates[index];
     }
 
     /// <summary>
