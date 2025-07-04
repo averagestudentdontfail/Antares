@@ -1,13 +1,13 @@
 // Nullcalendar.cs
 
-namespace Antares.Time.Calendar
+namespace Antares.Time
 {
     /// <summary>
     /// Calendar for reproducing theoretical calculations.
     /// This calendar has no holidays. Every day is a business day.
     /// It ensures that dates at whole-month distances have the same day of month.
     /// </summary>
-    public sealed class NullCalendar : Antares.Time.Calendar
+    public sealed class NullCalendar : Calendar
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="NullCalendar"/> class.
