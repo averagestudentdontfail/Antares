@@ -2,54 +2,10 @@
 
 
     0 Warning(s)
-    23 Error(s)
+    1 Error(s)
   All projects are up-to-date for restore.
   Determining projects to restore...
-/home/send2/.projects/Antares/cashflow.cs(194,45): error CS8625: Cannot convert null literal to non-nullable reference type. [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/cashflow.cs(194,45): error CS8625: Cannot convert null literal to non-nullable reference type. [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/cashflow.cs(223,56): error CS8625: Cannot convert null literal to non-nullable reference type. [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/cashflow.cs(223,56): error CS8625: Cannot convert null literal to non-nullable reference type. [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/cashflow.cs(262,52): error CS8625: Cannot convert null literal to non-nullable reference type. [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/cashflow.cs(262,52): error CS8625: Cannot convert null literal to non-nullable reference type. [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/cashflow.cs(29,20): error CS8767: Nullability of reference types in type of parameter 'other' of 'int Date.CompareTo(Date other)' doesn't match implicitly implemented member 'int IComparable<Date>.CompareTo(Date? other)' (possibly because of nullability attributes). [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/cashflow.cs(29,20): error CS8767: Nullability of reference types in type of parameter 'other' of 'int Date.CompareTo(Date other)' doesn't match implicitly implemented member 'int IComparable<Date>.CompareTo(Date? other)' (possibly because of nullability attributes). [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/cashflow.cs(300,21): error CS0108: 'CashFlow.RegisterWith(IObserver)' hides inherited member 'LazyObject.RegisterWith(IObserver)'. Use the new keyword if hiding was intended. [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/cashflow.cs(300,21): error CS0108: 'CashFlow.RegisterWith(IObserver)' hides inherited member 'LazyObject.RegisterWith(IObserver)'. Use the new keyword if hiding was intended. [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/cashflow.cs(301,21): error CS0108: 'CashFlow.UnregisterWith(IObserver)' hides inherited member 'LazyObject.UnregisterWith(IObserver)'. Use the new keyword if hiding was intended. [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/cashflow.cs(301,21): error CS0108: 'CashFlow.UnregisterWith(IObserver)' hides inherited member 'LazyObject.UnregisterWith(IObserver)'. Use the new keyword if hiding was intended. [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/cashflow.cs(302,24): error CS0108: 'CashFlow.NotifyObservers()' hides inherited member 'LazyObject.NotifyObservers()'. Use the new keyword if hiding was intended. [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/cashflow.cs(302,24): error CS0108: 'CashFlow.NotifyObservers()' hides inherited member 'LazyObject.NotifyObservers()'. Use the new keyword if hiding was intended. [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/cashflow.cs(37,30): error CS8765: Nullability of type of parameter 'obj' doesn't match overridden member (possibly because of nullability attributes). [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/cashflow.cs(37,30): error CS8765: Nullability of type of parameter 'obj' doesn't match overridden member (possibly because of nullability attributes). [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/event.cs(27,41): error CS8625: Cannot convert null literal to non-nullable reference type. [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/event.cs(27,41): error CS8625: Cannot convert null literal to non-nullable reference type. [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/event.cs(57,56): error CS8625: Cannot convert null literal to non-nullable reference type. [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/event.cs(57,56): error CS8625: Cannot convert null literal to non-nullable reference type. [/home/send2/.projects/Antares/Antares.csproj]
 /home/send2/.projects/Antares/settings.cs(63,25): error CS0101: The namespace 'Antares' already contains a definition for 'Settings' [/home/send2/.projects/Antares/Antares.csproj]
 /home/send2/.projects/Antares/settings.cs(63,25): error CS0101: The namespace 'Antares' already contains a definition for 'Settings' [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/termstructure.cs(115,44): error CS0556: User-defined conversion must convert to or from the enclosing type [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/termstructure.cs(115,44): error CS0556: User-defined conversion must convert to or from the enclosing type [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/termstructure.cs(115,44): error CS0558: User-defined operator 'Calendar.implicit operator DateTime(Date)' must be declared static and public [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/termstructure.cs(115,44): error CS0558: User-defined operator 'Calendar.implicit operator DateTime(Date)' must be declared static and public [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/termstructure.cs(120,44): error CS0556: User-defined conversion must convert to or from the enclosing type [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/termstructure.cs(120,44): error CS0556: User-defined conversion must convert to or from the enclosing type [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/termstructure.cs(120,44): error CS0558: User-defined operator 'Calendar.implicit operator Date(DateTime)' must be declared static and public [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/termstructure.cs(120,44): error CS0558: User-defined operator 'Calendar.implicit operator Date(DateTime)' must be declared static and public [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/termstructure.cs(125,30): error CS8765: Nullability of type of parameter 'obj' doesn't match overridden member (possibly because of nullability attributes). [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/termstructure.cs(125,30): error CS8765: Nullability of type of parameter 'obj' doesn't match overridden member (possibly because of nullability attributes). [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/termstructure.cs(136,21): error CS8767: Nullability of reference types in type of parameter 'other' of 'bool Calendar.Equals(Calendar other)' doesn't match implicitly implemented member 'bool IEquatable<Calendar>.Equals(Calendar? other)' (possibly because of nullability attributes). [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/termstructure.cs(136,21): error CS8767: Nullability of reference types in type of parameter 'other' of 'bool Calendar.Equals(Calendar other)' doesn't match implicitly implemented member 'bool IEquatable<Calendar>.Equals(Calendar? other)' (possibly because of nullability attributes). [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/termstructure.cs(214,57): error CS8625: Cannot convert null literal to non-nullable reference type. [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/termstructure.cs(214,57): error CS8625: Cannot convert null literal to non-nullable reference type. [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/termstructure.cs(226,103): error CS8625: Cannot convert null literal to non-nullable reference type. [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/termstructure.cs(226,103): error CS8625: Cannot convert null literal to non-nullable reference type. [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/termstructure.cs(226,73): error CS8625: Cannot convert null literal to non-nullable reference type. [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/termstructure.cs(226,73): error CS8625: Cannot convert null literal to non-nullable reference type. [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/termstructure.cs(239,100): error CS8625: Cannot convert null literal to non-nullable reference type. [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/termstructure.cs(239,100): error CS8625: Cannot convert null literal to non-nullable reference type. [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/termstructure.cs(35,21): error CS8767: Nullability of reference types in type of parameter 'other' of 'bool DayCounter.Equals(DayCounter other)' doesn't match implicitly implemented member 'bool IEquatable<DayCounter>.Equals(DayCounter? other)' (possibly because of nullability attributes). [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/termstructure.cs(35,21): error CS8767: Nullability of reference types in type of parameter 'other' of 'bool DayCounter.Equals(DayCounter other)' doesn't match implicitly implemented member 'bool IEquatable<DayCounter>.Equals(DayCounter? other)' (possibly because of nullability attributes). [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/termstructure.cs(42,30): error CS8765: Nullability of type of parameter 'obj' doesn't match overridden member (possibly because of nullability attributes). [/home/send2/.projects/Antares/Antares.csproj]
-/home/send2/.projects/Antares/termstructure.cs(42,30): error CS8765: Nullability of type of parameter 'obj' doesn't match overridden member (possibly because of nullability attributes). [/home/send2/.projects/Antares/Antares.csproj]
 Build FAILED.
-Time Elapsed 00:00:01.82
+Time Elapsed 00:00:01.43
