@@ -122,12 +122,12 @@ namespace Antares
         public override int GetHashCode() => Name?.GetHashCode() ?? 0;
         public override string ToString() => Name;
         
-        public static bool operator ==(Calendar c1, Calendar c2)
+        public static bool operator ==(Calendar? c1, Calendar? c2)
         {
             if (c1 is null) return c2 is null;
             return c1.Equals(c2);
         }
-        public static bool operator !=(Calendar c1, Calendar c2) => !(c1 == c2);
+        public static bool operator !=(Calendar? c1, Calendar? c2) => !(c1 == c2);
         
         public bool Equals(Calendar? other) => other != null && Name == other.Name;
     }
@@ -195,7 +195,7 @@ namespace Antares
         private bool _updated;
 
         private readonly Calendar _calendar;
-        private Date _referenceDate;
+        private Date? _referenceDate;
         private readonly Natural? _settlementDays;
         private readonly DayCounter _dayCounter;
 
@@ -277,7 +277,7 @@ namespace Antares
                     _referenceDate = Calendar.Advance(today, (int)SettlementDays, TimeUnit.Days);
                     _updated = true;
                 }
-                return _referenceDate;
+                return _referenceDate ?? Date.Today; // Provide fallback if null
             }
         }
 

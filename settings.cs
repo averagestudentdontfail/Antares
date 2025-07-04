@@ -13,7 +13,7 @@ namespace Antares
     /// <typeparam name="T">The type of the wrapped value.</typeparam>
     public class ObservableValue<T> : IObservable
     {
-        private T _value;
+        private T? _value;
         private readonly Observable _observable = new Observable();
 
         public ObservableValue()
@@ -21,12 +21,13 @@ namespace Antares
             _value = default;
         }
 
-        public ObservableValue(T value)
+        public ObservableValue(T? value)
         {
             _value = value;
         }
 
-        public T Value
+        public T? Value
+        public T? Value
         {
             get => _value;
             set
@@ -39,7 +40,7 @@ namespace Antares
             }
         }
 
-        public static implicit operator T(ObservableValue<T> ov)
+        public static implicit operator T?(ObservableValue<T> ov)
         {
             return ov.Value;
         }

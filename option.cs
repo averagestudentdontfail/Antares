@@ -60,10 +60,10 @@ namespace Antares
     /// </summary>
     public abstract class Instrument : LazyObject
     {
-        protected IPricingEngine _engine;
+        protected IPricingEngine? _engine;
         protected Real? _npv;
         protected Real? _errorEstimate;
-        protected Date _valuationDate;
+        protected Date? _valuationDate;
         protected Dictionary<string, object> _additionalResults = new Dictionary<string, object>();
 
         public Real NPV
@@ -86,7 +86,7 @@ namespace Antares
             }
         }
 
-        public Date ValuationDate
+        public Date? ValuationDate
         {
             get
             {
@@ -97,7 +97,7 @@ namespace Antares
 
         public abstract bool IsExpired { get; }
 
-        public void SetPricingEngine(IPricingEngine e)
+        public void SetPricingEngine(IPricingEngine? e)
         {
             if (_engine != null)
                 _engine.UnregisterWith(this);
@@ -190,8 +190,8 @@ namespace Antares
         /// </summary>
         public class Arguments : IPricingEngine.IArguments
         {
-            public IPayoff Payoff { get; set; }
-            public IExercise Exercise { get; set; }
+            public IPayoff? Payoff { get; set; }
+            public IExercise? Exercise { get; set; }
 
             public virtual void Validate()
             {

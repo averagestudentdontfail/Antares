@@ -23,15 +23,15 @@ namespace Antares
         protected class Link : IObservable, IObserver
         {
             private readonly Observable _observable = new Observable();
-            private T _currentLink;
+            private T? _currentLink;
             private bool _isObserver;
 
-            public Link(T h, bool registerAsObserver)
+            public Link(T? h, bool registerAsObserver)
             {
                 LinkTo(h, registerAsObserver);
             }
 
-            public void LinkTo(T h, bool registerAsObserver)
+            public void LinkTo(T? h, bool registerAsObserver)
             {
                 if (!ReferenceEquals(h, _currentLink) || _isObserver != registerAsObserver)
                 {
@@ -53,7 +53,7 @@ namespace Antares
             }
 
             public bool IsEmpty => _currentLink == null;
-            public T CurrentLinkObject => _currentLink;
+            public T? CurrentLinkObject => _currentLink;
             public void Update() => _observable.NotifyObservers();
             public void RegisterWith(IObserver observer) => _observable.RegisterWith(observer);
             public void UnregisterWith(IObserver observer) => _observable.UnregisterWith(observer);
@@ -76,7 +76,7 @@ namespace Antares
         /// Set this to false only in controlled environments to avoid receiving
         /// notifications from the underlying object, for example to break circular dependencies.
         /// </param>
-        public Handle(T p, bool registerAsObserver = true)
+        public Handle(T? p, bool registerAsObserver = true)
         {
             _link = new Link(p, registerAsObserver);
         }
@@ -146,7 +146,7 @@ namespace Antares
         /// <summary>
         /// Creates a handle pointing to the given object.
         /// </summary>
-        public RelinkableHandle(T p, bool registerAsObserver = true) : base(p, registerAsObserver) { }
+        public RelinkableHandle(T? p, bool registerAsObserver = true) : base(p, registerAsObserver) { }
         #endregion
 
         /// <summary>
@@ -154,7 +154,7 @@ namespace Antares
         /// </summary>
         /// <param name="h">The new object to link to.</param>
         /// <param name="registerAsObserver">Whether to register as an observer of the new object.</param>
-        public void LinkTo(T h, bool registerAsObserver = true)
+        public void LinkTo(T? h, bool registerAsObserver = true)
         {
             this._link.LinkTo(h, registerAsObserver);
         }

@@ -25,7 +25,6 @@
     <None Include="Directory.Build.targets" />
     <Compile Include="Antares.AssemblyInfo.cs" />
     <!-- Add the core source files that define Settings, QL, etc. -->
-    <Compile Include="userconfig.cs" />
     <Compile Include="settings.cs" />
     <Compile Include="errors.cs" />
     <Compile Include="types.cs" />
