@@ -24,7 +24,7 @@ namespace Antares
         /// If true, an event on the reference date has NOT occurred.
         /// If false, an event on the reference date HAS occurred.
         /// </param>
-        bool HasOccurred(Date refDate = null, bool? includeRefDate = null);
+        bool HasOccurred(Date? refDate = null, bool? includeRefDate = null);
 
         /// <summary>
         /// Accepts a visitor.
@@ -54,7 +54,7 @@ namespace Antares
         /// If true, an event on the reference date has NOT occurred (returns false).
         /// If false, an event on the reference date HAS occurred (returns true).
         /// </param>
-        public virtual bool HasOccurred(Date refDate = null, bool? includeRefDate = null)
+        public virtual bool HasOccurred(Date? refDate = null, bool? includeRefDate = null)
         {
             Date resolvedRefDate = refDate ?? Settings.EvaluationDate;
             bool include = includeRefDate ?? Settings.IncludeReferenceDateEvents;

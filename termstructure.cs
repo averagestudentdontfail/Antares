@@ -32,14 +32,14 @@ namespace Antares
         
         public bool IsEmpty() => string.IsNullOrEmpty(Name);
         
-        public bool Equals(DayCounter other)
+        public bool Equals(DayCounter? other)
         {
             if (other is null) return false;
             if (this.IsEmpty() && other.IsEmpty()) return true;
             return this.Name == other.Name;
         }
 
-        public override bool Equals(object obj) => obj is DayCounter other && this.Equals(other);
+        public override bool Equals(object? obj) => obj is DayCounter other && this.Equals(other);
         public override int GetHashCode() => Name?.GetHashCode() ?? 0;
         public override string ToString() => Name ?? "No day counter implementation provided";
         
@@ -96,33 +96,29 @@ namespace Antares
         
         public virtual Date Advance(Date date, int n, TimeUnit unit)
         {
+            DateTime dateTime = ConvertToDateTime(date);
             switch (unit)
             {
                 case TimeUnit.Days:
-                    return new Date(((DateTime)date).AddDays(n));
+                    return new Date(dateTime.AddDays(n));
                 case TimeUnit.Weeks:
-                    return new Date(((DateTime)date).AddDays(n * 7));
+                    return new Date(dateTime.AddDays(n * 7));
                 case TimeUnit.Months:
-                    return new Date(((DateTime)date).AddMonths(n));
+                    return new Date(dateTime.AddMonths(n));
                 case TimeUnit.Years:
-                    return new Date(((DateTime)date).AddYears(n));
+                    return new Date(dateTime.AddYears(n));
                 default:
                     throw new ArgumentException($"Unknown time unit: {unit}");
             }
         }
         
-        // Implicit conversion from Date to DateTime for convenience
-        protected static implicit operator DateTime(Date date)
+        // Helper method for date conversion
+        private static DateTime ConvertToDateTime(Date date)
         {
             return DateTime.Today; // Simplified implementation
         }
         
-        protected static implicit operator Date(DateTime dateTime)
-        {
-            return new Date(dateTime);
-        }
-        
-        public override bool Equals(object obj) => obj is Calendar other && this.Name == other.Name;
+        public override bool Equals(object? obj) => obj is Calendar other && this.Name == other.Name;
         public override int GetHashCode() => Name?.GetHashCode() ?? 0;
         public override string ToString() => Name;
         
@@ -133,7 +129,7 @@ namespace Antares
         }
         public static bool operator !=(Calendar c1, Calendar c2) => !(c1 == c2);
         
-        public bool Equals(Calendar other) => other != null && Name == other.Name;
+        public bool Equals(Calendar? other) => other != null && Name == other.Name;
     }
 
     /// <summary>
@@ -211,7 +207,7 @@ namespace Antares
         /// Term structures initialized by means of this constructor must manage
         /// their own reference date by overriding the ReferenceDate property.
         /// </remarks>
-        protected TermStructure(DayCounter dayCounter = null)
+        protected TermStructure(DayCounter? dayCounter = null)
         {
             _dayCounter = dayCounter ?? new Actual365Fixed();
             _settlementDays = null; // Equivalent to Null<Natural>()
@@ -223,7 +219,7 @@ namespace Antares
         /// <summary>
         /// Initialize with a fixed reference date.
         /// </summary>
-        protected TermStructure(Date referenceDate, Calendar calendar = null, DayCounter dayCounter = null)
+        protected TermStructure(Date referenceDate, Calendar? calendar = null, DayCounter? dayCounter = null)
         {
             _calendar = calendar ?? new TARGET();
             _dayCounter = dayCounter ?? new Actual365Fixed();
@@ -236,7 +232,7 @@ namespace Antares
         /// <summary>
         /// Calculate the reference date based on the global evaluation date.
         /// </summary>
-        protected TermStructure(Natural settlementDays, Calendar calendar, DayCounter dayCounter = null)
+        protected TermStructure(Natural settlementDays, Calendar calendar, DayCounter? dayCounter = null)
         {
             _calendar = calendar ?? throw new ArgumentNullException(nameof(calendar));
             _dayCounter = dayCounter ?? new Actual365Fixed();

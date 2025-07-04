@@ -26,15 +26,15 @@ namespace Antares
         public static Date MinDate => new Date(DateTime.MinValue);
         public static Date MaxDate => new Date(DateTime.MaxValue);
 
-        public int CompareTo(Date other) => _dateTime.CompareTo(other?._dateTime);
-        public static bool operator <(Date left, Date right) => left.CompareTo(right) < 0;
-        public static bool operator >(Date left, Date right) => left.CompareTo(right) > 0;
-        public static bool operator <=(Date left, Date right) => left.CompareTo(right) <= 0;
-        public static bool operator >=(Date left, Date right) => left.CompareTo(right) >= 0;
-        public static bool operator ==(Date left, Date right) => left?.CompareTo(right) == 0;
-        public static bool operator !=(Date left, Date right) => !(left == right);
+        public int CompareTo(Date? other) => other == null ? 1 : _dateTime.CompareTo(other._dateTime);
+        public static bool operator <(Date? left, Date? right) => left?.CompareTo(right) < 0;
+        public static bool operator >(Date? left, Date? right) => left?.CompareTo(right) > 0;
+        public static bool operator <=(Date? left, Date? right) => left?.CompareTo(right) <= 0;
+        public static bool operator >=(Date? left, Date? right) => left?.CompareTo(right) >= 0;
+        public static bool operator ==(Date? left, Date? right) => left?.CompareTo(right) == 0;
+        public static bool operator !=(Date? left, Date? right) => !(left == right);
 
-        public override bool Equals(object obj) => obj is Date other && this == other;
+        public override bool Equals(object? obj) => obj is Date other && this == other;
         public override int GetHashCode() => _dateTime.GetHashCode();
         public override string ToString() => _dateTime.ToString("yyyy-MM-dd");
     }
@@ -186,12 +186,12 @@ namespace Antares
         /// <summary>
         /// Returns the date that the cash flow trades ex-coupon.
         /// </summary>
-        Date ExCouponDate { get; }
+        Date? ExCouponDate { get; }
 
         /// <summary>
         /// Returns true if the cashflow is trading ex-coupon on the reference date.
         /// </summary>
-        bool TradingExCoupon(Date refDate = null);
+        bool TradingExCoupon(Date? refDate = null);
     }
 
     /// <summary>
@@ -215,12 +215,12 @@ namespace Antares
         /// Returns the date that the cash flow trades ex-coupon.
         /// By default, returns a null date.
         /// </summary>
-        public virtual Date ExCouponDate => null;
+        public virtual Date? ExCouponDate => null;
 
         /// <summary>
         /// Overloads Event.HasOccurred in order to take Settings.IncludeTodaysCashFlows into account.
         /// </summary>
-        public virtual bool HasOccurred(Date refDate = null, bool? includeRefDate = null)
+        public virtual bool HasOccurred(Date? refDate = null, bool? includeRefDate = null)
         {
             Date cfDate = this.Date;
 
@@ -259,9 +259,9 @@ namespace Antares
         /// <summary>
         /// Returns true if the cashflow is trading ex-coupon on the reference date.
         /// </summary>
-        public bool TradingExCoupon(Date refDate = null)
+        public bool TradingExCoupon(Date? refDate = null)
         {
-            Date ecd = this.ExCouponDate;
+            Date? ecd = this.ExCouponDate;
             if (ecd == null) // A null Date is the equivalent of a default-constructed C++ Date
                 return false;
 
@@ -297,9 +297,9 @@ namespace Antares
         protected override void PerformCalculations() { }
 
         // IObservable implementation methods
-        public void RegisterWith(IObserver observer) => _observable.RegisterWith(observer);
-        public void UnregisterWith(IObserver observer) => _observable.UnregisterWith(observer);
-        protected void NotifyObservers() => _observable.NotifyObservers();
+        public new void RegisterWith(IObserver observer) => _observable.RegisterWith(observer);
+        public new void UnregisterWith(IObserver observer) => _observable.UnregisterWith(observer);
+        protected new void NotifyObservers() => _observable.NotifyObservers();
     }
 
     /// <summary>
