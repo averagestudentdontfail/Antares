@@ -5,8 +5,6 @@ using System.Collections.Generic;
 
 namespace Antares
 {
-    #region Missing Type Definitions
-
     /// <summary>
     /// An observable and assignable proxy to a concrete value.
     /// </summary>
@@ -55,16 +53,14 @@ namespace Antares
         }
     }
 
-    #endregion
-
     /// <summary>
     /// Global settings for the Antares library.
     /// Contains both compile-time configuration and runtime settings.
     /// </summary>
     public static class Settings
     {
-        #region Configuration Constants (from userconfig.cs)
-        
+        #region Configuration Constants
+
         /// <summary>
         /// If set to true, function information is added to the error messages
         /// thrown by the library.
@@ -206,6 +202,40 @@ namespace Antares
         // Convenient accessor for backward compatibility
         public static bool FasterLazyObjects => FasterLazyObjectsConfig;
 
+        /// <summary>
+        /// Gets the observable evaluation date proxy for registration with observers.
+        /// </summary>
+        public static IObservable evaluationDate() => _evaluationDate;
+
         #endregion
+    }
+
+    /// <summary>
+    /// Helper class to temporarily and safely change the settings.
+    /// Corresponds to QuantLib's SavedSettings.
+    /// </summary>
+    public class SavedSettings : IDisposable
+    {
+        private readonly Date _evaluationDate;
+        private readonly bool _includeReferenceDateEvents;
+        private readonly bool? _includeTodaysCashFlows;
+        private readonly bool _enforcesTodaysHistoricFixings;
+
+        public SavedSettings()
+        {
+            _evaluationDate = Settings.EvaluationDate;
+            _includeReferenceDateEvents = Settings.IncludeReferenceDateEvents;
+            _includeTodaysCashFlows = Settings.IncludeTodaysCashFlows;
+            _enforcesTodaysHistoricFixings = Settings.EnforcesTodaysHistoricFixings;
+        }
+
+        public void Dispose()
+        {
+            if (Settings.EvaluationDate != _evaluationDate)
+                Settings.EvaluationDate = _evaluationDate;
+            Settings.IncludeReferenceDateEvents = _includeReferenceDateEvents;
+            Settings.IncludeTodaysCashFlows = _includeTodaysCashFlows;
+            Settings.EnforcesTodaysHistoricFixings = _enforcesTodaysHistoricFixings;
+        }
     }
 }

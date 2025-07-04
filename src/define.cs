@@ -15,7 +15,7 @@ namespace Antares
     /// on the translatable concepts.
     /// </para>
     /// </remarks>
-    public static class QLDefines
+    public static class Define
     {
         /// <summary>
         /// Defines the value of the largest representable negative integer value.

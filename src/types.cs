@@ -1,11 +1,10 @@
 // Types.cs
-
 global using Integer = System.Int32;
 global using BigInteger = System.Int64;
 global using Natural = System.UInt32;
 global using BigNatural = System.UInt64;
 global using Real = System.Double;
-global using Decimal = System.Double; // Note: This is an alias for Real, not C#'s System.Decimal.
+global using Decimal = System.Double;
 global using Size = System.Int32;
 global using Time = System.Double;
 global using DiscountFactor = System.Double;
@@ -13,36 +12,330 @@ global using Rate = System.Double;
 global using Spread = System.Double;
 global using Volatility = System.Double;
 global using Probability = System.Double;
+global using Price = System.Double;
+global using Barrier = System.Double;
+global using Strike = System.Double;
+using System;
+using System.Collections.Generic;
 
 namespace Antares
 {
     /// <summary>
-    /// This class serves as a documentation placeholder for the global type aliases
-    /// defined at the top of this file. These aliases are used throughout the
-    /// Antares library to maintain consistency with the original QuantLib C++ codebase.
+    /// Additional type definitions and constants for the Antares library.
     /// </summary>
-    /// <remarks>
-    /// The actual type aliases are defined using C# 10's `global using` feature.
-    /// This makes the aliases available project-wide, providing semantic meaning
-    /// to primitive types (e.g., using `Rate` instead of `double` for an interest rate).
-    /// <br/><br/>
-    /// <b>Type Mappings:</b>
-    /// <list type="table">
-    ///   <listheader>
-    ///     <term>C++ Type</term>
-    ///     <description>.NET Type</description>
-    ///   </listheader>
-    ///   <item><term>Real, Decimal, Time, DiscountFactor, Rate, Spread, Volatility, Probability</term><description>System.Double (aliased as Real, etc.)</description></item>
-    ///   <item><term>Integer</term><description>System.Int32 (aliased as Integer)</description></item>
-    ///   <item><term>BigInteger</term><description>System.Int64 (aliased as BigInteger)</description></item>
-    ///   <item><term>Natural</term><description>System.UInt32 (aliased as Natural)</description></item>
-    ///   <item><term>BigNatural</term><description>System.UInt64 (aliased as BigNatural)</description></item>
-    ///   <item><term>Size (from std::size_t)</term><description>System.Int32 (aliased as Size)</description></item>
-    /// </list>
-    /// </remarks>
-    public static class TypeAliases
+    public static class Types
     {
-        // This class is intentionally empty. Its purpose is to provide a home for the documentation
-        // of the file-level global using statements.
+        /// <summary>
+        /// Common mathematical and financial constants.
+        /// </summary>
+        public static class Constants
+        {
+            /// <summary>
+            /// One basis point (0.01%).
+            /// </summary>
+            public const Real BasisPoint = 1.0e-4;
+
+            /// <summary>
+            /// Machine epsilon for floating-point comparisons.
+            /// </summary>
+            public const Real Epsilon = 2.2204460492503131e-016;
+
+            /// <summary>
+            /// Number of days in a year (for simple calculations).
+            /// </summary>
+            public const Integer DaysInYear = 365;
+
+            /// <summary>
+            /// Number of months in a year.
+            /// </summary>
+            public const Integer MonthsInYear = 12;
+
+            /// <summary>
+            /// Number of weeks in a year.
+            /// </summary>
+            public const Integer WeeksInYear = 52;
+        }
+
+        /// <summary>
+        /// Common collection type aliases for financial data.
+        /// </summary>
+        public static class Collections
+        {
+            /// <summary>
+            /// A sequence of times.
+            /// </summary>
+            public class TimeGrid : List<Time> { }
+
+            /// <summary>
+            /// A sequence of rates.
+            /// </summary>
+            public class RateCurve : List<Rate> { }
+
+            /// <summary>
+            /// A sequence of discount factors.
+            /// </summary>
+            public class DiscountCurve : List<DiscountFactor> { }
+
+            /// <summary>
+            /// A time series of values.
+            /// </summary>
+            /// <typeparam name="T">The type of values in the series.</typeparam>
+            public class TimeSeries<T> : Dictionary<Date, T> { }
+        }
     }
+
+    #region Core Enumerations
+
+    /// <summary>
+    /// Position type (long or short).
+    /// </summary>
+    public enum Position
+    {
+        Long = 1,
+        Short = -1
+    }
+
+    /// <summary>
+    /// Duration calculation methods.
+    /// </summary>
+    public enum Duration
+    {
+        /// <summary>
+        /// Simple duration calculation.
+        /// </summary>
+        Simple,
+        /// <summary>
+        /// Macaulay duration.
+        /// </summary>
+        Macaulay,
+        /// <summary>
+        /// Modified duration.
+        /// </summary>
+        Modified
+    }
+
+    /// <summary>
+    /// Business day conventions.
+    /// </summary>
+    public enum BusinessDayConvention
+    {
+        /// <summary>
+        /// Choose the first business day after the given holiday.
+        /// </summary>
+        Following,
+        /// <summary>
+        /// Choose the first business day after the given holiday unless it belongs
+        /// to a different month, in which case choose the first business day before the holiday.
+        /// </summary>
+        ModifiedFollowing,
+        /// <summary>
+        /// Choose the first business day before the given holiday.
+        /// </summary>
+        Preceding,
+        /// <summary>
+        /// Choose the first business day before the given holiday unless it belongs
+        /// to a different month, in which case choose the first business day after the holiday.
+        /// </summary>
+        ModifiedPreceding,
+        /// <summary>
+        /// Do not adjust.
+        /// </summary>
+        Unadjusted,
+        /// <summary>
+        /// Choose the first business day after the given holiday unless that day
+        /// crosses the mid-month (15th) or the end of month, in which case choose
+        /// the first business day before the holiday.
+        /// </summary>
+        HalfMonthModifiedFollowing,
+        /// <summary>
+        /// Choose the nearest business day to the given holiday. If both the
+        /// preceding and following business days are equally far away, default
+        /// to following business day.
+        /// </summary>
+        Nearest
+    }
+
+    /// <summary>
+    /// Month enumeration.
+    /// </summary>
+    public enum Month
+    {
+        January = 1, February = 2, March = 3, April = 4, May = 5, June = 6,
+        July = 7, August = 8, September = 9, October = 10, November = 11, December = 12,
+        
+        // Short forms
+        Jan = 1, Feb = 2, Mar = 3, Apr = 4, Jun = 6, Jul = 7,
+        Aug = 8, Sep = 9, Oct = 10, Nov = 11, Dec = 12
+    }
+
+    /// <summary>
+    /// Weekday enumeration.
+    /// </summary>
+    public enum Weekday
+    {
+        Sunday = 1, Monday = 2, Tuesday = 3, Wednesday = 4,
+        Thursday = 5, Friday = 6, Saturday = 7,
+        
+        // Short forms
+        Sun = 1, Mon = 2, Tue = 3, Wed = 4, Thu = 5, Fri = 6, Sat = 7
+    }
+
+    /// <summary>
+    /// Date generation rules.
+    /// </summary>
+    public enum DateGeneration
+    {
+        /// <summary>
+        /// Backward from termination date to effective date.
+        /// </summary>
+        Backward,
+        /// <summary>
+        /// Forward from effective date to termination date.
+        /// </summary>
+        Forward,
+        /// <summary>
+        /// No intermediate dates between effective date and termination date.
+        /// </summary>
+        Zero,
+        /// <summary>
+        /// All dates but effective date and termination date are taken to be on the third Wednesday of their month.
+        /// </summary>
+        ThirdWednesday,
+        /// <summary>
+        /// All dates including effective date and termination date are taken to be on the third Wednesday
+        /// of their month (with forward calculation).
+        /// </summary>
+        ThirdWednesdayInclusive,
+        /// <summary>
+        /// All dates but the effective date are taken to be the twentieth of their
+        /// month (used for CDS schedules in emerging markets). The termination date is also modified.
+        /// </summary>
+        Twentieth,
+        /// <summary>
+        /// All dates but the effective date are taken to be the twentieth of an IMM
+        /// month (used for CDS schedules). The termination date is also modified.
+        /// </summary>
+        TwentiethIMM,
+        /// <summary>
+        /// Same as TwentiethIMM with unrestricted date ends and log/short stub
+        /// coupon period (old CDS convention).
+        /// </summary>
+        OldCDS,
+        /// <summary>
+        /// Credit derivatives standard rule since 'Big Bang' changes in 2009.
+        /// </summary>
+        CDS,
+        /// <summary>
+        /// Credit derivatives standard rule since December 20th, 2015.
+        /// </summary>
+        CDS2015
+    }
+
+    /// <summary>
+    /// Cap/Floor types.
+    /// </summary>
+    public enum CapFloorType
+    {
+        Cap,
+        Floor,
+        Collar
+    }
+
+    /// <summary>
+    /// Interest rate types.
+    /// </summary>
+    public enum InterestRateType
+    {
+        Fixed,
+        Floating
+    }
+
+    #endregion
+
+    #region Utility Structures
+
+    /// <summary>
+    /// Represents a null value for a given type.
+    /// Mimics QuantLib's Null template.
+    /// </summary>
+    /// <typeparam name="T">The type for which to represent null.</typeparam>
+    public static class Null<T>
+    {
+        private static readonly T _value = default(T)!;
+        
+        /// <summary>
+        /// Returns the null value for type T.
+        /// </summary>
+        public static T Value => _value;
+        
+        /// <summary>
+        /// Implicit conversion to T.
+        /// </summary>
+        public static implicit operator T(Null<T> _) => _value;
+    }
+
+    /// <summary>
+    /// Non-generic version of Null for common types.
+    /// </summary>
+    public static class Null
+    {
+        public static Real Real() => Real.NaN;
+        public static Integer Integer() => int.MinValue;
+        public static Size Size() => uint.MaxValue;
+        public static Time Time() => Real.NaN;
+        public static Rate Rate() => Real.NaN;
+        public static DiscountFactor DiscountFactor() => Real.NaN;
+    }
+
+    #endregion
+
+    #region Extension Methods
+
+    /// <summary>
+    /// Extension methods for common type operations.
+    /// </summary>
+    public static class TypeExtensions
+    {
+        /// <summary>
+        /// Checks if a Real value is effectively null.
+        /// </summary>
+        public static bool IsNull(this Real value)
+        {
+            return double.IsNaN(value);
+        }
+
+        /// <summary>
+        /// Checks if an Integer value is effectively null.
+        /// </summary>
+        public static bool IsNull(this Integer value)
+        {
+            return value == int.MinValue;
+        }
+
+        /// <summary>
+        /// Checks if a Size value is effectively null.
+        /// </summary>
+        public static bool IsNull(this Size value)
+        {
+            return value == uint.MaxValue;
+        }
+
+        /// <summary>
+        /// Converts basis points to a decimal rate.
+        /// </summary>
+        public static Real FromBasisPoints(this Real basisPoints)
+        {
+            return basisPoints * Types.Constants.BasisPoint;
+        }
+
+        /// <summary>
+        /// Converts a decimal rate to basis points.
+        /// </summary>
+        public static Real ToBasisPoints(this Real rate)
+        {
+            return rate / Types.Constants.BasisPoint;
+        }
+    }
+
+    #endregion
 }

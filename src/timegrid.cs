@@ -4,10 +4,31 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Antares.Math;
 
 namespace Antares
 {
+    /// <summary>
+    /// Provides mathematical comparison utilities.
+    /// </summary>
+    public static class Comparison
+    {
+        /// <summary>
+        /// Tests whether two floating point numbers are close enough to be considered equal.
+        /// </summary>
+        public static bool CloseEnough(double x, double y, double tolerance = 1e-15)
+        {
+            return Math.Abs(x - y) <= tolerance;
+        }
+
+        /// <summary>
+        /// Tests whether two floating point numbers are close.
+        /// </summary>
+        public static bool Close(double x, double y)
+        {
+            return CloseEnough(x, y, QLDefines.EPSILON);
+        }
+    }
+
     /// <summary>
     /// Time grid class
     /// </summary>
@@ -171,10 +192,10 @@ namespace Antares
         /// Returns the index i such that grid[i] = t.
         /// </summary>
         /// <exception cref="ArgumentException">Thrown if t is not on the grid.</exception>
-        public int Index(Time t)
+        public int index(Time t)
         {
-            int i = ClosestIndex(t);
-            if (Comparison.CloseEnough(t, _times[i]))
+            int i = closestIndex(t);
+            if (Comparison.Close(t, _times[i]))
             {
                 return i;
             }
@@ -208,7 +229,7 @@ namespace Antares
         /// <summary>
         /// Returns the index i such that grid[i] is closest to t.
         /// </summary>
-        public int ClosestIndex(Time t)
+        public int closestIndex(Time t)
         {
             int result = _times.BinarySearch(t);
 
@@ -231,25 +252,26 @@ namespace Antares
         /// <summary>
         /// Returns the time on the grid closest to the given t.
         /// </summary>
-        public Time ClosestTime(Time t) => _times[ClosestIndex(t)];
+        public Time closestTime(Time t) => _times[closestIndex(t)];
 
         /// <summary>
         /// Returns the list of mandatory times used to build the grid.
         /// </summary>
-        public IReadOnlyList<Time> MandatoryTimes => _mandatoryTimes;
+        public IReadOnlyList<Time> mandatoryTimes() => _mandatoryTimes;
 
         /// <summary>
         /// Returns the time step delta at a given index i.
         /// </summary>
-        public Time Dt(int i) => _dt[i];
+        public Time dt(int i) => _dt[i];
         #endregion
 
         #region IReadOnlyList<Time> implementation
         public Time this[int index] => _times[index];
         public int Count => _times.Count;
-        public bool IsEmpty => _times.Count == 0;
-        public Time Front => _times[0];
-        public Time Back => _times[_times.Count - 1];
+        public bool empty() => _times.Count == 0;
+        public Size size() => _times.Count;
+        public Time front() => _times[0];
+        public Time back() => _times[_times.Count - 1];
 
         public IEnumerator<Time> GetEnumerator() => _times.GetEnumerator();
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();

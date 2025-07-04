@@ -1,8 +1,6 @@
 // Quote.cs
 
 using System;
-using Antares.Pattern;
-using Antares.Quote;
 
 namespace Antares
 {
@@ -15,18 +13,57 @@ namespace Antares
         /// <summary>
         /// Returns the current value of the quote.
         /// </summary>
-        Real Value { get; }
+        Real value();
 
         /// <summary>
         /// Returns true if the Quote holds a valid value.
         /// </summary>
-        bool IsValid { get; }
+        bool isValid();
+    }
+
+    /// <summary>
+    /// Simple concrete quote implementation.
+    /// </summary>
+    public class SimpleQuote : IQuote
+    {
+        private Real? _value;
+        private readonly Observable _observable = new Observable();
+
+        public SimpleQuote() : this(null) { }
+
+        public SimpleQuote(Real? value)
+        {
+            _value = value;
+        }
+
+        public Real value()
+        {
+            if (!_value.HasValue)
+                throw new InvalidOperationException("invalid quote");
+            return _value.Value;
+        }
+
+        public bool isValid() => _value.HasValue;
+
+        public void setValue(Real? value)
+        {
+            var oldValue = _value;
+            _value = value;
+            if (oldValue != _value)
+                _observable.NotifyObservers();
+        }
+
+        public void reset() => setValue(null);
+
+        // IObservable implementation
+        public void RegisterWith(IObserver observer) => _observable.RegisterWith(observer);
+        public void UnregisterWith(IObserver observer) => _observable.UnregisterWith(observer);
     }
 
     /// <summary>
     /// Contains helper methods related to <see cref="IQuote"/>.
     /// </summary>
-    public static class Quote
+    public static class QuoteExtensions
     {
         /// <summary>
         /// Creates a Handle&lt;IQuote&gt; from a variant input, which can be either a Real or an existing Handle&lt;IQuote&gt;.
@@ -46,6 +83,14 @@ namespace Antares
                 default:
                     throw new ArgumentException($"Input must be a {nameof(Real)} or a {nameof(Handle<IQuote>)}.", nameof(value));
             }
+        }
+
+        /// <summary>
+        /// Creates a handle to a SimpleQuote with the given value.
+        /// </summary>
+        public static Handle<IQuote> makeQuoteHandle(Real value)
+        {
+            return new Handle<IQuote>(new SimpleQuote(value));
         }
     }
 }

@@ -2,10 +2,6 @@
 
 using System;
 using MathNet.Numerics.LinearAlgebra;
-using Antares.Time;
-using Antares.Pattern;
-
-// Type aliases for clarity and consistency with QuantLib's naming
 using Vector = MathNet.Numerics.LinearAlgebra.Vector<double>;
 using Matrix = MathNet.Numerics.LinearAlgebra.Matrix<double>;
 
@@ -45,65 +41,91 @@ namespace Antares
         /// <summary>
         /// Returns the number of dimensions of the stochastic process.
         /// </summary>
-        public abstract int Size { get; }
+        public abstract Size size();
+
+        /// <summary>
+        /// Returns the number of independent factors of the process.
+        /// </summary>
+        public virtual Size factors() => size();
 
         /// <summary>
         /// Returns an array of the initial values of the state variables.
         /// </summary>
-        public abstract Vector InitialValues { get; }
+        public abstract Vector initialValues();
 
         /// <summary>
         /// Returns the drift part of the equation, i.e., μ(t, x_t).
         /// </summary>
-        public abstract Vector Drift(Time t, Vector x);
+        public abstract Vector drift(Time t, Vector x);
 
         /// <summary>
         /// Returns the diffusion part of the equation, i.e., σ(t, x_t).
         /// </summary>
-        public abstract Matrix Diffusion(Time t, Vector x);
+        public abstract Matrix diffusion(Time t, Vector x);
 
         /// <summary>
         /// Returns the expectation E[x_T | x_t = x0] of the process after a time interval Δt.
         /// </summary>
-        public abstract Vector Expectation(Time t0, Vector x0, Time dt);
+        public virtual Vector expectation(Time t0, Vector x0, Time dt)
+        {
+            return apply(x0, _discretization.Drift(this, t0, x0, dt));
+        }
 
         /// <summary>
         /// Returns the standard deviation S of the process after a time interval Δt.
         /// </summary>
-        public abstract Matrix StdDeviation(Time t0, Vector x0, Time dt);
+        public virtual Matrix stdDeviation(Time t0, Vector x0, Time dt)
+        {
+            return _discretization.Diffusion(this, t0, x0, dt);
+        }
 
         /// <summary>
         /// Returns the covariance Cov[x_T, x_T] of the process after a time interval Δt.
         /// </summary>
-        public abstract Matrix Covariance(Time t0, Vector x0, Time dt);
+        public virtual Matrix covariance(Time t0, Vector x0, Time dt)
+        {
+            return _discretization.Covariance(this, t0, x0, dt);
+        }
 
         /// <summary>
         /// Returns the asset value after a time interval Δt according to the given discretization.
         /// </summary>
-        public abstract Vector Evolve(Time t0, Vector x0, Time dt, Vector dw);
+        public virtual Vector evolve(Time t0, Vector x0, Time dt, Vector dw)
+        {
+            return apply(expectation(t0, x0, dt), stdDeviation(t0, x0, dt) * dw);
+        }
 
         /// <summary>
         /// Applies a change to the asset value.
         /// </summary>
-        public abstract Vector Apply(Vector x0, Vector dx);
+        public virtual Vector apply(Vector x0, Vector dx)
+        {
+            return x0 + dx;
+        }
 
         /// <summary>
-        /// Returns the current time.
+        /// Returns the time value corresponding to the given date in the reference system of the stochastic process.
         /// </summary>
-        public virtual Time Time => 0.0;
+        public virtual Time time(Date d)
+        {
+            throw new NotSupportedException("date/time conversion not supported");
+        }
         #endregion
 
         #region IObserver implementation
-        public virtual void Update()
+        public virtual void update()
         {
-            NotifyObservers();
+            notifyObservers();
         }
+
+        // For C++ compatibility
+        public void Update() => update();
         #endregion
 
         #region IObservable implementation
         public void RegisterWith(IObserver observer) => _observable.RegisterWith(observer);
         public void UnregisterWith(IObserver observer) => _observable.UnregisterWith(observer);
-        protected void NotifyObservers() => _observable.NotifyObservers();
+        protected void notifyObservers() => _observable.NotifyObservers();
         #endregion
     }
 
@@ -115,125 +137,125 @@ namespace Antares
         /// <summary>
         /// Discretization interface for 1-D stochastic processes.
         /// </summary>
-        public interface IStochasticProcess1DDiscretization
+        public new interface IDiscretization
         {
             Real Drift(StochasticProcess1D process, Time t0, Real x0, Time dt);
             Real Diffusion(StochasticProcess1D process, Time t0, Real x0, Time dt);
             Real Variance(StochasticProcess1D process, Time t0, Real x0, Time dt);
         }
 
-        private readonly IStochasticProcess1DDiscretization _discretization1D;
+        private readonly new IDiscretization _discretization;
 
         protected StochasticProcess1D() { }
 
-        protected StochasticProcess1D(IStochasticProcess1DDiscretization discretization)
+        protected StochasticProcess1D(IDiscretization discretization)
         {
-            _discretization1D = discretization;
+            _discretization = discretization;
         }
 
         #region 1-D stochastic process interface
         /// <summary>
         /// Returns the initial value of the state variable.
         /// </summary>
-        public abstract Real X0 { get; }
+        public abstract Real x0();
 
         /// <summary>
         /// Returns the drift part of the equation, i.e., μ(t, x_t).
         /// </summary>
-        public abstract Real Drift(Time t, Real x);
+        public abstract Real drift(Time t, Real x);
 
         /// <summary>
         /// Returns the diffusion part of the equation, i.e., σ(t, x_t).
         /// </summary>
-        public abstract Real Diffusion(Time t, Real x);
+        public abstract Real diffusion(Time t, Real x);
 
         /// <summary>
         /// Returns the expectation E[x_T | x_t = x0] of the process after a time interval dt.
         /// </summary>
-        public virtual Real Expectation(Time t0, Real x0, Time dt)
+        public virtual Real expectation(Time t0, Real x0, Time dt)
         {
-            return _discretization1D.Drift(this, t0, x0, dt);
+            return apply(x0, _discretization.Drift(this, t0, x0, dt));
         }
 
         /// <summary>
         /// Returns the standard deviation S of the process after a time interval dt.
         /// </summary>
-        public virtual Real StdDeviation(Time t0, Real x0, Time dt)
+        public virtual Real stdDeviation(Time t0, Real x0, Time dt)
         {
-            return Math.Sqrt(Variance(t0, x0, dt));
+            return _discretization.Diffusion(this, t0, x0, dt);
         }
 
         /// <summary>
         /// Returns the variance V = S^2 of the process after a time interval dt.
         /// </summary>
-        public virtual Real Variance(Time t0, Real x0, Time dt)
+        public virtual Real variance(Time t0, Real x0, Time dt)
         {
-            return _discretization1D.Variance(this, t0, x0, dt);
+            return _discretization.Variance(this, t0, x0, dt);
         }
 
         /// <summary>
         /// Returns the asset value after a time interval dt.
         /// </summary>
-        public virtual Real Evolve(Time t0, Real x0, Time dt, Real dw)
+        public virtual Real evolve(Time t0, Real x0, Time dt, Real dw)
         {
-            return Apply(Expectation(t0, x0, dt), StdDeviation(t0, x0, dt) * dw);
+            return apply(expectation(t0, x0, dt), stdDeviation(t0, x0, dt) * dw);
         }
 
         /// <summary>
         /// Applies a change to the asset value.
         /// </summary>
-        public virtual Real Apply(Real x0, Real dx)
+        public virtual Real apply(Real x0, Real dx)
         {
             return x0 + dx;
         }
         #endregion
 
         #region StochasticProcess interface implementation (Adapter)
-        public override int Size => 1;
-        public override Vector InitialValues => Vector.Build.Dense(1, X0);
+        public override Size size() => 1;
+        public override Vector initialValues() => Vector.Build.Dense(1, x0());
 
-        public override Vector Drift(Time t, Vector x)
+        public override Vector drift(Time t, Vector x)
         {
             if (x.Count != 1) throw new ArgumentException("1-D vector required", nameof(x));
-            return Vector.Build.Dense(1, Drift(t, x[0]));
+            return Vector.Build.Dense(1, drift(t, x[0]));
         }
 
-        public override Matrix Diffusion(Time t, Vector x)
+        public override Matrix diffusion(Time t, Vector x)
         {
             if (x.Count != 1) throw new ArgumentException("1-D vector required", nameof(x));
-            return Matrix.Build.Dense(1, 1, Diffusion(t, x[0]));
+            return Matrix.Build.Dense(1, 1, diffusion(t, x[0]));
         }
 
-        public override Vector Expectation(Time t0, Vector x0, Time dt)
+        public override Vector expectation(Time t0, Vector x0, Time dt)
         {
             if (x0.Count != 1) throw new ArgumentException("1-D vector required", nameof(x0));
-            return Vector.Build.Dense(1, Expectation(t0, x0[0], dt));
+            return Vector.Build.Dense(1, expectation(t0, x0[0], dt));
         }
 
-        public override Matrix StdDeviation(Time t0, Vector x0, Time dt)
+        public override Matrix stdDeviation(Time t0, Vector x0, Time dt)
         {
             if (x0.Count != 1) throw new ArgumentException("1-D vector required", nameof(x0));
-            return Matrix.Build.Dense(1, 1, StdDeviation(t0, x0[0], dt));
+            return Matrix.Build.Dense(1, 1, stdDeviation(t0, x0[0], dt));
         }
 
-        public override Matrix Covariance(Time t0, Vector x0, Time dt)
+        public override Matrix covariance(Time t0, Vector x0, Time dt)
         {
             if (x0.Count != 1) throw new ArgumentException("1-D vector required", nameof(x0));
-            return Matrix.Build.Dense(1, 1, Variance(t0, x0[0], dt));
+            return Matrix.Build.Dense(1, 1, variance(t0, x0[0], dt));
         }
 
-        public override Vector Evolve(Time t0, Vector x0, Time dt, Vector dw)
+        public override Vector evolve(Time t0, Vector x0, Time dt, Vector dw)
         {
             if (x0.Count != 1) throw new ArgumentException("1-D vector required", nameof(x0));
             if (dw.Count != 1) throw new ArgumentException("1-D vector required", nameof(dw));
-            return Vector.Build.Dense(1, Evolve(t0, x0[0], dt, dw[0]));
+            return Vector.Build.Dense(1, evolve(t0, x0[0], dt, dw[0]));
         }
 
-        public override Vector Apply(Vector x0, Vector dx)
+        public override Vector apply(Vector x0, Vector dx)
         {
             if (x0.Count != 1) throw new ArgumentException("1-D vector required", nameof(x0));
             if (dx.Count != 1) throw new ArgumentException("1-D vector required", nameof(dx));
-            return Vector.Build.Dense(1, Apply(x0[0], dx[0]));
+            return Vector.Build.Dense(1, apply(x0[0], dx[0]));
         }
         #endregion
     }

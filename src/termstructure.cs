@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Antares
 {
-    #region Missing Type Definitions
+    #region Supporting Types
 
     /// <summary>
     /// Time unit enumeration.
@@ -19,84 +19,38 @@ namespace Antares
     }
 
     /// <summary>
-    /// Abstract base class for day counter implementations.
-    /// </summary>
-    public abstract class DayCounter : IEquatable<DayCounter>
-    {
-        public abstract string Name { get; }
-        public virtual int DayCount(Date d1, Date d2)
-        {
-            return d2.CompareTo(d1);
-        }
-        public abstract double YearFraction(Date d1, Date d2, Date? refPeriodStart = null, Date? refPeriodEnd = null);
-        
-        public bool IsEmpty() => string.IsNullOrEmpty(Name);
-        
-        public bool Equals(DayCounter? other)
-        {
-            if (other is null) return false;
-            if (this.IsEmpty() && other.IsEmpty()) return true;
-            return this.Name == other.Name;
-        }
-
-        public override bool Equals(object? obj) => obj is DayCounter other && this.Equals(other);
-        public override int GetHashCode() => Name?.GetHashCode() ?? 0;
-        public override string ToString() => Name ?? "No day counter implementation provided";
-        
-        public static bool operator ==(DayCounter d1, DayCounter d2)
-        {
-            if (d1 is null) return d2 is null;
-            return d1.Equals(d2);
-        }
-        public static bool operator !=(DayCounter d1, DayCounter d2) => !(d1 == d2);
-    }
-
-    /// <summary>
-    /// Actual/365 Fixed day counter.
-    /// </summary>
-    public class Actual365Fixed : DayCounter
-    {
-        public override string Name => "Actual/365 (Fixed)";
-        
-        public override double YearFraction(Date d1, Date d2, Date? refPeriodStart = null, Date? refPeriodEnd = null)
-        {
-            return DayCount(d1, d2) / 365.0;
-        }
-    }
-
-    /// <summary>
     /// Abstract base class for calendar implementations.
     /// </summary>
     public abstract class Calendar : IEquatable<Calendar>
     {
-        public abstract string Name { get; }
+        public abstract string name();
         
-        public virtual bool IsBusinessDay(Date d)
+        public virtual bool isBusinessDay(Date d)
         {
-            return !IsHoliday(d);
+            return !isHoliday(d);
         }
         
-        public virtual bool IsHoliday(Date d)
+        public virtual bool isHoliday(Date d)
         {
-            return IsWeekend(GetWeekday(d)) || IsBusinessDayImpl(d);
+            return isWeekend(getWeekday(d)) || !isBusinessDayImpl(d);
         }
         
-        protected abstract bool IsBusinessDayImpl(Date d);
+        protected abstract bool isBusinessDayImpl(Date d);
         
-        public virtual bool IsWeekend(int weekday)
+        public virtual bool isWeekend(int weekday)
         {
             return weekday == 0 || weekday == 6; // Sunday = 0, Saturday = 6
         }
         
-        protected virtual int GetWeekday(Date d)
+        protected virtual int getWeekday(Date d)
         {
             // Simple implementation - in real implementation would use actual date
             return 1; // Monday
         }
         
-        public virtual Date Advance(Date date, int n, TimeUnit unit)
+        public virtual Date advance(Date date, int n, TimeUnit unit)
         {
-            DateTime dateTime = ConvertToDateTime(date);
+            DateTime dateTime = convertToDateTime(date);
             switch (unit)
             {
                 case TimeUnit.Days:
@@ -113,14 +67,14 @@ namespace Antares
         }
         
         // Helper method for date conversion
-        private static DateTime ConvertToDateTime(Date date)
+        private static DateTime convertToDateTime(Date date)
         {
             return DateTime.Today; // Simplified implementation
         }
         
-        public override bool Equals(object? obj) => obj is Calendar other && this.Name == other.Name;
-        public override int GetHashCode() => Name?.GetHashCode() ?? 0;
-        public override string ToString() => Name;
+        public override bool Equals(object? obj) => obj is Calendar other && this.name() == other.name();
+        public override int GetHashCode() => name()?.GetHashCode() ?? 0;
+        public override string ToString() => name();
         
         public static bool operator ==(Calendar? c1, Calendar? c2)
         {
@@ -129,7 +83,7 @@ namespace Antares
         }
         public static bool operator !=(Calendar? c1, Calendar? c2) => !(c1 == c2);
         
-        public bool Equals(Calendar? other) => other != null && Name == other.Name;
+        public bool Equals(Calendar? other) => other != null && name() == other.name();
     }
 
     /// <summary>
@@ -137,9 +91,9 @@ namespace Antares
     /// </summary>
     public class TARGET : Calendar
     {
-        public override string Name => "TARGET";
+        public override string name() => "TARGET";
         
-        protected override bool IsBusinessDayImpl(Date d)
+        protected override bool isBusinessDayImpl(Date d)
         {
             return true; // Simplified implementation
         }
@@ -148,36 +102,13 @@ namespace Antares
     /// <summary>
     /// Defines behavior for classes that can perform extrapolation.
     /// </summary>
-    public interface IExtrapolator
+    public abstract class Extrapolator
     {
-        bool AllowsExtrapolation { get; }
-        void EnableExtrapolation(bool value);
-    }
+        private bool _extrapolationAllowed = false;
 
-    /// <summary>
-    /// Provides the global evaluation date and notifies observers on change.
-    /// This is a simplified C# equivalent of QuantLib's Settings singleton.
-    /// </summary>
-    public static class EvaluationSettings
-    {
-        private static readonly Observable _observable = new Observable();
-        private static Date _evaluationDate = Date.Today;
-
-        public static Date EvaluationDate
-        {
-            get => _evaluationDate;
-            set
-            {
-                if (_evaluationDate != value)
-                {
-                    _evaluationDate = value;
-                    _observable.NotifyObservers();
-                }
-            }
-        }
-
-        public static void RegisterWith(IObserver observer) => _observable.RegisterWith(observer);
-        public static void UnregisterWith(IObserver observer) => _observable.UnregisterWith(observer);
+        public bool allowsExtrapolation() => _extrapolationAllowed;
+        public void enableExtrapolation(bool b = true) => _extrapolationAllowed = b;
+        public void disableExtrapolation(bool b = true) => _extrapolationAllowed = !b;
     }
 
     #endregion
@@ -186,10 +117,9 @@ namespace Antares
     /// Basic term-structure functionality.
     /// Base class for interest-rate and volatility term structures.
     /// </summary>
-    public abstract class TermStructure : IObserver, IObservable, IExtrapolator
+    public abstract class TermStructure : Extrapolator, IObserver, IObservable
     {
         private readonly Observable _observable = new Observable();
-        private bool _extrapolationAllowed = false;
 
         private readonly bool _moving;
         private bool _updated;
@@ -205,7 +135,7 @@ namespace Antares
         /// </summary>
         /// <remarks>
         /// Term structures initialized by means of this constructor must manage
-        /// their own reference date by overriding the ReferenceDate property.
+        /// their own reference date by overriding the referenceDate() property.
         /// </remarks>
         protected TermStructure(DayCounter? dayCounter = null)
         {
@@ -239,7 +169,7 @@ namespace Antares
             _settlementDays = settlementDays;
             _moving = true;
             _updated = false;
-            EvaluationSettings.RegisterWith(this);
+            Settings.evaluationDate().RegisterWith(this);
         }
         #endregion
 
@@ -247,102 +177,95 @@ namespace Antares
         /// <summary>
         /// The day counter used for date/time conversion.
         /// </summary>
-        public DayCounter DayCounter => _dayCounter;
+        public DayCounter dayCounter() => _dayCounter;
 
         /// <summary>
         /// Date/time conversion.
         /// </summary>
-        public Time TimeFromReference(Date date) => DayCounter.YearFraction(ReferenceDate, date);
+        public Time timeFromReference(Date date) => dayCounter().yearFraction(referenceDate(), date);
 
         /// <summary>
         /// The latest date for which the curve can return values.
         /// </summary>
-        public abstract Date MaxDate { get; }
+        public abstract Date maxDate();
 
         /// <summary>
         /// The latest time for which the curve can return values.
         /// </summary>
-        public virtual Time MaxTime => TimeFromReference(MaxDate);
+        public virtual Time maxTime() => timeFromReference(maxDate());
 
         /// <summary>
         /// The date at which discount = 1.0 and/or variance = 0.0.
         /// </summary>
-        public virtual Date ReferenceDate
+        public virtual Date referenceDate()
         {
-            get
+            if (!_updated)
             {
-                if (!_updated)
-                {
-                    Date today = EvaluationSettings.EvaluationDate;
-                    _referenceDate = Calendar.Advance(today, (int)SettlementDays, TimeUnit.Days);
-                    _updated = true;
-                }
-                return _referenceDate ?? Date.Today; // Provide fallback if null
+                Date today = Settings.EvaluationDate;
+                _referenceDate = calendar().advance(today, (int)settlementDays(), TimeUnit.Days);
+                _updated = true;
             }
+            return _referenceDate ?? Date.Today; // Provide fallback if null
         }
 
         /// <summary>
         /// The calendar used for reference and/or option date calculation.
         /// </summary>
-        public Calendar Calendar => _calendar;
+        public Calendar calendar() => _calendar;
 
         /// <summary>
         /// The settlement days used for reference date calculation.
         /// </summary>
-        public Natural SettlementDays
+        public Natural settlementDays()
         {
-            get
-            {
-                if (!_settlementDays.HasValue)
-                    throw new InvalidOperationException("settlement days not provided for this instance");
-                return _settlementDays.Value;
-            }
+            if (!_settlementDays.HasValue)
+                throw new InvalidOperationException("settlement days not provided for this instance");
+            return _settlementDays.Value;
         }
         #endregion
 
         #region IObserver interface
-        public virtual void Update()
+        public virtual void update()
         {
             if (_moving)
                 _updated = false;
-            NotifyObservers();
+            notifyObservers();
         }
+
+        // For C++ compatibility
+        public void Update() => update();
         #endregion
 
         #region IObservable interface
         public void RegisterWith(IObserver observer) => _observable.RegisterWith(observer);
         public void UnregisterWith(IObserver observer) => _observable.UnregisterWith(observer);
-        protected void NotifyObservers() => _observable.NotifyObservers();
-        #endregion
-
-        #region IExtrapolator interface
-        public bool AllowsExtrapolation => _extrapolationAllowed;
-        public void EnableExtrapolation(bool value) => _extrapolationAllowed = value;
+        protected void notifyObservers() => _observable.NotifyObservers();
         #endregion
 
         #region Range checks
         /// <summary>
         /// Date-range check.
         /// </summary>
-        protected void CheckRange(Date d, bool extrapolate)
+        protected void checkRange(Date d, bool extrapolate)
         {
-            if (d < ReferenceDate || d > MaxDate)
-            {
-                if (!extrapolate || !AllowsExtrapolation)
-                    throw new ArgumentException($"Date {d} is outside the range [{ReferenceDate}, {MaxDate}]");
-            }
+            if (d < referenceDate())
+                throw new ArgumentException($"date ({d}) before reference date ({referenceDate()})");
+            
+            if (!extrapolate && !allowsExtrapolation() && d > maxDate())
+                throw new ArgumentException($"date ({d}) is past max curve date ({maxDate()})");
         }
 
         /// <summary>
         /// Time-range check.
         /// </summary>
-        protected void CheckRange(Time t, bool extrapolate)
+        protected void checkRange(Time t, bool extrapolate)
         {
-            if (t < 0.0 || t > MaxTime)
-            {
-                if (!extrapolate || !AllowsExtrapolation)
-                    throw new ArgumentException($"Time {t} is outside the range [0, {MaxTime}]");
-            }
+            if (t < 0.0)
+                throw new ArgumentException($"negative time ({t}) given");
+                
+            if (!extrapolate && !allowsExtrapolation() && 
+                t > maxTime() && !Comparison.CloseEnough(t, maxTime()))
+                throw new ArgumentException($"time ({t}) is past max curve time ({maxTime()})");
         }
         #endregion
     }

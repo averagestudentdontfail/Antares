@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace Antares
 {
-    #region Missing Type Definitions
+    #region Core Infrastructure Types
 
     /// <summary>
     /// Represents a date.
@@ -37,6 +37,8 @@ namespace Antares
         public override bool Equals(object? obj) => obj is Date other && this == other;
         public override int GetHashCode() => _dateTime.GetHashCode();
         public override string ToString() => _dateTime.ToString("yyyy-MM-dd");
+
+        public static Date minDate() => MinDate;
     }
 
     /// <summary>
@@ -171,6 +173,34 @@ namespace Antares
     }
 
     #endregion
+
+    /// <summary>
+    /// Base interface for events associated with a given date.
+    /// </summary>
+    public interface IEvent : IObservable
+    {
+        /// <summary>
+        /// Returns the date at which the event occurs.
+        /// </summary>
+        Date Date { get; }
+
+        /// <summary>
+        /// Returns true if an event has already occurred before a given reference date.
+        /// </summary>
+        /// <param name="refDate">The reference date. If null, the global evaluation date is used.</param>
+        /// <param name="includeRefDate">
+        /// Specifies whether an event occurring on the reference date has occurred.
+        /// If null, the global setting is used.
+        /// If true, an event on the reference date has NOT occurred.
+        /// If false, an event on the reference date HAS occurred.
+        /// </param>
+        bool HasOccurred(Date? refDate = null, bool? includeRefDate = null);
+
+        /// <summary>
+        /// Accepts a visitor.
+        /// </summary>
+        void Accept(IAcyclicVisitor v);
+    }
 
     /// <summary>
     /// Base interface for cash flows.
