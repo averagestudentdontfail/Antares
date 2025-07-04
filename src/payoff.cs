@@ -4,27 +4,39 @@ using System;
 
 namespace Antares
 {
-    #region Visitor Pattern Infrastructure
     /// <summary>
-    /// Base marker interface for the Acyclic Visitor pattern.
+    /// Interface for option payoffs.
     /// </summary>
-    public interface IAcyclicVisitor { }
-
-    /// <summary>
-    /// A generic visitor interface for the Acyclic Visitor pattern.
-    /// An object implementing this interface can visit objects of type T.
-    /// </summary>
-    /// <typeparam name="T">The type of the object to be visited.</typeparam>
-    public interface IVisitor<in T> : IAcyclicVisitor
+    public interface IPayoff
     {
-        void Visit(T element);
+        /// <summary>
+        /// A name describing the payoff type.
+        /// </summary>
+        string Name { get; }
+
+        /// <summary>
+        /// A more detailed description of the payoff, including its parameters.
+        /// </summary>
+        string Description { get; }
+
+        /// <summary>
+        /// Calculates the value of the payoff for a given underlying price.
+        /// </summary>
+        /// <param name="price">The price of the underlying asset.</param>
+        /// <returns>The calculated payoff value.</returns>
+        Real GetValue(Real price);
+
+        /// <summary>
+        /// Accepts a visitor.
+        /// </summary>
+        /// <param name="v">The visitor to accept.</param>
+        void Accept(IAcyclicVisitor v);
     }
-    #endregion
 
     /// <summary>
     /// Abstract base class for option payoffs.
     /// </summary>
-    public abstract class Payoff
+    public abstract class Payoff : IPayoff
     {
         #region Payoff interface
         /// <summary>
@@ -56,9 +68,13 @@ namespace Antares
         /// <param name="v">The visitor to accept.</param>
         public virtual void Accept(IAcyclicVisitor v)
         {
-            if (v is IVisitor<Payoff> visitor)
+            if (v is IVisitor<IPayoff> payoffVisitor)
             {
-                visitor.Visit(this);
+                payoffVisitor.Visit(this);
+            }
+            else if (v is IVisitor<Payoff> concretePayoffVisitor)
+            {
+                concretePayoffVisitor.Visit(this);
             }
             else
             {

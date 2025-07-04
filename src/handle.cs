@@ -98,7 +98,7 @@ namespace Antares
         /// </summary>
         /// <param name="h">The new object to link to.</param>
         /// <param name="registerAsObserver">Whether to register as an observer of the new object.</param>
-        public void linkTo(T? h, bool registerAsObserver = true)
+        public virtual void linkTo(T? h, bool registerAsObserver = true)
         {
             this._link.linkTo(h, registerAsObserver);
         }
@@ -200,7 +200,7 @@ namespace Antares
         /// <summary>
         /// Relinkable-handle assignment operator
         /// </summary>
-        public void linkTo(T? h, bool registerAsObserver = false)
+        public new void linkTo(T? h, bool registerAsObserver = false)
         {
             base.linkTo(h, registerAsObserver);
         }

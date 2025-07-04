@@ -259,7 +259,7 @@ namespace Antares
     /// Mimics QuantLib's Null template.
     /// </summary>
     /// <typeparam name="T">The type for which to represent null.</typeparam>
-    public static class Null<T>
+    public sealed class NullValue<T>
     {
         private static readonly T _value = default(T)!;
         
@@ -271,17 +271,24 @@ namespace Antares
         /// <summary>
         /// Implicit conversion to T.
         /// </summary>
-        public static implicit operator T(Null<T> _) => _value;
+        public static implicit operator T(NullValue<T> _) => _value;
+        
+        private NullValue() { }
+        
+        /// <summary>
+        /// Gets the singleton instance.
+        /// </summary>
+        public static NullValue<T> Instance { get; } = new NullValue<T>();
     }
 
     /// <summary>
     /// Non-generic version of Null for common types.
     /// </summary>
-    public static class Null
+    public static class NullValues
     {
         public static Real Real() => Real.NaN;
         public static Integer Integer() => int.MinValue;
-        public static Size Size() => uint.MaxValue;
+        public static Size Size() => int.MinValue;
         public static Time Time() => Real.NaN;
         public static Rate Rate() => Real.NaN;
         public static DiscountFactor DiscountFactor() => Real.NaN;
@@ -294,12 +301,12 @@ namespace Antares
     /// <summary>
     /// Extension methods for common type operations.
     /// </summary>
-    public static class TypeExtensions
+    public static class AntaresTypeExtensions
     {
         /// <summary>
         /// Checks if a Real value is effectively null.
         /// </summary>
-        public static bool IsNull(this Real value)
+        public static bool IsNullValue(this Real value)
         {
             return double.IsNaN(value);
         }
@@ -307,7 +314,7 @@ namespace Antares
         /// <summary>
         /// Checks if an Integer value is effectively null.
         /// </summary>
-        public static bool IsNull(this Integer value)
+        public static bool IsNullValue(this Integer value)
         {
             return value == int.MinValue;
         }
@@ -315,9 +322,9 @@ namespace Antares
         /// <summary>
         /// Checks if a Size value is effectively null.
         /// </summary>
-        public static bool IsNull(this Size value)
+        public static bool IsNullValue(this Size value)
         {
-            return value == uint.MaxValue;
+            return value == int.MinValue;
         }
 
         /// <summary>
