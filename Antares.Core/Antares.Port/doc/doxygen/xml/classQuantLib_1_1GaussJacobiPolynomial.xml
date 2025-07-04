@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1GaussJacobiPolynomial" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::GaussJacobiPolynomial</compoundname>
+    <basecompoundref refid="classQuantLib_1_1GaussianOrthogonalPolynomial" prot="public" virt="non-virtual">QuantLib::GaussianOrthogonalPolynomial</basecompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1GaussChebyshev2ndPolynomial" prot="public" virt="non-virtual">QuantLib::GaussChebyshev2ndPolynomial</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1GaussChebyshevPolynomial" prot="public" virt="non-virtual">QuantLib::GaussChebyshevPolynomial</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1GaussGegenbauerPolynomial" prot="public" virt="non-virtual">QuantLib::GaussGegenbauerPolynomial</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1GaussLegendrePolynomial" prot="public" virt="non-virtual">QuantLib::GaussLegendrePolynomial</derivedcompoundref>
+    <includes refid="gaussianorthogonalpolynomial_8hpp" local="no">gaussianorthogonalpolynomial.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1GaussJacobiPolynomial_1af2346ca124bf13a5684d6b6315d318fa" prot="private" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::GaussJacobiPolynomial::alpha_</definition>
+        <argsstring></argsstring>
+        <name>alpha_</name>
+        <qualifiedname>QuantLib::GaussJacobiPolynomial::alpha_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/integrals/gaussianorthogonalpolynomial.hpp" line="101" column="20" bodyfile="ql/math/integrals/gaussianorthogonalpolynomial.hpp" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1GaussJacobiPolynomial_1a0c7b6d296158a636521cbe6204540234" prot="private" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::GaussJacobiPolynomial::beta_</definition>
+        <argsstring></argsstring>
+        <name>beta_</name>
+        <qualifiedname>QuantLib::GaussJacobiPolynomial::beta_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/integrals/gaussianorthogonalpolynomial.hpp" line="102" column="20" bodyfile="ql/math/integrals/gaussianorthogonalpolynomial.hpp" bodystart="102" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1GaussJacobiPolynomial_1a8972d3c4141eaae9e9dfaa09e96a21ae" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::GaussJacobiPolynomial::GaussJacobiPolynomial</definition>
+        <argsstring>(Real alpha, Real beta)</argsstring>
+        <name>GaussJacobiPolynomial</name>
+        <qualifiedname>QuantLib::GaussJacobiPolynomial::GaussJacobiPolynomial</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>alpha</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>beta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/integrals/gaussianorthogonalpolynomial.hpp" line="93" column="18" bodyfile="ql/math/integrals/gaussianorthogonalpolynomial.cpp" bodystart="92" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1GaussJacobiPolynomial_1a143ac13372689d280a78816e2f21c7e9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::GaussJacobiPolynomial::mu_0</definition>
+        <argsstring>() const override</argsstring>
+        <name>mu_0</name>
+        <qualifiedname>QuantLib::GaussJacobiPolynomial::mu_0</qualifiedname>
+        <reimplements refid="classQuantLib_1_1GaussianOrthogonalPolynomial_1a4e518337d30d6fbb1444551b1323d25c">mu_0</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/integrals/gaussianorthogonalpolynomial.hpp" line="95" column="14" bodyfile="ql/math/integrals/gaussianorthogonalpolynomial.cpp" bodystart="99" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1GaussJacobiPolynomial_1aa4edae64a403c6324a6b1558ad113979" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::GaussJacobiPolynomial::alpha</definition>
+        <argsstring>(Size i) const override</argsstring>
+        <name>alpha</name>
+        <qualifiedname>QuantLib::GaussJacobiPolynomial::alpha</qualifiedname>
+        <reimplements refid="classQuantLib_1_1GaussianOrthogonalPolynomial_1a8914fabe6bef18ec39b110ca1f4710c6">alpha</reimplements>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/integrals/gaussianorthogonalpolynomial.hpp" line="96" column="14" bodyfile="ql/math/integrals/gaussianorthogonalpolynomial.cpp" bodystart="106" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1GaussJacobiPolynomial_1a7980ff3d59e76f74d6cef470241fe3be" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::GaussJacobiPolynomial::beta</definition>
+        <argsstring>(Size i) const override</argsstring>
+        <name>beta</name>
+        <qualifiedname>QuantLib::GaussJacobiPolynomial::beta</qualifiedname>
+        <reimplements refid="classQuantLib_1_1GaussianOrthogonalPolynomial_1a5d437722f274f2f41b5ec95397824177">beta</reimplements>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/integrals/gaussianorthogonalpolynomial.hpp" line="97" column="14" bodyfile="ql/math/integrals/gaussianorthogonalpolynomial.cpp" bodystart="126" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1GaussJacobiPolynomial_1a0e023173da1034c958dfe3c34c96cb6e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::GaussJacobiPolynomial::w</definition>
+        <argsstring>(Real x) const override</argsstring>
+        <name>w</name>
+        <qualifiedname>QuantLib::GaussJacobiPolynomial::w</qualifiedname>
+        <reimplements refid="classQuantLib_1_1GaussianOrthogonalPolynomial_1afba8fe00288c9d8cf42f63a91ad59836">w</reimplements>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/integrals/gaussianorthogonalpolynomial.hpp" line="98" column="14" bodyfile="ql/math/integrals/gaussianorthogonalpolynomial.cpp" bodystart="145" bodyend="147"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Gauss-Jacobi polynomial. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>QuantLib::GaussChebyshev2ndPolynomial</label>
+        <link refid="classQuantLib_1_1GaussChebyshev2ndPolynomial"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QuantLib::GaussChebyshevPolynomial</label>
+        <link refid="classQuantLib_1_1GaussChebyshevPolynomial"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>QuantLib::GaussGegenbauerPolynomial</label>
+        <link refid="classQuantLib_1_1GaussGegenbauerPolynomial"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::GaussJacobiPolynomial</label>
+        <link refid="classQuantLib_1_1GaussJacobiPolynomial"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>QuantLib::GaussLegendrePolynomial</label>
+        <link refid="classQuantLib_1_1GaussLegendrePolynomial"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::GaussianOrthogonalPolynomial</label>
+        <link refid="classQuantLib_1_1GaussianOrthogonalPolynomial"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>QuantLib::GaussJacobiPolynomial</label>
+        <link refid="classQuantLib_1_1GaussJacobiPolynomial"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::GaussianOrthogonalPolynomial</label>
+        <link refid="classQuantLib_1_1GaussianOrthogonalPolynomial"/>
+      </node>
+    </collaborationgraph>
+    <location file="ql/math/integrals/gaussianorthogonalpolynomial.hpp" line="91" column="5" bodyfile="ql/math/integrals/gaussianorthogonalpolynomial.hpp" bodystart="91" bodyend="103"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1GaussJacobiPolynomial_1aa4edae64a403c6324a6b1558ad113979" prot="public" virt="virtual"><scope>QuantLib::GaussJacobiPolynomial</scope><name>alpha</name></member>
+      <member refid="classQuantLib_1_1GaussJacobiPolynomial_1af2346ca124bf13a5684d6b6315d318fa" prot="private" virt="non-virtual"><scope>QuantLib::GaussJacobiPolynomial</scope><name>alpha_</name></member>
+      <member refid="classQuantLib_1_1GaussJacobiPolynomial_1a7980ff3d59e76f74d6cef470241fe3be" prot="public" virt="virtual"><scope>QuantLib::GaussJacobiPolynomial</scope><name>beta</name></member>
+      <member refid="classQuantLib_1_1GaussJacobiPolynomial_1a0c7b6d296158a636521cbe6204540234" prot="private" virt="non-virtual"><scope>QuantLib::GaussJacobiPolynomial</scope><name>beta_</name></member>
+      <member refid="classQuantLib_1_1GaussJacobiPolynomial_1a8972d3c4141eaae9e9dfaa09e96a21ae" prot="public" virt="non-virtual"><scope>QuantLib::GaussJacobiPolynomial</scope><name>GaussJacobiPolynomial</name></member>
+      <member refid="classQuantLib_1_1GaussJacobiPolynomial_1a143ac13372689d280a78816e2f21c7e9" prot="public" virt="virtual"><scope>QuantLib::GaussJacobiPolynomial</scope><name>mu_0</name></member>
+      <member refid="classQuantLib_1_1GaussianOrthogonalPolynomial_1a769accdc45f27c9b69a5ddebe2b9d3a3" prot="public" virt="non-virtual"><scope>QuantLib::GaussJacobiPolynomial</scope><name>value</name></member>
+      <member refid="classQuantLib_1_1GaussJacobiPolynomial_1a0e023173da1034c958dfe3c34c96cb6e" prot="public" virt="virtual"><scope>QuantLib::GaussJacobiPolynomial</scope><name>w</name></member>
+      <member refid="classQuantLib_1_1GaussianOrthogonalPolynomial_1a908f05e4162d866b3ff020fd5a1b7285" prot="public" virt="non-virtual"><scope>QuantLib::GaussJacobiPolynomial</scope><name>weightedValue</name></member>
+      <member refid="classQuantLib_1_1GaussianOrthogonalPolynomial_1afc3b36cc5ee57e8fd77be775e1ef101b" prot="public" virt="virtual"><scope>QuantLib::GaussJacobiPolynomial</scope><name>~GaussianOrthogonalPolynomial</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

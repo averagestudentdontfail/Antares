@@ -1,0 +1,982 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1ErrorFunction" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::ErrorFunction</compoundname>
+    <includes refid="errorfunction_8hpp" local="no">errorfunction.hpp</includes>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a5d7285bf56395a36c549a46f5d8b1281" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::tiny</definition>
+        <argsstring></argsstring>
+        <name>tiny</name>
+        <qualifiedname>QuantLib::ErrorFunction::tiny</qualifiedname>
+        <initializer>=  <ref refid="group__limitMacros_1ga4f2e6bcf6b19224bce1a5a6234286c17" kindref="member">QL_EPSILON</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="42" column="27" bodyfile="ql/math/errorfunction.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a2cd8521b5a314209ef4440989b054156" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::one</definition>
+        <argsstring></argsstring>
+        <name>one</name>
+        <qualifiedname>QuantLib::ErrorFunction::one</qualifiedname>
+        <initializer>=  1.00000000000000000000e+00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="42" column="32" bodyfile="ql/math/errorfunction.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1ac61c57eb3f4307737b2c76ac708cce6c" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::erx</definition>
+        <argsstring></argsstring>
+        <name>erx</name>
+        <qualifiedname>QuantLib::ErrorFunction::erx</qualifiedname>
+        <initializer>=  8.45062911510467529297e-01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="42" column="36" bodyfile="ql/math/errorfunction.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1afb4f1297bffef285b75e5416e1efb37c" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::efx</definition>
+        <argsstring></argsstring>
+        <name>efx</name>
+        <qualifiedname>QuantLib::ErrorFunction::efx</qualifiedname>
+        <initializer>=  1.28379167095512586316e-01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="42" column="40" bodyfile="ql/math/errorfunction.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a23524296e1ecefad979503e68495fdf9" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::efx8</definition>
+        <argsstring></argsstring>
+        <name>efx8</name>
+        <qualifiedname>QuantLib::ErrorFunction::efx8</qualifiedname>
+        <initializer>=  1.02703333676410069053e+00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="42" column="44" bodyfile="ql/math/errorfunction.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1aef9996248258427a448ac62e60e47166" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::pp0</definition>
+        <argsstring></argsstring>
+        <name>pp0</name>
+        <qualifiedname>QuantLib::ErrorFunction::pp0</qualifiedname>
+        <initializer>=  1.28379167095512558561e-01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="43" column="27" bodyfile="ql/math/errorfunction.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a1e8b4274b5556d7ec1e56b2d73c223c8" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::pp1</definition>
+        <argsstring></argsstring>
+        <name>pp1</name>
+        <qualifiedname>QuantLib::ErrorFunction::pp1</qualifiedname>
+        <initializer>= -3.25042107247001499370e-01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="43" column="31" bodyfile="ql/math/errorfunction.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a413893f22d52cea8c01ed81d174131ba" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::pp2</definition>
+        <argsstring></argsstring>
+        <name>pp2</name>
+        <qualifiedname>QuantLib::ErrorFunction::pp2</qualifiedname>
+        <initializer>= -2.84817495755985104766e-02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="43" column="34" bodyfile="ql/math/errorfunction.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a9198f351d59797934ecc8fb1e65ff7be" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::pp3</definition>
+        <argsstring></argsstring>
+        <name>pp3</name>
+        <qualifiedname>QuantLib::ErrorFunction::pp3</qualifiedname>
+        <initializer>= -5.77027029648944159157e-03</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="43" column="37" bodyfile="ql/math/errorfunction.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a0b85675aca254733a080e5fc0a116e45" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::pp4</definition>
+        <argsstring></argsstring>
+        <name>pp4</name>
+        <qualifiedname>QuantLib::ErrorFunction::pp4</qualifiedname>
+        <initializer>= -2.37630166566501626084e-05</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="43" column="40" bodyfile="ql/math/errorfunction.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1aae0b8bb16c73e9aa453ed92be0fcff0e" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::qq1</definition>
+        <argsstring></argsstring>
+        <name>qq1</name>
+        <qualifiedname>QuantLib::ErrorFunction::qq1</qualifiedname>
+        <initializer>=  3.97917223959155352819e-01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="44" column="27" bodyfile="ql/math/errorfunction.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a75e434869b3c1219d518fbfad4861dab" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::qq2</definition>
+        <argsstring></argsstring>
+        <name>qq2</name>
+        <qualifiedname>QuantLib::ErrorFunction::qq2</qualifiedname>
+        <initializer>=  6.50222499887672944485e-02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="44" column="30" bodyfile="ql/math/errorfunction.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a44f8849e446d5224e01493e1578708e2" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::qq3</definition>
+        <argsstring></argsstring>
+        <name>qq3</name>
+        <qualifiedname>QuantLib::ErrorFunction::qq3</qualifiedname>
+        <initializer>=  5.08130628187576562776e-03</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="44" column="33" bodyfile="ql/math/errorfunction.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a94bbe0e6089178253fc3a3bdb66009ea" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::qq4</definition>
+        <argsstring></argsstring>
+        <name>qq4</name>
+        <qualifiedname>QuantLib::ErrorFunction::qq4</qualifiedname>
+        <initializer>=  1.32494738004321644526e-04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="44" column="36" bodyfile="ql/math/errorfunction.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1abb655363f9e2bc668d080c27f71d684d" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::qq5</definition>
+        <argsstring></argsstring>
+        <name>qq5</name>
+        <qualifiedname>QuantLib::ErrorFunction::qq5</qualifiedname>
+        <initializer>= -3.96022827877536812320e-06</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="44" column="39" bodyfile="ql/math/errorfunction.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a73da66520999268b1f4ab959e3e88f7b" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::pa0</definition>
+        <argsstring></argsstring>
+        <name>pa0</name>
+        <qualifiedname>QuantLib::ErrorFunction::pa0</qualifiedname>
+        <initializer>= -2.36211856075265944077e-03</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="45" column="27" bodyfile="ql/math/errorfunction.hpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1ae7b9cd379a8725595229e746ee3fc7bd" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::pa1</definition>
+        <argsstring></argsstring>
+        <name>pa1</name>
+        <qualifiedname>QuantLib::ErrorFunction::pa1</qualifiedname>
+        <initializer>=  4.14856118683748331666e-01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="45" column="30" bodyfile="ql/math/errorfunction.hpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a6d96ad34dc4fe988b293ff92ee490cd8" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::pa2</definition>
+        <argsstring></argsstring>
+        <name>pa2</name>
+        <qualifiedname>QuantLib::ErrorFunction::pa2</qualifiedname>
+        <initializer>= -3.72207876035701323847e-01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="45" column="33" bodyfile="ql/math/errorfunction.hpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a55bf2f6073ad6b2ed96a1c749bc97156" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::pa3</definition>
+        <argsstring></argsstring>
+        <name>pa3</name>
+        <qualifiedname>QuantLib::ErrorFunction::pa3</qualifiedname>
+        <initializer>=  3.18346619901161753674e-01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="45" column="36" bodyfile="ql/math/errorfunction.hpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1ade46282cbdf89bfdaee9356c8b68388e" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::pa4</definition>
+        <argsstring></argsstring>
+        <name>pa4</name>
+        <qualifiedname>QuantLib::ErrorFunction::pa4</qualifiedname>
+        <initializer>= -1.10894694282396677476e-01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="45" column="39" bodyfile="ql/math/errorfunction.hpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1aa748173cf970c4cb97af852c58c1de02" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::pa5</definition>
+        <argsstring></argsstring>
+        <name>pa5</name>
+        <qualifiedname>QuantLib::ErrorFunction::pa5</qualifiedname>
+        <initializer>=  3.54783043256182359371e-02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="45" column="42" bodyfile="ql/math/errorfunction.hpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a78dfcc6b423cbaa7fb7f696a11e60627" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::pa6</definition>
+        <argsstring></argsstring>
+        <name>pa6</name>
+        <qualifiedname>QuantLib::ErrorFunction::pa6</qualifiedname>
+        <initializer>= -2.16637559486879084300e-03</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="45" column="45" bodyfile="ql/math/errorfunction.hpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1ad57760a18dbe7ad70a60e4b5bd43bde1" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::qa1</definition>
+        <argsstring></argsstring>
+        <name>qa1</name>
+        <qualifiedname>QuantLib::ErrorFunction::qa1</qualifiedname>
+        <initializer>=  1.06420880400844228286e-01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="46" column="27" bodyfile="ql/math/errorfunction.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a59519ac72105c5600968f25b2155277e" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::qa2</definition>
+        <argsstring></argsstring>
+        <name>qa2</name>
+        <qualifiedname>QuantLib::ErrorFunction::qa2</qualifiedname>
+        <initializer>=  5.40397917702171048937e-01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="46" column="30" bodyfile="ql/math/errorfunction.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a4722da30d3eb21a7c76681a02be89411" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::qa3</definition>
+        <argsstring></argsstring>
+        <name>qa3</name>
+        <qualifiedname>QuantLib::ErrorFunction::qa3</qualifiedname>
+        <initializer>=  7.18286544141962662868e-02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="46" column="33" bodyfile="ql/math/errorfunction.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1aa0982f59c1241c7a374e8771c67d7254" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::qa4</definition>
+        <argsstring></argsstring>
+        <name>qa4</name>
+        <qualifiedname>QuantLib::ErrorFunction::qa4</qualifiedname>
+        <initializer>=  1.26171219808761642112e-01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="46" column="36" bodyfile="ql/math/errorfunction.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a15a0bab347245311cabed2e70447c871" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::qa5</definition>
+        <argsstring></argsstring>
+        <name>qa5</name>
+        <qualifiedname>QuantLib::ErrorFunction::qa5</qualifiedname>
+        <initializer>=  1.36370839120290507362e-02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="46" column="39" bodyfile="ql/math/errorfunction.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1afeceb8218f598ff6d162aed04041c035" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::qa6</definition>
+        <argsstring></argsstring>
+        <name>qa6</name>
+        <qualifiedname>QuantLib::ErrorFunction::qa6</qualifiedname>
+        <initializer>=  1.19844998467991074170e-02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="46" column="42" bodyfile="ql/math/errorfunction.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a2c2bb2f718befcb3a6582553bce0d2ea" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::ra0</definition>
+        <argsstring></argsstring>
+        <name>ra0</name>
+        <qualifiedname>QuantLib::ErrorFunction::ra0</qualifiedname>
+        <initializer>= -9.86494403484714822705e-03</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="47" column="27" bodyfile="ql/math/errorfunction.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a9dfd295ea4d5f9f4073a01e706bf9d07" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::ra1</definition>
+        <argsstring></argsstring>
+        <name>ra1</name>
+        <qualifiedname>QuantLib::ErrorFunction::ra1</qualifiedname>
+        <initializer>= -6.93858572707181764372e-01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="47" column="30" bodyfile="ql/math/errorfunction.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1af3a340d993bcbb40a2456ea6750a9df5" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::ra2</definition>
+        <argsstring></argsstring>
+        <name>ra2</name>
+        <qualifiedname>QuantLib::ErrorFunction::ra2</qualifiedname>
+        <initializer>= -1.05586262253232909814e+01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="47" column="33" bodyfile="ql/math/errorfunction.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1af17c1336ef2602457b2e19a7db0798ee" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::ra3</definition>
+        <argsstring></argsstring>
+        <name>ra3</name>
+        <qualifiedname>QuantLib::ErrorFunction::ra3</qualifiedname>
+        <initializer>= -6.23753324503260060396e+01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="47" column="36" bodyfile="ql/math/errorfunction.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a8a911ae11065d85523021319853cc83c" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::ra4</definition>
+        <argsstring></argsstring>
+        <name>ra4</name>
+        <qualifiedname>QuantLib::ErrorFunction::ra4</qualifiedname>
+        <initializer>= -1.62396669462573470355e+02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="47" column="39" bodyfile="ql/math/errorfunction.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a36c0ba443025f7f6bc4fb08992320e84" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::ra5</definition>
+        <argsstring></argsstring>
+        <name>ra5</name>
+        <qualifiedname>QuantLib::ErrorFunction::ra5</qualifiedname>
+        <initializer>= -1.84605092906711035994e+02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="47" column="42" bodyfile="ql/math/errorfunction.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a15cd7edfa56dcc0bed2e440822baab3c" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::ra6</definition>
+        <argsstring></argsstring>
+        <name>ra6</name>
+        <qualifiedname>QuantLib::ErrorFunction::ra6</qualifiedname>
+        <initializer>= -8.12874355063065934246e+01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="47" column="45" bodyfile="ql/math/errorfunction.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1ab2ae07b83d555206f9a02b41593faed4" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::ra7</definition>
+        <argsstring></argsstring>
+        <name>ra7</name>
+        <qualifiedname>QuantLib::ErrorFunction::ra7</qualifiedname>
+        <initializer>= -9.81432934416914548592e+00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="47" column="48" bodyfile="ql/math/errorfunction.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1ae7ff8d2a8e3ef594e5e300a72a87aba4" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::sa1</definition>
+        <argsstring></argsstring>
+        <name>sa1</name>
+        <qualifiedname>QuantLib::ErrorFunction::sa1</qualifiedname>
+        <initializer>=  1.96512716674392571292e+01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="48" column="27" bodyfile="ql/math/errorfunction.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a5394a6436f255ddb7e39e3b09297b823" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::sa2</definition>
+        <argsstring></argsstring>
+        <name>sa2</name>
+        <qualifiedname>QuantLib::ErrorFunction::sa2</qualifiedname>
+        <initializer>=  1.37657754143519042600e+02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="48" column="30" bodyfile="ql/math/errorfunction.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a1b0d2c1d2ca46b877a210f3515b884b1" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::sa3</definition>
+        <argsstring></argsstring>
+        <name>sa3</name>
+        <qualifiedname>QuantLib::ErrorFunction::sa3</qualifiedname>
+        <initializer>=  4.34565877475229228821e+02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="48" column="33" bodyfile="ql/math/errorfunction.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1ae8a297f954b287dfb25192f6ac5b1cbb" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::sa4</definition>
+        <argsstring></argsstring>
+        <name>sa4</name>
+        <qualifiedname>QuantLib::ErrorFunction::sa4</qualifiedname>
+        <initializer>=  6.45387271733267880336e+02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="48" column="36" bodyfile="ql/math/errorfunction.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a1ebd52fb61943ed3f1d0f4348f25f7e9" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::sa5</definition>
+        <argsstring></argsstring>
+        <name>sa5</name>
+        <qualifiedname>QuantLib::ErrorFunction::sa5</qualifiedname>
+        <initializer>=  4.29008140027567833386e+02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="48" column="39" bodyfile="ql/math/errorfunction.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1acf9631546f2645237b8935056abc591a" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::sa6</definition>
+        <argsstring></argsstring>
+        <name>sa6</name>
+        <qualifiedname>QuantLib::ErrorFunction::sa6</qualifiedname>
+        <initializer>=  1.08635005541779435134e+02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="48" column="42" bodyfile="ql/math/errorfunction.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a840215fbc2bfbcbb17d879a3226157ed" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::sa7</definition>
+        <argsstring></argsstring>
+        <name>sa7</name>
+        <qualifiedname>QuantLib::ErrorFunction::sa7</qualifiedname>
+        <initializer>=  6.57024977031928170135e+00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="48" column="45" bodyfile="ql/math/errorfunction.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a660454704e2aaa48875c6404f24d8f11" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::sa8</definition>
+        <argsstring></argsstring>
+        <name>sa8</name>
+        <qualifiedname>QuantLib::ErrorFunction::sa8</qualifiedname>
+        <initializer>= -6.04244152148580987438e-02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="48" column="48" bodyfile="ql/math/errorfunction.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1acaf1ea7c909d04498f624765d4403b6e" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::rb0</definition>
+        <argsstring></argsstring>
+        <name>rb0</name>
+        <qualifiedname>QuantLib::ErrorFunction::rb0</qualifiedname>
+        <initializer>= -9.86494292470009928597e-03</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="49" column="27" bodyfile="ql/math/errorfunction.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1ab006ae0fc1bf81e86221f9e44ec53485" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::rb1</definition>
+        <argsstring></argsstring>
+        <name>rb1</name>
+        <qualifiedname>QuantLib::ErrorFunction::rb1</qualifiedname>
+        <initializer>= -7.99283237680523006574e-01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="49" column="30" bodyfile="ql/math/errorfunction.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1ad4295c2bc8cabe70f36e5017eb0e7bf6" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::rb2</definition>
+        <argsstring></argsstring>
+        <name>rb2</name>
+        <qualifiedname>QuantLib::ErrorFunction::rb2</qualifiedname>
+        <initializer>= -1.77579549177547519889e+01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="49" column="33" bodyfile="ql/math/errorfunction.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1aa040d5917fbbef8534229b2d59e48a4f" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::rb3</definition>
+        <argsstring></argsstring>
+        <name>rb3</name>
+        <qualifiedname>QuantLib::ErrorFunction::rb3</qualifiedname>
+        <initializer>= -1.60636384855821916062e+02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="49" column="36" bodyfile="ql/math/errorfunction.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a7edaae44779f57f63dd5f59567d5121f" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::rb4</definition>
+        <argsstring></argsstring>
+        <name>rb4</name>
+        <qualifiedname>QuantLib::ErrorFunction::rb4</qualifiedname>
+        <initializer>= -6.37566443368389627722e+02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="49" column="39" bodyfile="ql/math/errorfunction.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a590d00b8e04598df38002501950bd575" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::rb5</definition>
+        <argsstring></argsstring>
+        <name>rb5</name>
+        <qualifiedname>QuantLib::ErrorFunction::rb5</qualifiedname>
+        <initializer>= -1.02509513161107724954e+03</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="49" column="42" bodyfile="ql/math/errorfunction.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1af51eed554f983a19fea1124af0352090" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::rb6</definition>
+        <argsstring></argsstring>
+        <name>rb6</name>
+        <qualifiedname>QuantLib::ErrorFunction::rb6</qualifiedname>
+        <initializer>= -4.83519191608651397019e+02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="49" column="45" bodyfile="ql/math/errorfunction.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1aa6c019a6ec92d48fbd71e27716c03fd0" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::sb1</definition>
+        <argsstring></argsstring>
+        <name>sb1</name>
+        <qualifiedname>QuantLib::ErrorFunction::sb1</qualifiedname>
+        <initializer>=  3.03380607434824582924e+01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="50" column="27" bodyfile="ql/math/errorfunction.hpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a399e21a0e209aa0b744f60b1f3617b3e" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::sb2</definition>
+        <argsstring></argsstring>
+        <name>sb2</name>
+        <qualifiedname>QuantLib::ErrorFunction::sb2</qualifiedname>
+        <initializer>=  3.25792512996573918826e+02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="50" column="30" bodyfile="ql/math/errorfunction.hpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a49ab560c96be0006be7a14fde72e54e8" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::sb3</definition>
+        <argsstring></argsstring>
+        <name>sb3</name>
+        <qualifiedname>QuantLib::ErrorFunction::sb3</qualifiedname>
+        <initializer>=  1.53672958608443695994e+03</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="50" column="33" bodyfile="ql/math/errorfunction.hpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a906ed6af690d1109a236aa8bb0d402d9" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::sb4</definition>
+        <argsstring></argsstring>
+        <name>sb4</name>
+        <qualifiedname>QuantLib::ErrorFunction::sb4</qualifiedname>
+        <initializer>=  3.19985821950859553908e+03</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="50" column="36" bodyfile="ql/math/errorfunction.hpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1afe626401657c54f0bdeac2d37f803c65" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::sb5</definition>
+        <argsstring></argsstring>
+        <name>sb5</name>
+        <qualifiedname>QuantLib::ErrorFunction::sb5</qualifiedname>
+        <initializer>=  2.55305040643316442583e+03</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="50" column="39" bodyfile="ql/math/errorfunction.hpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1a61f488fef3c7fe0fb6bf3480128da662" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::sb6</definition>
+        <argsstring></argsstring>
+        <name>sb6</name>
+        <qualifiedname>QuantLib::ErrorFunction::sb6</qualifiedname>
+        <initializer>=  4.74528541206955367215e+02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="50" column="42" bodyfile="ql/math/errorfunction.hpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ErrorFunction_1ae7f28b1861b5ccee658cf9b20d1d18cc" prot="private" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::ErrorFunction::sb7</definition>
+        <argsstring></argsstring>
+        <name>sb7</name>
+        <qualifiedname>QuantLib::ErrorFunction::sb7</qualifiedname>
+        <initializer>= -2.24409524465858183362e+01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="50" column="45" bodyfile="ql/math/errorfunction.hpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1ErrorFunction_1a58469f0a5b29dbf2ba0ccdf8fccac1b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::ErrorFunction::ErrorFunction</definition>
+        <argsstring>()=default</argsstring>
+        <name>ErrorFunction</name>
+        <qualifiedname>QuantLib::ErrorFunction::ErrorFunction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="38" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1ErrorFunction_1aa98fda634004f849b53672fd99d362eb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::ErrorFunction::operator()</definition>
+        <argsstring>(Real x) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>QuantLib::ErrorFunction::operator()</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/errorfunction.hpp" line="40" column="14" bodyfile="ql/math/errorfunction.cpp" bodystart="196" bodyend="244"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Error function </para>
+    </briefdescription>
+    <detaileddescription>
+<para>formula here ... Used to calculate the cumulative normal distribution function </para>
+    </detaileddescription>
+    <location file="ql/math/errorfunction.hpp" line="36" column="5" bodyfile="ql/math/errorfunction.hpp" bodystart="36" bodyend="51"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1ErrorFunction_1afb4f1297bffef285b75e5416e1efb37c" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>efx</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a23524296e1ecefad979503e68495fdf9" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>efx8</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a58469f0a5b29dbf2ba0ccdf8fccac1b1" prot="public" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>ErrorFunction</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1ac61c57eb3f4307737b2c76ac708cce6c" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>erx</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a2cd8521b5a314209ef4440989b054156" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>one</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1aa98fda634004f849b53672fd99d362eb" prot="public" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>operator()</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a73da66520999268b1f4ab959e3e88f7b" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>pa0</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1ae7b9cd379a8725595229e746ee3fc7bd" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>pa1</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a6d96ad34dc4fe988b293ff92ee490cd8" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>pa2</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a55bf2f6073ad6b2ed96a1c749bc97156" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>pa3</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1ade46282cbdf89bfdaee9356c8b68388e" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>pa4</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1aa748173cf970c4cb97af852c58c1de02" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>pa5</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a78dfcc6b423cbaa7fb7f696a11e60627" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>pa6</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1aef9996248258427a448ac62e60e47166" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>pp0</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a1e8b4274b5556d7ec1e56b2d73c223c8" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>pp1</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a413893f22d52cea8c01ed81d174131ba" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>pp2</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a9198f351d59797934ecc8fb1e65ff7be" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>pp3</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a0b85675aca254733a080e5fc0a116e45" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>pp4</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1ad57760a18dbe7ad70a60e4b5bd43bde1" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>qa1</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a59519ac72105c5600968f25b2155277e" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>qa2</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a4722da30d3eb21a7c76681a02be89411" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>qa3</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1aa0982f59c1241c7a374e8771c67d7254" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>qa4</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a15a0bab347245311cabed2e70447c871" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>qa5</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1afeceb8218f598ff6d162aed04041c035" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>qa6</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1aae0b8bb16c73e9aa453ed92be0fcff0e" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>qq1</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a75e434869b3c1219d518fbfad4861dab" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>qq2</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a44f8849e446d5224e01493e1578708e2" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>qq3</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a94bbe0e6089178253fc3a3bdb66009ea" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>qq4</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1abb655363f9e2bc668d080c27f71d684d" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>qq5</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a2c2bb2f718befcb3a6582553bce0d2ea" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>ra0</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a9dfd295ea4d5f9f4073a01e706bf9d07" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>ra1</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1af3a340d993bcbb40a2456ea6750a9df5" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>ra2</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1af17c1336ef2602457b2e19a7db0798ee" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>ra3</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a8a911ae11065d85523021319853cc83c" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>ra4</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a36c0ba443025f7f6bc4fb08992320e84" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>ra5</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a15cd7edfa56dcc0bed2e440822baab3c" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>ra6</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1ab2ae07b83d555206f9a02b41593faed4" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>ra7</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1acaf1ea7c909d04498f624765d4403b6e" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>rb0</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1ab006ae0fc1bf81e86221f9e44ec53485" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>rb1</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1ad4295c2bc8cabe70f36e5017eb0e7bf6" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>rb2</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1aa040d5917fbbef8534229b2d59e48a4f" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>rb3</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a7edaae44779f57f63dd5f59567d5121f" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>rb4</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a590d00b8e04598df38002501950bd575" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>rb5</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1af51eed554f983a19fea1124af0352090" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>rb6</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1ae7ff8d2a8e3ef594e5e300a72a87aba4" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>sa1</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a5394a6436f255ddb7e39e3b09297b823" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>sa2</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a1b0d2c1d2ca46b877a210f3515b884b1" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>sa3</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1ae8a297f954b287dfb25192f6ac5b1cbb" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>sa4</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a1ebd52fb61943ed3f1d0f4348f25f7e9" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>sa5</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1acf9631546f2645237b8935056abc591a" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>sa6</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a840215fbc2bfbcbb17d879a3226157ed" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>sa7</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a660454704e2aaa48875c6404f24d8f11" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>sa8</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1aa6c019a6ec92d48fbd71e27716c03fd0" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>sb1</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a399e21a0e209aa0b744f60b1f3617b3e" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>sb2</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a49ab560c96be0006be7a14fde72e54e8" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>sb3</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a906ed6af690d1109a236aa8bb0d402d9" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>sb4</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1afe626401657c54f0bdeac2d37f803c65" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>sb5</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a61f488fef3c7fe0fb6bf3480128da662" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>sb6</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1ae7f28b1861b5ccee658cf9b20d1d18cc" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>sb7</name></member>
+      <member refid="classQuantLib_1_1ErrorFunction_1a5d7285bf56395a36c549a46f5d8b1281" prot="private" virt="non-virtual"><scope>QuantLib::ErrorFunction</scope><name>tiny</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

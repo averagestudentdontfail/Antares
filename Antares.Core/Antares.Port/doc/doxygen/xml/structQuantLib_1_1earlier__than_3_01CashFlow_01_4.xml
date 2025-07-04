@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structQuantLib_1_1earlier__than_3_01CashFlow_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>QuantLib::earlier_than&lt; CashFlow &gt;</compoundname>
+    <includes refid="cashflow_8hpp" local="no">cashflow.hpp</includes>
+    <templateparamlist>
+    </templateparamlist>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structQuantLib_1_1earlier__than_3_01CashFlow_01_4_1a1a73fe61f3e9e2d8c84c97972bca672a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QuantLib::earlier_than&lt; CashFlow &gt;::operator()</definition>
+        <argsstring>(const CashFlow &amp;c1, const CashFlow &amp;c2) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>QuantLib::earlier_than&lt; CashFlow &gt;::operator()</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1CashFlow" kindref="compound">CashFlow</ref> &amp;</type>
+          <declname>c1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1CashFlow" kindref="compound">CashFlow</ref> &amp;</type>
+          <declname>c2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/cashflow.hpp" line="82" column="14" bodyfile="ql/cashflow.hpp" bodystart="82" bodyend="85"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ql/cashflow.hpp" line="81" column="5" bodyfile="ql/cashflow.hpp" bodystart="81" bodyend="86"/>
+    <listofallmembers>
+      <member refid="structQuantLib_1_1earlier__than_3_01CashFlow_01_4_1a1a73fe61f3e9e2d8c84c97972bca672a" prot="public" virt="non-virtual"><scope>QuantLib::earlier_than&lt; CashFlow &gt;</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

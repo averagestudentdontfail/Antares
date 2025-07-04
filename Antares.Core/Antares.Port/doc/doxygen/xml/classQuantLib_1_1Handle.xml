@@ -1,0 +1,285 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1Handle" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::Handle</compoundname>
+    <derivedcompoundref refid="classQuantLib_1_1RelinkableHandle" prot="public" virt="non-virtual">QuantLib::RelinkableHandle&lt; QuantLib::LocalVolTermStructure &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1RelinkableHandle" prot="public" virt="non-virtual">QuantLib::RelinkableHandle&lt; T &gt;</derivedcompoundref>
+    <includes refid="handle_8hpp" local="no">handle.hpp</includes>
+    <innerclass refid="classQuantLib_1_1Handle_1_1Link" prot="protected">QuantLib::Handle::Link</innerclass>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="user-defined">
+      <header>Constructors</header>
+      <description><para><simplesect kind="warning"><para><computeroutput>registerAsObserver</computeroutput> is left as a backdoor in case the programmer cannot guarantee that the object pointed to will remain alive for the whole lifetime of the handle<mdash/>namely, it should be set to <computeroutput>false</computeroutput> when the passed shared pointer does not own the pointee (this should only happen in a controlled environment, so that the programmer is aware of it). Failure to do so can very likely result in a program crash. If the programmer does want the handle to register as observer of such a shared pointer, it is his responsibility to ensure that the handle gets destroyed before the pointed object does. </para>
+</simplesect>
+</para>
+</description>
+      <memberdef kind="function" id="classQuantLib_1_1Handle_1a552d4f5f9aff20a097ea119a97bb1807" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Handle&lt; T &gt;::Handle</definition>
+        <argsstring>()</argsstring>
+        <name>Handle</name>
+        <qualifiedname>QuantLib::Handle::Handle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/handle.hpp" line="78" column="9" bodyfile="ql/handle.hpp" bodystart="78" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Handle_1aac3c2b4574d6a4b2004919c04364bb8c" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Handle&lt; T &gt;::Handle</definition>
+        <argsstring>(const ext::shared_ptr&lt; T &gt; &amp;p, bool registerAsObserver=true)</argsstring>
+        <name>Handle</name>
+        <qualifiedname>QuantLib::Handle::Handle</qualifiedname>
+        <param>
+          <type>const ext::shared_ptr&lt; T &gt; &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>registerAsObserver</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/handle.hpp" line="80" column="18" bodyfile="ql/handle.hpp" bodystart="80" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Handle_1a4acb98146c0c4fc20487230960fe3637" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Handle&lt; T &gt;::Handle</definition>
+        <argsstring>(ext::shared_ptr&lt; T &gt; &amp;&amp;p, bool registerAsObserver=true)</argsstring>
+        <name>Handle</name>
+        <qualifiedname>QuantLib::Handle::Handle</qualifiedname>
+        <param>
+          <type>ext::shared_ptr&lt; T &gt; &amp;&amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>registerAsObserver</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/handle.hpp" line="83" column="18" bodyfile="ql/handle.hpp" bodystart="83" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Handle_1aaec4d63079c7a70267a6f3db80176e98" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const ext::shared_ptr&lt; T &gt; &amp;</type>
+        <definition>const ext::shared_ptr&lt; T &gt; &amp; QuantLib::Handle&lt; T &gt;::currentLink</definition>
+        <argsstring>() const</argsstring>
+        <name>currentLink</name>
+        <qualifiedname>QuantLib::Handle::currentLink</qualifiedname>
+        <briefdescription>
+<para>dereferencing </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/handle.hpp" line="88" column="31" bodyfile="ql/handle.hpp" bodystart="170" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Handle_1a68b12bc702ca553e5526ee5344c911d5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const ext::shared_ptr&lt; T &gt; &amp;</type>
+        <definition>const ext::shared_ptr&lt; T &gt; &amp; QuantLib::Handle&lt; T &gt;::operator-&gt;</definition>
+        <argsstring>() const</argsstring>
+        <name>operator-&gt;</name>
+        <qualifiedname>QuantLib::Handle::operator-&gt;</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/handle.hpp" line="89" column="31" bodyfile="ql/handle.hpp" bodystart="176" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Handle_1a55fad8baef8f2491d52ba1ed7db1c479" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const ext::shared_ptr&lt; T &gt; &amp;</type>
+        <definition>const ext::shared_ptr&lt; T &gt; &amp; QuantLib::Handle&lt; T &gt;::operator*</definition>
+        <argsstring>() const</argsstring>
+        <name>operator*</name>
+        <qualifiedname>QuantLib::Handle::operator*</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/handle.hpp" line="90" column="31" bodyfile="ql/handle.hpp" bodystart="182" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Handle_1ac2d6e7fa9fcb2b163c0cf80061de9da9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QuantLib::Handle&lt; T &gt;::empty</definition>
+        <argsstring>() const</argsstring>
+        <name>empty</name>
+        <qualifiedname>QuantLib::Handle::empty</qualifiedname>
+        <briefdescription>
+<para>checks if the contained shared pointer points to anything </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/handle.hpp" line="92" column="14" bodyfile="ql/handle.hpp" bodystart="188" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Handle_1a197ce6691cfe16fd889224dc7b35f713" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Handle&lt; T &gt;::operator ext::shared_ptr&lt; Observable &gt;</definition>
+        <argsstring>() const</argsstring>
+        <name>operator ext::shared_ptr&lt; Observable &gt;</name>
+        <qualifiedname>QuantLib::Handle::shared_ptr&lt; Observable &gt;</qualifiedname>
+        <briefdescription>
+<para>allows registration as observable </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/handle.hpp" line="94" column="9" bodyfile="ql/handle.hpp" bodystart="193" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Handle_1aa65f2cac21ccc76631fa9cafe3db9859" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool QuantLib::Handle&lt; T &gt;::operator==</definition>
+        <argsstring>(const Handle&lt; U &gt; &amp;other) const</argsstring>
+        <name>operator==</name>
+        <qualifiedname>QuantLib::Handle::operator==</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Handle" kindref="compound">Handle</ref>&lt; U &gt; &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>equality test </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/handle.hpp" line="97" column="14" bodyfile="ql/handle.hpp" bodystart="97" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Handle_1ab4af58d26e46c9081b2ed29659144592" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool QuantLib::Handle&lt; T &gt;::operator!=</definition>
+        <argsstring>(const Handle&lt; U &gt; &amp;other) const</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>QuantLib::Handle::operator!=</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Handle" kindref="compound">Handle</ref>&lt; U &gt; &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>disequality test </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/handle.hpp" line="100" column="14" bodyfile="ql/handle.hpp" bodystart="100" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Handle_1a5892b52bb2fd21113abd73980f8d9ecd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool QuantLib::Handle&lt; T &gt;::operator&lt;</definition>
+        <argsstring>(const Handle&lt; U &gt; &amp;other) const</argsstring>
+        <name>operator&lt;</name>
+        <qualifiedname>QuantLib::Handle::operator&lt;</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Handle" kindref="compound">Handle</ref>&lt; U &gt; &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>strict weak ordering </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/handle.hpp" line="103" column="9" bodyfile="ql/handle.hpp" bodystart="103" bodyend="103"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1Handle_1a36c6ffefb13247aad4233dea20b52238" prot="protected" static="no" mutable="no">
+        <type>ext::shared_ptr&lt; <ref refid="classQuantLib_1_1Handle_1_1Link" kindref="compound">Link</ref> &gt;</type>
+        <definition>ext::shared_ptr&lt;Link&gt; QuantLib::Handle&lt; T &gt;::link_</definition>
+        <argsstring></argsstring>
+        <name>link_</name>
+        <qualifiedname>QuantLib::Handle::link_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/handle.hpp" line="59" column="25" bodyfile="ql/handle.hpp" bodystart="59" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Shared handle to an observable. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>All copies of an instance of this class refer to the same observable by means of a relinkable smart pointer. When such pointer is relinked to another observable, the change will be propagated to all the copies.</para>
+<para><simplesect kind="pre"><para>Class T must inherit from <ref refid="classQuantLib_1_1Observable" kindref="compound">Observable</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>QuantLib::Handle&lt; T &gt;</label>
+        <link refid="classQuantLib_1_1Handle"/>
+      </node>
+      <node id="3">
+        <label>QuantLib::RelinkableHandle&lt; T &gt;</label>
+        <link refid="classQuantLib_1_1RelinkableHandle"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::RelinkableHandle&lt; QuantLib::LocalVolTermStructure &gt;</label>
+        <link refid="classQuantLib_1_1RelinkableHandle"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="ql/handle.hpp" line="41" column="5" bodyfile="ql/handle.hpp" bodystart="41" bodyend="104"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Handle_1aaec4d63079c7a70267a6f3db80176e98" prot="public" virt="non-virtual"><scope>QuantLib::Handle</scope><name>currentLink</name></member>
+      <member refid="classQuantLib_1_1Handle_1ac2d6e7fa9fcb2b163c0cf80061de9da9" prot="public" virt="non-virtual"><scope>QuantLib::Handle</scope><name>empty</name></member>
+      <member refid="classQuantLib_1_1Handle_1a552d4f5f9aff20a097ea119a97bb1807" prot="public" virt="non-virtual"><scope>QuantLib::Handle</scope><name>Handle</name></member>
+      <member refid="classQuantLib_1_1Handle_1aac3c2b4574d6a4b2004919c04364bb8c" prot="public" virt="non-virtual"><scope>QuantLib::Handle</scope><name>Handle</name></member>
+      <member refid="classQuantLib_1_1Handle_1a4acb98146c0c4fc20487230960fe3637" prot="public" virt="non-virtual"><scope>QuantLib::Handle</scope><name>Handle</name></member>
+      <member refid="classQuantLib_1_1Handle_1a36c6ffefb13247aad4233dea20b52238" prot="protected" virt="non-virtual"><scope>QuantLib::Handle</scope><name>link_</name></member>
+      <member refid="classQuantLib_1_1Handle_1a197ce6691cfe16fd889224dc7b35f713" prot="public" virt="non-virtual"><scope>QuantLib::Handle</scope><name>operator ext::shared_ptr&lt; Observable &gt;</name></member>
+      <member refid="classQuantLib_1_1Handle_1ab4af58d26e46c9081b2ed29659144592" prot="public" virt="non-virtual"><scope>QuantLib::Handle</scope><name>operator!=</name></member>
+      <member refid="classQuantLib_1_1Handle_1a55fad8baef8f2491d52ba1ed7db1c479" prot="public" virt="non-virtual"><scope>QuantLib::Handle</scope><name>operator*</name></member>
+      <member refid="classQuantLib_1_1Handle_1a68b12bc702ca553e5526ee5344c911d5" prot="public" virt="non-virtual"><scope>QuantLib::Handle</scope><name>operator-&gt;</name></member>
+      <member refid="classQuantLib_1_1Handle_1a5892b52bb2fd21113abd73980f8d9ecd" prot="public" virt="non-virtual"><scope>QuantLib::Handle</scope><name>operator&lt;</name></member>
+      <member refid="classQuantLib_1_1Handle_1aa65f2cac21ccc76631fa9cafe3db9859" prot="public" virt="non-virtual"><scope>QuantLib::Handle</scope><name>operator==</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

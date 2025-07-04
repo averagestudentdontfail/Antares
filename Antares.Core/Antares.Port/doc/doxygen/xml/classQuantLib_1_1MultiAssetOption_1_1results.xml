@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1MultiAssetOption_1_1results" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::MultiAssetOption::results</compoundname>
+    <basecompoundref refid="classQuantLib_1_1Instrument_1_1results" prot="public" virt="non-virtual">QuantLib::Instrument::results</basecompoundref>
+    <basecompoundref refid="classQuantLib_1_1Greeks" prot="public" virt="non-virtual">QuantLib::Greeks</basecompoundref>
+    <includes refid="multiassetoption_8hpp" local="no">multiassetoption.hpp</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1MultiAssetOption_1_1results_1a7d91e0b048e94a130485f4f54af0ed58" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void QuantLib::MultiAssetOption::results::reset</definition>
+        <argsstring>() override</argsstring>
+        <name>reset</name>
+        <qualifiedname>QuantLib::MultiAssetOption::results::reset</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Instrument_1_1results_1a73ca77d3032243797880c2e6462e9b73">reset</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/multiassetoption.hpp" line="67" column="14" bodyfile="ql/instruments/multiassetoption.hpp" bodystart="67" bodyend="70"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Results from multi-asset option calculation </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>QuantLib::Greeks</label>
+        <link refid="classQuantLib_1_1Greeks"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::Instrument::results</label>
+        <link refid="classQuantLib_1_1Instrument_1_1results"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::MultiAssetOption::results</label>
+        <link refid="classQuantLib_1_1MultiAssetOption_1_1results"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QuantLib::PricingEngine::results</label>
+        <link refid="classQuantLib_1_1PricingEngine_1_1results"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4">
+        <label>QuantLib::Date</label>
+        <link refid="classQuantLib_1_1Date"/>
+      </node>
+      <node id="5">
+        <label>QuantLib::Greeks</label>
+        <link refid="classQuantLib_1_1Greeks"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::Instrument::results</label>
+        <link refid="classQuantLib_1_1Instrument_1_1results"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>valuationDate</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::MultiAssetOption::results</label>
+        <link refid="classQuantLib_1_1MultiAssetOption_1_1results"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QuantLib::PricingEngine::results</label>
+        <link refid="classQuantLib_1_1PricingEngine_1_1results"/>
+      </node>
+    </collaborationgraph>
+    <location file="ql/instruments/multiassetoption.hpp" line="64" column="5" bodyfile="ql/instruments/multiassetoption.hpp" bodystart="65" bodyend="71"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Instrument_1_1results_1a5e933589fbf0e86ef38dae221a974710" prot="public" virt="non-virtual"><scope>QuantLib::MultiAssetOption::results</scope><name>additionalResults</name></member>
+      <member refid="classQuantLib_1_1Greeks_1a9656397c5df43a6ddab49893839b2906" prot="public" virt="non-virtual"><scope>QuantLib::MultiAssetOption::results</scope><name>delta</name></member>
+      <member refid="classQuantLib_1_1Greeks_1aa3493472c2d7d2d114760a62ec71fbe3" prot="public" virt="non-virtual"><scope>QuantLib::MultiAssetOption::results</scope><name>dividendRho</name></member>
+      <member refid="classQuantLib_1_1Instrument_1_1results_1ae69f4133f6f9ceb734e3094621f67dbc" prot="public" virt="non-virtual"><scope>QuantLib::MultiAssetOption::results</scope><name>errorEstimate</name></member>
+      <member refid="classQuantLib_1_1Greeks_1a2304f0c98b51064096fc577903a13e43" prot="public" virt="non-virtual"><scope>QuantLib::MultiAssetOption::results</scope><name>gamma</name></member>
+      <member refid="classQuantLib_1_1MultiAssetOption_1_1results_1a7d91e0b048e94a130485f4f54af0ed58" prot="public" virt="virtual"><scope>QuantLib::MultiAssetOption::results</scope><name>reset</name></member>
+      <member refid="classQuantLib_1_1Greeks_1a7100f8be6cc1db354c1a6ceb0b0228ce" prot="public" virt="non-virtual"><scope>QuantLib::MultiAssetOption::results</scope><name>rho</name></member>
+      <member refid="classQuantLib_1_1Greeks_1aa6727d08c27f4cd518aadbd0ba6322b3" prot="public" virt="non-virtual"><scope>QuantLib::MultiAssetOption::results</scope><name>theta</name></member>
+      <member refid="classQuantLib_1_1Instrument_1_1results_1a6c07d97b247d8eb9dada914e2a7f5661" prot="public" virt="non-virtual"><scope>QuantLib::MultiAssetOption::results</scope><name>valuationDate</name></member>
+      <member refid="classQuantLib_1_1Instrument_1_1results_1a83e6af07c17237ade11121f8ad74b4e5" prot="public" virt="non-virtual"><scope>QuantLib::MultiAssetOption::results</scope><name>value</name></member>
+      <member refid="classQuantLib_1_1Greeks_1ac31c3172936c48beb8ccb797381b0c1b" prot="public" virt="non-virtual"><scope>QuantLib::MultiAssetOption::results</scope><name>vega</name></member>
+      <member refid="classQuantLib_1_1PricingEngine_1_1results_1a8be3f1f78f755955d91d6d3217124d58" prot="public" virt="virtual"><scope>QuantLib::MultiAssetOption::results</scope><name>~results</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

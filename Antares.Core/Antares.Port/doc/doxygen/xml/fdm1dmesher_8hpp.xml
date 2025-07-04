@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="fdm1dmesher_8hpp" kind="file" language="C++">
+    <compoundname>fdm1dmesher.hpp</compoundname>
+    <includes refid="types_8hpp" local="no">ql/types.hpp</includes>
+    <includes local="no">vector</includes>
+    <includedby refid="concentrating1dmesher_8hpp" local="no">ql/methods/finitedifferences/meshers/concentrating1dmesher.hpp</includedby>
+    <includedby refid="fdmblackscholesmesher_8hpp" local="no">ql/methods/finitedifferences/meshers/fdmblackscholesmesher.hpp</includedby>
+    <includedby refid="fdmmeshercomposite_8hpp" local="no">ql/methods/finitedifferences/meshers/fdmmeshercomposite.hpp</includedby>
+    <includedby refid="uniform1dmesher_8hpp" local="no">ql/methods/finitedifferences/meshers/uniform1dmesher.hpp</includedby>
+    <incdepgraph>
+      <node id="6">
+        <label>ql/config.ansi.hpp</label>
+        <link refid="config_8ansi_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>ql/mathconstants.hpp</label>
+        <link refid="mathconstants_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ql/methods/finitedifferences/meshers/fdm1dmesher.hpp</label>
+        <link refid="fdm1dmesher_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>ql/qldefines.hpp</label>
+        <link refid="qldefines_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ql/types.hpp</label>
+        <link refid="types_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>ql/userconfig.hpp</label>
+        <link refid="userconfig_8hpp"/>
+      </node>
+      <node id="4">
+        <label>boost/config.hpp</label>
+      </node>
+      <node id="5">
+        <label>boost/version.hpp</label>
+      </node>
+      <node id="9">
+        <label>cmath</label>
+      </node>
+      <node id="11">
+        <label>cstddef</label>
+      </node>
+      <node id="10">
+        <label>limits</label>
+      </node>
+      <node id="12">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>ql/methods/finitedifferences/meshers/concentrating1dmesher.cpp</label>
+        <link refid="concentrating1dmesher_8cpp"/>
+      </node>
+      <node id="2">
+        <label>ql/methods/finitedifferences/meshers/concentrating1dmesher.hpp</label>
+        <link refid="concentrating1dmesher_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ql/methods/finitedifferences/meshers/fdm1dmesher.hpp</label>
+        <link refid="fdm1dmesher_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ql/methods/finitedifferences/meshers/fdmblackscholesmesher.cpp</label>
+        <link refid="fdmblackscholesmesher_8cpp"/>
+      </node>
+      <node id="5">
+        <label>ql/methods/finitedifferences/meshers/fdmblackscholesmesher.hpp</label>
+        <link refid="fdmblackscholesmesher_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>ql/methods/finitedifferences/meshers/fdmmeshercomposite.cpp</label>
+        <link refid="fdmmeshercomposite_8cpp"/>
+      </node>
+      <node id="7">
+        <label>ql/methods/finitedifferences/meshers/fdmmeshercomposite.hpp</label>
+        <link refid="fdmmeshercomposite_8hpp"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>ql/methods/finitedifferences/meshers/uniform1dmesher.hpp</label>
+        <link refid="uniform1dmesher_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>ql/pricingengines/vanilla/fdblackscholesvanillaengine.cpp</label>
+        <link refid="fdblackscholesvanillaengine_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classQuantLib_1_1Fdm1dMesher" prot="public">QuantLib::Fdm1dMesher</innerclass>
+    <innernamespace refid="namespaceQuantLib">QuantLib</innernamespace>
+    <briefdescription>
+<para>One-dimensional simple FDM mesher object working on an index. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>c++;<sp/>tab-width:<sp/>4;<sp/>indent-tabs-mode:<sp/>nil;<sp/>c-basic-offset:<sp/>4<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2008<sp/>Andreas<sp/>Gaida</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2008<sp/>Ralph<sp/>Schreyer</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2008<sp/>Klaus<sp/>Spanderen</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>QuantLib,<sp/>a<sp/>free-software/open-source<sp/>library</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>for<sp/>financial<sp/>quantitative<sp/>analysts<sp/>and<sp/>developers<sp/>-<sp/>http://quantlib.org/</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"></highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>QuantLib<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>QuantLib<sp/>license.<sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>copy<sp/>of<sp/>the<sp/>license<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>please<sp/>email</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>&lt;quantlib-dev@lists.sf.net&gt;.<sp/>The<sp/>license<sp/>is<sp/>also<sp/>available<sp/>online<sp/>at</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>&lt;http://quantlib.org/license.shtml&gt;.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"></highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the<sp/>license<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>quantlib_fdm_1d_mesher_hpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>quantlib_fdm_1d_mesher_hpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="types_8hpp" kindref="compound">ql/types.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceQuantLib" kindref="compound">QuantLib</ref><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="classQuantLib_1_1Fdm1dMesher" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classQuantLib_1_1Fdm1dMesher" kindref="compound">Fdm1dMesher</ref><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="36" refid="classQuantLib_1_1Fdm1dMesher_1a5367680ba14e2c946b344ca75c73d0bd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Fdm1dMesher_1a5367680ba14e2c946b344ca75c73d0bd" kindref="member">Fdm1dMesher</ref>(<ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref><sp/><ref refid="classQuantLib_1_1Fdm1dMesher_1aabe033deb1598c0d78fef55bded13204" kindref="member">size</ref>)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="classQuantLib_1_1Fdm1dMesher_1a10c310f04a295d8e8f59b9184a099398" kindref="member">locations_</ref>(<ref refid="classQuantLib_1_1Fdm1dMesher_1aabe033deb1598c0d78fef55bded13204" kindref="member">size</ref>),<sp/><ref refid="classQuantLib_1_1Fdm1dMesher_1af98e56b199e717effdde88076177901c" kindref="member">dplus_</ref>(<ref refid="classQuantLib_1_1Fdm1dMesher_1aabe033deb1598c0d78fef55bded13204" kindref="member">size</ref>),<sp/><ref refid="classQuantLib_1_1Fdm1dMesher_1a663945077bed74ac77aa9263e72daa86" kindref="member">dminus_</ref>(<ref refid="classQuantLib_1_1Fdm1dMesher_1aabe033deb1598c0d78fef55bded13204" kindref="member">size</ref>)<sp/>{}</highlight></codeline>
+<codeline lineno="38" refid="classQuantLib_1_1Fdm1dMesher_1a7ac7413653e669b7976f5419a147a67b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Fdm1dMesher_1a7ac7413653e669b7976f5419a147a67b" kindref="member">~Fdm1dMesher</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="classQuantLib_1_1Fdm1dMesher_1aabe033deb1598c0d78fef55bded13204" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref><sp/><ref refid="classQuantLib_1_1Fdm1dMesher_1aabe033deb1598c0d78fef55bded13204" kindref="member">size</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Fdm1dMesher_1a10c310f04a295d8e8f59b9184a099398" kindref="member">locations_</ref>.size();<sp/>}</highlight></codeline>
+<codeline lineno="41" refid="classQuantLib_1_1Fdm1dMesher_1ae12ae1bbc510c8ba6b41ec96efdb3073" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1Fdm1dMesher_1ae12ae1bbc510c8ba6b41ec96efdb3073" kindref="member">dplus</ref>(<ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref><sp/>index)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Fdm1dMesher_1af98e56b199e717effdde88076177901c" kindref="member">dplus_</ref>[index];}</highlight></codeline>
+<codeline lineno="42" refid="classQuantLib_1_1Fdm1dMesher_1af6a6b40f4c404b3198995ce20590a410" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1Fdm1dMesher_1af6a6b40f4c404b3198995ce20590a410" kindref="member">dminus</ref>(<ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref><sp/>index)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Fdm1dMesher_1a663945077bed74ac77aa9263e72daa86" kindref="member">dminus_</ref>[index];}</highlight></codeline>
+<codeline lineno="43" refid="classQuantLib_1_1Fdm1dMesher_1aaa56294b3e4aa5e814c6e32a748ecd2f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1Fdm1dMesher_1aaa56294b3e4aa5e814c6e32a748ecd2f" kindref="member">location</ref>(<ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref><sp/>index)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Fdm1dMesher_1a10c310f04a295d8e8f59b9184a099398" kindref="member">locations_</ref>[index];}</highlight></codeline>
+<codeline lineno="44" refid="classQuantLib_1_1Fdm1dMesher_1a0dfdfea910ddf7c11fdf33cbe95e71d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;Real&gt;&amp;<sp/><ref refid="classQuantLib_1_1Fdm1dMesher_1a0dfdfea910ddf7c11fdf33cbe95e71d7" kindref="member">locations</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Fdm1dMesher_1a10c310f04a295d8e8f59b9184a099398" kindref="member">locations_</ref>;}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="47" refid="classQuantLib_1_1Fdm1dMesher_1a10c310f04a295d8e8f59b9184a099398" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;Real&gt;<sp/><ref refid="classQuantLib_1_1Fdm1dMesher_1a10c310f04a295d8e8f59b9184a099398" kindref="member">locations_</ref>;</highlight></codeline>
+<codeline lineno="48" refid="classQuantLib_1_1Fdm1dMesher_1a663945077bed74ac77aa9263e72daa86" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;Real&gt;<sp/><ref refid="classQuantLib_1_1Fdm1dMesher_1af98e56b199e717effdde88076177901c" kindref="member">dplus_</ref>,<sp/><ref refid="classQuantLib_1_1Fdm1dMesher_1a663945077bed74ac77aa9263e72daa86" kindref="member">dminus_</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="ql/methods/finitedifferences/meshers/fdm1dmesher.hpp"/>
+  </compounddef>
+</doxygen>

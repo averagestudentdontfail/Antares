@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1SavedSettings" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::SavedSettings</compoundname>
+    <includes refid="settings_8hpp" local="no">settings.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1SavedSettings_1a1d81a70170606ef50d73348bfd560714" prot="private" static="no" mutable="no">
+        <type><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref></type>
+        <definition>Date QuantLib::SavedSettings::evaluationDate_</definition>
+        <argsstring></argsstring>
+        <name>evaluationDate_</name>
+        <qualifiedname>QuantLib::SavedSettings::evaluationDate_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/settings.hpp" line="125" column="14" bodyfile="ql/settings.hpp" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1SavedSettings_1acf1a2517eaf973f6e2d8ee07f8e01a29" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool QuantLib::SavedSettings::includeReferenceDateEvents_</definition>
+        <argsstring></argsstring>
+        <name>includeReferenceDateEvents_</name>
+        <qualifiedname>QuantLib::SavedSettings::includeReferenceDateEvents_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/settings.hpp" line="126" column="14" bodyfile="ql/settings.hpp" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1SavedSettings_1a8b0b355c9bea124fcbc5c1373bcc6ca8" prot="private" static="no" mutable="no">
+        <type>ext::optional&lt; bool &gt;</type>
+        <definition>ext::optional&lt;bool&gt; QuantLib::SavedSettings::includeTodaysCashFlows_</definition>
+        <argsstring></argsstring>
+        <name>includeTodaysCashFlows_</name>
+        <qualifiedname>QuantLib::SavedSettings::includeTodaysCashFlows_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/settings.hpp" line="127" column="23" bodyfile="ql/settings.hpp" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1SavedSettings_1a875d7f7c1c2fc9215b9a0d3bd80ae172" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool QuantLib::SavedSettings::enforcesTodaysHistoricFixings_</definition>
+        <argsstring></argsstring>
+        <name>enforcesTodaysHistoricFixings_</name>
+        <qualifiedname>QuantLib::SavedSettings::enforcesTodaysHistoricFixings_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/settings.hpp" line="128" column="14" bodyfile="ql/settings.hpp" bodystart="128" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1SavedSettings_1aeab952bd3d18a658eec04edf789ec092" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::SavedSettings::SavedSettings</definition>
+        <argsstring>()</argsstring>
+        <name>SavedSettings</name>
+        <qualifiedname>QuantLib::SavedSettings::SavedSettings</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/settings.hpp" line="122" column="9" bodyfile="ql/settings.cpp" bodystart="49" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1SavedSettings_1a59cff32ab26a0e319a5259c2123ea78a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::SavedSettings::~SavedSettings</definition>
+        <argsstring>()</argsstring>
+        <name>~SavedSettings</name>
+        <qualifiedname>QuantLib::SavedSettings::~SavedSettings</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/settings.hpp" line="123" column="9" bodyfile="ql/settings.cpp" bodystart="55" bodyend="68"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>QuantLib::Date</label>
+        <link refid="classQuantLib_1_1Date"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::SavedSettings</label>
+        <link refid="classQuantLib_1_1SavedSettings"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>evaluationDate_</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/settings.hpp" line="120" column="5" bodyfile="ql/settings.hpp" bodystart="120" bodyend="129"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1SavedSettings_1a875d7f7c1c2fc9215b9a0d3bd80ae172" prot="private" virt="non-virtual"><scope>QuantLib::SavedSettings</scope><name>enforcesTodaysHistoricFixings_</name></member>
+      <member refid="classQuantLib_1_1SavedSettings_1a1d81a70170606ef50d73348bfd560714" prot="private" virt="non-virtual"><scope>QuantLib::SavedSettings</scope><name>evaluationDate_</name></member>
+      <member refid="classQuantLib_1_1SavedSettings_1acf1a2517eaf973f6e2d8ee07f8e01a29" prot="private" virt="non-virtual"><scope>QuantLib::SavedSettings</scope><name>includeReferenceDateEvents_</name></member>
+      <member refid="classQuantLib_1_1SavedSettings_1a8b0b355c9bea124fcbc5c1373bcc6ca8" prot="private" virt="non-virtual"><scope>QuantLib::SavedSettings</scope><name>includeTodaysCashFlows_</name></member>
+      <member refid="classQuantLib_1_1SavedSettings_1aeab952bd3d18a658eec04edf789ec092" prot="public" virt="non-virtual"><scope>QuantLib::SavedSettings</scope><name>SavedSettings</name></member>
+      <member refid="classQuantLib_1_1SavedSettings_1a59cff32ab26a0e319a5259c2123ea78a" prot="public" virt="non-virtual"><scope>QuantLib::SavedSettings</scope><name>~SavedSettings</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

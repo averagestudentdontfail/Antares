@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1Actual365Fixed" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::Actual365Fixed</compoundname>
+    <basecompoundref refid="classQuantLib_1_1DayCounter" prot="public" virt="non-virtual">QuantLib::DayCounter</basecompoundref>
+    <includes refid="actual365fixed_8hpp" local="no">actual365fixed.hpp</includes>
+    <innerclass refid="classQuantLib_1_1Actual365Fixed_1_1CA__Impl" prot="private">QuantLib::Actual365Fixed::CA_Impl</innerclass>
+    <innerclass refid="classQuantLib_1_1Actual365Fixed_1_1Impl" prot="private">QuantLib::Actual365Fixed::Impl</innerclass>
+    <innerclass refid="classQuantLib_1_1Actual365Fixed_1_1NL__Impl" prot="private">QuantLib::Actual365Fixed::NL_Impl</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classQuantLib_1_1Actual365Fixed_1af4d948643f7e62e696d6cfc8a1a0611c" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Convention</name>
+        <qualifiedname>QuantLib::Actual365Fixed::Convention</qualifiedname>
+        <enumvalue id="classQuantLib_1_1Actual365Fixed_1af4d948643f7e62e696d6cfc8a1a0611ca4f32dd429ee7f02cf0002f23bdbb6250" prot="public">
+          <name>Standard</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classQuantLib_1_1Actual365Fixed_1af4d948643f7e62e696d6cfc8a1a0611cab85512ac16dd04b50602eb345ea7a16d" prot="public">
+          <name>Canadian</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classQuantLib_1_1Actual365Fixed_1af4d948643f7e62e696d6cfc8a1a0611ca36cd8236dcc98f3507d20af9e8fa3213" prot="public">
+          <name>NoLeap</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/daycounters/actual365fixed.hpp" line="47" column="9" bodyfile="ql/time/daycounters/actual365fixed.hpp" bodystart="47" bodyend="47"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1Actual365Fixed_1af4d9ca374c168253bb5a7dff61db5aa2" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Actual365Fixed::Actual365Fixed</definition>
+        <argsstring>(Convention c=Actual365Fixed::Standard)</argsstring>
+        <name>Actual365Fixed</name>
+        <qualifiedname>QuantLib::Actual365Fixed::Actual365Fixed</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Actual365Fixed_1af4d948643f7e62e696d6cfc8a1a0611c" kindref="member">Convention</ref></type>
+          <declname>c</declname>
+          <defval><ref refid="classQuantLib_1_1Actual365Fixed_1af4d948643f7e62e696d6cfc8a1a0611ca4f32dd429ee7f02cf0002f23bdbb6250" kindref="member">Actual365Fixed::Standard</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/daycounters/actual365fixed.hpp" line="48" column="18" bodyfile="ql/time/daycounters/actual365fixed.hpp" bodystart="48" bodyend="49"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classQuantLib_1_1Actual365Fixed_1a0878b0afd931efc3fcfd44b07a2ef9ed" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ext::shared_ptr&lt; <ref refid="classQuantLib_1_1DayCounter_1_1Impl" kindref="compound">DayCounter::Impl</ref> &gt;</type>
+        <definition>ext::shared_ptr&lt; DayCounter::Impl &gt; QuantLib::Actual365Fixed::implementation</definition>
+        <argsstring>(Convention)</argsstring>
+        <name>implementation</name>
+        <qualifiedname>QuantLib::Actual365Fixed::implementation</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Actual365Fixed_1af4d948643f7e62e696d6cfc8a1a0611c" kindref="member">Convention</ref></type>
+          <defname>c</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/daycounters/actual365fixed.hpp" line="79" column="32" bodyfile="ql/time/daycounters/actual365fixed.cpp" bodystart="27" bodyend="38"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Actual/365 (Fixed) day count convention. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>&quot;Actual/365 (Fixed)&quot; day count convention, also know as &quot;Act/365 (Fixed)&quot;, &quot;A/365 (Fixed)&quot;, or &quot;A/365F&quot;.</para>
+<para><simplesect kind="warning"><para>According to ISDA, &quot;Actual/365&quot; (without &quot;Fixed&quot;) is an alias for &quot;Actual/Actual (ISDA)&quot; (see ActualActual.) If Actual/365 is not explicitly specified as fixed in an instrument specification, you might want to double-check its meaning. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>QuantLib::Actual365Fixed</label>
+        <link refid="classQuantLib_1_1Actual365Fixed"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::DayCounter</label>
+        <link refid="classQuantLib_1_1DayCounter"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>QuantLib::Actual365Fixed</label>
+        <link refid="classQuantLib_1_1Actual365Fixed"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::DayCounter</label>
+        <link refid="classQuantLib_1_1DayCounter"/>
+      </node>
+    </collaborationgraph>
+    <location file="ql/time/daycounters/actual365fixed.hpp" line="45" column="5" bodyfile="ql/time/daycounters/actual365fixed.hpp" bodystart="45" bodyend="80"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Actual365Fixed_1af4d9ca374c168253bb5a7dff61db5aa2" prot="public" virt="non-virtual"><scope>QuantLib::Actual365Fixed</scope><name>Actual365Fixed</name></member>
+      <member refid="classQuantLib_1_1Actual365Fixed_1af4d948643f7e62e696d6cfc8a1a0611cab85512ac16dd04b50602eb345ea7a16d" prot="public" virt="non-virtual"><scope>QuantLib::Actual365Fixed</scope><name>Canadian</name></member>
+      <member refid="classQuantLib_1_1Actual365Fixed_1af4d948643f7e62e696d6cfc8a1a0611c" prot="public" virt="non-virtual"><scope>QuantLib::Actual365Fixed</scope><name>Convention</name></member>
+      <member refid="classQuantLib_1_1DayCounter_1ac4d0939293ac952b303cfff3067d8a98" prot="public" virt="non-virtual"><scope>QuantLib::Actual365Fixed</scope><name>dayCount</name></member>
+      <member refid="classQuantLib_1_1DayCounter_1a33fb22764180cf6d2e0d742baab4c4f8" prot="protected" virt="non-virtual"><scope>QuantLib::Actual365Fixed</scope><name>DayCounter</name></member>
+      <member refid="classQuantLib_1_1DayCounter_1a927907cb2ecf717e0333e872409c8cc5" prot="public" virt="non-virtual"><scope>QuantLib::Actual365Fixed</scope><name>DayCounter</name></member>
+      <member refid="classQuantLib_1_1DayCounter_1aa93127c3659fb7e50c3a5dba4ac29e22" prot="public" virt="non-virtual"><scope>QuantLib::Actual365Fixed</scope><name>empty</name></member>
+      <member refid="classQuantLib_1_1DayCounter_1a2603e8f7ab754d452a100b5056e39b45" prot="protected" virt="non-virtual"><scope>QuantLib::Actual365Fixed</scope><name>impl_</name></member>
+      <member refid="classQuantLib_1_1Actual365Fixed_1a0878b0afd931efc3fcfd44b07a2ef9ed" prot="private" virt="non-virtual"><scope>QuantLib::Actual365Fixed</scope><name>implementation</name></member>
+      <member refid="classQuantLib_1_1DayCounter_1aeae54209119ab35b4a69290b454be828" prot="public" virt="non-virtual"><scope>QuantLib::Actual365Fixed</scope><name>name</name></member>
+      <member refid="classQuantLib_1_1Actual365Fixed_1af4d948643f7e62e696d6cfc8a1a0611ca36cd8236dcc98f3507d20af9e8fa3213" prot="public" virt="non-virtual"><scope>QuantLib::Actual365Fixed</scope><name>NoLeap</name></member>
+      <member refid="classQuantLib_1_1DayCounter_1a0f7511e2a309e1588a2f300def9b495c" prot="public" virt="non-virtual"><scope>QuantLib::Actual365Fixed</scope><name>operator!=</name></member>
+      <member refid="classQuantLib_1_1DayCounter_1a68dd78dd1968d9b0c1d0702a6f3be500" prot="public" virt="non-virtual"><scope>QuantLib::Actual365Fixed</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classQuantLib_1_1DayCounter_1acbca520b46832e1a53e72053c233692c" prot="public" virt="non-virtual"><scope>QuantLib::Actual365Fixed</scope><name>operator==</name></member>
+      <member refid="classQuantLib_1_1Actual365Fixed_1af4d948643f7e62e696d6cfc8a1a0611ca4f32dd429ee7f02cf0002f23bdbb6250" prot="public" virt="non-virtual"><scope>QuantLib::Actual365Fixed</scope><name>Standard</name></member>
+      <member refid="classQuantLib_1_1DayCounter_1ae714645789e0daadefad81c135c03ffe" prot="public" virt="non-virtual"><scope>QuantLib::Actual365Fixed</scope><name>yearFraction</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

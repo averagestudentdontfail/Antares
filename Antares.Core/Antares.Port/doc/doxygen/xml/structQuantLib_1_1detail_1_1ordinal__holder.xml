@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structQuantLib_1_1detail_1_1ordinal__holder" kind="struct" language="C++" prot="public">
+    <compoundname>QuantLib::detail::ordinal_holder</compoundname>
+    <includes refid="dataformatters_8hpp" local="no">dataformatters.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structQuantLib_1_1detail_1_1ordinal__holder_1a9850f1ba4129fa6538046e0f23b29374" prot="public" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+        <definition>Size QuantLib::detail::ordinal_holder::n</definition>
+        <argsstring></argsstring>
+        <name>n</name>
+        <qualifiedname>QuantLib::detail::ordinal_holder::n</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/utilities/dataformatters.hpp" line="43" column="18" bodyfile="ql/utilities/dataformatters.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structQuantLib_1_1detail_1_1ordinal__holder_1a851bd9e440825e7ff117109ffc0405ce" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::detail::ordinal_holder::ordinal_holder</definition>
+        <argsstring>(Size n)</argsstring>
+        <name>ordinal_holder</name>
+        <qualifiedname>QuantLib::detail::ordinal_holder::ordinal_holder</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/utilities/dataformatters.hpp" line="42" column="22" bodyfile="ql/utilities/dataformatters.hpp" bodystart="42" bodyend="42"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ql/utilities/dataformatters.hpp" line="41" column="9" bodyfile="ql/utilities/dataformatters.hpp" bodystart="41" bodyend="44"/>
+    <listofallmembers>
+      <member refid="structQuantLib_1_1detail_1_1ordinal__holder_1a9850f1ba4129fa6538046e0f23b29374" prot="public" virt="non-virtual"><scope>QuantLib::detail::ordinal_holder</scope><name>n</name></member>
+      <member refid="structQuantLib_1_1detail_1_1ordinal__holder_1a851bd9e440825e7ff117109ffc0405ce" prot="public" virt="non-virtual"><scope>QuantLib::detail::ordinal_holder</scope><name>ordinal_holder</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

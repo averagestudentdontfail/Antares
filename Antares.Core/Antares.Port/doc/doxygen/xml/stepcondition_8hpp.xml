@@ -1,0 +1,739 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="stepcondition_8hpp" kind="file" language="C++">
+    <compoundname>stepcondition.hpp</compoundname>
+    <includes refid="array_8hpp" local="no">ql/math/array.hpp</includes>
+    <includes refid="payoffs_8hpp" local="no">ql/instruments/payoffs.hpp</includes>
+    <includedby refid="finitedifferencemodel_8hpp" local="no">ql/methods/finitedifferences/finitedifferencemodel.hpp</includedby>
+    <includedby refid="operatortraits_8hpp" local="no">ql/methods/finitedifferences/operatortraits.hpp</includedby>
+    <includedby refid="fdmamericanstepcondition_8hpp" local="no">ql/methods/finitedifferences/stepconditions/fdmamericanstepcondition.hpp</includedby>
+    <includedby refid="fdmbermudanstepcondition_8hpp" local="no">ql/methods/finitedifferences/stepconditions/fdmbermudanstepcondition.hpp</includedby>
+    <includedby refid="fdmsnapshotcondition_8hpp" local="no">ql/methods/finitedifferences/stepconditions/fdmsnapshotcondition.hpp</includedby>
+    <includedby refid="fdmstepconditioncomposite_8hpp" local="no">ql/methods/finitedifferences/stepconditions/fdmstepconditioncomposite.hpp</includedby>
+    <includedby refid="fdmdividendhandler_8hpp" local="no">ql/methods/finitedifferences/utilities/fdmdividendhandler.hpp</includedby>
+    <incdepgraph>
+      <node id="49">
+        <label>ql/any.hpp</label>
+        <link refid="any_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>ql/config.ansi.hpp</label>
+        <link refid="config_8ansi_8hpp"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>ql/errors.hpp</label>
+        <link refid="errors_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>ql/instrument.hpp</label>
+        <link refid="instrument_8hpp"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>ql/instruments/payoffs.hpp</label>
+        <link refid="payoffs_8hpp"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ql/math/array.hpp</label>
+        <link refid="array_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>ql/mathconstants.hpp</label>
+        <link refid="mathconstants_8hpp"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ql/methods/finitedifferences/stepcondition.hpp</label>
+        <link refid="stepcondition_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>ql/option.hpp</label>
+        <link refid="option_8hpp"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>ql/patterns/lazyobject.hpp</label>
+        <link refid="lazyobject_8hpp"/>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>ql/patterns/observable.hpp</label>
+        <link refid="observable_8hpp"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>ql/patterns/singleton.hpp</label>
+        <link refid="singleton_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>ql/patterns/visitor.hpp</label>
+        <link refid="visitor_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>ql/payoff.hpp</label>
+        <link refid="payoff_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>ql/pricingengine.hpp</label>
+        <link refid="pricingengine_8hpp"/>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ql/qldefines.hpp</label>
+        <link refid="qldefines_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>ql/shared_ptr.hpp</label>
+        <link refid="shared__ptr_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>ql/time/date.hpp</label>
+        <link refid="date_8hpp"/>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>ql/time/frequency.hpp</label>
+        <link refid="frequency_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>ql/time/period.hpp</label>
+        <link refid="period_8hpp"/>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>ql/time/timeunit.hpp</label>
+        <link refid="timeunit_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>ql/time/weekday.hpp</label>
+        <link refid="weekday_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>ql/types.hpp</label>
+        <link refid="types_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>ql/userconfig.hpp</label>
+        <link refid="userconfig_8hpp"/>
+      </node>
+      <node id="23">
+        <label>ql/utilities/null.hpp</label>
+        <link refid="null_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>algorithm</label>
+      </node>
+      <node id="50">
+        <label>any</label>
+      </node>
+      <node id="18">
+        <label>boost/assert.hpp</label>
+      </node>
+      <node id="5">
+        <label>boost/config.hpp</label>
+      </node>
+      <node id="19">
+        <label>boost/current_function.hpp</label>
+      </node>
+      <node id="17">
+        <label>boost/enable_shared_from_this.hpp</label>
+      </node>
+      <node id="16">
+        <label>boost/make_shared.hpp</label>
+      </node>
+      <node id="15">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="6">
+        <label>boost/version.hpp</label>
+      </node>
+      <node id="10">
+        <label>cmath</label>
+      </node>
+      <node id="12">
+        <label>cstddef</label>
+      </node>
+      <node id="47">
+        <label>cstdint</label>
+      </node>
+      <node id="20">
+        <label>exception</label>
+      </node>
+      <node id="26">
+        <label>functional</label>
+      </node>
+      <node id="30">
+        <label>initializer_list</label>
+      </node>
+      <node id="31">
+        <label>iomanip</label>
+      </node>
+      <node id="44">
+        <label>iosfwd</label>
+      </node>
+      <node id="25">
+        <label>iterator</label>
+      </node>
+      <node id="11">
+        <label>limits</label>
+      </node>
+      <node id="51">
+        <label>map</label>
+      </node>
+      <node id="32">
+        <label>memory</label>
+      </node>
+      <node id="28">
+        <label>numeric</label>
+      </node>
+      <node id="39">
+        <label>set</label>
+      </node>
+      <node id="21">
+        <label>sstream</label>
+      </node>
+      <node id="22">
+        <label>string</label>
+      </node>
+      <node id="24">
+        <label>type_traits</label>
+      </node>
+      <node id="48">
+        <label>utility</label>
+      </node>
+      <node id="29">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="31">
+        <label>ql/instruments/vanillaoption.cpp</label>
+        <link refid="vanillaoption_8cpp"/>
+      </node>
+      <node id="2">
+        <label>ql/methods/finitedifferences/finitedifferencemodel.hpp</label>
+        <link refid="finitedifferencemodel_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>ql/methods/finitedifferences/operatortraits.hpp</label>
+        <link refid="operatortraits_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>ql/methods/finitedifferences/schemes/boundaryconditionschemehelper.hpp</label>
+        <link refid="boundaryconditionschemehelper_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>ql/methods/finitedifferences/schemes/craigsneydscheme.cpp</label>
+        <link refid="craigsneydscheme_8cpp"/>
+      </node>
+      <node id="6">
+        <label>ql/methods/finitedifferences/schemes/craigsneydscheme.hpp</label>
+        <link refid="craigsneydscheme_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>ql/methods/finitedifferences/schemes/cranknicolsonscheme.cpp</label>
+        <link refid="cranknicolsonscheme_8cpp"/>
+      </node>
+      <node id="16">
+        <label>ql/methods/finitedifferences/schemes/cranknicolsonscheme.hpp</label>
+        <link refid="cranknicolsonscheme_8hpp"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>ql/methods/finitedifferences/schemes/douglasscheme.cpp</label>
+        <link refid="douglasscheme_8cpp"/>
+      </node>
+      <node id="8">
+        <label>ql/methods/finitedifferences/schemes/douglasscheme.hpp</label>
+        <link refid="douglasscheme_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>ql/methods/finitedifferences/schemes/expliciteulerscheme.cpp</label>
+        <link refid="expliciteulerscheme_8cpp"/>
+      </node>
+      <node id="10">
+        <label>ql/methods/finitedifferences/schemes/expliciteulerscheme.hpp</label>
+        <link refid="expliciteulerscheme_8hpp"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>ql/methods/finitedifferences/schemes/hundsdorferscheme.cpp</label>
+        <link refid="hundsdorferscheme_8cpp"/>
+      </node>
+      <node id="13">
+        <label>ql/methods/finitedifferences/schemes/hundsdorferscheme.hpp</label>
+        <link refid="hundsdorferscheme_8hpp"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>ql/methods/finitedifferences/schemes/impliciteulerscheme.cpp</label>
+        <link refid="impliciteulerscheme_8cpp"/>
+      </node>
+      <node id="15">
+        <label>ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp</label>
+        <link refid="impliciteulerscheme_8hpp"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>ql/methods/finitedifferences/schemes/methodoflinesscheme.cpp</label>
+        <link refid="methodoflinesscheme_8cpp"/>
+      </node>
+      <node id="18">
+        <label>ql/methods/finitedifferences/schemes/methodoflinesscheme.hpp</label>
+        <link refid="methodoflinesscheme_8hpp"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>ql/methods/finitedifferences/schemes/modifiedcraigsneydscheme.cpp</label>
+        <link refid="modifiedcraigsneydscheme_8cpp"/>
+      </node>
+      <node id="20">
+        <label>ql/methods/finitedifferences/schemes/modifiedcraigsneydscheme.hpp</label>
+        <link refid="modifiedcraigsneydscheme_8hpp"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>ql/methods/finitedifferences/schemes/trbdf2scheme.hpp</label>
+        <link refid="trbdf2scheme_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>ql/methods/finitedifferences/solvers/fdm1dimsolver.cpp</label>
+        <link refid="fdm1dimsolver_8cpp"/>
+      </node>
+      <node id="26">
+        <label>ql/methods/finitedifferences/solvers/fdm1dimsolver.hpp</label>
+        <link refid="fdm1dimsolver_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ql/methods/finitedifferences/solvers/fdmbackwardsolver.cpp</label>
+        <link refid="fdmbackwardsolver_8cpp"/>
+      </node>
+      <node id="25">
+        <label>ql/methods/finitedifferences/solvers/fdmbackwardsolver.hpp</label>
+        <link refid="fdmbackwardsolver_8hpp"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>ql/methods/finitedifferences/solvers/fdmblackscholessolver.cpp</label>
+        <link refid="fdmblackscholessolver_8cpp"/>
+      </node>
+      <node id="28">
+        <label>ql/methods/finitedifferences/solvers/fdmblackscholessolver.hpp</label>
+        <link refid="fdmblackscholessolver_8hpp"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>ql/methods/finitedifferences/solvers/fdmsolverdesc.hpp</label>
+        <link refid="fdmsolverdesc_8hpp"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ql/methods/finitedifferences/stepcondition.hpp</label>
+        <link refid="stepcondition_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>ql/methods/finitedifferences/stepconditions/fdmamericanstepcondition.cpp</label>
+        <link refid="fdmamericanstepcondition_8cpp"/>
+      </node>
+      <node id="33">
+        <label>ql/methods/finitedifferences/stepconditions/fdmamericanstepcondition.hpp</label>
+        <link refid="fdmamericanstepcondition_8hpp"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>ql/methods/finitedifferences/stepconditions/fdmbermudanstepcondition.cpp</label>
+        <link refid="fdmbermudanstepcondition_8cpp"/>
+      </node>
+      <node id="36">
+        <label>ql/methods/finitedifferences/stepconditions/fdmbermudanstepcondition.hpp</label>
+        <link refid="fdmbermudanstepcondition_8hpp"/>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>ql/methods/finitedifferences/stepconditions/fdmsnapshotcondition.cpp</label>
+        <link refid="fdmsnapshotcondition_8cpp"/>
+      </node>
+      <node id="38">
+        <label>ql/methods/finitedifferences/stepconditions/fdmsnapshotcondition.hpp</label>
+        <link refid="fdmsnapshotcondition_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>ql/methods/finitedifferences/stepconditions/fdmstepconditioncomposite.cpp</label>
+        <link refid="fdmstepconditioncomposite_8cpp"/>
+      </node>
+      <node id="40">
+        <label>ql/methods/finitedifferences/stepconditions/fdmstepconditioncomposite.hpp</label>
+        <link refid="fdmstepconditioncomposite_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>ql/methods/finitedifferences/utilities/fdmboundaryconditionset.hpp</label>
+        <link refid="fdmboundaryconditionset_8hpp"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>ql/methods/finitedifferences/utilities/fdmdividendhandler.cpp</label>
+        <link refid="fdmdividendhandler_8cpp"/>
+      </node>
+      <node id="41">
+        <label>ql/methods/finitedifferences/utilities/fdmdividendhandler.hpp</label>
+        <link refid="fdmdividendhandler_8hpp"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>ql/pricingengines/vanilla/fdblackscholesvanillaengine.cpp</label>
+        <link refid="fdblackscholesvanillaengine_8cpp"/>
+      </node>
+      <node id="30">
+        <label>ql/pricingengines/vanilla/fdblackscholesvanillaengine.hpp</label>
+        <link refid="fdblackscholesvanillaengine_8hpp"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classQuantLib_1_1StepCondition" prot="public">QuantLib::StepCondition</innerclass>
+    <innerclass refid="classQuantLib_1_1NullCondition" prot="public">QuantLib::NullCondition</innerclass>
+    <innernamespace refid="namespaceQuantLib">QuantLib</innernamespace>
+    <briefdescription>
+<para>conditions to be applied at every time step </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>c++;<sp/>tab-width:<sp/>4;<sp/>indent-tabs-mode:<sp/>nil;<sp/>c-basic-offset:<sp/>4<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2000,<sp/>2001,<sp/>2002,<sp/>2003<sp/>RiskMap<sp/>srl</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>QuantLib,<sp/>a<sp/>free-software/open-source<sp/>library</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>for<sp/>financial<sp/>quantitative<sp/>analysts<sp/>and<sp/>developers<sp/>-<sp/>http://quantlib.org/</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>QuantLib<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>QuantLib<sp/>license.<sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>copy<sp/>of<sp/>the<sp/>license<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>please<sp/>email</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>&lt;quantlib-dev@lists.sf.net&gt;.<sp/>The<sp/>license<sp/>is<sp/>also<sp/>available<sp/>online<sp/>at</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>&lt;http://quantlib.org/license.shtml&gt;.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"></highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the<sp/>license<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>quantlib_step_condition_hpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>quantlib_step_condition_hpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="array_8hpp" kindref="compound">ql/math/array.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="payoffs_8hpp" kindref="compound">ql/instruments/payoffs.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceQuantLib" kindref="compound">QuantLib</ref><sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>array_type&gt;</highlight></codeline>
+<codeline lineno="35" refid="classQuantLib_1_1StepCondition" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classQuantLib_1_1StepCondition" kindref="compound">StepCondition</ref><sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="37" refid="classQuantLib_1_1StepCondition_1a0867129678b1b4ae02e4d5630ee598ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1StepCondition_1a0867129678b1b4ae02e4d5630ee598ac" kindref="member">~StepCondition</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38" refid="classQuantLib_1_1StepCondition_1afff61b9eaacd16620791a39dd69b90bb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1StepCondition_1afff61b9eaacd16620791a39dd69b90bb" kindref="member">applyTo</ref>(array_type&amp;<sp/>a,<sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>t)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>array_type&gt;</highlight></codeline>
+<codeline lineno="45" refid="classQuantLib_1_1NullCondition" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classQuantLib_1_1NullCondition" kindref="compound">NullCondition</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1StepCondition" kindref="compound">StepCondition</ref>&lt;array_type&gt;<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="47" refid="classQuantLib_1_1NullCondition_1ab8128a8d70e11a137621b272f83681e0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1NullCondition_1ab8128a8d70e11a137621b272f83681e0" kindref="member">applyTo</ref>(array_type&amp;,<sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref>)</highlight><highlight class="keyword"><sp/>const<sp/>override<sp/></highlight><highlight class="normal">{}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="ql/methods/finitedifferences/stepcondition.hpp"/>
+  </compounddef>
+</doxygen>

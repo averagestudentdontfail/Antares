@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1Fdm1dMesher" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::Fdm1dMesher</compoundname>
+    <derivedcompoundref refid="classQuantLib_1_1Concentrating1dMesher" prot="public" virt="non-virtual">QuantLib::Concentrating1dMesher</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1FdmBlackScholesMesher" prot="public" virt="non-virtual">QuantLib::FdmBlackScholesMesher</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1Uniform1dMesher" prot="public" virt="non-virtual">QuantLib::Uniform1dMesher</derivedcompoundref>
+    <includes refid="fdm1dmesher_8hpp" local="no">fdm1dmesher.hpp</includes>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1Fdm1dMesher_1a10c310f04a295d8e8f59b9184a099398" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> &gt;</type>
+        <definition>std::vector&lt;Real&gt; QuantLib::Fdm1dMesher::locations_</definition>
+        <argsstring></argsstring>
+        <name>locations_</name>
+        <qualifiedname>QuantLib::Fdm1dMesher::locations_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/meshers/fdm1dmesher.hpp" line="47" column="21" bodyfile="ql/methods/finitedifferences/meshers/fdm1dmesher.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1Fdm1dMesher_1af98e56b199e717effdde88076177901c" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> &gt;</type>
+        <definition>std::vector&lt;Real&gt; QuantLib::Fdm1dMesher::dplus_</definition>
+        <argsstring></argsstring>
+        <name>dplus_</name>
+        <qualifiedname>QuantLib::Fdm1dMesher::dplus_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/meshers/fdm1dmesher.hpp" line="48" column="21" bodyfile="ql/methods/finitedifferences/meshers/fdm1dmesher.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1Fdm1dMesher_1a663945077bed74ac77aa9263e72daa86" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> &gt;</type>
+        <definition>std::vector&lt;Real&gt; QuantLib::Fdm1dMesher::dminus_</definition>
+        <argsstring></argsstring>
+        <name>dminus_</name>
+        <qualifiedname>QuantLib::Fdm1dMesher::dminus_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/meshers/fdm1dmesher.hpp" line="48" column="28" bodyfile="ql/methods/finitedifferences/meshers/fdm1dmesher.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1Fdm1dMesher_1a5367680ba14e2c946b344ca75c73d0bd" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Fdm1dMesher::Fdm1dMesher</definition>
+        <argsstring>(Size size)</argsstring>
+        <name>Fdm1dMesher</name>
+        <qualifiedname>QuantLib::Fdm1dMesher::Fdm1dMesher</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/meshers/fdm1dmesher.hpp" line="36" column="18" bodyfile="ql/methods/finitedifferences/meshers/fdm1dmesher.hpp" bodystart="36" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Fdm1dMesher_1a7ac7413653e669b7976f5419a147a67b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual QuantLib::Fdm1dMesher::~Fdm1dMesher</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Fdm1dMesher</name>
+        <qualifiedname>QuantLib::Fdm1dMesher::~Fdm1dMesher</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/meshers/fdm1dmesher.hpp" line="38" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Fdm1dMesher_1aabe033deb1598c0d78fef55bded13204" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+        <definition>Size QuantLib::Fdm1dMesher::size</definition>
+        <argsstring>() const</argsstring>
+        <name>size</name>
+        <qualifiedname>QuantLib::Fdm1dMesher::size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/meshers/fdm1dmesher.hpp" line="40" column="14" bodyfile="ql/methods/finitedifferences/meshers/fdm1dmesher.hpp" bodystart="40" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Fdm1dMesher_1ae12ae1bbc510c8ba6b41ec96efdb3073" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::Fdm1dMesher::dplus</definition>
+        <argsstring>(Size index) const</argsstring>
+        <name>dplus</name>
+        <qualifiedname>QuantLib::Fdm1dMesher::dplus</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/meshers/fdm1dmesher.hpp" line="41" column="14" bodyfile="ql/methods/finitedifferences/meshers/fdm1dmesher.hpp" bodystart="41" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Fdm1dMesher_1af6a6b40f4c404b3198995ce20590a410" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::Fdm1dMesher::dminus</definition>
+        <argsstring>(Size index) const</argsstring>
+        <name>dminus</name>
+        <qualifiedname>QuantLib::Fdm1dMesher::dminus</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/meshers/fdm1dmesher.hpp" line="42" column="14" bodyfile="ql/methods/finitedifferences/meshers/fdm1dmesher.hpp" bodystart="42" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Fdm1dMesher_1aaa56294b3e4aa5e814c6e32a748ecd2f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::Fdm1dMesher::location</definition>
+        <argsstring>(Size index) const</argsstring>
+        <name>location</name>
+        <qualifiedname>QuantLib::Fdm1dMesher::location</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/meshers/fdm1dmesher.hpp" line="43" column="14" bodyfile="ql/methods/finitedifferences/meshers/fdm1dmesher.hpp" bodystart="43" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Fdm1dMesher_1a0dfdfea910ddf7c11fdf33cbe95e71d7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::vector&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> &gt; &amp;</type>
+        <definition>const std::vector&lt; Real &gt; &amp; QuantLib::Fdm1dMesher::locations</definition>
+        <argsstring>() const</argsstring>
+        <name>locations</name>
+        <qualifiedname>QuantLib::Fdm1dMesher::locations</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/meshers/fdm1dmesher.hpp" line="44" column="27" bodyfile="ql/methods/finitedifferences/meshers/fdm1dmesher.hpp" bodystart="44" bodyend="44"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>QuantLib::Concentrating1dMesher</label>
+        <link refid="classQuantLib_1_1Concentrating1dMesher"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::Fdm1dMesher</label>
+        <link refid="classQuantLib_1_1Fdm1dMesher"/>
+      </node>
+      <node id="3">
+        <label>QuantLib::FdmBlackScholesMesher</label>
+        <link refid="classQuantLib_1_1FdmBlackScholesMesher"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QuantLib::Uniform1dMesher</label>
+        <link refid="classQuantLib_1_1Uniform1dMesher"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="ql/methods/finitedifferences/meshers/fdm1dmesher.hpp" line="34" column="5" bodyfile="ql/methods/finitedifferences/meshers/fdm1dmesher.hpp" bodystart="34" bodyend="49"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Fdm1dMesher_1af6a6b40f4c404b3198995ce20590a410" prot="public" virt="non-virtual"><scope>QuantLib::Fdm1dMesher</scope><name>dminus</name></member>
+      <member refid="classQuantLib_1_1Fdm1dMesher_1a663945077bed74ac77aa9263e72daa86" prot="protected" virt="non-virtual"><scope>QuantLib::Fdm1dMesher</scope><name>dminus_</name></member>
+      <member refid="classQuantLib_1_1Fdm1dMesher_1ae12ae1bbc510c8ba6b41ec96efdb3073" prot="public" virt="non-virtual"><scope>QuantLib::Fdm1dMesher</scope><name>dplus</name></member>
+      <member refid="classQuantLib_1_1Fdm1dMesher_1af98e56b199e717effdde88076177901c" prot="protected" virt="non-virtual"><scope>QuantLib::Fdm1dMesher</scope><name>dplus_</name></member>
+      <member refid="classQuantLib_1_1Fdm1dMesher_1a5367680ba14e2c946b344ca75c73d0bd" prot="public" virt="non-virtual"><scope>QuantLib::Fdm1dMesher</scope><name>Fdm1dMesher</name></member>
+      <member refid="classQuantLib_1_1Fdm1dMesher_1aaa56294b3e4aa5e814c6e32a748ecd2f" prot="public" virt="non-virtual"><scope>QuantLib::Fdm1dMesher</scope><name>location</name></member>
+      <member refid="classQuantLib_1_1Fdm1dMesher_1a0dfdfea910ddf7c11fdf33cbe95e71d7" prot="public" virt="non-virtual"><scope>QuantLib::Fdm1dMesher</scope><name>locations</name></member>
+      <member refid="classQuantLib_1_1Fdm1dMesher_1a10c310f04a295d8e8f59b9184a099398" prot="protected" virt="non-virtual"><scope>QuantLib::Fdm1dMesher</scope><name>locations_</name></member>
+      <member refid="classQuantLib_1_1Fdm1dMesher_1aabe033deb1598c0d78fef55bded13204" prot="public" virt="non-virtual"><scope>QuantLib::Fdm1dMesher</scope><name>size</name></member>
+      <member refid="classQuantLib_1_1Fdm1dMesher_1a7ac7413653e669b7976f5419a147a67b" prot="public" virt="virtual"><scope>QuantLib::Fdm1dMesher</scope><name>~Fdm1dMesher</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

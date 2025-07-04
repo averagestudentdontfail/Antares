@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1detail_1_1simple__event" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::detail::simple_event</compoundname>
+    <basecompoundref refid="classQuantLib_1_1Event" prot="public" virt="non-virtual">QuantLib::Event</basecompoundref>
+    <includes refid="event_8hpp" local="no">event.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1detail_1_1simple__event_1a2345d2fb3b155ba7e76bdda453d668b3" prot="private" static="no" mutable="no">
+        <type><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref></type>
+        <definition>Date QuantLib::detail::simple_event::date_</definition>
+        <argsstring></argsstring>
+        <name>date_</name>
+        <qualifiedname>QuantLib::detail::simple_event::date_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/event.hpp" line="75" column="18" bodyfile="ql/event.hpp" bodystart="75" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1detail_1_1simple__event_1a0b3294870ee5192a1649fedc4a461ae1" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::detail::simple_event::simple_event</definition>
+        <argsstring>(const Date &amp;date)</argsstring>
+        <name>simple_event</name>
+        <qualifiedname>QuantLib::detail::simple_event::simple_event</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+          <declname>date</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/event.hpp" line="71" column="22" bodyfile="ql/event.hpp" bodystart="71" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1detail_1_1simple__event_1a6a1783aa77d2827fef33897503343aa4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref></type>
+        <definition>Date QuantLib::detail::simple_event::date</definition>
+        <argsstring>() const override</argsstring>
+        <name>date</name>
+        <qualifiedname>QuantLib::detail::simple_event::date</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Event_1a7a690f69956e5d1f7175d7d7f879b9af">date</reimplements>
+        <briefdescription>
+<para>returns the date at which the event occurs </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/event.hpp" line="72" column="18" bodyfile="ql/event.hpp" bodystart="72" bodyend="72"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>QuantLib::Event</label>
+        <link refid="classQuantLib_1_1Event"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QuantLib::Observable</label>
+        <link refid="classQuantLib_1_1Observable"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::detail::simple_event</label>
+        <link refid="classQuantLib_1_1detail_1_1simple__event"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4">
+        <label>QuantLib::Date</label>
+        <link refid="classQuantLib_1_1Date"/>
+      </node>
+      <node id="2">
+        <label>QuantLib::Event</label>
+        <link refid="classQuantLib_1_1Event"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QuantLib::Observable</label>
+        <link refid="classQuantLib_1_1Observable"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::detail::simple_event</label>
+        <link refid="classQuantLib_1_1detail_1_1simple__event"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>date_</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/event.hpp" line="69" column="9" bodyfile="ql/event.hpp" bodystart="69" bodyend="76"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Event_1a572b6e63554be33515e60185aa8d1499" prot="public" virt="virtual"><scope>QuantLib::detail::simple_event</scope><name>accept</name></member>
+      <member refid="classQuantLib_1_1detail_1_1simple__event_1a6a1783aa77d2827fef33897503343aa4" prot="public" virt="virtual"><scope>QuantLib::detail::simple_event</scope><name>date</name></member>
+      <member refid="classQuantLib_1_1detail_1_1simple__event_1a2345d2fb3b155ba7e76bdda453d668b3" prot="private" virt="non-virtual"><scope>QuantLib::detail::simple_event</scope><name>date_</name></member>
+      <member refid="classQuantLib_1_1Event_1af09e3d842159f4d17482ce634642bc07" prot="public" virt="virtual"><scope>QuantLib::detail::simple_event</scope><name>hasOccurred</name></member>
+      <member refid="classQuantLib_1_1Observable_1a07ad87c2c2599551463d0a529924dec2" prot="private" virt="non-virtual"><scope>QuantLib::detail::simple_event</scope><name>iterator</name></member>
+      <member refid="classQuantLib_1_1Observable_1afb67478418efdb94382ac9d7ae904b94" prot="public" virt="non-virtual"><scope>QuantLib::detail::simple_event</scope><name>notifyObservers</name></member>
+      <member refid="classQuantLib_1_1Observable_1ae0d19b21fab87a01f53586a6b5c15f85" prot="public" virt="non-virtual"><scope>QuantLib::detail::simple_event</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observable_1a942cf6a572bd95341433a6772c70cb29" prot="public" virt="non-virtual"><scope>QuantLib::detail::simple_event</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observable_1a6c35885ef344665ecdfac9b9f3a59c0e" prot="public" virt="non-virtual"><scope>QuantLib::detail::simple_event</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observable_1a4da6017619203dcb570d5f4174f0beea" prot="private" virt="non-virtual"><scope>QuantLib::detail::simple_event</scope><name>observers_</name></member>
+      <member refid="classQuantLib_1_1Observable_1ad1e086da62f05b4bc5eafa698ef6fbc3" prot="public" virt="non-virtual"><scope>QuantLib::detail::simple_event</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1Observable_1ab45941c65068ab4c8d69a7d1a72beeb7" prot="public" virt="non-virtual"><scope>QuantLib::detail::simple_event</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1Observable_1a1eb87a03e7e1fd43377bce32e0c21bce" prot="private" virt="non-virtual"><scope>QuantLib::detail::simple_event</scope><name>registerObserver</name></member>
+      <member refid="classQuantLib_1_1Observable_1a22e674e99fccc2da996de9620304f63c" prot="private" virt="non-virtual"><scope>QuantLib::detail::simple_event</scope><name>set_type</name></member>
+      <member refid="classQuantLib_1_1detail_1_1simple__event_1a0b3294870ee5192a1649fedc4a461ae1" prot="public" virt="non-virtual"><scope>QuantLib::detail::simple_event</scope><name>simple_event</name></member>
+      <member refid="classQuantLib_1_1Observable_1abd81ef8b87594aa6f9d2a5bd5de3e628" prot="private" virt="non-virtual"><scope>QuantLib::detail::simple_event</scope><name>unregisterObserver</name></member>
+      <member refid="classQuantLib_1_1Event_1a26cef5942731bfb52ed77e74abdcfe9f" prot="public" virt="non-virtual"><scope>QuantLib::detail::simple_event</scope><name>~Event</name></member>
+      <member refid="classQuantLib_1_1Observable_1a32093a7038e9bd8d28e5d378eca9f4f7" prot="public" virt="virtual"><scope>QuantLib::detail::simple_event</scope><name>~Observable</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

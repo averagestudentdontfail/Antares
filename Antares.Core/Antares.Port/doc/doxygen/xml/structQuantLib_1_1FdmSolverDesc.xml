@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structQuantLib_1_1FdmSolverDesc" kind="struct" language="C++" prot="public">
+    <compoundname>QuantLib::FdmSolverDesc</compoundname>
+    <includes refid="fdmsolverdesc_8hpp" local="no">fdmsolverdesc.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structQuantLib_1_1FdmSolverDesc_1a08746cce063b3269d1d691a972b48a72" prot="public" static="no" mutable="no">
+        <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmMesher" kindref="compound">FdmMesher</ref> &gt;</type>
+        <definition>const ext::shared_ptr&lt;FdmMesher&gt; QuantLib::FdmSolverDesc::mesher</definition>
+        <argsstring></argsstring>
+        <name>mesher</name>
+        <qualifiedname>QuantLib::FdmSolverDesc::mesher</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/solvers/fdmsolverdesc.hpp" line="36" column="31" bodyfile="ql/methods/finitedifferences/solvers/fdmsolverdesc.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structQuantLib_1_1FdmSolverDesc_1a18346f1f4332580f109eacf48644e777" prot="public" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1af064f77bc69893c110a3797657b02c42" kindref="member">FdmBoundaryConditionSet</ref></type>
+        <definition>const FdmBoundaryConditionSet QuantLib::FdmSolverDesc::bcSet</definition>
+        <argsstring></argsstring>
+        <name>bcSet</name>
+        <qualifiedname>QuantLib::FdmSolverDesc::bcSet</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/solvers/fdmsolverdesc.hpp" line="37" column="39" bodyfile="ql/methods/finitedifferences/solvers/fdmsolverdesc.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structQuantLib_1_1FdmSolverDesc_1a854985a349cfe134823c9ccc488e6418" prot="public" static="no" mutable="no">
+        <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmStepConditionComposite" kindref="compound">FdmStepConditionComposite</ref> &gt;</type>
+        <definition>const ext::shared_ptr&lt;FdmStepConditionComposite&gt; QuantLib::FdmSolverDesc::condition</definition>
+        <argsstring></argsstring>
+        <name>condition</name>
+        <qualifiedname>QuantLib::FdmSolverDesc::condition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/solvers/fdmsolverdesc.hpp" line="38" column="31" bodyfile="ql/methods/finitedifferences/solvers/fdmsolverdesc.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structQuantLib_1_1FdmSolverDesc_1a35e877d3dfd31e2c57ab8d7eee0c4241" prot="public" static="no" mutable="no">
+        <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmInnerValueCalculator" kindref="compound">FdmInnerValueCalculator</ref> &gt;</type>
+        <definition>const ext::shared_ptr&lt;FdmInnerValueCalculator&gt; QuantLib::FdmSolverDesc::calculator</definition>
+        <argsstring></argsstring>
+        <name>calculator</name>
+        <qualifiedname>QuantLib::FdmSolverDesc::calculator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/solvers/fdmsolverdesc.hpp" line="39" column="31" bodyfile="ql/methods/finitedifferences/solvers/fdmsolverdesc.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structQuantLib_1_1FdmSolverDesc_1a85176d12dbe05683b4a98609d43ef90c" prot="public" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+        <definition>const Time QuantLib::FdmSolverDesc::maturity</definition>
+        <argsstring></argsstring>
+        <name>maturity</name>
+        <qualifiedname>QuantLib::FdmSolverDesc::maturity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/solvers/fdmsolverdesc.hpp" line="40" column="20" bodyfile="ql/methods/finitedifferences/solvers/fdmsolverdesc.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structQuantLib_1_1FdmSolverDesc_1a578e25ca98d05e8bf4e99bc52b661824" prot="public" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+        <definition>const Size QuantLib::FdmSolverDesc::timeSteps</definition>
+        <argsstring></argsstring>
+        <name>timeSteps</name>
+        <qualifiedname>QuantLib::FdmSolverDesc::timeSteps</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/solvers/fdmsolverdesc.hpp" line="41" column="20" bodyfile="ql/methods/finitedifferences/solvers/fdmsolverdesc.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structQuantLib_1_1FdmSolverDesc_1a7fa54b20f8f07303ccb9fee44bd56469" prot="public" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+        <definition>const Size QuantLib::FdmSolverDesc::dampingSteps</definition>
+        <argsstring></argsstring>
+        <name>dampingSteps</name>
+        <qualifiedname>QuantLib::FdmSolverDesc::dampingSteps</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/solvers/fdmsolverdesc.hpp" line="42" column="20" bodyfile="ql/methods/finitedifferences/solvers/fdmsolverdesc.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ql/methods/finitedifferences/solvers/fdmsolverdesc.hpp" line="35" column="5" bodyfile="ql/methods/finitedifferences/solvers/fdmsolverdesc.hpp" bodystart="35" bodyend="43"/>
+    <listofallmembers>
+      <member refid="structQuantLib_1_1FdmSolverDesc_1a18346f1f4332580f109eacf48644e777" prot="public" virt="non-virtual"><scope>QuantLib::FdmSolverDesc</scope><name>bcSet</name></member>
+      <member refid="structQuantLib_1_1FdmSolverDesc_1a35e877d3dfd31e2c57ab8d7eee0c4241" prot="public" virt="non-virtual"><scope>QuantLib::FdmSolverDesc</scope><name>calculator</name></member>
+      <member refid="structQuantLib_1_1FdmSolverDesc_1a854985a349cfe134823c9ccc488e6418" prot="public" virt="non-virtual"><scope>QuantLib::FdmSolverDesc</scope><name>condition</name></member>
+      <member refid="structQuantLib_1_1FdmSolverDesc_1a7fa54b20f8f07303ccb9fee44bd56469" prot="public" virt="non-virtual"><scope>QuantLib::FdmSolverDesc</scope><name>dampingSteps</name></member>
+      <member refid="structQuantLib_1_1FdmSolverDesc_1a85176d12dbe05683b4a98609d43ef90c" prot="public" virt="non-virtual"><scope>QuantLib::FdmSolverDesc</scope><name>maturity</name></member>
+      <member refid="structQuantLib_1_1FdmSolverDesc_1a08746cce063b3269d1d691a972b48a72" prot="public" virt="non-virtual"><scope>QuantLib::FdmSolverDesc</scope><name>mesher</name></member>
+      <member refid="structQuantLib_1_1FdmSolverDesc_1a578e25ca98d05e8bf4e99bc52b661824" prot="public" virt="non-virtual"><scope>QuantLib::FdmSolverDesc</scope><name>timeSteps</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

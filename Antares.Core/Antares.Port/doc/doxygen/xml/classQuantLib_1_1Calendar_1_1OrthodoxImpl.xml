@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1Calendar_1_1OrthodoxImpl" kind="class" language="C++" prot="protected">
+    <compoundname>QuantLib::Calendar::OrthodoxImpl</compoundname>
+    <basecompoundref refid="classQuantLib_1_1Calendar_1_1Impl" prot="public" virt="non-virtual">QuantLib::Calendar::Impl</basecompoundref>
+    <includes refid="calendar_8hpp" local="no">calendar.hpp</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1Calendar_1_1OrthodoxImpl_1a14ae9ed2074fc6c9c4eb71f8676fff7b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool QuantLib::Calendar::OrthodoxImpl::isWeekend</definition>
+        <argsstring>(Weekday) const override</argsstring>
+        <name>isWeekend</name>
+        <qualifiedname>QuantLib::Calendar::OrthodoxImpl::isWeekend</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Calendar_1_1Impl_1aece3c88f50cc7b63247d95127f14fb86">isWeekend</reimplements>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a04474aebb0bea95bba2f1dcbdd8a27a6" kindref="member">Weekday</ref></type>
+          <defname>w</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/calendar.hpp" line="187" column="18" bodyfile="ql/time/calendar.cpp" bodystart="237" bodyend="239"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classQuantLib_1_1Calendar_1_1OrthodoxImpl_1a482906651eed528ab437c5b449b56cc5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a7354a4ac9189352870cbb0cb998e0bd4" kindref="member">Day</ref></type>
+        <definition>Day QuantLib::Calendar::OrthodoxImpl::easterMonday</definition>
+        <argsstring>(Year)</argsstring>
+        <name>easterMonday</name>
+        <qualifiedname>QuantLib::Calendar::OrthodoxImpl::easterMonday</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a5dcda5470aff130981ac30f25d4244e7" kindref="member">Year</ref></type>
+          <defname>y</defname>
+        </param>
+        <briefdescription>
+<para>expressed relative to first day of year </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/calendar.hpp" line="189" column="24" bodyfile="ql/time/calendar.cpp" bodystart="241" bodyend="275"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>partial calendar implementation </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class provides the means of determining the Orthodox Easter Monday for a given year, as well as specifying Saturdays and Sundays as weekend days. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>QuantLib::Calendar::Impl</label>
+        <link refid="classQuantLib_1_1Calendar_1_1Impl"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::Calendar::OrthodoxImpl</label>
+        <link refid="classQuantLib_1_1Calendar_1_1OrthodoxImpl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>QuantLib::Calendar::Impl</label>
+        <link refid="classQuantLib_1_1Calendar_1_1Impl"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::Calendar::OrthodoxImpl</label>
+        <link refid="classQuantLib_1_1Calendar_1_1OrthodoxImpl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/time/calendar.hpp" line="185" column="9" bodyfile="ql/time/calendar.hpp" bodystart="185" bodyend="190"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Calendar_1_1Impl_1a5970124cdb6647a72d5f6929267f33a7" prot="public" virt="non-virtual"><scope>QuantLib::Calendar::OrthodoxImpl</scope><name>addedHolidays</name></member>
+      <member refid="classQuantLib_1_1Calendar_1_1OrthodoxImpl_1a482906651eed528ab437c5b449b56cc5" prot="public" virt="non-virtual"><scope>QuantLib::Calendar::OrthodoxImpl</scope><name>easterMonday</name></member>
+      <member refid="classQuantLib_1_1Calendar_1_1Impl_1a292319943221a9fa80988e562f7d4164" prot="public" virt="pure-virtual"><scope>QuantLib::Calendar::OrthodoxImpl</scope><name>isBusinessDay</name></member>
+      <member refid="classQuantLib_1_1Calendar_1_1OrthodoxImpl_1a14ae9ed2074fc6c9c4eb71f8676fff7b" prot="public" virt="virtual"><scope>QuantLib::Calendar::OrthodoxImpl</scope><name>isWeekend</name></member>
+      <member refid="classQuantLib_1_1Calendar_1_1Impl_1a322d7d95757716c5f3b025b2715f3f4d" prot="public" virt="pure-virtual"><scope>QuantLib::Calendar::OrthodoxImpl</scope><name>name</name></member>
+      <member refid="classQuantLib_1_1Calendar_1_1Impl_1a799e83eb1170cdd9ff1b29871af96fc4" prot="public" virt="non-virtual"><scope>QuantLib::Calendar::OrthodoxImpl</scope><name>removedHolidays</name></member>
+      <member refid="classQuantLib_1_1Calendar_1_1Impl_1ad7f00087252a73f1775d853165be3711" prot="public" virt="virtual"><scope>QuantLib::Calendar::OrthodoxImpl</scope><name>~Impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

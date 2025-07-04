@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1ObservableValue" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::ObservableValue</compoundname>
+    <includes refid="observablevalue_8hpp" local="no">observablevalue.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="user-defined">
+      <header>controlled assignment</header>
+      <memberdef kind="variable" id="classQuantLib_1_1ObservableValue_1a088ccbf3b3ed51a364449f7d612e8d70" prot="private" static="no" mutable="no">
+        <type>T</type>
+        <definition>T QuantLib::ObservableValue&lt; T &gt;::value_</definition>
+        <argsstring></argsstring>
+        <name>value_</name>
+        <qualifiedname>QuantLib::ObservableValue::value_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/utilities/observablevalue.hpp" line="61" column="11" bodyfile="ql/utilities/observablevalue.hpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1ObservableValue_1a7ad8c28951c9062608703f6341fa44a0" prot="private" static="no" mutable="no">
+        <type>ext::shared_ptr&lt; <ref refid="classQuantLib_1_1Observable" kindref="compound">Observable</ref> &gt;</type>
+        <definition>ext::shared_ptr&lt;Observable&gt; QuantLib::ObservableValue&lt; T &gt;::observable_</definition>
+        <argsstring></argsstring>
+        <name>observable_</name>
+        <qualifiedname>QuantLib::ObservableValue::observable_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/utilities/observablevalue.hpp" line="62" column="25" bodyfile="ql/utilities/observablevalue.hpp" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1ObservableValue_1a28217ef6ceac81c6883a24d14e053225" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1ObservableValue" kindref="compound">ObservableValue</ref>&lt; T &gt; &amp;</type>
+        <definition>ObservableValue&lt; T &gt; &amp; QuantLib::ObservableValue&lt; T &gt;::operator=</definition>
+        <argsstring>(T &amp;&amp;)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>QuantLib::ObservableValue::operator=</qualifiedname>
+        <param>
+          <type>T &amp;&amp;</type>
+          <defname>t</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/utilities/observablevalue.hpp" line="51" column="25" bodyfile="ql/utilities/observablevalue.hpp" bodystart="85" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1ObservableValue_1ae7854322ce2c071fdb193ad05c9c4eff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1ObservableValue" kindref="compound">ObservableValue</ref>&lt; T &gt; &amp;</type>
+        <definition>ObservableValue&lt; T &gt; &amp; QuantLib::ObservableValue&lt; T &gt;::operator=</definition>
+        <argsstring>(const T &amp;)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>QuantLib::ObservableValue::operator=</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <defname>t</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/utilities/observablevalue.hpp" line="52" column="25" bodyfile="ql/utilities/observablevalue.hpp" bodystart="92" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1ObservableValue_1aff4c97393510c023f29c4c08e09cdfca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1ObservableValue" kindref="compound">ObservableValue</ref>&lt; T &gt; &amp;</type>
+        <definition>ObservableValue&lt; T &gt; &amp; QuantLib::ObservableValue&lt; T &gt;::operator=</definition>
+        <argsstring>(const ObservableValue&lt; T &gt; &amp;)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>QuantLib::ObservableValue::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1ObservableValue" kindref="compound">ObservableValue</ref>&lt; T &gt; &amp;</type>
+          <defname>t</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/utilities/observablevalue.hpp" line="53" column="25" bodyfile="ql/utilities/observablevalue.hpp" bodystart="100" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1ObservableValue_1a3b310f7847f13c2467fbe894e61d9a0a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::ObservableValue&lt; T &gt;::operator T</definition>
+        <argsstring>() const</argsstring>
+        <name>operator T</name>
+        <qualifiedname>QuantLib::ObservableValue::operator T</qualifiedname>
+        <briefdescription>
+<para>implicit conversion </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/utilities/observablevalue.hpp" line="56" column="9" bodyfile="ql/utilities/observablevalue.hpp" bodystart="107" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1ObservableValue_1a0fd5e92c5201e205f2611cb719886a5e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::ObservableValue&lt; T &gt;::operator ext::shared_ptr&lt; Observable &gt;</definition>
+        <argsstring>() const</argsstring>
+        <name>operator ext::shared_ptr&lt; Observable &gt;</name>
+        <qualifiedname>QuantLib::ObservableValue::shared_ptr&lt; Observable &gt;</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/utilities/observablevalue.hpp" line="57" column="9" bodyfile="ql/utilities/observablevalue.hpp" bodystart="112" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1ObservableValue_1ae667c572a88dfb13373cafd410cced53" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const T &amp;</type>
+        <definition>const T &amp; QuantLib::ObservableValue&lt; T &gt;::value</definition>
+        <argsstring>() const</argsstring>
+        <name>value</name>
+        <qualifiedname>QuantLib::ObservableValue::value</qualifiedname>
+        <briefdescription>
+<para>explicit inspector </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/utilities/observablevalue.hpp" line="59" column="17" bodyfile="ql/utilities/observablevalue.hpp" bodystart="117" bodyend="119"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1ObservableValue_1a7c12afdd026a3fef47c42d24663dcca9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::ObservableValue&lt; T &gt;::ObservableValue</definition>
+        <argsstring>()</argsstring>
+        <name>ObservableValue</name>
+        <qualifiedname>QuantLib::ObservableValue::ObservableValue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/utilities/observablevalue.hpp" line="44" column="9" bodyfile="ql/utilities/observablevalue.hpp" bodystart="69" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1ObservableValue_1a1da2e39646203fca3ba08231b94e8b50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::ObservableValue&lt; T &gt;::ObservableValue</definition>
+        <argsstring>(T &amp;&amp;)</argsstring>
+        <name>ObservableValue</name>
+        <qualifiedname>QuantLib::ObservableValue::ObservableValue</qualifiedname>
+        <param>
+          <type>T &amp;&amp;</type>
+          <defname>t</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/utilities/observablevalue.hpp" line="45" column="9" bodyfile="ql/utilities/observablevalue.hpp" bodystart="73" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1ObservableValue_1a9f66734d7552236e1d2849ccc5df8dd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::ObservableValue&lt; T &gt;::ObservableValue</definition>
+        <argsstring>(const T &amp;)</argsstring>
+        <name>ObservableValue</name>
+        <qualifiedname>QuantLib::ObservableValue::ObservableValue</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <defname>t</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/utilities/observablevalue.hpp" line="46" column="9" bodyfile="ql/utilities/observablevalue.hpp" bodystart="77" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1ObservableValue_1abc8b86f6171e4fd95f3c8b3a01d7dc75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::ObservableValue&lt; T &gt;::ObservableValue</definition>
+        <argsstring>(const ObservableValue&lt; T &gt; &amp;)</argsstring>
+        <name>ObservableValue</name>
+        <qualifiedname>QuantLib::ObservableValue::ObservableValue</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1ObservableValue" kindref="compound">ObservableValue</ref>&lt; T &gt; &amp;</type>
+          <defname>t</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/utilities/observablevalue.hpp" line="47" column="9" bodyfile="ql/utilities/observablevalue.hpp" bodystart="81" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1ObservableValue_1ae5d2b86eca2a655f678127e0adab0134" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::ObservableValue&lt; T &gt;::~ObservableValue</definition>
+        <argsstring>()=default</argsstring>
+        <name>~ObservableValue</name>
+        <qualifiedname>QuantLib::ObservableValue::~ObservableValue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/utilities/observablevalue.hpp" line="48" column="9"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>observable and assignable proxy to concrete value </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Observers can be registered with instances of this class so that they are notified when a different value is assigned to such instances. Client code can copy the contained value or pass it to functions via implicit conversion. <simplesect kind="note"><para>it is not possible to call non-const method on the returned value. This is by design, as this possibility would necessarily bypass the notification code; client code should modify the value via re-assignment instead. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="ql/utilities/observablevalue.hpp" line="42" column="5" bodyfile="ql/utilities/observablevalue.hpp" bodystart="42" bodyend="63"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1ObservableValue_1a7ad8c28951c9062608703f6341fa44a0" prot="private" virt="non-virtual"><scope>QuantLib::ObservableValue</scope><name>observable_</name></member>
+      <member refid="classQuantLib_1_1ObservableValue_1a7c12afdd026a3fef47c42d24663dcca9" prot="public" virt="non-virtual"><scope>QuantLib::ObservableValue</scope><name>ObservableValue</name></member>
+      <member refid="classQuantLib_1_1ObservableValue_1a1da2e39646203fca3ba08231b94e8b50" prot="public" virt="non-virtual"><scope>QuantLib::ObservableValue</scope><name>ObservableValue</name></member>
+      <member refid="classQuantLib_1_1ObservableValue_1a9f66734d7552236e1d2849ccc5df8dd3" prot="public" virt="non-virtual"><scope>QuantLib::ObservableValue</scope><name>ObservableValue</name></member>
+      <member refid="classQuantLib_1_1ObservableValue_1abc8b86f6171e4fd95f3c8b3a01d7dc75" prot="public" virt="non-virtual"><scope>QuantLib::ObservableValue</scope><name>ObservableValue</name></member>
+      <member refid="classQuantLib_1_1ObservableValue_1a0fd5e92c5201e205f2611cb719886a5e" prot="public" virt="non-virtual"><scope>QuantLib::ObservableValue</scope><name>operator ext::shared_ptr&lt; Observable &gt;</name></member>
+      <member refid="classQuantLib_1_1ObservableValue_1a3b310f7847f13c2467fbe894e61d9a0a" prot="public" virt="non-virtual"><scope>QuantLib::ObservableValue</scope><name>operator T</name></member>
+      <member refid="classQuantLib_1_1ObservableValue_1a28217ef6ceac81c6883a24d14e053225" prot="public" virt="non-virtual"><scope>QuantLib::ObservableValue</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1ObservableValue_1ae7854322ce2c071fdb193ad05c9c4eff" prot="public" virt="non-virtual"><scope>QuantLib::ObservableValue</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1ObservableValue_1aff4c97393510c023f29c4c08e09cdfca" prot="public" virt="non-virtual"><scope>QuantLib::ObservableValue</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1ObservableValue_1ae667c572a88dfb13373cafd410cced53" prot="public" virt="non-virtual"><scope>QuantLib::ObservableValue</scope><name>value</name></member>
+      <member refid="classQuantLib_1_1ObservableValue_1a088ccbf3b3ed51a364449f7d612e8d70" prot="private" virt="non-virtual"><scope>QuantLib::ObservableValue</scope><name>value_</name></member>
+      <member refid="classQuantLib_1_1ObservableValue_1ae5d2b86eca2a655f678127e0adab0134" prot="public" virt="non-virtual"><scope>QuantLib::ObservableValue</scope><name>~ObservableValue</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

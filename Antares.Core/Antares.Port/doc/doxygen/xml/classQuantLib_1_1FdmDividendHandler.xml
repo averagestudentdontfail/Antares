@@ -1,0 +1,245 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1FdmDividendHandler" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::FdmDividendHandler</compoundname>
+    <basecompoundref refid="classQuantLib_1_1StepCondition" prot="public" virt="non-virtual">QuantLib::StepCondition&lt; Array &gt;</basecompoundref>
+    <includes refid="fdmdividendhandler_8hpp" local="no">fdmdividendhandler.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1FdmDividendHandler_1afa0124bb509e527a9520e9a1cd55cf43" prot="private" static="no" mutable="no">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array QuantLib::FdmDividendHandler::x_</definition>
+        <argsstring></argsstring>
+        <name>x_</name>
+        <qualifiedname>QuantLib::FdmDividendHandler::x_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/fdmdividendhandler.hpp" line="52" column="15" bodyfile="ql/methods/finitedifferences/utilities/fdmdividendhandler.hpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1FdmDividendHandler_1a8434001d556236311676699c976422c1" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref> &gt;</type>
+        <definition>std::vector&lt;Time&gt; QuantLib::FdmDividendHandler::dividendTimes_</definition>
+        <argsstring></argsstring>
+        <name>dividendTimes_</name>
+        <qualifiedname>QuantLib::FdmDividendHandler::dividendTimes_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/fdmdividendhandler.hpp" line="54" column="21" bodyfile="ql/methods/finitedifferences/utilities/fdmdividendhandler.hpp" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1FdmDividendHandler_1aa3a7a4a9e046d8496b321d28a185b23f" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &gt;</type>
+        <definition>std::vector&lt;Date&gt; QuantLib::FdmDividendHandler::dividendDates_</definition>
+        <argsstring></argsstring>
+        <name>dividendDates_</name>
+        <qualifiedname>QuantLib::FdmDividendHandler::dividendDates_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/fdmdividendhandler.hpp" line="55" column="21" bodyfile="ql/methods/finitedifferences/utilities/fdmdividendhandler.hpp" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1FdmDividendHandler_1afe7214245ef2ebe89d843b23df7987f0" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> &gt;</type>
+        <definition>std::vector&lt;Real&gt; QuantLib::FdmDividendHandler::dividends_</definition>
+        <argsstring></argsstring>
+        <name>dividends_</name>
+        <qualifiedname>QuantLib::FdmDividendHandler::dividends_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/fdmdividendhandler.hpp" line="56" column="21" bodyfile="ql/methods/finitedifferences/utilities/fdmdividendhandler.hpp" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1FdmDividendHandler_1a2e346e9229bdf6dedfab19a455f14882" prot="private" static="no" mutable="no">
+        <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmMesher" kindref="compound">FdmMesher</ref> &gt;</type>
+        <definition>const ext::shared_ptr&lt;FdmMesher&gt; QuantLib::FdmDividendHandler::mesher_</definition>
+        <argsstring></argsstring>
+        <name>mesher_</name>
+        <qualifiedname>QuantLib::FdmDividendHandler::mesher_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/fdmdividendhandler.hpp" line="57" column="31" bodyfile="ql/methods/finitedifferences/utilities/fdmdividendhandler.hpp" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1FdmDividendHandler_1af9b50386bf9c0a5db50fcdad207c2e8b" prot="private" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+        <definition>const Size QuantLib::FdmDividendHandler::equityDirection_</definition>
+        <argsstring></argsstring>
+        <name>equityDirection_</name>
+        <qualifiedname>QuantLib::FdmDividendHandler::equityDirection_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/fdmdividendhandler.hpp" line="58" column="20" bodyfile="ql/methods/finitedifferences/utilities/fdmdividendhandler.hpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1FdmDividendHandler_1a9202229824b012b3a9646313cd29887f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::FdmDividendHandler::FdmDividendHandler</definition>
+        <argsstring>(const DividendSchedule &amp;schedule, const ext::shared_ptr&lt; FdmMesher &gt; &amp;mesher, const Date &amp;referenceDate, const DayCounter &amp;dayCounter, Size equityDirection)</argsstring>
+        <name>FdmDividendHandler</name>
+        <qualifiedname>QuantLib::FdmDividendHandler::FdmDividendHandler</qualifiedname>
+        <param>
+          <type>const <ref refid="namespaceQuantLib_1a0a379fde0de6fd228a3365e3c519fe68" kindref="member">DividendSchedule</ref> &amp;</type>
+          <declname>schedule</declname>
+        </param>
+        <param>
+          <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmMesher" kindref="compound">FdmMesher</ref> &gt; &amp;</type>
+          <declname>mesher</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+          <declname>referenceDate</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref> &amp;</type>
+          <declname>dayCounter</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>equityDirection</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/fdmdividendhandler.hpp" line="39" column="9" bodyfile="ql/methods/finitedifferences/utilities/fdmdividendhandler.cpp" bodystart="30" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1FdmDividendHandler_1af0a5e1c95844d087488e18152b3ba4c3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QuantLib::FdmDividendHandler::applyTo</definition>
+        <argsstring>(Array &amp;a, Time t) const override</argsstring>
+        <name>applyTo</name>
+        <qualifiedname>QuantLib::FdmDividendHandler::applyTo</qualifiedname>
+        <reimplements refid="classQuantLib_1_1StepCondition_1afff61b9eaacd16620791a39dd69b90bb">applyTo</reimplements>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/fdmdividendhandler.hpp" line="45" column="14" bodyfile="ql/methods/finitedifferences/utilities/fdmdividendhandler.cpp" bodystart="68" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1FdmDividendHandler_1a23b3f532b57ca29c4f09471f06615a39" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; <ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref> &gt; &amp;</type>
+        <definition>const std::vector&lt; Time &gt; &amp; QuantLib::FdmDividendHandler::dividendTimes</definition>
+        <argsstring>() const</argsstring>
+        <name>dividendTimes</name>
+        <qualifiedname>QuantLib::FdmDividendHandler::dividendTimes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/fdmdividendhandler.hpp" line="47" column="27" bodyfile="ql/methods/finitedifferences/utilities/fdmdividendhandler.cpp" bodystart="56" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1FdmDividendHandler_1a5beb3ddf075ef70eb30d00ce1681b0a4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &gt; &amp;</type>
+        <definition>const std::vector&lt; Date &gt; &amp; QuantLib::FdmDividendHandler::dividendDates</definition>
+        <argsstring>() const</argsstring>
+        <name>dividendDates</name>
+        <qualifiedname>QuantLib::FdmDividendHandler::dividendDates</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/fdmdividendhandler.hpp" line="48" column="27" bodyfile="ql/methods/finitedifferences/utilities/fdmdividendhandler.cpp" bodystart="60" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1FdmDividendHandler_1a1020b269f49c865ac222fa6219dee21b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> &gt; &amp;</type>
+        <definition>const std::vector&lt; Real &gt; &amp; QuantLib::FdmDividendHandler::dividends</definition>
+        <argsstring>() const</argsstring>
+        <name>dividends</name>
+        <qualifiedname>QuantLib::FdmDividendHandler::dividends</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/utilities/fdmdividendhandler.hpp" line="49" column="27" bodyfile="ql/methods/finitedifferences/utilities/fdmdividendhandler.cpp" bodystart="64" bodyend="66"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>QuantLib::FdmDividendHandler</label>
+        <link refid="classQuantLib_1_1FdmDividendHandler"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::StepCondition&lt; Array &gt;</label>
+        <link refid="classQuantLib_1_1StepCondition"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>QuantLib::Array</label>
+        <link refid="classQuantLib_1_1Array"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::FdmDividendHandler</label>
+        <link refid="classQuantLib_1_1FdmDividendHandler"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>x_</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::StepCondition&lt; Array &gt;</label>
+        <link refid="classQuantLib_1_1StepCondition"/>
+      </node>
+    </collaborationgraph>
+    <location file="ql/methods/finitedifferences/utilities/fdmdividendhandler.hpp" line="37" column="5" bodyfile="ql/methods/finitedifferences/utilities/fdmdividendhandler.hpp" bodystart="37" bodyend="59"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1FdmDividendHandler_1af0a5e1c95844d087488e18152b3ba4c3" prot="public" virt="virtual"><scope>QuantLib::FdmDividendHandler</scope><name>applyTo</name></member>
+      <member refid="classQuantLib_1_1FdmDividendHandler_1a5beb3ddf075ef70eb30d00ce1681b0a4" prot="public" virt="non-virtual"><scope>QuantLib::FdmDividendHandler</scope><name>dividendDates</name></member>
+      <member refid="classQuantLib_1_1FdmDividendHandler_1aa3a7a4a9e046d8496b321d28a185b23f" prot="private" virt="non-virtual"><scope>QuantLib::FdmDividendHandler</scope><name>dividendDates_</name></member>
+      <member refid="classQuantLib_1_1FdmDividendHandler_1a1020b269f49c865ac222fa6219dee21b" prot="public" virt="non-virtual"><scope>QuantLib::FdmDividendHandler</scope><name>dividends</name></member>
+      <member refid="classQuantLib_1_1FdmDividendHandler_1afe7214245ef2ebe89d843b23df7987f0" prot="private" virt="non-virtual"><scope>QuantLib::FdmDividendHandler</scope><name>dividends_</name></member>
+      <member refid="classQuantLib_1_1FdmDividendHandler_1a23b3f532b57ca29c4f09471f06615a39" prot="public" virt="non-virtual"><scope>QuantLib::FdmDividendHandler</scope><name>dividendTimes</name></member>
+      <member refid="classQuantLib_1_1FdmDividendHandler_1a8434001d556236311676699c976422c1" prot="private" virt="non-virtual"><scope>QuantLib::FdmDividendHandler</scope><name>dividendTimes_</name></member>
+      <member refid="classQuantLib_1_1FdmDividendHandler_1af9b50386bf9c0a5db50fcdad207c2e8b" prot="private" virt="non-virtual"><scope>QuantLib::FdmDividendHandler</scope><name>equityDirection_</name></member>
+      <member refid="classQuantLib_1_1FdmDividendHandler_1a9202229824b012b3a9646313cd29887f" prot="public" virt="non-virtual"><scope>QuantLib::FdmDividendHandler</scope><name>FdmDividendHandler</name></member>
+      <member refid="classQuantLib_1_1FdmDividendHandler_1a2e346e9229bdf6dedfab19a455f14882" prot="private" virt="non-virtual"><scope>QuantLib::FdmDividendHandler</scope><name>mesher_</name></member>
+      <member refid="classQuantLib_1_1FdmDividendHandler_1afa0124bb509e527a9520e9a1cd55cf43" prot="private" virt="non-virtual"><scope>QuantLib::FdmDividendHandler</scope><name>x_</name></member>
+      <member refid="classQuantLib_1_1StepCondition_1a0867129678b1b4ae02e4d5630ee598ac" prot="public" virt="virtual"><scope>QuantLib::FdmDividendHandler</scope><name>~StepCondition</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

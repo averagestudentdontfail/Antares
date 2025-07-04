@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceQuantLib_1_1anonymous__namespace_02impliedvolatility_8cpp_03" kind="namespace" language="C++">
+    <compoundname>QuantLib::anonymous_namespace{impliedvolatility.cpp}</compoundname>
+    <innerclass refid="classQuantLib_1_1anonymous__namespace_02impliedvolatility_8cpp_03_1_1PriceError" prot="public">QuantLib::anonymous_namespace{impliedvolatility.cpp}::PriceError</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ql/instruments/impliedvolatility.cpp" line="26" column="5"/>
+  </compounddef>
+</doxygen>

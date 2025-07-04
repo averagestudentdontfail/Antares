@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1FdmLinearOp" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>QuantLib::FdmLinearOp</compoundname>
+    <derivedcompoundref refid="classQuantLib_1_1FdmLinearOpComposite" prot="public" virt="non-virtual">QuantLib::FdmLinearOpComposite</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1TripleBandLinearOp" prot="public" virt="non-virtual">QuantLib::TripleBandLinearOp</derivedcompoundref>
+    <includes refid="fdmlinearop_8hpp" local="no">fdmlinearop.hpp</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classQuantLib_1_1FdmLinearOp_1af55693593c0cf7e885c67fd848f76e49" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>typedef Array QuantLib::FdmLinearOp::array_type</definition>
+        <argsstring></argsstring>
+        <name>array_type</name>
+        <qualifiedname>QuantLib::FdmLinearOp::array_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/operators/fdmlinearop.hpp" line="36" column="23" bodyfile="ql/methods/finitedifferences/operators/fdmlinearop.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1FdmLinearOp_1aa6f29eb6144a1848c73c21e392f023e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual QuantLib::FdmLinearOp::~FdmLinearOp</definition>
+        <argsstring>()=default</argsstring>
+        <name>~FdmLinearOp</name>
+        <qualifiedname>QuantLib::FdmLinearOp::~FdmLinearOp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/operators/fdmlinearop.hpp" line="37" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1FdmLinearOp_1a9d59d8bb3597206db60f61c3f448c211" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classQuantLib_1_1FdmLinearOp_1af55693593c0cf7e885c67fd848f76e49" kindref="member">array_type</ref></type>
+        <definition>virtual array_type QuantLib::FdmLinearOp::apply</definition>
+        <argsstring>(const array_type &amp;r) const =0</argsstring>
+        <name>apply</name>
+        <qualifiedname>QuantLib::FdmLinearOp::apply</qualifiedname>
+        <reimplementedby refid="classQuantLib_1_1FdmBlackScholesOp_1af3981f4cc21489f14657e8366b88e1ef">apply</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1TripleBandLinearOp_1ac88145891f92b2e962c2e231bdc592d5">apply</reimplementedby>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1FdmLinearOp_1af55693593c0cf7e885c67fd848f76e49" kindref="member">array_type</ref> &amp;</type>
+          <declname>r</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/operators/fdmlinearop.hpp" line="38" column="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1FdmLinearOp_1a32b6761dc11909646700747d33ef710c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="namespaceQuantLib_1a92b8d18d2ff98d5c92d103939bba4a52" kindref="member">SparseMatrix</ref></type>
+        <definition>virtual SparseMatrix QuantLib::FdmLinearOp::toMatrix</definition>
+        <argsstring>() const =0</argsstring>
+        <name>toMatrix</name>
+        <qualifiedname>QuantLib::FdmLinearOp::toMatrix</qualifiedname>
+        <reimplementedby refid="classQuantLib_1_1FdmLinearOpComposite_1abca0364ae63b5b0e714fcd3ac9e8a73b">toMatrix</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1TripleBandLinearOp_1a49b67b45b712d6943f22d5c54ef78576">toMatrix</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/operators/fdmlinearop.hpp" line="40" column="30"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>QuantLib::FdmBlackScholesOp</label>
+        <link refid="classQuantLib_1_1FdmBlackScholesOp"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::FdmLinearOp</label>
+        <link refid="classQuantLib_1_1FdmLinearOp"/>
+      </node>
+      <node id="2">
+        <label>QuantLib::FdmLinearOpComposite</label>
+        <link refid="classQuantLib_1_1FdmLinearOpComposite"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>QuantLib::FirstDerivativeOp</label>
+        <link refid="classQuantLib_1_1FirstDerivativeOp"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>QuantLib::SecondDerivativeOp</label>
+        <link refid="classQuantLib_1_1SecondDerivativeOp"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QuantLib::TripleBandLinearOp</label>
+        <link refid="classQuantLib_1_1TripleBandLinearOp"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="ql/methods/finitedifferences/operators/fdmlinearop.hpp" line="34" column="5" bodyfile="ql/methods/finitedifferences/operators/fdmlinearop.hpp" bodystart="34" bodyend="41"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1FdmLinearOp_1a9d59d8bb3597206db60f61c3f448c211" prot="public" virt="pure-virtual"><scope>QuantLib::FdmLinearOp</scope><name>apply</name></member>
+      <member refid="classQuantLib_1_1FdmLinearOp_1af55693593c0cf7e885c67fd848f76e49" prot="public" virt="non-virtual"><scope>QuantLib::FdmLinearOp</scope><name>array_type</name></member>
+      <member refid="classQuantLib_1_1FdmLinearOp_1a32b6761dc11909646700747d33ef710c" prot="public" virt="pure-virtual"><scope>QuantLib::FdmLinearOp</scope><name>toMatrix</name></member>
+      <member refid="classQuantLib_1_1FdmLinearOp_1aa6f29eb6144a1848c73c21e392f023e4" prot="public" virt="virtual"><scope>QuantLib::FdmLinearOp</scope><name>~FdmLinearOp</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

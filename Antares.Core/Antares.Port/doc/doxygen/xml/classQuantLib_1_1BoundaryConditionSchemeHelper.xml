@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1BoundaryConditionSchemeHelper" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::BoundaryConditionSchemeHelper</compoundname>
+    <includes refid="boundaryconditionschemehelper_8hpp" local="no">boundaryconditionschemehelper.hpp</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classQuantLib_1_1BoundaryConditionSchemeHelper_1ab91d729b61551c058d62cdc5a5a27853" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1OperatorTraits" kindref="compound">OperatorTraits</ref>&lt; <ref refid="classQuantLib_1_1FdmLinearOp" kindref="compound">FdmLinearOp</ref> &gt;::array_type</type>
+        <definition>typedef OperatorTraits&lt;FdmLinearOp&gt;::array_type QuantLib::BoundaryConditionSchemeHelper::array_type</definition>
+        <argsstring></argsstring>
+        <name>array_type</name>
+        <qualifiedname>QuantLib::BoundaryConditionSchemeHelper::array_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/boundaryconditionschemehelper.hpp" line="34" column="45" bodyfile="ql/methods/finitedifferences/schemes/boundaryconditionschemehelper.hpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1BoundaryConditionSchemeHelper_1ab3611acc5647295c8c6416c360942a54" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1OperatorTraits" kindref="compound">OperatorTraits</ref>&lt; <ref refid="classQuantLib_1_1FdmLinearOp" kindref="compound">FdmLinearOp</ref> &gt;::operator_type</type>
+        <definition>typedef OperatorTraits&lt;FdmLinearOp&gt;::operator_type QuantLib::BoundaryConditionSchemeHelper::operator_type</definition>
+        <argsstring></argsstring>
+        <name>operator_type</name>
+        <qualifiedname>QuantLib::BoundaryConditionSchemeHelper::operator_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/boundaryconditionschemehelper.hpp" line="35" column="48" bodyfile="ql/methods/finitedifferences/schemes/boundaryconditionschemehelper.hpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1BoundaryConditionSchemeHelper_1a4bc9e4e5369e106053ae1c22a8e98809" prot="private" static="no" mutable="no">
+        <type><ref refid="classQuantLib_1_1OperatorTraits" kindref="compound">OperatorTraits</ref>&lt; <ref refid="classQuantLib_1_1FdmLinearOp" kindref="compound">FdmLinearOp</ref> &gt;::bc_set</type>
+        <definition>OperatorTraits&lt;FdmLinearOp&gt;::bc_set QuantLib::BoundaryConditionSchemeHelper::bcSet_</definition>
+        <argsstring></argsstring>
+        <name>bcSet_</name>
+        <qualifiedname>QuantLib::BoundaryConditionSchemeHelper::bcSet_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/boundaryconditionschemehelper.hpp" line="63" column="33" bodyfile="ql/methods/finitedifferences/schemes/boundaryconditionschemehelper.hpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1BoundaryConditionSchemeHelper_1ae3b5292ed50b656d31a3b570b3dcd5fe" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::BoundaryConditionSchemeHelper::BoundaryConditionSchemeHelper</definition>
+        <argsstring>(OperatorTraits&lt; FdmLinearOp &gt;::bc_set bcSet)</argsstring>
+        <name>BoundaryConditionSchemeHelper</name>
+        <qualifiedname>QuantLib::BoundaryConditionSchemeHelper::BoundaryConditionSchemeHelper</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1OperatorTraits" kindref="compound">OperatorTraits</ref>&lt; <ref refid="classQuantLib_1_1FdmLinearOp" kindref="compound">FdmLinearOp</ref> &gt;::bc_set</type>
+          <declname>bcSet</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/boundaryconditionschemehelper.hpp" line="37" column="18" bodyfile="ql/methods/finitedifferences/schemes/boundaryconditionschemehelper.hpp" bodystart="37" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1BoundaryConditionSchemeHelper_1af6df7e517410527679b0519e902008ed" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::BoundaryConditionSchemeHelper::applyBeforeApplying</definition>
+        <argsstring>(operator_type &amp;op) const</argsstring>
+        <name>applyBeforeApplying</name>
+        <qualifiedname>QuantLib::BoundaryConditionSchemeHelper::applyBeforeApplying</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1BoundaryConditionSchemeHelper_1ab3611acc5647295c8c6416c360942a54" kindref="member">operator_type</ref> &amp;</type>
+          <declname>op</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/boundaryconditionschemehelper.hpp" line="40" column="14" bodyfile="ql/methods/finitedifferences/schemes/boundaryconditionschemehelper.hpp" bodystart="40" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1BoundaryConditionSchemeHelper_1a6e0d039aa80f59b694cb8a4488731cf4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::BoundaryConditionSchemeHelper::applyBeforeSolving</definition>
+        <argsstring>(operator_type &amp;op, array_type &amp;a) const</argsstring>
+        <name>applyBeforeSolving</name>
+        <qualifiedname>QuantLib::BoundaryConditionSchemeHelper::applyBeforeSolving</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1BoundaryConditionSchemeHelper_1ab3611acc5647295c8c6416c360942a54" kindref="member">operator_type</ref> &amp;</type>
+          <declname>op</declname>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1BoundaryConditionSchemeHelper_1ab91d729b61551c058d62cdc5a5a27853" kindref="member">array_type</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/boundaryconditionschemehelper.hpp" line="44" column="14" bodyfile="ql/methods/finitedifferences/schemes/boundaryconditionschemehelper.hpp" bodystart="44" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1BoundaryConditionSchemeHelper_1a31d77d6acac9a5f604b1af1955d78de4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::BoundaryConditionSchemeHelper::applyAfterApplying</definition>
+        <argsstring>(array_type &amp;a) const</argsstring>
+        <name>applyAfterApplying</name>
+        <qualifiedname>QuantLib::BoundaryConditionSchemeHelper::applyAfterApplying</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1BoundaryConditionSchemeHelper_1ab91d729b61551c058d62cdc5a5a27853" kindref="member">array_type</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/boundaryconditionschemehelper.hpp" line="48" column="14" bodyfile="ql/methods/finitedifferences/schemes/boundaryconditionschemehelper.hpp" bodystart="48" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1BoundaryConditionSchemeHelper_1aa385bd3bb7950816cad17a1f171b349c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::BoundaryConditionSchemeHelper::applyAfterSolving</definition>
+        <argsstring>(array_type &amp;a) const</argsstring>
+        <name>applyAfterSolving</name>
+        <qualifiedname>QuantLib::BoundaryConditionSchemeHelper::applyAfterSolving</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1BoundaryConditionSchemeHelper_1ab91d729b61551c058d62cdc5a5a27853" kindref="member">array_type</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/boundaryconditionschemehelper.hpp" line="52" column="14" bodyfile="ql/methods/finitedifferences/schemes/boundaryconditionschemehelper.hpp" bodystart="52" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1BoundaryConditionSchemeHelper_1aea5303741dcf01207baaab80efa92080" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::BoundaryConditionSchemeHelper::setTime</definition>
+        <argsstring>(Time t) const</argsstring>
+        <name>setTime</name>
+        <qualifiedname>QuantLib::BoundaryConditionSchemeHelper::setTime</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/boundaryconditionschemehelper.hpp" line="56" column="14" bodyfile="ql/methods/finitedifferences/schemes/boundaryconditionschemehelper.hpp" bodystart="56" bodyend="59"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classQuantLib_1_1BoundaryConditionSchemeHelper_1a9d20b79a9978eee71df1f896ea908bee" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::BoundaryConditionSchemeHelper::BoundaryConditionSchemeHelper</definition>
+        <argsstring>()=default</argsstring>
+        <name>BoundaryConditionSchemeHelper</name>
+        <qualifiedname>QuantLib::BoundaryConditionSchemeHelper::BoundaryConditionSchemeHelper</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/boundaryconditionschemehelper.hpp" line="62" column="9"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>QuantLib::OperatorTraits&lt; QuantLib::FdmLinearOp &gt;</label>
+        <link refid="classQuantLib_1_1OperatorTraits"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::BoundaryConditionSchemeHelper</label>
+        <link refid="classQuantLib_1_1BoundaryConditionSchemeHelper"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>bcSet_</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/methods/finitedifferences/schemes/boundaryconditionschemehelper.hpp" line="32" column="5" bodyfile="ql/methods/finitedifferences/schemes/boundaryconditionschemehelper.hpp" bodystart="32" bodyend="64"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1BoundaryConditionSchemeHelper_1a31d77d6acac9a5f604b1af1955d78de4" prot="public" virt="non-virtual"><scope>QuantLib::BoundaryConditionSchemeHelper</scope><name>applyAfterApplying</name></member>
+      <member refid="classQuantLib_1_1BoundaryConditionSchemeHelper_1aa385bd3bb7950816cad17a1f171b349c" prot="public" virt="non-virtual"><scope>QuantLib::BoundaryConditionSchemeHelper</scope><name>applyAfterSolving</name></member>
+      <member refid="classQuantLib_1_1BoundaryConditionSchemeHelper_1af6df7e517410527679b0519e902008ed" prot="public" virt="non-virtual"><scope>QuantLib::BoundaryConditionSchemeHelper</scope><name>applyBeforeApplying</name></member>
+      <member refid="classQuantLib_1_1BoundaryConditionSchemeHelper_1a6e0d039aa80f59b694cb8a4488731cf4" prot="public" virt="non-virtual"><scope>QuantLib::BoundaryConditionSchemeHelper</scope><name>applyBeforeSolving</name></member>
+      <member refid="classQuantLib_1_1BoundaryConditionSchemeHelper_1ab91d729b61551c058d62cdc5a5a27853" prot="public" virt="non-virtual"><scope>QuantLib::BoundaryConditionSchemeHelper</scope><name>array_type</name></member>
+      <member refid="classQuantLib_1_1BoundaryConditionSchemeHelper_1a4bc9e4e5369e106053ae1c22a8e98809" prot="private" virt="non-virtual"><scope>QuantLib::BoundaryConditionSchemeHelper</scope><name>bcSet_</name></member>
+      <member refid="classQuantLib_1_1BoundaryConditionSchemeHelper_1ae3b5292ed50b656d31a3b570b3dcd5fe" prot="public" virt="non-virtual"><scope>QuantLib::BoundaryConditionSchemeHelper</scope><name>BoundaryConditionSchemeHelper</name></member>
+      <member refid="classQuantLib_1_1BoundaryConditionSchemeHelper_1a9d20b79a9978eee71df1f896ea908bee" prot="private" virt="non-virtual"><scope>QuantLib::BoundaryConditionSchemeHelper</scope><name>BoundaryConditionSchemeHelper</name></member>
+      <member refid="classQuantLib_1_1BoundaryConditionSchemeHelper_1ab3611acc5647295c8c6416c360942a54" prot="public" virt="non-virtual"><scope>QuantLib::BoundaryConditionSchemeHelper</scope><name>operator_type</name></member>
+      <member refid="classQuantLib_1_1BoundaryConditionSchemeHelper_1aea5303741dcf01207baaab80efa92080" prot="public" virt="non-virtual"><scope>QuantLib::BoundaryConditionSchemeHelper</scope><name>setTime</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

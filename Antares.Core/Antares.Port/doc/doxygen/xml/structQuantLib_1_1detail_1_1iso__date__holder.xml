@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structQuantLib_1_1detail_1_1iso__date__holder" kind="struct" language="C++" prot="private">
+    <compoundname>QuantLib::detail::iso_date_holder</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structQuantLib_1_1detail_1_1iso__date__holder_1a6ed253e4a995db36859a05d8f70fcc1f" prot="public" static="no" mutable="no">
+        <type><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref></type>
+        <definition>Date QuantLib::detail::iso_date_holder::d</definition>
+        <argsstring></argsstring>
+        <name>d</name>
+        <qualifiedname>QuantLib::detail::iso_date_holder::d</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="329" column="18" bodyfile="ql/time/date.hpp" bodystart="329" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structQuantLib_1_1detail_1_1iso__date__holder_1a04b7d65b9a62dc9944fdf16870c8db65" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::detail::iso_date_holder::iso_date_holder</definition>
+        <argsstring>(const Date &amp;d)</argsstring>
+        <name>iso_date_holder</name>
+        <qualifiedname>QuantLib::detail::iso_date_holder::iso_date_holder</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="328" column="22" bodyfile="ql/time/date.hpp" bodystart="328" bodyend="328"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>QuantLib::Date</label>
+        <link refid="classQuantLib_1_1Date"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::detail::iso_date_holder</label>
+        <link refid="structQuantLib_1_1detail_1_1iso__date__holder"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>d</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/time/date.hpp" line="327" column="9" bodyfile="ql/time/date.hpp" bodystart="327" bodyend="330"/>
+    <listofallmembers>
+      <member refid="structQuantLib_1_1detail_1_1iso__date__holder_1a6ed253e4a995db36859a05d8f70fcc1f" prot="public" virt="non-virtual"><scope>QuantLib::detail::iso_date_holder</scope><name>d</name></member>
+      <member refid="structQuantLib_1_1detail_1_1iso__date__holder_1a04b7d65b9a62dc9944fdf16870c8db65" prot="public" virt="non-virtual"><scope>QuantLib::detail::iso_date_holder</scope><name>iso_date_holder</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

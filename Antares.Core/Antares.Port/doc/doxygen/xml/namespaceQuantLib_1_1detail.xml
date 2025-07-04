@@ -1,0 +1,472 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceQuantLib_1_1detail" kind="namespace" language="C++">
+    <compoundname>QuantLib::detail</compoundname>
+    <innerclass refid="classQuantLib_1_1detail_1_1CoefficientHolder" prot="public">QuantLib::detail::CoefficientHolder</innerclass>
+    <innerclass refid="classQuantLib_1_1detail_1_1CubicInterpolationImpl" prot="public">QuantLib::detail::CubicInterpolationImpl</innerclass>
+    <innerclass refid="structQuantLib_1_1detail_1_1FormatResetter" prot="public">QuantLib::detail::FormatResetter</innerclass>
+    <innerclass refid="structQuantLib_1_1detail_1_1formatted__date__holder" prot="private">QuantLib::detail::formatted_date_holder</innerclass>
+    <innerclass refid="classQuantLib_1_1detail_1_1GaussianQuadratureIntegrator" prot="public">QuantLib::detail::GaussianQuadratureIntegrator</innerclass>
+    <innerclass refid="classQuantLib_1_1detail_1_1ImpliedVolatilityHelper" prot="public">QuantLib::detail::ImpliedVolatilityHelper</innerclass>
+    <innerclass refid="structQuantLib_1_1detail_1_1iso__date__holder" prot="private">QuantLib::detail::iso_date_holder</innerclass>
+    <innerclass refid="classQuantLib_1_1detail_1_1LagrangeInterpolationImpl" prot="public">QuantLib::detail::LagrangeInterpolationImpl</innerclass>
+    <innerclass refid="classQuantLib_1_1detail_1_1LinearInterpolationImpl" prot="public">QuantLib::detail::LinearInterpolationImpl</innerclass>
+    <innerclass refid="structQuantLib_1_1detail_1_1long__date__holder" prot="private">QuantLib::detail::long_date_holder</innerclass>
+    <innerclass refid="structQuantLib_1_1detail_1_1long__period__holder" prot="private">QuantLib::detail::long_period_holder</innerclass>
+    <innerclass refid="structQuantLib_1_1detail_1_1long__weekday__holder" prot="public">QuantLib::detail::long_weekday_holder</innerclass>
+    <innerclass refid="structQuantLib_1_1detail_1_1null__checker" prot="public">QuantLib::detail::null_checker</innerclass>
+    <innerclass refid="structQuantLib_1_1detail_1_1OdeFctWrapper" prot="private">QuantLib::detail::OdeFctWrapper</innerclass>
+    <innerclass refid="structQuantLib_1_1detail_1_1ordinal__holder" prot="public">QuantLib::detail::ordinal_holder</innerclass>
+    <innerclass refid="structQuantLib_1_1detail_1_1percent__holder" prot="public">QuantLib::detail::percent_holder</innerclass>
+    <innerclass refid="structQuantLib_1_1detail_1_1power__of__two__holder" prot="public">QuantLib::detail::power_of_two_holder</innerclass>
+    <innerclass refid="classQuantLib_1_1detail_1_1QdPlusAddOnValue" prot="public">QuantLib::detail::QdPlusAddOnValue</innerclass>
+    <innerclass refid="classQuantLib_1_1detail_1_1QdPutCallParityEngine" prot="public">QuantLib::detail::QdPutCallParityEngine</innerclass>
+    <innerclass refid="structQuantLib_1_1detail_1_1sequence__holder" prot="public">QuantLib::detail::sequence_holder</innerclass>
+    <innerclass refid="structQuantLib_1_1detail_1_1short__date__holder" prot="private">QuantLib::detail::short_date_holder</innerclass>
+    <innerclass refid="structQuantLib_1_1detail_1_1short__period__holder" prot="private">QuantLib::detail::short_period_holder</innerclass>
+    <innerclass refid="structQuantLib_1_1detail_1_1short__weekday__holder" prot="public">QuantLib::detail::short_weekday_holder</innerclass>
+    <innerclass refid="structQuantLib_1_1detail_1_1shortest__weekday__holder" prot="public">QuantLib::detail::shortest_weekday_holder</innerclass>
+    <innerclass refid="classQuantLib_1_1detail_1_1simple__event" prot="public">QuantLib::detail::simple_event</innerclass>
+    <innerclass refid="classQuantLib_1_1detail_1_1UpdatedYInterpolation" prot="public">QuantLib::detail::UpdatedYInterpolation</innerclass>
+    <innerclass refid="structQuantLib_1_1detail_1_1variant__visitor" prot="public">QuantLib::detail::variant_visitor</innerclass>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceQuantLib_1_1detail_1aca4d093c4c8c515c7bc4cacd66463a48" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class I</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void QuantLib::detail::_fill_array_</definition>
+        <argsstring>(Array &amp;a, std::unique_ptr&lt; Real[]&gt; &amp;data_, Size &amp;n_, I begin, I end, const std::true_type &amp;)</argsstring>
+        <name>_fill_array_</name>
+        <qualifiedname>QuantLib::detail::_fill_array_</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>[]&gt; &amp;</type>
+          <declname>data_</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref> &amp;</type>
+          <declname>n_</declname>
+        </param>
+        <param>
+          <type>I</type>
+          <declname>begin</declname>
+        </param>
+        <param>
+          <type>I</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type>const std::true_type &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="295" column="21" bodyfile="ql/math/array.hpp" bodystart="295" bodyend="309"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceQuantLib_1_1detail_1af1f64201af68d0d28c833fe92ae17477" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class I</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void QuantLib::detail::_fill_array_</definition>
+        <argsstring>(Array &amp;a, std::unique_ptr&lt; Real[]&gt; &amp;data_, Size &amp;n_, const I &amp;begin, const I &amp;end, const std::false_type &amp;)</argsstring>
+        <name>_fill_array_</name>
+        <qualifiedname>QuantLib::detail::_fill_array_</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>[]&gt; &amp;</type>
+          <declname>data_</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref> &amp;</type>
+          <declname>n_</declname>
+        </param>
+        <param>
+          <type>const I &amp;</type>
+          <declname>begin</declname>
+        </param>
+        <param>
+          <type>const I &amp;</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type>const std::false_type &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/array.hpp" line="312" column="21" bodyfile="ql/math/array.hpp" bodystart="312" bodyend="325"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceQuantLib_1_1detail_1a081e3d826897f7d0f8851f9c34158a29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; QuantLib::detail::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const short_date_holder &amp;holder)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>QuantLib::detail::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structQuantLib_1_1detail_1_1short__date__holder" kindref="compound">short_date_holder</ref> &amp;</type>
+          <declname>holder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.cpp" line="894" column="9" bodyfile="ql/time/date.cpp" bodystart="894" bodyend="910" declfile="ql/time/date.hpp" declline="319" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceQuantLib_1_1detail_1a86542b093e78a0c0e868d9695cb3ebee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; QuantLib::detail::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const long_date_holder &amp;holder)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>QuantLib::detail::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structQuantLib_1_1detail_1_1long__date__holder" kindref="compound">long_date_holder</ref> &amp;</type>
+          <declname>holder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.cpp" line="912" column="9" bodyfile="ql/time/date.cpp" bodystart="912" bodyend="924" declfile="ql/time/date.hpp" declline="325" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceQuantLib_1_1detail_1a654bb73c4478bbe4d9bc0e7cbf83691a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; QuantLib::detail::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const iso_date_holder &amp;holder)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>QuantLib::detail::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structQuantLib_1_1detail_1_1iso__date__holder" kindref="compound">iso_date_holder</ref> &amp;</type>
+          <declname>holder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.cpp" line="926" column="9" bodyfile="ql/time/date.cpp" bodystart="926" bodyend="940" declfile="ql/time/date.hpp" declline="331" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceQuantLib_1_1detail_1a11d160d0d48bd83b18eed32905bd02f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; QuantLib::detail::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const formatted_date_holder &amp;holder)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>QuantLib::detail::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structQuantLib_1_1detail_1_1formatted__date__holder" kindref="compound">formatted_date_holder</ref> &amp;</type>
+          <declname>holder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.cpp" line="942" column="9" bodyfile="ql/time/date.cpp" bodystart="942" bodyend="956" declfile="ql/time/date.hpp" declline="338" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceQuantLib_1_1detail_1aaeadb487709958322c0ba994d682aeba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; QuantLib::detail::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const long_period_holder &amp;holder)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>QuantLib::detail::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structQuantLib_1_1detail_1_1long__period__holder" kindref="compound">long_period_holder</ref> &amp;</type>
+          <declname>holder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.cpp" line="404" column="9" bodyfile="ql/time/period.cpp" bodystart="404" bodyend="419" declfile="ql/time/period.hpp" declline="116" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceQuantLib_1_1detail_1a16958d5aa2c48816ce167212326e7040" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; QuantLib::detail::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const short_period_holder &amp;holder)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>QuantLib::detail::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structQuantLib_1_1detail_1_1short__period__holder" kindref="compound">short_period_holder</ref> &amp;</type>
+          <declname>holder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/period.cpp" line="421" column="9" bodyfile="ql/time/period.cpp" bodystart="421" bodyend="436" declfile="ql/time/period.hpp" declline="122" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceQuantLib_1_1detail_1a888b1a0d03bd629785256e0b9a568511" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; QuantLib::detail::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const long_weekday_holder &amp;holder)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>QuantLib::detail::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structQuantLib_1_1detail_1_1long__weekday__holder" kindref="compound">long_weekday_holder</ref> &amp;</type>
+          <declname>holder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/weekday.cpp" line="38" column="9" bodyfile="ql/time/weekday.cpp" bodystart="38" bodyend="58" declfile="ql/time/weekday.hpp" declline="66" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceQuantLib_1_1detail_1ad75e75ee0e61ef2aa5f4f1b4767be4f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; QuantLib::detail::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const short_weekday_holder &amp;holder)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>QuantLib::detail::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structQuantLib_1_1detail_1_1short__weekday__holder" kindref="compound">short_weekday_holder</ref> &amp;</type>
+          <declname>holder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/weekday.cpp" line="60" column="9" bodyfile="ql/time/weekday.cpp" bodystart="60" bodyend="80" declfile="ql/time/weekday.hpp" declline="72" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceQuantLib_1_1detail_1a30309e4567cd3c4594a9b264562897ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; QuantLib::detail::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const shortest_weekday_holder &amp;holder)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>QuantLib::detail::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structQuantLib_1_1detail_1_1shortest__weekday__holder" kindref="compound">shortest_weekday_holder</ref> &amp;</type>
+          <declname>holder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/weekday.cpp" line="82" column="9" bodyfile="ql/time/weekday.cpp" bodystart="82" bodyend="102" declfile="ql/time/weekday.hpp" declline="78" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceQuantLib_1_1detail_1aba38987c56d428dfe3f8352066aa030a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; QuantLib::detail::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const ordinal_holder &amp;holder)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>QuantLib::detail::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structQuantLib_1_1detail_1_1ordinal__holder" kindref="compound">ordinal_holder</ref> &amp;</type>
+          <declname>holder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/utilities/dataformatters.cpp" line="25" column="9" bodyfile="ql/utilities/dataformatters.cpp" bodystart="25" bodyend="40" declfile="ql/utilities/dataformatters.hpp" declline="45" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceQuantLib_1_1detail_1a15379eca1db9f6c1b837bacbf4f87b43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; QuantLib::detail::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const percent_holder &amp;holder)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>QuantLib::detail::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structQuantLib_1_1detail_1_1percent__holder" kindref="compound">percent_holder</ref> &amp;</type>
+          <declname>holder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/utilities/dataformatters.cpp" line="42" column="9" bodyfile="ql/utilities/dataformatters.cpp" bodystart="42" bodyend="55" declfile="ql/utilities/dataformatters.hpp" declline="59" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceQuantLib_1_1detail_1a096a01f5d5eda5c27f55bdb9cab08c7f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; QuantLib::detail::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;, const null_checker&lt; T &gt; &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>QuantLib::detail::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <defname>out</defname>
+        </param>
+        <param>
+          <type>const <ref refid="structQuantLib_1_1detail_1_1null__checker" kindref="compound">null_checker</ref>&lt; T &gt; &amp;</type>
+          <defname>checker</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/utilities/dataformatters.hpp" line="149" column="16" bodyfile="ql/utilities/dataformatters.hpp" bodystart="149" bodyend="155" declfile="ql/utilities/dataformatters.hpp" declline="39" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceQuantLib_1_1detail_1a3610c09876d0efbe92d54c545a977bde" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; QuantLib::detail::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;, const power_of_two_holder&lt; T &gt; &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>QuantLib::detail::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <defname>out</defname>
+        </param>
+        <param>
+          <type>const <ref refid="structQuantLib_1_1detail_1_1power__of__two__holder" kindref="compound">power_of_two_holder</ref>&lt; T &gt; &amp;</type>
+          <defname>holder</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/utilities/dataformatters.hpp" line="158" column="16" bodyfile="ql/utilities/dataformatters.hpp" bodystart="158" bodyend="172" declfile="ql/utilities/dataformatters.hpp" declline="52" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceQuantLib_1_1detail_1a5a45288d328b31dcabf4abdb791c8266" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename I</type>
+          </param>
+        </templateparamlist>
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; QuantLib::detail::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;, const sequence_holder&lt; I &gt; &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>QuantLib::detail::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <defname>out</defname>
+        </param>
+        <param>
+          <type>const <ref refid="structQuantLib_1_1detail_1_1sequence__holder" kindref="compound">sequence_holder</ref>&lt; I &gt; &amp;</type>
+          <defname>holder</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/utilities/dataformatters.hpp" line="175" column="16" bodyfile="ql/utilities/dataformatters.hpp" bodystart="175" bodyend="182" declfile="ql/utilities/dataformatters.hpp" declline="67" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceQuantLib_1_1detail_1afc214dd4193f4c9c629ffce3741f165b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>QuantLib::detail::variant_visitor</definition>
+        <argsstring>(Ts...) -&gt; variant_visitor&lt; Ts... &gt;</argsstring>
+        <name>variant_visitor</name>
+        <qualifiedname>QuantLib::detail::variant_visitor</qualifiedname>
+        <param>
+          <type>Ts...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/utilities/variants.hpp" line="15" column="5" declfile="ql/utilities/variants.hpp" declline="15" declcolumn="5"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>References: J-P. Berrut and L.N. Trefethen, Barycentric Lagrange interpolation, SIAM Review, 46(3):501–517, 2004. <ulink url="https://people.maths.ox.ac.uk/trefethen/barycentric.pdf">https://people.maths.ox.ac.uk/trefethen/barycentric.pdf</ulink> </para>
+    </detaileddescription>
+    <location file="ql/event.hpp" line="65" column="5"/>
+  </compounddef>
+</doxygen>

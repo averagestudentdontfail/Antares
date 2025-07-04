@@ -1,0 +1,707 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1YieldTermStructure" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>QuantLib::YieldTermStructure</compoundname>
+    <basecompoundref refid="classQuantLib_1_1TermStructure" prot="public" virt="non-virtual">QuantLib::TermStructure</basecompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1FlatForward" prot="public" virt="non-virtual">QuantLib::FlatForward</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1ZeroYieldStructure" prot="public" virt="non-virtual">QuantLib::ZeroYieldStructure</derivedcompoundref>
+    <includes refid="yieldtermstructure_8hpp" local="no">yieldtermstructure.hpp</includes>
+    <sectiondef kind="user-defined">
+      <header>Calculations</header>
+      <description><para>This method must be implemented in derived classes to perform the actual calculations. When it is called, range check has already been performed; therefore, it must assume that extrapolation is required. </para>
+</description>
+      <memberdef kind="variable" id="classQuantLib_1_1YieldTermStructure_1a695c29e6164bddd6cc0db183dd1e9649" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classQuantLib_1_1Handle" kindref="compound">Handle</ref>&lt; <ref refid="classQuantLib_1_1Quote" kindref="compound">Quote</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;Handle&lt;Quote&gt; &gt; QuantLib::YieldTermStructure::jumps_</definition>
+        <argsstring></argsstring>
+        <name>jumps_</name>
+        <qualifiedname>QuantLib::YieldTermStructure::jumps_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/yieldtermstructure.hpp" line="173" column="21" bodyfile="ql/termstructures/yieldtermstructure.hpp" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1YieldTermStructure_1abb0dd012c9c0fb492ad683ec69e93a40" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &gt;</type>
+        <definition>std::vector&lt;Date&gt; QuantLib::YieldTermStructure::jumpDates_</definition>
+        <argsstring></argsstring>
+        <name>jumpDates_</name>
+        <qualifiedname>QuantLib::YieldTermStructure::jumpDates_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/yieldtermstructure.hpp" line="174" column="21" bodyfile="ql/termstructures/yieldtermstructure.hpp" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1YieldTermStructure_1a4fdef8c6b55317cd8604ecf9115d0a64" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref> &gt;</type>
+        <definition>std::vector&lt;Time&gt; QuantLib::YieldTermStructure::jumpTimes_</definition>
+        <argsstring></argsstring>
+        <name>jumpTimes_</name>
+        <qualifiedname>QuantLib::YieldTermStructure::jumpTimes_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/yieldtermstructure.hpp" line="175" column="21" bodyfile="ql/termstructures/yieldtermstructure.hpp" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1YieldTermStructure_1ac7ae5be010c465ff793d9508711c3559" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+        <definition>Size QuantLib::YieldTermStructure::nJumps_</definition>
+        <argsstring></argsstring>
+        <name>nJumps_</name>
+        <qualifiedname>QuantLib::YieldTermStructure::nJumps_</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/yieldtermstructure.hpp" line="176" column="14" bodyfile="ql/termstructures/yieldtermstructure.hpp" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1YieldTermStructure_1ac090b5d7653dd28dfae598627f36aff9" prot="private" static="no" mutable="no">
+        <type><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref></type>
+        <definition>Date QuantLib::YieldTermStructure::latestReference_</definition>
+        <argsstring></argsstring>
+        <name>latestReference_</name>
+        <qualifiedname>QuantLib::YieldTermStructure::latestReference_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/yieldtermstructure.hpp" line="177" column="14" bodyfile="ql/termstructures/yieldtermstructure.hpp" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1YieldTermStructure_1a5c8dd504b1ed73f96c61dce6d8bfed81" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="namespaceQuantLib_1a05e8e288a4bdedfe5b4e16d8cec14f1c" kindref="member">DiscountFactor</ref></type>
+        <definition>virtual DiscountFactor QuantLib::YieldTermStructure::discountImpl</definition>
+        <argsstring>(Time) const =0</argsstring>
+        <name>discountImpl</name>
+        <qualifiedname>QuantLib::YieldTermStructure::discountImpl</qualifiedname>
+        <reimplementedby refid="classQuantLib_1_1FlatForward_1a24c25d14869a0361904afa54cbaca7e6">discountImpl</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1ZeroYieldStructure_1a16ba143ac6c7b44a9648b52966afd357">discountImpl</reimplementedby>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+        </param>
+        <briefdescription>
+<para>discount factor calculation </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/yieldtermstructure.hpp" line="167" column="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1YieldTermStructure_1ae2c9e322b272582ee6456fb7e83c0066" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::YieldTermStructure::setJumps</definition>
+        <argsstring>(const Date &amp;referenceDate)</argsstring>
+        <name>setJumps</name>
+        <qualifiedname>QuantLib::YieldTermStructure::setJumps</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+          <declname>referenceDate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/yieldtermstructure.hpp" line="171" column="14" bodyfile="ql/termstructures/yieldtermstructure.cpp" bodystart="59" bodyend="74"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <header>Constructors</header>
+      <description><para>See the <ref refid="classQuantLib_1_1TermStructure" kindref="compound">TermStructure</ref> documentation for issues regarding constructors. </para>
+</description>
+      <memberdef kind="function" id="classQuantLib_1_1YieldTermStructure_1a2f77f6a92f1e48450c801debadd6c5d1" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::YieldTermStructure::YieldTermStructure</definition>
+        <argsstring>(const DayCounter &amp;dc=DayCounter())</argsstring>
+        <name>YieldTermStructure</name>
+        <qualifiedname>QuantLib::YieldTermStructure::YieldTermStructure</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref> &amp;</type>
+          <declname>dc</declname>
+          <defval><ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/yieldtermstructure.hpp" line="51" column="18" bodyfile="ql/termstructures/yieldtermstructure.cpp" bodystart="33" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1YieldTermStructure_1a1512e59ec18b51681936cd84c1381b28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::YieldTermStructure::YieldTermStructure</definition>
+        <argsstring>(const Date &amp;referenceDate, const Calendar &amp;cal=Calendar(), const DayCounter &amp;dc=DayCounter(), std::vector&lt; Handle&lt; Quote &gt; &gt; jumps={}, const std::vector&lt; Date &gt; &amp;jumpDates={})</argsstring>
+        <name>YieldTermStructure</name>
+        <qualifiedname>QuantLib::YieldTermStructure::YieldTermStructure</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+          <declname>referenceDate</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Calendar" kindref="compound">Calendar</ref> &amp;</type>
+          <declname>cal</declname>
+          <defval><ref refid="classQuantLib_1_1Calendar" kindref="compound">Calendar</ref>()</defval>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref> &amp;</type>
+          <declname>dc</declname>
+          <defval><ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref>()</defval>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="classQuantLib_1_1Handle" kindref="compound">Handle</ref>&lt; <ref refid="classQuantLib_1_1Quote" kindref="compound">Quote</ref> &gt; &gt;</type>
+          <declname>jumps</declname>
+          <defval>{}</defval>
+        </param>
+        <param>
+          <type>const std::vector&lt; <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &gt; &amp;</type>
+          <declname>jumpDates</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/yieldtermstructure.hpp" line="52" column="9" bodyfile="ql/termstructures/yieldtermstructure.cpp" bodystart="35" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1YieldTermStructure_1a1c4ed273e8b8b8631139fc784edb399c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::YieldTermStructure::YieldTermStructure</definition>
+        <argsstring>(Natural settlementDays, const Calendar &amp;cal, const DayCounter &amp;dc=DayCounter(), std::vector&lt; Handle&lt; Quote &gt; &gt; jumps={}, const std::vector&lt; Date &gt; &amp;jumpDates={})</argsstring>
+        <name>YieldTermStructure</name>
+        <qualifiedname>QuantLib::YieldTermStructure::YieldTermStructure</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a9adc2615d630d6006896b3402b09b03b" kindref="member">Natural</ref></type>
+          <declname>settlementDays</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Calendar" kindref="compound">Calendar</ref> &amp;</type>
+          <declname>cal</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref> &amp;</type>
+          <declname>dc</declname>
+          <defval><ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref>()</defval>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="classQuantLib_1_1Handle" kindref="compound">Handle</ref>&lt; <ref refid="classQuantLib_1_1Quote" kindref="compound">Quote</ref> &gt; &gt;</type>
+          <declname>jumps</declname>
+          <defval>{}</defval>
+        </param>
+        <param>
+          <type>const std::vector&lt; <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &gt; &amp;</type>
+          <declname>jumpDates</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/yieldtermstructure.hpp" line="57" column="9" bodyfile="ql/termstructures/yieldtermstructure.cpp" bodystart="47" bodyend="57"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <header>Discount factors</header>
+      <description><para>These methods return the discount factor from a given date or time to the reference date. In the latter case, the time is calculated as a fraction of year from the reference date. </para>
+</description>
+      <memberdef kind="function" id="classQuantLib_1_1YieldTermStructure_1ae7ebb1a52720c8275b40752e505834b8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a05e8e288a4bdedfe5b4e16d8cec14f1c" kindref="member">DiscountFactor</ref></type>
+        <definition>DiscountFactor QuantLib::YieldTermStructure::discount</definition>
+        <argsstring>(const Date &amp;d, bool extrapolate=false) const</argsstring>
+        <name>discount</name>
+        <qualifiedname>QuantLib::YieldTermStructure::discount</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>extrapolate</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/yieldtermstructure.hpp" line="71" column="24" bodyfile="ql/termstructures/yieldtermstructure.hpp" bodystart="183" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1YieldTermStructure_1a0f98239d6aa04b7bb905da1f36e93f05" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a05e8e288a4bdedfe5b4e16d8cec14f1c" kindref="member">DiscountFactor</ref></type>
+        <definition>DiscountFactor QuantLib::YieldTermStructure::discount</definition>
+        <argsstring>(Time t, bool extrapolate=false) const</argsstring>
+        <name>discount</name>
+        <qualifiedname>QuantLib::YieldTermStructure::discount</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>extrapolate</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The same day-counting rule used by the term structure should be used for calculating the passed time t. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/yieldtermstructure.hpp" line="76" column="24" bodyfile="ql/termstructures/yieldtermstructure.cpp" bodystart="76" bodyend="96"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <header>Zero-yield rates</header>
+      <description><para>These methods return the implied zero-yield rate for a given date or time. In the former case, the time is calculated as a fraction of year from the reference date. </para>
+</description>
+      <memberdef kind="function" id="classQuantLib_1_1YieldTermStructure_1a2c3ff5cd67f7a14b9d917fbe6491c096" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1InterestRate" kindref="compound">InterestRate</ref></type>
+        <definition>InterestRate QuantLib::YieldTermStructure::zeroRate</definition>
+        <argsstring>(const Date &amp;d, const DayCounter &amp;resultDayCounter, Compounding comp, Frequency freq=Annual, bool extrapolate=false) const</argsstring>
+        <name>zeroRate</name>
+        <qualifiedname>QuantLib::YieldTermStructure::zeroRate</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref> &amp;</type>
+          <declname>resultDayCounter</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a1d1b94285bc6741279c70fac8b34265b" kindref="member">Compounding</ref></type>
+          <declname>comp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1abfa020992bcf412e2bc99f56d4381b4a" kindref="member">Frequency</ref></type>
+          <declname>freq</declname>
+          <defval><ref refid="namespaceQuantLib_1abfa020992bcf412e2bc99f56d4381b4aac6003519ba84c016466307b35221e4cf" kindref="member">Annual</ref></defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>extrapolate</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The resulting interest rate has the required daycounting rule. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/yieldtermstructure.hpp" line="90" column="22" bodyfile="ql/termstructures/yieldtermstructure.cpp" bodystart="98" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1YieldTermStructure_1a081055025072ce474e54ba29a250c786" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1InterestRate" kindref="compound">InterestRate</ref></type>
+        <definition>InterestRate QuantLib::YieldTermStructure::zeroRate</definition>
+        <argsstring>(Time t, Compounding comp, Frequency freq=Annual, bool extrapolate=false) const</argsstring>
+        <name>zeroRate</name>
+        <qualifiedname>QuantLib::YieldTermStructure::zeroRate</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a1d1b94285bc6741279c70fac8b34265b" kindref="member">Compounding</ref></type>
+          <declname>comp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1abfa020992bcf412e2bc99f56d4381b4a" kindref="member">Frequency</ref></type>
+          <declname>freq</declname>
+          <defval><ref refid="namespaceQuantLib_1abfa020992bcf412e2bc99f56d4381b4aac6003519ba84c016466307b35221e4cf" kindref="member">Annual</ref></defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>extrapolate</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The resulting interest rate has the same day-counting rule used by the term structure. The same rule should be used for calculating the passed time t. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/yieldtermstructure.hpp" line="100" column="22" bodyfile="ql/termstructures/yieldtermstructure.cpp" bodystart="118" bodyend="127"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <header>Forward rates</header>
+      <description><para>These methods returns the forward interest rate between two dates or times. In the former case, times are calculated as fractions of year from the reference date.</para>
+<para>If both dates (times) are equal the instantaneous forward rate is returned. </para>
+</description>
+      <memberdef kind="function" id="classQuantLib_1_1YieldTermStructure_1a1e1ae6ff3486bb692f6a27a00c88deb0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1InterestRate" kindref="compound">InterestRate</ref></type>
+        <definition>InterestRate QuantLib::YieldTermStructure::forwardRate</definition>
+        <argsstring>(const Date &amp;d1, const Date &amp;d2, const DayCounter &amp;resultDayCounter, Compounding comp, Frequency freq=Annual, bool extrapolate=false) const</argsstring>
+        <name>forwardRate</name>
+        <qualifiedname>QuantLib::YieldTermStructure::forwardRate</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+          <declname>d1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+          <declname>d2</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref> &amp;</type>
+          <declname>resultDayCounter</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a1d1b94285bc6741279c70fac8b34265b" kindref="member">Compounding</ref></type>
+          <declname>comp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1abfa020992bcf412e2bc99f56d4381b4a" kindref="member">Frequency</ref></type>
+          <declname>freq</declname>
+          <defval><ref refid="namespaceQuantLib_1abfa020992bcf412e2bc99f56d4381b4aac6003519ba84c016466307b35221e4cf" kindref="member">Annual</ref></defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>extrapolate</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The resulting interest rate has the required day-counting rule. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/yieldtermstructure.hpp" line="119" column="22" bodyfile="ql/termstructures/yieldtermstructure.cpp" bodystart="129" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1YieldTermStructure_1a54d4939c63eae4aa5c96cdc50a6384b5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1InterestRate" kindref="compound">InterestRate</ref></type>
+        <definition>InterestRate QuantLib::YieldTermStructure::forwardRate</definition>
+        <argsstring>(const Date &amp;d, const Period &amp;p, const DayCounter &amp;resultDayCounter, Compounding comp, Frequency freq=Annual, bool extrapolate=false) const</argsstring>
+        <name>forwardRate</name>
+        <qualifiedname>QuantLib::YieldTermStructure::forwardRate</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref> &amp;</type>
+          <declname>resultDayCounter</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a1d1b94285bc6741279c70fac8b34265b" kindref="member">Compounding</ref></type>
+          <declname>comp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1abfa020992bcf412e2bc99f56d4381b4a" kindref="member">Frequency</ref></type>
+          <declname>freq</declname>
+          <defval><ref refid="namespaceQuantLib_1abfa020992bcf412e2bc99f56d4381b4aac6003519ba84c016466307b35221e4cf" kindref="member">Annual</ref></defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>extrapolate</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The resulting interest rate has the required day-counting rule. <simplesect kind="warning"><para>dates are not adjusted for holidays </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/yieldtermstructure.hpp" line="129" column="22" bodyfile="ql/termstructures/yieldtermstructure.hpp" bodystart="189" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1YieldTermStructure_1a5d109bba7336c36026652266be7abd0c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1InterestRate" kindref="compound">InterestRate</ref></type>
+        <definition>InterestRate QuantLib::YieldTermStructure::forwardRate</definition>
+        <argsstring>(Time t1, Time t2, Compounding comp, Frequency freq=Annual, bool extrapolate=false) const</argsstring>
+        <name>forwardRate</name>
+        <qualifiedname>QuantLib::YieldTermStructure::forwardRate</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>t1</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>t2</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a1d1b94285bc6741279c70fac8b34265b" kindref="member">Compounding</ref></type>
+          <declname>comp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1abfa020992bcf412e2bc99f56d4381b4a" kindref="member">Frequency</ref></type>
+          <declname>freq</declname>
+          <defval><ref refid="namespaceQuantLib_1abfa020992bcf412e2bc99f56d4381b4aac6003519ba84c016466307b35221e4cf" kindref="member">Annual</ref></defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>extrapolate</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The resulting interest rate has the same day-counting rule used by the term structure. The same rule should be used for calculating the passed times t1 and t2. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/yieldtermstructure.hpp" line="140" column="22" bodyfile="ql/termstructures/yieldtermstructure.cpp" bodystart="154" bodyend="172"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <header>Jump inspectors</header>
+      <memberdef kind="function" id="classQuantLib_1_1YieldTermStructure_1a1121c8d1e731832496182bda33ba8d45" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::vector&lt; <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &gt; &amp;</type>
+        <definition>const std::vector&lt; Date &gt; &amp; QuantLib::YieldTermStructure::jumpDates</definition>
+        <argsstring>() const</argsstring>
+        <name>jumpDates</name>
+        <qualifiedname>QuantLib::YieldTermStructure::jumpDates</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/yieldtermstructure.hpp" line="149" column="27" bodyfile="ql/termstructures/yieldtermstructure.hpp" bodystart="198" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1YieldTermStructure_1ae34149edb2c2f604b0f1469b2268e517" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::vector&lt; <ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref> &gt; &amp;</type>
+        <definition>const std::vector&lt; Time &gt; &amp; QuantLib::YieldTermStructure::jumpTimes</definition>
+        <argsstring>() const</argsstring>
+        <name>jumpTimes</name>
+        <qualifiedname>QuantLib::YieldTermStructure::jumpTimes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/yieldtermstructure.hpp" line="150" column="27" bodyfile="ql/termstructures/yieldtermstructure.hpp" bodystart="202" bodyend="204"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <header>Observer interface</header>
+      <memberdef kind="function" id="classQuantLib_1_1YieldTermStructure_1af8c4936ba1b89c3dd94445159e7c330f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QuantLib::YieldTermStructure::update</definition>
+        <argsstring>() override</argsstring>
+        <name>update</name>
+        <qualifiedname>QuantLib::YieldTermStructure::update</qualifiedname>
+        <reimplements refid="classQuantLib_1_1TermStructure_1a016528f1fe9cabca6472d8f4776351e2">update</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method must be implemented in derived classes. An instance of Observer does not call this method directly: instead, it will be called by the observables the instance registered with when they need to notify any changes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/yieldtermstructure.hpp" line="155" column="14" bodyfile="ql/termstructures/yieldtermstructure.cpp" bodystart="174" bodyend="195"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Interest-rate term structure. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This abstract class defines the interface of concrete interest rate structures which will be derived from this one.</para>
+<para><xrefsect id="test_1_test000020"><xreftitle>Test</xreftitle><xrefdescription><para>observability against evaluation date changes is checked. </para>
+</xrefdescription></xrefsect></para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="5">
+        <label>QuantLib::Extrapolator</label>
+        <link refid="classQuantLib_1_1Extrapolator"/>
+      </node>
+      <node id="6">
+        <label>QuantLib::FlatForward</label>
+        <link refid="classQuantLib_1_1FlatForward"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QuantLib::Observable</label>
+        <link refid="classQuantLib_1_1Observable"/>
+      </node>
+      <node id="3">
+        <label>QuantLib::Observer</label>
+        <link refid="classQuantLib_1_1Observer"/>
+      </node>
+      <node id="8">
+        <label>QuantLib::QuantoTermStructure</label>
+        <link refid="classQuantLib_1_1QuantoTermStructure"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::TermStructure</label>
+        <link refid="classQuantLib_1_1TermStructure"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::YieldTermStructure</label>
+        <link refid="classQuantLib_1_1YieldTermStructure"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>QuantLib::ZeroYieldStructure</label>
+        <link refid="classQuantLib_1_1ZeroYieldStructure"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="6">
+        <label>QuantLib::Calendar</label>
+        <link refid="classQuantLib_1_1Calendar"/>
+      </node>
+      <node id="7">
+        <label>QuantLib::Date</label>
+        <link refid="classQuantLib_1_1Date"/>
+      </node>
+      <node id="8">
+        <label>QuantLib::DayCounter</label>
+        <link refid="classQuantLib_1_1DayCounter"/>
+      </node>
+      <node id="5">
+        <label>QuantLib::Extrapolator</label>
+        <link refid="classQuantLib_1_1Extrapolator"/>
+      </node>
+      <node id="4">
+        <label>QuantLib::Observable</label>
+        <link refid="classQuantLib_1_1Observable"/>
+      </node>
+      <node id="3">
+        <label>QuantLib::Observer</label>
+        <link refid="classQuantLib_1_1Observer"/>
+      </node>
+      <node id="2">
+        <label>QuantLib::TermStructure</label>
+        <link refid="classQuantLib_1_1TermStructure"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>calendar_</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>referenceDate_</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>dayCounter_</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::YieldTermStructure</label>
+        <link refid="classQuantLib_1_1YieldTermStructure"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>latestReference_</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/termstructures/yieldtermstructure.hpp" line="44" column="5" bodyfile="ql/termstructures/yieldtermstructure.hpp" bodystart="44" bodyend="178"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Extrapolator_1ab3936a9b5b5c163d3e511437c16c1d9e" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>allowsExtrapolation</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1ac4ea5cbce495c9a47a44eeaedf7a9d45" prot="public" virt="virtual"><scope>QuantLib::YieldTermStructure</scope><name>calendar</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1a0a09e3fa8cdfbc9aa9685da0c35ccb90" prot="protected" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>calendar_</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1aa7297742ffbeeb0c7611f90a0f7d15bf" prot="protected" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>checkRange</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1a4d246bcb13b7518a75088bf7cf01ea75" prot="protected" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>checkRange</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1ac03e725e4e0685b209caa626b00924ca" prot="public" virt="virtual"><scope>QuantLib::YieldTermStructure</scope><name>dayCounter</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1ab7dbb0cc1b2a4c5b5ee840b4822dc55e" prot="private" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>dayCounter_</name></member>
+      <member refid="classQuantLib_1_1Observer_1acfbf794db3e7d5cfdea2cd517a195183" prot="public" virt="virtual"><scope>QuantLib::YieldTermStructure</scope><name>deepUpdate</name></member>
+      <member refid="classQuantLib_1_1Extrapolator_1a6af69387d5cae0fe84d6a0c858406218" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>disableExtrapolation</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1ae7ebb1a52720c8275b40752e505834b8" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>discount</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1a0f98239d6aa04b7bb905da1f36e93f05" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>discount</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1a5c8dd504b1ed73f96c61dce6d8bfed81" prot="protected" virt="pure-virtual"><scope>QuantLib::YieldTermStructure</scope><name>discountImpl</name></member>
+      <member refid="classQuantLib_1_1Extrapolator_1a5f7b5650a44d6c63095bc739470c8bfb" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>enableExtrapolation</name></member>
+      <member refid="classQuantLib_1_1Extrapolator_1a9a45b840a003c411ad1c2b71578e329a" prot="private" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>extrapolate_</name></member>
+      <member refid="classQuantLib_1_1Extrapolator_1af1c3adaccdfaf07d3d07edaa234444f7" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>Extrapolator</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1a1e1ae6ff3486bb692f6a27a00c88deb0" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>forwardRate</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1a54d4939c63eae4aa5c96cdc50a6384b5" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>forwardRate</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1a5d109bba7336c36026652266be7abd0c" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>forwardRate</name></member>
+      <member refid="classQuantLib_1_1Observer_1ad45fa6f7242ee763d17c714a3e8bb6d7" prot="public" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::YieldTermStructure</scope><name>iterator</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1a1121c8d1e731832496182bda33ba8d45" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>jumpDates</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1abb0dd012c9c0fb492ad683ec69e93a40" prot="private" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>jumpDates_</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1a695c29e6164bddd6cc0db183dd1e9649" prot="private" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>jumps_</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1ae34149edb2c2f604b0f1469b2268e517" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>jumpTimes</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1a4fdef8c6b55317cd8604ecf9115d0a64" prot="private" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>jumpTimes_</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1ac090b5d7653dd28dfae598627f36aff9" prot="private" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>latestReference_</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1ae9af756bbddc15962711f77f514f08fa" prot="public" virt="pure-virtual"><scope>QuantLib::YieldTermStructure</scope><name>maxDate</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1a2f820c32e198e1046d97ca3dd9a807c5" prot="public" virt="virtual"><scope>QuantLib::YieldTermStructure</scope><name>maxTime</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1a8319e5c2c37b09a825d61210c9cb8e2a" prot="protected" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>moving_</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1ac7ae5be010c465ff793d9508711c3559" prot="private" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>nJumps_</name></member>
+      <member refid="classQuantLib_1_1Observable_1afb67478418efdb94382ac9d7ae904b94" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>notifyObservers</name></member>
+      <member refid="classQuantLib_1_1Observable_1ae0d19b21fab87a01f53586a6b5c15f85" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observable_1a942cf6a572bd95341433a6772c70cb29" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observable_1a6c35885ef344665ecdfac9b9f3a59c0e" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observer_1a85e3adb273b706155ea7e8bd98ee460b" prot="private" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>observables_</name></member>
+      <member refid="classQuantLib_1_1Observer_1a246072080d37c0cd180013417251c70b" prot="public" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::YieldTermStructure</scope><name>Observer</name></member>
+      <member refid="classQuantLib_1_1Observer_1ae6e892e237db5ffe7acbef54360ef0e3" prot="public" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::YieldTermStructure</scope><name>Observer</name></member>
+      <member refid="classQuantLib_1_1Observable_1a4da6017619203dcb570d5f4174f0beea" prot="private" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>observers_</name></member>
+      <member refid="classQuantLib_1_1Observer_1a40ad1a8bfb71e32b2916b370f3f9392c" prot="public" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::YieldTermStructure</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1Observable_1ad1e086da62f05b4bc5eafa698ef6fbc3" prot="public" virt="non-virtual" ambiguityscope="QuantLib::Observable::"><scope>QuantLib::YieldTermStructure</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1Observable_1ab45941c65068ab4c8d69a7d1a72beeb7" prot="public" virt="non-virtual" ambiguityscope="QuantLib::Observable::"><scope>QuantLib::YieldTermStructure</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1accbf3d4af41db0333d456eb5616c4e1e" prot="public" virt="virtual"><scope>QuantLib::YieldTermStructure</scope><name>referenceDate</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1ae710961574841a314aaee208cd8fd9d2" prot="private" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>referenceDate_</name></member>
+      <member refid="classQuantLib_1_1Observable_1a1eb87a03e7e1fd43377bce32e0c21bce" prot="private" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>registerObserver</name></member>
+      <member refid="classQuantLib_1_1Observer_1a312bbe4a5386f10a1584f3477b3c2709" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>registerWith</name></member>
+      <member refid="classQuantLib_1_1Observer_1a338928c4fe626f9ccf0b98ceb318853a" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>registerWithObservables</name></member>
+      <member refid="classQuantLib_1_1Observer_1a3dcd7d8542d1142f29da8326919e863f" prot="private" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::YieldTermStructure</scope><name>set_type</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1ae2c9e322b272582ee6456fb7e83c0066" prot="private" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>setJumps</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1abeb79eefda70a9414f206ca9e70ced0f" prot="public" virt="virtual"><scope>QuantLib::YieldTermStructure</scope><name>settlementDays</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1aaf8d92d98e6e398e43eb57cd29248ee9" prot="private" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>settlementDays_</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1ac8365997e6d41134b4e0998fe6b4e949" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>TermStructure</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1a95764a49e0368b653eadbe619d9ef334" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>TermStructure</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1aab73d2acafdc8fbdf9336e7084bd88a1" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>TermStructure</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1ac8da61eb0f06ae07a35e8e4bbe7146b0" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>timeFromReference</name></member>
+      <member refid="classQuantLib_1_1Observable_1abd81ef8b87594aa6f9d2a5bd5de3e628" prot="private" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>unregisterObserver</name></member>
+      <member refid="classQuantLib_1_1Observer_1a297d13afa77b0e7e6deae3bab777180f" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>unregisterWith</name></member>
+      <member refid="classQuantLib_1_1Observer_1ab88925691aba7e7d96cc5188e94361ea" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>unregisterWithAll</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1af8c4936ba1b89c3dd94445159e7c330f" prot="public" virt="virtual"><scope>QuantLib::YieldTermStructure</scope><name>update</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1a2fcf1c78e57786ad5c123f52dbf619e8" prot="protected" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>updated_</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1a2f77f6a92f1e48450c801debadd6c5d1" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>YieldTermStructure</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1a1512e59ec18b51681936cd84c1381b28" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>YieldTermStructure</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1a1c4ed273e8b8b8631139fc784edb399c" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>YieldTermStructure</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1a2c3ff5cd67f7a14b9d917fbe6491c096" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>zeroRate</name></member>
+      <member refid="classQuantLib_1_1YieldTermStructure_1a081055025072ce474e54ba29a250c786" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>zeroRate</name></member>
+      <member refid="classQuantLib_1_1Extrapolator_1af0ca0156436ffbce159183198eb27e2e" prot="public" virt="virtual"><scope>QuantLib::YieldTermStructure</scope><name>~Extrapolator</name></member>
+      <member refid="classQuantLib_1_1Observable_1a32093a7038e9bd8d28e5d378eca9f4f7" prot="public" virt="virtual"><scope>QuantLib::YieldTermStructure</scope><name>~Observable</name></member>
+      <member refid="classQuantLib_1_1Observer_1a6b5c15445bbe598d34871f5a5a3ed671" prot="public" virt="virtual"><scope>QuantLib::YieldTermStructure</scope><name>~Observer</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1ad202ddcc14fc4a6c16686d6164d7b36c" prot="public" virt="non-virtual"><scope>QuantLib::YieldTermStructure</scope><name>~TermStructure</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

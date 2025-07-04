@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceQuantLib_1_1anonymous__namespace_02fdminnervaluecalculator_8cpp_03" kind="namespace" language="C++">
+    <compoundname>QuantLib::anonymous_namespace{fdminnervaluecalculator.cpp}</compoundname>
+    <innerclass refid="structQuantLib_1_1anonymous__namespace_02fdminnervaluecalculator_8cpp_03_1_1mapped__payoff" prot="public">QuantLib::anonymous_namespace{fdminnervaluecalculator.cpp}::mapped_payoff</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ql/methods/finitedifferences/utilities/fdminnervaluecalculator.cpp" line="37" column="5"/>
+  </compounddef>
+</doxygen>

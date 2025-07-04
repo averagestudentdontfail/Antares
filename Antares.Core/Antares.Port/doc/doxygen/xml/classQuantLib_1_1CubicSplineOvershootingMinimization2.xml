@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1CubicSplineOvershootingMinimization2" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::CubicSplineOvershootingMinimization2</compoundname>
+    <basecompoundref refid="classQuantLib_1_1CubicInterpolation" prot="public" virt="non-virtual">QuantLib::CubicInterpolation</basecompoundref>
+    <includes refid="cubicinterpolation_8hpp" local="no">cubicinterpolation.hpp</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1CubicSplineOvershootingMinimization2_1a45c8c0d23705785cc0e1146596ed9d91" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class I1</type>
+          </param>
+          <param>
+            <type>class I2</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>QuantLib::CubicSplineOvershootingMinimization2::CubicSplineOvershootingMinimization2</definition>
+        <argsstring>(const I1 &amp;xBegin, const I1 &amp;xEnd, const I2 &amp;yBegin)</argsstring>
+        <name>CubicSplineOvershootingMinimization2</name>
+        <qualifiedname>QuantLib::CubicSplineOvershootingMinimization2::CubicSplineOvershootingMinimization2</qualifiedname>
+        <param>
+          <type>const I1 &amp;</type>
+          <declname>xBegin</declname>
+        </param>
+        <param>
+          <type>const I1 &amp;</type>
+          <declname>xEnd</declname>
+        </param>
+        <param>
+          <type>const I2 &amp;</type>
+          <declname>yBegin</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="pre"><para>the <formula id="36">$ x $</formula> values must be sorted. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/cubicinterpolation.hpp" line="239" column="9" bodyfile="ql/math/interpolations/cubicinterpolation.hpp" bodystart="239" bodyend="245"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>QuantLib::CubicInterpolation</label>
+        <link refid="classQuantLib_1_1CubicInterpolation"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::CubicSplineOvershootingMinimization2</label>
+        <link refid="classQuantLib_1_1CubicSplineOvershootingMinimization2"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QuantLib::Extrapolator</label>
+        <link refid="classQuantLib_1_1Extrapolator"/>
+      </node>
+      <node id="3">
+        <label>QuantLib::Interpolation</label>
+        <link refid="classQuantLib_1_1Interpolation"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>QuantLib::CubicInterpolation</label>
+        <link refid="classQuantLib_1_1CubicInterpolation"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::CubicSplineOvershootingMinimization2</label>
+        <link refid="classQuantLib_1_1CubicSplineOvershootingMinimization2"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QuantLib::Extrapolator</label>
+        <link refid="classQuantLib_1_1Extrapolator"/>
+      </node>
+      <node id="3">
+        <label>QuantLib::Interpolation</label>
+        <link refid="classQuantLib_1_1Interpolation"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/math/interpolations/cubicinterpolation.hpp" line="235" column="5" bodyfile="ql/math/interpolations/cubicinterpolation.hpp" bodystart="235" bodyend="246"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1CubicInterpolation_1a41c9316afcef51fcc63843e615eb7c7f" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>aCoefficients</name></member>
+      <member refid="classQuantLib_1_1CubicInterpolation_1a6897ea07ce6993b4df934091a3723d28a3da52995b65ceaa3b317cd111d4effd6" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>Akima</name></member>
+      <member refid="classQuantLib_1_1Extrapolator_1ab3936a9b5b5c163d3e511437c16c1d9e" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>allowsExtrapolation</name></member>
+      <member refid="classQuantLib_1_1CubicInterpolation_1afddfdbcabc2778acbb8821eb7bace747" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>bCoefficients</name></member>
+      <member refid="classQuantLib_1_1CubicInterpolation_1ae300e9cdeef2bc60889b474f01eae4c2" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>BoundaryCondition</name></member>
+      <member refid="classQuantLib_1_1CubicInterpolation_1a5b2d7df37cbf802e478903d1fcc824a2" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>cCoefficients</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1ab682157f4f0585bc28beefc6c22c8ba8" prot="protected" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>checkRange</name></member>
+      <member refid="classQuantLib_1_1CubicInterpolation_1a2d5d2965d210886929c75c2ab7c3ba1c" prot="private" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>coeffs</name></member>
+      <member refid="classQuantLib_1_1CubicInterpolation_1ad01c1dd629c8828cc07bc5d19262a6b6" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>CubicInterpolation</name></member>
+      <member refid="classQuantLib_1_1CubicSplineOvershootingMinimization2_1a45c8c0d23705785cc0e1146596ed9d91" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>CubicSplineOvershootingMinimization2</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1ab52a971431083a0a474266d6cdc9f936" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>derivative</name></member>
+      <member refid="classQuantLib_1_1CubicInterpolation_1a6897ea07ce6993b4df934091a3723d28" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>DerivativeApprox</name></member>
+      <member refid="classQuantLib_1_1Extrapolator_1a6af69387d5cae0fe84d6a0c858406218" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>disableExtrapolation</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1aca518c22ea0e7c6a410757877f11756c" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>empty</name></member>
+      <member refid="classQuantLib_1_1Extrapolator_1a5f7b5650a44d6c63095bc739470c8bfb" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>enableExtrapolation</name></member>
+      <member refid="classQuantLib_1_1Extrapolator_1a9a45b840a003c411ad1c2b71578e329a" prot="private" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>extrapolate_</name></member>
+      <member refid="classQuantLib_1_1Extrapolator_1af1c3adaccdfaf07d3d07edaa234444f7" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>Extrapolator</name></member>
+      <member refid="classQuantLib_1_1CubicInterpolation_1ae300e9cdeef2bc60889b474f01eae4c2ad22688f36c922046f6c65b68af4b09ee" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>FirstDerivative</name></member>
+      <member refid="classQuantLib_1_1CubicInterpolation_1a6897ea07ce6993b4df934091a3723d28a8398e52e5ac2d6cb982583eb93121c60" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>FourthOrder</name></member>
+      <member refid="classQuantLib_1_1CubicInterpolation_1a6897ea07ce6993b4df934091a3723d28a382235585b6df81d2a2a76ebc67a51f1" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>FritschButland</name></member>
+      <member refid="classQuantLib_1_1CubicInterpolation_1a6897ea07ce6993b4df934091a3723d28ac68a4d60443425887e8fcc3bf5f5870f" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>Harmonic</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1aef7940748a211476a0ed80e3a6ca9b9b" prot="protected" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>impl_</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1a3357fa39f1e41da02be1792133f6d622" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>Interpolation</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1af0892ba060b7b7d58943718b074f079a" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>isInRange</name></member>
+      <member refid="classQuantLib_1_1CubicInterpolation_1a6897ea07ce6993b4df934091a3723d28a07ea2cd3f162271d5f00b36af15db775" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>Kruger</name></member>
+      <member refid="classQuantLib_1_1CubicInterpolation_1ae300e9cdeef2bc60889b474f01eae4c2a4f8cf58b888cceefce621dead46cecfb" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>Lagrange</name></member>
+      <member refid="classQuantLib_1_1CubicInterpolation_1a99dee302ee3aa7e44a51356cc07e2cef" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>monotonicityAdjustments</name></member>
+      <member refid="classQuantLib_1_1CubicInterpolation_1ae300e9cdeef2bc60889b474f01eae4c2aa935d8faa9b58af88d0f2e10b4d8fd79" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>NotAKnot</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1a9e0ba688e60feed84158204bf22b678d" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>operator()</name></member>
+      <member refid="classQuantLib_1_1CubicInterpolation_1a6897ea07ce6993b4df934091a3723d28a59b262d48fba762c8ddf0f492142d401" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>Parabolic</name></member>
+      <member refid="classQuantLib_1_1CubicInterpolation_1ae300e9cdeef2bc60889b474f01eae4c2a6847b34b015cdf8ebe961cf88d821124" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>Periodic</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1a5b8ec18bc4927757f4a04967f13b271c" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>primitive</name></member>
+      <member refid="classQuantLib_1_1CubicInterpolation_1a0209cc00b9679077a46ed33936321e56" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>primitiveConstants</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1afab97bcd82695d553682b5f6eebb1718" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>secondDerivative</name></member>
+      <member refid="classQuantLib_1_1CubicInterpolation_1ae300e9cdeef2bc60889b474f01eae4c2af4b281a5218c4674a7539bf071bfca0d" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>SecondDerivative</name></member>
+      <member refid="classQuantLib_1_1CubicInterpolation_1a6897ea07ce6993b4df934091a3723d28aaa6b6cbb8010b02172412742c21ce2d7" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>Spline</name></member>
+      <member refid="classQuantLib_1_1CubicInterpolation_1a6897ea07ce6993b4df934091a3723d28a2e0b992051247c4b596f0c76bf9b6872" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>SplineOM1</name></member>
+      <member refid="classQuantLib_1_1CubicInterpolation_1a6897ea07ce6993b4df934091a3723d28a03364cf5474cc64cf64a6ad04a23e925" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>SplineOM2</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1a56cfc87cb5966ee36d72e5ffc7b1ff5c" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>update</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1a12711f5ec2e165fdb5104f3979855cc4" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>xMax</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1afc10233f6b565f10e291389631e5ea1f" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>xMin</name></member>
+      <member refid="classQuantLib_1_1Extrapolator_1af0ca0156436ffbce159183198eb27e2e" prot="public" virt="virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>~Extrapolator</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1a2b6d1246d8676354fb8f1efb03c9852f" prot="public" virt="non-virtual"><scope>QuantLib::CubicSplineOvershootingMinimization2</scope><name>~Interpolation</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,404 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1TrBDF2Scheme" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::TrBDF2Scheme</compoundname>
+    <includes refid="trbdf2scheme_8hpp" local="no">trbdf2scheme.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>class TrapezoidalScheme</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classQuantLib_1_1TrBDF2Scheme_1a2f22a03fcf2fcd31ac8429fd305b2311" prot="public" static="no" strong="no">
+        <type></type>
+        <name>SolverType</name>
+        <qualifiedname>QuantLib::TrBDF2Scheme::SolverType</qualifiedname>
+        <enumvalue id="classQuantLib_1_1TrBDF2Scheme_1a2f22a03fcf2fcd31ac8429fd305b2311a7eab566f65844d02c141ee36148d8553" prot="public">
+          <name>BiCGstab</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classQuantLib_1_1TrBDF2Scheme_1a2f22a03fcf2fcd31ac8429fd305b2311a6cbaa72bc7e156048323d1d9549fe41b" prot="public">
+          <name>GMRES</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" line="41" column="9" bodyfile="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" bodystart="41" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1TrBDF2Scheme_1a3ee02278cd8d07e880576d1656be7a29" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1OperatorTraits" kindref="compound">OperatorTraits</ref>&lt; <ref refid="classQuantLib_1_1FdmLinearOp" kindref="compound">FdmLinearOp</ref> &gt;</type>
+        <definition>typedef OperatorTraits&lt;FdmLinearOp&gt; QuantLib::TrBDF2Scheme&lt; TrapezoidalScheme &gt;::traits</definition>
+        <argsstring></argsstring>
+        <name>traits</name>
+        <qualifiedname>QuantLib::TrBDF2Scheme::traits</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" line="44" column="32" bodyfile="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1TrBDF2Scheme_1aa79d1ab74cf8dda83e93701c332f78bc" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1OperatorTraits_1a7f201b1bba2d13ab18324758b388d586" kindref="member">traits::operator_type</ref></type>
+        <definition>typedef traits::operator_type QuantLib::TrBDF2Scheme&lt; TrapezoidalScheme &gt;::operator_type</definition>
+        <argsstring></argsstring>
+        <name>operator_type</name>
+        <qualifiedname>QuantLib::TrBDF2Scheme::operator_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" line="45" column="39" bodyfile="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1TrBDF2Scheme_1aee8fe9bbae71683893cbd1936869e9a6" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1OperatorTraits_1a8b93c7b87d132e84abc2a170df02f9d2" kindref="member">traits::array_type</ref></type>
+        <definition>typedef traits::array_type QuantLib::TrBDF2Scheme&lt; TrapezoidalScheme &gt;::array_type</definition>
+        <argsstring></argsstring>
+        <name>array_type</name>
+        <qualifiedname>QuantLib::TrBDF2Scheme::array_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" line="46" column="36" bodyfile="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1TrBDF2Scheme_1a5d3b4ac427d69c711cfc9cf272eb32e8" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1OperatorTraits_1a36e452286290e4446d658377e6487d00" kindref="member">traits::bc_set</ref></type>
+        <definition>typedef traits::bc_set QuantLib::TrBDF2Scheme&lt; TrapezoidalScheme &gt;::bc_set</definition>
+        <argsstring></argsstring>
+        <name>bc_set</name>
+        <qualifiedname>QuantLib::TrBDF2Scheme::bc_set</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" line="47" column="32" bodyfile="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1TrBDF2Scheme_1a63d17308ce96b578d6bd3ea7f9fafd19" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1OperatorTraits_1afba7e06f490184e83ac81ac711dc7e1e" kindref="member">traits::condition_type</ref></type>
+        <definition>typedef traits::condition_type QuantLib::TrBDF2Scheme&lt; TrapezoidalScheme &gt;::condition_type</definition>
+        <argsstring></argsstring>
+        <name>condition_type</name>
+        <qualifiedname>QuantLib::TrBDF2Scheme::condition_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" line="48" column="40" bodyfile="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1TrBDF2Scheme_1a443bc55c2d9fb0ee96b71f9b82cc8392" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+        <definition>Time QuantLib::TrBDF2Scheme&lt; TrapezoidalScheme &gt;::dt_</definition>
+        <argsstring></argsstring>
+        <name>dt_</name>
+        <qualifiedname>QuantLib::TrBDF2Scheme::dt_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" line="65" column="14" bodyfile="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1TrBDF2Scheme_1a25b04b33c62ab1da9673e73adff8b576" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::TrBDF2Scheme&lt; TrapezoidalScheme &gt;::beta_</definition>
+        <argsstring></argsstring>
+        <name>beta_</name>
+        <qualifiedname>QuantLib::TrBDF2Scheme::beta_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" line="66" column="14" bodyfile="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1TrBDF2Scheme_1a1e48c191dba6324fbae21aa4c3b4fc87" prot="protected" static="no" mutable="no">
+        <type>ext::shared_ptr&lt; <ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref> &gt;</type>
+        <definition>ext::shared_ptr&lt;Size&gt; QuantLib::TrBDF2Scheme&lt; TrapezoidalScheme &gt;::iterations_</definition>
+        <argsstring></argsstring>
+        <name>iterations_</name>
+        <qualifiedname>QuantLib::TrBDF2Scheme::iterations_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" line="67" column="25" bodyfile="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1TrBDF2Scheme_1a799f2b4ef3666a63d0f365af69a716b4" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::TrBDF2Scheme&lt; TrapezoidalScheme &gt;::alpha_</definition>
+        <argsstring></argsstring>
+        <name>alpha_</name>
+        <qualifiedname>QuantLib::TrBDF2Scheme::alpha_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" line="69" column="20" bodyfile="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1TrBDF2Scheme_1a8847b2965e60c5c8404c72de39ca3f1e" prot="protected" static="no" mutable="no">
+        <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmLinearOpComposite" kindref="compound">FdmLinearOpComposite</ref> &gt;</type>
+        <definition>const ext::shared_ptr&lt;FdmLinearOpComposite&gt; QuantLib::TrBDF2Scheme&lt; TrapezoidalScheme &gt;::map_</definition>
+        <argsstring></argsstring>
+        <name>map_</name>
+        <qualifiedname>QuantLib::TrBDF2Scheme::map_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" line="70" column="31" bodyfile="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1TrBDF2Scheme_1acbea8ee80494cb5dce2885551a36d3ad" prot="protected" static="no" mutable="no">
+        <type>const ext::shared_ptr&lt; TrapezoidalScheme &gt; &amp;</type>
+        <definition>const ext::shared_ptr&lt;TrapezoidalScheme&gt;&amp; QuantLib::TrBDF2Scheme&lt; TrapezoidalScheme &gt;::trapezoidalScheme_</definition>
+        <argsstring></argsstring>
+        <name>trapezoidalScheme_</name>
+        <qualifiedname>QuantLib::TrBDF2Scheme::trapezoidalScheme_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" line="71" column="31" bodyfile="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1TrBDF2Scheme_1a550d48c9d040a51cdf73145cf3a11278" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="classQuantLib_1_1BoundaryConditionSchemeHelper" kindref="compound">BoundaryConditionSchemeHelper</ref></type>
+        <definition>const BoundaryConditionSchemeHelper QuantLib::TrBDF2Scheme&lt; TrapezoidalScheme &gt;::bcSet_</definition>
+        <argsstring></argsstring>
+        <name>bcSet_</name>
+        <qualifiedname>QuantLib::TrBDF2Scheme::bcSet_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" line="72" column="45" bodyfile="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1TrBDF2Scheme_1a837257f34b768ffeb82016e39642368b" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::TrBDF2Scheme&lt; TrapezoidalScheme &gt;::relTol_</definition>
+        <argsstring></argsstring>
+        <name>relTol_</name>
+        <qualifiedname>QuantLib::TrBDF2Scheme::relTol_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" line="73" column="20" bodyfile="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1TrBDF2Scheme_1a1f61b55660d484d148edfe3b35ef9264" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="classQuantLib_1_1TrBDF2Scheme_1a2f22a03fcf2fcd31ac8429fd305b2311" kindref="member">SolverType</ref></type>
+        <definition>const SolverType QuantLib::TrBDF2Scheme&lt; TrapezoidalScheme &gt;::solverType_</definition>
+        <argsstring></argsstring>
+        <name>solverType_</name>
+        <qualifiedname>QuantLib::TrBDF2Scheme::solverType_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" line="74" column="26" bodyfile="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" bodystart="74" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1TrBDF2Scheme_1a348ea5103d4a1229ec2358e69d70428f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::TrBDF2Scheme&lt; TrapezoidalScheme &gt;::TrBDF2Scheme</definition>
+        <argsstring>(Real alpha, ext::shared_ptr&lt; FdmLinearOpComposite &gt; map, const ext::shared_ptr&lt; TrapezoidalScheme &gt; &amp;trapezoidalScheme, const bc_set &amp;bcSet=bc_set(), Real relTol=1e-8, SolverType solverType=BiCGstab)</argsstring>
+        <name>TrBDF2Scheme</name>
+        <qualifiedname>QuantLib::TrBDF2Scheme::TrBDF2Scheme</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>alpha</declname>
+        </param>
+        <param>
+          <type>ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmLinearOpComposite" kindref="compound">FdmLinearOpComposite</ref> &gt;</type>
+          <declname>map</declname>
+        </param>
+        <param>
+          <type>const ext::shared_ptr&lt; TrapezoidalScheme &gt; &amp;</type>
+          <declname>trapezoidalScheme</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1TrBDF2Scheme_1a5d3b4ac427d69c711cfc9cf272eb32e8" kindref="member">bc_set</ref> &amp;</type>
+          <declname>bcSet</declname>
+          <defval><ref refid="classQuantLib_1_1TrBDF2Scheme_1a5d3b4ac427d69c711cfc9cf272eb32e8" kindref="member">bc_set</ref>()</defval>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>relTol</declname>
+          <defval>1e-8</defval>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1TrBDF2Scheme_1a2f22a03fcf2fcd31ac8429fd305b2311" kindref="member">SolverType</ref></type>
+          <declname>solverType</declname>
+          <defval><ref refid="classQuantLib_1_1BiCGstab" kindref="compound">BiCGstab</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" line="51" column="9" bodyfile="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" bodystart="78" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1TrBDF2Scheme_1a7e77ed2742e64d3a1925744673420db4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::TrBDF2Scheme&lt; TrapezoidalScheme &gt;::step</definition>
+        <argsstring>(array_type &amp;a, Time t)</argsstring>
+        <name>step</name>
+        <qualifiedname>QuantLib::TrBDF2Scheme::step</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1TrBDF2Scheme_1aee8fe9bbae71683893cbd1936869e9a6" kindref="member">array_type</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" line="58" column="14" bodyfile="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" bodystart="106" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1TrBDF2Scheme_1a4f634749959d17e979081827ed0e0d46" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::TrBDF2Scheme&lt; TrapezoidalScheme &gt;::setStep</definition>
+        <argsstring>(Time dt)</argsstring>
+        <name>setStep</name>
+        <qualifiedname>QuantLib::TrBDF2Scheme::setStep</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" line="59" column="14" bodyfile="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" bodystart="90" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1TrBDF2Scheme_1aab5e3a62f07e3a31cdbc17bd0fc80c36" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+        <definition>Size QuantLib::TrBDF2Scheme&lt; TrapezoidalScheme &gt;::numberOfIterations</definition>
+        <argsstring>() const</argsstring>
+        <name>numberOfIterations</name>
+        <qualifiedname>QuantLib::TrBDF2Scheme::numberOfIterations</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" line="61" column="14" bodyfile="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" bodystart="96" bodyend="98"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classQuantLib_1_1TrBDF2Scheme_1af75199068bbb6ac0d9900d40eb366972" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array QuantLib::TrBDF2Scheme&lt; TrapezoidalScheme &gt;::apply</definition>
+        <argsstring>(const Array &amp;r) const</argsstring>
+        <name>apply</name>
+        <qualifiedname>QuantLib::TrBDF2Scheme::apply</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>r</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" line="63" column="15" bodyfile="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" bodystart="101" bodyend="103"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>QuantLib::OperatorTraits&lt; QuantLib::FdmLinearOp &gt;</label>
+        <link refid="classQuantLib_1_1OperatorTraits"/>
+      </node>
+      <node id="2">
+        <label>QuantLib::BoundaryConditionSchemeHelper</label>
+        <link refid="classQuantLib_1_1BoundaryConditionSchemeHelper"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>bcSet_</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::TrBDF2Scheme&lt; TrapezoidalScheme &gt;</label>
+        <link refid="classQuantLib_1_1TrBDF2Scheme"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>bcSet_</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" line="39" column="5" bodyfile="ql/methods/finitedifferences/schemes/trbdf2scheme.hpp" bodystart="39" bodyend="75"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1TrBDF2Scheme_1a799f2b4ef3666a63d0f365af69a716b4" prot="protected" virt="non-virtual"><scope>QuantLib::TrBDF2Scheme</scope><name>alpha_</name></member>
+      <member refid="classQuantLib_1_1TrBDF2Scheme_1af75199068bbb6ac0d9900d40eb366972" prot="protected" virt="non-virtual"><scope>QuantLib::TrBDF2Scheme</scope><name>apply</name></member>
+      <member refid="classQuantLib_1_1TrBDF2Scheme_1aee8fe9bbae71683893cbd1936869e9a6" prot="public" virt="non-virtual"><scope>QuantLib::TrBDF2Scheme</scope><name>array_type</name></member>
+      <member refid="classQuantLib_1_1TrBDF2Scheme_1a5d3b4ac427d69c711cfc9cf272eb32e8" prot="public" virt="non-virtual"><scope>QuantLib::TrBDF2Scheme</scope><name>bc_set</name></member>
+      <member refid="classQuantLib_1_1TrBDF2Scheme_1a550d48c9d040a51cdf73145cf3a11278" prot="protected" virt="non-virtual"><scope>QuantLib::TrBDF2Scheme</scope><name>bcSet_</name></member>
+      <member refid="classQuantLib_1_1TrBDF2Scheme_1a25b04b33c62ab1da9673e73adff8b576" prot="protected" virt="non-virtual"><scope>QuantLib::TrBDF2Scheme</scope><name>beta_</name></member>
+      <member refid="classQuantLib_1_1TrBDF2Scheme_1a2f22a03fcf2fcd31ac8429fd305b2311a7eab566f65844d02c141ee36148d8553" prot="public" virt="non-virtual"><scope>QuantLib::TrBDF2Scheme</scope><name>BiCGstab</name></member>
+      <member refid="classQuantLib_1_1TrBDF2Scheme_1a63d17308ce96b578d6bd3ea7f9fafd19" prot="public" virt="non-virtual"><scope>QuantLib::TrBDF2Scheme</scope><name>condition_type</name></member>
+      <member refid="classQuantLib_1_1TrBDF2Scheme_1a443bc55c2d9fb0ee96b71f9b82cc8392" prot="protected" virt="non-virtual"><scope>QuantLib::TrBDF2Scheme</scope><name>dt_</name></member>
+      <member refid="classQuantLib_1_1TrBDF2Scheme_1a2f22a03fcf2fcd31ac8429fd305b2311a6cbaa72bc7e156048323d1d9549fe41b" prot="public" virt="non-virtual"><scope>QuantLib::TrBDF2Scheme</scope><name>GMRES</name></member>
+      <member refid="classQuantLib_1_1TrBDF2Scheme_1a1e48c191dba6324fbae21aa4c3b4fc87" prot="protected" virt="non-virtual"><scope>QuantLib::TrBDF2Scheme</scope><name>iterations_</name></member>
+      <member refid="classQuantLib_1_1TrBDF2Scheme_1a8847b2965e60c5c8404c72de39ca3f1e" prot="protected" virt="non-virtual"><scope>QuantLib::TrBDF2Scheme</scope><name>map_</name></member>
+      <member refid="classQuantLib_1_1TrBDF2Scheme_1aab5e3a62f07e3a31cdbc17bd0fc80c36" prot="public" virt="non-virtual"><scope>QuantLib::TrBDF2Scheme</scope><name>numberOfIterations</name></member>
+      <member refid="classQuantLib_1_1TrBDF2Scheme_1aa79d1ab74cf8dda83e93701c332f78bc" prot="public" virt="non-virtual"><scope>QuantLib::TrBDF2Scheme</scope><name>operator_type</name></member>
+      <member refid="classQuantLib_1_1TrBDF2Scheme_1a837257f34b768ffeb82016e39642368b" prot="protected" virt="non-virtual"><scope>QuantLib::TrBDF2Scheme</scope><name>relTol_</name></member>
+      <member refid="classQuantLib_1_1TrBDF2Scheme_1a4f634749959d17e979081827ed0e0d46" prot="public" virt="non-virtual"><scope>QuantLib::TrBDF2Scheme</scope><name>setStep</name></member>
+      <member refid="classQuantLib_1_1TrBDF2Scheme_1a2f22a03fcf2fcd31ac8429fd305b2311" prot="public" virt="non-virtual"><scope>QuantLib::TrBDF2Scheme</scope><name>SolverType</name></member>
+      <member refid="classQuantLib_1_1TrBDF2Scheme_1a1f61b55660d484d148edfe3b35ef9264" prot="protected" virt="non-virtual"><scope>QuantLib::TrBDF2Scheme</scope><name>solverType_</name></member>
+      <member refid="classQuantLib_1_1TrBDF2Scheme_1a7e77ed2742e64d3a1925744673420db4" prot="public" virt="non-virtual"><scope>QuantLib::TrBDF2Scheme</scope><name>step</name></member>
+      <member refid="classQuantLib_1_1TrBDF2Scheme_1a3ee02278cd8d07e880576d1656be7a29" prot="public" virt="non-virtual"><scope>QuantLib::TrBDF2Scheme</scope><name>traits</name></member>
+      <member refid="classQuantLib_1_1TrBDF2Scheme_1acbea8ee80494cb5dce2885551a36d3ad" prot="protected" virt="non-virtual"><scope>QuantLib::TrBDF2Scheme</scope><name>trapezoidalScheme_</name></member>
+      <member refid="classQuantLib_1_1TrBDF2Scheme_1a348ea5103d4a1229ec2358e69d70428f" prot="public" virt="non-virtual"><scope>QuantLib::TrBDF2Scheme</scope><name>TrBDF2Scheme</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

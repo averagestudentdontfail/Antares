@@ -1,0 +1,264 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1CraigSneydScheme" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::CraigSneydScheme</compoundname>
+    <includes refid="craigsneydscheme_8hpp" local="no">craigsneydscheme.hpp</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classQuantLib_1_1CraigSneydScheme_1a6e10a55718c9b7ccdbdecde75e261549" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1OperatorTraits" kindref="compound">OperatorTraits</ref>&lt; <ref refid="classQuantLib_1_1FdmLinearOp" kindref="compound">FdmLinearOp</ref> &gt;</type>
+        <definition>typedef OperatorTraits&lt;FdmLinearOp&gt; QuantLib::CraigSneydScheme::traits</definition>
+        <argsstring></argsstring>
+        <name>traits</name>
+        <qualifiedname>QuantLib::CraigSneydScheme::traits</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/craigsneydscheme.hpp" line="38" column="32" bodyfile="ql/methods/finitedifferences/schemes/craigsneydscheme.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1CraigSneydScheme_1a9442bf075c49ead360763fdbd47ae0f2" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1OperatorTraits_1a7f201b1bba2d13ab18324758b388d586" kindref="member">traits::operator_type</ref></type>
+        <definition>typedef traits::operator_type QuantLib::CraigSneydScheme::operator_type</definition>
+        <argsstring></argsstring>
+        <name>operator_type</name>
+        <qualifiedname>QuantLib::CraigSneydScheme::operator_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/craigsneydscheme.hpp" line="39" column="39" bodyfile="ql/methods/finitedifferences/schemes/craigsneydscheme.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1CraigSneydScheme_1aa24b48e9bfdc8cf271b334b7b789f706" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1OperatorTraits_1a8b93c7b87d132e84abc2a170df02f9d2" kindref="member">traits::array_type</ref></type>
+        <definition>typedef traits::array_type QuantLib::CraigSneydScheme::array_type</definition>
+        <argsstring></argsstring>
+        <name>array_type</name>
+        <qualifiedname>QuantLib::CraigSneydScheme::array_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/craigsneydscheme.hpp" line="40" column="36" bodyfile="ql/methods/finitedifferences/schemes/craigsneydscheme.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1CraigSneydScheme_1a2af9cc0dd8ed93fe58bdd3be7eee58eb" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1OperatorTraits_1a36e452286290e4446d658377e6487d00" kindref="member">traits::bc_set</ref></type>
+        <definition>typedef traits::bc_set QuantLib::CraigSneydScheme::bc_set</definition>
+        <argsstring></argsstring>
+        <name>bc_set</name>
+        <qualifiedname>QuantLib::CraigSneydScheme::bc_set</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/craigsneydscheme.hpp" line="41" column="32" bodyfile="ql/methods/finitedifferences/schemes/craigsneydscheme.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classQuantLib_1_1CraigSneydScheme_1a0522ff8b6ffd09473eb1124e1d828741" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1OperatorTraits_1afba7e06f490184e83ac81ac711dc7e1e" kindref="member">traits::condition_type</ref></type>
+        <definition>typedef traits::condition_type QuantLib::CraigSneydScheme::condition_type</definition>
+        <argsstring></argsstring>
+        <name>condition_type</name>
+        <qualifiedname>QuantLib::CraigSneydScheme::condition_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/craigsneydscheme.hpp" line="42" column="40" bodyfile="ql/methods/finitedifferences/schemes/craigsneydscheme.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1CraigSneydScheme_1a1e71eab6b0d92af6a8f62e7098c23899" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+        <definition>Time QuantLib::CraigSneydScheme::dt_</definition>
+        <argsstring></argsstring>
+        <name>dt_</name>
+        <qualifiedname>QuantLib::CraigSneydScheme::dt_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/craigsneydscheme.hpp" line="54" column="14" bodyfile="ql/methods/finitedifferences/schemes/craigsneydscheme.hpp" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1CraigSneydScheme_1a1b3c208a0020742385c566d9a70a89a6" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::CraigSneydScheme::theta_</definition>
+        <argsstring></argsstring>
+        <name>theta_</name>
+        <qualifiedname>QuantLib::CraigSneydScheme::theta_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/craigsneydscheme.hpp" line="55" column="20" bodyfile="ql/methods/finitedifferences/schemes/craigsneydscheme.hpp" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1CraigSneydScheme_1ab460349dbadb82ee3a4b63b0866ddb7a" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::CraigSneydScheme::mu_</definition>
+        <argsstring></argsstring>
+        <name>mu_</name>
+        <qualifiedname>QuantLib::CraigSneydScheme::mu_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/craigsneydscheme.hpp" line="56" column="20" bodyfile="ql/methods/finitedifferences/schemes/craigsneydscheme.hpp" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1CraigSneydScheme_1a391e26798ded330c327ba45d4ec76682" prot="protected" static="no" mutable="no">
+        <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmLinearOpComposite" kindref="compound">FdmLinearOpComposite</ref> &gt;</type>
+        <definition>const ext::shared_ptr&lt;FdmLinearOpComposite&gt; QuantLib::CraigSneydScheme::map_</definition>
+        <argsstring></argsstring>
+        <name>map_</name>
+        <qualifiedname>QuantLib::CraigSneydScheme::map_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/craigsneydscheme.hpp" line="57" column="31" bodyfile="ql/methods/finitedifferences/schemes/craigsneydscheme.hpp" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1CraigSneydScheme_1a693de6ee49f8303bb969bc9b75abaa64" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="classQuantLib_1_1BoundaryConditionSchemeHelper" kindref="compound">BoundaryConditionSchemeHelper</ref></type>
+        <definition>const BoundaryConditionSchemeHelper QuantLib::CraigSneydScheme::bcSet_</definition>
+        <argsstring></argsstring>
+        <name>bcSet_</name>
+        <qualifiedname>QuantLib::CraigSneydScheme::bcSet_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/craigsneydscheme.hpp" line="58" column="45" bodyfile="ql/methods/finitedifferences/schemes/craigsneydscheme.hpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1CraigSneydScheme_1ac045b233887e027d47993151801995c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::CraigSneydScheme::CraigSneydScheme</definition>
+        <argsstring>(Real theta, Real mu, ext::shared_ptr&lt; FdmLinearOpComposite &gt; map, const bc_set &amp;bcSet=bc_set())</argsstring>
+        <name>CraigSneydScheme</name>
+        <qualifiedname>QuantLib::CraigSneydScheme::CraigSneydScheme</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>theta</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>mu</declname>
+        </param>
+        <param>
+          <type>ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmLinearOpComposite" kindref="compound">FdmLinearOpComposite</ref> &gt;</type>
+          <declname>map</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1CraigSneydScheme_1a2af9cc0dd8ed93fe58bdd3be7eee58eb" kindref="member">bc_set</ref> &amp;</type>
+          <declname>bcSet</declname>
+          <defval><ref refid="classQuantLib_1_1CraigSneydScheme_1a2af9cc0dd8ed93fe58bdd3be7eee58eb" kindref="member">bc_set</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/craigsneydscheme.hpp" line="45" column="9" bodyfile="ql/methods/finitedifferences/schemes/craigsneydscheme.cpp" bodystart="27" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1CraigSneydScheme_1ace5add5ec459348145a4af4efea5bdb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::CraigSneydScheme::step</definition>
+        <argsstring>(array_type &amp;a, Time t)</argsstring>
+        <name>step</name>
+        <qualifiedname>QuantLib::CraigSneydScheme::step</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1CraigSneydScheme_1aa24b48e9bfdc8cf271b334b7b789f706" kindref="member">array_type</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/craigsneydscheme.hpp" line="50" column="14" bodyfile="ql/methods/finitedifferences/schemes/craigsneydscheme.cpp" bodystart="33" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1CraigSneydScheme_1affb27f7f58d46d69d36644086b17d1dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::CraigSneydScheme::setStep</definition>
+        <argsstring>(Time dt)</argsstring>
+        <name>setStep</name>
+        <qualifiedname>QuantLib::CraigSneydScheme::setStep</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/schemes/craigsneydscheme.hpp" line="51" column="14" bodyfile="ql/methods/finitedifferences/schemes/craigsneydscheme.cpp" bodystart="63" bodyend="65"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>QuantLib::OperatorTraits&lt; QuantLib::FdmLinearOp &gt;</label>
+        <link refid="classQuantLib_1_1OperatorTraits"/>
+      </node>
+      <node id="2">
+        <label>QuantLib::BoundaryConditionSchemeHelper</label>
+        <link refid="classQuantLib_1_1BoundaryConditionSchemeHelper"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>bcSet_</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::CraigSneydScheme</label>
+        <link refid="classQuantLib_1_1CraigSneydScheme"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>bcSet_</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/methods/finitedifferences/schemes/craigsneydscheme.hpp" line="35" column="5" bodyfile="ql/methods/finitedifferences/schemes/craigsneydscheme.hpp" bodystart="35" bodyend="59"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1CraigSneydScheme_1aa24b48e9bfdc8cf271b334b7b789f706" prot="public" virt="non-virtual"><scope>QuantLib::CraigSneydScheme</scope><name>array_type</name></member>
+      <member refid="classQuantLib_1_1CraigSneydScheme_1a2af9cc0dd8ed93fe58bdd3be7eee58eb" prot="public" virt="non-virtual"><scope>QuantLib::CraigSneydScheme</scope><name>bc_set</name></member>
+      <member refid="classQuantLib_1_1CraigSneydScheme_1a693de6ee49f8303bb969bc9b75abaa64" prot="protected" virt="non-virtual"><scope>QuantLib::CraigSneydScheme</scope><name>bcSet_</name></member>
+      <member refid="classQuantLib_1_1CraigSneydScheme_1a0522ff8b6ffd09473eb1124e1d828741" prot="public" virt="non-virtual"><scope>QuantLib::CraigSneydScheme</scope><name>condition_type</name></member>
+      <member refid="classQuantLib_1_1CraigSneydScheme_1ac045b233887e027d47993151801995c3" prot="public" virt="non-virtual"><scope>QuantLib::CraigSneydScheme</scope><name>CraigSneydScheme</name></member>
+      <member refid="classQuantLib_1_1CraigSneydScheme_1a1e71eab6b0d92af6a8f62e7098c23899" prot="protected" virt="non-virtual"><scope>QuantLib::CraigSneydScheme</scope><name>dt_</name></member>
+      <member refid="classQuantLib_1_1CraigSneydScheme_1a391e26798ded330c327ba45d4ec76682" prot="protected" virt="non-virtual"><scope>QuantLib::CraigSneydScheme</scope><name>map_</name></member>
+      <member refid="classQuantLib_1_1CraigSneydScheme_1ab460349dbadb82ee3a4b63b0866ddb7a" prot="protected" virt="non-virtual"><scope>QuantLib::CraigSneydScheme</scope><name>mu_</name></member>
+      <member refid="classQuantLib_1_1CraigSneydScheme_1a9442bf075c49ead360763fdbd47ae0f2" prot="public" virt="non-virtual"><scope>QuantLib::CraigSneydScheme</scope><name>operator_type</name></member>
+      <member refid="classQuantLib_1_1CraigSneydScheme_1affb27f7f58d46d69d36644086b17d1dd" prot="public" virt="non-virtual"><scope>QuantLib::CraigSneydScheme</scope><name>setStep</name></member>
+      <member refid="classQuantLib_1_1CraigSneydScheme_1ace5add5ec459348145a4af4efea5bdb6" prot="public" virt="non-virtual"><scope>QuantLib::CraigSneydScheme</scope><name>step</name></member>
+      <member refid="classQuantLib_1_1CraigSneydScheme_1a1b3c208a0020742385c566d9a70a89a6" prot="protected" virt="non-virtual"><scope>QuantLib::CraigSneydScheme</scope><name>theta_</name></member>
+      <member refid="classQuantLib_1_1CraigSneydScheme_1a6e10a55718c9b7ccdbdecde75e261549" prot="public" virt="non-virtual"><scope>QuantLib::CraigSneydScheme</scope><name>traits</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

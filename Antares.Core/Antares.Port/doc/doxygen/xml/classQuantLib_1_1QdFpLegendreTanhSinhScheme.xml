@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1QdFpLegendreTanhSinhScheme" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::QdFpLegendreTanhSinhScheme</compoundname>
+    <basecompoundref refid="classQuantLib_1_1QdFpLegendreScheme" prot="public" virt="non-virtual">QuantLib::QdFpLegendreScheme</basecompoundref>
+    <includes refid="qdfpamericanengine_8hpp" local="no">qdfpamericanengine.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1QdFpLegendreTanhSinhScheme_1a8ae3d14a96d426f21bd2692fc107f16d" prot="private" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::QdFpLegendreTanhSinhScheme::eps_</definition>
+        <argsstring></argsstring>
+        <name>eps_</name>
+        <qualifiedname>QuantLib::QdFpLegendreTanhSinhScheme::eps_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/qdfpamericanengine.hpp" line="85" column="20" bodyfile="ql/pricingengines/vanilla/qdfpamericanengine.hpp" bodystart="85" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1QdFpLegendreTanhSinhScheme_1a5564390d557b48714404331610275074" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::QdFpLegendreTanhSinhScheme::QdFpLegendreTanhSinhScheme</definition>
+        <argsstring>(Size l, Size m, Size n, Real eps)</argsstring>
+        <name>QdFpLegendreTanhSinhScheme</name>
+        <qualifiedname>QuantLib::QdFpLegendreTanhSinhScheme::QdFpLegendreTanhSinhScheme</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>eps</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/qdfpamericanengine.hpp" line="80" column="9" bodyfile="ql/pricingengines/vanilla/qdfpamericanengine.cpp" bodystart="103" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1QdFpLegendreTanhSinhScheme_1a2a5c50d49a4e348ea1e9f5aa27509950" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>ext::shared_ptr&lt; <ref refid="classQuantLib_1_1Integrator" kindref="compound">Integrator</ref> &gt;</type>
+        <definition>ext::shared_ptr&lt; Integrator &gt; QuantLib::QdFpLegendreTanhSinhScheme::getExerciseBoundaryToPriceIntegrator</definition>
+        <argsstring>() const override</argsstring>
+        <name>getExerciseBoundaryToPriceIntegrator</name>
+        <qualifiedname>QuantLib::QdFpLegendreTanhSinhScheme::getExerciseBoundaryToPriceIntegrator</qualifiedname>
+        <reimplements refid="classQuantLib_1_1QdFpLegendreScheme_1aa2a63a17b1bc7d0315a43e0b553ba7bc">getExerciseBoundaryToPriceIntegrator</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/qdfpamericanengine.hpp" line="82" column="25" bodyfile="ql/pricingengines/vanilla/qdfpamericanengine.cpp" bodystart="109" bodyend="116"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Legendre-Tanh-Sinh (l,m,n)-eps Scheme. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>order of Gauss-Legendre integration within every fixed point iteration step </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>fixed point iteration steps, first step is a partial Jacobi-Newton, the rest are naive Richardson fixed point iterations </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of Chebyshev nodes to interpolate the exercise boundary </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>eps</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>final conversion of the exercise boundary into option prices is carried out by a tanh-sinh integration with accuracy eps </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>QuantLib::QdFpIterationScheme</label>
+        <link refid="classQuantLib_1_1QdFpIterationScheme"/>
+      </node>
+      <node id="2">
+        <label>QuantLib::QdFpLegendreScheme</label>
+        <link refid="classQuantLib_1_1QdFpLegendreScheme"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::QdFpLegendreTanhSinhScheme</label>
+        <link refid="classQuantLib_1_1QdFpLegendreTanhSinhScheme"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>QuantLib::QdFpIterationScheme</label>
+        <link refid="classQuantLib_1_1QdFpIterationScheme"/>
+      </node>
+      <node id="2">
+        <label>QuantLib::QdFpLegendreScheme</label>
+        <link refid="classQuantLib_1_1QdFpLegendreScheme"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::QdFpLegendreTanhSinhScheme</label>
+        <link refid="classQuantLib_1_1QdFpLegendreTanhSinhScheme"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/pricingengines/vanilla/qdfpamericanengine.hpp" line="78" column="5" bodyfile="ql/pricingengines/vanilla/qdfpamericanengine.hpp" bodystart="78" bodyend="86"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1QdFpLegendreTanhSinhScheme_1a8ae3d14a96d426f21bd2692fc107f16d" prot="private" virt="non-virtual"><scope>QuantLib::QdFpLegendreTanhSinhScheme</scope><name>eps_</name></member>
+      <member refid="classQuantLib_1_1QdFpLegendreScheme_1a6566f6af0d16b5b2835443ef5bfa648f" prot="private" virt="non-virtual"><scope>QuantLib::QdFpLegendreTanhSinhScheme</scope><name>exerciseBoundaryIntegrator_</name></member>
+      <member refid="classQuantLib_1_1QdFpLegendreScheme_1a43f065742293d77c8b17df1b90b46dd2" prot="private" virt="non-virtual"><scope>QuantLib::QdFpLegendreTanhSinhScheme</scope><name>fpIntegrator_</name></member>
+      <member refid="classQuantLib_1_1QdFpLegendreTanhSinhScheme_1a2a5c50d49a4e348ea1e9f5aa27509950" prot="public" virt="virtual"><scope>QuantLib::QdFpLegendreTanhSinhScheme</scope><name>getExerciseBoundaryToPriceIntegrator</name></member>
+      <member refid="classQuantLib_1_1QdFpLegendreScheme_1a88a46a80aa45760c354af3472f2d7de4" prot="public" virt="virtual"><scope>QuantLib::QdFpLegendreTanhSinhScheme</scope><name>getFixedPointIntegrator</name></member>
+      <member refid="classQuantLib_1_1QdFpLegendreScheme_1a609e12761be910c5f9f2468b9724739f" prot="public" virt="virtual"><scope>QuantLib::QdFpLegendreTanhSinhScheme</scope><name>getNumberOfChebyshevInterpolationNodes</name></member>
+      <member refid="classQuantLib_1_1QdFpLegendreScheme_1a56c3bea199374ed4ecbf4fb6913247c5" prot="public" virt="virtual"><scope>QuantLib::QdFpLegendreTanhSinhScheme</scope><name>getNumberOfJacobiNewtonFixedPointSteps</name></member>
+      <member refid="classQuantLib_1_1QdFpLegendreScheme_1a2c6211f83199410ca629c9664e32e11c" prot="public" virt="virtual"><scope>QuantLib::QdFpLegendreTanhSinhScheme</scope><name>getNumberOfNaiveFixedPointSteps</name></member>
+      <member refid="classQuantLib_1_1QdFpLegendreScheme_1a9e4f7716539cb5ee3ff88aadb9868673" prot="private" virt="non-virtual"><scope>QuantLib::QdFpLegendreTanhSinhScheme</scope><name>m_</name></member>
+      <member refid="classQuantLib_1_1QdFpLegendreScheme_1a2b0f5e6f8394ad67361442c113d30969" prot="private" virt="non-virtual"><scope>QuantLib::QdFpLegendreTanhSinhScheme</scope><name>n_</name></member>
+      <member refid="classQuantLib_1_1QdFpLegendreScheme_1a53b81f8c9fca3943a9ad16bcc69cb908" prot="public" virt="non-virtual"><scope>QuantLib::QdFpLegendreTanhSinhScheme</scope><name>QdFpLegendreScheme</name></member>
+      <member refid="classQuantLib_1_1QdFpLegendreTanhSinhScheme_1a5564390d557b48714404331610275074" prot="public" virt="non-virtual"><scope>QuantLib::QdFpLegendreTanhSinhScheme</scope><name>QdFpLegendreTanhSinhScheme</name></member>
+      <member refid="classQuantLib_1_1QdFpIterationScheme_1a77901315dc05c53d02a39c9f41c88116" prot="public" virt="virtual"><scope>QuantLib::QdFpLegendreTanhSinhScheme</scope><name>~QdFpIterationScheme</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

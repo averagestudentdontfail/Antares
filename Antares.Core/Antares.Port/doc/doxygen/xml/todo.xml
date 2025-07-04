@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="todo" kind="page">
+    <compoundname>todo</compoundname>
+    <title>Todo List</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><variablelist>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1AmericanExercise" kindref="compound">QuantLib::AmericanExercise</ref>  </term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000001"/>check that everywhere the American condition is applied from earliestDate and not earlier  </para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1BlackVarianceCurve" kindref="compound">QuantLib::BlackVarianceCurve</ref>  </term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000009"/>check time extrapolation </para>
+</listitem>
+<varlistentry><term>Member <ref refid="classQuantLib_1_1BoundaryCondition_1ab685ab8e5ea909d20f659fab031a3dcb" kindref="member">QuantLib::BoundaryCondition&lt; Operator &gt;::Side</ref>  </term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000006"/>Generalize for n-dimensional conditions  </para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1CubicInterpolation" kindref="compound">QuantLib::CubicInterpolation</ref>  </term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000002"/>implement missing schemes (FourthOrder and ModifiedParabolic) and missing boundary conditions (Periodic and Lagrange). </para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1DirichletBC" kindref="compound">QuantLib::DirichletBC</ref>  </term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000005"/>generalize to time-dependent conditions. </para>
+</listitem>
+<varlistentry><term>Member <ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1a72dbcf1a1c410debf2b0b1d07124a3bf" kindref="member">QuantLib::GeneralizedBlackScholesProcess::diffusion</ref>  (Time t, Real x) const override</term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000008"/>revise extrapolation  </para>
+</listitem>
+<varlistentry><term>Member <ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess_1abf46d8ac312c489f2fcf00fefc734953" kindref="member">QuantLib::GeneralizedBlackScholesProcess::drift</ref>  (Time t, Real x) const override</term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000007"/>revise extrapolation  </para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1NeumannBC" kindref="compound">QuantLib::NeumannBC</ref>  </term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000004"/>generalize to time-dependent conditions. </para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1Solver1D" kindref="compound">QuantLib::Solver1D&lt; Impl &gt;</ref>  </term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000003"/><itemizedlist>
+<listitem><para>clean up the interface so that it is clear whether the accuracy is specified for <formula id="36">$ x $</formula> or <formula id="45">$ f(x) $</formula>.</para>
+</listitem><listitem><para>add target value (now the target value is 0.0)  </para>
+</listitem></itemizedlist>
+</para>
+</listitem>
+<varlistentry><term>Class <ref refid="classQuantLib_1_1TimeGrid" kindref="compound">QuantLib::TimeGrid</ref>  </term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000010"/>what was the rationale for limiting the grid to positive times? Investigate and see whether we can use it for negative ones as well. </para>
+</listitem>
+</variablelist>
+</para>
+    </detaileddescription>
+    <location file="todo"/>
+  </compounddef>
+</doxygen>

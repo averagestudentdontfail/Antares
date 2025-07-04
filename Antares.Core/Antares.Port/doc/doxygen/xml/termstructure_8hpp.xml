@@ -1,0 +1,738 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="termstructure_8hpp" kind="file" language="C++">
+    <compoundname>termstructure.hpp</compoundname>
+    <includes refid="calendar_8hpp" local="no">ql/time/calendar.hpp</includes>
+    <includes refid="daycounter_8hpp" local="no">ql/time/daycounter.hpp</includes>
+    <includes refid="settings_8hpp" local="no">ql/settings.hpp</includes>
+    <includes refid="handle_8hpp" local="no">ql/handle.hpp</includes>
+    <includes refid="extrapolation_8hpp" local="no">ql/math/interpolations/extrapolation.hpp</includes>
+    <includes refid="null_8hpp" local="no">ql/utilities/null.hpp</includes>
+    <includedby refid="termstructure_8cpp" local="no">ql/termstructure.cpp</includedby>
+    <includedby refid="voltermstructure_8hpp" local="no">ql/termstructures/voltermstructure.hpp</includedby>
+    <includedby refid="yieldtermstructure_8hpp" local="no">ql/termstructures/yieldtermstructure.hpp</includedby>
+    <incdepgraph>
+      <node id="7">
+        <label>ql/config.ansi.hpp</label>
+        <link refid="config_8ansi_8hpp"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>ql/errors.hpp</label>
+        <link refid="errors_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>ql/handle.hpp</label>
+        <link refid="handle_8hpp"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>ql/math/interpolations/extrapolation.hpp</label>
+        <link refid="extrapolation_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>ql/mathconstants.hpp</label>
+        <link refid="mathconstants_8hpp"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>ql/optional.hpp</label>
+        <link refid="optional_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>ql/patterns/observable.hpp</label>
+        <link refid="observable_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>ql/patterns/singleton.hpp</label>
+        <link refid="singleton_8hpp"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ql/qldefines.hpp</label>
+        <link refid="qldefines_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>ql/settings.hpp</label>
+        <link refid="settings_8hpp"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>ql/shared_ptr.hpp</label>
+        <link refid="shared__ptr_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ql/termstructure.hpp</label>
+        <link refid="termstructure_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>ql/time/businessdayconvention.hpp</label>
+        <link refid="businessdayconvention_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ql/time/calendar.hpp</label>
+        <link refid="calendar_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>ql/time/date.hpp</label>
+        <link refid="date_8hpp"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>ql/time/daycounter.hpp</label>
+        <link refid="daycounter_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>ql/time/frequency.hpp</label>
+        <link refid="frequency_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>ql/time/period.hpp</label>
+        <link refid="period_8hpp"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>ql/time/timeunit.hpp</label>
+        <link refid="timeunit_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>ql/time/weekday.hpp</label>
+        <link refid="weekday_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>ql/types.hpp</label>
+        <link refid="types_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>ql/userconfig.hpp</label>
+        <link refid="userconfig_8hpp"/>
+      </node>
+      <node id="29">
+        <label>ql/utilities/null.hpp</label>
+        <link refid="null_8hpp"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>ql/utilities/observablevalue.hpp</label>
+        <link refid="observablevalue_8hpp"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>boost/assert.hpp</label>
+      </node>
+      <node id="5">
+        <label>boost/config.hpp</label>
+      </node>
+      <node id="17">
+        <label>boost/current_function.hpp</label>
+      </node>
+      <node id="15">
+        <label>boost/enable_shared_from_this.hpp</label>
+      </node>
+      <node id="14">
+        <label>boost/make_shared.hpp</label>
+      </node>
+      <node id="43">
+        <label>boost/optional.hpp</label>
+      </node>
+      <node id="13">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="6">
+        <label>boost/version.hpp</label>
+      </node>
+      <node id="10">
+        <label>cmath</label>
+      </node>
+      <node id="27">
+        <label>cstddef</label>
+      </node>
+      <node id="31">
+        <label>cstdint</label>
+      </node>
+      <node id="18">
+        <label>exception</label>
+      </node>
+      <node id="33">
+        <label>functional</label>
+      </node>
+      <node id="24">
+        <label>iosfwd</label>
+      </node>
+      <node id="11">
+        <label>limits</label>
+      </node>
+      <node id="35">
+        <label>set</label>
+      </node>
+      <node id="19">
+        <label>sstream</label>
+      </node>
+      <node id="20">
+        <label>string</label>
+      </node>
+      <node id="30">
+        <label>type_traits</label>
+      </node>
+      <node id="32">
+        <label>utility</label>
+      </node>
+      <node id="36">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="8">
+        <label>ql/instruments/impliedvolatility.cpp</label>
+        <link refid="impliedvolatility_8cpp"/>
+      </node>
+      <node id="7">
+        <label>ql/instruments/impliedvolatility.hpp</label>
+        <link refid="impliedvolatility_8hpp"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>ql/instruments/vanillaoption.cpp</label>
+        <link refid="vanillaoption_8cpp"/>
+      </node>
+      <node id="10">
+        <label>ql/methods/finitedifferences/meshers/fdmblackscholesmesher.cpp</label>
+        <link refid="fdmblackscholesmesher_8cpp"/>
+      </node>
+      <node id="12">
+        <label>ql/methods/finitedifferences/operators/fdmblackscholesop.cpp</label>
+        <link refid="fdmblackscholesop_8cpp"/>
+      </node>
+      <node id="11">
+        <label>ql/methods/finitedifferences/operators/fdmblackscholesop.hpp</label>
+        <link refid="fdmblackscholesop_8hpp"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>ql/methods/finitedifferences/solvers/fdmblackscholessolver.cpp</label>
+        <link refid="fdmblackscholessolver_8cpp"/>
+      </node>
+      <node id="38">
+        <label>ql/methods/finitedifferences/utilities/escroweddividendadjustment.cpp</label>
+        <link refid="escroweddividendadjustment_8cpp"/>
+      </node>
+      <node id="37">
+        <label>ql/methods/finitedifferences/utilities/escroweddividendadjustment.hpp</label>
+        <link refid="escroweddividendadjustment_8hpp"/>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>ql/methods/finitedifferences/utilities/fdmescrowedloginnervaluecalculator.cpp</label>
+        <link refid="fdmescrowedloginnervaluecalculator_8cpp"/>
+      </node>
+      <node id="39">
+        <label>ql/methods/finitedifferences/utilities/fdmescrowedloginnervaluecalculator.hpp</label>
+        <link refid="fdmescrowedloginnervaluecalculator_8hpp"/>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>ql/methods/finitedifferences/utilities/fdmquantohelper.cpp</label>
+        <link refid="fdmquantohelper_8cpp"/>
+      </node>
+      <node id="15">
+        <label>ql/pricingengines/vanilla/analyticdividendeuropeanengine.cpp</label>
+        <link refid="analyticdividendeuropeanengine_8cpp"/>
+      </node>
+      <node id="14">
+        <label>ql/pricingengines/vanilla/analyticdividendeuropeanengine.hpp</label>
+        <link refid="analyticdividendeuropeanengine_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>ql/pricingengines/vanilla/analyticeuropeanengine.cpp</label>
+        <link refid="analyticeuropeanengine_8cpp"/>
+      </node>
+      <node id="16">
+        <label>ql/pricingengines/vanilla/analyticeuropeanengine.hpp</label>
+        <link refid="analyticeuropeanengine_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>ql/pricingengines/vanilla/fdblackscholesvanillaengine.cpp</label>
+        <link refid="fdblackscholesvanillaengine_8cpp"/>
+      </node>
+      <node id="21">
+        <label>ql/pricingengines/vanilla/qdfpamericanengine.cpp</label>
+        <link refid="qdfpamericanengine_8cpp"/>
+      </node>
+      <node id="20">
+        <label>ql/pricingengines/vanilla/qdfpamericanengine.hpp</label>
+        <link refid="qdfpamericanengine_8hpp"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>ql/pricingengines/vanilla/qdplusamericanengine.cpp</label>
+        <link refid="qdplusamericanengine_8cpp"/>
+      </node>
+      <node id="19">
+        <label>ql/pricingengines/vanilla/qdplusamericanengine.hpp</label>
+        <link refid="qdplusamericanengine_8hpp"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>ql/processes/blackscholesprocess.cpp</label>
+        <link refid="blackscholesprocess_8cpp"/>
+      </node>
+      <node id="6">
+        <label>ql/processes/blackscholesprocess.hpp</label>
+        <link refid="blackscholesprocess_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ql/termstructure.cpp</label>
+        <link refid="termstructure_8cpp"/>
+      </node>
+      <node id="1">
+        <label>ql/termstructure.hpp</label>
+        <link refid="termstructure_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>ql/termstructures/volatility/equityfx/blackconstantvol.hpp</label>
+        <link refid="blackconstantvol_8hpp"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>ql/termstructures/volatility/equityfx/blackvariancecurve.cpp</label>
+        <link refid="blackvariancecurve_8cpp"/>
+      </node>
+      <node id="26">
+        <label>ql/termstructures/volatility/equityfx/blackvariancecurve.hpp</label>
+        <link refid="blackvariancecurve_8hpp"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>ql/termstructures/volatility/equityfx/blackvoltermstructure.cpp</label>
+        <link refid="blackvoltermstructure_8cpp"/>
+      </node>
+      <node id="4">
+        <label>ql/termstructures/volatility/equityfx/blackvoltermstructure.hpp</label>
+        <link refid="blackvoltermstructure_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>ql/termstructures/volatility/equityfx/localconstantvol.hpp</label>
+        <link refid="localconstantvol_8hpp"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>ql/termstructures/volatility/equityfx/localvolcurve.hpp</label>
+        <link refid="localvolcurve_8hpp"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>ql/termstructures/volatility/equityfx/localvolsurface.cpp</label>
+        <link refid="localvolsurface_8cpp"/>
+      </node>
+      <node id="33">
+        <label>ql/termstructures/volatility/equityfx/localvolsurface.hpp</label>
+        <link refid="localvolsurface_8hpp"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>ql/termstructures/volatility/equityfx/localvoltermstructure.cpp</label>
+        <link refid="localvoltermstructure_8cpp"/>
+      </node>
+      <node id="32">
+        <label>ql/termstructures/volatility/equityfx/localvoltermstructure.hpp</label>
+        <link refid="localvoltermstructure_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>ql/termstructures/voltermstructure.cpp</label>
+        <link refid="voltermstructure_8cpp"/>
+      </node>
+      <node id="3">
+        <label>ql/termstructures/voltermstructure.hpp</label>
+        <link refid="voltermstructure_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>ql/termstructures/yield/flatforward.cpp</label>
+        <link refid="flatforward_8cpp"/>
+      </node>
+      <node id="41">
+        <label>ql/termstructures/yield/flatforward.hpp</label>
+        <link refid="flatforward_8hpp"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>ql/termstructures/yield/quantotermstructure.hpp</label>
+        <link refid="quantotermstructure_8hpp"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>ql/termstructures/yield/zeroyieldstructure.cpp</label>
+        <link refid="zeroyieldstructure_8cpp"/>
+      </node>
+      <node id="43">
+        <label>ql/termstructures/yield/zeroyieldstructure.hpp</label>
+        <link refid="zeroyieldstructure_8hpp"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>ql/termstructures/yieldtermstructure.cpp</label>
+        <link refid="yieldtermstructure_8cpp"/>
+      </node>
+      <node id="36">
+        <label>ql/termstructures/yieldtermstructure.hpp</label>
+        <link refid="yieldtermstructure_8hpp"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classQuantLib_1_1TermStructure" prot="public">QuantLib::TermStructure</innerclass>
+    <innernamespace refid="namespaceQuantLib">QuantLib</innernamespace>
+    <briefdescription>
+<para>base class for term structures </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>c++;<sp/>tab-width:<sp/>4;<sp/>indent-tabs-mode:<sp/>nil;<sp/>c-basic-offset:<sp/>4<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2004,<sp/>2005,<sp/>2006,<sp/>2007<sp/>StatPro<sp/>Italia<sp/>srl</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>QuantLib,<sp/>a<sp/>free-software/open-source<sp/>library</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>for<sp/>financial<sp/>quantitative<sp/>analysts<sp/>and<sp/>developers<sp/>-<sp/>http://quantlib.org/</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>QuantLib<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>QuantLib<sp/>license.<sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>copy<sp/>of<sp/>the<sp/>license<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>please<sp/>email</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>&lt;quantlib-dev@lists.sf.net&gt;.<sp/>The<sp/>license<sp/>is<sp/>also<sp/>available<sp/>online<sp/>at</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>&lt;http://quantlib.org/license.shtml&gt;.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"></highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the<sp/>license<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>quantlib_term_structure_hpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>quantlib_term_structure_hpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="calendar_8hpp" kindref="compound">ql/time/calendar.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="daycounter_8hpp" kindref="compound">ql/time/daycounter.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="settings_8hpp" kindref="compound">ql/settings.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="handle_8hpp" kindref="compound">ql/handle.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="extrapolation_8hpp" kindref="compound">ql/math/interpolations/extrapolation.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="null_8hpp" kindref="compound">ql/utilities/null.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceQuantLib" kindref="compound">QuantLib</ref><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="classQuantLib_1_1TermStructure" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classQuantLib_1_1TermStructure" kindref="compound">TermStructure</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Observer" kindref="compound">Observer</ref>,</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Observable" kindref="compound">Observable</ref>,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Extrapolator" kindref="compound">Extrapolator</ref><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1TermStructure" kindref="compound">TermStructure</ref>(<ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref><sp/>dc<sp/>=<sp/><ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref>());</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1TermStructure" kindref="compound">TermStructure</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref>&amp;<sp/><ref refid="classQuantLib_1_1TermStructure_1accbf3d4af41db0333d456eb5616c4e1e" kindref="member">referenceDate</ref>,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1Calendar" kindref="compound">Calendar</ref><sp/><ref refid="classQuantLib_1_1TermStructure_1ac4ea5cbce495c9a47a44eeaedf7a9d45" kindref="member">calendar</ref><sp/>=<sp/><ref refid="classQuantLib_1_1Calendar" kindref="compound">Calendar</ref>(),</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref><sp/>dc<sp/>=<sp/><ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref>());</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1TermStructure" kindref="compound">TermStructure</ref>(<ref refid="namespaceQuantLib_1a9adc2615d630d6006896b3402b09b03b" kindref="member">Natural</ref><sp/><ref refid="classQuantLib_1_1TermStructure_1abeb79eefda70a9414f206ca9e70ced0f" kindref="member">settlementDays</ref>,<sp/><ref refid="classQuantLib_1_1Calendar" kindref="compound">Calendar</ref>,<sp/><ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref><sp/>dc<sp/>=<sp/><ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref>());</highlight></codeline>
+<codeline lineno="75" refid="classQuantLib_1_1TermStructure_1ad202ddcc14fc4a6c16686d6164d7b36c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1TermStructure_1ad202ddcc14fc4a6c16686d6164d7b36c" kindref="member">~TermStructure</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="77"></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref><sp/><ref refid="classQuantLib_1_1TermStructure_1ac03e725e4e0685b209caa626b00924ca" kindref="member">dayCounter</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/><ref refid="classQuantLib_1_1TermStructure_1ac8da61eb0f06ae07a35e8e4bbe7146b0" kindref="member">timeFromReference</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref>&amp;<sp/>date)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="83" refid="classQuantLib_1_1TermStructure_1ae9af756bbddc15962711f77f514f08fa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref><sp/><ref refid="classQuantLib_1_1TermStructure_1ae9af756bbddc15962711f77f514f08fa" kindref="member">maxDate</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/><ref refid="classQuantLib_1_1TermStructure_1a2f820c32e198e1046d97ca3dd9a807c5" kindref="member">maxTime</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref>&amp;<sp/><ref refid="classQuantLib_1_1TermStructure_1accbf3d4af41db0333d456eb5616c4e1e" kindref="member">referenceDate</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Calendar" kindref="compound">Calendar</ref><sp/><ref refid="classQuantLib_1_1TermStructure_1ac4ea5cbce495c9a47a44eeaedf7a9d45" kindref="member">calendar</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a9adc2615d630d6006896b3402b09b03b" kindref="member">Natural</ref><sp/><ref refid="classQuantLib_1_1TermStructure_1abeb79eefda70a9414f206ca9e70ced0f" kindref="member">settlementDays</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="93"></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1TermStructure_1a016528f1fe9cabca6472d8f4776351e2" kindref="member">update</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1TermStructure_1aa7297742ffbeeb0c7611f90a0f7d15bf" kindref="member">checkRange</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref>&amp;<sp/>d,</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>extrapolate)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1TermStructure_1aa7297742ffbeeb0c7611f90a0f7d15bf" kindref="member">checkRange</ref>(<ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/>t,</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>extrapolate)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="104" refid="classQuantLib_1_1TermStructure_1a8319e5c2c37b09a825d61210c9cb8e2a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1TermStructure_1a8319e5c2c37b09a825d61210c9cb8e2a" kindref="member">moving_</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="105" refid="classQuantLib_1_1TermStructure_1a2fcf1c78e57786ad5c123f52dbf619e8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1TermStructure_1a2fcf1c78e57786ad5c123f52dbf619e8" kindref="member">updated_</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="106" refid="classQuantLib_1_1TermStructure_1a0a09e3fa8cdfbc9aa9685da0c35ccb90" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1Calendar" kindref="compound">Calendar</ref><sp/><ref refid="classQuantLib_1_1TermStructure_1a0a09e3fa8cdfbc9aa9685da0c35ccb90" kindref="member">calendar_</ref>;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="108" refid="classQuantLib_1_1TermStructure_1ae710961574841a314aaee208cd8fd9d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref><sp/><ref refid="classQuantLib_1_1TermStructure_1ae710961574841a314aaee208cd8fd9d2" kindref="member">referenceDate_</ref>;</highlight></codeline>
+<codeline lineno="109" refid="classQuantLib_1_1TermStructure_1aaf8d92d98e6e398e43eb57cd29248ee9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a9adc2615d630d6006896b3402b09b03b" kindref="member">Natural</ref><sp/><ref refid="classQuantLib_1_1TermStructure_1aaf8d92d98e6e398e43eb57cd29248ee9" kindref="member">settlementDays_</ref>;</highlight></codeline>
+<codeline lineno="110" refid="classQuantLib_1_1TermStructure_1ab7dbb0cc1b2a4c5b5ee840b4822dc55e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref><sp/><ref refid="classQuantLib_1_1TermStructure_1ab7dbb0cc1b2a4c5b5ee840b4822dc55e" kindref="member">dayCounter_</ref>;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>inline<sp/>definitions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="classQuantLib_1_1TermStructure_1ac03e725e4e0685b209caa626b00924ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref><sp/><ref refid="classQuantLib_1_1TermStructure_1ac03e725e4e0685b209caa626b00924ca" kindref="member">TermStructure::dayCounter</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1TermStructure_1ab7dbb0cc1b2a4c5b5ee840b4822dc55e" kindref="member">dayCounter_</ref>;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="classQuantLib_1_1TermStructure_1a2f820c32e198e1046d97ca3dd9a807c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/><ref refid="classQuantLib_1_1TermStructure_1a2f820c32e198e1046d97ca3dd9a807c5" kindref="member">TermStructure::maxTime</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1TermStructure_1ac8da61eb0f06ae07a35e8e4bbe7146b0" kindref="member">timeFromReference</ref>(<ref refid="classQuantLib_1_1TermStructure_1ae9af756bbddc15962711f77f514f08fa" kindref="member">maxDate</ref>());</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="classQuantLib_1_1TermStructure_1ac4ea5cbce495c9a47a44eeaedf7a9d45" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Calendar" kindref="compound">Calendar</ref><sp/><ref refid="classQuantLib_1_1TermStructure_1ac4ea5cbce495c9a47a44eeaedf7a9d45" kindref="member">TermStructure::calendar</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1TermStructure_1a0a09e3fa8cdfbc9aa9685da0c35ccb90" kindref="member">calendar_</ref>;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="classQuantLib_1_1TermStructure_1abeb79eefda70a9414f206ca9e70ced0f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a9adc2615d630d6006896b3402b09b03b" kindref="member">Natural</ref><sp/><ref refid="classQuantLib_1_1TermStructure_1abeb79eefda70a9414f206ca9e70ced0f" kindref="member">TermStructure::settlementDays</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="errors_8hpp_1a7a9bcab8006882bc7d5302a0861ab1a6" kindref="member">QL_REQUIRE</ref>(<ref refid="classQuantLib_1_1TermStructure_1aaf8d92d98e6e398e43eb57cd29248ee9" kindref="member">settlementDays_</ref>!=<ref refid="classQuantLib_1_1Null" kindref="compound">Null&lt;Natural&gt;</ref>(),</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;settlement<sp/>days<sp/>not<sp/>provided<sp/>for<sp/>this<sp/>instance&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1TermStructure_1aaf8d92d98e6e398e43eb57cd29248ee9" kindref="member">settlementDays_</ref>;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133" refid="classQuantLib_1_1TermStructure_1ac8da61eb0f06ae07a35e8e4bbe7146b0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref><sp/><ref refid="classQuantLib_1_1TermStructure_1ac8da61eb0f06ae07a35e8e4bbe7146b0" kindref="member">TermStructure::timeFromReference</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref>&amp;<sp/>d)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classQuantLib_1_1TermStructure_1ac03e725e4e0685b209caa626b00924ca" kindref="member">dayCounter</ref>().<ref refid="classQuantLib_1_1DayCounter_1ae714645789e0daadefad81c135c03ffe" kindref="member">yearFraction</ref>(<ref refid="classQuantLib_1_1TermStructure_1accbf3d4af41db0333d456eb5616c4e1e" kindref="member">referenceDate</ref>(),<sp/>d);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="ql/termstructure.hpp"/>
+  </compounddef>
+</doxygen>

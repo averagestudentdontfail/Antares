@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1GenericEngine" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::GenericEngine</compoundname>
+    <basecompoundref refid="classQuantLib_1_1PricingEngine" prot="public" virt="non-virtual">QuantLib::PricingEngine</basecompoundref>
+    <basecompoundref refid="classQuantLib_1_1Observer" prot="public" virt="non-virtual">QuantLib::Observer</basecompoundref>
+    <includes refid="pricingengine_8hpp" local="no">pricingengine.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>class ArgumentsType</type>
+      </param>
+      <param>
+        <type>class ResultsType</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1GenericEngine_1ad2371cdbafa1989afb0e4733b1212c0d" prot="protected" static="no" mutable="yes">
+        <type>ArgumentsType</type>
+        <definition>ArgumentsType QuantLib::GenericEngine&lt; ArgumentsType, ResultsType &gt;::arguments_</definition>
+        <argsstring></argsstring>
+        <name>arguments_</name>
+        <qualifiedname>QuantLib::GenericEngine::arguments_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengine.hpp" line="72" column="31" bodyfile="ql/pricingengine.hpp" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1GenericEngine_1a41281f2ea4990dbce90be1f9f2e231f6" prot="protected" static="no" mutable="yes">
+        <type>ResultsType</type>
+        <definition>ResultsType QuantLib::GenericEngine&lt; ArgumentsType, ResultsType &gt;::results_</definition>
+        <argsstring></argsstring>
+        <name>results_</name>
+        <qualifiedname>QuantLib::GenericEngine::results_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengine.hpp" line="73" column="29" bodyfile="ql/pricingengine.hpp" bodystart="73" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1GenericEngine_1ad9c6e8dc65ca072d5e6e17640d74db3e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classQuantLib_1_1PricingEngine_1_1arguments" kindref="compound">PricingEngine::arguments</ref> *</type>
+        <definition>PricingEngine::arguments * QuantLib::GenericEngine&lt; ArgumentsType, ResultsType &gt;::getArguments</definition>
+        <argsstring>() const override</argsstring>
+        <name>getArguments</name>
+        <qualifiedname>QuantLib::GenericEngine::getArguments</qualifiedname>
+        <reimplements refid="classQuantLib_1_1PricingEngine_1a5a21907a02d0ed93092f6685519fe6a8">getArguments</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengine.hpp" line="66" column="34" bodyfile="ql/pricingengine.hpp" bodystart="66" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1GenericEngine_1aea8272ef6e5e0ea1cffadfed0454fa88" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>const <ref refid="classQuantLib_1_1PricingEngine_1_1results" kindref="compound">PricingEngine::results</ref> *</type>
+        <definition>const PricingEngine::results * QuantLib::GenericEngine&lt; ArgumentsType, ResultsType &gt;::getResults</definition>
+        <argsstring>() const override</argsstring>
+        <name>getResults</name>
+        <qualifiedname>QuantLib::GenericEngine::getResults</qualifiedname>
+        <reimplements refid="classQuantLib_1_1PricingEngine_1a1e7395b270712df3e31f36a1ba795d29">getResults</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengine.hpp" line="67" column="38" bodyfile="ql/pricingengine.hpp" bodystart="67" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1GenericEngine_1a81c5390ba1e713e57ca87d5f841d37f2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void QuantLib::GenericEngine&lt; ArgumentsType, ResultsType &gt;::reset</definition>
+        <argsstring>() override</argsstring>
+        <name>reset</name>
+        <qualifiedname>QuantLib::GenericEngine::reset</qualifiedname>
+        <reimplements refid="classQuantLib_1_1PricingEngine_1a1baa30a4b6ce6f6fd48e63ab79564d01">reset</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengine.hpp" line="68" column="14" bodyfile="ql/pricingengine.hpp" bodystart="68" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1GenericEngine_1aaf5ef54d9e1abf8b1b50b48804edf3dc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void QuantLib::GenericEngine&lt; ArgumentsType, ResultsType &gt;::update</definition>
+        <argsstring>() override</argsstring>
+        <name>update</name>
+        <qualifiedname>QuantLib::GenericEngine::update</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Observer_1a07905c55dca858470fcf4a1aea0005aa">update</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method must be implemented in derived classes. An instance of Observer does not call this method directly: instead, it will be called by the observables the instance registered with when they need to notify any changes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengine.hpp" line="69" column="14" bodyfile="ql/pricingengine.hpp" bodystart="69" bodyend="69"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>template base class for option pricing engines </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Derived engines only need to implement the <computeroutput><ref refid="classQuantLib_1_1PricingEngine_1ad2be11cff80d9792f0cc8231711fcb06" kindref="member">calculate()</ref></computeroutput> method. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>QuantLib::GenericEngine&lt; ArgumentsType, ResultsType &gt;</label>
+        <link refid="classQuantLib_1_1GenericEngine"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QuantLib::Observable</label>
+        <link refid="classQuantLib_1_1Observable"/>
+      </node>
+      <node id="4">
+        <label>QuantLib::Observer</label>
+        <link refid="classQuantLib_1_1Observer"/>
+      </node>
+      <node id="2">
+        <label>QuantLib::PricingEngine</label>
+        <link refid="classQuantLib_1_1PricingEngine"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>QuantLib::GenericEngine&lt; ArgumentsType, ResultsType &gt;</label>
+        <link refid="classQuantLib_1_1GenericEngine"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QuantLib::Observable</label>
+        <link refid="classQuantLib_1_1Observable"/>
+      </node>
+      <node id="4">
+        <label>QuantLib::Observer</label>
+        <link refid="classQuantLib_1_1Observer"/>
+      </node>
+      <node id="2">
+        <label>QuantLib::PricingEngine</label>
+        <link refid="classQuantLib_1_1PricingEngine"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/pricingengine.hpp" line="63" column="5" bodyfile="ql/pricingengine.hpp" bodystart="64" bodyend="74"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1GenericEngine_1ad2371cdbafa1989afb0e4733b1212c0d" prot="protected" virt="non-virtual"><scope>QuantLib::GenericEngine</scope><name>arguments_</name></member>
+      <member refid="classQuantLib_1_1PricingEngine_1ad2be11cff80d9792f0cc8231711fcb06" prot="public" virt="pure-virtual"><scope>QuantLib::GenericEngine</scope><name>calculate</name></member>
+      <member refid="classQuantLib_1_1Observer_1acfbf794db3e7d5cfdea2cd517a195183" prot="public" virt="virtual"><scope>QuantLib::GenericEngine</scope><name>deepUpdate</name></member>
+      <member refid="classQuantLib_1_1GenericEngine_1ad9c6e8dc65ca072d5e6e17640d74db3e" prot="public" virt="virtual"><scope>QuantLib::GenericEngine</scope><name>getArguments</name></member>
+      <member refid="classQuantLib_1_1GenericEngine_1aea8272ef6e5e0ea1cffadfed0454fa88" prot="public" virt="virtual"><scope>QuantLib::GenericEngine</scope><name>getResults</name></member>
+      <member refid="classQuantLib_1_1Observable_1a07ad87c2c2599551463d0a529924dec2" prot="private" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::GenericEngine</scope><name>iterator</name></member>
+      <member refid="classQuantLib_1_1Observer_1ad45fa6f7242ee763d17c714a3e8bb6d7" prot="public" virt="non-virtual" ambiguityscope="QuantLib::Observer::"><scope>QuantLib::GenericEngine</scope><name>iterator</name></member>
+      <member refid="classQuantLib_1_1Observable_1afb67478418efdb94382ac9d7ae904b94" prot="public" virt="non-virtual"><scope>QuantLib::GenericEngine</scope><name>notifyObservers</name></member>
+      <member refid="classQuantLib_1_1Observable_1ae0d19b21fab87a01f53586a6b5c15f85" prot="public" virt="non-virtual"><scope>QuantLib::GenericEngine</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observable_1a942cf6a572bd95341433a6772c70cb29" prot="public" virt="non-virtual"><scope>QuantLib::GenericEngine</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observable_1a6c35885ef344665ecdfac9b9f3a59c0e" prot="public" virt="non-virtual"><scope>QuantLib::GenericEngine</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observer_1a85e3adb273b706155ea7e8bd98ee460b" prot="private" virt="non-virtual"><scope>QuantLib::GenericEngine</scope><name>observables_</name></member>
+      <member refid="classQuantLib_1_1Observer_1a246072080d37c0cd180013417251c70b" prot="public" virt="non-virtual"><scope>QuantLib::GenericEngine</scope><name>Observer</name></member>
+      <member refid="classQuantLib_1_1Observer_1ae6e892e237db5ffe7acbef54360ef0e3" prot="public" virt="non-virtual" ambiguityscope="QuantLib::Observer::"><scope>QuantLib::GenericEngine</scope><name>Observer</name></member>
+      <member refid="classQuantLib_1_1Observable_1a4da6017619203dcb570d5f4174f0beea" prot="private" virt="non-virtual"><scope>QuantLib::GenericEngine</scope><name>observers_</name></member>
+      <member refid="classQuantLib_1_1Observable_1ad1e086da62f05b4bc5eafa698ef6fbc3" prot="public" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::GenericEngine</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1Observable_1ab45941c65068ab4c8d69a7d1a72beeb7" prot="public" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::GenericEngine</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1Observer_1a40ad1a8bfb71e32b2916b370f3f9392c" prot="public" virt="non-virtual" ambiguityscope="QuantLib::Observer::"><scope>QuantLib::GenericEngine</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1Observable_1a1eb87a03e7e1fd43377bce32e0c21bce" prot="private" virt="non-virtual"><scope>QuantLib::GenericEngine</scope><name>registerObserver</name></member>
+      <member refid="classQuantLib_1_1Observer_1a312bbe4a5386f10a1584f3477b3c2709" prot="public" virt="non-virtual"><scope>QuantLib::GenericEngine</scope><name>registerWith</name></member>
+      <member refid="classQuantLib_1_1Observer_1a338928c4fe626f9ccf0b98ceb318853a" prot="public" virt="non-virtual"><scope>QuantLib::GenericEngine</scope><name>registerWithObservables</name></member>
+      <member refid="classQuantLib_1_1GenericEngine_1a81c5390ba1e713e57ca87d5f841d37f2" prot="public" virt="virtual"><scope>QuantLib::GenericEngine</scope><name>reset</name></member>
+      <member refid="classQuantLib_1_1GenericEngine_1a41281f2ea4990dbce90be1f9f2e231f6" prot="protected" virt="non-virtual"><scope>QuantLib::GenericEngine</scope><name>results_</name></member>
+      <member refid="classQuantLib_1_1Observable_1a22e674e99fccc2da996de9620304f63c" prot="private" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::GenericEngine</scope><name>set_type</name></member>
+      <member refid="classQuantLib_1_1Observable_1abd81ef8b87594aa6f9d2a5bd5de3e628" prot="private" virt="non-virtual"><scope>QuantLib::GenericEngine</scope><name>unregisterObserver</name></member>
+      <member refid="classQuantLib_1_1Observer_1a297d13afa77b0e7e6deae3bab777180f" prot="public" virt="non-virtual"><scope>QuantLib::GenericEngine</scope><name>unregisterWith</name></member>
+      <member refid="classQuantLib_1_1Observer_1ab88925691aba7e7d96cc5188e94361ea" prot="public" virt="non-virtual"><scope>QuantLib::GenericEngine</scope><name>unregisterWithAll</name></member>
+      <member refid="classQuantLib_1_1GenericEngine_1aaf5ef54d9e1abf8b1b50b48804edf3dc" prot="public" virt="virtual"><scope>QuantLib::GenericEngine</scope><name>update</name></member>
+      <member refid="classQuantLib_1_1Observable_1a32093a7038e9bd8d28e5d378eca9f4f7" prot="public" virt="virtual"><scope>QuantLib::GenericEngine</scope><name>~Observable</name></member>
+      <member refid="classQuantLib_1_1Observer_1a6b5c15445bbe598d34871f5a5a3ed671" prot="public" virt="virtual"><scope>QuantLib::GenericEngine</scope><name>~Observer</name></member>
+      <member refid="classQuantLib_1_1PricingEngine_1a66b279a54578cd7e60d402e5147eb526" prot="public" virt="non-virtual"><scope>QuantLib::GenericEngine</scope><name>~PricingEngine</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

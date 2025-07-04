@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1AnalyticEuropeanEngine" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::AnalyticEuropeanEngine</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">VanillaOption::engine</basecompoundref>
+    <includes refid="analyticeuropeanengine_8hpp" local="no">analyticeuropeanengine.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1AnalyticEuropeanEngine_1a157238ab6f6516878927d5274c064ef5" prot="private" static="no" mutable="no">
+        <type>ext::shared_ptr&lt; <ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess" kindref="compound">GeneralizedBlackScholesProcess</ref> &gt;</type>
+        <definition>ext::shared_ptr&lt;GeneralizedBlackScholesProcess&gt; QuantLib::AnalyticEuropeanEngine::process_</definition>
+        <argsstring></argsstring>
+        <name>process_</name>
+        <qualifiedname>QuantLib::AnalyticEuropeanEngine::process_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/analyticeuropeanengine.hpp" line="79" column="25" bodyfile="ql/pricingengines/vanilla/analyticeuropeanengine.hpp" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1AnalyticEuropeanEngine_1aa28ee4a8a2f47d5c0a901c9f1987daa8" prot="private" static="no" mutable="no">
+        <type><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle</ref>&lt; <ref refid="classQuantLib_1_1YieldTermStructure" kindref="compound">YieldTermStructure</ref> &gt;</type>
+        <definition>Handle&lt;YieldTermStructure&gt; QuantLib::AnalyticEuropeanEngine::discountCurve_</definition>
+        <argsstring></argsstring>
+        <name>discountCurve_</name>
+        <qualifiedname>QuantLib::AnalyticEuropeanEngine::discountCurve_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/analyticeuropeanengine.hpp" line="80" column="16" bodyfile="ql/pricingengines/vanilla/analyticeuropeanengine.hpp" bodystart="80" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1AnalyticEuropeanEngine_1aa14a9828e046a8a6ad102f9c3f8f2b48" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::AnalyticEuropeanEngine::AnalyticEuropeanEngine</definition>
+        <argsstring>(ext::shared_ptr&lt; GeneralizedBlackScholesProcess &gt;)</argsstring>
+        <name>AnalyticEuropeanEngine</name>
+        <qualifiedname>QuantLib::AnalyticEuropeanEngine::AnalyticEuropeanEngine</qualifiedname>
+        <param>
+          <type>ext::shared_ptr&lt; <ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess" kindref="compound">GeneralizedBlackScholesProcess</ref> &gt;</type>
+          <defname>process</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This constructor triggers the usual calculation, in which the risk-free rate in the given process is used for both forecasting and discounting. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/analyticeuropeanengine.hpp" line="67" column="18" bodyfile="ql/pricingengines/vanilla/analyticeuropeanengine.cpp" bodystart="28" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1AnalyticEuropeanEngine_1a144330a2747d6b292f8ce55d19ef14ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::AnalyticEuropeanEngine::AnalyticEuropeanEngine</definition>
+        <argsstring>(ext::shared_ptr&lt; GeneralizedBlackScholesProcess &gt; process, Handle&lt; YieldTermStructure &gt; discountCurve)</argsstring>
+        <name>AnalyticEuropeanEngine</name>
+        <qualifiedname>QuantLib::AnalyticEuropeanEngine::AnalyticEuropeanEngine</qualifiedname>
+        <param>
+          <type>ext::shared_ptr&lt; <ref refid="classQuantLib_1_1GeneralizedBlackScholesProcess" kindref="compound">GeneralizedBlackScholesProcess</ref> &gt;</type>
+          <declname>process</declname>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1Handle" kindref="compound">Handle</ref>&lt; <ref refid="classQuantLib_1_1YieldTermStructure" kindref="compound">YieldTermStructure</ref> &gt;</type>
+          <declname>discountCurve</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This constructor allows to use a different term structure for discounting the payoff. As usual, the risk-free rate from the given process is used for forecasting the forward price. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/analyticeuropeanengine.hpp" line="74" column="9" bodyfile="ql/pricingengines/vanilla/analyticeuropeanengine.cpp" bodystart="34" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1AnalyticEuropeanEngine_1acbb8f5a10a928b93c6045720ce0e3ff8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::AnalyticEuropeanEngine::calculate</definition>
+        <argsstring>() const override</argsstring>
+        <name>calculate</name>
+        <qualifiedname>QuantLib::AnalyticEuropeanEngine::calculate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/pricingengines/vanilla/analyticeuropeanengine.hpp" line="76" column="14" bodyfile="ql/pricingengines/vanilla/analyticeuropeanengine.cpp" bodystart="42" bodyend="115"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Pricing engine for European vanilla options using analytical formulae. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><xrefsect id="test_1_test000017"><xreftitle>Test</xreftitle><xrefdescription><para><itemizedlist>
+<listitem><para>the correctness of the returned value is tested by reproducing results available in literature.</para>
+</listitem><listitem><para>the correctness of the returned greeks is tested by reproducing results available in literature.</para>
+</listitem><listitem><para>the correctness of the returned greeks is tested by reproducing numerical derivatives.</para>
+</listitem><listitem><para>the correctness of the returned implied volatility is tested by using it for reproducing the target value.</para>
+</listitem><listitem><para>the implied-volatility calculation is tested by checking that it does not modify the option.</para>
+</listitem><listitem><para>the correctness of the returned value in case of cash-or-nothing digital payoff is tested by reproducing results available in literature.</para>
+</listitem><listitem><para>the correctness of the returned value in case of asset-or-nothing digital payoff is tested by reproducing results available in literature.</para>
+</listitem><listitem><para>the correctness of the returned value in case of gap digital payoff is tested by reproducing results available in literature.</para>
+</listitem><listitem><para>the correctness of the returned greeks in case of cash-or-nothing digital payoff is tested by reproducing numerical derivatives. </para>
+</listitem></itemizedlist>
+</para>
+</xrefdescription></xrefsect></para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>QuantLib::AnalyticEuropeanEngine</label>
+        <link refid="classQuantLib_1_1AnalyticEuropeanEngine"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>VanillaOption::engine</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>QuantLib::Handle&lt; QuantLib::YieldTermStructure &gt;</label>
+        <link refid="classQuantLib_1_1Handle"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::AnalyticEuropeanEngine</label>
+        <link refid="classQuantLib_1_1AnalyticEuropeanEngine"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>discountCurve_</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>VanillaOption::engine</label>
+      </node>
+    </collaborationgraph>
+    <location file="ql/pricingengines/vanilla/analyticeuropeanengine.hpp" line="61" column="5" bodyfile="ql/pricingengines/vanilla/analyticeuropeanengine.hpp" bodystart="61" bodyend="81"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1AnalyticEuropeanEngine_1aa14a9828e046a8a6ad102f9c3f8f2b48" prot="public" virt="non-virtual"><scope>QuantLib::AnalyticEuropeanEngine</scope><name>AnalyticEuropeanEngine</name></member>
+      <member refid="classQuantLib_1_1AnalyticEuropeanEngine_1a144330a2747d6b292f8ce55d19ef14ec" prot="public" virt="non-virtual"><scope>QuantLib::AnalyticEuropeanEngine</scope><name>AnalyticEuropeanEngine</name></member>
+      <member refid="classQuantLib_1_1AnalyticEuropeanEngine_1acbb8f5a10a928b93c6045720ce0e3ff8" prot="public" virt="non-virtual"><scope>QuantLib::AnalyticEuropeanEngine</scope><name>calculate</name></member>
+      <member refid="classQuantLib_1_1AnalyticEuropeanEngine_1aa28ee4a8a2f47d5c0a901c9f1987daa8" prot="private" virt="non-virtual"><scope>QuantLib::AnalyticEuropeanEngine</scope><name>discountCurve_</name></member>
+      <member refid="classQuantLib_1_1AnalyticEuropeanEngine_1a157238ab6f6516878927d5274c064ef5" prot="private" virt="non-virtual"><scope>QuantLib::AnalyticEuropeanEngine</scope><name>process_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

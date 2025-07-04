@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1BasketOption" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::BasketOption</compoundname>
+    <basecompoundref refid="classQuantLib_1_1MultiAssetOption" prot="public" virt="non-virtual">QuantLib::MultiAssetOption</basecompoundref>
+    <includes refid="basketoption_8hpp" local="no">basketoption.hpp</includes>
+    <innerclass refid="classQuantLib_1_1BasketOption_1_1engine" prot="public">QuantLib::BasketOption::engine</innerclass>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1BasketOption_1a30d3cacead391c52390644bd65c1b55a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::BasketOption::BasketOption</definition>
+        <argsstring>(const ext::shared_ptr&lt; BasketPayoff &gt; &amp;, const ext::shared_ptr&lt; Exercise &gt; &amp;)</argsstring>
+        <name>BasketOption</name>
+        <qualifiedname>QuantLib::BasketOption::BasketOption</qualifiedname>
+        <param>
+          <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1BasketPayoff" kindref="compound">BasketPayoff</ref> &gt; &amp;</type>
+          <defname>payoff</defname>
+        </param>
+        <param>
+          <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1Exercise" kindref="compound">Exercise</ref> &gt; &amp;</type>
+          <defname>exercise</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/basketoption.hpp" line="106" column="9" bodyfile="ql/instruments/basketoption.cpp" bodystart="27" bodyend="30"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Basket option on a number of assets. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>QuantLib::BasketOption</label>
+        <link refid="classQuantLib_1_1BasketOption"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QuantLib::Instrument</label>
+        <link refid="classQuantLib_1_1Instrument"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>QuantLib::LazyObject</label>
+        <link refid="classQuantLib_1_1LazyObject"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::MultiAssetOption</label>
+        <link refid="classQuantLib_1_1MultiAssetOption"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>QuantLib::Observable</label>
+        <link refid="classQuantLib_1_1Observable"/>
+      </node>
+      <node id="7">
+        <label>QuantLib::Observer</label>
+        <link refid="classQuantLib_1_1Observer"/>
+      </node>
+      <node id="3">
+        <label>QuantLib::Option</label>
+        <link refid="classQuantLib_1_1Option"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>QuantLib::BasketOption</label>
+        <link refid="classQuantLib_1_1BasketOption"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>QuantLib::Date</label>
+        <link refid="classQuantLib_1_1Date"/>
+      </node>
+      <node id="4">
+        <label>QuantLib::Instrument</label>
+        <link refid="classQuantLib_1_1Instrument"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>valuationDate_</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>QuantLib::LazyObject</label>
+        <link refid="classQuantLib_1_1LazyObject"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::MultiAssetOption</label>
+        <link refid="classQuantLib_1_1MultiAssetOption"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>QuantLib::Observable</label>
+        <link refid="classQuantLib_1_1Observable"/>
+      </node>
+      <node id="7">
+        <label>QuantLib::Observer</label>
+        <link refid="classQuantLib_1_1Observer"/>
+      </node>
+      <node id="3">
+        <label>QuantLib::Option</label>
+        <link refid="classQuantLib_1_1Option"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/instruments/basketoption.hpp" line="103" column="5" bodyfile="ql/instruments/basketoption.hpp" bodystart="103" bodyend="108"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Instrument_1a468edb294da268b097c91bf821084c07" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>additionalResults</name></member>
+      <member refid="classQuantLib_1_1Instrument_1a57d2b34e8625ab3d9ffa50c0c7931099" prot="protected" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>additionalResults_</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a02070ea7442d30625992c1711030d4b8" prot="protected" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>alwaysForward_</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a17c9433135a259e4776baec66204a484" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>alwaysForwardNotifications</name></member>
+      <member refid="classQuantLib_1_1BasketOption_1a30d3cacead391c52390644bd65c1b55a" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>BasketOption</name></member>
+      <member refid="classQuantLib_1_1Instrument_1a4c573c48f7eaead5042864ac0eb5b025" prot="protected" virt="virtual"><scope>QuantLib::BasketOption</scope><name>calculate</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a58b4986a80efa18634483a92c121e26e" prot="protected" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>calculated_</name></member>
+      <member refid="classQuantLib_1_1Option_1abaee7fc605354c444867545492cd5845a4f872c1ba3286c1af60485c2f4a4d3c1" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>Call</name></member>
+      <member refid="classQuantLib_1_1Observer_1acfbf794db3e7d5cfdea2cd517a195183" prot="public" virt="virtual"><scope>QuantLib::BasketOption</scope><name>deepUpdate</name></member>
+      <member refid="classQuantLib_1_1MultiAssetOption_1aa935ec94636cea01e1d43f28c538e97e" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>delta</name></member>
+      <member refid="classQuantLib_1_1MultiAssetOption_1a15ec1ba72437bc618ce22aeff4c2b664" prot="protected" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>delta_</name></member>
+      <member refid="classQuantLib_1_1MultiAssetOption_1a7a94ac3d3141f6a5953f27fde6debf13" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>dividendRho</name></member>
+      <member refid="classQuantLib_1_1MultiAssetOption_1a59c6208db8a249fdf66658b98d75a20f" prot="protected" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>dividendRho_</name></member>
+      <member refid="classQuantLib_1_1Instrument_1ac548cb61c864779db09bd0fac6ae7c81" prot="protected" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>engine_</name></member>
+      <member refid="classQuantLib_1_1Instrument_1a03502fb6c606b262c25acd94ff4c1e52" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>errorEstimate</name></member>
+      <member refid="classQuantLib_1_1Instrument_1abb8f4cfa7346fab7a2f3a8c8b4da30f3" prot="protected" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>errorEstimate_</name></member>
+      <member refid="classQuantLib_1_1Option_1a983bd3fd1eb1437bbdef1f3fa2adf899" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>exercise</name></member>
+      <member refid="classQuantLib_1_1Option_1a3e8fca2ab5ba46c45b99badeeacd7e7a" prot="protected" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>exercise_</name></member>
+      <member refid="classQuantLib_1_1MultiAssetOption_1a3abc5def0cf1ad60ed096a70ecf29d39" prot="public" virt="virtual"><scope>QuantLib::BasketOption</scope><name>fetchResults</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1afac6ee19c3107c453e1347dd8000e023" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>forwardFirstNotificationOnly</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a7157f41e83f2c5d924f5c5bafda04d1d" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>freeze</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a7bb721fe00c6854e602758aba629ab77" prot="protected" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>frozen_</name></member>
+      <member refid="classQuantLib_1_1MultiAssetOption_1a6d789cd940d29dc0b996c8db3ef1b93b" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>gamma</name></member>
+      <member refid="classQuantLib_1_1MultiAssetOption_1a1b734c00d4b96f455cccac65c4816a29" prot="protected" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>gamma_</name></member>
+      <member refid="classQuantLib_1_1Instrument_1a5e4c746cbf7999c83dc57f87e241f1cc" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>Instrument</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a0a7c5d42815a4e16ee2158e24dbfc748" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>isCalculated</name></member>
+      <member refid="classQuantLib_1_1MultiAssetOption_1a128c1356873e78210478158f2c7324ab" prot="public" virt="virtual"><scope>QuantLib::BasketOption</scope><name>isExpired</name></member>
+      <member refid="classQuantLib_1_1Observable_1a07ad87c2c2599551463d0a529924dec2" prot="private" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::BasketOption</scope><name>iterator</name></member>
+      <member refid="classQuantLib_1_1Observer_1ad45fa6f7242ee763d17c714a3e8bb6d7" prot="public" virt="non-virtual" ambiguityscope="QuantLib::Observer::"><scope>QuantLib::BasketOption</scope><name>iterator</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a26f18f4ff7faaaebd8eae50e064b493e" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>LazyObject</name></member>
+      <member refid="classQuantLib_1_1MultiAssetOption_1a09edae1ab9de3bfd4aa4d94c07c21ae7" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>MultiAssetOption</name></member>
+      <member refid="classQuantLib_1_1Observable_1afb67478418efdb94382ac9d7ae904b94" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>notifyObservers</name></member>
+      <member refid="classQuantLib_1_1Instrument_1a5afdd9698267cd30ddd10cf01f3487b0" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>NPV</name></member>
+      <member refid="classQuantLib_1_1Instrument_1a997663780100d30ae59b14ac0285322d" prot="protected" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>NPV_</name></member>
+      <member refid="classQuantLib_1_1Observable_1ae0d19b21fab87a01f53586a6b5c15f85" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observable_1a942cf6a572bd95341433a6772c70cb29" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observable_1a6c35885ef344665ecdfac9b9f3a59c0e" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observer_1a85e3adb273b706155ea7e8bd98ee460b" prot="private" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>observables_</name></member>
+      <member refid="classQuantLib_1_1Observer_1a246072080d37c0cd180013417251c70b" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>Observer</name></member>
+      <member refid="classQuantLib_1_1Observer_1ae6e892e237db5ffe7acbef54360ef0e3" prot="public" virt="non-virtual" ambiguityscope="QuantLib::Observer::"><scope>QuantLib::BasketOption</scope><name>Observer</name></member>
+      <member refid="classQuantLib_1_1Observable_1a4da6017619203dcb570d5f4174f0beea" prot="private" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>observers_</name></member>
+      <member refid="classQuantLib_1_1Option_1a03bf400e04666eadc73907b0c716739e" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classQuantLib_1_1Observable_1ad1e086da62f05b4bc5eafa698ef6fbc3" prot="public" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::BasketOption</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1Observable_1ab45941c65068ab4c8d69a7d1a72beeb7" prot="public" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::BasketOption</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1Observer_1a40ad1a8bfb71e32b2916b370f3f9392c" prot="public" virt="non-virtual" ambiguityscope="QuantLib::Observer::"><scope>QuantLib::BasketOption</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1Option_1a53a00c225649c5da693898cb8b4b364b" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>Option</name></member>
+      <member refid="classQuantLib_1_1Option_1a85744e7ba21d0df6987f618893ea76ce" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>payoff</name></member>
+      <member refid="classQuantLib_1_1Option_1ada24896615e540bebf2b9623c3537def" prot="protected" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>payoff_</name></member>
+      <member refid="classQuantLib_1_1Instrument_1aad23f546bbca156a49a95ca2bee124c4" prot="protected" virt="virtual"><scope>QuantLib::BasketOption</scope><name>performCalculations</name></member>
+      <member refid="classQuantLib_1_1Option_1abaee7fc605354c444867545492cd5845aa96ffa37e51c7bbea13951f106dbd3c0" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>Put</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a70c9b24e50132408d8d9ce4f6674662a" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>recalculate</name></member>
+      <member refid="classQuantLib_1_1Observable_1a1eb87a03e7e1fd43377bce32e0c21bce" prot="private" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>registerObserver</name></member>
+      <member refid="classQuantLib_1_1Observer_1a312bbe4a5386f10a1584f3477b3c2709" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>registerWith</name></member>
+      <member refid="classQuantLib_1_1Observer_1a338928c4fe626f9ccf0b98ceb318853a" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>registerWithObservables</name></member>
+      <member refid="classQuantLib_1_1Instrument_1a266c15a12160a89f4f9707db85f9fa27" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>result</name></member>
+      <member refid="classQuantLib_1_1MultiAssetOption_1a35d7770b7eb280297682f213bc5a9ec1" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>rho</name></member>
+      <member refid="classQuantLib_1_1MultiAssetOption_1ae928d5a0223d2b0d08d65f134824e8dc" prot="protected" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>rho_</name></member>
+      <member refid="classQuantLib_1_1Observable_1a22e674e99fccc2da996de9620304f63c" prot="private" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::BasketOption</scope><name>set_type</name></member>
+      <member refid="classQuantLib_1_1Instrument_1a3444386491f179f64f4f0aac24997071" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>setPricingEngine</name></member>
+      <member refid="classQuantLib_1_1MultiAssetOption_1a020153980256090d873547d3a6a47d4b" prot="public" virt="virtual"><scope>QuantLib::BasketOption</scope><name>setupArguments</name></member>
+      <member refid="classQuantLib_1_1MultiAssetOption_1aabd72139997142de12e8a26c75c3d247" prot="protected" virt="virtual"><scope>QuantLib::BasketOption</scope><name>setupExpired</name></member>
+      <member refid="classQuantLib_1_1MultiAssetOption_1a25225b9e74828a4b79128535ef3156c1" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>theta</name></member>
+      <member refid="classQuantLib_1_1MultiAssetOption_1a542375fc454d827e9769804de60a944a" prot="protected" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>theta_</name></member>
+      <member refid="classQuantLib_1_1Option_1abaee7fc605354c444867545492cd5845" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>Type</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a2e0e4786666453024b9d4e0761f2770b" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>unfreeze</name></member>
+      <member refid="classQuantLib_1_1Observable_1abd81ef8b87594aa6f9d2a5bd5de3e628" prot="private" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>unregisterObserver</name></member>
+      <member refid="classQuantLib_1_1Observer_1a297d13afa77b0e7e6deae3bab777180f" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>unregisterWith</name></member>
+      <member refid="classQuantLib_1_1Observer_1ab88925691aba7e7d96cc5188e94361ea" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>unregisterWithAll</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1adee2bf49be5c4c78736be293321a856d" prot="public" virt="virtual"><scope>QuantLib::BasketOption</scope><name>update</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1ae2c605a452787b38d6a64cf20395a075" prot="private" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>updating_</name></member>
+      <member refid="classQuantLib_1_1Instrument_1a53a0fc1adc70b73387ad53009725835d" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>valuationDate</name></member>
+      <member refid="classQuantLib_1_1Instrument_1aa60b558fc82f022e13535360ac4a6fed" prot="protected" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>valuationDate_</name></member>
+      <member refid="classQuantLib_1_1MultiAssetOption_1a32e1631d39103b92dff9aeebfafd4846" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>vega</name></member>
+      <member refid="classQuantLib_1_1MultiAssetOption_1a560d57212c304108d64f9a2496267edb" prot="protected" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>vega_</name></member>
+      <member refid="classQuantLib_1_1LazyObject_1a9d719c43bb627177a90d7d12324a2d6e" prot="public" virt="non-virtual"><scope>QuantLib::BasketOption</scope><name>~LazyObject</name></member>
+      <member refid="classQuantLib_1_1Observable_1a32093a7038e9bd8d28e5d378eca9f4f7" prot="public" virt="virtual"><scope>QuantLib::BasketOption</scope><name>~Observable</name></member>
+      <member refid="classQuantLib_1_1Observer_1a6b5c15445bbe598d34871f5a5a3ed671" prot="public" virt="virtual"><scope>QuantLib::BasketOption</scope><name>~Observer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

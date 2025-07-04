@@ -1,0 +1,389 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1Interpolation" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::Interpolation</compoundname>
+    <basecompoundref refid="classQuantLib_1_1Extrapolator" prot="public" virt="non-virtual">QuantLib::Extrapolator</basecompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1ChebyshevInterpolation" prot="public" virt="non-virtual">QuantLib::ChebyshevInterpolation</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1CubicInterpolation" prot="public" virt="non-virtual">QuantLib::CubicInterpolation</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1LagrangeInterpolation" prot="public" virt="non-virtual">QuantLib::LagrangeInterpolation</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1LinearInterpolation" prot="public" virt="non-virtual">QuantLib::LinearInterpolation</derivedcompoundref>
+    <includes refid="interpolation_8hpp" local="no">interpolation.hpp</includes>
+    <innerclass refid="classQuantLib_1_1Interpolation_1_1Impl" prot="protected">QuantLib::Interpolation::Impl</innerclass>
+    <innerclass refid="classQuantLib_1_1Interpolation_1_1templateImpl" prot="public">QuantLib::Interpolation::templateImpl</innerclass>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1Interpolation_1aef7940748a211476a0ed80e3a6ca9b9b" prot="protected" static="no" mutable="no">
+        <type>ext::shared_ptr&lt; <ref refid="classQuantLib_1_1Interpolation_1_1Impl" kindref="compound">Impl</ref> &gt;</type>
+        <definition>ext::shared_ptr&lt;Impl&gt; QuantLib::Interpolation::impl_</definition>
+        <argsstring></argsstring>
+        <name>impl_</name>
+        <qualifiedname>QuantLib::Interpolation::impl_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolation.hpp" line="72" column="25" bodyfile="ql/math/interpolation.hpp" bodystart="72" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1Interpolation_1a3357fa39f1e41da02be1792133f6d622" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Interpolation::Interpolation</definition>
+        <argsstring>()=default</argsstring>
+        <name>Interpolation</name>
+        <qualifiedname>QuantLib::Interpolation::Interpolation</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolation.hpp" line="118" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Interpolation_1a2b6d1246d8676354fb8f1efb03c9852f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Interpolation::~Interpolation</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~Interpolation</name>
+        <qualifiedname>QuantLib::Interpolation::~Interpolation</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolation.hpp" line="119" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Interpolation_1aca518c22ea0e7c6a410757877f11756c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QuantLib::Interpolation::empty</definition>
+        <argsstring>() const</argsstring>
+        <name>empty</name>
+        <qualifiedname>QuantLib::Interpolation::empty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolation.hpp" line="120" column="14" bodyfile="ql/math/interpolation.hpp" bodystart="120" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Interpolation_1a9e0ba688e60feed84158204bf22b678d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::Interpolation::operator()</definition>
+        <argsstring>(Real x, bool allowExtrapolation=false) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>QuantLib::Interpolation::operator()</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>allowExtrapolation</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolation.hpp" line="121" column="14" bodyfile="ql/math/interpolation.hpp" bodystart="121" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Interpolation_1a5b8ec18bc4927757f4a04967f13b271c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::Interpolation::primitive</definition>
+        <argsstring>(Real x, bool allowExtrapolation=false) const</argsstring>
+        <name>primitive</name>
+        <qualifiedname>QuantLib::Interpolation::primitive</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>allowExtrapolation</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolation.hpp" line="125" column="14" bodyfile="ql/math/interpolation.hpp" bodystart="125" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Interpolation_1ab52a971431083a0a474266d6cdc9f936" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::Interpolation::derivative</definition>
+        <argsstring>(Real x, bool allowExtrapolation=false) const</argsstring>
+        <name>derivative</name>
+        <qualifiedname>QuantLib::Interpolation::derivative</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>allowExtrapolation</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolation.hpp" line="129" column="14" bodyfile="ql/math/interpolation.hpp" bodystart="129" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Interpolation_1afab97bcd82695d553682b5f6eebb1718" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::Interpolation::secondDerivative</definition>
+        <argsstring>(Real x, bool allowExtrapolation=false) const</argsstring>
+        <name>secondDerivative</name>
+        <qualifiedname>QuantLib::Interpolation::secondDerivative</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>allowExtrapolation</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolation.hpp" line="133" column="14" bodyfile="ql/math/interpolation.hpp" bodystart="133" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Interpolation_1afc10233f6b565f10e291389631e5ea1f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::Interpolation::xMin</definition>
+        <argsstring>() const</argsstring>
+        <name>xMin</name>
+        <qualifiedname>QuantLib::Interpolation::xMin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolation.hpp" line="137" column="14" bodyfile="ql/math/interpolation.hpp" bodystart="137" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Interpolation_1a12711f5ec2e165fdb5104f3979855cc4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::Interpolation::xMax</definition>
+        <argsstring>() const</argsstring>
+        <name>xMax</name>
+        <qualifiedname>QuantLib::Interpolation::xMax</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolation.hpp" line="140" column="14" bodyfile="ql/math/interpolation.hpp" bodystart="140" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Interpolation_1af0892ba060b7b7d58943718b074f079a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QuantLib::Interpolation::isInRange</definition>
+        <argsstring>(Real x) const</argsstring>
+        <name>isInRange</name>
+        <qualifiedname>QuantLib::Interpolation::isInRange</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolation.hpp" line="143" column="14" bodyfile="ql/math/interpolation.hpp" bodystart="143" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Interpolation_1a56cfc87cb5966ee36d72e5ffc7b1ff5c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::Interpolation::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <qualifiedname>QuantLib::Interpolation::update</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolation.hpp" line="146" column="14" bodyfile="ql/math/interpolation.hpp" bodystart="146" bodyend="148"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classQuantLib_1_1Interpolation_1ab682157f4f0585bc28beefc6c22c8ba8" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::Interpolation::checkRange</definition>
+        <argsstring>(Real x, bool extrapolate) const</argsstring>
+        <name>checkRange</name>
+        <qualifiedname>QuantLib::Interpolation::checkRange</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>extrapolate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolation.hpp" line="150" column="14" bodyfile="ql/math/interpolation.hpp" bodystart="150" bodyend="156"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>base class for 1-D interpolations. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Classes derived from this class will provide interpolated values from two sequences of equal length, representing discretized values of a variable and a function of the former, respectively.</para>
+<para><simplesect kind="warning"><para>Interpolations don&apos;t copy their underlying data; instead, they store iterators through which they access them. This allow them to see changes in the underlying data without having to propagate them manually, but adds the requirement that the lifetime of the underlying data exceeds or equals the lifetime of the interpolation. It is up to the user to ensure this: usually, a class will store as data members both the data and the interpolation (see, e.g., the InterpolatedCurve class) and call the <ref refid="classQuantLib_1_1Interpolation_1a56cfc87cb5966ee36d72e5ffc7b1ff5c" kindref="member">update()</ref> method on the latter when the data change. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="5">
+        <label>QuantLib::AkimaCubicInterpolation</label>
+        <link refid="classQuantLib_1_1AkimaCubicInterpolation"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QuantLib::ChebyshevInterpolation</label>
+        <link refid="classQuantLib_1_1ChebyshevInterpolation"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QuantLib::CubicInterpolation</label>
+        <link refid="classQuantLib_1_1CubicInterpolation"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>QuantLib::CubicNaturalSpline</label>
+        <link refid="classQuantLib_1_1CubicNaturalSpline"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>QuantLib::CubicSplineOvershootingMinimization1</label>
+        <link refid="classQuantLib_1_1CubicSplineOvershootingMinimization1"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>QuantLib::CubicSplineOvershootingMinimization2</label>
+        <link refid="classQuantLib_1_1CubicSplineOvershootingMinimization2"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::Extrapolator</label>
+        <link refid="classQuantLib_1_1Extrapolator"/>
+      </node>
+      <node id="9">
+        <label>QuantLib::FritschButlandCubic</label>
+        <link refid="classQuantLib_1_1FritschButlandCubic"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>QuantLib::HarmonicCubic</label>
+        <link refid="classQuantLib_1_1HarmonicCubic"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::Interpolation</label>
+        <link refid="classQuantLib_1_1Interpolation"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>QuantLib::KrugerCubic</label>
+        <link refid="classQuantLib_1_1KrugerCubic"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>QuantLib::LagrangeInterpolation</label>
+        <link refid="classQuantLib_1_1LagrangeInterpolation"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>QuantLib::LinearInterpolation</label>
+        <link refid="classQuantLib_1_1LinearInterpolation"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>QuantLib::MonotonicCubicNaturalSpline</label>
+        <link refid="classQuantLib_1_1MonotonicCubicNaturalSpline"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>QuantLib::MonotonicParabolic</label>
+        <link refid="classQuantLib_1_1MonotonicParabolic"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>QuantLib::Parabolic</label>
+        <link refid="classQuantLib_1_1Parabolic"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>QuantLib::Extrapolator</label>
+        <link refid="classQuantLib_1_1Extrapolator"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::Interpolation</label>
+        <link refid="classQuantLib_1_1Interpolation"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/math/interpolation.hpp" line="55" column="5" bodyfile="ql/math/interpolation.hpp" bodystart="55" bodyend="157"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Extrapolator_1ab3936a9b5b5c163d3e511437c16c1d9e" prot="public" virt="non-virtual"><scope>QuantLib::Interpolation</scope><name>allowsExtrapolation</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1ab682157f4f0585bc28beefc6c22c8ba8" prot="protected" virt="non-virtual"><scope>QuantLib::Interpolation</scope><name>checkRange</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1ab52a971431083a0a474266d6cdc9f936" prot="public" virt="non-virtual"><scope>QuantLib::Interpolation</scope><name>derivative</name></member>
+      <member refid="classQuantLib_1_1Extrapolator_1a6af69387d5cae0fe84d6a0c858406218" prot="public" virt="non-virtual"><scope>QuantLib::Interpolation</scope><name>disableExtrapolation</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1aca518c22ea0e7c6a410757877f11756c" prot="public" virt="non-virtual"><scope>QuantLib::Interpolation</scope><name>empty</name></member>
+      <member refid="classQuantLib_1_1Extrapolator_1a5f7b5650a44d6c63095bc739470c8bfb" prot="public" virt="non-virtual"><scope>QuantLib::Interpolation</scope><name>enableExtrapolation</name></member>
+      <member refid="classQuantLib_1_1Extrapolator_1a9a45b840a003c411ad1c2b71578e329a" prot="private" virt="non-virtual"><scope>QuantLib::Interpolation</scope><name>extrapolate_</name></member>
+      <member refid="classQuantLib_1_1Extrapolator_1af1c3adaccdfaf07d3d07edaa234444f7" prot="public" virt="non-virtual"><scope>QuantLib::Interpolation</scope><name>Extrapolator</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1aef7940748a211476a0ed80e3a6ca9b9b" prot="protected" virt="non-virtual"><scope>QuantLib::Interpolation</scope><name>impl_</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1a3357fa39f1e41da02be1792133f6d622" prot="public" virt="non-virtual"><scope>QuantLib::Interpolation</scope><name>Interpolation</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1af0892ba060b7b7d58943718b074f079a" prot="public" virt="non-virtual"><scope>QuantLib::Interpolation</scope><name>isInRange</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1a9e0ba688e60feed84158204bf22b678d" prot="public" virt="non-virtual"><scope>QuantLib::Interpolation</scope><name>operator()</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1a5b8ec18bc4927757f4a04967f13b271c" prot="public" virt="non-virtual"><scope>QuantLib::Interpolation</scope><name>primitive</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1afab97bcd82695d553682b5f6eebb1718" prot="public" virt="non-virtual"><scope>QuantLib::Interpolation</scope><name>secondDerivative</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1a56cfc87cb5966ee36d72e5ffc7b1ff5c" prot="public" virt="non-virtual"><scope>QuantLib::Interpolation</scope><name>update</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1a12711f5ec2e165fdb5104f3979855cc4" prot="public" virt="non-virtual"><scope>QuantLib::Interpolation</scope><name>xMax</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1afc10233f6b565f10e291389631e5ea1f" prot="public" virt="non-virtual"><scope>QuantLib::Interpolation</scope><name>xMin</name></member>
+      <member refid="classQuantLib_1_1Extrapolator_1af0ca0156436ffbce159183198eb27e2e" prot="public" virt="virtual"><scope>QuantLib::Interpolation</scope><name>~Extrapolator</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1a2b6d1246d8676354fb8f1efb03c9852f" prot="public" virt="non-virtual"><scope>QuantLib::Interpolation</scope><name>~Interpolation</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

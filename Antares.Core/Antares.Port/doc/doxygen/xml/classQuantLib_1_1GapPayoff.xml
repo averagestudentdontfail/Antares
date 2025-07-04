@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1GapPayoff" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::GapPayoff</compoundname>
+    <basecompoundref refid="classQuantLib_1_1StrikedTypePayoff" prot="public" virt="non-virtual">QuantLib::StrikedTypePayoff</basecompoundref>
+    <includes refid="payoffs_8hpp" local="no">payoffs.hpp</includes>
+    <sectiondef kind="user-defined">
+      <header>Payoff interface</header>
+      <memberdef kind="variable" id="classQuantLib_1_1GapPayoff_1a54613db1125f2429839f20d39fb87d89" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::GapPayoff::secondStrike_</definition>
+        <argsstring></argsstring>
+        <name>secondStrike_</name>
+        <qualifiedname>QuantLib::GapPayoff::secondStrike_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/payoffs.hpp" line="193" column="14" bodyfile="ql/instruments/payoffs.hpp" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1GapPayoff_1abfc756d401e48c1135b8af277bd4492d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string QuantLib::GapPayoff::name</definition>
+        <argsstring>() const override</argsstring>
+        <name>name</name>
+        <qualifiedname>QuantLib::GapPayoff::name</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Payoff_1aceb029d314fb74ab5797d7bc7752d0c8">name</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="warning"><para>This method is used for output and comparison between payoffs. It is <bold>not</bold> meant to be used for writing switch-on-type code. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/payoffs.hpp" line="186" column="21" bodyfile="ql/instruments/payoffs.hpp" bodystart="186" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1GapPayoff_1a08d050cf580f1f92c892f665fdcfcef4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string QuantLib::GapPayoff::description</definition>
+        <argsstring>() const override</argsstring>
+        <name>description</name>
+        <qualifiedname>QuantLib::GapPayoff::description</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Payoff_1a0f2a1e491b9cf7411a3759c2fd7ed90e">description</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/payoffs.hpp" line="187" column="21" bodyfile="ql/instruments/payoffs.cpp" bodystart="172" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1GapPayoff_1a6d7508cf19bdef36476972005ba51046" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::GapPayoff::operator()</definition>
+        <argsstring>(Real price) const override</argsstring>
+        <name>operator()</name>
+        <qualifiedname>QuantLib::GapPayoff::operator()</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Payoff_1a1b10d7224a8089b21a56eb1fa0562c37">operator()</reimplements>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>price</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/payoffs.hpp" line="188" column="14" bodyfile="ql/instruments/payoffs.cpp" bodystart="178" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1GapPayoff_1abb833446630efd963e1ab166701b6eb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QuantLib::GapPayoff::accept</definition>
+        <argsstring>(AcyclicVisitor &amp;) override</argsstring>
+        <name>accept</name>
+        <qualifiedname>QuantLib::GapPayoff::accept</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Payoff_1ac2902d1c8e84743671f759180fbff190">accept</reimplements>
+        <param>
+          <type><ref refid="classQuantLib_1_1AcyclicVisitor" kindref="compound">AcyclicVisitor</ref> &amp;</type>
+          <defname>v</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/payoffs.hpp" line="189" column="14" bodyfile="ql/instruments/payoffs.cpp" bodystart="189" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1GapPayoff_1ace6cdc6568bf5ef135f431d8464b6f93" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::GapPayoff::secondStrike</definition>
+        <argsstring>() const</argsstring>
+        <name>secondStrike</name>
+        <qualifiedname>QuantLib::GapPayoff::secondStrike</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/payoffs.hpp" line="191" column="14" bodyfile="ql/instruments/payoffs.hpp" bodystart="191" bodyend="191"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1GapPayoff_1aa2dde1adf3c786b2df14f2c28226072e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::GapPayoff::GapPayoff</definition>
+        <argsstring>(Option::Type type, Real strike, Real secondStrike)</argsstring>
+        <name>GapPayoff</name>
+        <qualifiedname>QuantLib::GapPayoff::GapPayoff</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Option_1abaee7fc605354c444867545492cd5845" kindref="member">Option::Type</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>strike</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>secondStrike</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/payoffs.hpp" line="180" column="9" bodyfile="ql/instruments/payoffs.hpp" bodystart="180" bodyend="183"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Binary gap payoff. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This payoff is equivalent to being a) long a <ref refid="classQuantLib_1_1PlainVanillaPayoff" kindref="compound">PlainVanillaPayoff</ref> at the first strike (same Call/Put type) and b) short a <ref refid="classQuantLib_1_1CashOrNothingPayoff" kindref="compound">CashOrNothingPayoff</ref> at the first strike (same Call/Put type) with cash payoff equal to the difference between the second and the first strike. <simplesect kind="warning"><para>this payoff can be negative depending on the strikes </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>QuantLib::GapPayoff</label>
+        <link refid="classQuantLib_1_1GapPayoff"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QuantLib::Payoff</label>
+        <link refid="classQuantLib_1_1Payoff"/>
+      </node>
+      <node id="2">
+        <label>QuantLib::StrikedTypePayoff</label>
+        <link refid="classQuantLib_1_1StrikedTypePayoff"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QuantLib::TypePayoff</label>
+        <link refid="classQuantLib_1_1TypePayoff"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>QuantLib::GapPayoff</label>
+        <link refid="classQuantLib_1_1GapPayoff"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QuantLib::Payoff</label>
+        <link refid="classQuantLib_1_1Payoff"/>
+      </node>
+      <node id="2">
+        <label>QuantLib::StrikedTypePayoff</label>
+        <link refid="classQuantLib_1_1StrikedTypePayoff"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QuantLib::TypePayoff</label>
+        <link refid="classQuantLib_1_1TypePayoff"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/instruments/payoffs.hpp" line="178" column="5" bodyfile="ql/instruments/payoffs.hpp" bodystart="178" bodyend="194"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1GapPayoff_1abb833446630efd963e1ab166701b6eb0" prot="public" virt="virtual"><scope>QuantLib::GapPayoff</scope><name>accept</name></member>
+      <member refid="classQuantLib_1_1GapPayoff_1a08d050cf580f1f92c892f665fdcfcef4" prot="public" virt="virtual"><scope>QuantLib::GapPayoff</scope><name>description</name></member>
+      <member refid="classQuantLib_1_1GapPayoff_1aa2dde1adf3c786b2df14f2c28226072e" prot="public" virt="non-virtual"><scope>QuantLib::GapPayoff</scope><name>GapPayoff</name></member>
+      <member refid="classQuantLib_1_1GapPayoff_1abfc756d401e48c1135b8af277bd4492d" prot="public" virt="virtual"><scope>QuantLib::GapPayoff</scope><name>name</name></member>
+      <member refid="classQuantLib_1_1GapPayoff_1a6d7508cf19bdef36476972005ba51046" prot="public" virt="virtual"><scope>QuantLib::GapPayoff</scope><name>operator()</name></member>
+      <member refid="classQuantLib_1_1TypePayoff_1a65d88064f1dd8a1d832061dbfc604812" prot="public" virt="non-virtual"><scope>QuantLib::GapPayoff</scope><name>optionType</name></member>
+      <member refid="classQuantLib_1_1GapPayoff_1ace6cdc6568bf5ef135f431d8464b6f93" prot="public" virt="non-virtual"><scope>QuantLib::GapPayoff</scope><name>secondStrike</name></member>
+      <member refid="classQuantLib_1_1GapPayoff_1a54613db1125f2429839f20d39fb87d89" prot="protected" virt="non-virtual"><scope>QuantLib::GapPayoff</scope><name>secondStrike_</name></member>
+      <member refid="classQuantLib_1_1StrikedTypePayoff_1a3c01bf0738a40de8dfd81e1a7127e3e7" prot="public" virt="non-virtual"><scope>QuantLib::GapPayoff</scope><name>strike</name></member>
+      <member refid="classQuantLib_1_1StrikedTypePayoff_1a1a8dfb6b6f557d30b497ef63a92e12d0" prot="protected" virt="non-virtual"><scope>QuantLib::GapPayoff</scope><name>strike_</name></member>
+      <member refid="classQuantLib_1_1StrikedTypePayoff_1a68f84b64d373d6e9cf49e0fb633880d3" prot="protected" virt="non-virtual"><scope>QuantLib::GapPayoff</scope><name>StrikedTypePayoff</name></member>
+      <member refid="classQuantLib_1_1TypePayoff_1af4e5a4d11b0c069fcde370573be46191" prot="protected" virt="non-virtual"><scope>QuantLib::GapPayoff</scope><name>type_</name></member>
+      <member refid="classQuantLib_1_1TypePayoff_1ad79b48279b590d246a611009bca455c1" prot="protected" virt="non-virtual"><scope>QuantLib::GapPayoff</scope><name>TypePayoff</name></member>
+      <member refid="classQuantLib_1_1Payoff_1a7067fc920554af30af0ac5b82d0f4650" prot="public" virt="virtual"><scope>QuantLib::GapPayoff</scope><name>~Payoff</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1FdmBackwardSolver" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::FdmBackwardSolver</compoundname>
+    <includes refid="fdmbackwardsolver_8hpp" local="no">fdmbackwardsolver.hpp</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classQuantLib_1_1FdmBackwardSolver_1a09b94a55afd6f607a38c1e3d0bf3acd5" prot="public" static="no">
+        <type><ref refid="classQuantLib_1_1FdmLinearOp_1af55693593c0cf7e885c67fd848f76e49" kindref="member">FdmLinearOp::array_type</ref></type>
+        <definition>typedef FdmLinearOp::array_type QuantLib::FdmBackwardSolver::array_type</definition>
+        <argsstring></argsstring>
+        <name>array_type</name>
+        <qualifiedname>QuantLib::FdmBackwardSolver::array_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/solvers/fdmbackwardsolver.hpp" line="63" column="41" bodyfile="ql/methods/finitedifferences/solvers/fdmbackwardsolver.hpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1FdmBackwardSolver_1abe5ccc7cc8384183f4b81d871efaf9ac" prot="protected" static="no" mutable="no">
+        <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmLinearOpComposite" kindref="compound">FdmLinearOpComposite</ref> &gt;</type>
+        <definition>const ext::shared_ptr&lt;FdmLinearOpComposite&gt; QuantLib::FdmBackwardSolver::map_</definition>
+        <argsstring></argsstring>
+        <name>map_</name>
+        <qualifiedname>QuantLib::FdmBackwardSolver::map_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/solvers/fdmbackwardsolver.hpp" line="75" column="31" bodyfile="ql/methods/finitedifferences/solvers/fdmbackwardsolver.hpp" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1FdmBackwardSolver_1a2d025499c427d2d9d3233de8ec8c3a78" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1af064f77bc69893c110a3797657b02c42" kindref="member">FdmBoundaryConditionSet</ref></type>
+        <definition>const FdmBoundaryConditionSet QuantLib::FdmBackwardSolver::bcSet_</definition>
+        <argsstring></argsstring>
+        <name>bcSet_</name>
+        <qualifiedname>QuantLib::FdmBackwardSolver::bcSet_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/solvers/fdmbackwardsolver.hpp" line="76" column="39" bodyfile="ql/methods/finitedifferences/solvers/fdmbackwardsolver.hpp" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1FdmBackwardSolver_1a36056e2ca90a8daee7d395d3c19eaf0e" prot="protected" static="no" mutable="no">
+        <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmStepConditionComposite" kindref="compound">FdmStepConditionComposite</ref> &gt;</type>
+        <definition>const ext::shared_ptr&lt;FdmStepConditionComposite&gt; QuantLib::FdmBackwardSolver::condition_</definition>
+        <argsstring></argsstring>
+        <name>condition_</name>
+        <qualifiedname>QuantLib::FdmBackwardSolver::condition_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/solvers/fdmbackwardsolver.hpp" line="77" column="31" bodyfile="ql/methods/finitedifferences/solvers/fdmbackwardsolver.hpp" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1FdmBackwardSolver_1ab96d530501ce059619db0d9ac0759cf4" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="structQuantLib_1_1FdmSchemeDesc" kindref="compound">FdmSchemeDesc</ref></type>
+        <definition>const FdmSchemeDesc QuantLib::FdmBackwardSolver::schemeDesc_</definition>
+        <argsstring></argsstring>
+        <name>schemeDesc_</name>
+        <qualifiedname>QuantLib::FdmBackwardSolver::schemeDesc_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/solvers/fdmbackwardsolver.hpp" line="78" column="29" bodyfile="ql/methods/finitedifferences/solvers/fdmbackwardsolver.hpp" bodystart="78" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1FdmBackwardSolver_1aac75d3ad78c26529c220726703455b84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::FdmBackwardSolver::FdmBackwardSolver</definition>
+        <argsstring>(ext::shared_ptr&lt; FdmLinearOpComposite &gt; map, FdmBoundaryConditionSet bcSet, const ext::shared_ptr&lt; FdmStepConditionComposite &gt; &amp;condition, const FdmSchemeDesc &amp;schemeDesc)</argsstring>
+        <name>FdmBackwardSolver</name>
+        <qualifiedname>QuantLib::FdmBackwardSolver::FdmBackwardSolver</qualifiedname>
+        <param>
+          <type>ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmLinearOpComposite" kindref="compound">FdmLinearOpComposite</ref> &gt;</type>
+          <declname>map</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af064f77bc69893c110a3797657b02c42" kindref="member">FdmBoundaryConditionSet</ref></type>
+          <declname>bcSet</declname>
+        </param>
+        <param>
+          <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmStepConditionComposite" kindref="compound">FdmStepConditionComposite</ref> &gt; &amp;</type>
+          <declname>condition</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structQuantLib_1_1FdmSchemeDesc" kindref="compound">FdmSchemeDesc</ref> &amp;</type>
+          <declname>schemeDesc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/solvers/fdmbackwardsolver.hpp" line="65" column="9" bodyfile="ql/methods/finitedifferences/solvers/fdmbackwardsolver.cpp" bodystart="80" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1FdmBackwardSolver_1aa25e9f93a1640fa52f52091b629ab7c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::FdmBackwardSolver::rollback</definition>
+        <argsstring>(array_type &amp;a, Time from, Time to, Size steps, Size dampingSteps)</argsstring>
+        <name>rollback</name>
+        <qualifiedname>QuantLib::FdmBackwardSolver::rollback</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1FdmBackwardSolver_1a09b94a55afd6f607a38c1e3d0bf3acd5" kindref="member">array_type</ref> &amp;</type>
+          <declname>a</declname>
+          <defname>rhs</defname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>from</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>to</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>steps</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>dampingSteps</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/solvers/fdmbackwardsolver.hpp" line="70" column="14" bodyfile="ql/methods/finitedifferences/solvers/fdmbackwardsolver.cpp" bodystart="92" bodyend="199"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>QuantLib::FdmBackwardSolver</label>
+        <link refid="classQuantLib_1_1FdmBackwardSolver"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>schemeDesc_</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::FdmSchemeDesc</label>
+        <link refid="structQuantLib_1_1FdmSchemeDesc"/>
+      </node>
+    </collaborationgraph>
+    <location file="ql/methods/finitedifferences/solvers/fdmbackwardsolver.hpp" line="61" column="5" bodyfile="ql/methods/finitedifferences/solvers/fdmbackwardsolver.hpp" bodystart="61" bodyend="79"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1FdmBackwardSolver_1a09b94a55afd6f607a38c1e3d0bf3acd5" prot="public" virt="non-virtual"><scope>QuantLib::FdmBackwardSolver</scope><name>array_type</name></member>
+      <member refid="classQuantLib_1_1FdmBackwardSolver_1a2d025499c427d2d9d3233de8ec8c3a78" prot="protected" virt="non-virtual"><scope>QuantLib::FdmBackwardSolver</scope><name>bcSet_</name></member>
+      <member refid="classQuantLib_1_1FdmBackwardSolver_1a36056e2ca90a8daee7d395d3c19eaf0e" prot="protected" virt="non-virtual"><scope>QuantLib::FdmBackwardSolver</scope><name>condition_</name></member>
+      <member refid="classQuantLib_1_1FdmBackwardSolver_1aac75d3ad78c26529c220726703455b84" prot="public" virt="non-virtual"><scope>QuantLib::FdmBackwardSolver</scope><name>FdmBackwardSolver</name></member>
+      <member refid="classQuantLib_1_1FdmBackwardSolver_1abe5ccc7cc8384183f4b81d871efaf9ac" prot="protected" virt="non-virtual"><scope>QuantLib::FdmBackwardSolver</scope><name>map_</name></member>
+      <member refid="classQuantLib_1_1FdmBackwardSolver_1aa25e9f93a1640fa52f52091b629ab7c0" prot="public" virt="non-virtual"><scope>QuantLib::FdmBackwardSolver</scope><name>rollback</name></member>
+      <member refid="classQuantLib_1_1FdmBackwardSolver_1ab96d530501ce059619db0d9ac0759cf4" prot="protected" virt="non-virtual"><scope>QuantLib::FdmBackwardSolver</scope><name>schemeDesc_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

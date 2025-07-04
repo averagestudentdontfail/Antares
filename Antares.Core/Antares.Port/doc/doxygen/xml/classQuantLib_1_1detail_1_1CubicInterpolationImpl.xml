@@ -1,0 +1,464 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1detail_1_1CubicInterpolationImpl" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::detail::CubicInterpolationImpl</compoundname>
+    <basecompoundref refid="classQuantLib_1_1detail_1_1CoefficientHolder" prot="public" virt="non-virtual">QuantLib::detail::CoefficientHolder</basecompoundref>
+    <basecompoundref refid="classQuantLib_1_1Interpolation_1_1templateImpl" prot="public" virt="non-virtual">QuantLib::Interpolation::templateImpl&lt; I1, I2 &gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>class I1</type>
+      </param>
+      <param>
+        <type>class I2</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1ad0ad323c1fa9d456addc5d967fdbe3e3" prot="private" static="no" mutable="no">
+        <type><ref refid="classQuantLib_1_1CubicInterpolation_1a6897ea07ce6993b4df934091a3723d28" kindref="member">CubicInterpolation::DerivativeApprox</ref></type>
+        <definition>CubicInterpolation::DerivativeApprox QuantLib::detail::CubicInterpolationImpl&lt; I1, I2 &gt;::da_</definition>
+        <argsstring></argsstring>
+        <name>da_</name>
+        <qualifiedname>QuantLib::detail::CubicInterpolationImpl::da_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/cubicinterpolation.hpp" line="785" column="50" bodyfile="ql/math/interpolations/cubicinterpolation.hpp" bodystart="785" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1ada9121910cd5151bc5ef9791cb71c495" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool QuantLib::detail::CubicInterpolationImpl&lt; I1, I2 &gt;::monotonic_</definition>
+        <argsstring></argsstring>
+        <name>monotonic_</name>
+        <qualifiedname>QuantLib::detail::CubicInterpolationImpl::monotonic_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/cubicinterpolation.hpp" line="786" column="18" bodyfile="ql/math/interpolations/cubicinterpolation.hpp" bodystart="786" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1a21dc391839bf6b27405cf1861d6a0667" prot="private" static="no" mutable="no">
+        <type><ref refid="classQuantLib_1_1CubicInterpolation_1ae300e9cdeef2bc60889b474f01eae4c2" kindref="member">CubicInterpolation::BoundaryCondition</ref></type>
+        <definition>CubicInterpolation::BoundaryCondition QuantLib::detail::CubicInterpolationImpl&lt; I1, I2 &gt;::leftType_</definition>
+        <argsstring></argsstring>
+        <name>leftType_</name>
+        <qualifiedname>QuantLib::detail::CubicInterpolationImpl::leftType_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/cubicinterpolation.hpp" line="787" column="51" bodyfile="ql/math/interpolations/cubicinterpolation.hpp" bodystart="787" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1a49e8c000bc8367d9ae5d29651238a93a" prot="private" static="no" mutable="no">
+        <type><ref refid="classQuantLib_1_1CubicInterpolation_1ae300e9cdeef2bc60889b474f01eae4c2" kindref="member">CubicInterpolation::BoundaryCondition</ref></type>
+        <definition>CubicInterpolation::BoundaryCondition QuantLib::detail::CubicInterpolationImpl&lt; I1, I2 &gt;::rightType_</definition>
+        <argsstring></argsstring>
+        <name>rightType_</name>
+        <qualifiedname>QuantLib::detail::CubicInterpolationImpl::rightType_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/cubicinterpolation.hpp" line="787" column="61" bodyfile="ql/math/interpolations/cubicinterpolation.hpp" bodystart="787" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1aa4a26cdfd4ddb1ef3a7a76d70e0a309f" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::detail::CubicInterpolationImpl&lt; I1, I2 &gt;::leftValue_</definition>
+        <argsstring></argsstring>
+        <name>leftValue_</name>
+        <qualifiedname>QuantLib::detail::CubicInterpolationImpl::leftValue_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/cubicinterpolation.hpp" line="788" column="18" bodyfile="ql/math/interpolations/cubicinterpolation.hpp" bodystart="788" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1a0a4eaed150f41775877d3f9cab63934a" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::detail::CubicInterpolationImpl&lt; I1, I2 &gt;::rightValue_</definition>
+        <argsstring></argsstring>
+        <name>rightValue_</name>
+        <qualifiedname>QuantLib::detail::CubicInterpolationImpl::rightValue_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/cubicinterpolation.hpp" line="788" column="29" bodyfile="ql/math/interpolations/cubicinterpolation.hpp" bodystart="788" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1af514f373f353d0f67cab5db5e171d77f" prot="private" static="no" mutable="yes">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array QuantLib::detail::CubicInterpolationImpl&lt; I1, I2 &gt;::tmp_</definition>
+        <argsstring></argsstring>
+        <name>tmp_</name>
+        <qualifiedname>QuantLib::detail::CubicInterpolationImpl::tmp_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/cubicinterpolation.hpp" line="789" column="27" bodyfile="ql/math/interpolations/cubicinterpolation.hpp" bodystart="789" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1adc07d7dfefbd7c3c27a266b5b7bdeada" prot="private" static="no" mutable="yes">
+        <type>std::vector&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> &gt;</type>
+        <definition>std::vector&lt;Real&gt; QuantLib::detail::CubicInterpolationImpl&lt; I1, I2 &gt;::dx_</definition>
+        <argsstring></argsstring>
+        <name>dx_</name>
+        <qualifiedname>QuantLib::detail::CubicInterpolationImpl::dx_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/cubicinterpolation.hpp" line="790" column="33" bodyfile="ql/math/interpolations/cubicinterpolation.hpp" bodystart="790" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1ad70800a5d355647cbf9c869078127c94" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> &gt;</type>
+        <definition>std::vector&lt;Real&gt; QuantLib::detail::CubicInterpolationImpl&lt; I1, I2 &gt;::S_</definition>
+        <argsstring></argsstring>
+        <name>S_</name>
+        <qualifiedname>QuantLib::detail::CubicInterpolationImpl::S_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/cubicinterpolation.hpp" line="790" column="37" bodyfile="ql/math/interpolations/cubicinterpolation.hpp" bodystart="790" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1abb4bc39ae50c79fe630f9016923a5ad6" prot="private" static="no" mutable="yes">
+        <type><ref refid="classQuantLib_1_1TridiagonalOperator" kindref="compound">TridiagonalOperator</ref></type>
+        <definition>TridiagonalOperator QuantLib::detail::CubicInterpolationImpl&lt; I1, I2 &gt;::L_</definition>
+        <argsstring></argsstring>
+        <name>L_</name>
+        <qualifiedname>QuantLib::detail::CubicInterpolationImpl::L_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/cubicinterpolation.hpp" line="791" column="41" bodyfile="ql/math/interpolations/cubicinterpolation.hpp" bodystart="791" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1ac7e45e65469fa91e9236ef26dbbf774d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::detail::CubicInterpolationImpl&lt; I1, I2 &gt;::CubicInterpolationImpl</definition>
+        <argsstring>(const I1 &amp;xBegin, const I1 &amp;xEnd, const I2 &amp;yBegin, CubicInterpolation::DerivativeApprox da, bool monotonic, CubicInterpolation::BoundaryCondition leftCondition, Real leftConditionValue, CubicInterpolation::BoundaryCondition rightCondition, Real rightConditionValue)</argsstring>
+        <name>CubicInterpolationImpl</name>
+        <qualifiedname>QuantLib::detail::CubicInterpolationImpl::CubicInterpolationImpl</qualifiedname>
+        <param>
+          <type>const I1 &amp;</type>
+          <declname>xBegin</declname>
+        </param>
+        <param>
+          <type>const I1 &amp;</type>
+          <declname>xEnd</declname>
+        </param>
+        <param>
+          <type>const I2 &amp;</type>
+          <declname>yBegin</declname>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1CubicInterpolation_1a6897ea07ce6993b4df934091a3723d28" kindref="member">CubicInterpolation::DerivativeApprox</ref></type>
+          <declname>da</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>monotonic</declname>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1CubicInterpolation_1ae300e9cdeef2bc60889b474f01eae4c2" kindref="member">CubicInterpolation::BoundaryCondition</ref></type>
+          <declname>leftCondition</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>leftConditionValue</declname>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1CubicInterpolation_1ae300e9cdeef2bc60889b474f01eae4c2" kindref="member">CubicInterpolation::BoundaryCondition</ref></type>
+          <declname>rightCondition</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>rightConditionValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/cubicinterpolation.hpp" line="367" column="13" bodyfile="ql/math/interpolations/cubicinterpolation.hpp" bodystart="367" bodyend="391"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1a0c26be1beba9c81d75521faf8d0624a9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void QuantLib::detail::CubicInterpolationImpl&lt; I1, I2 &gt;::update</definition>
+        <argsstring>() override</argsstring>
+        <name>update</name>
+        <qualifiedname>QuantLib::detail::CubicInterpolationImpl::update</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Interpolation_1_1Impl_1a709278c2ce75ffc2bea488619d4997e6">update</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/cubicinterpolation.hpp" line="393" column="18" bodyfile="ql/math/interpolations/cubicinterpolation.hpp" bodystart="393" bodyend="760"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1a68a0ac422ef42a1357df863b7236ea83" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::detail::CubicInterpolationImpl&lt; I1, I2 &gt;::value</definition>
+        <argsstring>(Real x) const override</argsstring>
+        <name>value</name>
+        <qualifiedname>QuantLib::detail::CubicInterpolationImpl::value</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Interpolation_1_1Impl_1ad99198f18adb259c124fd2df7f2c4dea">value</reimplements>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/cubicinterpolation.hpp" line="761" column="18" bodyfile="ql/math/interpolations/cubicinterpolation.hpp" bodystart="761" bodyend="765"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1aefef8096edd8b09b95a57ac0458e516a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::detail::CubicInterpolationImpl&lt; I1, I2 &gt;::primitive</definition>
+        <argsstring>(Real x) const override</argsstring>
+        <name>primitive</name>
+        <qualifiedname>QuantLib::detail::CubicInterpolationImpl::primitive</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Interpolation_1_1Impl_1ac7ada137d995e5b5afa466e1ea64f3af">primitive</reimplements>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/cubicinterpolation.hpp" line="766" column="18" bodyfile="ql/math/interpolations/cubicinterpolation.hpp" bodystart="766" bodyend="772"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1a6c71937772870d6332ced58ab254ce03" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::detail::CubicInterpolationImpl&lt; I1, I2 &gt;::derivative</definition>
+        <argsstring>(Real x) const override</argsstring>
+        <name>derivative</name>
+        <qualifiedname>QuantLib::detail::CubicInterpolationImpl::derivative</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Interpolation_1_1Impl_1aa3d5009598ca4940c1d1abb87e821c3d">derivative</reimplements>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/cubicinterpolation.hpp" line="773" column="18" bodyfile="ql/math/interpolations/cubicinterpolation.hpp" bodystart="773" bodyend="777"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1a27ac164a9db6ac751f61d548d3fde6a9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::detail::CubicInterpolationImpl&lt; I1, I2 &gt;::secondDerivative</definition>
+        <argsstring>(Real x) const override</argsstring>
+        <name>secondDerivative</name>
+        <qualifiedname>QuantLib::detail::CubicInterpolationImpl::secondDerivative</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Interpolation_1_1Impl_1a6274e96e3ee0da2e2a2d1dfd842932a7">secondDerivative</reimplements>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/cubicinterpolation.hpp" line="778" column="18" bodyfile="ql/math/interpolations/cubicinterpolation.hpp" bodystart="778" bodyend="782"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1a21859cf48ec01bd5fefa4b4ee832b43d" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::detail::CubicInterpolationImpl&lt; I1, I2 &gt;::cubicInterpolatingPolynomialDerivative</definition>
+        <argsstring>(Real a, Real b, Real c, Real d, Real u, Real v, Real w, Real z, Real x) const</argsstring>
+        <name>cubicInterpolatingPolynomialDerivative</name>
+        <qualifiedname>QuantLib::detail::CubicInterpolationImpl::cubicInterpolatingPolynomialDerivative</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>u</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>z</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/cubicinterpolation.hpp" line="793" column="18" bodyfile="ql/math/interpolations/cubicinterpolation.hpp" bodystart="793" bodyend="802"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>QuantLib::Interpolation::Impl</label>
+        <link refid="classQuantLib_1_1Interpolation_1_1Impl"/>
+      </node>
+      <node id="3">
+        <label>QuantLib::Interpolation::templateImpl&lt; I1, I2 &gt;</label>
+        <link refid="classQuantLib_1_1Interpolation_1_1templateImpl"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::detail::CoefficientHolder</label>
+        <link refid="classQuantLib_1_1detail_1_1CoefficientHolder"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::detail::CubicInterpolationImpl&lt; I1, I2 &gt;</label>
+        <link refid="classQuantLib_1_1detail_1_1CubicInterpolationImpl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="5">
+        <label>QuantLib::Array</label>
+        <link refid="classQuantLib_1_1Array"/>
+      </node>
+      <node id="4">
+        <label>QuantLib::Interpolation::Impl</label>
+        <link refid="classQuantLib_1_1Interpolation_1_1Impl"/>
+      </node>
+      <node id="3">
+        <label>QuantLib::Interpolation::templateImpl&lt; I1, I2 &gt;</label>
+        <link refid="classQuantLib_1_1Interpolation_1_1templateImpl"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>QuantLib::TridiagonalOperator</label>
+        <link refid="classQuantLib_1_1TridiagonalOperator"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>diagonal_</edgelabel>
+          <edgelabel>lowerDiagonal_</edgelabel>
+          <edgelabel>temp_</edgelabel>
+          <edgelabel>upperDiagonal_</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::detail::CoefficientHolder</label>
+        <link refid="classQuantLib_1_1detail_1_1CoefficientHolder"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::detail::CubicInterpolationImpl&lt; I1, I2 &gt;</label>
+        <link refid="classQuantLib_1_1detail_1_1CubicInterpolationImpl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>tmp_</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>L_</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/math/interpolations/cubicinterpolation.hpp" line="364" column="9" bodyfile="ql/math/interpolations/cubicinterpolation.hpp" bodystart="365" bodyend="803"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1detail_1_1CoefficientHolder_1a8acc4f29e052a398aa1ea72097b65a32" prot="public" virt="non-virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>a_</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CoefficientHolder_1acbf9bee68fb8d13dba9b44d349f75dd8" prot="public" virt="non-virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>b_</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CoefficientHolder_1a2aedc602998bda34827a09e4a92ab683" prot="public" virt="non-virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>c_</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CoefficientHolder_1adc039680a253501528d9d93a20d0d112" prot="public" virt="non-virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>CoefficientHolder</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1a21859cf48ec01bd5fefa4b4ee832b43d" prot="private" virt="non-virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>cubicInterpolatingPolynomialDerivative</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1ac7e45e65469fa91e9236ef26dbbf774d" prot="public" virt="non-virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>CubicInterpolationImpl</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1ad0ad323c1fa9d456addc5d967fdbe3e3" prot="private" virt="non-virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>da_</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1a6c71937772870d6332ced58ab254ce03" prot="public" virt="virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>derivative</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1adc07d7dfefbd7c3c27a266b5b7bdeada" prot="private" virt="non-virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>dx_</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1_1templateImpl_1aa1a96576884df7179393ce68928a85c2" prot="public" virt="virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>isInRange</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1abb4bc39ae50c79fe630f9016923a5ad6" prot="private" virt="non-virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>L_</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1a21dc391839bf6b27405cf1861d6a0667" prot="private" virt="non-virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>leftType_</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1aa4a26cdfd4ddb1ef3a7a76d70e0a309f" prot="private" virt="non-virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>leftValue_</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1_1templateImpl_1a2884268a09723fa87ec7146750d2d46c" prot="protected" virt="non-virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>locate</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1ada9121910cd5151bc5ef9791cb71c495" prot="private" virt="non-virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>monotonic_</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CoefficientHolder_1aced4d46a4d1e45e5e0d7d5c87cd4a899" prot="public" virt="non-virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>monotonicityAdjustments_</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CoefficientHolder_1a64c69dd54aa7e76fe36f9847661c724d" prot="public" virt="non-virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>n_</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1aefef8096edd8b09b95a57ac0458e516a" prot="public" virt="virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>primitive</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CoefficientHolder_1aea766d3597798ed87177a110eb6b8f1f" prot="public" virt="non-virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>primitiveConst_</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1a49e8c000bc8367d9ae5d29651238a93a" prot="private" virt="non-virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>rightType_</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1a0a4eaed150f41775877d3f9cab63934a" prot="private" virt="non-virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>rightValue_</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1ad70800a5d355647cbf9c869078127c94" prot="private" virt="non-virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>S_</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1a27ac164a9db6ac751f61d548d3fde6a9" prot="public" virt="virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>secondDerivative</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1_1templateImpl_1afd70a6545d200055b1e7fd3ac6cc3f45" prot="public" virt="non-virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>templateImpl</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1af514f373f353d0f67cab5db5e171d77f" prot="private" virt="non-virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>tmp_</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1a0c26be1beba9c81d75521faf8d0624a9" prot="public" virt="virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>update</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CubicInterpolationImpl_1a68a0ac422ef42a1357df863b7236ea83" prot="public" virt="virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>value</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1_1templateImpl_1a4224a56b414e92505e5b1e2b83282d80" prot="protected" virt="non-virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>xBegin_</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1_1templateImpl_1ae31c6c02580a0b25b0e9c64fad90604a" prot="protected" virt="non-virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>xEnd_</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1_1templateImpl_1af2ee8595e097522bbac466d2e036a536" prot="public" virt="virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>xMax</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1_1templateImpl_1adfc3310f6f3ea269f80c21cbc9cd2480" prot="public" virt="virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>xMin</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1_1templateImpl_1ae58e26280490791d1704b518e4461713" prot="public" virt="virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>xValues</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1_1templateImpl_1adef37d429d0186d836878f1cc9ae3c71" prot="protected" virt="non-virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>yBegin_</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1_1templateImpl_1a745482b424f51c5726caa0cc6412f1a0" prot="public" virt="virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>yValues</name></member>
+      <member refid="classQuantLib_1_1detail_1_1CoefficientHolder_1a983d356663bec120236e6e478d81e96d" prot="public" virt="virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>~CoefficientHolder</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1_1Impl_1aac2065f5fde38ec969bdcb7a99430e92" prot="public" virt="virtual"><scope>QuantLib::detail::CubicInterpolationImpl</scope><name>~Impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

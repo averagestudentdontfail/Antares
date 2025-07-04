@@ -1,0 +1,417 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1VolatilityTermStructure" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>QuantLib::VolatilityTermStructure</compoundname>
+    <basecompoundref refid="classQuantLib_1_1TermStructure" prot="public" virt="non-virtual">QuantLib::TermStructure</basecompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1BlackVolTermStructure" prot="public" virt="non-virtual">QuantLib::BlackVolTermStructure</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1LocalVolTermStructure" prot="public" virt="non-virtual">QuantLib::LocalVolTermStructure</derivedcompoundref>
+    <includes refid="voltermstructure_8hpp" local="no">voltermstructure.hpp</includes>
+    <sectiondef kind="user-defined">
+      <header>Constructors</header>
+      <description><para>See the <ref refid="classQuantLib_1_1TermStructure" kindref="compound">TermStructure</ref> documentation for issues regarding constructors. </para>
+</description>
+      <memberdef kind="variable" id="classQuantLib_1_1VolatilityTermStructure_1a865ea0add51ef91c3b2a4c7f8cdb00dd" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1ac95a4b5bc8017f1eb4ad0b54a9af3881" kindref="member">BusinessDayConvention</ref></type>
+        <definition>BusinessDayConvention QuantLib::VolatilityTermStructure::bdc_</definition>
+        <argsstring></argsstring>
+        <name>bdc_</name>
+        <qualifiedname>QuantLib::VolatilityTermStructure::bdc_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/voltermstructure.hpp" line="73" column="31" bodyfile="ql/termstructures/voltermstructure.hpp" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1VolatilityTermStructure_1adfc4d4619ecf74dd849ba4fdf0b36d22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::VolatilityTermStructure::VolatilityTermStructure</definition>
+        <argsstring>(BusinessDayConvention bdc, const DayCounter &amp;dc=DayCounter())</argsstring>
+        <name>VolatilityTermStructure</name>
+        <qualifiedname>QuantLib::VolatilityTermStructure::VolatilityTermStructure</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1ac95a4b5bc8017f1eb4ad0b54a9af3881" kindref="member">BusinessDayConvention</ref></type>
+          <declname>bdc</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref> &amp;</type>
+          <declname>dc</declname>
+          <defval><ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="warning"><para>term structures initialized by means of this constructor must manage their own reference date by overriding the <ref refid="classQuantLib_1_1TermStructure_1accbf3d4af41db0333d456eb5616c4e1e" kindref="member">referenceDate()</ref> method. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/voltermstructure.hpp" line="47" column="9" bodyfile="ql/termstructures/voltermstructure.cpp" bodystart="24" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1VolatilityTermStructure_1aa43b8722cce970ee126cc5907026f860" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::VolatilityTermStructure::VolatilityTermStructure</definition>
+        <argsstring>(const Date &amp;referenceDate, const Calendar &amp;cal, BusinessDayConvention bdc, const DayCounter &amp;dc=DayCounter())</argsstring>
+        <name>VolatilityTermStructure</name>
+        <qualifiedname>QuantLib::VolatilityTermStructure::VolatilityTermStructure</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+          <declname>referenceDate</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Calendar" kindref="compound">Calendar</ref> &amp;</type>
+          <declname>cal</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1ac95a4b5bc8017f1eb4ad0b54a9af3881" kindref="member">BusinessDayConvention</ref></type>
+          <declname>bdc</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref> &amp;</type>
+          <declname>dc</declname>
+          <defval><ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref>()</defval>
+        </param>
+        <briefdescription>
+<para>initialize with a fixed reference date </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/voltermstructure.hpp" line="50" column="9" bodyfile="ql/termstructures/voltermstructure.cpp" bodystart="28" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1VolatilityTermStructure_1a10cfe1d03a1cfd642e7608d019f2cafc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::VolatilityTermStructure::VolatilityTermStructure</definition>
+        <argsstring>(Natural settlementDays, const Calendar &amp;cal, BusinessDayConvention bdc, const DayCounter &amp;dc=DayCounter())</argsstring>
+        <name>VolatilityTermStructure</name>
+        <qualifiedname>QuantLib::VolatilityTermStructure::VolatilityTermStructure</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a9adc2615d630d6006896b3402b09b03b" kindref="member">Natural</ref></type>
+          <declname>settlementDays</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Calendar" kindref="compound">Calendar</ref> &amp;</type>
+          <declname>cal</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1ac95a4b5bc8017f1eb4ad0b54a9af3881" kindref="member">BusinessDayConvention</ref></type>
+          <declname>bdc</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref> &amp;</type>
+          <declname>dc</declname>
+          <defval><ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref>()</defval>
+        </param>
+        <briefdescription>
+<para>calculate the reference date based on the global evaluation date </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/voltermstructure.hpp" line="55" column="9" bodyfile="ql/termstructures/voltermstructure.cpp" bodystart="34" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1VolatilityTermStructure_1aaa1bad703d789d96a86c0d09f5bd0c05" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="namespaceQuantLib_1ac95a4b5bc8017f1eb4ad0b54a9af3881" kindref="member">BusinessDayConvention</ref></type>
+        <definition>BusinessDayConvention QuantLib::VolatilityTermStructure::businessDayConvention</definition>
+        <argsstring>() const</argsstring>
+        <name>businessDayConvention</name>
+        <qualifiedname>QuantLib::VolatilityTermStructure::businessDayConvention</qualifiedname>
+        <briefdescription>
+<para>the business day convention used in tenor to date conversion </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/voltermstructure.hpp" line="61" column="39" bodyfile="ql/termstructures/voltermstructure.hpp" bodystart="79" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1VolatilityTermStructure_1a22aae9cc9f2deb51962cc13092de98b5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref></type>
+        <definition>Date QuantLib::VolatilityTermStructure::optionDateFromTenor</definition>
+        <argsstring>(const Period &amp;) const</argsstring>
+        <name>optionDateFromTenor</name>
+        <qualifiedname>QuantLib::VolatilityTermStructure::optionDateFromTenor</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+          <defname>p</defname>
+        </param>
+        <briefdescription>
+<para>period/date conversion </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/voltermstructure.hpp" line="63" column="14" bodyfile="ql/termstructures/voltermstructure.hpp" bodystart="84" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1VolatilityTermStructure_1a71a5c8f0fb8d9d478126f79d975cb26f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref></type>
+        <definition>virtual Rate QuantLib::VolatilityTermStructure::minStrike</definition>
+        <argsstring>() const =0</argsstring>
+        <name>minStrike</name>
+        <qualifiedname>QuantLib::VolatilityTermStructure::minStrike</qualifiedname>
+        <reimplementedby refid="classQuantLib_1_1BlackConstantVol_1af151d4971690e397725949b2e2d7e2f0">minStrike</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1BlackVarianceCurve_1acf98ea6b7369b986207f7f1075dd71c6">minStrike</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1LocalConstantVol_1a9e4f7277235ea8feabed4c97fbeb499e">minStrike</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1LocalVolCurve_1a2e84b75ab6049f67eb33e4ea8a9813d7">minStrike</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1LocalVolSurface_1a5f06548d0262be859fdb42a989146563">minStrike</reimplementedby>
+        <briefdescription>
+<para>the minimum strike for which the term structure can return vols </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/voltermstructure.hpp" line="65" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1VolatilityTermStructure_1a31f164f3562124b7de3ea6caf0af08a9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref></type>
+        <definition>virtual Rate QuantLib::VolatilityTermStructure::maxStrike</definition>
+        <argsstring>() const =0</argsstring>
+        <name>maxStrike</name>
+        <qualifiedname>QuantLib::VolatilityTermStructure::maxStrike</qualifiedname>
+        <reimplementedby refid="classQuantLib_1_1BlackConstantVol_1a3890b5b533e3b9140782e503c4ba3195">maxStrike</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1BlackVarianceCurve_1a561b3b561200e2631fbbdb464d39f099">maxStrike</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1LocalConstantVol_1a25a43b1f0db5275b98d1248437e3fb74">maxStrike</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1LocalVolCurve_1a755be90afab9ea8c8b6f95e0e7041119">maxStrike</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1LocalVolSurface_1a269137ee569247f7738427793c0086f8">maxStrike</reimplementedby>
+        <briefdescription>
+<para>the maximum strike for which the term structure can return vols </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/voltermstructure.hpp" line="67" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1VolatilityTermStructure_1aad02ea6fe4bf30c662adaf01a46d5537" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::VolatilityTermStructure::checkStrike</definition>
+        <argsstring>(Rate strike, bool extrapolate) const</argsstring>
+        <name>checkStrike</name>
+        <qualifiedname>QuantLib::VolatilityTermStructure::checkStrike</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a919ba3567cc89fca373f8d6b8e80126b" kindref="member">Rate</ref></type>
+          <declname>strike</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>extrapolate</declname>
+        </param>
+        <briefdescription>
+<para>strike-range check </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/termstructures/voltermstructure.hpp" line="70" column="14" bodyfile="ql/termstructures/voltermstructure.cpp" bodystart="40" bodyend="46"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Volatility term structure. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This abstract class defines the interface of concrete volatility structures which will be derived from this one. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="10">
+        <label>QuantLib::BlackConstantVol</label>
+        <link refid="classQuantLib_1_1BlackConstantVol"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>QuantLib::BlackVarianceCurve</label>
+        <link refid="classQuantLib_1_1BlackVarianceCurve"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>QuantLib::BlackVarianceTermStructure</label>
+        <link refid="classQuantLib_1_1BlackVarianceTermStructure"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>QuantLib::BlackVolTermStructure</label>
+        <link refid="classQuantLib_1_1BlackVolTermStructure"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>QuantLib::BlackVolatilityTermStructure</label>
+        <link refid="classQuantLib_1_1BlackVolatilityTermStructure"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>QuantLib::Extrapolator</label>
+        <link refid="classQuantLib_1_1Extrapolator"/>
+      </node>
+      <node id="12">
+        <label>QuantLib::LocalConstantVol</label>
+        <link refid="classQuantLib_1_1LocalConstantVol"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>QuantLib::LocalVolCurve</label>
+        <link refid="classQuantLib_1_1LocalVolCurve"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>QuantLib::LocalVolSurface</label>
+        <link refid="classQuantLib_1_1LocalVolSurface"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>QuantLib::LocalVolTermStructure</label>
+        <link refid="classQuantLib_1_1LocalVolTermStructure"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QuantLib::Observable</label>
+        <link refid="classQuantLib_1_1Observable"/>
+      </node>
+      <node id="3">
+        <label>QuantLib::Observer</label>
+        <link refid="classQuantLib_1_1Observer"/>
+      </node>
+      <node id="2">
+        <label>QuantLib::TermStructure</label>
+        <link refid="classQuantLib_1_1TermStructure"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::VolatilityTermStructure</label>
+        <link refid="classQuantLib_1_1VolatilityTermStructure"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="6">
+        <label>QuantLib::Calendar</label>
+        <link refid="classQuantLib_1_1Calendar"/>
+      </node>
+      <node id="7">
+        <label>QuantLib::Date</label>
+        <link refid="classQuantLib_1_1Date"/>
+      </node>
+      <node id="8">
+        <label>QuantLib::DayCounter</label>
+        <link refid="classQuantLib_1_1DayCounter"/>
+      </node>
+      <node id="5">
+        <label>QuantLib::Extrapolator</label>
+        <link refid="classQuantLib_1_1Extrapolator"/>
+      </node>
+      <node id="4">
+        <label>QuantLib::Observable</label>
+        <link refid="classQuantLib_1_1Observable"/>
+      </node>
+      <node id="3">
+        <label>QuantLib::Observer</label>
+        <link refid="classQuantLib_1_1Observer"/>
+      </node>
+      <node id="2">
+        <label>QuantLib::TermStructure</label>
+        <link refid="classQuantLib_1_1TermStructure"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>calendar_</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>referenceDate_</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>dayCounter_</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::VolatilityTermStructure</label>
+        <link refid="classQuantLib_1_1VolatilityTermStructure"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/termstructures/voltermstructure.hpp" line="36" column="5" bodyfile="ql/termstructures/voltermstructure.hpp" bodystart="36" bodyend="74"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Extrapolator_1ab3936a9b5b5c163d3e511437c16c1d9e" prot="public" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>allowsExtrapolation</name></member>
+      <member refid="classQuantLib_1_1VolatilityTermStructure_1a865ea0add51ef91c3b2a4c7f8cdb00dd" prot="private" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>bdc_</name></member>
+      <member refid="classQuantLib_1_1VolatilityTermStructure_1aaa1bad703d789d96a86c0d09f5bd0c05" prot="public" virt="virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>businessDayConvention</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1ac4ea5cbce495c9a47a44eeaedf7a9d45" prot="public" virt="virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>calendar</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1a0a09e3fa8cdfbc9aa9685da0c35ccb90" prot="protected" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>calendar_</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1aa7297742ffbeeb0c7611f90a0f7d15bf" prot="protected" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>checkRange</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1a4d246bcb13b7518a75088bf7cf01ea75" prot="protected" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>checkRange</name></member>
+      <member refid="classQuantLib_1_1VolatilityTermStructure_1aad02ea6fe4bf30c662adaf01a46d5537" prot="protected" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>checkStrike</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1ac03e725e4e0685b209caa626b00924ca" prot="public" virt="virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>dayCounter</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1ab7dbb0cc1b2a4c5b5ee840b4822dc55e" prot="private" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>dayCounter_</name></member>
+      <member refid="classQuantLib_1_1Observer_1acfbf794db3e7d5cfdea2cd517a195183" prot="public" virt="virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>deepUpdate</name></member>
+      <member refid="classQuantLib_1_1Extrapolator_1a6af69387d5cae0fe84d6a0c858406218" prot="public" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>disableExtrapolation</name></member>
+      <member refid="classQuantLib_1_1Extrapolator_1a5f7b5650a44d6c63095bc739470c8bfb" prot="public" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>enableExtrapolation</name></member>
+      <member refid="classQuantLib_1_1Extrapolator_1a9a45b840a003c411ad1c2b71578e329a" prot="private" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>extrapolate_</name></member>
+      <member refid="classQuantLib_1_1Extrapolator_1af1c3adaccdfaf07d3d07edaa234444f7" prot="public" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>Extrapolator</name></member>
+      <member refid="classQuantLib_1_1Observer_1ad45fa6f7242ee763d17c714a3e8bb6d7" prot="public" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::VolatilityTermStructure</scope><name>iterator</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1ae9af756bbddc15962711f77f514f08fa" prot="public" virt="pure-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>maxDate</name></member>
+      <member refid="classQuantLib_1_1VolatilityTermStructure_1a31f164f3562124b7de3ea6caf0af08a9" prot="public" virt="pure-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>maxStrike</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1a2f820c32e198e1046d97ca3dd9a807c5" prot="public" virt="virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>maxTime</name></member>
+      <member refid="classQuantLib_1_1VolatilityTermStructure_1a71a5c8f0fb8d9d478126f79d975cb26f" prot="public" virt="pure-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>minStrike</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1a8319e5c2c37b09a825d61210c9cb8e2a" prot="protected" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>moving_</name></member>
+      <member refid="classQuantLib_1_1Observable_1afb67478418efdb94382ac9d7ae904b94" prot="public" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>notifyObservers</name></member>
+      <member refid="classQuantLib_1_1Observable_1ae0d19b21fab87a01f53586a6b5c15f85" prot="public" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observable_1a942cf6a572bd95341433a6772c70cb29" prot="public" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observable_1a6c35885ef344665ecdfac9b9f3a59c0e" prot="public" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>Observable</name></member>
+      <member refid="classQuantLib_1_1Observer_1a85e3adb273b706155ea7e8bd98ee460b" prot="private" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>observables_</name></member>
+      <member refid="classQuantLib_1_1Observer_1a246072080d37c0cd180013417251c70b" prot="public" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::VolatilityTermStructure</scope><name>Observer</name></member>
+      <member refid="classQuantLib_1_1Observer_1ae6e892e237db5ffe7acbef54360ef0e3" prot="public" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::VolatilityTermStructure</scope><name>Observer</name></member>
+      <member refid="classQuantLib_1_1Observable_1a4da6017619203dcb570d5f4174f0beea" prot="private" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>observers_</name></member>
+      <member refid="classQuantLib_1_1Observer_1a40ad1a8bfb71e32b2916b370f3f9392c" prot="public" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::VolatilityTermStructure</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1Observable_1ad1e086da62f05b4bc5eafa698ef6fbc3" prot="public" virt="non-virtual" ambiguityscope="QuantLib::Observable::"><scope>QuantLib::VolatilityTermStructure</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1Observable_1ab45941c65068ab4c8d69a7d1a72beeb7" prot="public" virt="non-virtual" ambiguityscope="QuantLib::Observable::"><scope>QuantLib::VolatilityTermStructure</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1VolatilityTermStructure_1a22aae9cc9f2deb51962cc13092de98b5" prot="public" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>optionDateFromTenor</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1accbf3d4af41db0333d456eb5616c4e1e" prot="public" virt="virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>referenceDate</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1ae710961574841a314aaee208cd8fd9d2" prot="private" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>referenceDate_</name></member>
+      <member refid="classQuantLib_1_1Observable_1a1eb87a03e7e1fd43377bce32e0c21bce" prot="private" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>registerObserver</name></member>
+      <member refid="classQuantLib_1_1Observer_1a312bbe4a5386f10a1584f3477b3c2709" prot="public" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>registerWith</name></member>
+      <member refid="classQuantLib_1_1Observer_1a338928c4fe626f9ccf0b98ceb318853a" prot="public" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>registerWithObservables</name></member>
+      <member refid="classQuantLib_1_1Observer_1a3dcd7d8542d1142f29da8326919e863f" prot="private" virt="non-virtual" ambiguityscope="QuantLib::"><scope>QuantLib::VolatilityTermStructure</scope><name>set_type</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1abeb79eefda70a9414f206ca9e70ced0f" prot="public" virt="virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>settlementDays</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1aaf8d92d98e6e398e43eb57cd29248ee9" prot="private" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>settlementDays_</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1ac8365997e6d41134b4e0998fe6b4e949" prot="public" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>TermStructure</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1a95764a49e0368b653eadbe619d9ef334" prot="public" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>TermStructure</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1aab73d2acafdc8fbdf9336e7084bd88a1" prot="public" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>TermStructure</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1ac8da61eb0f06ae07a35e8e4bbe7146b0" prot="public" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>timeFromReference</name></member>
+      <member refid="classQuantLib_1_1Observable_1abd81ef8b87594aa6f9d2a5bd5de3e628" prot="private" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>unregisterObserver</name></member>
+      <member refid="classQuantLib_1_1Observer_1a297d13afa77b0e7e6deae3bab777180f" prot="public" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>unregisterWith</name></member>
+      <member refid="classQuantLib_1_1Observer_1ab88925691aba7e7d96cc5188e94361ea" prot="public" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>unregisterWithAll</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1a016528f1fe9cabca6472d8f4776351e2" prot="public" virt="virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>update</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1a2fcf1c78e57786ad5c123f52dbf619e8" prot="protected" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>updated_</name></member>
+      <member refid="classQuantLib_1_1VolatilityTermStructure_1adfc4d4619ecf74dd849ba4fdf0b36d22" prot="public" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>VolatilityTermStructure</name></member>
+      <member refid="classQuantLib_1_1VolatilityTermStructure_1aa43b8722cce970ee126cc5907026f860" prot="public" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>VolatilityTermStructure</name></member>
+      <member refid="classQuantLib_1_1VolatilityTermStructure_1a10cfe1d03a1cfd642e7608d019f2cafc" prot="public" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>VolatilityTermStructure</name></member>
+      <member refid="classQuantLib_1_1Extrapolator_1af0ca0156436ffbce159183198eb27e2e" prot="public" virt="virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>~Extrapolator</name></member>
+      <member refid="classQuantLib_1_1Observable_1a32093a7038e9bd8d28e5d378eca9f4f7" prot="public" virt="virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>~Observable</name></member>
+      <member refid="classQuantLib_1_1Observer_1a6b5c15445bbe598d34871f5a5a3ed671" prot="public" virt="virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>~Observer</name></member>
+      <member refid="classQuantLib_1_1TermStructure_1ad202ddcc14fc4a6c16686d6164d7b36c" prot="public" virt="non-virtual"><scope>QuantLib::VolatilityTermStructure</scope><name>~TermStructure</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

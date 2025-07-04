@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_e57750ea043109b97ce8dd7b556b4c4d" kind="dir">
+    <compoundname>ql/math/matrixutilities</compoundname>
+    <innerfile refid="bicgstab_8cpp">bicgstab.cpp</innerfile>
+    <innerfile refid="bicgstab_8hpp">bicgstab.hpp</innerfile>
+    <innerfile refid="gmres_8cpp">gmres.cpp</innerfile>
+    <innerfile refid="gmres_8hpp">gmres.hpp</innerfile>
+    <innerfile refid="qrdecomposition_8cpp">qrdecomposition.cpp</innerfile>
+    <innerfile refid="qrdecomposition_8hpp">qrdecomposition.hpp</innerfile>
+    <innerfile refid="sparsematrix_8hpp">sparsematrix.hpp</innerfile>
+    <innerfile refid="symmetricschurdecomposition_8cpp">symmetricschurdecomposition.cpp</innerfile>
+    <innerfile refid="symmetricschurdecomposition_8hpp">symmetricschurdecomposition.hpp</innerfile>
+    <innerfile refid="tqreigendecomposition_8cpp">tqreigendecomposition.cpp</innerfile>
+    <innerfile refid="tqreigendecomposition_8hpp">tqreigendecomposition.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ql/math/matrixutilities/"/>
+  </compounddef>
+</doxygen>

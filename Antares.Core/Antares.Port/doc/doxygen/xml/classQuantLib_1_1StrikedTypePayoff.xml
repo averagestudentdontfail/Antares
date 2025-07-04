@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1StrikedTypePayoff" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::StrikedTypePayoff</compoundname>
+    <basecompoundref refid="classQuantLib_1_1TypePayoff" prot="public" virt="non-virtual">QuantLib::TypePayoff</basecompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1AssetOrNothingPayoff" prot="public" virt="non-virtual">QuantLib::AssetOrNothingPayoff</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1CashOrNothingPayoff" prot="public" virt="non-virtual">QuantLib::CashOrNothingPayoff</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1GapPayoff" prot="public" virt="non-virtual">QuantLib::GapPayoff</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1PercentageStrikePayoff" prot="public" virt="non-virtual">QuantLib::PercentageStrikePayoff</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1PlainVanillaPayoff" prot="public" virt="non-virtual">QuantLib::PlainVanillaPayoff</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1SuperFundPayoff" prot="public" virt="non-virtual">QuantLib::SuperFundPayoff</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1SuperSharePayoff" prot="public" virt="non-virtual">QuantLib::SuperSharePayoff</derivedcompoundref>
+    <includes refid="payoffs_8hpp" local="no">payoffs.hpp</includes>
+    <sectiondef kind="user-defined">
+      <header>Payoff interface</header>
+      <memberdef kind="variable" id="classQuantLib_1_1StrikedTypePayoff_1a1a8dfb6b6f557d30b497ef63a92e12d0" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::StrikedTypePayoff::strike_</definition>
+        <argsstring></argsstring>
+        <name>strike_</name>
+        <qualifiedname>QuantLib::StrikedTypePayoff::strike_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/payoffs.hpp" line="101" column="14" bodyfile="ql/instruments/payoffs.hpp" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1StrikedTypePayoff_1a947973d3f9750cd112178fa0d8bd6fef" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string QuantLib::StrikedTypePayoff::description</definition>
+        <argsstring>() const override</argsstring>
+        <name>description</name>
+        <qualifiedname>QuantLib::StrikedTypePayoff::description</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Payoff_1a0f2a1e491b9cf7411a3759c2fd7ed90e">description</reimplements>
+        <reimplementedby refid="classQuantLib_1_1SuperSharePayoff_1aae875387cb91dcd8ded8c521461f2180">description</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/payoffs.hpp" line="94" column="21" bodyfile="ql/instruments/payoffs.cpp" bodystart="76" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1StrikedTypePayoff_1a3c01bf0738a40de8dfd81e1a7127e3e7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::StrikedTypePayoff::strike</definition>
+        <argsstring>() const</argsstring>
+        <name>strike</name>
+        <qualifiedname>QuantLib::StrikedTypePayoff::strike</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/payoffs.hpp" line="96" column="14" bodyfile="ql/instruments/payoffs.hpp" bodystart="96" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1StrikedTypePayoff_1a68f84b64d373d6e9cf49e0fb633880d3" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::StrikedTypePayoff::StrikedTypePayoff</definition>
+        <argsstring>(Option::Type type, Real strike)</argsstring>
+        <name>StrikedTypePayoff</name>
+        <qualifiedname>QuantLib::StrikedTypePayoff::StrikedTypePayoff</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Option_1abaee7fc605354c444867545492cd5845" kindref="member">Option::Type</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>strike</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instruments/payoffs.hpp" line="98" column="9" bodyfile="ql/instruments/payoffs.hpp" bodystart="98" bodyend="100"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Intermediate class for payoffs based on a fixed strike. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>QuantLib::AssetOrNothingPayoff</label>
+        <link refid="classQuantLib_1_1AssetOrNothingPayoff"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>QuantLib::CashOrNothingPayoff</label>
+        <link refid="classQuantLib_1_1CashOrNothingPayoff"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>QuantLib::GapPayoff</label>
+        <link refid="classQuantLib_1_1GapPayoff"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QuantLib::Payoff</label>
+        <link refid="classQuantLib_1_1Payoff"/>
+      </node>
+      <node id="7">
+        <label>QuantLib::PercentageStrikePayoff</label>
+        <link refid="classQuantLib_1_1PercentageStrikePayoff"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>QuantLib::PlainVanillaPayoff</label>
+        <link refid="classQuantLib_1_1PlainVanillaPayoff"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::StrikedTypePayoff</label>
+        <link refid="classQuantLib_1_1StrikedTypePayoff"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>QuantLib::SuperFundPayoff</label>
+        <link refid="classQuantLib_1_1SuperFundPayoff"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>QuantLib::SuperSharePayoff</label>
+        <link refid="classQuantLib_1_1SuperSharePayoff"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::TypePayoff</label>
+        <link refid="classQuantLib_1_1TypePayoff"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>QuantLib::Payoff</label>
+        <link refid="classQuantLib_1_1Payoff"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::StrikedTypePayoff</label>
+        <link refid="classQuantLib_1_1StrikedTypePayoff"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::TypePayoff</label>
+        <link refid="classQuantLib_1_1TypePayoff"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/instruments/payoffs.hpp" line="88" column="5" bodyfile="ql/instruments/payoffs.hpp" bodystart="90" bodyend="102"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Payoff_1ac2902d1c8e84743671f759180fbff190" prot="public" virt="virtual"><scope>QuantLib::StrikedTypePayoff</scope><name>accept</name></member>
+      <member refid="classQuantLib_1_1StrikedTypePayoff_1a947973d3f9750cd112178fa0d8bd6fef" prot="public" virt="virtual"><scope>QuantLib::StrikedTypePayoff</scope><name>description</name></member>
+      <member refid="classQuantLib_1_1Payoff_1aceb029d314fb74ab5797d7bc7752d0c8" prot="public" virt="pure-virtual"><scope>QuantLib::StrikedTypePayoff</scope><name>name</name></member>
+      <member refid="classQuantLib_1_1Payoff_1a1b10d7224a8089b21a56eb1fa0562c37" prot="public" virt="pure-virtual"><scope>QuantLib::StrikedTypePayoff</scope><name>operator()</name></member>
+      <member refid="classQuantLib_1_1TypePayoff_1a65d88064f1dd8a1d832061dbfc604812" prot="public" virt="non-virtual"><scope>QuantLib::StrikedTypePayoff</scope><name>optionType</name></member>
+      <member refid="classQuantLib_1_1StrikedTypePayoff_1a3c01bf0738a40de8dfd81e1a7127e3e7" prot="public" virt="non-virtual"><scope>QuantLib::StrikedTypePayoff</scope><name>strike</name></member>
+      <member refid="classQuantLib_1_1StrikedTypePayoff_1a1a8dfb6b6f557d30b497ef63a92e12d0" prot="protected" virt="non-virtual"><scope>QuantLib::StrikedTypePayoff</scope><name>strike_</name></member>
+      <member refid="classQuantLib_1_1StrikedTypePayoff_1a68f84b64d373d6e9cf49e0fb633880d3" prot="protected" virt="non-virtual"><scope>QuantLib::StrikedTypePayoff</scope><name>StrikedTypePayoff</name></member>
+      <member refid="classQuantLib_1_1TypePayoff_1af4e5a4d11b0c069fcde370573be46191" prot="protected" virt="non-virtual"><scope>QuantLib::StrikedTypePayoff</scope><name>type_</name></member>
+      <member refid="classQuantLib_1_1TypePayoff_1ad79b48279b590d246a611009bca455c1" prot="protected" virt="non-virtual"><scope>QuantLib::StrikedTypePayoff</scope><name>TypePayoff</name></member>
+      <member refid="classQuantLib_1_1Payoff_1a7067fc920554af30af0ac5b82d0f4650" prot="public" virt="virtual"><scope>QuantLib::StrikedTypePayoff</scope><name>~Payoff</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

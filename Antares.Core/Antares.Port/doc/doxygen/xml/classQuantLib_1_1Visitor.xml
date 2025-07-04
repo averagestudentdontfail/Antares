@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1Visitor" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>QuantLib::Visitor</compoundname>
+    <includes refid="visitor_8hpp" local="no">visitor.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1Visitor_1a3e63c0c44ee20cf9cb3b493d3c3f5d63" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual QuantLib::Visitor&lt; T &gt;::~Visitor</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Visitor</name>
+        <qualifiedname>QuantLib::Visitor::~Visitor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/patterns/visitor.hpp" line="42" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Visitor_1af9b94be68f009a444f0bfe9c25aabf9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void QuantLib::Visitor&lt; T &gt;::visit</definition>
+        <argsstring>(T &amp;)=0</argsstring>
+        <name>visit</name>
+        <qualifiedname>QuantLib::Visitor::visit</qualifiedname>
+        <reimplementedby refid="classQuantLib_1_1BlackCalculator_1_1Calculator_1a421afe121561bf73c879c70bd4714b22">visit</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1BlackCalculator_1_1Calculator_1ad21b8039ecea33350d9525798c5b82f9">visit</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1BlackCalculator_1_1Calculator_1afa89dbe437ec805e1278a170e790cdb8">visit</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1BlackCalculator_1_1Calculator_1a9f7a8feb53e310f393f6812277315b88">visit</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1BlackCalculator_1_1Calculator_1a69e4cf55b1726734fe07261ad1f1ccbd">visit</reimplementedby>
+        <param>
+          <type>T &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/patterns/visitor.hpp" line="43" column="22"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Visitor for a specific class </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ql/patterns/visitor.hpp" line="40" column="5" bodyfile="ql/patterns/visitor.hpp" bodystart="40" bodyend="44"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Visitor_1af9b94be68f009a444f0bfe9c25aabf9e" prot="public" virt="pure-virtual"><scope>QuantLib::Visitor</scope><name>visit</name></member>
+      <member refid="classQuantLib_1_1Visitor_1a3e63c0c44ee20cf9cb3b493d3c3f5d63" prot="public" virt="virtual"><scope>QuantLib::Visitor</scope><name>~Visitor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

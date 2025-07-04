@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1FdmBermudanStepCondition" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::FdmBermudanStepCondition</compoundname>
+    <basecompoundref refid="classQuantLib_1_1StepCondition" prot="public" virt="non-virtual">QuantLib::StepCondition&lt; Array &gt;</basecompoundref>
+    <includes refid="fdmbermudanstepcondition_8hpp" local="no">fdmbermudanstepcondition.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1FdmBermudanStepCondition_1aedc79c60182876d64e64215acb19b2fc" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref> &gt;</type>
+        <definition>std::vector&lt;Time&gt; QuantLib::FdmBermudanStepCondition::exerciseTimes_</definition>
+        <argsstring></argsstring>
+        <name>exerciseTimes_</name>
+        <qualifiedname>QuantLib::FdmBermudanStepCondition::exerciseTimes_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/stepconditions/fdmbermudanstepcondition.hpp" line="47" column="21" bodyfile="ql/methods/finitedifferences/stepconditions/fdmbermudanstepcondition.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1FdmBermudanStepCondition_1a010600b7503132ff6aa39928c266eead" prot="private" static="no" mutable="no">
+        <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmMesher" kindref="compound">FdmMesher</ref> &gt;</type>
+        <definition>const ext::shared_ptr&lt;FdmMesher&gt; QuantLib::FdmBermudanStepCondition::mesher_</definition>
+        <argsstring></argsstring>
+        <name>mesher_</name>
+        <qualifiedname>QuantLib::FdmBermudanStepCondition::mesher_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/stepconditions/fdmbermudanstepcondition.hpp" line="48" column="31" bodyfile="ql/methods/finitedifferences/stepconditions/fdmbermudanstepcondition.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1FdmBermudanStepCondition_1add5d0a3a7d5eae79648d9198a3f68ac0" prot="private" static="no" mutable="no">
+        <type>const ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmInnerValueCalculator" kindref="compound">FdmInnerValueCalculator</ref> &gt;</type>
+        <definition>const ext::shared_ptr&lt;FdmInnerValueCalculator&gt; QuantLib::FdmBermudanStepCondition::calculator_</definition>
+        <argsstring></argsstring>
+        <name>calculator_</name>
+        <qualifiedname>QuantLib::FdmBermudanStepCondition::calculator_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/stepconditions/fdmbermudanstepcondition.hpp" line="49" column="31" bodyfile="ql/methods/finitedifferences/stepconditions/fdmbermudanstepcondition.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1FdmBermudanStepCondition_1aa2839d7692bd48349a42813105f2c5dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::FdmBermudanStepCondition::FdmBermudanStepCondition</definition>
+        <argsstring>(const std::vector&lt; Date &gt; &amp;exerciseDates, const Date &amp;referenceDate, const DayCounter &amp;dayCounter, ext::shared_ptr&lt; FdmMesher &gt; mesher, ext::shared_ptr&lt; FdmInnerValueCalculator &gt; calculator)</argsstring>
+        <name>FdmBermudanStepCondition</name>
+        <qualifiedname>QuantLib::FdmBermudanStepCondition::FdmBermudanStepCondition</qualifiedname>
+        <param>
+          <type>const std::vector&lt; <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &gt; &amp;</type>
+          <declname>exerciseDates</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+          <declname>referenceDate</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1DayCounter" kindref="compound">DayCounter</ref> &amp;</type>
+          <declname>dayCounter</declname>
+        </param>
+        <param>
+          <type>ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmMesher" kindref="compound">FdmMesher</ref> &gt;</type>
+          <declname>mesher</declname>
+        </param>
+        <param>
+          <type>ext::shared_ptr&lt; <ref refid="classQuantLib_1_1FdmInnerValueCalculator" kindref="compound">FdmInnerValueCalculator</ref> &gt;</type>
+          <declname>calculator</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/stepconditions/fdmbermudanstepcondition.hpp" line="37" column="9" bodyfile="ql/methods/finitedifferences/stepconditions/fdmbermudanstepcondition.cpp" bodystart="27" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1FdmBermudanStepCondition_1a978dbe646cd917e786e1595a6b04570e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QuantLib::FdmBermudanStepCondition::applyTo</definition>
+        <argsstring>(Array &amp;a, Time t) const override</argsstring>
+        <name>applyTo</name>
+        <qualifiedname>QuantLib::FdmBermudanStepCondition::applyTo</qualifiedname>
+        <reimplements refid="classQuantLib_1_1StepCondition_1afff61b9eaacd16620791a39dd69b90bb">applyTo</reimplements>
+        <param>
+          <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/stepconditions/fdmbermudanstepcondition.hpp" line="43" column="14" bodyfile="ql/methods/finitedifferences/stepconditions/fdmbermudanstepcondition.cpp" bodystart="45" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1FdmBermudanStepCondition_1aacc8a38b2037e10bf99c2c0f4fc12229" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; <ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref> &gt; &amp;</type>
+        <definition>const std::vector&lt; Time &gt; &amp; QuantLib::FdmBermudanStepCondition::exerciseTimes</definition>
+        <argsstring>() const</argsstring>
+        <name>exerciseTimes</name>
+        <qualifiedname>QuantLib::FdmBermudanStepCondition::exerciseTimes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/methods/finitedifferences/stepconditions/fdmbermudanstepcondition.hpp" line="44" column="27" bodyfile="ql/methods/finitedifferences/stepconditions/fdmbermudanstepcondition.cpp" bodystart="41" bodyend="43"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>QuantLib::FdmBermudanStepCondition</label>
+        <link refid="classQuantLib_1_1FdmBermudanStepCondition"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::StepCondition&lt; Array &gt;</label>
+        <link refid="classQuantLib_1_1StepCondition"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>QuantLib::FdmBermudanStepCondition</label>
+        <link refid="classQuantLib_1_1FdmBermudanStepCondition"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::StepCondition&lt; Array &gt;</label>
+        <link refid="classQuantLib_1_1StepCondition"/>
+      </node>
+    </collaborationgraph>
+    <location file="ql/methods/finitedifferences/stepconditions/fdmbermudanstepcondition.hpp" line="35" column="5" bodyfile="ql/methods/finitedifferences/stepconditions/fdmbermudanstepcondition.hpp" bodystart="35" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1FdmBermudanStepCondition_1a978dbe646cd917e786e1595a6b04570e" prot="public" virt="virtual"><scope>QuantLib::FdmBermudanStepCondition</scope><name>applyTo</name></member>
+      <member refid="classQuantLib_1_1FdmBermudanStepCondition_1add5d0a3a7d5eae79648d9198a3f68ac0" prot="private" virt="non-virtual"><scope>QuantLib::FdmBermudanStepCondition</scope><name>calculator_</name></member>
+      <member refid="classQuantLib_1_1FdmBermudanStepCondition_1aacc8a38b2037e10bf99c2c0f4fc12229" prot="public" virt="non-virtual"><scope>QuantLib::FdmBermudanStepCondition</scope><name>exerciseTimes</name></member>
+      <member refid="classQuantLib_1_1FdmBermudanStepCondition_1aedc79c60182876d64e64215acb19b2fc" prot="private" virt="non-virtual"><scope>QuantLib::FdmBermudanStepCondition</scope><name>exerciseTimes_</name></member>
+      <member refid="classQuantLib_1_1FdmBermudanStepCondition_1aa2839d7692bd48349a42813105f2c5dd" prot="public" virt="non-virtual"><scope>QuantLib::FdmBermudanStepCondition</scope><name>FdmBermudanStepCondition</name></member>
+      <member refid="classQuantLib_1_1FdmBermudanStepCondition_1a010600b7503132ff6aa39928c266eead" prot="private" virt="non-virtual"><scope>QuantLib::FdmBermudanStepCondition</scope><name>mesher_</name></member>
+      <member refid="classQuantLib_1_1StepCondition_1a0867129678b1b4ae02e4d5630ee598ac" prot="public" virt="virtual"><scope>QuantLib::FdmBermudanStepCondition</scope><name>~StepCondition</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

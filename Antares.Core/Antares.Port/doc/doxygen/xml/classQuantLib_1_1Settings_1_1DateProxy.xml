@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1Settings_1_1DateProxy" kind="class" language="C++" prot="private">
+    <compoundname>QuantLib::Settings::DateProxy</compoundname>
+    <basecompoundref refid="classQuantLib_1_1ObservableValue" prot="public" virt="non-virtual">QuantLib::ObservableValue&lt; Date &gt;</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1Settings_1_1DateProxy_1ae4b2ccfbd5159d14b399d580bccb4554" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Settings::DateProxy::DateProxy</definition>
+        <argsstring>()</argsstring>
+        <name>DateProxy</name>
+        <qualifiedname>QuantLib::Settings::DateProxy::DateProxy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/settings.hpp" line="43" column="13" bodyfile="ql/settings.cpp" bodystart="26" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Settings_1_1DateProxy_1a9f2588b867b311d01fa004b484347b01" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Settings_1_1DateProxy" kindref="compound">DateProxy</ref> &amp;</type>
+        <definition>Settings::DateProxy &amp; QuantLib::Settings::DateProxy::operator=</definition>
+        <argsstring>(const Date &amp;)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>QuantLib::Settings::DateProxy::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+          <defname>d</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/settings.hpp" line="44" column="23" bodyfile="ql/settings.hpp" bodystart="141" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Settings_1_1DateProxy_1abd8659fc9ffbb9b8bff515db1448904e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Settings::DateProxy::operator Date</definition>
+        <argsstring>() const</argsstring>
+        <name>operator Date</name>
+        <qualifiedname>QuantLib::Settings::DateProxy::operator Date</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/settings.hpp" line="45" column="13" bodyfile="ql/settings.hpp" bodystart="134" bodyend="139"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>QuantLib::ObservableValue&lt; Date &gt;</label>
+        <link refid="classQuantLib_1_1ObservableValue"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::Settings::DateProxy</label>
+        <link refid="classQuantLib_1_1Settings_1_1DateProxy"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>QuantLib::ObservableValue&lt; Date &gt;</label>
+        <link refid="classQuantLib_1_1ObservableValue"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>value_</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QuantLib::Date</label>
+        <link refid="classQuantLib_1_1Date"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::Settings::DateProxy</label>
+        <link refid="classQuantLib_1_1Settings_1_1DateProxy"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/settings.hpp" line="41" column="9" bodyfile="ql/settings.hpp" bodystart="41" bodyend="46"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Settings_1_1DateProxy_1ae4b2ccfbd5159d14b399d580bccb4554" prot="public" virt="non-virtual"><scope>QuantLib::Settings::DateProxy</scope><name>DateProxy</name></member>
+      <member refid="classQuantLib_1_1ObservableValue_1a7ad8c28951c9062608703f6341fa44a0" prot="private" virt="non-virtual"><scope>QuantLib::Settings::DateProxy</scope><name>observable_</name></member>
+      <member refid="classQuantLib_1_1ObservableValue_1a7c12afdd026a3fef47c42d24663dcca9" prot="public" virt="non-virtual"><scope>QuantLib::Settings::DateProxy</scope><name>ObservableValue</name></member>
+      <member refid="classQuantLib_1_1ObservableValue_1a1da2e39646203fca3ba08231b94e8b50" prot="public" virt="non-virtual"><scope>QuantLib::Settings::DateProxy</scope><name>ObservableValue</name></member>
+      <member refid="classQuantLib_1_1ObservableValue_1a9f66734d7552236e1d2849ccc5df8dd3" prot="public" virt="non-virtual"><scope>QuantLib::Settings::DateProxy</scope><name>ObservableValue</name></member>
+      <member refid="classQuantLib_1_1ObservableValue_1abc8b86f6171e4fd95f3c8b3a01d7dc75" prot="public" virt="non-virtual"><scope>QuantLib::Settings::DateProxy</scope><name>ObservableValue</name></member>
+      <member refid="classQuantLib_1_1Settings_1_1DateProxy_1abd8659fc9ffbb9b8bff515db1448904e" prot="public" virt="non-virtual"><scope>QuantLib::Settings::DateProxy</scope><name>operator Date</name></member>
+      <member refid="classQuantLib_1_1ObservableValue_1a0fd5e92c5201e205f2611cb719886a5e" prot="public" virt="non-virtual"><scope>QuantLib::Settings::DateProxy</scope><name>operator ext::shared_ptr&lt; Observable &gt;</name></member>
+      <member refid="classQuantLib_1_1Settings_1_1DateProxy_1a9f2588b867b311d01fa004b484347b01" prot="public" virt="non-virtual"><scope>QuantLib::Settings::DateProxy</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1ObservableValue_1a28217ef6ceac81c6883a24d14e053225" prot="public" virt="non-virtual" ambiguityscope="ObservableValue&lt; Date &gt;::"><scope>QuantLib::Settings::DateProxy</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1ObservableValue_1ae7854322ce2c071fdb193ad05c9c4eff" prot="public" virt="non-virtual" ambiguityscope="ObservableValue&lt; Date &gt;::"><scope>QuantLib::Settings::DateProxy</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1ObservableValue_1aff4c97393510c023f29c4c08e09cdfca" prot="public" virt="non-virtual" ambiguityscope="ObservableValue&lt; Date &gt;::"><scope>QuantLib::Settings::DateProxy</scope><name>operator=</name></member>
+      <member refid="classQuantLib_1_1ObservableValue_1ae667c572a88dfb13373cafd410cced53" prot="public" virt="non-virtual"><scope>QuantLib::Settings::DateProxy</scope><name>value</name></member>
+      <member refid="classQuantLib_1_1ObservableValue_1a088ccbf3b3ed51a364449f7d612e8d70" prot="private" virt="non-virtual"><scope>QuantLib::Settings::DateProxy</scope><name>value_</name></member>
+      <member refid="classQuantLib_1_1ObservableValue_1ae5d2b86eca2a655f678127e0adab0134" prot="public" virt="non-virtual"><scope>QuantLib::Settings::DateProxy</scope><name>~ObservableValue</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

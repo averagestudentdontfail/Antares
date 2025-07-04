@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_386d4efe9b845332e9157e8737f14645" kind="dir">
+    <compoundname>ql/math/solvers1d</compoundname>
+    <innerfile refid="brent_8hpp">brent.hpp</innerfile>
+    <innerfile refid="newton_8hpp">newton.hpp</innerfile>
+    <innerfile refid="newtonsafe_8hpp">newtonsafe.hpp</innerfile>
+    <innerfile refid="ridder_8hpp">ridder.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ql/math/solvers1d/"/>
+  </compounddef>
+</doxygen>

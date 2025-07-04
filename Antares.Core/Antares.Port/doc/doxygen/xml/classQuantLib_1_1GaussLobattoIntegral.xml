@@ -1,0 +1,306 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1GaussLobattoIntegral" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::GaussLobattoIntegral</compoundname>
+    <basecompoundref refid="classQuantLib_1_1Integrator" prot="public" virt="non-virtual">QuantLib::Integrator</basecompoundref>
+    <includes refid="gausslobattointegral_8hpp" local="no">gausslobattointegral.hpp</includes>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1GaussLobattoIntegral_1a0ee7691f264e304da5faee26095ab0b6" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::GaussLobattoIntegral::relAccuracy_</definition>
+        <argsstring></argsstring>
+        <name>relAccuracy_</name>
+        <qualifiedname>QuantLib::GaussLobattoIntegral::relAccuracy_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/integrals/gausslobattointegral.hpp" line="67" column="14" bodyfile="ql/math/integrals/gausslobattointegral.hpp" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1GaussLobattoIntegral_1ae63c67da9bfccf79e7488eaf09285801" prot="protected" static="no" mutable="no">
+        <type>const bool</type>
+        <definition>const bool QuantLib::GaussLobattoIntegral::useConvergenceEstimate_</definition>
+        <argsstring></argsstring>
+        <name>useConvergenceEstimate_</name>
+        <qualifiedname>QuantLib::GaussLobattoIntegral::useConvergenceEstimate_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/integrals/gausslobattointegral.hpp" line="68" column="20" bodyfile="ql/math/integrals/gausslobattointegral.hpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-static-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1GaussLobattoIntegral_1a96c4319a15101fa9bbe38da8078a8c79" prot="protected" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::GaussLobattoIntegral::alpha_</definition>
+        <argsstring></argsstring>
+        <name>alpha_</name>
+        <qualifiedname>QuantLib::GaussLobattoIntegral::alpha_</qualifiedname>
+        <initializer>= std::sqrt(2.0/3.0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/integrals/gausslobattointegral.hpp" line="69" column="27" bodyfile="ql/math/integrals/gausslobattointegral.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1GaussLobattoIntegral_1a12037a71b92770d89a16329a02171444" prot="protected" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::GaussLobattoIntegral::beta_</definition>
+        <argsstring></argsstring>
+        <name>beta_</name>
+        <qualifiedname>QuantLib::GaussLobattoIntegral::beta_</qualifiedname>
+        <initializer>= 1.0/std::sqrt(5.0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/integrals/gausslobattointegral.hpp" line="69" column="34" bodyfile="ql/math/integrals/gausslobattointegral.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1GaussLobattoIntegral_1a77fe88b5d6648762ba89efb7beb61017" prot="protected" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::GaussLobattoIntegral::x1_</definition>
+        <argsstring></argsstring>
+        <name>x1_</name>
+        <qualifiedname>QuantLib::GaussLobattoIntegral::x1_</qualifiedname>
+        <initializer>= 0.94288241569547971906</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/integrals/gausslobattointegral.hpp" line="69" column="40" bodyfile="ql/math/integrals/gausslobattointegral.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1GaussLobattoIntegral_1a4e3305ece7b5383202a41377841c82cd" prot="protected" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::GaussLobattoIntegral::x2_</definition>
+        <argsstring></argsstring>
+        <name>x2_</name>
+        <qualifiedname>QuantLib::GaussLobattoIntegral::x2_</qualifiedname>
+        <initializer>= 0.64185334234578130578</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/integrals/gausslobattointegral.hpp" line="69" column="44" bodyfile="ql/math/integrals/gausslobattointegral.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1GaussLobattoIntegral_1a69edcb6382064dd4f9a383e5528bfd4e" prot="protected" static="yes" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::GaussLobattoIntegral::x3_</definition>
+        <argsstring></argsstring>
+        <name>x3_</name>
+        <qualifiedname>QuantLib::GaussLobattoIntegral::x3_</qualifiedname>
+        <initializer>= 0.23638319966214988028</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/integrals/gausslobattointegral.hpp" line="69" column="48" bodyfile="ql/math/integrals/gausslobattointegral.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1GaussLobattoIntegral_1aa0e22de25bc2d54ff9b329603647fbdf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::GaussLobattoIntegral::GaussLobattoIntegral</definition>
+        <argsstring>(Size maxIterations, Real absAccuracy, Real relAccuracy=Null&lt; Real &gt;(), bool useConvergenceEstimate=true)</argsstring>
+        <name>GaussLobattoIntegral</name>
+        <qualifiedname>QuantLib::GaussLobattoIntegral::GaussLobattoIntegral</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>maxIterations</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>absAccuracy</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>relAccuracy</declname>
+          <defval><ref refid="classQuantLib_1_1Null" kindref="compound">Null</ref>&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref> &gt;()</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useConvergenceEstimate</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/integrals/gausslobattointegral.hpp" line="53" column="9" bodyfile="ql/math/integrals/gausslobattointegral.cpp" bodystart="36" bodyend="43"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classQuantLib_1_1GaussLobattoIntegral_1a2c960075261c744fa60c69409295f6d4" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::GaussLobattoIntegral::integrate</definition>
+        <argsstring>(const std::function&lt; Real(Real)&gt; &amp;f, Real a, Real b) const override</argsstring>
+        <name>integrate</name>
+        <qualifiedname>QuantLib::GaussLobattoIntegral::integrate</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Integrator_1a6ec7c11d79c2d1553de8b8e5822c0402">integrate</reimplements>
+        <param>
+          <type>const std::function&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>)&gt; &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/integrals/gausslobattointegral.hpp" line="59" column="14" bodyfile="ql/math/integrals/gausslobattointegral.cpp" bodystart="45" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1GaussLobattoIntegral_1a784d4ec741b26e11f7ac85918afe854d" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::GaussLobattoIntegral::adaptivGaussLobattoStep</definition>
+        <argsstring>(const std::function&lt; Real(Real)&gt; &amp;f, Real a, Real b, Real fa, Real fb, Real is) const</argsstring>
+        <name>adaptivGaussLobattoStep</name>
+        <qualifiedname>QuantLib::GaussLobattoIntegral::adaptivGaussLobattoStep</qualifiedname>
+        <param>
+          <type>const std::function&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>)&gt; &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>fa</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>fb</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>is</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/integrals/gausslobattointegral.hpp" line="61" column="14" bodyfile="ql/math/integrals/gausslobattointegral.cpp" bodystart="114" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1GaussLobattoIntegral_1ab199382b4580cff17b15dd1b1d6fd056" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::GaussLobattoIntegral::calculateAbsTolerance</definition>
+        <argsstring>(const std::function&lt; Real(Real)&gt; &amp;f, Real a, Real b) const</argsstring>
+        <name>calculateAbsTolerance</name>
+        <qualifiedname>QuantLib::GaussLobattoIntegral::calculateAbsTolerance</qualifiedname>
+        <param>
+          <type>const std::function&lt; <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref>)&gt; &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/integrals/gausslobattointegral.hpp" line="64" column="14" bodyfile="ql/math/integrals/gausslobattointegral.cpp" bodystart="56" bodyend="112"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Integral of a one-dimensional function. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Given a target accuracy <formula id="26">$ \epsilon $</formula>, the integral of a function <formula id="27">$ f $</formula> between <formula id="28">$ a $</formula> and <formula id="29">$ b $</formula> is calculated by means of the Gauss-Lobatto formula</para>
+<para>References: This algorithm is a C++ implementation of the algorithm outlined in</para>
+<para>W. Gander and W. Gautschi, Adaptive Quadrature - Revisited. BIT, 40(1):84-101, March 2000. CS technical report: ftp.inf.ethz.ch/pub/publications/tech-reports/3xx/306.ps.gz</para>
+<para>The original MATLAB version can be downloaded here <ulink url="http://www.inf.ethz.ch/personal/gander/adaptlob.m">http://www.inf.ethz.ch/personal/gander/adaptlob.m</ulink> </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>QuantLib::GaussLobattoIntegral</label>
+        <link refid="classQuantLib_1_1GaussLobattoIntegral"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::Integrator</label>
+        <link refid="classQuantLib_1_1Integrator"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>QuantLib::GaussLobattoIntegral</label>
+        <link refid="classQuantLib_1_1GaussLobattoIntegral"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::Integrator</label>
+        <link refid="classQuantLib_1_1Integrator"/>
+      </node>
+    </collaborationgraph>
+    <location file="ql/math/integrals/gausslobattointegral.hpp" line="51" column="5" bodyfile="ql/math/integrals/gausslobattointegral.hpp" bodystart="51" bodyend="70"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Integrator_1a780bcd96e38c5cbd5674abc2a82ed204" prot="public" virt="non-virtual"><scope>QuantLib::GaussLobattoIntegral</scope><name>absoluteAccuracy</name></member>
+      <member refid="classQuantLib_1_1Integrator_1af30c23b7bd23002620e869a9cef523a8" prot="private" virt="non-virtual"><scope>QuantLib::GaussLobattoIntegral</scope><name>absoluteAccuracy_</name></member>
+      <member refid="classQuantLib_1_1Integrator_1a457e00ab72b659e9e5455ab7ef695a21" prot="public" virt="non-virtual"><scope>QuantLib::GaussLobattoIntegral</scope><name>absoluteError</name></member>
+      <member refid="classQuantLib_1_1Integrator_1a513c90604c0ae1ad4dbafd87c713d922" prot="private" virt="non-virtual"><scope>QuantLib::GaussLobattoIntegral</scope><name>absoluteError_</name></member>
+      <member refid="classQuantLib_1_1GaussLobattoIntegral_1a784d4ec741b26e11f7ac85918afe854d" prot="protected" virt="non-virtual"><scope>QuantLib::GaussLobattoIntegral</scope><name>adaptivGaussLobattoStep</name></member>
+      <member refid="classQuantLib_1_1GaussLobattoIntegral_1a96c4319a15101fa9bbe38da8078a8c79" prot="protected" virt="non-virtual"><scope>QuantLib::GaussLobattoIntegral</scope><name>alpha_</name></member>
+      <member refid="classQuantLib_1_1GaussLobattoIntegral_1a12037a71b92770d89a16329a02171444" prot="protected" virt="non-virtual"><scope>QuantLib::GaussLobattoIntegral</scope><name>beta_</name></member>
+      <member refid="classQuantLib_1_1GaussLobattoIntegral_1ab199382b4580cff17b15dd1b1d6fd056" prot="protected" virt="non-virtual"><scope>QuantLib::GaussLobattoIntegral</scope><name>calculateAbsTolerance</name></member>
+      <member refid="classQuantLib_1_1Integrator_1a5bb88222d38207e2f261ff55bacc9e70" prot="private" virt="non-virtual"><scope>QuantLib::GaussLobattoIntegral</scope><name>evaluations_</name></member>
+      <member refid="classQuantLib_1_1GaussLobattoIntegral_1aa0e22de25bc2d54ff9b329603647fbdf" prot="public" virt="non-virtual"><scope>QuantLib::GaussLobattoIntegral</scope><name>GaussLobattoIntegral</name></member>
+      <member refid="classQuantLib_1_1Integrator_1a5ec592d87089c83ed43b13dc3b89e3d5" prot="protected" virt="non-virtual"><scope>QuantLib::GaussLobattoIntegral</scope><name>increaseNumberOfEvaluations</name></member>
+      <member refid="classQuantLib_1_1GaussLobattoIntegral_1a2c960075261c744fa60c69409295f6d4" prot="protected" virt="virtual"><scope>QuantLib::GaussLobattoIntegral</scope><name>integrate</name></member>
+      <member refid="classQuantLib_1_1Integrator_1a3f9e803134fa741989ca1864bf32b1be" prot="public" virt="virtual"><scope>QuantLib::GaussLobattoIntegral</scope><name>integrationSuccess</name></member>
+      <member refid="classQuantLib_1_1Integrator_1af1b1a6639727b55ddf35989fef19376e" prot="public" virt="non-virtual"><scope>QuantLib::GaussLobattoIntegral</scope><name>Integrator</name></member>
+      <member refid="classQuantLib_1_1Integrator_1ae33afd264a1fd8c04da749f81fd0c5da" prot="public" virt="non-virtual"><scope>QuantLib::GaussLobattoIntegral</scope><name>maxEvaluations</name></member>
+      <member refid="classQuantLib_1_1Integrator_1a16f0862ffd8f5583784dfb760ed828d1" prot="private" virt="non-virtual"><scope>QuantLib::GaussLobattoIntegral</scope><name>maxEvaluations_</name></member>
+      <member refid="classQuantLib_1_1Integrator_1a90cc40e34213c30b55e96243ed3ed484" prot="public" virt="non-virtual"><scope>QuantLib::GaussLobattoIntegral</scope><name>numberOfEvaluations</name></member>
+      <member refid="classQuantLib_1_1Integrator_1a6ced5a1acd0d08e620198f476b4717b9" prot="public" virt="non-virtual"><scope>QuantLib::GaussLobattoIntegral</scope><name>operator()</name></member>
+      <member refid="classQuantLib_1_1GaussLobattoIntegral_1a0ee7691f264e304da5faee26095ab0b6" prot="protected" virt="non-virtual"><scope>QuantLib::GaussLobattoIntegral</scope><name>relAccuracy_</name></member>
+      <member refid="classQuantLib_1_1Integrator_1a73631092f9449fe296b6ac5a35a33364" prot="public" virt="non-virtual"><scope>QuantLib::GaussLobattoIntegral</scope><name>setAbsoluteAccuracy</name></member>
+      <member refid="classQuantLib_1_1Integrator_1a4aa6a7c87024c497457607db03d80bf8" prot="protected" virt="non-virtual"><scope>QuantLib::GaussLobattoIntegral</scope><name>setAbsoluteError</name></member>
+      <member refid="classQuantLib_1_1Integrator_1aeec56c0f0fbfe04a7c15e4766d224d44" prot="public" virt="non-virtual"><scope>QuantLib::GaussLobattoIntegral</scope><name>setMaxEvaluations</name></member>
+      <member refid="classQuantLib_1_1Integrator_1a53c93a2ae74e97752d1c8bd176c5cb7f" prot="protected" virt="non-virtual"><scope>QuantLib::GaussLobattoIntegral</scope><name>setNumberOfEvaluations</name></member>
+      <member refid="classQuantLib_1_1GaussLobattoIntegral_1ae63c67da9bfccf79e7488eaf09285801" prot="protected" virt="non-virtual"><scope>QuantLib::GaussLobattoIntegral</scope><name>useConvergenceEstimate_</name></member>
+      <member refid="classQuantLib_1_1GaussLobattoIntegral_1a77fe88b5d6648762ba89efb7beb61017" prot="protected" virt="non-virtual"><scope>QuantLib::GaussLobattoIntegral</scope><name>x1_</name></member>
+      <member refid="classQuantLib_1_1GaussLobattoIntegral_1a4e3305ece7b5383202a41377841c82cd" prot="protected" virt="non-virtual"><scope>QuantLib::GaussLobattoIntegral</scope><name>x2_</name></member>
+      <member refid="classQuantLib_1_1GaussLobattoIntegral_1a69edcb6382064dd4f9a383e5528bfd4e" prot="protected" virt="non-virtual"><scope>QuantLib::GaussLobattoIntegral</scope><name>x3_</name></member>
+      <member refid="classQuantLib_1_1Integrator_1a56e54bf50cc21384d1f96234d5a3332a" prot="public" virt="virtual"><scope>QuantLib::GaussLobattoIntegral</scope><name>~Integrator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

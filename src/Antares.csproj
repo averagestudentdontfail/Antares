@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <VersionPrefix>1.13.1</VersionPrefix>
+    <TargetFrameworks>net9.0;netstandard2.0</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <DefineConstants>$(DefineConstants);QL_NEGATIVE_RATES</DefineConstants>
+    <AssemblyName>Antares</AssemblyName>
+    <PackageId>Antares</PackageId>
+    <PackageVersion>1.13.1</PackageVersion>
+    <Authors>Andrea Maggiulli</Authors>
+    <Company />
+    <Description>A free and open-source library for quantitative finance</Description>
+    <PackageTags>Antares</PackageTags>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+    <PackageReference Include="System.Reflection.Emit.Lightweight" Version="4.7.0" />
+  </ItemGroup>
+
+</Project>

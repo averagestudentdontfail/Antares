@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1BermudanExercise" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::BermudanExercise</compoundname>
+    <basecompoundref refid="classQuantLib_1_1EarlyExercise" prot="public" virt="non-virtual">QuantLib::EarlyExercise</basecompoundref>
+    <includes refid="exercise_8hpp" local="no">exercise.hpp</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1BermudanExercise_1a373b7a714678441449e949b273631e8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::BermudanExercise::BermudanExercise</definition>
+        <argsstring>(const std::vector&lt; Date &gt; &amp;dates, bool payoffAtExpiry=false)</argsstring>
+        <name>BermudanExercise</name>
+        <qualifiedname>QuantLib::BermudanExercise::BermudanExercise</qualifiedname>
+        <param>
+          <type>const std::vector&lt; <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &gt; &amp;</type>
+          <declname>dates</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>payoffAtExpiry</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/exercise.hpp" line="89" column="9" bodyfile="ql/exercise.cpp" bodystart="52" bodyend="58"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Bermudan exercise. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>A Bermudan option can only be exercised at a set of fixed dates. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>QuantLib::BermudanExercise</label>
+        <link refid="classQuantLib_1_1BermudanExercise"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::EarlyExercise</label>
+        <link refid="classQuantLib_1_1EarlyExercise"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QuantLib::Exercise</label>
+        <link refid="classQuantLib_1_1Exercise"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>QuantLib::BermudanExercise</label>
+        <link refid="classQuantLib_1_1BermudanExercise"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::EarlyExercise</label>
+        <link refid="classQuantLib_1_1EarlyExercise"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QuantLib::Exercise</label>
+        <link refid="classQuantLib_1_1Exercise"/>
+      </node>
+    </collaborationgraph>
+    <location file="ql/exercise.hpp" line="87" column="5" bodyfile="ql/exercise.hpp" bodystart="87" bodyend="91"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Exercise_1add0610ca64f2c8be9355ac232cb2f322adf21ec9b24cabb0aa9ea49575f0d8486" prot="public" virt="non-virtual"><scope>QuantLib::BermudanExercise</scope><name>American</name></member>
+      <member refid="classQuantLib_1_1Exercise_1add0610ca64f2c8be9355ac232cb2f322a6e844373b3634774f8f78af1778ba512" prot="public" virt="non-virtual"><scope>QuantLib::BermudanExercise</scope><name>Bermudan</name></member>
+      <member refid="classQuantLib_1_1BermudanExercise_1a373b7a714678441449e949b273631e8f" prot="public" virt="non-virtual"><scope>QuantLib::BermudanExercise</scope><name>BermudanExercise</name></member>
+      <member refid="classQuantLib_1_1Exercise_1a043759691ce8b222eb14748e0ece3a35" prot="public" virt="non-virtual"><scope>QuantLib::BermudanExercise</scope><name>date</name></member>
+      <member refid="classQuantLib_1_1Exercise_1a08f686d067ca06ea5b0bd8e2217c4ff0" prot="public" virt="non-virtual"><scope>QuantLib::BermudanExercise</scope><name>dateAt</name></member>
+      <member refid="classQuantLib_1_1Exercise_1a1848b1452116d8607d723ec3fd0ebfb2" prot="public" virt="non-virtual"><scope>QuantLib::BermudanExercise</scope><name>dates</name></member>
+      <member refid="classQuantLib_1_1Exercise_1aa06ae4f9b50a447bb9bc920fbcdb31f0" prot="protected" virt="non-virtual"><scope>QuantLib::BermudanExercise</scope><name>dates_</name></member>
+      <member refid="classQuantLib_1_1EarlyExercise_1aa5cddb90f266b34b0f5626783a1b21e4" prot="public" virt="non-virtual"><scope>QuantLib::BermudanExercise</scope><name>EarlyExercise</name></member>
+      <member refid="classQuantLib_1_1Exercise_1add0610ca64f2c8be9355ac232cb2f322af4e71f30188d596e0e7572d76ad0bfe7" prot="public" virt="non-virtual"><scope>QuantLib::BermudanExercise</scope><name>European</name></member>
+      <member refid="classQuantLib_1_1Exercise_1aa334f9ccc0dab351fcec15c48afc39df" prot="public" virt="non-virtual"><scope>QuantLib::BermudanExercise</scope><name>Exercise</name></member>
+      <member refid="classQuantLib_1_1Exercise_1a267a951570c4f0020b7e973caa4b0010" prot="public" virt="non-virtual"><scope>QuantLib::BermudanExercise</scope><name>lastDate</name></member>
+      <member refid="classQuantLib_1_1EarlyExercise_1a46f21bf6b2116144d095624a457f0fef" prot="public" virt="non-virtual"><scope>QuantLib::BermudanExercise</scope><name>payoffAtExpiry</name></member>
+      <member refid="classQuantLib_1_1EarlyExercise_1a3745164ef37e8176ad0570b903c05547" prot="private" virt="non-virtual"><scope>QuantLib::BermudanExercise</scope><name>payoffAtExpiry_</name></member>
+      <member refid="classQuantLib_1_1Exercise_1ab6c3a18fd35e6da5edc10931ff69364e" prot="public" virt="non-virtual"><scope>QuantLib::BermudanExercise</scope><name>type</name></member>
+      <member refid="classQuantLib_1_1Exercise_1add0610ca64f2c8be9355ac232cb2f322" prot="public" virt="non-virtual"><scope>QuantLib::BermudanExercise</scope><name>Type</name></member>
+      <member refid="classQuantLib_1_1Exercise_1ae5062b176d899bf244e98ba1fe0af098" prot="protected" virt="non-virtual"><scope>QuantLib::BermudanExercise</scope><name>type_</name></member>
+      <member refid="classQuantLib_1_1Exercise_1a7a9c5a4d3136f05219c863f61c9792dd" prot="public" virt="virtual"><scope>QuantLib::BermudanExercise</scope><name>~Exercise</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

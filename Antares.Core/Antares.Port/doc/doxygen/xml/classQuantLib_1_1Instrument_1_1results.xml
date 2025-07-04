@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1Instrument_1_1results" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::Instrument::results</compoundname>
+    <basecompoundref refid="classQuantLib_1_1PricingEngine_1_1results" prot="public" virt="virtual">QuantLib::PricingEngine::results</basecompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1MultiAssetOption_1_1results" prot="public" virt="non-virtual">QuantLib::MultiAssetOption::results</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1OneAssetOption_1_1results" prot="public" virt="non-virtual">QuantLib::OneAssetOption::results</derivedcompoundref>
+    <includes refid="instrument_8hpp" local="no">instrument.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1Instrument_1_1results_1a83e6af07c17237ade11121f8ad74b4e5" prot="public" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::Instrument::results::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <qualifiedname>QuantLib::Instrument::results::value</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instrument.hpp" line="120" column="14" bodyfile="ql/instrument.hpp" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1Instrument_1_1results_1ae69f4133f6f9ceb734e3094621f67dbc" prot="public" static="no" mutable="no">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::Instrument::results::errorEstimate</definition>
+        <argsstring></argsstring>
+        <name>errorEstimate</name>
+        <qualifiedname>QuantLib::Instrument::results::errorEstimate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instrument.hpp" line="121" column="14" bodyfile="ql/instrument.hpp" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1Instrument_1_1results_1a6c07d97b247d8eb9dada914e2a7f5661" prot="public" static="no" mutable="no">
+        <type><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref></type>
+        <definition>Date QuantLib::Instrument::results::valuationDate</definition>
+        <argsstring></argsstring>
+        <name>valuationDate</name>
+        <qualifiedname>QuantLib::Instrument::results::valuationDate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instrument.hpp" line="122" column="14" bodyfile="ql/instrument.hpp" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1Instrument_1_1results_1a5e933589fbf0e86ef38dae221a974710" prot="public" static="no" mutable="no">
+        <type>std::map&lt; std::string, ext::any &gt;</type>
+        <definition>std::map&lt;std::string, ext::any&gt; QuantLib::Instrument::results::additionalResults</definition>
+        <argsstring></argsstring>
+        <name>additionalResults</name>
+        <qualifiedname>QuantLib::Instrument::results::additionalResults</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instrument.hpp" line="123" column="18" bodyfile="ql/instrument.hpp" bodystart="123" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1Instrument_1_1results_1a73ca77d3032243797880c2e6462e9b73" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void QuantLib::Instrument::results::reset</definition>
+        <argsstring>() override</argsstring>
+        <name>reset</name>
+        <qualifiedname>QuantLib::Instrument::results::reset</qualifiedname>
+        <reimplements refid="classQuantLib_1_1PricingEngine_1_1results_1a02de680b735d899c192bb0fbf890eaa9">reset</reimplements>
+        <reimplementedby refid="classQuantLib_1_1MultiAssetOption_1_1results_1a7d91e0b048e94a130485f4f54af0ed58">reset</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1OneAssetOption_1_1results_1a0cb435df22b9ab57dd3dc69ef5725fb8">reset</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/instrument.hpp" line="115" column="14" bodyfile="ql/instrument.hpp" bodystart="115" bodyend="119"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>QuantLib::Instrument::results</label>
+        <link refid="classQuantLib_1_1Instrument_1_1results"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QuantLib::MultiAssetOption::results</label>
+        <link refid="classQuantLib_1_1MultiAssetOption_1_1results"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QuantLib::OneAssetOption::results</label>
+        <link refid="classQuantLib_1_1OneAssetOption_1_1results"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::PricingEngine::results</label>
+        <link refid="classQuantLib_1_1PricingEngine_1_1results"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>QuantLib::Date</label>
+        <link refid="classQuantLib_1_1Date"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::Instrument::results</label>
+        <link refid="classQuantLib_1_1Instrument_1_1results"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>valuationDate</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::PricingEngine::results</label>
+        <link refid="classQuantLib_1_1PricingEngine_1_1results"/>
+      </node>
+    </collaborationgraph>
+    <location file="ql/instrument.hpp" line="113" column="5" bodyfile="ql/instrument.hpp" bodystart="113" bodyend="124"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Instrument_1_1results_1a5e933589fbf0e86ef38dae221a974710" prot="public" virt="non-virtual"><scope>QuantLib::Instrument::results</scope><name>additionalResults</name></member>
+      <member refid="classQuantLib_1_1Instrument_1_1results_1ae69f4133f6f9ceb734e3094621f67dbc" prot="public" virt="non-virtual"><scope>QuantLib::Instrument::results</scope><name>errorEstimate</name></member>
+      <member refid="classQuantLib_1_1Instrument_1_1results_1a73ca77d3032243797880c2e6462e9b73" prot="public" virt="virtual"><scope>QuantLib::Instrument::results</scope><name>reset</name></member>
+      <member refid="classQuantLib_1_1Instrument_1_1results_1a6c07d97b247d8eb9dada914e2a7f5661" prot="public" virt="non-virtual"><scope>QuantLib::Instrument::results</scope><name>valuationDate</name></member>
+      <member refid="classQuantLib_1_1Instrument_1_1results_1a83e6af07c17237ade11121f8ad74b4e5" prot="public" virt="non-virtual"><scope>QuantLib::Instrument::results</scope><name>value</name></member>
+      <member refid="classQuantLib_1_1PricingEngine_1_1results_1a8be3f1f78f755955d91d6d3217124d58" prot="public" virt="virtual"><scope>QuantLib::Instrument::results</scope><name>~results</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

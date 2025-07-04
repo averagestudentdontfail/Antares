@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structQuantLib_1_1detail_1_1FormatResetter_1_1nopunct" kind="struct" language="C++" prot="public">
+    <compoundname>QuantLib::detail::FormatResetter::nopunct</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::numpunct&lt; char &gt;</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structQuantLib_1_1detail_1_1FormatResetter_1_1nopunct_1a4d659cfc749d277b3d4462a08987bf31" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string QuantLib::detail::FormatResetter::nopunct::do_grouping</definition>
+        <argsstring>() const override</argsstring>
+        <name>do_grouping</name>
+        <qualifiedname>QuantLib::detail::FormatResetter::nopunct::do_grouping</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.cpp" line="870" column="29" bodyfile="ql/time/date.cpp" bodystart="870" bodyend="870"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>QuantLib::detail::FormatResetter::nopunct</label>
+        <link refid="structQuantLib_1_1detail_1_1FormatResetter_1_1nopunct"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::numpunct&lt; char &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>QuantLib::detail::FormatResetter::nopunct</label>
+        <link refid="structQuantLib_1_1detail_1_1FormatResetter_1_1nopunct"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::numpunct&lt; char &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="ql/time/date.cpp" line="869" column="13" bodyfile="ql/time/date.cpp" bodystart="869" bodyend="871"/>
+    <listofallmembers>
+      <member refid="structQuantLib_1_1detail_1_1FormatResetter_1_1nopunct_1a4d659cfc749d277b3d4462a08987bf31" prot="public" virt="non-virtual"><scope>QuantLib::detail::FormatResetter::nopunct</scope><name>do_grouping</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

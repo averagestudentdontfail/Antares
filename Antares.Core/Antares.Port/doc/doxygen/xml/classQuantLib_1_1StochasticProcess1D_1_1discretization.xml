@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1StochasticProcess1D_1_1discretization" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>QuantLib::StochasticProcess1D::discretization</compoundname>
+    <derivedcompoundref refid="classQuantLib_1_1EulerDiscretization" prot="public" virt="non-virtual">QuantLib::EulerDiscretization</derivedcompoundref>
+    <includes refid="stochasticprocess_8hpp" local="no">stochasticprocess.hpp</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1StochasticProcess1D_1_1discretization_1a74bd4a65170a1aacdc5407cd458a1b4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual QuantLib::StochasticProcess1D::discretization::~discretization</definition>
+        <argsstring>()=default</argsstring>
+        <name>~discretization</name>
+        <qualifiedname>QuantLib::StochasticProcess1D::discretization::~discretization</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/stochasticprocess.hpp" line="168" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1StochasticProcess1D_1_1discretization_1a545721dad2755b82ace41c1f1465afa7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>virtual Real QuantLib::StochasticProcess1D::discretization::drift</definition>
+        <argsstring>(const StochasticProcess1D &amp;, Time t0, Real x0, Time dt) const =0</argsstring>
+        <name>drift</name>
+        <qualifiedname>QuantLib::StochasticProcess1D::discretization::drift</qualifiedname>
+        <reimplementedby refid="classQuantLib_1_1EulerDiscretization_1a9b093c4f6033c735d58745be4b64bbe6">drift</reimplementedby>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1StochasticProcess1D" kindref="compound">StochasticProcess1D</ref> &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>t0</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>x0</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/stochasticprocess.hpp" line="169" column="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1StochasticProcess1D_1_1discretization_1aed9d1d6d06a43f5f2e1436fe2a62df94" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>virtual Real QuantLib::StochasticProcess1D::discretization::diffusion</definition>
+        <argsstring>(const StochasticProcess1D &amp;, Time t0, Real x0, Time dt) const =0</argsstring>
+        <name>diffusion</name>
+        <qualifiedname>QuantLib::StochasticProcess1D::discretization::diffusion</qualifiedname>
+        <reimplementedby refid="classQuantLib_1_1EulerDiscretization_1a1ed0e385969eb50594a4e63a6faddd40">diffusion</reimplementedby>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1StochasticProcess1D" kindref="compound">StochasticProcess1D</ref> &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>t0</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>x0</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/stochasticprocess.hpp" line="171" column="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1StochasticProcess1D_1_1discretization_1a0c27252f7798f60909e8375cc4bf0bd7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>virtual Real QuantLib::StochasticProcess1D::discretization::variance</definition>
+        <argsstring>(const StochasticProcess1D &amp;, Time t0, Real x0, Time dt) const =0</argsstring>
+        <name>variance</name>
+        <qualifiedname>QuantLib::StochasticProcess1D::discretization::variance</qualifiedname>
+        <reimplementedby refid="classQuantLib_1_1EulerDiscretization_1aca65b65c36d9feaa85d7f74defd24c2f">variance</reimplementedby>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1StochasticProcess1D" kindref="compound">StochasticProcess1D</ref> &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>t0</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>x0</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/stochasticprocess.hpp" line="173" column="26"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>discretization of a 1-D stochastic process </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>QuantLib::EulerDiscretization</label>
+        <link refid="classQuantLib_1_1EulerDiscretization"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::StochasticProcess1D::discretization</label>
+        <link refid="classQuantLib_1_1StochasticProcess1D_1_1discretization"/>
+      </node>
+    </inheritancegraph>
+    <location file="ql/stochasticprocess.hpp" line="166" column="9" bodyfile="ql/stochasticprocess.hpp" bodystart="166" bodyend="175"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1StochasticProcess1D_1_1discretization_1aed9d1d6d06a43f5f2e1436fe2a62df94" prot="public" virt="pure-virtual"><scope>QuantLib::StochasticProcess1D::discretization</scope><name>diffusion</name></member>
+      <member refid="classQuantLib_1_1StochasticProcess1D_1_1discretization_1a545721dad2755b82ace41c1f1465afa7" prot="public" virt="pure-virtual"><scope>QuantLib::StochasticProcess1D::discretization</scope><name>drift</name></member>
+      <member refid="classQuantLib_1_1StochasticProcess1D_1_1discretization_1a0c27252f7798f60909e8375cc4bf0bd7" prot="public" virt="pure-virtual"><scope>QuantLib::StochasticProcess1D::discretization</scope><name>variance</name></member>
+      <member refid="classQuantLib_1_1StochasticProcess1D_1_1discretization_1a74bd4a65170a1aacdc5407cd458a1b4e" prot="public" virt="virtual"><scope>QuantLib::StochasticProcess1D::discretization</scope><name>~discretization</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

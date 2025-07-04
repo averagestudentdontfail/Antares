@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1GMRES" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::GMRES</compoundname>
+    <includes refid="gmres_8hpp" local="no">gmres.hpp</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classQuantLib_1_1GMRES_1af069357528a26c96966992f6f8bac66e" prot="public" static="no">
+        <type>std::function&lt; <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref>(const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;)&gt;</type>
+        <definition>typedef std::function&lt;Array(const Array&amp;)&gt; QuantLib::GMRES::MatrixMult</definition>
+        <argsstring></argsstring>
+        <name>MatrixMult</name>
+        <qualifiedname>QuantLib::GMRES::MatrixMult</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/matrixutilities/gmres.hpp" line="56" column="31" bodyfile="ql/math/matrixutilities/gmres.hpp" bodystart="56" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1GMRES_1a13f60ff2998f4f58e2a5fee2e19a20db" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="classQuantLib_1_1GMRES_1af069357528a26c96966992f6f8bac66e" kindref="member">MatrixMult</ref></type>
+        <definition>const MatrixMult QuantLib::GMRES::A_</definition>
+        <argsstring></argsstring>
+        <name>A_</name>
+        <qualifiedname>QuantLib::GMRES::A_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/matrixutilities/gmres.hpp" line="67" column="26" bodyfile="ql/math/matrixutilities/gmres.hpp" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1GMRES_1a46c797082a5d6ec6190def6cf5ffebd6" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="classQuantLib_1_1GMRES_1af069357528a26c96966992f6f8bac66e" kindref="member">MatrixMult</ref></type>
+        <definition>const MatrixMult QuantLib::GMRES::M_</definition>
+        <argsstring></argsstring>
+        <name>M_</name>
+        <qualifiedname>QuantLib::GMRES::M_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/matrixutilities/gmres.hpp" line="67" column="29" bodyfile="ql/math/matrixutilities/gmres.hpp" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1GMRES_1a6b33ca37606e8ff9327fcf00cd3be8ca" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+        <definition>const Size QuantLib::GMRES::maxIter_</definition>
+        <argsstring></argsstring>
+        <name>maxIter_</name>
+        <qualifiedname>QuantLib::GMRES::maxIter_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/matrixutilities/gmres.hpp" line="68" column="20" bodyfile="ql/math/matrixutilities/gmres.hpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1GMRES_1a60fa52ff88ca958e5c958f83d38a7f81" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>const Real QuantLib::GMRES::relTol_</definition>
+        <argsstring></argsstring>
+        <name>relTol_</name>
+        <qualifiedname>QuantLib::GMRES::relTol_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/matrixutilities/gmres.hpp" line="69" column="20" bodyfile="ql/math/matrixutilities/gmres.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1GMRES_1a10788a14788ba5107334caa566b44530" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::GMRES::GMRES</definition>
+        <argsstring>(MatrixMult A, Size maxIter, Real relTol, MatrixMult preConditioner=MatrixMult())</argsstring>
+        <name>GMRES</name>
+        <qualifiedname>QuantLib::GMRES::GMRES</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1GMRES_1af069357528a26c96966992f6f8bac66e" kindref="member">MatrixMult</ref></type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>maxIter</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>relTol</declname>
+        </param>
+        <param>
+          <type><ref refid="classQuantLib_1_1GMRES_1af069357528a26c96966992f6f8bac66e" kindref="member">MatrixMult</ref></type>
+          <declname>preConditioner</declname>
+          <defval><ref refid="classQuantLib_1_1GMRES_1af069357528a26c96966992f6f8bac66e" kindref="member">MatrixMult</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/matrixutilities/gmres.hpp" line="58" column="9" bodyfile="ql/math/matrixutilities/gmres.cpp" bodystart="33" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1GMRES_1abc13cf5a870bda06a556055bdc0c4343" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structQuantLib_1_1GMRESResult" kindref="compound">GMRESResult</ref></type>
+        <definition>GMRESResult QuantLib::GMRES::solve</definition>
+        <argsstring>(const Array &amp;b, const Array &amp;x0=Array()) const</argsstring>
+        <name>solve</name>
+        <qualifiedname>QuantLib::GMRES::solve</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>x0</declname>
+          <defval><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/matrixutilities/gmres.hpp" line="60" column="21" bodyfile="ql/math/matrixutilities/gmres.cpp" bodystart="39" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1GMRES_1ac0a6b00752f61deba603753a66c8533c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structQuantLib_1_1GMRESResult" kindref="compound">GMRESResult</ref></type>
+        <definition>GMRESResult QuantLib::GMRES::solveWithRestart</definition>
+        <argsstring>(Size restart, const Array &amp;b, const Array &amp;x0=Array()) const</argsstring>
+        <name>solveWithRestart</name>
+        <qualifiedname>QuantLib::GMRES::solveWithRestart</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>restart</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>x0</declname>
+          <defval><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/matrixutilities/gmres.hpp" line="61" column="21" bodyfile="ql/math/matrixutilities/gmres.cpp" bodystart="47" bodyend="64"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classQuantLib_1_1GMRES_1a78838c1775476746e2e07b5c2bdc7156" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structQuantLib_1_1GMRESResult" kindref="compound">GMRESResult</ref></type>
+        <definition>GMRESResult QuantLib::GMRES::solveImpl</definition>
+        <argsstring>(const Array &amp;b, const Array &amp;x0) const</argsstring>
+        <name>solveImpl</name>
+        <qualifiedname>QuantLib::GMRES::solveImpl</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>x0</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/matrixutilities/gmres.hpp" line="65" column="21" bodyfile="ql/math/matrixutilities/gmres.cpp" bodystart="66" bodyend="145"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ql/math/matrixutilities/gmres.hpp" line="54" column="5" bodyfile="ql/math/matrixutilities/gmres.hpp" bodystart="54" bodyend="70"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1GMRES_1a13f60ff2998f4f58e2a5fee2e19a20db" prot="protected" virt="non-virtual"><scope>QuantLib::GMRES</scope><name>A_</name></member>
+      <member refid="classQuantLib_1_1GMRES_1a10788a14788ba5107334caa566b44530" prot="public" virt="non-virtual"><scope>QuantLib::GMRES</scope><name>GMRES</name></member>
+      <member refid="classQuantLib_1_1GMRES_1a46c797082a5d6ec6190def6cf5ffebd6" prot="protected" virt="non-virtual"><scope>QuantLib::GMRES</scope><name>M_</name></member>
+      <member refid="classQuantLib_1_1GMRES_1af069357528a26c96966992f6f8bac66e" prot="public" virt="non-virtual"><scope>QuantLib::GMRES</scope><name>MatrixMult</name></member>
+      <member refid="classQuantLib_1_1GMRES_1a6b33ca37606e8ff9327fcf00cd3be8ca" prot="protected" virt="non-virtual"><scope>QuantLib::GMRES</scope><name>maxIter_</name></member>
+      <member refid="classQuantLib_1_1GMRES_1a60fa52ff88ca958e5c958f83d38a7f81" prot="protected" virt="non-virtual"><scope>QuantLib::GMRES</scope><name>relTol_</name></member>
+      <member refid="classQuantLib_1_1GMRES_1abc13cf5a870bda06a556055bdc0c4343" prot="public" virt="non-virtual"><scope>QuantLib::GMRES</scope><name>solve</name></member>
+      <member refid="classQuantLib_1_1GMRES_1a78838c1775476746e2e07b5c2bdc7156" prot="protected" virt="non-virtual"><scope>QuantLib::GMRES</scope><name>solveImpl</name></member>
+      <member refid="classQuantLib_1_1GMRES_1ac0a6b00752f61deba603753a66c8533c" prot="public" virt="non-virtual"><scope>QuantLib::GMRES</scope><name>solveWithRestart</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

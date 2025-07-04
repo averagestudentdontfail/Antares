@@ -1,0 +1,1032 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1Date" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::Date</compoundname>
+    <includes refid="date_8hpp" local="no">date.hpp</includes>
+    <sectiondef kind="user-defined">
+      <header>static methods</header>
+      <memberdef kind="variable" id="classQuantLib_1_1Date_1a7cd085139f4c7df54014b935788ff882" prot="private" static="no" mutable="no">
+        <type><ref refid="classQuantLib_1_1Date_1a2fbbbf87429ca9d86bde4e068eb028d6" kindref="member">Date::serial_type</ref></type>
+        <definition>Date::serial_type QuantLib::Date::serialNumber_</definition>
+        <argsstring></argsstring>
+        <name>serialNumber_</name>
+        <qualifiedname>QuantLib::Date::serialNumber_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="257" column="27" bodyfile="ql/time/date.hpp" bodystart="257" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1acdc9ad017a50abc0f14b8c4c77b3abe6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref></type>
+        <definition>Date QuantLib::Date::todaysDate</definition>
+        <argsstring>()</argsstring>
+        <name>todaysDate</name>
+        <qualifiedname>QuantLib::Date::todaysDate</qualifiedname>
+        <briefdescription>
+<para>today&apos;s date. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="203" column="21" bodyfile="ql/time/date.cpp" bodystart="788" bodyend="795"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1ab3e730da90778d2163d34719915efaed" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref></type>
+        <definition>Date QuantLib::Date::minDate</definition>
+        <argsstring>()</argsstring>
+        <name>minDate</name>
+        <qualifiedname>QuantLib::Date::minDate</qualifiedname>
+        <briefdescription>
+<para>earliest allowed date </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="205" column="21" bodyfile="ql/time/date.cpp" bodystart="766" bodyend="769"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1ad04a122553934667f47284aede26bde2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref></type>
+        <definition>Date QuantLib::Date::maxDate</definition>
+        <argsstring>()</argsstring>
+        <name>maxDate</name>
+        <qualifiedname>QuantLib::Date::maxDate</qualifiedname>
+        <briefdescription>
+<para>latest allowed date </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="207" column="21" bodyfile="ql/time/date.cpp" bodystart="771" bodyend="774"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1ae51d29d45deb8e9f5fa2d538ea92068c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QuantLib::Date::isLeap</definition>
+        <argsstring>(Year y)</argsstring>
+        <name>isLeap</name>
+        <qualifiedname>QuantLib::Date::isLeap</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a5dcda5470aff130981ac30f25d4244e7" kindref="member">Year</ref></type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+<para>whether the given year is a leap one </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="209" column="21" bodyfile="ql/time/date.cpp" bodystart="187" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1a6364156ee4ee36b71ce2a61657b14e5d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref></type>
+        <definition>Date QuantLib::Date::startOfMonth</definition>
+        <argsstring>(const Date &amp;d)</argsstring>
+        <name>startOfMonth</name>
+        <qualifiedname>QuantLib::Date::startOfMonth</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+<para>first day of the month to which the given date belongs </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="211" column="21" bodyfile="ql/time/date.hpp" bodystart="380" bodyend="384"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1a8509a966813ef17cc30c08b922ef7011" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QuantLib::Date::isStartOfMonth</definition>
+        <argsstring>(const Date &amp;d)</argsstring>
+        <name>isStartOfMonth</name>
+        <qualifiedname>QuantLib::Date::isStartOfMonth</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+<para>whether a date is the first day of its month </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="213" column="21" bodyfile="ql/time/date.hpp" bodystart="386" bodyend="388"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1a452304c9aded5ef07d82fc43dcc81309" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref></type>
+        <definition>Date QuantLib::Date::endOfMonth</definition>
+        <argsstring>(const Date &amp;d)</argsstring>
+        <name>endOfMonth</name>
+        <qualifiedname>QuantLib::Date::endOfMonth</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+<para>last day of the month to which the given date belongs </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="215" column="21" bodyfile="ql/time/date.hpp" bodystart="424" bodyend="428"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1a748ed14c936b2b91dfd440fdb9e309e3" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QuantLib::Date::isEndOfMonth</definition>
+        <argsstring>(const Date &amp;d)</argsstring>
+        <name>isEndOfMonth</name>
+        <qualifiedname>QuantLib::Date::isEndOfMonth</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+<para>whether a date is the last day of its month </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="217" column="21" bodyfile="ql/time/date.hpp" bodystart="430" bodyend="432"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1a30e332994cecd9a8891cc975eaf763ef" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref></type>
+        <definition>Date QuantLib::Date::nextWeekday</definition>
+        <argsstring>(const Date &amp;d, Weekday w)</argsstring>
+        <name>nextWeekday</name>
+        <qualifiedname>QuantLib::Date::nextWeekday</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a04474aebb0bea95bba2f1dcbdd8a27a6" kindref="member">Weekday</ref></type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+<para>next given weekday following or equal to the given date </para>
+        </briefdescription>
+        <detaileddescription>
+<para>E.g., the Friday following Tuesday, January 15th, 2002 was January 18th, 2002.</para>
+<para>see <ulink url="http://www.cpearson.com/excel/DateTimeWS.htm">http://www.cpearson.com/excel/DateTimeWS.htm</ulink> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="224" column="21" bodyfile="ql/time/date.cpp" bodystart="797" bodyend="800"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1ac71c17c630fb79d73d3030bfbffd3975" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref></type>
+        <definition>Date QuantLib::Date::nthWeekday</definition>
+        <argsstring>(Size n, Weekday w, Month m, Year y)</argsstring>
+        <name>nthWeekday</name>
+        <qualifiedname>QuantLib::Date::nthWeekday</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a04474aebb0bea95bba2f1dcbdd8a27a6" kindref="member">Weekday</ref></type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1afc504c75e7ee54a75e255256d99781e4" kindref="member">Month</ref></type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a5dcda5470aff130981ac30f25d4244e7" kindref="member">Year</ref></type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+<para>n-th given weekday in the given month and year </para>
+        </briefdescription>
+        <detaileddescription>
+<para>E.g., the 4th Thursday of March, 1998 was March 26th, 1998.</para>
+<para>see <ulink url="http://www.cpearson.com/excel/DateTimeWS.htm">http://www.cpearson.com/excel/DateTimeWS.htm</ulink> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="232" column="21" bodyfile="ql/time/date.cpp" bodystart="802" bodyend="811"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1a756075d077a8e3e9ec4af2deffadbec7" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Date_1a2fbbbf87429ca9d86bde4e068eb028d6" kindref="member">Date::serial_type</ref></type>
+        <definition>Date::serial_type QuantLib::Date::minimumSerialNumber</definition>
+        <argsstring>()</argsstring>
+        <name>minimumSerialNumber</name>
+        <qualifiedname>QuantLib::Date::minimumSerialNumber</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="250" column="34" bodyfile="ql/time/date.cpp" bodystart="749" bodyend="751"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1aeb31aa80e42d040e09b1d724e07f5be9" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Date_1a2fbbbf87429ca9d86bde4e068eb028d6" kindref="member">Date::serial_type</ref></type>
+        <definition>Date::serial_type QuantLib::Date::maximumSerialNumber</definition>
+        <argsstring>()</argsstring>
+        <name>maximumSerialNumber</name>
+        <qualifiedname>QuantLib::Date::maximumSerialNumber</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="251" column="34" bodyfile="ql/time/date.cpp" bodystart="753" bodyend="755"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1af66b43aff10845b192d542c06c4d0f25" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::Date::checkSerialNumber</definition>
+        <argsstring>(Date::serial_type serialNumber)</argsstring>
+        <name>checkSerialNumber</name>
+        <qualifiedname>QuantLib::Date::checkSerialNumber</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Date_1a2fbbbf87429ca9d86bde4e068eb028d6" kindref="member">Date::serial_type</ref></type>
+          <declname>serialNumber</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="252" column="21" bodyfile="ql/time/date.cpp" bodystart="757" bodyend="764"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1a0eb2b32bac68e01a7eab2a47e3b2f1c0" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref></type>
+        <definition>Date QuantLib::Date::advance</definition>
+        <argsstring>(const Date &amp;d, Integer units, TimeUnit)</argsstring>
+        <name>advance</name>
+        <qualifiedname>QuantLib::Date::advance</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a8ac1a45a37d8d3dda438a2e59e222620" kindref="member">Integer</ref></type>
+          <declname>units</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a6cdac5e2dae1e972076cc8e3302e4ad3" kindref="member">TimeUnit</ref></type>
+          <defname>units</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="258" column="21" bodyfile="ql/time/date.cpp" bodystart="139" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1a59fe01b93217f33a462c6ede745b01cc" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a8ac1a45a37d8d3dda438a2e59e222620" kindref="member">Integer</ref></type>
+        <definition>Integer QuantLib::Date::monthLength</definition>
+        <argsstring>(Month m, bool leapYear)</argsstring>
+        <name>monthLength</name>
+        <qualifiedname>QuantLib::Date::monthLength</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1afc504c75e7ee54a75e255256d99781e4" kindref="member">Month</ref></type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>leapYear</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="259" column="24" bodyfile="ql/time/date.cpp" bodystart="259" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1ad8c23cabbd499a3d0ef4c6d1a0e2fcc1" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a8ac1a45a37d8d3dda438a2e59e222620" kindref="member">Integer</ref></type>
+        <definition>Integer QuantLib::Date::monthOffset</definition>
+        <argsstring>(Month m, bool leapYear)</argsstring>
+        <name>monthOffset</name>
+        <qualifiedname>QuantLib::Date::monthOffset</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1afc504c75e7ee54a75e255256d99781e4" kindref="member">Month</ref></type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>leapYear</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="260" column="24" bodyfile="ql/time/date.cpp" bodystart="269" bodyend="281"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1afbcfae9b183c97a38a98506d1d2df07c" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Date_1a2fbbbf87429ca9d86bde4e068eb028d6" kindref="member">Date::serial_type</ref></type>
+        <definition>Date::serial_type QuantLib::Date::yearOffset</definition>
+        <argsstring>(Year y)</argsstring>
+        <name>yearOffset</name>
+        <qualifiedname>QuantLib::Date::yearOffset</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a5dcda5470aff130981ac30f25d4244e7" kindref="member">Year</ref></type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="261" column="34" bodyfile="ql/time/date.cpp" bodystart="283" bodyend="351"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <header>constructors</header>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1a2aebff9676fa9c647cc2cefe9f50fc0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Date::Date</definition>
+        <argsstring>()</argsstring>
+        <name>Date</name>
+        <qualifiedname>QuantLib::Date::Date</qualifiedname>
+        <briefdescription>
+<para><ref refid="structQuantLib_1_1Default" kindref="compound">Default</ref> constructor returning a null date. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="132" column="9" bodyfile="ql/time/date.cpp" bodystart="58" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1a750025b5c6db2547179a204bc53f44a3" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Date::Date</definition>
+        <argsstring>(Date::serial_type serialNumber)</argsstring>
+        <name>Date</name>
+        <qualifiedname>QuantLib::Date::Date</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Date_1a2fbbbf87429ca9d86bde4e068eb028d6" kindref="member">Date::serial_type</ref></type>
+          <declname>serialNumber</declname>
+        </param>
+        <briefdescription>
+<para>Constructor taking a serial number as given by Applix or Excel. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="134" column="18" bodyfile="ql/time/date.cpp" bodystart="61" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1af2f64545a84627079fdff8a68eac180f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::Date::Date</definition>
+        <argsstring>(Day d, Month m, Year y)</argsstring>
+        <name>Date</name>
+        <qualifiedname>QuantLib::Date::Date</qualifiedname>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a7354a4ac9189352870cbb0cb998e0bd4" kindref="member">Day</ref></type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1afc504c75e7ee54a75e255256d99781e4" kindref="member">Month</ref></type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a5dcda5470aff130981ac30f25d4244e7" kindref="member">Year</ref></type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+<para>More traditional constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="136" column="9" bodyfile="ql/time/date.cpp" bodystart="66" bodyend="80"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <header>inspectors</header>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1af35fd1f19ebaad485c09143ce514fa17" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a04474aebb0bea95bba2f1dcbdd8a27a6" kindref="member">Weekday</ref></type>
+        <definition>Weekday QuantLib::Date::weekday</definition>
+        <argsstring>() const</argsstring>
+        <name>weekday</name>
+        <qualifiedname>QuantLib::Date::weekday</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="150" column="17" bodyfile="ql/time/date.hpp" bodystart="391" bodyend="394"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1a06e40aaa71eadf6b67db9b6e714923f2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a7354a4ac9189352870cbb0cb998e0bd4" kindref="member">Day</ref></type>
+        <definition>Day QuantLib::Date::dayOfMonth</definition>
+        <argsstring>() const</argsstring>
+        <name>dayOfMonth</name>
+        <qualifiedname>QuantLib::Date::dayOfMonth</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="151" column="13" bodyfile="ql/time/date.hpp" bodystart="396" bodyend="398"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1a015382225a0dcdc9476170fdd75cf2bf" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a7354a4ac9189352870cbb0cb998e0bd4" kindref="member">Day</ref></type>
+        <definition>Day QuantLib::Date::dayOfYear</definition>
+        <argsstring>() const</argsstring>
+        <name>dayOfYear</name>
+        <qualifiedname>QuantLib::Date::dayOfYear</qualifiedname>
+        <briefdescription>
+<para>One-based (Jan 1st = 1) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="153" column="13" bodyfile="ql/time/date.hpp" bodystart="400" bodyend="402"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1a020b505ad0bcb0a74da4889144d1ad8b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1afc504c75e7ee54a75e255256d99781e4" kindref="member">Month</ref></type>
+        <definition>Month QuantLib::Date::month</definition>
+        <argsstring>() const</argsstring>
+        <name>month</name>
+        <qualifiedname>QuantLib::Date::month</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="154" column="15" bodyfile="ql/time/date.cpp" bodystart="82" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1a2e9611d4f28e785dba87d98a8acdb87a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a5dcda5470aff130981ac30f25d4244e7" kindref="member">Year</ref></type>
+        <definition>Year QuantLib::Date::year</definition>
+        <argsstring>() const</argsstring>
+        <name>year</name>
+        <qualifiedname>QuantLib::Date::year</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="155" column="14" bodyfile="ql/time/date.cpp" bodystart="93" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1a3f7d4c2388fe0014caf4eee208331e1f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Date_1a2fbbbf87429ca9d86bde4e068eb028d6" kindref="member">Date::serial_type</ref></type>
+        <definition>Date::serial_type QuantLib::Date::serialNumber</definition>
+        <argsstring>() const</argsstring>
+        <name>serialNumber</name>
+        <qualifiedname>QuantLib::Date::serialNumber</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="156" column="27" bodyfile="ql/time/date.hpp" bodystart="404" bodyend="406"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <header>date algebra</header>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1ac02f4dd69c10af7d7dcb1a38a79965c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+        <definition>Date &amp; QuantLib::Date::operator+=</definition>
+        <argsstring>(Date::serial_type days)</argsstring>
+        <name>operator+=</name>
+        <qualifiedname>QuantLib::Date::operator+=</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Date_1a2fbbbf87429ca9d86bde4e068eb028d6" kindref="member">Date::serial_type</ref></type>
+          <declname>days</declname>
+        </param>
+        <briefdescription>
+<para>increments date by the given number of days </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="175" column="14" bodyfile="ql/time/date.cpp" bodystart="101" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1ac82eb0387f1759bc6a0d426161a27688" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+        <definition>Date &amp; QuantLib::Date::operator+=</definition>
+        <argsstring>(const Period &amp;)</argsstring>
+        <name>operator+=</name>
+        <qualifiedname>QuantLib::Date::operator+=</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+          <defname>p</defname>
+        </param>
+        <briefdescription>
+<para>increments date by the given period </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="177" column="14" bodyfile="ql/time/date.cpp" bodystart="108" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1ac4c78bcec781349ca3bf6270731c384f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+        <definition>Date &amp; QuantLib::Date::operator-=</definition>
+        <argsstring>(Date::serial_type days)</argsstring>
+        <name>operator-=</name>
+        <qualifiedname>QuantLib::Date::operator-=</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Date_1a2fbbbf87429ca9d86bde4e068eb028d6" kindref="member">Date::serial_type</ref></type>
+          <declname>days</declname>
+        </param>
+        <briefdescription>
+<para>decrement date by the given number of days </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="179" column="14" bodyfile="ql/time/date.cpp" bodystart="113" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1a5ae5a403700d36d25f8f0a4cc4904d6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+        <definition>Date &amp; QuantLib::Date::operator-=</definition>
+        <argsstring>(const Period &amp;)</argsstring>
+        <name>operator-=</name>
+        <qualifiedname>QuantLib::Date::operator-=</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+          <defname>p</defname>
+        </param>
+        <briefdescription>
+<para>decrements date by the given period </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="181" column="14" bodyfile="ql/time/date.cpp" bodystart="120" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1ac4133b8fc2bf0a3b66149b9ec7ef9288" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+        <definition>Date &amp; QuantLib::Date::operator++</definition>
+        <argsstring>()</argsstring>
+        <name>operator++</name>
+        <qualifiedname>QuantLib::Date::operator++</qualifiedname>
+        <briefdescription>
+<para>1-day pre-increment </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="183" column="14" bodyfile="ql/time/date.cpp" bodystart="125" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1a67961c446cb754c2c38e3c6070324f43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref></type>
+        <definition>Date QuantLib::Date::operator++</definition>
+        <argsstring>(int)</argsstring>
+        <name>operator++</name>
+        <qualifiedname>QuantLib::Date::operator++</qualifiedname>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+<para>1-day post-increment </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="185" column="14" bodyfile="ql/time/date.cpp" bodystart="776" bodyend="780"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1a10075e5b5ea11c6f4b6e2034ede6ba9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+        <definition>Date &amp; QuantLib::Date::operator--</definition>
+        <argsstring>()</argsstring>
+        <name>operator--</name>
+        <qualifiedname>QuantLib::Date::operator--</qualifiedname>
+        <briefdescription>
+<para>1-day pre-decrement </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="187" column="14" bodyfile="ql/time/date.cpp" bodystart="132" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1ade88348d080f353149a13077df6d3ace" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref></type>
+        <definition>Date QuantLib::Date::operator--</definition>
+        <argsstring>(int)</argsstring>
+        <name>operator--</name>
+        <qualifiedname>QuantLib::Date::operator--</qualifiedname>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+<para>1-day post-decrement </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="189" column="14" bodyfile="ql/time/date.cpp" bodystart="782" bodyend="786"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1a0f1cdebd554cd8728d396499f0f0585b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref></type>
+        <definition>Date QuantLib::Date::operator+</definition>
+        <argsstring>(Date::serial_type days) const</argsstring>
+        <name>operator+</name>
+        <qualifiedname>QuantLib::Date::operator+</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Date_1a2fbbbf87429ca9d86bde4e068eb028d6" kindref="member">Date::serial_type</ref></type>
+          <declname>days</declname>
+        </param>
+        <briefdescription>
+<para>returns a new date incremented by the given number of days </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="191" column="14" bodyfile="ql/time/date.hpp" bodystart="408" bodyend="410"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1ae0b6a26e4bcfda378decd424294572af" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref></type>
+        <definition>Date QuantLib::Date::operator+</definition>
+        <argsstring>(const Period &amp;) const</argsstring>
+        <name>operator+</name>
+        <qualifiedname>QuantLib::Date::operator+</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+          <defname>p</defname>
+        </param>
+        <briefdescription>
+<para>returns a new date incremented by the given period </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="193" column="14" bodyfile="ql/time/date.hpp" bodystart="416" bodyend="418"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1ae49bdabcb6460b1f4a7a7a2fd8e9d8a9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref></type>
+        <definition>Date QuantLib::Date::operator-</definition>
+        <argsstring>(Date::serial_type days) const</argsstring>
+        <name>operator-</name>
+        <qualifiedname>QuantLib::Date::operator-</qualifiedname>
+        <param>
+          <type><ref refid="classQuantLib_1_1Date_1a2fbbbf87429ca9d86bde4e068eb028d6" kindref="member">Date::serial_type</ref></type>
+          <declname>days</declname>
+        </param>
+        <briefdescription>
+<para>returns a new date decremented by the given number of days </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="195" column="14" bodyfile="ql/time/date.hpp" bodystart="412" bodyend="414"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1a3a784d82dbcebd0092aa1c16436e6a40" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref></type>
+        <definition>Date QuantLib::Date::operator-</definition>
+        <argsstring>(const Period &amp;) const</argsstring>
+        <name>operator-</name>
+        <qualifiedname>QuantLib::Date::operator-</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Period" kindref="compound">Period</ref> &amp;</type>
+          <defname>p</defname>
+        </param>
+        <briefdescription>
+<para>returns a new date decremented by the given period </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="197" column="14" bodyfile="ql/time/date.hpp" bodystart="420" bodyend="422"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classQuantLib_1_1Date_1a2fbbbf87429ca9d86bde4e068eb028d6" prot="public" static="no">
+        <type>std::int_fast32_t</type>
+        <definition>typedef std::int_fast32_t QuantLib::Date::serial_type</definition>
+        <argsstring></argsstring>
+        <name>serial_type</name>
+        <qualifiedname>QuantLib::Date::serial_type</qualifiedname>
+        <briefdescription>
+<para>serial number type </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="128" column="35" bodyfile="ql/time/date.hpp" bodystart="128" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="related">
+      <memberdef kind="function" id="classQuantLib_1_1Date_1a66b638bea097bef164edf8a312e7f7ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classQuantLib_1_1Date_1a2fbbbf87429ca9d86bde4e068eb028d6" kindref="member">Date::serial_type</ref></type>
+        <definition>Date::serial_type operator-</definition>
+        <argsstring>(const Date &amp;, const Date &amp;)</argsstring>
+        <name>operator-</name>
+        <qualifiedname>QuantLib::Date::operator-</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>Difference in days between dates. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="268" column="23" bodyfile="ql/time/date.hpp" bodystart="434" bodyend="436" declfile="ql/time/date.hpp" declline="268" declcolumn="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1a29f7670d202257ce1117b1806711ba2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceQuantLib_1a4f78b18a4dd1a979eb78b4e1e8ac1503" kindref="member">Time</ref></type>
+        <definition>Time daysBetween</definition>
+        <argsstring>(const Date &amp;, const Date &amp;)</argsstring>
+        <name>daysBetween</name>
+        <qualifiedname>QuantLib::Date::daysBetween</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>Difference in days (including fraction of days) between dates. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="272" column="10" bodyfile="ql/time/date.hpp" bodystart="438" bodyend="440" declfile="ql/time/date.hpp" declline="272" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1ad51822da99f2cc001b6326ac28bd49d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator==</definition>
+        <argsstring>(const Date &amp;, const Date &amp;)</argsstring>
+        <name>operator==</name>
+        <qualifiedname>QuantLib::Date::operator==</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="275" column="10" bodyfile="ql/time/date.hpp" bodystart="442" bodyend="444" declfile="ql/time/date.hpp" declline="275" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1a5ac1b43688828377f31de974e061006f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator!=</definition>
+        <argsstring>(const Date &amp;, const Date &amp;)</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>QuantLib::Date::operator!=</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="277" column="10" bodyfile="ql/time/date.hpp" bodystart="446" bodyend="448" declfile="ql/time/date.hpp" declline="277" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1acbc7a012dc46ebcd65dfd2887e3a3ad4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator&lt;</definition>
+        <argsstring>(const Date &amp;, const Date &amp;)</argsstring>
+        <name>operator&lt;</name>
+        <qualifiedname>QuantLib::Date::operator&lt;</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="279" column="5" bodyfile="ql/time/date.hpp" bodystart="450" bodyend="452" declfile="ql/time/date.hpp" declline="279" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1aec251fea3c00fa40e6e9e07a90620f78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator&lt;=</definition>
+        <argsstring>(const Date &amp;, const Date &amp;)</argsstring>
+        <name>operator&lt;=</name>
+        <qualifiedname>QuantLib::Date::operator&lt;=</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="281" column="5" bodyfile="ql/time/date.hpp" bodystart="454" bodyend="456" declfile="ql/time/date.hpp" declline="281" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1a042bfc86a816127e316415634bb99107" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator&gt;</definition>
+        <argsstring>(const Date &amp;, const Date &amp;)</argsstring>
+        <name>operator&gt;</name>
+        <qualifiedname>QuantLib::Date::operator&gt;</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="283" column="10" bodyfile="ql/time/date.hpp" bodystart="458" bodyend="460" declfile="ql/time/date.hpp" declline="283" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1a04118d56c46df4ac9054f0e34d2a6ce2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool operator&gt;=</definition>
+        <argsstring>(const Date &amp;, const Date &amp;)</argsstring>
+        <name>operator&gt;=</name>
+        <qualifiedname>QuantLib::Date::operator&gt;=</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="285" column="10" bodyfile="ql/time/date.hpp" bodystart="462" bodyend="464" declfile="ql/time/date.hpp" declline="285" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1ab332a16e149355c29db8fd10e0cb6103" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>std::size_t hash_value</definition>
+        <argsstring>(const Date &amp;d)</argsstring>
+        <name>hash_value</name>
+        <qualifiedname>QuantLib::Date::hash_value</qualifiedname>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compute a hash value of <computeroutput>d</computeroutput>.</para>
+<para>This method makes <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> hashable via <computeroutput>boost::hash</computeroutput>.</para>
+<para>Example:</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="preprocessor">#include<sp/>&lt;unordered_set&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">std::unordered_set&lt;Date&gt;<sp/>set;</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classQuantLib_1_1Date_1a2aebff9676fa9c647cc2cefe9f50fc0e" kindref="member">Date</ref><sp/>d<sp/>=<sp/><ref refid="classQuantLib_1_1Date_1a2aebff9676fa9c647cc2cefe9f50fc0e" kindref="member">Date</ref>(1,<sp/><ref refid="namespaceQuantLib_1afc504c75e7ee54a75e255256d99781e4a457c3d6657917c0414293ce6754833b8" kindref="member">Jan</ref>,<sp/>2020);<sp/></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">set.insert(d);</highlight></codeline>
+<codeline><highlight class="normal">assert(set.count(d));<sp/></highlight><highlight class="comment">//<sp/>&apos;d&apos;<sp/>was<sp/>added<sp/>to<sp/>&apos;set&apos;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> to hash </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A hash value of <computeroutput>d</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="308" column="17" bodyfile="ql/time/date.cpp" bodystart="846" bodyend="855" declfile="ql/time/date.hpp" declline="308" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Date_1a65ff0f219c6817d3b8b6e57724dc680a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;, const Date &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>QuantLib::Date::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Date" kindref="compound">Date</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/time/date.hpp" line="311" column="5" bodyfile="ql/time/date.cpp" bodystart="859" bodyend="861" declfile="ql/time/date.hpp" declline="311" declcolumn="5"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Concrete date class. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class provides methods to inspect dates as well as methods and operators which implement a limited date algebra (increasing and decreasing dates, and calculating their difference).</para>
+<para><xrefsect id="test_1_test000022"><xreftitle>Test</xreftitle><xrefdescription><para>self-consistency of dates, serial numbers, days of month, months, and weekdays is checked over the whole date range. </para>
+</xrefdescription></xrefsect></para>
+    </detaileddescription>
+    <location file="ql/time/date.hpp" line="125" column="5" bodyfile="ql/time/date.hpp" bodystart="125" bodyend="263"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Date_1a0eb2b32bac68e01a7eab2a47e3b2f1c0" prot="private" virt="non-virtual"><scope>QuantLib::Date</scope><name>advance</name></member>
+      <member refid="classQuantLib_1_1Date_1af66b43aff10845b192d542c06c4d0f25" prot="private" virt="non-virtual"><scope>QuantLib::Date</scope><name>checkSerialNumber</name></member>
+      <member refid="classQuantLib_1_1Date_1a2aebff9676fa9c647cc2cefe9f50fc0e" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>Date</name></member>
+      <member refid="classQuantLib_1_1Date_1a750025b5c6db2547179a204bc53f44a3" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>Date</name></member>
+      <member refid="classQuantLib_1_1Date_1af2f64545a84627079fdff8a68eac180f" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>Date</name></member>
+      <member refid="classQuantLib_1_1Date_1a06e40aaa71eadf6b67db9b6e714923f2" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>dayOfMonth</name></member>
+      <member refid="classQuantLib_1_1Date_1a015382225a0dcdc9476170fdd75cf2bf" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>dayOfYear</name></member>
+      <member refid="classQuantLib_1_1Date_1a29f7670d202257ce1117b1806711ba2a" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>daysBetween</name></member>
+      <member refid="classQuantLib_1_1Date_1a452304c9aded5ef07d82fc43dcc81309" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>endOfMonth</name></member>
+      <member refid="classQuantLib_1_1Date_1ab332a16e149355c29db8fd10e0cb6103" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>hash_value</name></member>
+      <member refid="classQuantLib_1_1Date_1a748ed14c936b2b91dfd440fdb9e309e3" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>isEndOfMonth</name></member>
+      <member refid="classQuantLib_1_1Date_1ae51d29d45deb8e9f5fa2d538ea92068c" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>isLeap</name></member>
+      <member refid="classQuantLib_1_1Date_1a8509a966813ef17cc30c08b922ef7011" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>isStartOfMonth</name></member>
+      <member refid="classQuantLib_1_1Date_1ad04a122553934667f47284aede26bde2" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>maxDate</name></member>
+      <member refid="classQuantLib_1_1Date_1aeb31aa80e42d040e09b1d724e07f5be9" prot="private" virt="non-virtual"><scope>QuantLib::Date</scope><name>maximumSerialNumber</name></member>
+      <member refid="classQuantLib_1_1Date_1ab3e730da90778d2163d34719915efaed" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>minDate</name></member>
+      <member refid="classQuantLib_1_1Date_1a756075d077a8e3e9ec4af2deffadbec7" prot="private" virt="non-virtual"><scope>QuantLib::Date</scope><name>minimumSerialNumber</name></member>
+      <member refid="classQuantLib_1_1Date_1a020b505ad0bcb0a74da4889144d1ad8b" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>month</name></member>
+      <member refid="classQuantLib_1_1Date_1a59fe01b93217f33a462c6ede745b01cc" prot="private" virt="non-virtual"><scope>QuantLib::Date</scope><name>monthLength</name></member>
+      <member refid="classQuantLib_1_1Date_1ad8c23cabbd499a3d0ef4c6d1a0e2fcc1" prot="private" virt="non-virtual"><scope>QuantLib::Date</scope><name>monthOffset</name></member>
+      <member refid="classQuantLib_1_1Date_1a30e332994cecd9a8891cc975eaf763ef" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>nextWeekday</name></member>
+      <member refid="classQuantLib_1_1Date_1ac71c17c630fb79d73d3030bfbffd3975" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>nthWeekday</name></member>
+      <member refid="classQuantLib_1_1Date_1a5ac1b43688828377f31de974e061006f" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>operator!=</name></member>
+      <member refid="classQuantLib_1_1Date_1a0f1cdebd554cd8728d396499f0f0585b" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>operator+</name></member>
+      <member refid="classQuantLib_1_1Date_1ae0b6a26e4bcfda378decd424294572af" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>operator+</name></member>
+      <member refid="classQuantLib_1_1Date_1ac4133b8fc2bf0a3b66149b9ec7ef9288" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>operator++</name></member>
+      <member refid="classQuantLib_1_1Date_1a67961c446cb754c2c38e3c6070324f43" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>operator++</name></member>
+      <member refid="classQuantLib_1_1Date_1ac02f4dd69c10af7d7dcb1a38a79965c5" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>operator+=</name></member>
+      <member refid="classQuantLib_1_1Date_1ac82eb0387f1759bc6a0d426161a27688" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>operator+=</name></member>
+      <member refid="classQuantLib_1_1Date_1ae49bdabcb6460b1f4a7a7a2fd8e9d8a9" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>operator-</name></member>
+      <member refid="classQuantLib_1_1Date_1a3a784d82dbcebd0092aa1c16436e6a40" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>operator-</name></member>
+      <member refid="classQuantLib_1_1Date_1a66b638bea097bef164edf8a312e7f7ee" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>operator-</name></member>
+      <member refid="classQuantLib_1_1Date_1a10075e5b5ea11c6f4b6e2034ede6ba9e" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>operator--</name></member>
+      <member refid="classQuantLib_1_1Date_1ade88348d080f353149a13077df6d3ace" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>operator--</name></member>
+      <member refid="classQuantLib_1_1Date_1ac4c78bcec781349ca3bf6270731c384f" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>operator-=</name></member>
+      <member refid="classQuantLib_1_1Date_1a5ae5a403700d36d25f8f0a4cc4904d6e" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>operator-=</name></member>
+      <member refid="classQuantLib_1_1Date_1acbc7a012dc46ebcd65dfd2887e3a3ad4" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>operator&lt;</name></member>
+      <member refid="classQuantLib_1_1Date_1a65ff0f219c6817d3b8b6e57724dc680a" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classQuantLib_1_1Date_1aec251fea3c00fa40e6e9e07a90620f78" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>operator&lt;=</name></member>
+      <member refid="classQuantLib_1_1Date_1ad51822da99f2cc001b6326ac28bd49d6" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>operator==</name></member>
+      <member refid="classQuantLib_1_1Date_1a042bfc86a816127e316415634bb99107" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>operator&gt;</name></member>
+      <member refid="classQuantLib_1_1Date_1a04118d56c46df4ac9054f0e34d2a6ce2" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>operator&gt;=</name></member>
+      <member refid="classQuantLib_1_1Date_1a2fbbbf87429ca9d86bde4e068eb028d6" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>serial_type</name></member>
+      <member refid="classQuantLib_1_1Date_1a3f7d4c2388fe0014caf4eee208331e1f" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>serialNumber</name></member>
+      <member refid="classQuantLib_1_1Date_1a7cd085139f4c7df54014b935788ff882" prot="private" virt="non-virtual"><scope>QuantLib::Date</scope><name>serialNumber_</name></member>
+      <member refid="classQuantLib_1_1Date_1a6364156ee4ee36b71ce2a61657b14e5d" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>startOfMonth</name></member>
+      <member refid="classQuantLib_1_1Date_1acdc9ad017a50abc0f14b8c4c77b3abe6" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>todaysDate</name></member>
+      <member refid="classQuantLib_1_1Date_1af35fd1f19ebaad485c09143ce514fa17" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>weekday</name></member>
+      <member refid="classQuantLib_1_1Date_1a2e9611d4f28e785dba87d98a8acdb87a" prot="public" virt="non-virtual"><scope>QuantLib::Date</scope><name>year</name></member>
+      <member refid="classQuantLib_1_1Date_1afbcfae9b183c97a38a98506d1d2df07c" prot="private" virt="non-virtual"><scope>QuantLib::Date</scope><name>yearOffset</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

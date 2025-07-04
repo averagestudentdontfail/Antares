@@ -1,0 +1,250 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1Payoff" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>QuantLib::Payoff</compoundname>
+    <derivedcompoundref refid="classQuantLib_1_1BasketPayoff" prot="public" virt="non-virtual">QuantLib::BasketPayoff</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1NullPayoff" prot="public" virt="non-virtual">QuantLib::NullPayoff</derivedcompoundref>
+    <derivedcompoundref refid="classQuantLib_1_1TypePayoff" prot="public" virt="non-virtual">QuantLib::TypePayoff</derivedcompoundref>
+    <includes refid="payoff_8hpp" local="no">payoff.hpp</includes>
+    <sectiondef kind="user-defined">
+      <header>Payoff interface</header>
+      <memberdef kind="function" id="classQuantLib_1_1Payoff_1aceb029d314fb74ab5797d7bc7752d0c8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string</type>
+        <definition>virtual std::string QuantLib::Payoff::name</definition>
+        <argsstring>() const =0</argsstring>
+        <name>name</name>
+        <qualifiedname>QuantLib::Payoff::name</qualifiedname>
+        <reimplementedby refid="classQuantLib_1_1BasketPayoff_1a7d5c7a0c081e9e48a74b86efdc535635">name</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1NullPayoff_1a99388e2d004b43b9e2eeeafc15c3d5bc">name</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1FloatingTypePayoff_1ab90e6347f39541eb443aa4f1341a09a1">name</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1PlainVanillaPayoff_1ae81f90b6e48eea82fdcf2aa52992b06e">name</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1PercentageStrikePayoff_1ac803a0540c88f940c3534e18ccad2f29">name</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1AssetOrNothingPayoff_1a03c47ee6dad7c2b649f21244f6587bbe">name</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1CashOrNothingPayoff_1a16a686d3d59af74ddd94af95b5e7a71b">name</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1GapPayoff_1abfc756d401e48c1135b8af277bd4492d">name</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1SuperFundPayoff_1ac271639cbc2c5e667b171776a02442aa">name</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1SuperSharePayoff_1adb6160d39bb140fbc00236a5eb58e94f">name</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="warning"><para>This method is used for output and comparison between payoffs. It is <bold>not</bold> meant to be used for writing switch-on-type code. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/payoff.hpp" line="45" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Payoff_1a0f2a1e491b9cf7411a3759c2fd7ed90e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string</type>
+        <definition>virtual std::string QuantLib::Payoff::description</definition>
+        <argsstring>() const =0</argsstring>
+        <name>description</name>
+        <qualifiedname>QuantLib::Payoff::description</qualifiedname>
+        <reimplementedby refid="classQuantLib_1_1BasketPayoff_1a1de7557061770800c5d321b151a87699">description</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1NullPayoff_1a0be3f2debae70cf70647d87738c5cd6c">description</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1TypePayoff_1af2fdf3fb17b55335944e6b36dd47799c">description</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1StrikedTypePayoff_1a947973d3f9750cd112178fa0d8bd6fef">description</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1CashOrNothingPayoff_1a20cb1df0ff5c02494fe979cab04e9bb7">description</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1GapPayoff_1a08d050cf580f1f92c892f665fdcfcef4">description</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1SuperSharePayoff_1aae875387cb91dcd8ded8c521461f2180">description</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/payoff.hpp" line="46" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1Payoff_1a1b10d7224a8089b21a56eb1fa0562c37" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>virtual Real QuantLib::Payoff::operator()</definition>
+        <argsstring>(Real price) const =0</argsstring>
+        <name>operator()</name>
+        <qualifiedname>QuantLib::Payoff::operator()</qualifiedname>
+        <reimplementedby refid="classQuantLib_1_1BasketPayoff_1ab148f1625b9b0df38349a9618e2e38b0">operator()</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1NullPayoff_1ab06381cafc0e872a2e02a381010203e7">operator()</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1FloatingTypePayoff_1ae5a53846fc897a33465e680b31a2e3c3">operator()</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1PlainVanillaPayoff_1a1527200f6ff6f30ccefff8348b5d891d">operator()</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1PercentageStrikePayoff_1a985945dda8dfba2fb400af44e0450309">operator()</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1AssetOrNothingPayoff_1a7cdbe0cdee536793436296cefc9a7f59">operator()</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1CashOrNothingPayoff_1a6d89cf338ee0b8d60d77f2d32e97c06b">operator()</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1GapPayoff_1a6d7508cf19bdef36476972005ba51046">operator()</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1SuperFundPayoff_1acbfb26b7d00a4cb23ba7f6bb19199884">operator()</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1SuperSharePayoff_1afc6d6becb81868aaf6a996954a950cf3">operator()</reimplementedby>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>price</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/payoff.hpp" line="47" column="22"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <header>Visitability</header>
+      <memberdef kind="function" id="classQuantLib_1_1Payoff_1ac2902d1c8e84743671f759180fbff190" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void QuantLib::Payoff::accept</definition>
+        <argsstring>(AcyclicVisitor &amp;)</argsstring>
+        <name>accept</name>
+        <qualifiedname>QuantLib::Payoff::accept</qualifiedname>
+        <reimplementedby refid="classQuantLib_1_1NullPayoff_1abc9c52698da52dcd49764175d26f20bf">accept</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1FloatingTypePayoff_1a4f42fca976d9b84121a409dbb2089f35">accept</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1PlainVanillaPayoff_1abe755048265c8eec97985f8e51b4da45">accept</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1PercentageStrikePayoff_1a2a31d866e5878a3c4584b9ab7555c19e">accept</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1AssetOrNothingPayoff_1a928afec46428323950c7715f30df8378">accept</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1CashOrNothingPayoff_1a630d16239198c8b533e7ba58a795a946">accept</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1GapPayoff_1abb833446630efd963e1ab166701b6eb0">accept</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1SuperFundPayoff_1aa501a592aa9e36fd83690efc9bec9977">accept</reimplementedby>
+        <reimplementedby refid="classQuantLib_1_1SuperSharePayoff_1a8ced9416331b3f20a69bbb32a9b02a21">accept</reimplementedby>
+        <param>
+          <type><ref refid="classQuantLib_1_1AcyclicVisitor" kindref="compound">AcyclicVisitor</ref> &amp;</type>
+          <defname>v</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/payoff.hpp" line="51" column="22" bodyfile="ql/payoff.hpp" bodystart="58" bodyend="64"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1Payoff_1a7067fc920554af30af0ac5b82d0f4650" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual QuantLib::Payoff::~Payoff</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Payoff</name>
+        <qualifiedname>QuantLib::Payoff::~Payoff</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/payoff.hpp" line="38" column="17"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Abstract base class for option payoffs. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="11">
+        <label>QuantLib::AssetOrNothingPayoff</label>
+        <link refid="classQuantLib_1_1AssetOrNothingPayoff"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QuantLib::AverageBasketPayoff</label>
+        <link refid="classQuantLib_1_1AverageBasketPayoff"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QuantLib::BasketPayoff</label>
+        <link refid="classQuantLib_1_1BasketPayoff"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>QuantLib::CashOrNothingPayoff</label>
+        <link refid="classQuantLib_1_1CashOrNothingPayoff"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>QuantLib::FloatingTypePayoff</label>
+        <link refid="classQuantLib_1_1FloatingTypePayoff"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>QuantLib::GapPayoff</label>
+        <link refid="classQuantLib_1_1GapPayoff"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QuantLib::MaxBasketPayoff</label>
+        <link refid="classQuantLib_1_1MaxBasketPayoff"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>QuantLib::MinBasketPayoff</label>
+        <link refid="classQuantLib_1_1MinBasketPayoff"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>QuantLib::NullPayoff</label>
+        <link refid="classQuantLib_1_1NullPayoff"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::Payoff</label>
+        <link refid="classQuantLib_1_1Payoff"/>
+      </node>
+      <node id="14">
+        <label>QuantLib::PercentageStrikePayoff</label>
+        <link refid="classQuantLib_1_1PercentageStrikePayoff"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>QuantLib::PlainVanillaPayoff</label>
+        <link refid="classQuantLib_1_1PlainVanillaPayoff"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>QuantLib::SpreadBasketPayoff</label>
+        <link refid="classQuantLib_1_1SpreadBasketPayoff"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>QuantLib::StrikedTypePayoff</label>
+        <link refid="classQuantLib_1_1StrikedTypePayoff"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>QuantLib::SuperFundPayoff</label>
+        <link refid="classQuantLib_1_1SuperFundPayoff"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>QuantLib::SuperSharePayoff</label>
+        <link refid="classQuantLib_1_1SuperSharePayoff"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>QuantLib::TypePayoff</label>
+        <link refid="classQuantLib_1_1TypePayoff"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="ql/payoff.hpp" line="36" column="5" bodyfile="ql/payoff.hpp" bodystart="36" bodyend="53"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Payoff_1ac2902d1c8e84743671f759180fbff190" prot="public" virt="virtual"><scope>QuantLib::Payoff</scope><name>accept</name></member>
+      <member refid="classQuantLib_1_1Payoff_1a0f2a1e491b9cf7411a3759c2fd7ed90e" prot="public" virt="pure-virtual"><scope>QuantLib::Payoff</scope><name>description</name></member>
+      <member refid="classQuantLib_1_1Payoff_1aceb029d314fb74ab5797d7bc7752d0c8" prot="public" virt="pure-virtual"><scope>QuantLib::Payoff</scope><name>name</name></member>
+      <member refid="classQuantLib_1_1Payoff_1a1b10d7224a8089b21a56eb1fa0562c37" prot="public" virt="pure-virtual"><scope>QuantLib::Payoff</scope><name>operator()</name></member>
+      <member refid="classQuantLib_1_1Payoff_1a7067fc920554af30af0ac5b82d0f4650" prot="public" virt="virtual"><scope>QuantLib::Payoff</scope><name>~Payoff</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

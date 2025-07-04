@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="variants_8hpp" kind="file" language="C++">
+    <compoundname>variants.hpp</compoundname>
+    <includedby refid="quote_8cpp" local="no">ql/quote.cpp</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>ql/quote.cpp</label>
+        <link refid="quote_8cpp"/>
+      </node>
+      <node id="1">
+        <label>ql/utilities/variants.hpp</label>
+        <link refid="variants_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structQuantLib_1_1detail_1_1variant__visitor" prot="public">QuantLib::detail::variant_visitor</innerclass>
+    <innernamespace refid="namespaceQuantLib">QuantLib</innernamespace>
+    <innernamespace refid="namespaceQuantLib_1_1detail">QuantLib::detail</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>c++;<sp/>tab-width:<sp/>4;<sp/>indent-tabs-mode:<sp/>nil;<sp/>c-basic-offset:<sp/>4<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>quantlib_utilities_variants_hpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>quantlib_utilities_variants_hpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceQuantLib_1_1detail" kindref="compound">QuantLib::detail</ref><sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Helper<sp/>type<sp/>for<sp/>use<sp/>with<sp/>std::visit.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">...<sp/>Ts&gt;</highlight></codeline>
+<codeline lineno="10" refid="structQuantLib_1_1detail_1_1variant__visitor" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structQuantLib_1_1detail_1_1variant__visitor" kindref="compound">variant_visitor</ref><sp/>:<sp/>Ts...<sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">Ts::operator()...;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">...<sp/>Ts&gt;</highlight></codeline>
+<codeline lineno="15" refid="namespaceQuantLib_1_1detail_1afc214dd4193f4c9c629ffce3741f165b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structQuantLib_1_1detail_1_1variant__visitor" kindref="compound">variant_visitor</ref>(Ts...)<sp/>-&gt;<sp/><ref refid="structQuantLib_1_1detail_1_1variant__visitor" kindref="compound">variant_visitor</ref>&lt;Ts...&gt;;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="ql/utilities/variants.hpp"/>
+  </compounddef>
+</doxygen>

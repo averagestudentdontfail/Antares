@@ -1,0 +1,300 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1detail_1_1LagrangeInterpolationImpl" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::detail::LagrangeInterpolationImpl</compoundname>
+    <basecompoundref refid="classQuantLib_1_1Interpolation_1_1templateImpl" prot="public" virt="non-virtual">QuantLib::Interpolation::templateImpl&lt; I1, I2 &gt;</basecompoundref>
+    <basecompoundref refid="classQuantLib_1_1detail_1_1UpdatedYInterpolation" prot="public" virt="non-virtual">QuantLib::detail::UpdatedYInterpolation</basecompoundref>
+    <includes refid="lagrangeinterpolation_8hpp" local="no">lagrangeinterpolation.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>class I1</type>
+      </param>
+      <param>
+        <type>class I2</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classQuantLib_1_1detail_1_1LagrangeInterpolationImpl_1ad7499993143d91f6f5cec7700062378e" prot="private" static="no" mutable="no">
+        <type>const <ref refid="namespaceQuantLib_1af4cc4ef40b52c17cc455ead2a97aedb3" kindref="member">Size</ref></type>
+        <definition>const Size QuantLib::detail::LagrangeInterpolationImpl&lt; I1, I2 &gt;::n_</definition>
+        <argsstring></argsstring>
+        <name>n_</name>
+        <qualifiedname>QuantLib::detail::LagrangeInterpolationImpl::n_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/lagrangeinterpolation.hpp" line="133" column="26" bodyfile="ql/math/interpolations/lagrangeinterpolation.hpp" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classQuantLib_1_1detail_1_1LagrangeInterpolationImpl_1abe86a119dcff5cfe8b28642485bda8f7" prot="private" static="no" mutable="no">
+        <type><ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref></type>
+        <definition>Array QuantLib::detail::LagrangeInterpolationImpl&lt; I1, I2 &gt;::lambda_</definition>
+        <argsstring></argsstring>
+        <name>lambda_</name>
+        <qualifiedname>QuantLib::detail::LagrangeInterpolationImpl::lambda_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/lagrangeinterpolation.hpp" line="134" column="21" bodyfile="ql/math/interpolations/lagrangeinterpolation.hpp" bodystart="134" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1detail_1_1LagrangeInterpolationImpl_1aa33bc66a924d4017a886007cecb29850" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::detail::LagrangeInterpolationImpl&lt; I1, I2 &gt;::LagrangeInterpolationImpl</definition>
+        <argsstring>(const I1 &amp;xBegin, const I1 &amp;xEnd, const I2 &amp;yBegin)</argsstring>
+        <name>LagrangeInterpolationImpl</name>
+        <qualifiedname>QuantLib::detail::LagrangeInterpolationImpl::LagrangeInterpolationImpl</qualifiedname>
+        <param>
+          <type>const I1 &amp;</type>
+          <declname>xBegin</declname>
+        </param>
+        <param>
+          <type>const I1 &amp;</type>
+          <declname>xEnd</declname>
+        </param>
+        <param>
+          <type>const I2 &amp;</type>
+          <declname>yBegin</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/lagrangeinterpolation.hpp" line="49" column="13" bodyfile="ql/math/interpolations/lagrangeinterpolation.hpp" bodystart="49" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1detail_1_1LagrangeInterpolationImpl_1ae9c4548a9cefbd71c4ce985073f7387a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void QuantLib::detail::LagrangeInterpolationImpl&lt; I1, I2 &gt;::update</definition>
+        <argsstring>() override</argsstring>
+        <name>update</name>
+        <qualifiedname>QuantLib::detail::LagrangeInterpolationImpl::update</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Interpolation_1_1Impl_1a709278c2ce75ffc2bea488619d4997e6">update</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/lagrangeinterpolation.hpp" line="60" column="18" bodyfile="ql/math/interpolations/lagrangeinterpolation.hpp" bodystart="60" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1detail_1_1LagrangeInterpolationImpl_1a3d4c870fdfa1f3c3b1fc696a039374c7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::detail::LagrangeInterpolationImpl&lt; I1, I2 &gt;::value</definition>
+        <argsstring>(Real x) const override</argsstring>
+        <name>value</name>
+        <qualifiedname>QuantLib::detail::LagrangeInterpolationImpl::value</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Interpolation_1_1Impl_1ad99198f18adb259c124fd2df7f2c4dea">value</reimplements>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/lagrangeinterpolation.hpp" line="75" column="18" bodyfile="ql/math/interpolations/lagrangeinterpolation.hpp" bodystart="75" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1detail_1_1LagrangeInterpolationImpl_1a28b53c8f5fdee7f58e67581bf35a5149" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::detail::LagrangeInterpolationImpl&lt; I1, I2 &gt;::derivative</definition>
+        <argsstring>(Real x) const override</argsstring>
+        <name>derivative</name>
+        <qualifiedname>QuantLib::detail::LagrangeInterpolationImpl::derivative</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Interpolation_1_1Impl_1aa3d5009598ca4940c1d1abb87e821c3d">derivative</reimplements>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/lagrangeinterpolation.hpp" line="77" column="18" bodyfile="ql/math/interpolations/lagrangeinterpolation.hpp" bodystart="77" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1detail_1_1LagrangeInterpolationImpl_1a7f44f3655075034e85c17b9aa2272f58" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::detail::LagrangeInterpolationImpl&lt; I1, I2 &gt;::primitive</definition>
+        <argsstring>(Real) const override</argsstring>
+        <name>primitive</name>
+        <qualifiedname>QuantLib::detail::LagrangeInterpolationImpl::primitive</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Interpolation_1_1Impl_1ac7ada137d995e5b5afa466e1ea64f3af">primitive</reimplements>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/lagrangeinterpolation.hpp" line="102" column="18" bodyfile="ql/math/interpolations/lagrangeinterpolation.hpp" bodystart="102" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1detail_1_1LagrangeInterpolationImpl_1ae9a88561091ee1b5a7a1b15a1fb1d59a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::detail::LagrangeInterpolationImpl&lt; I1, I2 &gt;::secondDerivative</definition>
+        <argsstring>(Real) const override</argsstring>
+        <name>secondDerivative</name>
+        <qualifiedname>QuantLib::detail::LagrangeInterpolationImpl::secondDerivative</qualifiedname>
+        <reimplements refid="classQuantLib_1_1Interpolation_1_1Impl_1a6274e96e3ee0da2e2a2d1dfd842932a7">secondDerivative</reimplements>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/lagrangeinterpolation.hpp" line="106" column="18" bodyfile="ql/math/interpolations/lagrangeinterpolation.hpp" bodystart="106" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1detail_1_1LagrangeInterpolationImpl_1adf2359d089ed2fad62956104a71b00f6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::detail::LagrangeInterpolationImpl&lt; I1, I2 &gt;::value</definition>
+        <argsstring>(const Array &amp;y, Real x) const override</argsstring>
+        <name>value</name>
+        <qualifiedname>QuantLib::detail::LagrangeInterpolationImpl::value</qualifiedname>
+        <reimplements refid="classQuantLib_1_1detail_1_1UpdatedYInterpolation_1ab502417ca03c3c5ed35d7f35c1fd3d54">value</reimplements>
+        <param>
+          <type>const <ref refid="classQuantLib_1_1Array" kindref="compound">Array</ref> &amp;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/lagrangeinterpolation.hpp" line="111" column="18" bodyfile="ql/math/interpolations/lagrangeinterpolation.hpp" bodystart="111" bodyend="111"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classQuantLib_1_1detail_1_1LagrangeInterpolationImpl_1a0fa90b02def031db247199dc17e4e4ba" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Iterator</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+        <definition>Real QuantLib::detail::LagrangeInterpolationImpl&lt; I1, I2 &gt;::_value</definition>
+        <argsstring>(const Iterator &amp;yBegin, Real x) const</argsstring>
+        <name>_value</name>
+        <qualifiedname>QuantLib::detail::LagrangeInterpolationImpl::_value</qualifiedname>
+        <param>
+          <type>const Iterator &amp;</type>
+          <declname>yBegin</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref></type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/math/interpolations/lagrangeinterpolation.hpp" line="115" column="18" bodyfile="ql/math/interpolations/lagrangeinterpolation.hpp" bodystart="115" bodyend="131"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>QuantLib::Interpolation::Impl</label>
+        <link refid="classQuantLib_1_1Interpolation_1_1Impl"/>
+      </node>
+      <node id="2">
+        <label>QuantLib::Interpolation::templateImpl&lt; I1, I2 &gt;</label>
+        <link refid="classQuantLib_1_1Interpolation_1_1templateImpl"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::detail::LagrangeInterpolationImpl&lt; I1, I2 &gt;</label>
+        <link refid="classQuantLib_1_1detail_1_1LagrangeInterpolationImpl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QuantLib::detail::UpdatedYInterpolation</label>
+        <link refid="classQuantLib_1_1detail_1_1UpdatedYInterpolation"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="5">
+        <label>QuantLib::Array</label>
+        <link refid="classQuantLib_1_1Array"/>
+      </node>
+      <node id="3">
+        <label>QuantLib::Interpolation::Impl</label>
+        <link refid="classQuantLib_1_1Interpolation_1_1Impl"/>
+      </node>
+      <node id="2">
+        <label>QuantLib::Interpolation::templateImpl&lt; I1, I2 &gt;</label>
+        <link refid="classQuantLib_1_1Interpolation_1_1templateImpl"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QuantLib::detail::LagrangeInterpolationImpl&lt; I1, I2 &gt;</label>
+        <link refid="classQuantLib_1_1detail_1_1LagrangeInterpolationImpl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>lambda_</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QuantLib::detail::UpdatedYInterpolation</label>
+        <link refid="classQuantLib_1_1detail_1_1UpdatedYInterpolation"/>
+      </node>
+    </collaborationgraph>
+    <location file="ql/math/interpolations/lagrangeinterpolation.hpp" line="44" column="9" bodyfile="ql/math/interpolations/lagrangeinterpolation.hpp" bodystart="46" bodyend="135"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1detail_1_1LagrangeInterpolationImpl_1a0fa90b02def031db247199dc17e4e4ba" prot="private" virt="non-virtual"><scope>QuantLib::detail::LagrangeInterpolationImpl</scope><name>_value</name></member>
+      <member refid="classQuantLib_1_1detail_1_1LagrangeInterpolationImpl_1a28b53c8f5fdee7f58e67581bf35a5149" prot="public" virt="virtual"><scope>QuantLib::detail::LagrangeInterpolationImpl</scope><name>derivative</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1_1templateImpl_1aa1a96576884df7179393ce68928a85c2" prot="public" virt="virtual"><scope>QuantLib::detail::LagrangeInterpolationImpl</scope><name>isInRange</name></member>
+      <member refid="classQuantLib_1_1detail_1_1LagrangeInterpolationImpl_1aa33bc66a924d4017a886007cecb29850" prot="public" virt="non-virtual"><scope>QuantLib::detail::LagrangeInterpolationImpl</scope><name>LagrangeInterpolationImpl</name></member>
+      <member refid="classQuantLib_1_1detail_1_1LagrangeInterpolationImpl_1abe86a119dcff5cfe8b28642485bda8f7" prot="private" virt="non-virtual"><scope>QuantLib::detail::LagrangeInterpolationImpl</scope><name>lambda_</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1_1templateImpl_1a2884268a09723fa87ec7146750d2d46c" prot="protected" virt="non-virtual"><scope>QuantLib::detail::LagrangeInterpolationImpl</scope><name>locate</name></member>
+      <member refid="classQuantLib_1_1detail_1_1LagrangeInterpolationImpl_1ad7499993143d91f6f5cec7700062378e" prot="private" virt="non-virtual"><scope>QuantLib::detail::LagrangeInterpolationImpl</scope><name>n_</name></member>
+      <member refid="classQuantLib_1_1detail_1_1LagrangeInterpolationImpl_1a7f44f3655075034e85c17b9aa2272f58" prot="public" virt="virtual"><scope>QuantLib::detail::LagrangeInterpolationImpl</scope><name>primitive</name></member>
+      <member refid="classQuantLib_1_1detail_1_1LagrangeInterpolationImpl_1ae9a88561091ee1b5a7a1b15a1fb1d59a" prot="public" virt="virtual"><scope>QuantLib::detail::LagrangeInterpolationImpl</scope><name>secondDerivative</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1_1templateImpl_1afd70a6545d200055b1e7fd3ac6cc3f45" prot="public" virt="non-virtual"><scope>QuantLib::detail::LagrangeInterpolationImpl</scope><name>templateImpl</name></member>
+      <member refid="classQuantLib_1_1detail_1_1LagrangeInterpolationImpl_1ae9c4548a9cefbd71c4ce985073f7387a" prot="public" virt="virtual"><scope>QuantLib::detail::LagrangeInterpolationImpl</scope><name>update</name></member>
+      <member refid="classQuantLib_1_1detail_1_1LagrangeInterpolationImpl_1a3d4c870fdfa1f3c3b1fc696a039374c7" prot="public" virt="virtual"><scope>QuantLib::detail::LagrangeInterpolationImpl</scope><name>value</name></member>
+      <member refid="classQuantLib_1_1detail_1_1LagrangeInterpolationImpl_1adf2359d089ed2fad62956104a71b00f6" prot="public" virt="virtual"><scope>QuantLib::detail::LagrangeInterpolationImpl</scope><name>value</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1_1templateImpl_1a4224a56b414e92505e5b1e2b83282d80" prot="protected" virt="non-virtual"><scope>QuantLib::detail::LagrangeInterpolationImpl</scope><name>xBegin_</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1_1templateImpl_1ae31c6c02580a0b25b0e9c64fad90604a" prot="protected" virt="non-virtual"><scope>QuantLib::detail::LagrangeInterpolationImpl</scope><name>xEnd_</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1_1templateImpl_1af2ee8595e097522bbac466d2e036a536" prot="public" virt="virtual"><scope>QuantLib::detail::LagrangeInterpolationImpl</scope><name>xMax</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1_1templateImpl_1adfc3310f6f3ea269f80c21cbc9cd2480" prot="public" virt="virtual"><scope>QuantLib::detail::LagrangeInterpolationImpl</scope><name>xMin</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1_1templateImpl_1ae58e26280490791d1704b518e4461713" prot="public" virt="virtual"><scope>QuantLib::detail::LagrangeInterpolationImpl</scope><name>xValues</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1_1templateImpl_1adef37d429d0186d836878f1cc9ae3c71" prot="protected" virt="non-virtual"><scope>QuantLib::detail::LagrangeInterpolationImpl</scope><name>yBegin_</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1_1templateImpl_1a745482b424f51c5726caa0cc6412f1a0" prot="public" virt="virtual"><scope>QuantLib::detail::LagrangeInterpolationImpl</scope><name>yValues</name></member>
+      <member refid="classQuantLib_1_1Interpolation_1_1Impl_1aac2065f5fde38ec969bdcb7a99430e92" prot="public" virt="virtual"><scope>QuantLib::detail::LagrangeInterpolationImpl</scope><name>~Impl</name></member>
+      <member refid="classQuantLib_1_1detail_1_1UpdatedYInterpolation_1a04c24114716776bfed2ccd8507574061" prot="public" virt="virtual"><scope>QuantLib::detail::LagrangeInterpolationImpl</scope><name>~UpdatedYInterpolation</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

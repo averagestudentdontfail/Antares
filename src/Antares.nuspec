@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Antares</id>
+    <version>1</version>
+    <title>Antares</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A free and open-source library for quantitative finance</description>
+    <releaseNotes>Version 1.9.1.0</releaseNotes>
+    <tags>Antares</tags>
+  </metadata>
+    <files>
+      <file src="bin\Release\net40\Antares.dll" target="lib\net40\Antares.dll" />
+	   <file src="bin\Release\net45\Antares.dll" target="lib\net45\Antares.dll" />
+	   <file src="bin\Release\netstandard1.1\Antares.dll" target="lib\netstandard1.1\Antares.dll" />	
+    </files>
+</package>

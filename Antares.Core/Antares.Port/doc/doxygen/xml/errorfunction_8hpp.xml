@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="errorfunction_8hpp" kind="file" language="C++">
+    <compoundname>errorfunction.hpp</compoundname>
+    <includes refid="types_8hpp" local="no">ql/types.hpp</includes>
+    <includes local="no">functional</includes>
+    <includedby refid="normaldistribution_8hpp" local="no">ql/math/distributions/normaldistribution.hpp</includedby>
+    <includedby refid="errorfunction_8cpp" local="no">ql/math/errorfunction.cpp</includedby>
+    <incdepgraph>
+      <node id="6">
+        <label>ql/config.ansi.hpp</label>
+        <link refid="config_8ansi_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ql/math/errorfunction.hpp</label>
+        <link refid="errorfunction_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>ql/mathconstants.hpp</label>
+        <link refid="mathconstants_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>ql/qldefines.hpp</label>
+        <link refid="qldefines_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ql/types.hpp</label>
+        <link refid="types_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>ql/userconfig.hpp</label>
+        <link refid="userconfig_8hpp"/>
+      </node>
+      <node id="4">
+        <label>boost/config.hpp</label>
+      </node>
+      <node id="5">
+        <label>boost/version.hpp</label>
+      </node>
+      <node id="9">
+        <label>cmath</label>
+      </node>
+      <node id="11">
+        <label>cstddef</label>
+      </node>
+      <node id="12">
+        <label>functional</label>
+      </node>
+      <node id="10">
+        <label>limits</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>ql/math/distributions/normaldistribution.cpp</label>
+        <link refid="normaldistribution_8cpp"/>
+      </node>
+      <node id="2">
+        <label>ql/math/distributions/normaldistribution.hpp</label>
+        <link refid="normaldistribution_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>ql/math/errorfunction.cpp</label>
+        <link refid="errorfunction_8cpp"/>
+      </node>
+      <node id="1">
+        <label>ql/math/errorfunction.hpp</label>
+        <link refid="errorfunction_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ql/methods/finitedifferences/meshers/fdmblackscholesmesher.cpp</label>
+        <link refid="fdmblackscholesmesher_8cpp"/>
+      </node>
+      <node id="5">
+        <label>ql/pricingengines/blackcalculator.cpp</label>
+        <link refid="blackcalculator_8cpp"/>
+      </node>
+      <node id="6">
+        <label>ql/pricingengines/vanilla/qdfpamericanengine.cpp</label>
+        <link refid="qdfpamericanengine_8cpp"/>
+      </node>
+      <node id="8">
+        <label>ql/pricingengines/vanilla/qdfpamericanengine.hpp</label>
+        <link refid="qdfpamericanengine_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>ql/pricingengines/vanilla/qdplusamericanengine.cpp</label>
+        <link refid="qdplusamericanengine_8cpp"/>
+      </node>
+      <node id="7">
+        <label>ql/pricingengines/vanilla/qdplusamericanengine.hpp</label>
+        <link refid="qdplusamericanengine_8hpp"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classQuantLib_1_1ErrorFunction" prot="public">QuantLib::ErrorFunction</innerclass>
+    <innernamespace refid="namespaceQuantLib">QuantLib</innernamespace>
+    <briefdescription>
+<para>Error function. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>mode:<sp/>c++;<sp/>tab-width:<sp/>4;<sp/>indent-tabs-mode:<sp/>nil;<sp/>c-basic-offset:<sp/>4<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>Copyright<sp/>(C)<sp/>2003<sp/>Ferdinando<sp/>Ametrano</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>QuantLib,<sp/>a<sp/>free-software/open-source<sp/>library</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>for<sp/>financial<sp/>quantitative<sp/>analysts<sp/>and<sp/>developers<sp/>-<sp/>http://quantlib.org/</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>QuantLib<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify<sp/>it</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>QuantLib<sp/>license.<sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>copy<sp/>of<sp/>the<sp/>license<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>please<sp/>email</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>&lt;quantlib-dev@lists.sf.net&gt;.<sp/>The<sp/>license<sp/>is<sp/>also<sp/>available<sp/>online<sp/>at</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>&lt;http://quantlib.org/license.shtml&gt;.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"></highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the<sp/>license<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>quantlib_error_function_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>quantlib_error_function_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="types_8hpp" kindref="compound">ql/types.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceQuantLib" kindref="compound">QuantLib</ref><sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="classQuantLib_1_1ErrorFunction" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classQuantLib_1_1ErrorFunction" kindref="compound">ErrorFunction</ref><sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="38" refid="classQuantLib_1_1ErrorFunction_1a58469f0a5b29dbf2ba0ccdf8fccac1b1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classQuantLib_1_1ErrorFunction_1a58469f0a5b29dbf2ba0ccdf8fccac1b1" kindref="member">ErrorFunction</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1ErrorFunction_1aa98fda634004f849b53672fd99d362eb" kindref="member">operator()</ref>(<ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/>x)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="42" refid="classQuantLib_1_1ErrorFunction_1afb4f1297bffef285b75e5416e1efb37c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1ErrorFunction_1a5d7285bf56395a36c549a46f5d8b1281" kindref="member">tiny</ref>,<sp/><ref refid="classQuantLib_1_1ErrorFunction_1a2cd8521b5a314209ef4440989b054156" kindref="member">one</ref>,<sp/><ref refid="classQuantLib_1_1ErrorFunction_1ac61c57eb3f4307737b2c76ac708cce6c" kindref="member">erx</ref>,<sp/><ref refid="classQuantLib_1_1ErrorFunction_1afb4f1297bffef285b75e5416e1efb37c" kindref="member">efx</ref>,<sp/><ref refid="classQuantLib_1_1ErrorFunction_1a23524296e1ecefad979503e68495fdf9" kindref="member">efx8</ref>;</highlight></codeline>
+<codeline lineno="43" refid="classQuantLib_1_1ErrorFunction_1aef9996248258427a448ac62e60e47166" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1ErrorFunction_1aef9996248258427a448ac62e60e47166" kindref="member">pp0</ref>,<sp/><ref refid="classQuantLib_1_1ErrorFunction_1a1e8b4274b5556d7ec1e56b2d73c223c8" kindref="member">pp1</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1a413893f22d52cea8c01ed81d174131ba" kindref="member">pp2</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1a9198f351d59797934ecc8fb1e65ff7be" kindref="member">pp3</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1a0b85675aca254733a080e5fc0a116e45" kindref="member">pp4</ref>;</highlight></codeline>
+<codeline lineno="44" refid="classQuantLib_1_1ErrorFunction_1aae0b8bb16c73e9aa453ed92be0fcff0e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1ErrorFunction_1aae0b8bb16c73e9aa453ed92be0fcff0e" kindref="member">qq1</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1a75e434869b3c1219d518fbfad4861dab" kindref="member">qq2</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1a44f8849e446d5224e01493e1578708e2" kindref="member">qq3</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1a94bbe0e6089178253fc3a3bdb66009ea" kindref="member">qq4</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1abb655363f9e2bc668d080c27f71d684d" kindref="member">qq5</ref>;</highlight></codeline>
+<codeline lineno="45" refid="classQuantLib_1_1ErrorFunction_1a73da66520999268b1f4ab959e3e88f7b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1ErrorFunction_1a73da66520999268b1f4ab959e3e88f7b" kindref="member">pa0</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1ae7b9cd379a8725595229e746ee3fc7bd" kindref="member">pa1</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1a6d96ad34dc4fe988b293ff92ee490cd8" kindref="member">pa2</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1a55bf2f6073ad6b2ed96a1c749bc97156" kindref="member">pa3</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1ade46282cbdf89bfdaee9356c8b68388e" kindref="member">pa4</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1aa748173cf970c4cb97af852c58c1de02" kindref="member">pa5</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1a78dfcc6b423cbaa7fb7f696a11e60627" kindref="member">pa6</ref>;</highlight></codeline>
+<codeline lineno="46" refid="classQuantLib_1_1ErrorFunction_1ad57760a18dbe7ad70a60e4b5bd43bde1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1ErrorFunction_1ad57760a18dbe7ad70a60e4b5bd43bde1" kindref="member">qa1</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1a59519ac72105c5600968f25b2155277e" kindref="member">qa2</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1a4722da30d3eb21a7c76681a02be89411" kindref="member">qa3</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1aa0982f59c1241c7a374e8771c67d7254" kindref="member">qa4</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1a15a0bab347245311cabed2e70447c871" kindref="member">qa5</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1afeceb8218f598ff6d162aed04041c035" kindref="member">qa6</ref>;</highlight></codeline>
+<codeline lineno="47" refid="classQuantLib_1_1ErrorFunction_1a2c2bb2f718befcb3a6582553bce0d2ea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1ErrorFunction_1a2c2bb2f718befcb3a6582553bce0d2ea" kindref="member">ra0</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1a9dfd295ea4d5f9f4073a01e706bf9d07" kindref="member">ra1</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1af3a340d993bcbb40a2456ea6750a9df5" kindref="member">ra2</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1af17c1336ef2602457b2e19a7db0798ee" kindref="member">ra3</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1a8a911ae11065d85523021319853cc83c" kindref="member">ra4</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1a36c0ba443025f7f6bc4fb08992320e84" kindref="member">ra5</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1a15cd7edfa56dcc0bed2e440822baab3c" kindref="member">ra6</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1ab2ae07b83d555206f9a02b41593faed4" kindref="member">ra7</ref>;</highlight></codeline>
+<codeline lineno="48" refid="classQuantLib_1_1ErrorFunction_1ae7ff8d2a8e3ef594e5e300a72a87aba4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1ErrorFunction_1ae7ff8d2a8e3ef594e5e300a72a87aba4" kindref="member">sa1</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1a5394a6436f255ddb7e39e3b09297b823" kindref="member">sa2</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1a1b0d2c1d2ca46b877a210f3515b884b1" kindref="member">sa3</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1ae8a297f954b287dfb25192f6ac5b1cbb" kindref="member">sa4</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1a1ebd52fb61943ed3f1d0f4348f25f7e9" kindref="member">sa5</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1acf9631546f2645237b8935056abc591a" kindref="member">sa6</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1a840215fbc2bfbcbb17d879a3226157ed" kindref="member">sa7</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1a660454704e2aaa48875c6404f24d8f11" kindref="member">sa8</ref>;</highlight></codeline>
+<codeline lineno="49" refid="classQuantLib_1_1ErrorFunction_1acaf1ea7c909d04498f624765d4403b6e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1ErrorFunction_1acaf1ea7c909d04498f624765d4403b6e" kindref="member">rb0</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1ab006ae0fc1bf81e86221f9e44ec53485" kindref="member">rb1</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1ad4295c2bc8cabe70f36e5017eb0e7bf6" kindref="member">rb2</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1aa040d5917fbbef8534229b2d59e48a4f" kindref="member">rb3</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1a7edaae44779f57f63dd5f59567d5121f" kindref="member">rb4</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1a590d00b8e04598df38002501950bd575" kindref="member">rb5</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1af51eed554f983a19fea1124af0352090" kindref="member">rb6</ref>;</highlight></codeline>
+<codeline lineno="50" refid="classQuantLib_1_1ErrorFunction_1aa6c019a6ec92d48fbd71e27716c03fd0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceQuantLib_1a372ac5c1a422a6b276fe0552d4d83f50" kindref="member">Real</ref><sp/><ref refid="classQuantLib_1_1ErrorFunction_1aa6c019a6ec92d48fbd71e27716c03fd0" kindref="member">sb1</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1a399e21a0e209aa0b744f60b1f3617b3e" kindref="member">sb2</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1a49ab560c96be0006be7a14fde72e54e8" kindref="member">sb3</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1a906ed6af690d1109a236aa8bb0d402d9" kindref="member">sb4</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1afe626401657c54f0bdeac2d37f803c65" kindref="member">sb5</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1a61f488fef3c7fe0fb6bf3480128da662" kindref="member">sb6</ref>,<ref refid="classQuantLib_1_1ErrorFunction_1ae7f28b1861b5ccee658cf9b20d1d18cc" kindref="member">sb7</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="ql/math/errorfunction.hpp"/>
+  </compounddef>
+</doxygen>

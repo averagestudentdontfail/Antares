@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classQuantLib_1_1RelinkableHandle" kind="class" language="C++" prot="public">
+    <compoundname>QuantLib::RelinkableHandle</compoundname>
+    <basecompoundref refid="classQuantLib_1_1Handle" prot="public" virt="non-virtual">QuantLib::Handle&lt; T &gt;</basecompoundref>
+    <includes refid="handle_8hpp" local="no">handle.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classQuantLib_1_1RelinkableHandle_1ab5c67c6176efd48b73bca7e6f9f6c234" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::RelinkableHandle&lt; T &gt;::RelinkableHandle</definition>
+        <argsstring>()</argsstring>
+        <name>RelinkableHandle</name>
+        <qualifiedname>QuantLib::RelinkableHandle::RelinkableHandle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/handle.hpp" line="119" column="9" bodyfile="ql/handle.hpp" bodystart="119" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1RelinkableHandle_1a21f6a91566e734792dd884c836c1c9e5" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::RelinkableHandle&lt; T &gt;::RelinkableHandle</definition>
+        <argsstring>(const ext::shared_ptr&lt; T &gt; &amp;p, bool registerAsObserver=true)</argsstring>
+        <name>RelinkableHandle</name>
+        <qualifiedname>QuantLib::RelinkableHandle::RelinkableHandle</qualifiedname>
+        <param>
+          <type>const ext::shared_ptr&lt; T &gt; &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>registerAsObserver</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/handle.hpp" line="121" column="18" bodyfile="ql/handle.hpp" bodystart="199" bodyend="201"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1RelinkableHandle_1a13116259baa6f3e4793a5c44dcfe93d6" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::RelinkableHandle&lt; T &gt;::RelinkableHandle</definition>
+        <argsstring>(ext::shared_ptr&lt; T &gt; &amp;&amp;p, bool registerAsObserver=true)</argsstring>
+        <name>RelinkableHandle</name>
+        <qualifiedname>QuantLib::RelinkableHandle::RelinkableHandle</qualifiedname>
+        <param>
+          <type>ext::shared_ptr&lt; T &gt; &amp;&amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>registerAsObserver</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/handle.hpp" line="124" column="18" bodyfile="ql/handle.hpp" bodystart="204" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1RelinkableHandle_1a3eb68df0a3bf75915d1ebbd07f4b57e5" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QuantLib::RelinkableHandle&lt; T &gt;::RelinkableHandle</definition>
+        <argsstring>(T *p, bool registerAsObserver=true)</argsstring>
+        <name>RelinkableHandle</name>
+        <qualifiedname>QuantLib::RelinkableHandle::RelinkableHandle</qualifiedname>
+        <param>
+          <type>T *</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>registerAsObserver</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="deprecated_1_deprecated000006"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use one of the constructors taking shared_ptr. Deprecated in version 1.35. </para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/handle.hpp" line="131" column="18" bodyfile="ql/handle.hpp" bodystart="209" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1RelinkableHandle_1a587da0fc55bcc6d41428a01532092630" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::RelinkableHandle&lt; T &gt;::linkTo</definition>
+        <argsstring>(const ext::shared_ptr&lt; T &gt; &amp;h, bool registerAsObserver=true)</argsstring>
+        <name>linkTo</name>
+        <qualifiedname>QuantLib::RelinkableHandle::linkTo</qualifiedname>
+        <param>
+          <type>const ext::shared_ptr&lt; T &gt; &amp;</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>registerAsObserver</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/handle.hpp" line="134" column="14" bodyfile="ql/handle.hpp" bodystart="214" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1RelinkableHandle_1af25aac62146be151fa5f3184ad10ad57" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::RelinkableHandle&lt; T &gt;::linkTo</definition>
+        <argsstring>(ext::shared_ptr&lt; T &gt; &amp;&amp;h, bool registerAsObserver=true)</argsstring>
+        <name>linkTo</name>
+        <qualifiedname>QuantLib::RelinkableHandle::linkTo</qualifiedname>
+        <param>
+          <type>ext::shared_ptr&lt; T &gt; &amp;&amp;</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>registerAsObserver</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/handle.hpp" line="136" column="14" bodyfile="ql/handle.hpp" bodystart="220" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="classQuantLib_1_1RelinkableHandle_1ad009857a5e19d1433de9428b7baa8ce8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuantLib::RelinkableHandle&lt; T &gt;::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <qualifiedname>QuantLib::RelinkableHandle::reset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ql/handle.hpp" line="138" column="14" bodyfile="ql/handle.hpp" bodystart="226" bodyend="228"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Relinkable handle to an observable. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>An instance of this class can be relinked so that it points to another observable. The change will be propagated to all handles that were created as copies of such instance.</para>
+<para><simplesect kind="pre"><para>Class T must inherit from <ref refid="classQuantLib_1_1Observable" kindref="compound">Observable</ref></para>
+</simplesect>
+<simplesect kind="warning"><para>see the <ref refid="classQuantLib_1_1Handle" kindref="compound">Handle</ref> documentation for issues relatives to <computeroutput>registerAsObserver</computeroutput>. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>QuantLib::Handle&lt; T &gt;</label>
+        <link refid="classQuantLib_1_1Handle"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::RelinkableHandle&lt; T &gt;</label>
+        <link refid="classQuantLib_1_1RelinkableHandle"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>QuantLib::Handle&lt; T &gt;</label>
+        <link refid="classQuantLib_1_1Handle"/>
+      </node>
+      <node id="1">
+        <label>QuantLib::RelinkableHandle&lt; T &gt;</label>
+        <link refid="classQuantLib_1_1RelinkableHandle"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ql/handle.hpp" line="117" column="5" bodyfile="ql/handle.hpp" bodystart="117" bodyend="139"/>
+    <listofallmembers>
+      <member refid="classQuantLib_1_1Handle_1aaec4d63079c7a70267a6f3db80176e98" prot="public" virt="non-virtual"><scope>QuantLib::RelinkableHandle</scope><name>currentLink</name></member>
+      <member refid="classQuantLib_1_1Handle_1ac2d6e7fa9fcb2b163c0cf80061de9da9" prot="public" virt="non-virtual"><scope>QuantLib::RelinkableHandle</scope><name>empty</name></member>
+      <member refid="classQuantLib_1_1Handle_1a552d4f5f9aff20a097ea119a97bb1807" prot="public" virt="non-virtual"><scope>QuantLib::RelinkableHandle</scope><name>Handle</name></member>
+      <member refid="classQuantLib_1_1Handle_1aac3c2b4574d6a4b2004919c04364bb8c" prot="public" virt="non-virtual"><scope>QuantLib::RelinkableHandle</scope><name>Handle</name></member>
+      <member refid="classQuantLib_1_1Handle_1a4acb98146c0c4fc20487230960fe3637" prot="public" virt="non-virtual"><scope>QuantLib::RelinkableHandle</scope><name>Handle</name></member>
+      <member refid="classQuantLib_1_1Handle_1a36c6ffefb13247aad4233dea20b52238" prot="protected" virt="non-virtual"><scope>QuantLib::RelinkableHandle</scope><name>link_</name></member>
+      <member refid="classQuantLib_1_1RelinkableHandle_1a587da0fc55bcc6d41428a01532092630" prot="public" virt="non-virtual"><scope>QuantLib::RelinkableHandle</scope><name>linkTo</name></member>
+      <member refid="classQuantLib_1_1RelinkableHandle_1af25aac62146be151fa5f3184ad10ad57" prot="public" virt="non-virtual"><scope>QuantLib::RelinkableHandle</scope><name>linkTo</name></member>
+      <member refid="classQuantLib_1_1Handle_1a197ce6691cfe16fd889224dc7b35f713" prot="public" virt="non-virtual"><scope>QuantLib::RelinkableHandle</scope><name>operator ext::shared_ptr&lt; Observable &gt;</name></member>
+      <member refid="classQuantLib_1_1Handle_1ab4af58d26e46c9081b2ed29659144592" prot="public" virt="non-virtual"><scope>QuantLib::RelinkableHandle</scope><name>operator!=</name></member>
+      <member refid="classQuantLib_1_1Handle_1a55fad8baef8f2491d52ba1ed7db1c479" prot="public" virt="non-virtual"><scope>QuantLib::RelinkableHandle</scope><name>operator*</name></member>
+      <member refid="classQuantLib_1_1Handle_1a68b12bc702ca553e5526ee5344c911d5" prot="public" virt="non-virtual"><scope>QuantLib::RelinkableHandle</scope><name>operator-&gt;</name></member>
+      <member refid="classQuantLib_1_1Handle_1a5892b52bb2fd21113abd73980f8d9ecd" prot="public" virt="non-virtual"><scope>QuantLib::RelinkableHandle</scope><name>operator&lt;</name></member>
+      <member refid="classQuantLib_1_1Handle_1aa65f2cac21ccc76631fa9cafe3db9859" prot="public" virt="non-virtual"><scope>QuantLib::RelinkableHandle</scope><name>operator==</name></member>
+      <member refid="classQuantLib_1_1RelinkableHandle_1ab5c67c6176efd48b73bca7e6f9f6c234" prot="public" virt="non-virtual"><scope>QuantLib::RelinkableHandle</scope><name>RelinkableHandle</name></member>
+      <member refid="classQuantLib_1_1RelinkableHandle_1a21f6a91566e734792dd884c836c1c9e5" prot="public" virt="non-virtual"><scope>QuantLib::RelinkableHandle</scope><name>RelinkableHandle</name></member>
+      <member refid="classQuantLib_1_1RelinkableHandle_1a13116259baa6f3e4793a5c44dcfe93d6" prot="public" virt="non-virtual"><scope>QuantLib::RelinkableHandle</scope><name>RelinkableHandle</name></member>
+      <member refid="classQuantLib_1_1RelinkableHandle_1a3eb68df0a3bf75915d1ebbd07f4b57e5" prot="public" virt="non-virtual"><scope>QuantLib::RelinkableHandle</scope><name>RelinkableHandle</name></member>
+      <member refid="classQuantLib_1_1RelinkableHandle_1ad009857a5e19d1433de9428b7baa8ce8" prot="public" virt="non-virtual"><scope>QuantLib::RelinkableHandle</scope><name>reset</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

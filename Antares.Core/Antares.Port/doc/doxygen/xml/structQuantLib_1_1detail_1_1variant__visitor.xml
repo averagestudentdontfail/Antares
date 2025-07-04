@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structQuantLib_1_1detail_1_1variant__visitor" kind="struct" language="C++" prot="public">
+    <compoundname>QuantLib::detail::variant_visitor</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QuantLib::detail::Ts</basecompoundref>
+    <includes refid="variants_8hpp" local="no">variants.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>class...</type>
+        <declname>Ts</declname>
+        <defname>Ts</defname>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>QuantLib::detail::variant_visitor&lt; Ts &gt;</label>
+        <link refid="structQuantLib_1_1detail_1_1variant__visitor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Ts</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>QuantLib::detail::variant_visitor&lt; Ts &gt;</label>
+        <link refid="structQuantLib_1_1detail_1_1variant__visitor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Ts</label>
+      </node>
+    </collaborationgraph>
+    <location file="ql/utilities/variants.hpp" line="10" column="5" bodyfile="ql/utilities/variants.hpp" bodystart="10" bodyend="12"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
