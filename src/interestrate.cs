@@ -179,4 +179,183 @@ namespace Antares
         public static implicit operator Rate(InterestRate ir) => ir.rate();
         #endregion
 
-        #region Discount/compound
+        #region Discount/compound factor calculations
+        /// <summary>
+        /// Discount factor implied by the rate compounded between two dates.
+        /// </summary>
+        public DiscountFactor discountFactor(Date d1, Date d2)
+        {
+            if (!_rate.HasValue)
+                throw new InvalidOperationException("null interest rate");
+            return discountFactor(_dayCounter.yearFraction(d1, d2));
+        }
+
+        /// <summary>
+        /// Discount factor implied by the rate compounded for a given time.
+        /// </summary>
+        public DiscountFactor discountFactor(Time t)
+        {
+            return 1.0 / compoundFactor(t);
+        }
+
+        /// <summary>
+        /// Compound factor implied by the rate compounded between two dates.
+        /// </summary>
+        public Real compoundFactor(Date d1, Date d2)
+        {
+            if (!_rate.HasValue)
+                throw new InvalidOperationException("null interest rate");
+            return compoundFactor(_dayCounter.yearFraction(d1, d2));
+        }
+
+        /// <summary>
+        /// Compound factor implied by the rate compounded for a given time.
+        /// </summary>
+        public Real compoundFactor(Time t)
+        {
+            if (!_rate.HasValue)
+                throw new InvalidOperationException("null interest rate");
+
+            QL.Require(t >= 0.0, "negative time not allowed");
+
+            switch (_compounding)
+            {
+                case Compounding.Simple:
+                    return 1.0 + _rate.Value * t;
+                case Compounding.Compounded:
+                    return Math.Pow(1.0 + _rate.Value / _frequencyValue, _frequencyValue * t);
+                case Compounding.Continuous:
+                    return Math.Exp(_rate.Value * t);
+                case Compounding.SimpleThenCompounded:
+                    if (t <= 1.0 / _frequencyValue)
+                        return 1.0 + _rate.Value * t;
+                    else
+                        return Math.Pow(1.0 + _rate.Value / _frequencyValue, _frequencyValue * t);
+                case Compounding.CompoundedThenSimple:
+                    if (t > 1.0 / _frequencyValue)
+                        return 1.0 + _rate.Value * t;
+                    else
+                        return Math.Pow(1.0 + _rate.Value / _frequencyValue, _frequencyValue * t);
+                default:
+                    QL.Fail($"Unknown compounding convention ({_compounding})");
+                    return 0.0; // Never reached
+            }
+        }
+        #endregion
+
+        #region Equivalent rate calculations
+        /// <summary>
+        /// Equivalent interest rate for a different compounding convention.
+        /// </summary>
+        public InterestRate equivalentRate(Compounding compounding, Frequency frequency, Time t)
+        {
+            return impliedRate(compoundFactor(t), t, _dayCounter, compounding, frequency);
+        }
+
+        /// <summary>
+        /// Equivalent interest rate for a different day count convention.
+        /// </summary>
+        public InterestRate equivalentRate(DayCounter dayCounter, Compounding compounding, Frequency frequency, Date d1, Date d2)
+        {
+            Time t1 = _dayCounter.yearFraction(d1, d2);
+            Time t2 = dayCounter.yearFraction(d1, d2);
+            return impliedRate(compoundFactor(t1), t2, dayCounter, compounding, frequency);
+        }
+        #endregion
+
+        #region Static utility methods
+        /// <summary>
+        /// Implied interest rate for a given compound factor at a given time.
+        /// </summary>
+        public static InterestRate impliedRate(Real compound, Time t, DayCounter dayCounter, Compounding compounding, Frequency frequency = Frequency.Annual)
+        {
+            QL.Require(compound > 0.0, "positive compound factor required");
+
+            Rate r;
+            if (compound == 1.0)
+            {
+                QL.Require(t >= 0.0, "non negative time (" + t + ") required");
+                r = 0.0;
+            }
+            else
+            {
+                QL.Require(t > 0.0, "positive time (" + t + ") required");
+                switch (compounding)
+                {
+                    case Compounding.Simple:
+                        r = (compound - 1.0) / t;
+                        break;
+                    case Compounding.Compounded:
+                        r = (Math.Pow(compound, 1.0 / ((double)frequency * t)) - 1.0) * (double)frequency;
+                        break;
+                    case Compounding.Continuous:
+                        r = Math.Log(compound) / t;
+                        break;
+                    case Compounding.SimpleThenCompounded:
+                        if (t <= 1.0 / (double)frequency)
+                            r = (compound - 1.0) / t;
+                        else
+                            r = (Math.Pow(compound, 1.0 / ((double)frequency * t)) - 1.0) * (double)frequency;
+                        break;
+                    case Compounding.CompoundedThenSimple:
+                        if (t > 1.0 / (double)frequency)
+                            r = (compound - 1.0) / t;
+                        else
+                            r = (Math.Pow(compound, 1.0 / ((double)frequency * t)) - 1.0) * (double)frequency;
+                        break;
+                    default:
+                        QL.Fail($"Unknown compounding convention ({compounding})");
+                        r = 0.0; // Never reached
+                        break;
+                }
+            }
+
+            return new InterestRate(r, dayCounter, compounding, frequency);
+        }
+
+        /// <summary>
+        /// Implied interest rate for a given compound factor between two dates.
+        /// </summary>
+        public static InterestRate impliedRate(Real compound, Date d1, Date d2, DayCounter dayCounter, Compounding compounding, Frequency frequency = Frequency.Annual)
+        {
+            QL.Require(d1 <= d2, "d1 (" + d1 + ") later than d2 (" + d2 + ")");
+            Time t = dayCounter.yearFraction(d1, d2);
+            return impliedRate(compound, t, dayCounter, compounding, frequency);
+        }
+        #endregion
+
+        #region String representation
+        /// <summary>
+        /// Returns a string representation of the interest rate.
+        /// </summary>
+        public override string ToString()
+        {
+            if (!_rate.HasValue)
+                return "null interest rate";
+
+            var result = new StringBuilder();
+            result.AppendFormat("{0:F6} % ", _rate.Value * 100);
+            result.Append(_dayCounter.name());
+            result.Append(" ");
+            result.Append(_compounding.ToEnumString());
+
+            if (_freqMakesSense)
+            {
+                result.Append(" compounding");
+                switch (_compounding)
+                {
+                    case Compounding.SimpleThenCompounded:
+                    case Compounding.CompoundedThenSimple:
+                        result.AppendFormat(" {0} frequency", frequency().ToEnumString());
+                        break;
+                    case Compounding.Compounded:
+                        result.AppendFormat(" {0} frequency", frequency().ToEnumString());
+                        break;
+                }
+            }
+
+            return result.ToString();
+        }
+        #endregion
+    }
+}
