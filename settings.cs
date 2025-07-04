@@ -27,7 +27,6 @@ namespace Antares
         }
 
         public T? Value
-        public T? Value
         {
             get => _value;
             set
@@ -163,7 +162,7 @@ namespace Antares
         /// </remarks>
         public static Date EvaluationDate
         {
-            get => _evaluationDate.Value;
+            get => _evaluationDate.Value ?? Date.Today;
             set => _evaluationDate.Value = value;
         }
 
@@ -173,7 +172,7 @@ namespace Antares
         /// <remarks>
         /// This affects the behavior of event.HasOccurred() when called on the evaluation date.
         /// </remarks>
-        public static bool IncludeReferenceDateEvents
+        public static bool IncludeReferenceDateEvents // Fix: Operator '??' cannot be applied to operands of type 'bool' and 'bool'
         {
             get => _includeReferenceDateEvents.Value;
             set => _includeReferenceDateEvents.Value = value;
@@ -200,7 +199,7 @@ namespace Antares
         /// </remarks>
         public static bool EnforcesTodaysHistoricFixings
         {
-            get => _enforcesTodaysHistoricFixings.Value;
+            get => _enforcesTodaysHistoricFixings.Value ?? false;
             set => _enforcesTodaysHistoricFixings.Value = value;
         }
 
