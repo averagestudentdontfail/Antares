@@ -7,26 +7,6 @@ using System.Diagnostics;
 namespace Antares.Time
 {
     /// <summary>
-    /// Frequency of events.
-    /// </summary>
-    public enum Frequency
-    {
-        NoFrequency = -1,      //!< null frequency
-        Once = 0,              //!< only once, e.g., a zero-coupon
-        Annual = 1,            //!< once a year
-        Semiannual = 2,        //!< twice a year
-        EveryFourthMonth = 3,  //!< every fourth month
-        Quarterly = 4,         //!< every third month
-        Bimonthly = 6,         //!< every second month
-        Monthly = 12,          //!< once a month
-        EveryFourthWeek = 13,  //!< every fourth week
-        Biweekly = 26,         //!< every second week
-        Weekly = 52,           //!< once a week
-        Daily = 365,           //!< once a day
-        OtherFrequency = 999   //!< some other unknown frequency
-    }
-
-    /// <summary>
     /// Represents a period of time defined by a length and a time unit.
     /// This is an immutable struct with value semantics.
     /// </summary>
@@ -78,17 +58,9 @@ namespace Antares.Time
                     Length = 1;
                     break;
                 case Frequency.OtherFrequency:
-                    QL.Fail("unknown frequency");
-                    // The following is unreachable but required by the compiler
-                    Units = default;
-                    Length = default;
-                    break;
+                    throw new InvalidOperationException("unknown frequency");
                 default:
-                    QL.Fail($"unknown frequency ({f})");
-                    // The following is unreachable but required by the compiler
-                    Units = default;
-                    Length = default;
-                    break;
+                    throw new InvalidOperationException($"unknown frequency ({f})");
             }
         }
         #endregion
@@ -121,8 +93,7 @@ namespace Antares.Time
                 case TimeUnit.Days:
                     return length == 1 ? Frequency.Daily : Frequency.OtherFrequency;
                 default:
-                    QL.Fail($"unknown time unit ({Units})");
-                    return default; // Unreachable
+                    throw new InvalidOperationException($"unknown time unit ({Units})");
             }
         }
 
@@ -154,8 +125,7 @@ namespace Antares.Time
                 case TimeUnit.Years:
                     break; // Already in normalized form
                 default:
-                    QL.Fail($"unknown time unit ({units})");
-                    break;
+                    throw new InvalidOperationException($"unknown time unit ({units})");
             }
             return new Period(length, units);
         }
@@ -209,7 +179,9 @@ namespace Antares.Time
 
         public static Period operator /(Period p, int n)
         {
-            QL.Require(n != 0, "cannot be divided by zero");
+            if (n == 0)
+                throw new DivideByZeroException("cannot be divided by zero");
+            
             if (p.Length % n == 0)
             {
                 return new Period(p.Length / n, p.Units);
@@ -230,7 +202,9 @@ namespace Antares.Time
                     break;
             }
 
-            QL.Require(length % n == 0, $"{p} cannot be divided by {n}");
+            if (length % n != 0)
+                throw new ArgumentException($"{p} cannot be divided by {n}");
+            
             return new Period(length / n, units);
         }
         #endregion
@@ -252,8 +226,7 @@ namespace Antares.Time
 
             if (p1Max < p2Min) return true;
             if (p1Min > p2Max) return false;
-            QL.Fail($"undecidable comparison between {p1} and {p2}");
-            return false; // Unreachable
+            throw new InvalidOperationException($"undecidable comparison between {p1} and {p2}");
         }
 
         private static (int min, int max) DaysMinMax(Period p)

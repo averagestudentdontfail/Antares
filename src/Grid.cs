@@ -1,4 +1,4 @@
-// TimeGrid.cs
+// doubleGrid.cs
 
 using System;
 using System.Collections;
@@ -30,27 +30,27 @@ namespace Antares
     }
 
     /// <summary>
-    /// Time grid class
+    /// double grid class
     /// </summary>
     /// <remarks>
     /// The original C++ code limited the grid to positive times. This implementation
     /// maintains that constraint.
     /// </remarks>
-    public class TimeGrid : IReadOnlyList<Time>
+    public class doubleGrid : IReadOnlyList<double>
     {
-        private readonly List<Time> _times;
-        private readonly List<Time> _dt;
-        private readonly List<Time> _mandatoryTimes;
+        private readonly List<double> _times;
+        private readonly List<double> _dt;
+        private readonly List<double> _mandatorydoubles;
 
         #region Constructors
         /// <summary>
         /// Creates an empty time grid.
         /// </summary>
-        public TimeGrid()
+        public doubleGrid()
         {
-            _times = new List<Time>();
-            _dt = new List<Time>();
-            _mandatoryTimes = new List<Time>();
+            _times = new List<double>();
+            _dt = new List<double>();
+            _mandatorydoubles = new List<double>();
         }
 
         /// <summary>
@@ -58,19 +58,19 @@ namespace Antares
         /// </summary>
         /// <param name="end">The final time of the grid.</param>
         /// <param name="steps">The number of steps in the grid.</param>
-        public TimeGrid(Time end, Size steps)
+        public doubleGrid(double end, Size steps)
         {
             if (end <= 0.0)
                 throw new ArgumentException("Negative or zero end time not allowed");
 
-            Time dt = end / steps;
-            _times = new List<Time>(steps + 1);
+            double dt = end / steps;
+            _times = new List<double>(steps + 1);
             for (Size i = 0; i <= steps; i++)
                 _times.Add(dt * i);
 
-            _mandatoryTimes = new List<Time> { end };
+            _mandatorydoubles = new List<double> { end };
 
-            _dt = new List<Time>(steps);
+            _dt = new List<double>(steps);
             for(int i = 0; i < steps; ++i)
                 _dt.Add(dt);
         }
@@ -81,34 +81,34 @@ namespace Antares
         /// No additional points are added.
         /// </summary>
         /// <param name="times">The sequence of mandatory times.</param>
-        public TimeGrid(IEnumerable<Time> times)
+        public doubleGrid(IEnumerable<double> times)
         {
-            _mandatoryTimes = times.ToList();
-            if (_mandatoryTimes.Count == 0)
+            _mandatorydoubles = times.ToList();
+            if (_mandatorydoubles.Count == 0)
                 throw new ArgumentException("Empty time sequence");
 
-            _mandatoryTimes.Sort();
-            if (_mandatoryTimes[0] < 0.0)
+            _mandatorydoubles.Sort();
+            if (_mandatorydoubles[0] < 0.0)
                 throw new ArgumentException("Negative times not allowed");
 
             // Remove adjacent duplicates
-            var uniqueMandatoryTimes = new List<Time> { _mandatoryTimes[0] };
-            for (int i = 1; i < _mandatoryTimes.Count; ++i)
+            var uniqueMandatorydoubles = new List<double> { _mandatorydoubles[0] };
+            for (int i = 1; i < _mandatorydoubles.Count; ++i)
             {
-                if (!Comparison.CloseEnough(_mandatoryTimes[i], uniqueMandatoryTimes.Last()))
+                if (!Comparison.CloseEnough(_mandatorydoubles[i], uniqueMandatorydoubles.Last()))
                 {
-                    uniqueMandatoryTimes.Add(_mandatoryTimes[i]);
+                    uniqueMandatorydoubles.Add(_mandatorydoubles[i]);
                 }
             }
-            _mandatoryTimes = uniqueMandatoryTimes;
+            _mandatorydoubles = uniqueMandatorydoubles;
 
-            _times = new List<Time>();
-            if (_mandatoryTimes[0] > 0.0)
+            _times = new List<double>();
+            if (_mandatorydoubles[0] > 0.0)
                 _times.Add(0.0);
 
-            _times.AddRange(_mandatoryTimes);
+            _times.AddRange(_mandatorydoubles);
 
-            _dt = new List<Time>(_times.Count > 0 ? _times.Count - 1 : 0);
+            _dt = new List<double>(_times.Count > 0 ? _times.Count - 1 : 0);
             for (int i = 1; i < _times.Count; ++i)
                 _dt.Add(_times[i] - _times[i - 1]);
         }
@@ -122,35 +122,35 @@ namespace Antares
         /// </summary>
         /// <param name="times">The sequence of mandatory times.</param>
         /// <param name="steps">The total number of steps to aim for.</param>
-        public TimeGrid(IEnumerable<Time> mandatoryTimes, Size steps)
+        public doubleGrid(IEnumerable<double> mandatorydoubles, Size steps)
         {
-            _mandatoryTimes = mandatoryTimes.ToList();
-            if (_mandatoryTimes.Count == 0)
+            _mandatorydoubles = mandatorydoubles.ToList();
+            if (_mandatorydoubles.Count == 0)
                 throw new ArgumentException("Empty time sequence");
 
-            _mandatoryTimes.Sort();
-            if (_mandatoryTimes[0] < 0.0)
+            _mandatorydoubles.Sort();
+            if (_mandatorydoubles[0] < 0.0)
                 throw new ArgumentException("Negative times not allowed");
 
             // Remove adjacent duplicates
-            var uniqueMandatoryTimes = new List<Time> { _mandatoryTimes[0] };
-            for (int i = 1; i < _mandatoryTimes.Count; ++i)
+            var uniqueMandatorydoubles = new List<double> { _mandatorydoubles[0] };
+            for (int i = 1; i < _mandatorydoubles.Count; ++i)
             {
-                if (!Comparison.CloseEnough(_mandatoryTimes[i], uniqueMandatoryTimes.Last()))
+                if (!Comparison.CloseEnough(_mandatorydoubles[i], uniqueMandatorydoubles.Last()))
                 {
-                    uniqueMandatoryTimes.Add(_mandatoryTimes[i]);
+                    uniqueMandatorydoubles.Add(_mandatorydoubles[i]);
                 }
             }
-            _mandatoryTimes = uniqueMandatoryTimes;
+            _mandatorydoubles = uniqueMandatorydoubles;
 
-            Time last = _mandatoryTimes.Last();
-            Time dtMax;
+            double last = _mandatorydoubles.Last();
+            double dtMax;
 
             if (steps == 0)
             {
-                var diff = new List<Time>();
-                for (int i = 1; i < _mandatoryTimes.Count; ++i)
-                    diff.Add(_mandatoryTimes[i] - _mandatoryTimes[i - 1]);
+                var diff = new List<double>();
+                for (int i = 1; i < _mandatorydoubles.Count; ++i)
+                    diff.Add(_mandatorydoubles[i] - _mandatorydoubles[i - 1]);
                 
                 if (diff.Count == 0)
                     throw new ArgumentException("At least two distinct points required in time grid");
@@ -164,35 +164,35 @@ namespace Antares
                 dtMax = last / steps;
             }
 
-            _times = new List<Time>();
-            Time periodBegin = 0.0;
+            _times = new List<double>();
+            double periodBegin = 0.0;
             _times.Add(periodBegin);
-            foreach (var t in _mandatoryTimes)
+            foreach (var t in _mandatorydoubles)
             {
-                Time periodEnd = t;
+                double periodEnd = t;
                 if (periodEnd > 0.0 && !Comparison.CloseEnough(periodBegin, periodEnd))
                 {
                     // at least 1 step
                     Size nSteps = Math.Max(1, (int)Math.Round((periodEnd - periodBegin) / dtMax));
-                    Time dt = (periodEnd - periodBegin) / nSteps;
+                    double dt = (periodEnd - periodBegin) / nSteps;
                     for (Size n = 1; n <= nSteps; ++n)
                         _times.Add(periodBegin + n * dt);
                 }
                 periodBegin = periodEnd;
             }
 
-            _dt = new List<Time>(_times.Count > 0 ? _times.Count - 1 : 0);
+            _dt = new List<double>(_times.Count > 0 ? _times.Count - 1 : 0);
             for (int i = 1; i < _times.Count; ++i)
                 _dt.Add(_times[i] - _times[i - 1]);
         }
         #endregion
 
-        #region Time grid interface
+        #region double grid interface
         /// <summary>
         /// Returns the index i such that grid[i] = t.
         /// </summary>
         /// <exception cref="ArgumentException">Thrown if t is not on the grid.</exception>
-        public int index(Time t)
+        public int index(double t)
         {
             int i = closestIndex(t);
             if (Comparison.Close(t, _times[i]))
@@ -229,7 +229,7 @@ namespace Antares
         /// <summary>
         /// Returns the index i such that grid[i] is closest to t.
         /// </summary>
-        public int closestIndex(Time t)
+        public int closestIndex(double t)
         {
             int result = _times.BinarySearch(t);
 
@@ -243,8 +243,8 @@ namespace Antares
             if (insertionPoint == _times.Count)
                 return _times.Count - 1;
 
-            Time dt1 = _times[insertionPoint] - t;
-            Time dt2 = t - _times[insertionPoint - 1];
+            double dt1 = _times[insertionPoint] - t;
+            double dt2 = t - _times[insertionPoint - 1];
 
             return dt1 < dt2 ? insertionPoint : insertionPoint - 1;
         }
@@ -252,28 +252,28 @@ namespace Antares
         /// <summary>
         /// Returns the time on the grid closest to the given t.
         /// </summary>
-        public Time closestTime(Time t) => _times[closestIndex(t)];
+        public double closestdouble(double t) => _times[closestIndex(t)];
 
         /// <summary>
         /// Returns the list of mandatory times used to build the grid.
         /// </summary>
-        public IReadOnlyList<Time> mandatoryTimes() => _mandatoryTimes;
+        public IReadOnlyList<double> mandatorydoubles() => _mandatorydoubles;
 
         /// <summary>
         /// Returns the time step delta at a given index i.
         /// </summary>
-        public Time dt(int i) => _dt[i];
+        public double dt(int i) => _dt[i];
         #endregion
 
-        #region IReadOnlyList<Time> implementation
-        public Time this[int index] => _times[index];
+        #region IReadOnlyList<double> implementation
+        public double this[int index] => _times[index];
         public int Count => _times.Count;
         public bool empty() => _times.Count == 0;
         public Size size() => _times.Count;
-        public Time front() => _times[0];
-        public Time back() => _times[_times.Count - 1];
+        public double front() => _times[0];
+        public double back() => _times[_times.Count - 1];
 
-        public IEnumerator<Time> GetEnumerator() => _times.GetEnumerator();
+        public IEnumerator<double> GetEnumerator() => _times.GetEnumerator();
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
         #endregion
     }

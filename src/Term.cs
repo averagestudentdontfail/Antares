@@ -182,7 +182,7 @@ namespace Antares
         /// <summary>
         /// Date/time conversion.
         /// </summary>
-        public Time timeFromReference(Date date) => dayCounter().yearFraction(referenceDate(), date);
+        public double timeFromReference(Date date) => dayCounter().yearFraction(referenceDate(), date);
 
         /// <summary>
         /// The latest date for which the curve can return values.
@@ -192,7 +192,7 @@ namespace Antares
         /// <summary>
         /// The latest time for which the curve can return values.
         /// </summary>
-        public virtual Time maxTime() => timeFromReference(maxDate());
+        public virtual double maxTime() => timeFromReference(maxDate());
 
         /// <summary>
         /// The date at which discount = 1.0 and/or variance = 0.0.
@@ -258,7 +258,7 @@ namespace Antares
         /// <summary>
         /// Time-range check.
         /// </summary>
-        protected void checkRange(Time t, bool extrapolate)
+        protected void checkRange(double t, bool extrapolate)
         {
             if (t < 0.0)
                 throw new ArgumentException($"negative time ({t}) given");

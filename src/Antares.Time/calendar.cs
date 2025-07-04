@@ -3,7 +3,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Antares.Time
 {
@@ -99,7 +98,8 @@ namespace Antares.Time
         /// </summary>
         public Date Adjust(Date d, BusinessDayConvention convention = BusinessDayConvention.Following)
         {
-            QL.Require(d != default, "null date");
+            if (d == default)
+                throw new ArgumentException("null date");
 
             if (convention == BusinessDayConvention.Unadjusted)
                 return d;
@@ -146,7 +146,7 @@ namespace Antares.Time
             }
             else
             {
-                QL.Fail("unknown business-day convention");
+                throw new ArgumentException("unknown business-day convention");
             }
             return d1;
         }
@@ -164,7 +164,8 @@ namespace Antares.Time
         /// </summary>
         public Date Advance(Date d, int n, TimeUnit unit, BusinessDayConvention convention = BusinessDayConvention.Following, bool endOfMonth = false)
         {
-            QL.Require(d != default, "null date");
+            if (d == default)
+                throw new ArgumentException("null date");
 
             if (n == 0)
             {
@@ -223,7 +224,9 @@ namespace Antares.Time
 
         public List<Date> HolidayList(Date from, Date to, bool includeWeekends = false)
         {
-            QL.Require(to >= from, $"'from' date ({from}) must be equal to or earlier than 'to' date ({to})");
+            if (to < from)
+                throw new ArgumentException($"'from' date ({from}) must be equal to or earlier than 'to' date ({to})");
+
             var result = new List<Date>();
             for (Date d = from; d <= to; d++)
             {
@@ -239,12 +242,7 @@ namespace Antares.Time
         public override int GetHashCode() => Name?.GetHashCode() ?? 0;
         public override string ToString() => Name;
 
-        public static bool operator ==(Calendar? c1, Calendar? c2)
-        {
-            if (c1 is null) return c2 is null;
-            return c1.Equals(c2);
-        }
-        public static bool operator !=(Calendar? c1, Calendar? c2) => !(c1 == c2);
+        // Remove the problematic binary operators - these will be handled by Equals() method
         #endregion
     }
 

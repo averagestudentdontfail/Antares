@@ -2,48 +2,11 @@
 
 using System;
 using System.Text;
+using Antares.Time; // Add this using statement for Frequency
 
 namespace Antares
 {
     #region Supporting Types
-
-    /// <summary>
-    /// Frequency enumeration.
-    /// </summary>
-    public enum Frequency
-    {
-        NoFrequency = -1,     //!< null frequency
-        Once = 0,             //!< only once, e.g., a zero-coupon
-        Annual = 1,           //!< once a year
-        Semiannual = 2,       //!< twice a year
-        EveryFourthMonth = 3, //!< every fourth month
-        Quarterly = 4,        //!< every third month
-        Bimonthly = 6,        //!< every second month
-        Monthly = 12,         //!< once a month
-        EveryFourthWeek = 13, //!< every fourth week
-        Biweekly = 26,        //!< every second week
-        Weekly = 52,          //!< once a week
-        Daily = 365,          //!< once a day
-        OtherFrequency = 999  //!< some other unknown frequency
-    }
-
-    /// <summary>
-    /// Provides extension methods for the Frequency enum.
-    /// </summary>
-    public static class FrequencyExtensions
-    {
-        /// <summary>
-        /// Returns a string representation of the frequency.
-        /// </summary>
-        public static string ToEnumString(this Frequency f)
-        {
-            if (Enum.IsDefined(typeof(Frequency), f))
-            {
-                return f.ToString();
-            }
-            throw new ArgumentException($"Unknown frequency: {(int)f}");
-        }
-    }
 
     /// <summary>
     /// Abstract base class for day counter implementations.
@@ -194,7 +157,7 @@ namespace Antares
         /// <summary>
         /// Discount factor implied by the rate compounded for a given time.
         /// </summary>
-        public DiscountFactor discountFactor(Time t)
+        public DiscountFactor discountFactor(double t)
         {
             return 1.0 / compoundFactor(t);
         }
@@ -212,12 +175,13 @@ namespace Antares
         /// <summary>
         /// Compound factor implied by the rate compounded for a given time.
         /// </summary>
-        public Real compoundFactor(Time t)
+        public Real compoundFactor(double t)
         {
             if (!_rate.HasValue)
                 throw new InvalidOperationException("null interest rate");
 
-            QL.Require(t >= 0.0, "negative time not allowed");
+            if (t < 0.0)
+                throw new ArgumentException("negative time not allowed");
 
             switch (_compounding)
             {
@@ -238,8 +202,7 @@ namespace Antares
                     else
                         return Math.Pow(1.0 + _rate.Value / _frequencyValue, _frequencyValue * t);
                 default:
-                    QL.Fail($"Unknown compounding convention ({_compounding})");
-                    return 0.0; // Never reached
+                    throw new ArgumentException($"Unknown compounding convention ({_compounding})");
             }
         }
         #endregion
@@ -248,7 +211,7 @@ namespace Antares
         /// <summary>
         /// Equivalent interest rate for a different compounding convention.
         /// </summary>
-        public InterestRate equivalentRate(Compounding compounding, Frequency frequency, Time t)
+        public InterestRate equivalentRate(Compounding compounding, Frequency frequency, double t)
         {
             return impliedRate(compoundFactor(t), t, _dayCounter, compounding, frequency);
         }
@@ -258,8 +221,8 @@ namespace Antares
         /// </summary>
         public InterestRate equivalentRate(DayCounter dayCounter, Compounding compounding, Frequency frequency, Date d1, Date d2)
         {
-            Time t1 = _dayCounter.yearFraction(d1, d2);
-            Time t2 = dayCounter.yearFraction(d1, d2);
+            double t1 = _dayCounter.yearFraction(d1, d2);
+            double t2 = dayCounter.yearFraction(d1, d2);
             return impliedRate(compoundFactor(t1), t2, dayCounter, compounding, frequency);
         }
         #endregion
@@ -268,19 +231,23 @@ namespace Antares
         /// <summary>
         /// Implied interest rate for a given compound factor at a given time.
         /// </summary>
-        public static InterestRate impliedRate(Real compound, Time t, DayCounter dayCounter, Compounding compounding, Frequency frequency = Frequency.Annual)
+        public static InterestRate impliedRate(Real compound, double t, DayCounter dayCounter, Compounding compounding, Frequency frequency = Frequency.Annual)
         {
-            QL.Require(compound > 0.0, "positive compound factor required");
+            if (compound <= 0.0)
+                throw new ArgumentException("positive compound factor required");
 
             Rate r;
             if (compound == 1.0)
             {
-                QL.Require(t >= 0.0, "non negative time (" + t + ") required");
+                if (t < 0.0)
+                    throw new ArgumentException("non negative time (" + t + ") required");
                 r = 0.0;
             }
             else
             {
-                QL.Require(t > 0.0, "positive time (" + t + ") required");
+                if (t <= 0.0)
+                    throw new ArgumentException("positive time (" + t + ") required");
+                    
                 switch (compounding)
                 {
                     case Compounding.Simple:
@@ -305,9 +272,7 @@ namespace Antares
                             r = (Math.Pow(compound, 1.0 / ((double)frequency * t)) - 1.0) * (double)frequency;
                         break;
                     default:
-                        QL.Fail($"Unknown compounding convention ({compounding})");
-                        r = 0.0; // Never reached
-                        break;
+                        throw new ArgumentException($"Unknown compounding convention ({compounding})");
                 }
             }
 
@@ -319,8 +284,9 @@ namespace Antares
         /// </summary>
         public static InterestRate impliedRate(Real compound, Date d1, Date d2, DayCounter dayCounter, Compounding compounding, Frequency frequency = Frequency.Annual)
         {
-            QL.Require(d1 <= d2, "d1 (" + d1 + ") later than d2 (" + d2 + ")");
-            Time t = dayCounter.yearFraction(d1, d2);
+            if (d1 > d2)
+                throw new ArgumentException("d1 (" + d1 + ") later than d2 (" + d2 + ")");
+            double t = dayCounter.yearFraction(d1, d2);
             return impliedRate(compound, t, dayCounter, compounding, frequency);
         }
         #endregion

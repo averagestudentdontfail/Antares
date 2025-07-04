@@ -23,9 +23,9 @@ namespace Antares
         /// </summary>
         public interface IDiscretization
         {
-            Vector Drift(StochasticProcess process, Time t0, Vector x0, Time dt);
-            Matrix Diffusion(StochasticProcess process, Time t0, Vector x0, Time dt);
-            Matrix Covariance(StochasticProcess process, Time t0, Vector x0, Time dt);
+            Vector Drift(StochasticProcess process, double t0, Vector x0, double dt);
+            Matrix Diffusion(StochasticProcess process, double t0, Vector x0, double dt);
+            Matrix Covariance(StochasticProcess process, double t0, Vector x0, double dt);
         }
 
         protected readonly IDiscretization? _discretization;
@@ -59,17 +59,17 @@ namespace Antares
         /// <summary>
         /// Returns the drift part of the equation, i.e., μ(t, x_t).
         /// </summary>
-        public abstract Vector drift(Time t, Vector x);
+        public abstract Vector drift(double t, Vector x);
 
         /// <summary>
         /// Returns the diffusion part of the equation, i.e., σ(t, x_t).
         /// </summary>
-        public abstract Matrix diffusion(Time t, Vector x);
+        public abstract Matrix diffusion(double t, Vector x);
 
         /// <summary>
         /// Returns the expectation E[x_T | x_t = x0] of the process after a time interval Δt.
         /// </summary>
-        public virtual Vector expectation(Time t0, Vector x0, Time dt)
+        public virtual Vector expectation(double t0, Vector x0, double dt)
         {
             if (_discretization == null)
                 throw new InvalidOperationException("Discretization not set");
@@ -79,7 +79,7 @@ namespace Antares
         /// <summary>
         /// Returns the standard deviation S of the process after a time interval Δt.
         /// </summary>
-        public virtual Matrix stdDeviation(Time t0, Vector x0, Time dt)
+        public virtual Matrix stdDeviation(double t0, Vector x0, double dt)
         {
             if (_discretization == null)
                 throw new InvalidOperationException("Discretization not set");
@@ -89,7 +89,7 @@ namespace Antares
         /// <summary>
         /// Returns the covariance Cov[x_T, x_T] of the process after a time interval Δt.
         /// </summary>
-        public virtual Matrix covariance(Time t0, Vector x0, Time dt)
+        public virtual Matrix covariance(double t0, Vector x0, double dt)
         {
             if (_discretization == null)
                 throw new InvalidOperationException("Discretization not set");
@@ -99,7 +99,7 @@ namespace Antares
         /// <summary>
         /// Returns the asset value after a time interval Δt according to the given discretization.
         /// </summary>
-        public virtual Vector evolve(Time t0, Vector x0, Time dt, Vector dw)
+        public virtual Vector evolve(double t0, Vector x0, double dt, Vector dw)
         {
             return apply(expectation(t0, x0, dt), stdDeviation(t0, x0, dt) * dw);
         }
@@ -115,7 +115,7 @@ namespace Antares
         /// <summary>
         /// Returns the time value corresponding to the given date in the reference system of the stochastic process.
         /// </summary>
-        public virtual Time time(Date d)
+        public virtual double time(Date d)
         {
             throw new NotSupportedException("date/time conversion not supported");
         }
@@ -148,9 +148,9 @@ namespace Antares
         /// </summary>
         public new interface IDiscretization
         {
-            Real Drift(StochasticProcess1D process, Time t0, Real x0, Time dt);
-            Real Diffusion(StochasticProcess1D process, Time t0, Real x0, Time dt);
-            Real Variance(StochasticProcess1D process, Time t0, Real x0, Time dt);
+            Real Drift(StochasticProcess1D process, double t0, Real x0, double dt);
+            Real Diffusion(StochasticProcess1D process, double t0, Real x0, double dt);
+            Real Variance(StochasticProcess1D process, double t0, Real x0, double dt);
         }
 
         private readonly new IDiscretization? _discretization;
@@ -174,17 +174,17 @@ namespace Antares
         /// <summary>
         /// Returns the drift part of the equation, i.e., μ(t, x_t).
         /// </summary>
-        public abstract Real drift(Time t, Real x);
+        public abstract Real drift(double t, Real x);
 
         /// <summary>
         /// Returns the diffusion part of the equation, i.e., σ(t, x_t).
         /// </summary>
-        public abstract Real diffusion(Time t, Real x);
+        public abstract Real diffusion(double t, Real x);
 
         /// <summary>
         /// Returns the expectation E[x_T | x_t = x0] of the process after a time interval dt.
         /// </summary>
-        public virtual Real expectation(Time t0, Real x0, Time dt)
+        public virtual Real expectation(double t0, Real x0, double dt)
         {
             if (_discretization == null)
                 throw new InvalidOperationException("Discretization not set");
@@ -194,7 +194,7 @@ namespace Antares
         /// <summary>
         /// Returns the standard deviation S of the process after a time interval dt.
         /// </summary>
-        public virtual Real stdDeviation(Time t0, Real x0, Time dt)
+        public virtual Real stdDeviation(double t0, Real x0, double dt)
         {
             if (_discretization == null)
                 throw new InvalidOperationException("Discretization not set");
@@ -204,7 +204,7 @@ namespace Antares
         /// <summary>
         /// Returns the variance V = S^2 of the process after a time interval dt.
         /// </summary>
-        public virtual Real variance(Time t0, Real x0, Time dt)
+        public virtual Real variance(double t0, Real x0, double dt)
         {
             if (_discretization == null)
                 throw new InvalidOperationException("Discretization not set");
@@ -214,7 +214,7 @@ namespace Antares
         /// <summary>
         /// Returns the asset value after a time interval dt.
         /// </summary>
-        public virtual Real evolve(Time t0, Real x0, Time dt, Real dw)
+        public virtual Real evolve(double t0, Real x0, double dt, Real dw)
         {
             return apply(expectation(t0, x0, dt), stdDeviation(t0, x0, dt) * dw);
         }
@@ -232,37 +232,37 @@ namespace Antares
         public override Size size() => 1;
         public override Vector initialValues() => Vector.Build.Dense(1, x0());
 
-        public override Vector drift(Time t, Vector x)
+        public override Vector drift(double t, Vector x)
         {
             if (x.Count != 1) throw new ArgumentException("1-D vector required", nameof(x));
             return Vector.Build.Dense(1, drift(t, x[0]));
         }
 
-        public override Matrix diffusion(Time t, Vector x)
+        public override Matrix diffusion(double t, Vector x)
         {
             if (x.Count != 1) throw new ArgumentException("1-D vector required", nameof(x));
             return Matrix.Build.Dense(1, 1, diffusion(t, x[0]));
         }
 
-        public override Vector expectation(Time t0, Vector x0, Time dt)
+        public override Vector expectation(double t0, Vector x0, double dt)
         {
             if (x0.Count != 1) throw new ArgumentException("1-D vector required", nameof(x0));
             return Vector.Build.Dense(1, expectation(t0, x0[0], dt));
         }
 
-        public override Matrix stdDeviation(Time t0, Vector x0, Time dt)
+        public override Matrix stdDeviation(double t0, Vector x0, double dt)
         {
             if (x0.Count != 1) throw new ArgumentException("1-D vector required", nameof(x0));
             return Matrix.Build.Dense(1, 1, stdDeviation(t0, x0[0], dt));
         }
 
-        public override Matrix covariance(Time t0, Vector x0, Time dt)
+        public override Matrix covariance(double t0, Vector x0, double dt)
         {
             if (x0.Count != 1) throw new ArgumentException("1-D vector required", nameof(x0));
             return Matrix.Build.Dense(1, 1, variance(t0, x0[0], dt));
         }
 
-        public override Vector evolve(Time t0, Vector x0, Time dt, Vector dw)
+        public override Vector evolve(double t0, Vector x0, double dt, Vector dw)
         {
             if (x0.Count != 1) throw new ArgumentException("1-D vector required", nameof(x0));
             if (dw.Count != 1) throw new ArgumentException("1-D vector required", nameof(dw));

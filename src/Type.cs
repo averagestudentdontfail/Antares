@@ -6,7 +6,7 @@ global using BigNatural = System.UInt64;
 global using Real = System.Double;
 global using Decimal = System.Double;
 global using Size = System.Int32;
-global using Time = System.Double;
+// REMOVED: global using Time = System.Double;  // This conflicts with Antares.Time namespace
 global using DiscountFactor = System.Double;
 global using Rate = System.Double;
 global using Spread = System.Double;
@@ -64,7 +64,7 @@ namespace Antares
             /// <summary>
             /// A sequence of times.
             /// </summary>
-            public class TimeGrid : List<Time> { }
+            public class TimeGrid : List<double> { }
 
             /// <summary>
             /// A sequence of rates.
@@ -289,7 +289,7 @@ namespace Antares
         public static Real NullReal => Real.NaN;
         public static Integer NullInteger => int.MinValue;
         public static Size NullSize => int.MinValue;
-        public static Time NullTime => Real.NaN;
+        public static double NullTime => Real.NaN;
         public static Rate NullRate => Real.NaN;
         public static DiscountFactor NullDiscountFactor => Real.NaN;
     }
