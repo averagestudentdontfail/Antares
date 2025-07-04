@@ -5,6 +5,7 @@
     <PackageId>Antares.Math</PackageId>
     <Description>Mathematical components for the Antares financial library including interpolation, linear algebra, and numerical methods</Description>
     <PackageTags>quantlib;financial;mathematics;interpolation;linear-algebra</PackageTags>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
