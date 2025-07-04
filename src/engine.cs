@@ -1,7 +1,5 @@
 // Pricingengine.cs
 
-using Antares.Pattern;
-
 namespace Antares
 {
     /// <summary>

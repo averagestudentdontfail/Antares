@@ -1,4 +1,4 @@
-// Qldefines.cs
+// Defines.cs
 
 namespace Antares
 {

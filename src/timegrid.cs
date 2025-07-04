@@ -25,7 +25,7 @@ namespace Antares
         /// </summary>
         public static bool Close(double x, double y)
         {
-            return CloseEnough(x, y, QLDefines.EPSILON);
+            return CloseEnough(x, y, Define.EPSILON);
         }
     }
 
