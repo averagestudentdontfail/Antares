@@ -62,20 +62,21 @@ namespace Antares.Time
         /// Returns a string representation of the business day convention.
         /// This method mimics the C++ operator&lt;&lt; and provides error checking for invalid enum values.
         /// </summary>
-        /// <param name="b">The BusinessDayConvention enum value.</param>
-        /// <returns>A formatted string representation of the convention.</returns>
-        public static string ToFormattedString(this BusinessDayConvention b)
+        /// <param name="convention">The business day convention.</param>
+        /// <returns>A string representation of the convention.</returns>
+        /// <exception cref="InvalidEnumArgumentException">Thrown if the enum value is not defined.</exception>
+        public static string ToFormattedString(this BusinessDayConvention convention)
         {
-            return b switch
+            return convention switch
             {
                 BusinessDayConvention.Following => "Following",
                 BusinessDayConvention.ModifiedFollowing => "Modified Following",
-                BusinessDayConvention.HalfMonthModifiedFollowing => "Half-Month Modified Following",
                 BusinessDayConvention.Preceding => "Preceding",
                 BusinessDayConvention.ModifiedPreceding => "Modified Preceding",
                 BusinessDayConvention.Unadjusted => "Unadjusted",
+                BusinessDayConvention.HalfMonthModifiedFollowing => "Half-Month Modified Following",
                 BusinessDayConvention.Nearest => "Nearest",
-                _ => throw new InvalidEnumArgumentException(nameof(b), (int)b, typeof(BusinessDayConvention))
+                _ => throw new InvalidEnumArgumentException(nameof(convention), (int)convention, typeof(BusinessDayConvention))
             };
         }
     }

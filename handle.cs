@@ -93,7 +93,7 @@ namespace Antares
             {
                 if (IsEmpty)
                     throw new InvalidOperationException("Empty Handle cannot be dereferenced");
-                return _link.CurrentLinkObject;
+                return _link.CurrentLinkObject!;
             }
         }
 

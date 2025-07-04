@@ -8,29 +8,6 @@ using System.Text;
 namespace Antares.Time
 {
     /// <summary>
-    /// Business day conventions.
-    /// </summary>
-    public enum BusinessDayConvention
-    {
-        // ISDA
-        /// <summary>Choose the first business day after the given holiday.</summary>
-        Following,
-        /// <summary>Choose the first business day after the given holiday unless it belongs to a different month, in which case choose the first business day before the holiday.</summary>
-        ModifiedFollowing,
-        /// <summary>Choose the first business day before the given holiday.</summary>
-        Preceding,
-        // FIMMDA
-        /// <summary>Choose the first business day before the given holiday unless it belongs to a different month, in which case choose the first business day after the holiday.</summary>
-        ModifiedPreceding,
-        /// <summary>Do not adjust.</summary>
-        Unadjusted,
-        /// <summary>Choose the first business day after the given holiday unless that day crosses the mid-month (15th) or the end of month, in which case choose the first business day before the holiday.</summary>
-        HalfMonthModifiedFollowing,
-        /// <summary>Choose the nearest business day to the given holiday. If both the preceding and the following business days are equally far away, the following one is chosen.</summary>
-        Nearest
-    }
-
-    /// <summary>
     /// Calendar class for business day logic.
     /// </summary>
     /// <remarks>
@@ -70,8 +47,10 @@ namespace Antares.Time
         /// </summary>
         public bool IsBusinessDay(Date d)
         {
-            if (_addedHolidays.Contains(d)) return false;
-            if (_removedHolidays.Contains(d)) return true;
+            if (_addedHolidays.Contains(d))
+                return false;
+            if (_removedHolidays.Contains(d))
+                return true;
             return IsBusinessDayImpl(d);
         }
 
@@ -81,17 +60,22 @@ namespace Antares.Time
         public bool IsHoliday(Date d) => !IsBusinessDay(d);
 
         /// <summary>
+        /// Returns true if the weekday is part of the weekend for this calendar.
+        /// </summary>
+        public bool IsWeekend(Date d) => IsWeekend(d.Weekday);
+
+        /// <summary>
+        /// Returns true if the date is the last business day for the month in given market.
+        /// </summary>
+        public bool IsEndOfMonth(Date d) => d.Month != Adjust(d + 1).Month;
+
+        /// <summary>
         /// Last business day of the month to which the given date belongs.
         /// </summary>
         public Date EndOfMonth(Date d) => Adjust(Date.EndOfMonth(d), BusinessDayConvention.Preceding);
 
         /// <summary>
-        /// Returns true if the date is the last business day of the month for this calendar.
-        /// </summary>
-        public bool IsEndOfMonth(Date d) => d >= EndOfMonth(d);
-
-        /// <summary>
-        /// Adds a date to the set of holidays for this calendar.
+        /// Adds a date to the set of holidays for the given calendar.
         /// </summary>
         public void AddHoliday(Date d)
         {
@@ -101,7 +85,7 @@ namespace Antares.Time
         }
 
         /// <summary>
-        /// Removes a date from the set of holidays for this calendar.
+        /// Removes a date from the set of holidays for the given calendar.
         /// </summary>
         public void RemoveHoliday(Date d)
         {
@@ -181,10 +165,12 @@ namespace Antares.Time
         public Date Advance(Date d, int n, TimeUnit unit, BusinessDayConvention convention = BusinessDayConvention.Following, bool endOfMonth = false)
         {
             QL.Require(d != default, "null date");
-            if (n == 0)
-                return Adjust(d, convention);
 
-            if (unit == TimeUnit.Days)
+            if (n == 0)
+            {
+                return Adjust(d, convention);
+            }
+            else if (unit == TimeUnit.Days)
             {
                 Date d1 = d;
                 if (n > 0)
@@ -192,7 +178,8 @@ namespace Antares.Time
                     while (n > 0)
                     {
                         d1++;
-                        while (IsHoliday(d1)) d1++;
+                        while (IsHoliday(d1))
+                            d1++;
                         n--;
                     }
                 }
@@ -201,39 +188,26 @@ namespace Antares.Time
                     while (n < 0)
                     {
                         d1--;
-                        while (IsHoliday(d1)) d1--;
+                        while (IsHoliday(d1))
+                            d1--;
                         n++;
                     }
                 }
                 return d1;
             }
-
-            Date d1 = d + new Period(n, unit);
-            if (endOfMonth)
+            else
             {
-                if (convention == BusinessDayConvention.Unadjusted)
-                {
-                    if (Date.IsEndOfMonth(d)) return Date.EndOfMonth(d1);
-                }
-                else
-                {
-                    if (this.IsEndOfMonth(d)) return this.EndOfMonth(d1);
-                }
+                Date d1 = d + new Period(n, unit);
+                return Adjust(d1, convention);
             }
-            return Adjust(d1, convention);
         }
 
         /// <summary>
-        /// Calculates the number of business days between two given dates.
+        /// Calculates the number of business days between two given dates and returns the result.
         /// </summary>
         public int BusinessDaysBetween(Date from, Date to, bool includeFirst = true, bool includeLast = false)
         {
-            if (from < to)
-                return BusinessDaysBetweenImpl(this, from, to, includeFirst, includeLast);
-            if (from > to)
-                return -BusinessDaysBetweenImpl(this, to, from, includeLast, includeFirst);
-            
-            return (includeFirst && includeLast && IsBusinessDay(from)) ? 1 : 0;
+            return BusinessDaysBetweenImpl(this, from, to, includeFirst, includeLast);
         }
 
         private static int BusinessDaysBetweenImpl(Calendar cal, Date from, Date to, bool includeFirst, bool includeLast)
@@ -261,16 +235,16 @@ namespace Antares.Time
         #endregion
 
         #region Equality and Formatting
-        public override bool Equals(object obj) => obj is Calendar other && this.Name == other.Name;
+        public override bool Equals(object? obj) => obj is Calendar other && this.Name == other.Name;
         public override int GetHashCode() => Name?.GetHashCode() ?? 0;
         public override string ToString() => Name;
 
-        public static bool operator ==(Calendar c1, Calendar c2)
+        public static bool operator ==(Calendar? c1, Calendar? c2)
         {
             if (c1 is null) return c2 is null;
             return c1.Equals(c2);
         }
-        public static bool operator !=(Calendar c1, Calendar c2) => !(c1 == c2);
+        public static bool operator !=(Calendar? c1, Calendar? c2) => !(c1 == c2);
         #endregion
     }
 

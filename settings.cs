@@ -172,7 +172,7 @@ namespace Antares
         /// <remarks>
         /// This affects the behavior of event.HasOccurred() when called on the evaluation date.
         /// </remarks>
-        public static bool IncludeReferenceDateEvents // Fix: Operator '??' cannot be applied to operands of type 'bool' and 'bool'
+        public static bool IncludeReferenceDateEvents
         {
             get => _includeReferenceDateEvents.Value;
             set => _includeReferenceDateEvents.Value = value;
@@ -199,7 +199,7 @@ namespace Antares
         /// </remarks>
         public static bool EnforcesTodaysHistoricFixings
         {
-            get => _enforcesTodaysHistoricFixings.Value ?? false;
+            get => _enforcesTodaysHistoricFixings.Value;
             set => _enforcesTodaysHistoricFixings.Value = value;
         }
 

@@ -26,20 +26,6 @@ namespace Antares.Time
         December = 12
     }
 
-    /// <summary>
-    /// Weekday names.
-    /// </summary>
-    public enum Weekday
-    {
-        Sunday = 0,
-        Monday = 1,
-        Tuesday = 2,
-        Wednesday = 3,
-        Thursday = 4,
-        Friday = 5,
-        Saturday = 6
-    }
-
     public static class MonthExtensions
     {
         /// <summary>
@@ -74,6 +60,12 @@ namespace Antares.Time
     {
         private readonly DateOnly _date;
 
+        #region Constants
+        private const int ExcelEpochOffset = -693594; // Offset to convert .NET day numbers to Excel serial numbers
+        private const int MinSerialNumber = 367; // January 1, 1901 in Excel
+        private const int MaxSerialNumber = 109574; // December 31, 2199 in Excel
+        #endregion
+
         #region Constructors
         /// <summary>
         /// Constructor taking a serial number as given by Excel.
@@ -107,12 +99,6 @@ namespace Antares.Time
         {
             _date = DateOnly.FromDateTime(dateTime);
         }
-        #endregion
-
-        #region Constants
-        private const int ExcelEpochOffset = -693594; // Offset to convert .NET day numbers to Excel serial numbers
-        private const int MinSerialNumber = 367; // January 1, 1901 in Excel
-        private const int MaxSerialNumber = 109574; // December 31, 2199 in Excel
         #endregion
 
         #region Inspectors
@@ -215,13 +201,6 @@ namespace Antares.Time
         public override bool Equals(object? obj) => obj is Date other && this.Equals(other);
         public override int GetHashCode() => _date.GetHashCode();
         public int CompareTo(Date other) => _date.CompareTo(other._date);
-
-        private static void CheckSerialNumber(int serialNumber)
-        {
-            if (serialNumber < MinSerialNumber || serialNumber > MaxSerialNumber)
-                throw new ArgumentOutOfRangeException(nameof(serialNumber), 
-                    $"Date's serial number ({serialNumber}) outside allowed range [{MinSerialNumber}, {MaxSerialNumber}]");
-        }
         #endregion
         
         #region Comparison Operators
@@ -237,40 +216,6 @@ namespace Antares.Time
         public static implicit operator DateOnly(Date date) => date._date;
         public static implicit operator Date(DateOnly dateOnly) => new Date(dateOnly);
         #endregion
-    }
-
-    /// <summary>
-    /// Time unit enumeration.
-    /// </summary>
-    public enum TimeUnit
-    {
-        Days,
-        Weeks,
-        Months,
-        Years
-    }
-
-    /// <summary>
-    /// Period class representing a time span.
-    /// </summary>
-    public readonly struct Period : IEquatable<Period>
-    {
-        public int Length { get; }
-        public TimeUnit Units { get; }
-
-        public Period(int length, TimeUnit units)
-        {
-            Length = length;
-            Units = units;
-        }
-
-        public bool Equals(Period other) => Length == other.Length && Units == other.Units;
-        public override bool Equals(object? obj) => obj is Period other && Equals(other);
-        public override int GetHashCode() => HashCode.Combine(Length, Units);
-        public override string ToString() => $"{Length}{Units switch { TimeUnit.Days => "D", TimeUnit.Weeks => "W", TimeUnit.Months => "M", TimeUnit.Years => "Y", _ => "?" }}";
-
-        public static bool operator ==(Period left, Period right) => left.Equals(right);
-        public static bool operator !=(Period left, Period right) => !left.Equals(right);
     }
 
     /// <summary>

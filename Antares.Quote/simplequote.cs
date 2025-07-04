@@ -1,6 +1,7 @@
 // SimpleQuote.cs
 
 using System;
+using Antares;
 using Antares.Pattern;
 
 namespace Antares.Quote
@@ -28,7 +29,7 @@ namespace Antares.Quote
             get
             {
                 QL.Ensure(IsValid, "invalid SimpleQuote");
-                return _value.Value;
+                return _value!.Value;
             }
         }
 

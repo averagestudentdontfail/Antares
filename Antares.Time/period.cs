@@ -275,7 +275,7 @@ namespace Antares.Time
         public static bool operator !=(Period p1, Period p2) => !(p1 == p2);
 
         public bool Equals(Period other) => this == other;
-        public override bool Equals(object obj) => obj is Period other && this.Equals(other);
+        public override bool Equals(object? obj) => obj is Period other && this.Equals(other);
         public override int GetHashCode() => HashCode.Combine(Length, Units);
         public int CompareTo(Period other)
         {

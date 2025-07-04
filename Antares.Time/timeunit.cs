@@ -1,4 +1,4 @@
-// Timeunit.cs
+// TimeUnit.cs
 
 using System;
 using System.ComponentModel;
@@ -10,15 +10,14 @@ namespace Antares.Time
     /// </summary>
     public enum TimeUnit
     {
+        /// <summary>Time unit is days.</summary>
         Days,
+        /// <summary>Time unit is weeks.</summary>
         Weeks,
+        /// <summary>Time unit is months.</summary>
         Months,
-        Years,
-        Hours,
-        Minutes,
-        Seconds,
-        Milliseconds,
-        Microseconds
+        /// <summary>Time unit is years.</summary>
+        Years
     }
 
     /// <summary>
@@ -28,24 +27,37 @@ namespace Antares.Time
     {
         /// <summary>
         /// Returns a string representation of the time unit.
-        /// This method mimics the C++ operator&lt;&lt; and provides error checking for invalid enum values.
         /// </summary>
-        /// <param name="tu">The TimeUnit enum value.</param>
-        /// <returns>A string representation of the enum member name.</returns>
-        public static string ToEnumString(this TimeUnit tu)
+        /// <param name="unit">The time unit.</param>
+        /// <returns>A string representation of the time unit.</returns>
+        /// <exception cref="InvalidEnumArgumentException">Thrown if the enum value is not defined.</exception>
+        public static string ToFormattedString(this TimeUnit unit)
         {
-            return tu switch
+            return unit switch
             {
                 TimeUnit.Days => "Days",
-                TimeUnit.Weeks => "Weeks",
+                TimeUnit.Weeks => "Weeks", 
                 TimeUnit.Months => "Months",
                 TimeUnit.Years => "Years",
-                TimeUnit.Hours => "Hours",
-                TimeUnit.Minutes => "Minutes",
-                TimeUnit.Seconds => "Seconds",
-                TimeUnit.Milliseconds => "Milliseconds",
-                TimeUnit.Microseconds => "Microseconds",
-                _ => throw new InvalidEnumArgumentException(nameof(tu), (int)tu, typeof(TimeUnit))
+                _ => throw new InvalidEnumArgumentException(nameof(unit), (int)unit, typeof(TimeUnit))
+            };
+        }
+
+        /// <summary>
+        /// Returns a short string representation of the time unit.
+        /// </summary>
+        /// <param name="unit">The time unit.</param>
+        /// <returns>A short string representation of the time unit.</returns>
+        /// <exception cref="InvalidEnumArgumentException">Thrown if the enum value is not defined.</exception>
+        public static string ToShortString(this TimeUnit unit)
+        {
+            return unit switch
+            {
+                TimeUnit.Days => "D",
+                TimeUnit.Weeks => "W",
+                TimeUnit.Months => "M", 
+                TimeUnit.Years => "Y",
+                _ => throw new InvalidEnumArgumentException(nameof(unit), (int)unit, typeof(TimeUnit))
             };
         }
     }

@@ -58,7 +58,7 @@ namespace Antares.Time
         /// <summary>
         /// Checks for equality based on the day counter's name.
         /// </summary>
-        public bool Equals(DayCounter other)
+        public bool Equals(DayCounter? other)
         {
             if (other is null) return false;
             // Two uninitialized day counters are considered equal.
@@ -66,19 +66,19 @@ namespace Antares.Time
             return this.Name == other.Name;
         }
 
-        public override bool Equals(object obj) => obj is DayCounter other && this.Equals(other);
+        public override bool Equals(object? obj) => obj is DayCounter other && this.Equals(other);
 
         public override int GetHashCode() => Name?.GetHashCode() ?? 0;
 
         public override string ToString() => Name ?? "No day counter implementation provided";
 
-        public static bool operator ==(DayCounter d1, DayCounter d2)
+        public static bool operator ==(DayCounter? d1, DayCounter? d2)
         {
             if (d1 is null) return d2 is null;
             return d1.Equals(d2);
         }
 
-        public static bool operator !=(DayCounter d1, DayCounter d2) => !(d1 == d2);
+        public static bool operator !=(DayCounter? d1, DayCounter? d2) => !(d1 == d2);
         #endregion
     }
 }
