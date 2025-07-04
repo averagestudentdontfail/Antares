@@ -1,16 +1,177 @@
 // Cashflow.cs
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Antares.Time;
-using Antares.Pattern;
-
 // A Leg is a sequence of cash flows.
 global using Leg = System.Collections.Generic.IReadOnlyList<Antares.ICashFlow>;
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
 namespace Antares
 {
+    #region Missing Type Definitions
+
+    /// <summary>
+    /// Represents a date.
+    /// </summary>
+    public class Date : IComparable<Date>
+    {
+        private readonly DateTime _dateTime;
+
+        public Date() { _dateTime = DateTime.Today; }
+        public Date(DateTime dateTime) { _dateTime = dateTime.Date; }
+        public Date(int year, int month, int day) { _dateTime = new DateTime(year, month, day); }
+
+        public static Date Today => new Date(DateTime.Today);
+        public static Date MinDate => new Date(DateTime.MinValue);
+        public static Date MaxDate => new Date(DateTime.MaxValue);
+
+        public int CompareTo(Date other) => _dateTime.CompareTo(other?._dateTime);
+        public static bool operator <(Date left, Date right) => left.CompareTo(right) < 0;
+        public static bool operator >(Date left, Date right) => left.CompareTo(right) > 0;
+        public static bool operator <=(Date left, Date right) => left.CompareTo(right) <= 0;
+        public static bool operator >=(Date left, Date right) => left.CompareTo(right) >= 0;
+        public static bool operator ==(Date left, Date right) => left?.CompareTo(right) == 0;
+        public static bool operator !=(Date left, Date right) => !(left == right);
+
+        public override bool Equals(object obj) => obj is Date other && this == other;
+        public override int GetHashCode() => _dateTime.GetHashCode();
+        public override string ToString() => _dateTime.ToString("yyyy-MM-dd");
+    }
+
+    /// <summary>
+    /// Observer interface for the observer pattern.
+    /// </summary>
+    public interface IObserver
+    {
+        void Update();
+    }
+
+    /// <summary>
+    /// Observable interface for the observer pattern.
+    /// </summary>
+    public interface IObservable
+    {
+        void RegisterWith(IObserver observer);
+        void UnregisterWith(IObserver observer);
+    }
+
+    /// <summary>
+    /// Concrete implementation of IObservable to be used via composition.
+    /// </summary>
+    public class Observable : IObservable
+    {
+        private readonly List<IObserver> _observers = new List<IObserver>();
+
+        public void RegisterWith(IObserver observer)
+        {
+            if (!_observers.Contains(observer))
+            {
+                _observers.Add(observer);
+            }
+        }
+
+        public void UnregisterWith(IObserver observer)
+        {
+            _observers.Remove(observer);
+        }
+
+        public void NotifyObservers()
+        {
+            var observersCopy = new List<IObserver>(_observers);
+            foreach (var observer in observersCopy)
+            {
+                observer.Update();
+            }
+        }
+    }
+
+    /// <summary>
+    /// A degenerate base interface for the Acyclic Visitor pattern.
+    /// </summary>
+    public interface IAcyclicVisitor
+    {
+        // This interface is intentionally empty.
+    }
+
+    /// <summary>
+    /// A generic visitor interface for a specific class in the Acyclic Visitor pattern.
+    /// </summary>
+    /// <typeparam name="T">The type of the object to be visited.</typeparam>
+    public interface IVisitor<in T> : IAcyclicVisitor
+    {
+        void Visit(T element);
+    }
+
+    /// <summary>
+    /// Framework for calculation on demand and result caching.
+    /// </summary>
+    public abstract class LazyObject : IObserver, IObservable
+    {
+        private readonly Observable _observable = new Observable();
+        protected bool _calculated;
+        protected bool _frozen;
+        protected bool _alwaysForward;
+        private bool _updating;
+
+        protected LazyObject()
+        {
+            _calculated = false;
+            _frozen = false;
+            _updating = false;
+            _alwaysForward = !Settings.FasterLazyObjects;
+        }
+
+        public bool IsCalculated => _calculated;
+
+        public virtual void Update()
+        {
+            if (_frozen) return;
+            if (_updating) return;
+
+            bool wasCalculated = _calculated;
+            _calculated = false;
+
+            if (_alwaysForward || wasCalculated)
+            {
+                _updating = true;
+                try
+                {
+                    NotifyObservers();
+                }
+                finally
+                {
+                    _updating = false;
+                }
+            }
+        }
+
+        public virtual void Calculate()
+        {
+            if (!_calculated && !_frozen)
+            {
+                _calculated = true;
+                try
+                {
+                    PerformCalculations();
+                }
+                catch
+                {
+                    _calculated = false;
+                    throw;
+                }
+            }
+        }
+
+        protected abstract void PerformCalculations();
+
+        public void RegisterWith(IObserver observer) => _observable.RegisterWith(observer);
+        public void UnregisterWith(IObserver observer) => _observable.UnregisterWith(observer);
+        protected void NotifyObservers() => _observable.NotifyObservers();
+    }
+
+    #endregion
+
     /// <summary>
     /// Base interface for cash flows.
     /// </summary>
@@ -38,6 +199,8 @@ namespace Antares
     /// </summary>
     public abstract class CashFlow : LazyObject, ICashFlow
     {
+        private readonly Observable _observable = new Observable();
+
         /// <summary>
         /// Returns the date at which the event occurs.
         /// </summary>
@@ -132,6 +295,11 @@ namespace Antares
         /// CashFlow itself doesn't perform calculations, but derived classes might.
         /// </summary>
         protected override void PerformCalculations() { }
+
+        // IObservable implementation methods
+        public void RegisterWith(IObserver observer) => _observable.RegisterWith(observer);
+        public void UnregisterWith(IObserver observer) => _observable.UnregisterWith(observer);
+        protected void NotifyObservers() => _observable.NotifyObservers();
     }
 
     /// <summary>

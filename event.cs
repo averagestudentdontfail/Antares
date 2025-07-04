@@ -1,8 +1,6 @@
 // Event.cs
 
 using System;
-using Antares.Time;
-using Antares.Pattern;
 
 namespace Antares
 {

@@ -1,7 +1,6 @@
 // Handle.cs
 
 using System;
-using Antares.Pattern;
 
 namespace Antares
 {
@@ -102,14 +101,14 @@ namespace Antares
         /// Checks if the contained pointer is null.
         /// </summary>
         public bool IsEmpty => _link.IsEmpty;
+
+        /// <summary>
+        /// Allows the handle to be used as an observable.
+        /// </summary>
+        public IObservable AsObservable => _link;
         #endregion
 
         #region Operators
-        /// <summary>
-        /// Allows the handle to be used in observer registration.
-        /// </summary>
-        public static implicit operator IObservable(Handle<T> h) => h._link;
-
         public static bool operator ==(Handle<T> h1, Handle<T> h2)
         {
             if (h1 is null) return h2 is null;
@@ -118,7 +117,7 @@ namespace Antares
 
         public static bool operator !=(Handle<T> h1, Handle<T> h2) => !(h1 == h2);
 
-        public override bool Equals(object o)
+        public override bool Equals(object? o)
         {
             if (o is not Handle<T> other) return false;
             return ReferenceEquals(this._link, other._link);

@@ -1,69 +1,87 @@
 // Settings.cs
 
 using System;
-using Antares.Time;
-using Antares.Utility;
+using System.Collections.Generic;
 
 namespace Antares
 {
+    #region Missing Type Definitions
+
     /// <summary>
-    /// Global repository for run-time library settings.
+    /// An observable and assignable proxy to a concrete value.
     /// </summary>
-    public static class Settings
+    /// <typeparam name="T">The type of the wrapped value.</typeparam>
+    public class ObservableValue<T> : IObservable
     {
-        /// <summary>
-        /// A proxy for the evaluation date that handles floating vs. fixed dates and notifications.
-        /// </summary>
-        public class DateProxy : ObservableValue<Date>
+        private T _value;
+        private readonly Observable _observable = new Observable();
+
+        public ObservableValue()
         {
-            /// <summary>
-            /// Initializes the proxy with a null date, indicating a floating evaluation date.
-            /// </summary>
-            public DateProxy() : base(new Date()) { }
+            _value = default;
+        }
 
-            /// <summary>
-            /// Implicit conversion to Date.
-            /// </summary>
-            public static implicit operator Date(DateProxy proxy) => proxy.Value;
+        public ObservableValue(T value)
+        {
+            _value = value;
+        }
 
-            /// <summary>
-            /// Returns the evaluation date; if a null date is specified, today's date is used.
-            /// </summary>
-            public Date EvaluationDate
+        public T Value
+        {
+            get => _value;
+            set
             {
-                get
+                if (!EqualityComparer<T>.Default.Equals(_value, value))
                 {
-                    Date date = Value;
-                    return date ?? Date.Today;
+                    _value = value;
+                    _observable.NotifyObservers();
                 }
             }
         }
 
-        private static readonly DateProxy _evaluationDate = new DateProxy();
+        public static implicit operator T(ObservableValue<T> ov)
+        {
+            return ov.Value;
+        }
+
+        public void RegisterWith(IObserver observer)
+        {
+            _observable.RegisterWith(observer);
+        }
+
+        public void UnregisterWith(IObserver observer)
+        {
+            _observable.UnregisterWith(observer);
+        }
+    }
+
+    #endregion
+
+    /// <summary>
+    /// Global settings for the Antares library.
+    /// </summary>
+    public static class Settings
+    {
+        private static readonly ObservableValue<Date> _evaluationDate = new ObservableValue<Date>(Date.Today);
         private static readonly ObservableValue<bool> _includeReferenceDateEvents = new ObservableValue<bool>(false);
         private static readonly ObservableValue<bool?> _includeTodaysCashFlows = new ObservableValue<bool?>(null);
         private static readonly ObservableValue<bool> _enforcesTodaysHistoricFixings = new ObservableValue<bool>(false);
 
         /// <summary>
-        /// Gets or sets the global evaluation date.
+        /// Gets or sets the evaluation date for the library.
         /// </summary>
         /// <remarks>
-        /// This is the date at which instruments are valued, curves are built, etc.
-        /// Setting this will notify all observers.
+        /// This is the date on which all calculations are performed.
+        /// It should normally be set to the current business date.
         /// </remarks>
         public static Date EvaluationDate
         {
-            get => _evaluationDate.EvaluationDate;
+            get => _evaluationDate.Value;
             set => _evaluationDate.Value = value;
         }
 
         /// <summary>
-        /// Gets the evaluation date proxy for advanced usage scenarios where observer registration is needed.
-        /// </summary>
-        public static DateProxy EvaluationDateProxy => _evaluationDate;
-
-        /// <summary>
-        /// Gets or sets whether events occurring on the reference date should be considered as having already occurred.
+        /// Gets or sets whether events happening on the reference date are considered to have occurred.
         /// </summary>
         /// <remarks>
         /// This affects the behavior of event.HasOccurred() when called on the evaluation date.
